@@ -81,7 +81,8 @@ class DefaultApi
         Configuration $config = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
-    ) {
+    )
+    {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
         $this->headerSelector = $selector ?: new HeaderSelector();
@@ -121,9 +122,7 @@ class DefaultApi
      *
      * Buy a Phone Number
      *
-
      * @param  \FreeClimb\Api\Model\BuyIncomingNumberRequest $buy_incoming_number_request Incoming Number transaction details (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -140,9 +139,7 @@ class DefaultApi
      *
      * Buy a Phone Number
      *
-
      * @param  \FreeClimb\Api\Model\BuyIncomingNumberRequest $buy_incoming_number_request Incoming Number transaction details (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -187,7 +184,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\IncomingNumberResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -235,9 +232,7 @@ class DefaultApi
      *
      * Buy a Phone Number
      *
-
      * @param  \FreeClimb\Api\Model\BuyIncomingNumberRequest $buy_incoming_number_request Incoming Number transaction details (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -257,9 +252,7 @@ class DefaultApi
      *
      * Buy a Phone Number
      *
-
      * @param  \FreeClimb\Api\Model\BuyIncomingNumberRequest $buy_incoming_number_request Incoming Number transaction details (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -305,15 +298,13 @@ class DefaultApi
     /**
      * Create request for operation 'buyAPhoneNumber'
      *
-
      * @param  \FreeClimb\Api\Model\BuyIncomingNumberRequest $buy_incoming_number_request Incoming Number transaction details (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function buyAPhoneNumberRequest($buy_incoming_number_request)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -419,9 +410,7 @@ class DefaultApi
      *
      * Create a Conference
      *
-
      * @param  \FreeClimb\Api\Model\CreateConferenceRequest $create_conference_request Conference to create (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -438,9 +427,7 @@ class DefaultApi
      *
      * Create a Conference
      *
-
      * @param  \FreeClimb\Api\Model\CreateConferenceRequest $create_conference_request Conference to create (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -485,7 +472,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -533,9 +520,7 @@ class DefaultApi
      *
      * Create a Conference
      *
-
      * @param  \FreeClimb\Api\Model\CreateConferenceRequest $create_conference_request Conference to create (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -555,9 +540,7 @@ class DefaultApi
      *
      * Create a Conference
      *
-
      * @param  \FreeClimb\Api\Model\CreateConferenceRequest $create_conference_request Conference to create (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -603,15 +586,13 @@ class DefaultApi
     /**
      * Create request for operation 'createAConference'
      *
-
      * @param  \FreeClimb\Api\Model\CreateConferenceRequest $create_conference_request Conference to create (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAConferenceRequest($create_conference_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -711,9 +692,7 @@ class DefaultApi
      *
      * Create a Queue
      *
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue details used to create a queue (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -730,9 +709,7 @@ class DefaultApi
      *
      * Create a Queue
      *
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue details used to create a queue (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -777,7 +754,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -825,9 +802,7 @@ class DefaultApi
      *
      * Create a Queue
      *
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue details used to create a queue (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -847,9 +822,7 @@ class DefaultApi
      *
      * Create a Queue
      *
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue details used to create a queue (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -895,15 +868,13 @@ class DefaultApi
     /**
      * Create request for operation 'createAQueue'
      *
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue details used to create a queue (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAQueueRequest($queue_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -1003,9 +974,7 @@ class DefaultApi
      *
      * Create an application
      *
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application Details (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1022,9 +991,7 @@ class DefaultApi
      *
      * Create an application
      *
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application Details (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1069,7 +1036,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     if ('\FreeClimb\Api\Model\ApplicationResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -1117,9 +1084,7 @@ class DefaultApi
      *
      * Create an application
      *
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application Details (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1139,9 +1104,7 @@ class DefaultApi
      *
      * Create an application
      *
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application Details (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1187,15 +1150,13 @@ class DefaultApi
     /**
      * Create request for operation 'createAnApplication'
      *
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application Details (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAnApplicationRequest($application_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -1295,9 +1256,7 @@ class DefaultApi
      *
      * Delete a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1313,9 +1272,7 @@ class DefaultApi
      *
      * Delete a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1374,9 +1331,7 @@ class DefaultApi
      *
      * Delete a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1396,9 +1351,7 @@ class DefaultApi
      *
      * Delete a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1434,15 +1387,13 @@ class DefaultApi
     /**
      * Create request for operation 'deleteARecording'
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteARecordingRequest($recording_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -1550,9 +1501,7 @@ class DefaultApi
      *
      * Delete an application
      *
-
      * @param  string $application_id String that uniquely identifies this application resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1568,9 +1517,7 @@ class DefaultApi
      *
      * Delete an application
      *
-
      * @param  string $application_id String that uniquely identifies this application resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1629,9 +1576,7 @@ class DefaultApi
      *
      * Delete an application
      *
-
      * @param  string $application_id String that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1651,9 +1596,7 @@ class DefaultApi
      *
      * Delete an application
      *
-
      * @param  string $application_id String that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1689,15 +1632,13 @@ class DefaultApi
     /**
      * Create request for operation 'deleteAnApplication'
      *
-
      * @param  string $application_id String that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAnApplicationRequest($application_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -1805,9 +1746,7 @@ class DefaultApi
      *
      * Delete an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1823,9 +1762,7 @@ class DefaultApi
      *
      * Delete an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1884,9 +1821,7 @@ class DefaultApi
      *
      * Delete an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1906,9 +1841,7 @@ class DefaultApi
      *
      * Delete an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1944,15 +1877,13 @@ class DefaultApi
     /**
      * Create request for operation 'deleteAnIncomingNumber'
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAnIncomingNumberRequest($phone_number_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -2060,11 +1991,8 @@ class DefaultApi
      *
      * Dequeue a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID if the Call that the Member belongs to (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2081,11 +2009,8 @@ class DefaultApi
      *
      * Dequeue a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID if the Call that the Member belongs to (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2130,7 +2055,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 202:
                     if ('\FreeClimb\Api\Model\QueueMember' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -2178,11 +2103,8 @@ class DefaultApi
      *
      * Dequeue a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID if the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2202,11 +2124,8 @@ class DefaultApi
      *
      * Dequeue a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID if the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2252,17 +2171,14 @@ class DefaultApi
     /**
      * Create request for operation 'dequeueAMember'
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID if the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function dequeueAMemberRequest($queue_id, $call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -2384,9 +2300,7 @@ class DefaultApi
      *
      * Dequeue Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies this queue resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2403,9 +2317,7 @@ class DefaultApi
      *
      * Dequeue Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies this queue resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2450,7 +2362,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 202:
                     if ('\FreeClimb\Api\Model\QueueMember' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -2498,9 +2410,7 @@ class DefaultApi
      *
      * Dequeue Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2520,9 +2430,7 @@ class DefaultApi
      *
      * Dequeue Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2568,15 +2476,13 @@ class DefaultApi
     /**
      * Create request for operation 'dequeueHeadMember'
      *
-
      * @param  string $queue_id String that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function dequeueHeadMemberRequest($queue_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -2684,9 +2590,7 @@ class DefaultApi
      *
      * Download a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2703,9 +2607,7 @@ class DefaultApi
      *
      * Download a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2750,7 +2652,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\SplFileObject' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -2798,9 +2700,7 @@ class DefaultApi
      *
      * Download a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2820,9 +2720,7 @@ class DefaultApi
      *
      * Download a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2868,15 +2766,13 @@ class DefaultApi
     /**
      * Create request for operation 'downloadARecordingFile'
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function downloadARecordingFileRequest($recording_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -2984,9 +2880,7 @@ class DefaultApi
      *
      * Filter Logs
      *
-
      * @param  \FreeClimb\Api\Model\FilterLogsRequest $filter_logs_request Filter logs request paramters (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3003,9 +2897,7 @@ class DefaultApi
      *
      * Filter Logs
      *
-
      * @param  \FreeClimb\Api\Model\FilterLogsRequest $filter_logs_request Filter logs request paramters (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3050,7 +2942,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\LogList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -3098,9 +2990,7 @@ class DefaultApi
      *
      * Filter Logs
      *
-
      * @param  \FreeClimb\Api\Model\FilterLogsRequest $filter_logs_request Filter logs request paramters (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3120,9 +3010,7 @@ class DefaultApi
      *
      * Filter Logs
      *
-
      * @param  \FreeClimb\Api\Model\FilterLogsRequest $filter_logs_request Filter logs request paramters (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3168,15 +3056,13 @@ class DefaultApi
     /**
      * Create request for operation 'filterLogs'
      *
-
      * @param  \FreeClimb\Api\Model\FilterLogsRequest $filter_logs_request Filter logs request paramters (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function filterLogsRequest($filter_logs_request)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -3282,9 +3168,7 @@ class DefaultApi
      *
      * Get a Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3301,9 +3185,7 @@ class DefaultApi
      *
      * Get a Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3348,7 +3230,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\CallResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -3396,9 +3278,7 @@ class DefaultApi
      *
      * Get a Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3418,9 +3298,7 @@ class DefaultApi
      *
      * Get a Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3466,15 +3344,13 @@ class DefaultApi
     /**
      * Create request for operation 'getACall'
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getACallRequest($call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -3582,9 +3458,7 @@ class DefaultApi
      *
      * Get a Conference
      *
-
      * @param  string $conference_id A string that uniquely identifies this conference resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3601,9 +3475,7 @@ class DefaultApi
      *
      * Get a Conference
      *
-
      * @param  string $conference_id A string that uniquely identifies this conference resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3648,7 +3520,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -3696,9 +3568,7 @@ class DefaultApi
      *
      * Get a Conference
      *
-
      * @param  string $conference_id A string that uniquely identifies this conference resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3718,9 +3588,7 @@ class DefaultApi
      *
      * Get a Conference
      *
-
      * @param  string $conference_id A string that uniquely identifies this conference resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3766,15 +3634,13 @@ class DefaultApi
     /**
      * Create request for operation 'getAConference'
      *
-
      * @param  string $conference_id A string that uniquely identifies this conference resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAConferenceRequest($conference_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -3882,11 +3748,8 @@ class DefaultApi
      *
      * Get a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID of the Call that the Member belongs to (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3903,11 +3766,8 @@ class DefaultApi
      *
      * Get a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID of the Call that the Member belongs to (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3952,7 +3812,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueMember' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -4000,11 +3860,8 @@ class DefaultApi
      *
      * Get a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID of the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4024,11 +3881,8 @@ class DefaultApi
      *
      * Get a Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID of the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4074,17 +3928,14 @@ class DefaultApi
     /**
      * Create request for operation 'getAMember'
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      * @param  string $call_id ID of the Call that the Member belongs to (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAMemberRequest($queue_id, $call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -4206,11 +4057,8 @@ class DefaultApi
      *
      * Get a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4227,11 +4075,8 @@ class DefaultApi
      *
      * Get a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4276,7 +4121,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceParticipantResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -4324,11 +4169,8 @@ class DefaultApi
      *
      * Get a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4348,11 +4190,8 @@ class DefaultApi
      *
      * Get a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4398,17 +4237,14 @@ class DefaultApi
     /**
      * Create request for operation 'getAParticipant'
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAParticipantRequest($conference_id, $call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -4530,9 +4366,7 @@ class DefaultApi
      *
      * Get a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this queue resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4549,9 +4383,7 @@ class DefaultApi
      *
      * Get a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this queue resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4596,7 +4428,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -4644,9 +4476,7 @@ class DefaultApi
      *
      * Get a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4666,9 +4496,7 @@ class DefaultApi
      *
      * Get a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4714,15 +4542,13 @@ class DefaultApi
     /**
      * Create request for operation 'getAQueue'
      *
-
      * @param  string $queue_id A string that uniquely identifies this queue resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAQueueRequest($queue_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -4830,9 +4656,7 @@ class DefaultApi
      *
      * Get a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4849,9 +4673,7 @@ class DefaultApi
      *
      * Get a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4896,7 +4718,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\RecordingResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -4944,9 +4766,7 @@ class DefaultApi
      *
      * Get a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4966,9 +4786,7 @@ class DefaultApi
      *
      * Get a Recording
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5014,15 +4832,13 @@ class DefaultApi
     /**
      * Create request for operation 'getARecording'
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getARecordingRequest($recording_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -5130,7 +4946,6 @@ class DefaultApi
      *
      * Get an Account
      *
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5147,7 +4962,6 @@ class DefaultApi
      *
      * Get an Account
      *
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5192,7 +5006,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\AccountResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -5240,7 +5054,6 @@ class DefaultApi
      *
      * Get an Account
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5260,7 +5073,6 @@ class DefaultApi
      *
      * Get an Account
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5306,13 +5118,12 @@ class DefaultApi
     /**
      * Create request for operation 'getAnAccount'
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnAccountRequest()
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -5406,9 +5217,7 @@ class DefaultApi
      *
      * Get an Application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5425,9 +5234,7 @@ class DefaultApi
      *
      * Get an Application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5472,7 +5279,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ApplicationResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -5520,9 +5327,7 @@ class DefaultApi
      *
      * Get an Application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5542,9 +5347,7 @@ class DefaultApi
      *
      * Get an Application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5590,15 +5393,13 @@ class DefaultApi
     /**
      * Create request for operation 'getAnApplication'
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnApplicationRequest($application_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -5706,9 +5507,7 @@ class DefaultApi
      *
      * Get an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5725,9 +5524,7 @@ class DefaultApi
      *
      * Get an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5772,7 +5569,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\IncomingNumberResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -5820,9 +5617,7 @@ class DefaultApi
      *
      * Get an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5842,9 +5637,7 @@ class DefaultApi
      *
      * Get an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5890,15 +5683,13 @@ class DefaultApi
     /**
      * Create request for operation 'getAnIncomingNumber'
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnIncomingNumberRequest($phone_number_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -6006,9 +5797,7 @@ class DefaultApi
      *
      * Get an SMS Message
      *
-
      * @param  string $message_id String that uniquely identifies this Message resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6025,9 +5814,7 @@ class DefaultApi
      *
      * Get an SMS Message
      *
-
      * @param  string $message_id String that uniquely identifies this Message resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6072,7 +5859,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\MessageResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -6120,9 +5907,7 @@ class DefaultApi
      *
      * Get an SMS Message
      *
-
      * @param  string $message_id String that uniquely identifies this Message resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6142,9 +5927,7 @@ class DefaultApi
      *
      * Get an SMS Message
      *
-
      * @param  string $message_id String that uniquely identifies this Message resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6190,15 +5973,13 @@ class DefaultApi
     /**
      * Create request for operation 'getAnSmsMessage'
      *
-
      * @param  string $message_id String that uniquely identifies this Message resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnSmsMessageRequest($message_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -6306,9 +6087,7 @@ class DefaultApi
      *
      * Get Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6325,9 +6104,7 @@ class DefaultApi
      *
      * Get Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6372,7 +6149,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueMember' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -6420,9 +6197,7 @@ class DefaultApi
      *
      * Get Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6442,9 +6217,7 @@ class DefaultApi
      *
      * Get Head Member
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6490,15 +6263,13 @@ class DefaultApi
     /**
      * Create request for operation 'getHeadMember'
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getHeadMemberRequest($queue_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -6606,9 +6377,7 @@ class DefaultApi
      *
      * List Active Queues
      *
-
      * @param  string $alias Return only the Queue resources with aliases that exactly match this name. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6625,9 +6394,7 @@ class DefaultApi
      *
      * List Active Queues
      *
-
      * @param  string $alias Return only the Queue resources with aliases that exactly match this name. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6672,7 +6439,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -6720,9 +6487,7 @@ class DefaultApi
      *
      * List Active Queues
      *
-
      * @param  string $alias Return only the Queue resources with aliases that exactly match this name. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6742,9 +6507,7 @@ class DefaultApi
      *
      * List Active Queues
      *
-
      * @param  string $alias Return only the Queue resources with aliases that exactly match this name. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6790,15 +6553,13 @@ class DefaultApi
     /**
      * Create request for operation 'listActiveQueues'
      *
-
      * @param  string $alias Return only the Queue resources with aliases that exactly match this name. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listActiveQueuesRequest($alias = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -6816,12 +6577,11 @@ class DefaultApi
 
         // query params
         if ($alias !== null) {
-            if('form' === 'form' && is_array($alias)) {
-                foreach($alias as $key => $value) {
+            if ('form' === 'form' && is_array($alias)) {
+                foreach ($alias as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['alias'] = $alias;
             }
         }
@@ -6903,7 +6663,6 @@ class DefaultApi
      *
      * List All Account Logs
      *
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6920,7 +6679,6 @@ class DefaultApi
      *
      * List All Account Logs
      *
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6965,7 +6723,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\LogList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -7013,7 +6771,6 @@ class DefaultApi
      *
      * List All Account Logs
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7033,7 +6790,6 @@ class DefaultApi
      *
      * List All Account Logs
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7079,13 +6835,12 @@ class DefaultApi
     /**
      * Create request for operation 'listAllAccountLogs'
      *
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listAllAccountLogsRequest()
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -7179,9 +6934,7 @@ class DefaultApi
      *
      * List applications
      *
-
      * @param  string $alias Return only applications with aliases that exactly match this value. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7198,9 +6951,7 @@ class DefaultApi
      *
      * List applications
      *
-
      * @param  string $alias Return only applications with aliases that exactly match this value. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7245,7 +6996,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ApplicationList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -7293,9 +7044,7 @@ class DefaultApi
      *
      * List applications
      *
-
      * @param  string $alias Return only applications with aliases that exactly match this value. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7315,9 +7064,7 @@ class DefaultApi
      *
      * List applications
      *
-
      * @param  string $alias Return only applications with aliases that exactly match this value. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7363,15 +7110,13 @@ class DefaultApi
     /**
      * Create request for operation 'listApplications'
      *
-
      * @param  string $alias Return only applications with aliases that exactly match this value. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listApplicationsRequest($alias = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -7389,12 +7134,11 @@ class DefaultApi
 
         // query params
         if ($alias !== null) {
-            if('form' === 'form' && is_array($alias)) {
-                foreach($alias as $key => $value) {
+            if ('form' === 'form' && is_array($alias)) {
+                foreach ($alias as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['alias'] = $alias;
             }
         }
@@ -7476,27 +7220,16 @@ class DefaultApi
      *
      * List available numbers
      *
-
      * @param  string $phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $capabilities_voice capabilities_voice (optional)
-
      * @param  bool $capabilities_sms capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code capabilities_short_code (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7513,27 +7246,16 @@ class DefaultApi
      *
      * List available numbers
      *
-
      * @param  string $phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7578,7 +7300,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\AvailableNumberList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -7626,27 +7348,16 @@ class DefaultApi
      *
      * List available numbers
      *
-
      * @param  string $phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7666,27 +7377,16 @@ class DefaultApi
      *
      * List available numbers
      *
-
      * @param  string $phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7732,33 +7432,22 @@ class DefaultApi
     /**
      * Create request for operation 'listAvailableNumbers'
      *
-
      * @param  string $phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listAvailableNumbersRequest($phone_number = null, $region = null, $country = null, $voice_enabled = true, $sms_enabled = true, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null)
-    { 
+    {
 
         $resourcePath = '/AvailablePhoneNumbers';
         $formParams = [];
@@ -7769,111 +7458,101 @@ class DefaultApi
 
         // query params
         if ($phone_number !== null) {
-            if('form' === 'form' && is_array($phone_number)) {
-                foreach($phone_number as $key => $value) {
+            if ('form' === 'form' && is_array($phone_number)) {
+                foreach ($phone_number as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['phoneNumber'] = $phone_number;
             }
         }
         // query params
         if ($region !== null) {
-            if('form' === 'form' && is_array($region)) {
-                foreach($region as $key => $value) {
+            if ('form' === 'form' && is_array($region)) {
+                foreach ($region as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['region'] = $region;
             }
         }
         // query params
         if ($country !== null) {
-            if('form' === 'form' && is_array($country)) {
-                foreach($country as $key => $value) {
+            if ('form' === 'form' && is_array($country)) {
+                foreach ($country as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['country'] = $country;
             }
         }
         // query params
         if ($voice_enabled !== null) {
-            if('form' === 'form' && is_array($voice_enabled)) {
-                foreach($voice_enabled as $key => $value) {
+            if ('form' === 'form' && is_array($voice_enabled)) {
+                foreach ($voice_enabled as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['voiceEnabled'] = $voice_enabled;
             }
         }
         // query params
         if ($sms_enabled !== null) {
-            if('form' === 'form' && is_array($sms_enabled)) {
-                foreach($sms_enabled as $key => $value) {
+            if ('form' === 'form' && is_array($sms_enabled)) {
+                foreach ($sms_enabled as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['smsEnabled'] = $sms_enabled;
             }
         }
         // query params
         if ($capabilities_voice !== null) {
-            if('form' === 'form' && is_array($capabilities_voice)) {
-                foreach($capabilities_voice as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_voice)) {
+                foreach ($capabilities_voice as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.voice'] = $capabilities_voice;
             }
         }
         // query params
         if ($capabilities_sms !== null) {
-            if('form' === 'form' && is_array($capabilities_sms)) {
-                foreach($capabilities_sms as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_sms)) {
+                foreach ($capabilities_sms as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.sms'] = $capabilities_sms;
             }
         }
         // query params
         if ($capabilities_toll_free !== null) {
-            if('form' === 'form' && is_array($capabilities_toll_free)) {
-                foreach($capabilities_toll_free as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_toll_free)) {
+                foreach ($capabilities_toll_free as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.tollFree'] = $capabilities_toll_free;
             }
         }
         // query params
         if ($capabilities_ten_dlc !== null) {
-            if('form' === 'form' && is_array($capabilities_ten_dlc)) {
-                foreach($capabilities_ten_dlc as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_ten_dlc)) {
+                foreach ($capabilities_ten_dlc as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.tenDLC'] = $capabilities_ten_dlc;
             }
         }
         // query params
         if ($capabilities_short_code !== null) {
-            if('form' === 'form' && is_array($capabilities_short_code)) {
-                foreach($capabilities_short_code as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_short_code)) {
+                foreach ($capabilities_short_code as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.shortCode'] = $capabilities_short_code;
             }
         }
@@ -7947,9 +7626,7 @@ class DefaultApi
      *
      * List Call Logs
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7966,9 +7643,7 @@ class DefaultApi
      *
      * List Call Logs
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8013,7 +7688,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\LogList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -8061,9 +7736,7 @@ class DefaultApi
      *
      * List Call Logs
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8083,9 +7756,7 @@ class DefaultApi
      *
      * List Call Logs
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8131,15 +7802,13 @@ class DefaultApi
     /**
      * Create request for operation 'listCallLogs'
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listCallLogsRequest($call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -8247,11 +7916,8 @@ class DefaultApi
      *
      * List Call Recordings
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8268,11 +7934,8 @@ class DefaultApi
      *
      * List Call Recordings
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8317,7 +7980,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\RecordingList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -8365,11 +8028,8 @@ class DefaultApi
      *
      * List Call Recordings
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8389,11 +8049,8 @@ class DefaultApi
      *
      * List Call Recordings
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8439,17 +8096,14 @@ class DefaultApi
     /**
      * Create request for operation 'listCallRecordings'
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listCallRecordingsRequest($call_id, $date_created = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -8473,12 +8127,11 @@ class DefaultApi
 
         // query params
         if ($date_created !== null) {
-            if('form' === 'form' && is_array($date_created)) {
-                foreach($date_created as $key => $value) {
+            if ('form' === 'form' && is_array($date_created)) {
+                foreach ($date_created as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['dateCreated'] = $date_created;
             }
         }
@@ -8568,21 +8221,13 @@ class DefaultApi
      *
      * List Calls
      *
-
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
-
      * @param  string $to Only show Calls to this phone number. (optional)
-
      * @param  string $from Only show Calls from this phone number. (optional)
-
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
-
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
-
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
-
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8599,21 +8244,13 @@ class DefaultApi
      *
      * List Calls
      *
-
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
-
      * @param  string $to Only show Calls to this phone number. (optional)
-
      * @param  string $from Only show Calls from this phone number. (optional)
-
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
-
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
-
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
-
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8658,7 +8295,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\CallList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -8706,21 +8343,13 @@ class DefaultApi
      *
      * List Calls
      *
-
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
-
      * @param  string $to Only show Calls to this phone number. (optional)
-
      * @param  string $from Only show Calls from this phone number. (optional)
-
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
-
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
-
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
-
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8740,21 +8369,13 @@ class DefaultApi
      *
      * List Calls
      *
-
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
-
      * @param  string $to Only show Calls to this phone number. (optional)
-
      * @param  string $from Only show Calls from this phone number. (optional)
-
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
-
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
-
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
-
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8800,27 +8421,19 @@ class DefaultApi
     /**
      * Create request for operation 'listCalls'
      *
-
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
-
      * @param  string $to Only show Calls to this phone number. (optional)
-
      * @param  string $from Only show Calls from this phone number. (optional)
-
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
-
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
-
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
-
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -8838,78 +8451,71 @@ class DefaultApi
 
         // query params
         if ($active !== null) {
-            if('form' === 'form' && is_array($active)) {
-                foreach($active as $key => $value) {
+            if ('form' === 'form' && is_array($active)) {
+                foreach ($active as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['active'] = $active;
             }
         }
         // query params
         if ($to !== null) {
-            if('form' === 'form' && is_array($to)) {
-                foreach($to as $key => $value) {
+            if ('form' === 'form' && is_array($to)) {
+                foreach ($to as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['to'] = $to;
             }
         }
         // query params
         if ($from !== null) {
-            if('form' === 'form' && is_array($from)) {
-                foreach($from as $key => $value) {
+            if ('form' === 'form' && is_array($from)) {
+                foreach ($from as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['from'] = $from;
             }
         }
         // query params
         if ($status !== null) {
-            if('form' === 'form' && is_array($status)) {
-                foreach($status as $key => $value) {
+            if ('form' === 'form' && is_array($status)) {
+                foreach ($status as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['status'] = $status;
             }
         }
         // query params
         if ($start_time !== null) {
-            if('form' === 'form' && is_array($start_time)) {
-                foreach($start_time as $key => $value) {
+            if ('form' === 'form' && is_array($start_time)) {
+                foreach ($start_time as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['startTime'] = $start_time;
             }
         }
         // query params
         if ($end_time !== null) {
-            if('form' === 'form' && is_array($end_time)) {
-                foreach($end_time as $key => $value) {
+            if ('form' === 'form' && is_array($end_time)) {
+                foreach ($end_time as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['endTime'] = $end_time;
             }
         }
         // query params
         if ($parent_call_id !== null) {
-            if('form' === 'form' && is_array($parent_call_id)) {
-                foreach($parent_call_id as $key => $value) {
+            if ('form' === 'form' && is_array($parent_call_id)) {
+                foreach ($parent_call_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['parentCallId'] = $parent_call_id;
             }
         }
@@ -8991,15 +8597,10 @@ class DefaultApi
      *
      * List Conferences
      *
-
      * @param  string $status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)
-
      * @param  string $alias List Conferences whose alias exactly matches this string. (optional)
-
      * @param  string $date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      * @param  string $date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9016,15 +8617,10 @@ class DefaultApi
      *
      * List Conferences
      *
-
      * @param  string $status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)
-
      * @param  string $alias List Conferences whose alias exactly matches this string. (optional)
-
      * @param  string $date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      * @param  string $date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9069,7 +8665,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -9117,15 +8713,10 @@ class DefaultApi
      *
      * List Conferences
      *
-
      * @param  string $status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)
-
      * @param  string $alias List Conferences whose alias exactly matches this string. (optional)
-
      * @param  string $date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      * @param  string $date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9145,15 +8736,10 @@ class DefaultApi
      *
      * List Conferences
      *
-
      * @param  string $status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)
-
      * @param  string $alias List Conferences whose alias exactly matches this string. (optional)
-
      * @param  string $date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      * @param  string $date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9199,21 +8785,16 @@ class DefaultApi
     /**
      * Create request for operation 'listConferences'
      *
-
      * @param  string $status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. (optional)
-
      * @param  string $alias List Conferences whose alias exactly matches this string. (optional)
-
      * @param  string $date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      * @param  string $date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listConferencesRequest($status = null, $alias = null, $date_created = null, $date_updated = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -9231,45 +8812,41 @@ class DefaultApi
 
         // query params
         if ($status !== null) {
-            if('form' === 'form' && is_array($status)) {
-                foreach($status as $key => $value) {
+            if ('form' === 'form' && is_array($status)) {
+                foreach ($status as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['status'] = $status;
             }
         }
         // query params
         if ($alias !== null) {
-            if('form' === 'form' && is_array($alias)) {
-                foreach($alias as $key => $value) {
+            if ('form' === 'form' && is_array($alias)) {
+                foreach ($alias as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['alias'] = $alias;
             }
         }
         // query params
         if ($date_created !== null) {
-            if('form' === 'form' && is_array($date_created)) {
-                foreach($date_created as $key => $value) {
+            if ('form' === 'form' && is_array($date_created)) {
+                foreach ($date_created as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['dateCreated'] = $date_created;
             }
         }
         // query params
         if ($date_updated !== null) {
-            if('form' === 'form' && is_array($date_updated)) {
-                foreach($date_updated as $key => $value) {
+            if ('form' === 'form' && is_array($date_updated)) {
+                foreach ($date_updated as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['dateUpdated'] = $date_updated;
             }
         }
@@ -9351,35 +8928,20 @@ class DefaultApi
      *
      * List Incoming Numbers
      *
-
      * @param  string $phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)
-
      * @param  string $alias Only show incoming phone numbers with aliases that exactly match this value. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
-
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $capabilities_voice capabilities_voice (optional)
-
      * @param  bool $capabilities_sms capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code capabilities_short_code (optional)
-
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9396,35 +8958,20 @@ class DefaultApi
      *
      * List Incoming Numbers
      *
-
      * @param  string $phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)
-
      * @param  string $alias Only show incoming phone numbers with aliases that exactly match this value. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
-
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9469,7 +9016,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\IncomingNumberList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -9517,35 +9064,20 @@ class DefaultApi
      *
      * List Incoming Numbers
      *
-
      * @param  string $phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)
-
      * @param  string $alias Only show incoming phone numbers with aliases that exactly match this value. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
-
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9565,35 +9097,20 @@ class DefaultApi
      *
      * List Incoming Numbers
      *
-
      * @param  string $phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)
-
      * @param  string $alias Only show incoming phone numbers with aliases that exactly match this value. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
-
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -9639,41 +9156,26 @@ class DefaultApi
     /**
      * Create request for operation 'listIncomingNumbers'
      *
-
      * @param  string $phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression. (optional)
-
      * @param  string $alias Only show incoming phone numbers with aliases that exactly match this value. (optional)
-
      * @param  string $region State or province of this phone number. (optional)
-
      * @param  string $country Country of this phone number. (optional)
-
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
-
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $capabilities_voice (optional)
-
      * @param  bool $capabilities_sms (optional)
-
      * @param  bool $capabilities_toll_free (optional)
-
      * @param  bool $capabilities_ten_dlc (optional)
-
      * @param  bool $capabilities_short_code (optional)
-
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listIncomingNumbersRequest($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -9691,155 +9193,141 @@ class DefaultApi
 
         // query params
         if ($phone_number !== null) {
-            if('form' === 'form' && is_array($phone_number)) {
-                foreach($phone_number as $key => $value) {
+            if ('form' === 'form' && is_array($phone_number)) {
+                foreach ($phone_number as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['phoneNumber'] = $phone_number;
             }
         }
         // query params
         if ($alias !== null) {
-            if('form' === 'form' && is_array($alias)) {
-                foreach($alias as $key => $value) {
+            if ('form' === 'form' && is_array($alias)) {
+                foreach ($alias as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['alias'] = $alias;
             }
         }
         // query params
         if ($region !== null) {
-            if('form' === 'form' && is_array($region)) {
-                foreach($region as $key => $value) {
+            if ('form' === 'form' && is_array($region)) {
+                foreach ($region as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['region'] = $region;
             }
         }
         // query params
         if ($country !== null) {
-            if('form' === 'form' && is_array($country)) {
-                foreach($country as $key => $value) {
+            if ('form' === 'form' && is_array($country)) {
+                foreach ($country as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['country'] = $country;
             }
         }
         // query params
         if ($application_id !== null) {
-            if('form' === 'form' && is_array($application_id)) {
-                foreach($application_id as $key => $value) {
+            if ('form' === 'form' && is_array($application_id)) {
+                foreach ($application_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['applicationId'] = $application_id;
             }
         }
         // query params
         if ($has_application !== null) {
-            if('form' === 'form' && is_array($has_application)) {
-                foreach($has_application as $key => $value) {
+            if ('form' === 'form' && is_array($has_application)) {
+                foreach ($has_application as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['hasApplication'] = $has_application;
             }
         }
         // query params
         if ($voice_enabled !== null) {
-            if('form' === 'form' && is_array($voice_enabled)) {
-                foreach($voice_enabled as $key => $value) {
+            if ('form' === 'form' && is_array($voice_enabled)) {
+                foreach ($voice_enabled as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['voiceEnabled'] = $voice_enabled;
             }
         }
         // query params
         if ($sms_enabled !== null) {
-            if('form' === 'form' && is_array($sms_enabled)) {
-                foreach($sms_enabled as $key => $value) {
+            if ('form' === 'form' && is_array($sms_enabled)) {
+                foreach ($sms_enabled as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['smsEnabled'] = $sms_enabled;
             }
         }
         // query params
         if ($capabilities_voice !== null) {
-            if('form' === 'form' && is_array($capabilities_voice)) {
-                foreach($capabilities_voice as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_voice)) {
+                foreach ($capabilities_voice as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.voice'] = $capabilities_voice;
             }
         }
         // query params
         if ($capabilities_sms !== null) {
-            if('form' === 'form' && is_array($capabilities_sms)) {
-                foreach($capabilities_sms as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_sms)) {
+                foreach ($capabilities_sms as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.sms'] = $capabilities_sms;
             }
         }
         // query params
         if ($capabilities_toll_free !== null) {
-            if('form' === 'form' && is_array($capabilities_toll_free)) {
-                foreach($capabilities_toll_free as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_toll_free)) {
+                foreach ($capabilities_toll_free as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.tollFree'] = $capabilities_toll_free;
             }
         }
         // query params
         if ($capabilities_ten_dlc !== null) {
-            if('form' === 'form' && is_array($capabilities_ten_dlc)) {
-                foreach($capabilities_ten_dlc as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_ten_dlc)) {
+                foreach ($capabilities_ten_dlc as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.tenDLC'] = $capabilities_ten_dlc;
             }
         }
         // query params
         if ($capabilities_short_code !== null) {
-            if('form' === 'form' && is_array($capabilities_short_code)) {
-                foreach($capabilities_short_code as $key => $value) {
+            if ('form' === 'form' && is_array($capabilities_short_code)) {
+                foreach ($capabilities_short_code as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['capabilities.shortCode'] = $capabilities_short_code;
             }
         }
         // query params
         if ($offnet !== null) {
-            if('form' === 'form' && is_array($offnet)) {
-                foreach($offnet as $key => $value) {
+            if ('form' === 'form' && is_array($offnet)) {
+                foreach ($offnet as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['offnet'] = $offnet;
             }
         }
@@ -9921,9 +9409,7 @@ class DefaultApi
      *
      * List Members
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9940,9 +9426,7 @@ class DefaultApi
      *
      * List Members
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -9987,7 +9471,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueMemberList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -10035,9 +9519,7 @@ class DefaultApi
      *
      * List Members
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10057,9 +9539,7 @@ class DefaultApi
      *
      * List Members
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10105,15 +9585,13 @@ class DefaultApi
     /**
      * Create request for operation 'listMembers'
      *
-
      * @param  string $queue_id String that uniquely identifies the Queue that the Member belongs to. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listMembersRequest($queue_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -10221,13 +9699,9 @@ class DefaultApi
      *
      * List Participants
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
-
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10244,13 +9718,9 @@ class DefaultApi
      *
      * List Participants
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
-
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10295,7 +9765,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceParticipantList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -10343,13 +9813,9 @@ class DefaultApi
      *
      * List Participants
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
-
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10369,13 +9835,9 @@ class DefaultApi
      *
      * List Participants
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
-
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10421,19 +9883,15 @@ class DefaultApi
     /**
      * Create request for operation 'listParticipants'
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
-
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listParticipantsRequest($conference_id, $talk = null, $listen = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -10457,23 +9915,21 @@ class DefaultApi
 
         // query params
         if ($talk !== null) {
-            if('form' === 'form' && is_array($talk)) {
-                foreach($talk as $key => $value) {
+            if ('form' === 'form' && is_array($talk)) {
+                foreach ($talk as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['talk'] = $talk;
             }
         }
         // query params
         if ($listen !== null) {
-            if('form' === 'form' && is_array($listen)) {
-                foreach($listen as $key => $value) {
+            if ('form' === 'form' && is_array($listen)) {
+                foreach ($listen as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['listen'] = $listen;
             }
         }
@@ -10563,13 +10019,9 @@ class DefaultApi
      *
      * List Recordings
      *
-
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-
      * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
-
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10586,13 +10038,9 @@ class DefaultApi
      *
      * List Recordings
      *
-
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-
      * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
-
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10637,7 +10085,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\RecordingList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -10685,13 +10133,9 @@ class DefaultApi
      *
      * List Recordings
      *
-
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-
      * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
-
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10711,13 +10155,9 @@ class DefaultApi
      *
      * List Recordings
      *
-
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-
      * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
-
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10763,19 +10203,15 @@ class DefaultApi
     /**
      * Create request for operation 'listRecordings'
      *
-
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-
      * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
-
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listRecordingsRequest($call_id = null, $conference_id = null, $date_created = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -10793,34 +10229,31 @@ class DefaultApi
 
         // query params
         if ($call_id !== null) {
-            if('form' === 'form' && is_array($call_id)) {
-                foreach($call_id as $key => $value) {
+            if ('form' === 'form' && is_array($call_id)) {
+                foreach ($call_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['callId'] = $call_id;
             }
         }
         // query params
         if ($conference_id !== null) {
-            if('form' === 'form' && is_array($conference_id)) {
-                foreach($conference_id as $key => $value) {
+            if ('form' === 'form' && is_array($conference_id)) {
+                foreach ($conference_id as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['conferenceId'] = $conference_id;
             }
         }
         // query params
         if ($date_created !== null) {
-            if('form' === 'form' && is_array($date_created)) {
-                foreach($date_created as $key => $value) {
+            if ('form' === 'form' && is_array($date_created)) {
+                foreach ($date_created as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['dateCreated'] = $date_created;
             }
         }
@@ -10902,17 +10335,11 @@ class DefaultApi
      *
      * List SMS Messages
      *
-
      * @param  string $to Only show Messages to this phone number. (optional)
-
      * @param  string $from Only show Messages from this phone number. (optional)
-
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
-
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
-
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
-
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10929,17 +10356,11 @@ class DefaultApi
      *
      * List SMS Messages
      *
-
      * @param  string $to Only show Messages to this phone number. (optional)
-
      * @param  string $from Only show Messages from this phone number. (optional)
-
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
-
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
-
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
-
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -10984,7 +10405,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\MessagesList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -11032,17 +10453,11 @@ class DefaultApi
      *
      * List SMS Messages
      *
-
      * @param  string $to Only show Messages to this phone number. (optional)
-
      * @param  string $from Only show Messages from this phone number. (optional)
-
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
-
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
-
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
-
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11062,17 +10477,11 @@ class DefaultApi
      *
      * List SMS Messages
      *
-
      * @param  string $to Only show Messages to this phone number. (optional)
-
      * @param  string $from Only show Messages from this phone number. (optional)
-
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
-
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
-
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
-
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11118,23 +10527,17 @@ class DefaultApi
     /**
      * Create request for operation 'listSmsMessages'
      *
-
      * @param  string $to Only show Messages to this phone number. (optional)
-
      * @param  string $from Only show Messages from this phone number. (optional)
-
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
-
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
-
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
-
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listSmsMessagesRequest($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -11152,56 +10555,51 @@ class DefaultApi
 
         // query params
         if ($to !== null) {
-            if('form' === 'form' && is_array($to)) {
-                foreach($to as $key => $value) {
+            if ('form' === 'form' && is_array($to)) {
+                foreach ($to as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['to'] = $to;
             }
         }
         // query params
         if ($from !== null) {
-            if('form' === 'form' && is_array($from)) {
-                foreach($from as $key => $value) {
+            if ('form' === 'form' && is_array($from)) {
+                foreach ($from as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['from'] = $from;
             }
         }
         // query params
         if ($begin_time !== null) {
-            if('form' === 'form' && is_array($begin_time)) {
-                foreach($begin_time as $key => $value) {
+            if ('form' === 'form' && is_array($begin_time)) {
+                foreach ($begin_time as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['beginTime'] = $begin_time;
             }
         }
         // query params
         if ($end_time !== null) {
-            if('form' === 'form' && is_array($end_time)) {
-                foreach($end_time as $key => $value) {
+            if ('form' === 'form' && is_array($end_time)) {
+                foreach ($end_time as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['endTime'] = $end_time;
             }
         }
         // query params
         if ($direction !== null) {
-            if('form' === 'form' && is_array($direction)) {
-                foreach($direction as $key => $value) {
+            if ('form' === 'form' && is_array($direction)) {
+                foreach ($direction as $key => $value) {
                     $queryParams[$key] = $value;
                 }
-            }
-            else {
+            } else {
                 $queryParams['direction'] = $direction;
             }
         }
@@ -11283,9 +10681,7 @@ class DefaultApi
      *
      * Make a Call
      *
-
      * @param  \FreeClimb\Api\Model\MakeCallRequest $make_call_request Call details for making a call (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11302,9 +10698,7 @@ class DefaultApi
      *
      * Make a Call
      *
-
      * @param  \FreeClimb\Api\Model\MakeCallRequest $make_call_request Call details for making a call (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11349,7 +10743,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\CallResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -11397,9 +10791,7 @@ class DefaultApi
      *
      * Make a Call
      *
-
      * @param  \FreeClimb\Api\Model\MakeCallRequest $make_call_request Call details for making a call (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11419,9 +10811,7 @@ class DefaultApi
      *
      * Make a Call
      *
-
      * @param  \FreeClimb\Api\Model\MakeCallRequest $make_call_request Call details for making a call (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11467,15 +10857,13 @@ class DefaultApi
     /**
      * Create request for operation 'makeACall'
      *
-
      * @param  \FreeClimb\Api\Model\MakeCallRequest $make_call_request Call details for making a call (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function makeACallRequest($make_call_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -11575,11 +10963,8 @@ class DefaultApi
      *
      * Remove a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11595,11 +10980,8 @@ class DefaultApi
      *
      * Remove a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11658,11 +11040,8 @@ class DefaultApi
      *
      * Remove a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11682,11 +11061,8 @@ class DefaultApi
      *
      * Remove a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11722,17 +11098,14 @@ class DefaultApi
     /**
      * Create request for operation 'removeAParticipant'
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function removeAParticipantRequest($conference_id, $call_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -11854,9 +11227,7 @@ class DefaultApi
      *
      * Send an SMS Message
      *
-
      * @param  \FreeClimb\Api\Model\MessageRequest $message_request Details to create a message (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11873,9 +11244,7 @@ class DefaultApi
      *
      * Send an SMS Message
      *
-
      * @param  \FreeClimb\Api\Model\MessageRequest $message_request Details to create a message (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -11920,7 +11289,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 202:
                     if ('\FreeClimb\Api\Model\MessageResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -11968,9 +11337,7 @@ class DefaultApi
      *
      * Send an SMS Message
      *
-
      * @param  \FreeClimb\Api\Model\MessageRequest $message_request Details to create a message (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -11990,9 +11357,7 @@ class DefaultApi
      *
      * Send an SMS Message
      *
-
      * @param  \FreeClimb\Api\Model\MessageRequest $message_request Details to create a message (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12038,15 +11403,13 @@ class DefaultApi
     /**
      * Create request for operation 'sendAnSmsMessage'
      *
-
      * @param  \FreeClimb\Api\Model\MessageRequest $message_request Details to create a message (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function sendAnSmsMessageRequest($message_request)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -12152,9 +11515,7 @@ class DefaultApi
      *
      * Stream a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12171,9 +11532,7 @@ class DefaultApi
      *
      * Stream a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12218,7 +11577,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\SplFileObject' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -12266,9 +11625,7 @@ class DefaultApi
      *
      * Stream a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12288,9 +11645,7 @@ class DefaultApi
      *
      * Stream a Recording File
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12336,15 +11691,13 @@ class DefaultApi
     /**
      * Create request for operation 'streamARecordingFile'
      *
-
      * @param  string $recording_id String that uniquely identifies this recording resource. (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function streamARecordingFileRequest($recording_id)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -12452,11 +11805,8 @@ class DefaultApi
      *
      * Update a Conference
      *
-
      * @param  string $conference_id String that uniquely identifies this conference resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceRequest $update_conference_request Conference Details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12473,11 +11823,8 @@ class DefaultApi
      *
      * Update a Conference
      *
-
      * @param  string $conference_id String that uniquely identifies this conference resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceRequest $update_conference_request Conference Details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12522,7 +11869,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -12570,11 +11917,8 @@ class DefaultApi
      *
      * Update a Conference
      *
-
      * @param  string $conference_id String that uniquely identifies this conference resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceRequest $update_conference_request Conference Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12594,11 +11938,8 @@ class DefaultApi
      *
      * Update a Conference
      *
-
      * @param  string $conference_id String that uniquely identifies this conference resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceRequest $update_conference_request Conference Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12644,17 +11985,14 @@ class DefaultApi
     /**
      * Create request for operation 'updateAConference'
      *
-
      * @param  string $conference_id String that uniquely identifies this conference resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceRequest $update_conference_request Conference Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAConferenceRequest($conference_id, $update_conference_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -12768,11 +12106,8 @@ class DefaultApi
      *
      * Update a Live Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateCallRequest $update_call_request Call details to update (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12788,11 +12123,8 @@ class DefaultApi
      *
      * Update a Live Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateCallRequest $update_call_request Call details to update (required)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -12851,11 +12183,8 @@ class DefaultApi
      *
      * Update a Live Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateCallRequest $update_call_request Call details to update (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12875,11 +12204,8 @@ class DefaultApi
      *
      * Update a Live Call
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateCallRequest $update_call_request Call details to update (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -12915,17 +12241,14 @@ class DefaultApi
     /**
      * Create request for operation 'updateALiveCall'
      *
-
      * @param  string $call_id String that uniquely identifies this call resource. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateCallRequest $update_call_request Call details to update (required)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateALiveCallRequest($call_id, $update_call_request)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -13045,13 +12368,9 @@ class DefaultApi
      *
      * Update a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceParticipantRequest $update_conference_participant_request Conference participant details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13068,13 +12387,9 @@ class DefaultApi
      *
      * Update a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceParticipantRequest $update_conference_participant_request Conference participant details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13119,7 +12434,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ConferenceParticipantResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -13167,13 +12482,9 @@ class DefaultApi
      *
      * Update a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceParticipantRequest $update_conference_participant_request Conference participant details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13193,13 +12504,9 @@ class DefaultApi
      *
      * Update a Participant
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceParticipantRequest $update_conference_participant_request Conference participant details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13245,19 +12552,15 @@ class DefaultApi
     /**
      * Create request for operation 'updateAParticipant'
      *
-
      * @param  string $conference_id ID of the conference this participant is in. (required)
-
      * @param  string $call_id ID of the Call associated with this participant. (required)
-
      * @param  \FreeClimb\Api\Model\UpdateConferenceParticipantRequest $update_conference_participant_request Conference participant details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAParticipantRequest($conference_id, $call_id, $update_conference_participant_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -13385,11 +12688,8 @@ class DefaultApi
      *
      * Update a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this Queue resource. (required)
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue Details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13406,11 +12706,8 @@ class DefaultApi
      *
      * Update a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this Queue resource. (required)
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue Details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13455,7 +12752,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\QueueResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -13503,11 +12800,8 @@ class DefaultApi
      *
      * Update a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this Queue resource. (required)
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13527,11 +12821,8 @@ class DefaultApi
      *
      * Update a Queue
      *
-
      * @param  string $queue_id A string that uniquely identifies this Queue resource. (required)
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13577,17 +12868,14 @@ class DefaultApi
     /**
      * Create request for operation 'updateAQueue'
      *
-
      * @param  string $queue_id A string that uniquely identifies this Queue resource. (required)
-
      * @param  \FreeClimb\Api\Model\QueueRequest $queue_request Queue Details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAQueueRequest($queue_id, $queue_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -13701,9 +12989,7 @@ class DefaultApi
      *
      * Manage an account
      *
-
      * @param  \FreeClimb\Api\Model\AccountRequest $account_request Account details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13719,9 +13005,7 @@ class DefaultApi
      *
      * Manage an account
      *
-
      * @param  \FreeClimb\Api\Model\AccountRequest $account_request Account details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13780,9 +13064,7 @@ class DefaultApi
      *
      * Manage an account
      *
-
      * @param  \FreeClimb\Api\Model\AccountRequest $account_request Account details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13802,9 +13084,7 @@ class DefaultApi
      *
      * Manage an account
      *
-
      * @param  \FreeClimb\Api\Model\AccountRequest $account_request Account details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -13840,15 +13120,13 @@ class DefaultApi
     /**
      * Create request for operation 'updateAnAccount'
      *
-
      * @param  \FreeClimb\Api\Model\AccountRequest $account_request Account details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAnAccountRequest($account_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -13948,11 +13226,8 @@ class DefaultApi
      *
      * Update an application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application details to update. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -13969,11 +13244,8 @@ class DefaultApi
      *
      * Update an application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application details to update. (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14018,7 +13290,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\ApplicationResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -14066,11 +13338,8 @@ class DefaultApi
      *
      * Update an application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application details to update. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14090,11 +13359,8 @@ class DefaultApi
      *
      * Update an application
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application details to update. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14140,17 +13406,14 @@ class DefaultApi
     /**
      * Create request for operation 'updateAnApplication'
      *
-
      * @param  string $application_id A string that uniquely identifies this application resource. (required)
-
      * @param  \FreeClimb\Api\Model\ApplicationRequest $application_request Application details to update. (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAnApplicationRequest($application_id, $application_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -14264,11 +13527,8 @@ class DefaultApi
      *
      * Update an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      * @param  \FreeClimb\Api\Model\IncomingNumberRequest $incoming_number_request Incoming Number details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14285,11 +13545,8 @@ class DefaultApi
      *
      * Update an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      * @param  \FreeClimb\Api\Model\IncomingNumberRequest $incoming_number_request Incoming Number details to update (optional)
-
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -14334,7 +13591,7 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     if ('\FreeClimb\Api\Model\IncomingNumberResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -14382,11 +13639,8 @@ class DefaultApi
      *
      * Update an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      * @param  \FreeClimb\Api\Model\IncomingNumberRequest $incoming_number_request Incoming Number details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14406,11 +13660,8 @@ class DefaultApi
      *
      * Update an Incoming Number
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      * @param  \FreeClimb\Api\Model\IncomingNumberRequest $incoming_number_request Incoming Number details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -14456,17 +13707,14 @@ class DefaultApi
     /**
      * Create request for operation 'updateAnIncomingNumber'
      *
-
      * @param  string $phone_number_id String that uniquely identifies this phone number resource. (required)
-
      * @param  \FreeClimb\Api\Model\IncomingNumberRequest $incoming_number_request Incoming Number details to update (optional)
-
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAnIncomingNumberRequest($phone_number_id, $incoming_number_request = null)
-    { 
+    {
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
@@ -14590,7 +13838,6 @@ class DefaultApi
                 throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
-
         return $options;
     }
 }

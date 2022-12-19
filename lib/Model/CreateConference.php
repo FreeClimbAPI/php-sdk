@@ -61,9 +61,9 @@ class CreateConference extends PerclCommand
     protected static $openAPITypes = [
         'action_url' => 'string',
         'alias' => 'bool',
-        'play_beep' => 'string',
+        'play_beep' => '\FreeClimb\Api\Model\PlayBeep',
         'record' => 'bool',
-        'status_callback_url' => 'bool',
+        'status_callback_url' => 'string',
         'wait_url' => 'string'
     ];
 
@@ -285,7 +285,7 @@ class CreateConference extends PerclCommand
     /**
      * Gets play_beep
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\PlayBeep|null
      */
     public function getPlayBeep()
     {
@@ -295,7 +295,7 @@ class CreateConference extends PerclCommand
     /**
      * Sets play_beep
      *
-     * @param string|null $play_beep Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always`
+     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep play_beep
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class CreateConference extends PerclCommand
     /**
      * Gets status_callback_url
      *
-     * @return bool|null
+     * @return string|null
      */
     public function getStatusCallbackUrl()
     {
@@ -343,7 +343,7 @@ class CreateConference extends PerclCommand
     /**
      * Sets status_callback_url
      *
-     * @param bool|null $status_callback_url This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
+     * @param string|null $status_callback_url This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
      *
      * @return self
      */

@@ -1836,7 +1836,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $active = false; // bool | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
 $to = 'to_example'; // string | Only show Calls to this phone number.
 $from = 'from_example'; // string | Only show Calls from this phone number.
-$status = 'status_example'; // string | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
+$status = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\CallStatus(); // \FreeClimb\Api\Model\CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
 $start_time = 'start_time_example'; // string | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
 $end_time = 'end_time_example'; // string | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
 $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned by the call with this ID.
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Notes
  **active** | **bool**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false]
  **to** | **string**| Only show Calls to this phone number. | [optional]
  **from** | **string**| Only show Calls from this phone number. | [optional]
- **status** | **string**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional]
+ **status** | [**\FreeClimb\Api\Model\CallStatus**](../Model/.md)| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional]
  **start_time** | **string**| Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional]
  **end_time** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional]
  **parent_call_id** | **string**| Only show Calls spawned by the call with this ID. | [optional]
@@ -2261,7 +2261,7 @@ $to = 'to_example'; // string | Only show Messages to this phone number.
 $from = 'from_example'; // string | Only show Messages from this phone number.
 $begin_time = 'begin_time_example'; // string | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
 $end_time = 'end_time_example'; // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-$direction = 'direction_example'; // string | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+$direction = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\MessageDirection(); // \FreeClimb\Api\Model\MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
 
 try {
     $result = $apiInstance->listSmsMessages($account_id, $to, $from, $begin_time, $end_time, $direction);
@@ -2280,7 +2280,7 @@ Name | Type | Description  | Notes
  **from** | **string**| Only show Messages from this phone number. | [optional]
  **begin_time** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional]
  **end_time** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional]
- **direction** | **string**| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional]
+ **direction** | [**\FreeClimb\Api\Model\MessageDirection**](../Model/.md)| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional]
 
 ### Return type
 

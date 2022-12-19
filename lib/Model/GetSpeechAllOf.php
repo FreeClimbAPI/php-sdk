@@ -61,10 +61,10 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'action_url' => 'string',
-        'grammar_type' => 'int',
+        'grammar_type' => '\FreeClimb\Api\Model\GrammarType',
         'grammar_file' => 'string',
-        'grammar_rule' => 'bool',
-        'play_beep' => 'string',
+        'grammar_rule' => 'string',
+        'play_beep' => 'bool',
         'prompts' => '\FreeClimb\Api\Model\PerclCommand[]',
         'no_input_timeout_ms' => 'int',
         'recognition_timeout_ms' => 'int',
@@ -83,7 +83,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'action_url' => null,
+        'action_url' => 'uri',
         'grammar_type' => null,
         'grammar_file' => null,
         'grammar_rule' => null,
@@ -311,7 +311,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grammar_type
      *
-     * @return int|null
+     * @return \FreeClimb\Api\Model\GrammarType|null
      */
     public function getGrammarType()
     {
@@ -321,7 +321,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grammar_type
      *
-     * @param int|null $grammar_type The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.
+     * @param \FreeClimb\Api\Model\GrammarType|null $grammar_type grammar_type
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grammar_rule
      *
-     * @return bool|null
+     * @return string|null
      */
     public function getGrammarRule()
     {
@@ -369,7 +369,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grammar_rule
      *
-     * @param bool|null $grammar_rule The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if `grammarType` is `URL` and ignored if `grammarType` is `BUILTIN`.
+     * @param string|null $grammar_rule The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if `grammarType` is `URL` and ignored if `grammarType` is `BUILTIN`.
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets play_beep
      *
-     * @return string|null
+     * @return bool|null
      */
     public function getPlayBeep()
     {
@@ -393,7 +393,7 @@ class GetSpeechAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets play_beep
      *
-     * @param string|null $play_beep Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.
+     * @param bool|null $play_beep Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak.
      *
      * @return self
      */

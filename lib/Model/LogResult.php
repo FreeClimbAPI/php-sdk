@@ -61,7 +61,7 @@ class LogResult implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'timestamp' => 'int',
-        'level' => 'string',
+        'level' => '\FreeClimb\Api\Model\LogLevel',
         'request_id' => 'string',
         'account_id' => 'string',
         'call_id' => 'string',
@@ -193,23 +193,6 @@ class LogResult implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const LEVEL_INFO = 'info';
-    const LEVEL_WARNING = 'warning';
-    const LEVEL_ERROR = 'error';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getLevelAllowableValues()
-    {
-        return [
-            self::LEVEL_INFO,
-            self::LEVEL_WARNING,
-            self::LEVEL_ERROR,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -243,15 +226,6 @@ class LogResult implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getLevelAllowableValues();
-        if (!is_null($this->container['level']) && !in_array($this->container['level'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'level', must be one of '%s'",
-                $this->container['level'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -295,7 +269,7 @@ class LogResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets level
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\LogLevel|null
      */
     public function getLevel()
     {
@@ -305,22 +279,12 @@ class LogResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets level
      *
-     * @param string|null $level Level of the log. Possible values are info, warning, and error.
+     * @param \FreeClimb\Api\Model\LogLevel|null $level level
      *
      * @return self
      */
     public function setLevel($level)
     {
-        $allowedValues = $this->getLevelAllowableValues();
-        if (!is_null($level) && !in_array($level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'level', must be one of '%s'",
-                    $level,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['level'] = $level;
 
         return $this;

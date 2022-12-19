@@ -64,8 +64,8 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'api_key' => 'string',
         'alias' => 'string',
         'label' => 'string',
-        'type' => 'string',
-        'status' => 'string',
+        'type' => '\FreeClimb\Api\Model\AccountType',
+        'status' => '\FreeClimb\Api\Model\AccountStatus',
         'subresource_uris' => 'object'
     ];
 
@@ -193,38 +193,6 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    const TYPE_TRIAL = 'trial';
-    const TYPE_FULL = 'full';
-    const STATUS_ACTIVE = 'active';
-    const STATUS_SUSPENDED = 'suspended';
-    const STATUS_CLOSED = 'closed';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_TRIAL,
-            self::TYPE_FULL,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_ACTIVE,
-            self::STATUS_SUSPENDED,
-            self::STATUS_CLOSED,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -258,24 +226,6 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -391,7 +341,7 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets type
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\AccountType|null
      */
     public function getType()
     {
@@ -401,22 +351,12 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets type
      *
-     * @param string|null $type The type of this account. It is one of: trial or full.
+     * @param \FreeClimb\Api\Model\AccountType|null $type type
      *
      * @return self
      */
     public function setType($type)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;
@@ -425,7 +365,7 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\AccountStatus|null
      */
     public function getStatus()
     {
@@ -435,22 +375,12 @@ class AccountResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets status
      *
-     * @param string|null $status The status of this account. It is one of: active, suspended, or closed.
+     * @param \FreeClimb\Api\Model\AccountStatus|null $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
