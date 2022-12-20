@@ -31,6 +31,8 @@ namespace FreeClimb\Api\Test\Api;
 use FreeClimb\Api\Model\CallStatus;
 use FreeClimb\Api\Model\MessageDirection;
 use FreeClimb\Api\Model\PlayBeep;
+use FreeClimb\Api\Model\UpdateCallRequestStatus;
+use FreeClimb\Api\Model\UpdateConferenceRequestStatus;
 use \stdClass;
 use FreeClimb\Api\Api\DefaultApi;
 use \FreeClimb\Api\Configuration;
@@ -146,7 +148,7 @@ class DefaultApiTest extends TestCase
             "application_id"=>"applicationId_example"
         )); 
 
-
+        $account_id = 'account_id_example';
         $response = $apiInstance->buyAPhoneNumber($buy_incoming_number_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult', $response);
     }
@@ -296,7 +298,8 @@ class DefaultApiTest extends TestCase
         $recording_id = 'recording_id_example';
 
         //$response = $apiInstance->deleteARecording($account_id, $recording_id);
-        $apiInstance->deleteARecording($recording_id);
+        $response = $apiInstance->deleteARecording($recording_id);
+        $this->assertNull($response);
     }
     /**
      * Test case for deleteAnApplication
@@ -328,7 +331,8 @@ class DefaultApiTest extends TestCase
         $account_id = 'account_id_example';
         $application_id = 'application_id_example';
 
-        $apiInstance->deleteAnApplication($application_id);
+        $response = $apiInstance->deleteAnApplication($application_id);
+        $this->assertNull($response);
     }
     /**
      * Test case for deleteAnIncomingNumber
@@ -359,7 +363,8 @@ class DefaultApiTest extends TestCase
         $account_id = 'account_id_example';
         $phone_number_id = 'phone_number_id_example';
 
-        $apiInstance->deleteAnIncomingNumber($phone_number_id);
+        $response = $apiInstance->deleteAnIncomingNumber($phone_number_id);
+        $this->assertNull($response);
     }
     /**
      * Test case for dequeueAMember
@@ -1452,17 +1457,6 @@ class DefaultApiTest extends TestCase
             $config
         );
 
-        // $this->container['from'] = $data['from'] ?? null;
-        // $this->container['to'] = $data['to'] ?? null;
-        // $this->container['application_id'] = $data['application_id'] ?? null;
-        // $this->container['send_digits'] = $data['send_digits'] ?? null;
-        // $this->container['if_machine'] = $data['if_machine'] ?? null;
-        // $this->container['if_machine_url'] = $data['if_machine_url'] ?? null;
-        // $this->container['timeout'] = $data['timeout'] ?? 30;
-        // $this->container['parent_call_id'] = $data['parent_call_id'] ?? null;
-        // $this->container['privacy_mode'] = $data['privacy_mode'] ?? null;
-        // $this->container['call_connect_url'] = $data['call_connect_url'] ?? null;
-
         $make_call_request = new \FreeClimb\Api\Model\MakeCallRequest(array(
             "from"=>"from_example",
             "to"=>"to_example",
@@ -1489,12 +1483,30 @@ class DefaultApiTest extends TestCase
      */
     public function testRemoveAParticipant()
     {
+        // $account_id = 'account_id_example';
+        // $conference_id = 'conference_id_example';
+        // $call_id = 'call_id_example';
+        
+        // $response = $this->apiInstance->removeAParticipant($account_id, $conference_id, $call_id);
+        
+        // $this->assertNull($response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $conference_id = 'conference_id_example';
         $call_id = 'call_id_example';
-        
-        $response = $this->apiInstance->removeAParticipant($account_id, $conference_id, $call_id);
-        
+
+        $response = $apiInstance->removeAParticipant($account_id, $conference_id, $call_id);
         $this->assertNull($response);
     }
     /**
@@ -1506,12 +1518,39 @@ class DefaultApiTest extends TestCase
      */
     public function testSendAnSmsMessage()
     {
+        // $account_id = 'account_id_example';
+        // $message_request = new \FreeClimb\Api\Model\MessageRequest(array());
+        
+        // $response = $this->apiInstance->sendAnSmsMessage($account_id, $message_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\MessageResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
-        $message_request = new \FreeClimb\Api\Model\MessageRequest(array());
-        
-        $response = $this->apiInstance->sendAnSmsMessage($account_id, $message_request);
-        
-        
+        $message_request = new \FreeClimb\Api\Model\MessageRequest(array(
+            "uri"=> "uri_example",
+            "date_created"=> "dateCreated_example",
+            "date_updated"=> "dateUpdated_example",
+            "revision"=> 0,
+            "from"=>"from_example",
+            "to"=> "to_example",
+            "text"=> "text_example",
+            "notification_url"=> "notificationUrl_example",
+            "account_id"=> "accountId_example"
+        ));
+
+        $response = $apiInstance->sendAnSmsMessage($message_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessageResult',$response);
     }
     /**
@@ -1523,12 +1562,29 @@ class DefaultApiTest extends TestCase
      */
     public function testStreamARecordingFile()
     {
+        // $account_id = 'account_id_example';
+        // $recording_id = 'recording_id_example';
+        
+        // $response = $this->apiInstance->streamARecordingFile($account_id, $recording_id);
+        
+        
+        // $this->assertInstanceOf('\SplFileObject',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $recording_id = 'recording_id_example';
-        
-        $response = $this->apiInstance->streamARecordingFile($account_id, $recording_id);
-        
-        
+
+        $response = $apiInstance->streamARecordingFile($recording_id);
         $this->assertInstanceOf('\SplFileObject',$response);
     }
     /**
@@ -1541,13 +1597,35 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAConference()
     {
+        // $account_id = 'account_id_example';
+        // $conference_id = 'conference_id_example';
+        // $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(array());
+        
+        // $response = $this->apiInstance->updateAConference($account_id, $conference_id, $update_conference_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $conference_id = 'conference_id_example';
-        $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(array());
-        
-        $response = $this->apiInstance->updateAConference($account_id, $conference_id, $update_conference_request);
-        
-        
+        $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(array(
+            "alias"=>"from_example",
+            "play_beep"=>PlayBeep::ALWAYS,
+            "status"=>UpdateConferenceRequestStatus::EMPTY,
+        ));
+
+        $response = $apiInstance->updateAConference($conference_id, $update_conference_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceResult',$response);
     }
     /**
@@ -1560,12 +1638,37 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateALiveCall()
     {
+        // $account_id = 'account_id_example';
+        // $call_id = 'call_id_example';
+        // $update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(array());
+        
+        // $response = $this->apiInstance->updateALiveCall($account_id, $call_id, $update_call_request);
+        
+        // $this->assertNull($response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $call_id = 'call_id_example';
-        $update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(array());
-        
-        $response = $this->apiInstance->updateALiveCall($account_id, $call_id, $update_call_request);
-        
+        $update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(array(
+            "status"=>UpdateCallRequestStatus::COMPLETED
+        ));
+        $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(array(
+            "alias"=>"from_example",
+            "play_beep"=>PlayBeep::ALWAYS,
+            "status"=>UpdateConferenceRequestStatus::EMPTY,
+        ));
+
+        $response = $apiInstance->updateALiveCall($call_id, $update_call_request);
         $this->assertNull($response);
     }
     /**
@@ -1579,14 +1682,36 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAParticipant()
     {
+        // $account_id = 'account_id_example';
+        // $conference_id = 'conference_id_example';
+        // $call_id = 'call_id_example';
+        // $update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(array());
+        
+        // $response = $this->apiInstance->updateAParticipant($account_id, $conference_id, $call_id, $update_conference_participant_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $conference_id = 'conference_id_example';
         $call_id = 'call_id_example';
-        $update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(array());
+        $update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(array(
+            "talk"=>true,
+            "listen"=>true,
+        ));
         
-        $response = $this->apiInstance->updateAParticipant($account_id, $conference_id, $call_id, $update_conference_participant_request);
-        
-        
+        $response = $apiInstance->updateAParticipant($conference_id, $call_id, $update_conference_participant_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantResult',$response);
     }
     /**
@@ -1599,13 +1724,34 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAQueue()
     {
+        // $account_id = 'account_id_example';
+        // $queue_id = 'queue_id_example';
+        // $queue_request = new \FreeClimb\Api\Model\QueueRequest(array());
+        
+        // $response = $this->apiInstance->updateAQueue($account_id, $queue_id, $queue_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\QueueResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $queue_id = 'queue_id_example';
-        $queue_request = new \FreeClimb\Api\Model\QueueRequest(array());
+        $queue_request = new \FreeClimb\Api\Model\QueueRequest(array(
+            "alias"=>"alias_example",
+            "max_size"=>0,
+        ));
         
-        $response = $this->apiInstance->updateAQueue($account_id, $queue_id, $queue_request);
-        
-        
+        $response = $apiInstance->updateAQueue($queue_id, $queue_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueResult',$response);
     }
     /**
@@ -1617,11 +1763,31 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAnAccount()
     {
+        // $account_id = 'account_id_example';
+        // $account_request = new \FreeClimb\Api\Model\AccountRequest(array());
+        
+        // $response = $this->apiInstance->updateAnAccount($account_id, $account_request);
+        
+        // $this->assertNull($response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
-        $account_request = new \FreeClimb\Api\Model\AccountRequest(array());
+        $account_request = new \FreeClimb\Api\Model\AccountRequest(array(
+            "alias"=>"alias_example",
+            "label"=>"label_example",
+        ));
         
-        $response = $this->apiInstance->updateAnAccount($account_id, $account_request);
-        
+        $response = $apiInstance->updateAnAccount($account_request);
         $this->assertNull($response);
     }
     /**
@@ -1634,13 +1800,39 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAnApplication()
     {
+        // $account_id = 'account_id_example';
+        // $application_id = 'application_id_example';
+        // $application_request = new \FreeClimb\Api\Model\ApplicationRequest(array());
+        
+        // $response = $this->apiInstance->updateAnApplication($account_id, $application_id, $application_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $application_id = 'application_id_example';
-        $application_request = new \FreeClimb\Api\Model\ApplicationRequest(array());
+        $application_request = new \FreeClimb\Api\Model\ApplicationRequest(array(
+            "alias"=> "alias_example",
+            "voice_url"=> "voiceUrl_example",
+            "voice_fallback_url"=> "voiceFallbackUrl_example",
+            "call_connect_url"=> "voiceUrl_example",
+            "status_callback_url"=>"statusCallbackUrl_example",
+            "sms_url"=> "smsUrl_example",
+            "sms_fallback_url"=> "smsFallbackUrl_example"
+        ));
         
-        $response = $this->apiInstance->updateAnApplication($account_id, $application_id, $application_request);
-        
-        
+        $response = $apiInstance->updateAnApplication($application_id, $application_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
     }
     /**
@@ -1653,13 +1845,35 @@ class DefaultApiTest extends TestCase
      */
     public function testUpdateAnIncomingNumber()
     {
+        // $account_id = 'account_id_example';
+        // $phone_number_id = 'phone_number_id_example';
+        // $incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(array());
+        
+        // $response = $this->apiInstance->updateAnIncomingNumber($account_id, $phone_number_id, $incoming_number_request);
+        
+        
+        // $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
+
+        $config = Configuration::getDefaultConfiguration()
+        ->setHost('http://127.0.0.1:4010')
+        ->setUsername('YOUR_ACCOUNT_ID')
+        ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
         $account_id = 'account_id_example';
         $phone_number_id = 'phone_number_id_example';
-        $incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(array());
+        $incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(array(
+            "application_id" => "applicationId_example",
+            "alias"=> "alias_example"
+
+        ));
         
-        $response = $this->apiInstance->updateAnIncomingNumber($account_id, $phone_number_id, $incoming_number_request);
-        
-        
+        $response = $apiInstance->updateAnIncomingNumber($phone_number_id, $incoming_number_request);
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
 }
