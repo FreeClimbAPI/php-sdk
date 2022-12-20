@@ -738,7 +738,6 @@ class DefaultApiTest extends TestCase
         );
 
         $account_id = 'account_id_example';
-        $recording_id = 'recording_id_example';
         
         $response = $apiInstance->getAnAccount($account_id);
         $this->assertInstanceOf('\FreeClimb\Api\Model\AccountResult',$response);
@@ -1196,7 +1195,7 @@ class DefaultApiTest extends TestCase
         $date_created = 'date_created_example';
         $date_updated = 'date_updated_example';
         
-        $response = $apiInstance->listConferences($account_id, $status, $alias, $date_created, $date_updated);
+        $response = $apiInstance->listConferences($status, $alias, $date_created, $date_updated);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceList',$response);
     }
     /**
@@ -1661,11 +1660,6 @@ class DefaultApiTest extends TestCase
         $call_id = 'call_id_example';
         $update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(array(
             "status"=>UpdateCallRequestStatus::COMPLETED
-        ));
-        $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(array(
-            "alias"=>"from_example",
-            "play_beep"=>PlayBeep::ALWAYS,
-            "status"=>UpdateConferenceRequestStatus::EMPTY,
         ));
 
         $response = $apiInstance->updateALiveCall($call_id, $update_call_request);
