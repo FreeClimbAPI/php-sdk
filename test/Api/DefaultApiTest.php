@@ -458,20 +458,6 @@ class DefaultApiTest extends TestCase
 
     }
 
-    private function buildGuzzleClient($responseString) : Client
-    {
-        //$responseString = '{"accountId": "TEST_ID","applicationId": "TEST_ID","phoneNumber": "+18883334444"}';
-        //$mock = new MockHandler([
-            //new Response(200, [], $responseString)
-        //]);
-
-        //$handlerStack = HandlerStack::create($mock);
-
-        // create our http client (Guzzle)
-        //return new Client(['handler' => $handlerStack]);
-
-    }
-
     /**
      * Clean up after running each test case
      */
