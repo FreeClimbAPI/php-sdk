@@ -266,5 +266,3 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/QueueResultAllOfTest.php
-test/Model/QueueResultTest.php
