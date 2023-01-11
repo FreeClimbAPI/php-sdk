@@ -60,7 +60,7 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string'
+        'status' => '\FreeClimb\Api\Model\UpdateCallRequestStatus'
     ];
 
     /**
@@ -163,21 +163,6 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
-    const STATUS_CANCELED = 'canceled';
-    const STATUS_COMPLETED = 'completed';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_CANCELED,
-            self::STATUS_COMPLETED,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -209,15 +194,6 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -236,7 +212,7 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets status
      *
-     * @return string
+     * @return \FreeClimb\Api\Model\UpdateCallRequestStatus
      */
     public function getStatus()
     {
@@ -246,22 +222,12 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets status
      *
-     * @param string $status Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress.
+     * @param \FreeClimb\Api\Model\UpdateCallRequestStatus $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

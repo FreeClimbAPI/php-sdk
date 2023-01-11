@@ -8575,7 +8575,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8606,7 +8606,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8713,7 +8713,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8747,7 +8747,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8807,7 +8807,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  string $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -10911,7 +10911,7 @@ class DefaultApi
 
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
 
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
@@ -10938,7 +10938,7 @@ class DefaultApi
 
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
 
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
@@ -11041,7 +11041,7 @@ class DefaultApi
 
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
 
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
      *
      * @throws \InvalidArgumentException
@@ -11071,7 +11071,7 @@ class DefaultApi
 
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
 
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
      *
      * @throws \InvalidArgumentException
@@ -11127,7 +11127,7 @@ class DefaultApi
 
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
 
-     * @param  string $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
      *
      * @throws \InvalidArgumentException

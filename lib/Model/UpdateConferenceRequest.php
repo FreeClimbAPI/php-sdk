@@ -61,8 +61,8 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'alias' => 'string',
-        'play_beep' => 'string',
-        'status' => 'string'
+        'play_beep' => '\FreeClimb\Api\Model\PlayBeep',
+        'status' => '\FreeClimb\Api\Model\UpdateConferenceRequestStatus'
     ];
 
     /**
@@ -173,40 +173,6 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
         return self::$openAPIModelName;
     }
 
-    const PLAY_BEEP_ALWAYS = 'always';
-    const PLAY_BEEP_NEVER = 'never';
-    const PLAY_BEEP_ENTRY_ONLY = 'entryOnly';
-    const PLAY_BEEP_EXIT_ONLY = 'exitOnly';
-    const STATUS_EMPTY = 'empty';
-    const STATUS_TERMINATED = 'terminated';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPlayBeepAllowableValues()
-    {
-        return [
-            self::PLAY_BEEP_ALWAYS,
-            self::PLAY_BEEP_NEVER,
-            self::PLAY_BEEP_ENTRY_ONLY,
-            self::PLAY_BEEP_EXIT_ONLY,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_EMPTY,
-            self::STATUS_TERMINATED,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -224,7 +190,7 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->container['alias'] = $data['alias'] ?? null;
-        $this->container['play_beep'] = $data['play_beep'] ?? 'always';
+        $this->container['play_beep'] = $data['play_beep'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
     }
 
@@ -236,24 +202,6 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getPlayBeepAllowableValues();
-        if (!is_null($this->container['play_beep']) && !in_array($this->container['play_beep'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'play_beep', must be one of '%s'",
-                $this->container['play_beep'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -297,7 +245,7 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets play_beep
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\PlayBeep|null
      */
     public function getPlayBeep()
     {
@@ -307,22 +255,12 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets play_beep
      *
-     * @param string|null $play_beep Controls when a beep is played. Valid values: `always`, `never`, `entryOnly`, `exitOnly`.
+     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep play_beep
      *
      * @return self
      */
     public function setPlayBeep($play_beep)
     {
-        $allowedValues = $this->getPlayBeepAllowableValues();
-        if (!is_null($play_beep) && !in_array($play_beep, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'play_beep', must be one of '%s'",
-                    $play_beep,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['play_beep'] = $play_beep;
 
         return $this;
@@ -331,7 +269,7 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\UpdateConferenceRequestStatus|null
      */
     public function getStatus()
     {
@@ -341,22 +279,12 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets status
      *
-     * @param string|null $status New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**
+     * @param \FreeClimb\Api\Model\UpdateConferenceRequestStatus|null $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

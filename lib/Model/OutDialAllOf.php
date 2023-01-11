@@ -64,7 +64,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'call_connect_url' => 'string',
         'calling_number' => 'float',
         'destination' => 'float',
-        'if_machine' => 'string',
+        'if_machine' => '\FreeClimb\Api\Model\IfMachine',
         'if_machine_url' => 'string',
         'send_digits' => 'string',
         'status_callback_url' => 'string',
@@ -371,7 +371,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets if_machine
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\IfMachine|null
      */
     public function getIfMachine()
     {
@@ -381,7 +381,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets if_machine
      *
-     * @param string|null $if_machine Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked.
+     * @param \FreeClimb\Api\Model\IfMachine|null $if_machine if_machine
      *
      * @return self
      */

@@ -62,7 +62,7 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'account_id' => 'string',
         'message_id' => 'string',
-        'status' => 'string',
+        'status' => '\FreeClimb\Api\Model\MessageStatus',
         'from' => 'string',
         'to' => 'string',
         'text' => 'string',
@@ -198,39 +198,6 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    const STATUS_NEW = 'new';
-    const STATUS_QUEUED = 'queued';
-    const STATUS_REJECTED = 'rejected';
-    const STATUS_SENDING = 'sending';
-    const STATUS_SENT = 'sent';
-    const STATUS_FAILED = 'failed';
-    const STATUS_RECEIVED = 'received';
-    const STATUS_UNDELIVERED = 'undelivered';
-    const STATUS_EXPIRED = 'expired';
-    const STATUS_DELETED = 'deleted';
-    const STATUS_UNKNOWN = 'unknown';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_NEW,
-            self::STATUS_QUEUED,
-            self::STATUS_REJECTED,
-            self::STATUS_SENDING,
-            self::STATUS_SENT,
-            self::STATUS_FAILED,
-            self::STATUS_RECEIVED,
-            self::STATUS_UNDELIVERED,
-            self::STATUS_EXPIRED,
-            self::STATUS_DELETED,
-            self::STATUS_UNKNOWN,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -265,15 +232,6 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -341,7 +299,7 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\MessageStatus|null
      */
     public function getStatus()
     {
@@ -351,22 +309,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets status
      *
-     * @param string|null $status Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
+     * @param \FreeClimb\Api\Model\MessageStatus|null $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

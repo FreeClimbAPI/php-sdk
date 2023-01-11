@@ -70,14 +70,14 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'string',
         'to' => 'string',
         'phone_number_id' => 'string',
-        'status' => 'string',
+        'status' => '\FreeClimb\Api\Model\CallStatus',
         'start_time' => 'string',
         'connect_time' => 'string',
         'end_time' => 'string',
         'duration' => 'int',
         'connect_duration' => 'int',
-        'direction' => 'string',
-        'answered_by' => 'string',
+        'direction' => '\FreeClimb\Api\Model\CallDirection',
+        'answered_by' => '\FreeClimb\Api\Model\AnsweredBy',
         'subresource_uris' => 'object'
     ];
 
@@ -253,33 +253,6 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const STATUS_QUEUED = 'queued';
-    const STATUS_RINGING = 'ringing';
-    const STATUS_IN_PROGRESS = 'inProgress';
-    const STATUS_CANCELED = 'canceled';
-    const STATUS_COMPLETED = 'completed';
-    const STATUS_BUSY = 'busy';
-    const STATUS_FAILED = 'failed';
-    const STATUS_NO_ANSWER = 'noAnswer';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_QUEUED,
-            self::STATUS_RINGING,
-            self::STATUS_IN_PROGRESS,
-            self::STATUS_CANCELED,
-            self::STATUS_COMPLETED,
-            self::STATUS_BUSY,
-            self::STATUS_FAILED,
-            self::STATUS_NO_ANSWER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -325,15 +298,6 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -593,7 +557,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\CallStatus|null
      */
     public function getStatus()
     {
@@ -603,22 +567,12 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status * `queued` &ndash; Call is ready and waiting in line before going out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash; Call was answered and is currently in progress. * `canceled` &ndash; Call was hung up while it was queued or ringing. * `completed` &ndash; Call was answered and has ended normally. * `busy` &ndash; Caller received a busy signal. * `failed` &ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * `noAnswer` &ndash; Call ended without being answered.
+     * @param \FreeClimb\Api\Model\CallStatus|null $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
@@ -747,7 +701,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets direction
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\CallDirection|null
      */
     public function getDirection()
     {
@@ -757,7 +711,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets direction
      *
-     * @param string|null $direction Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command.
+     * @param \FreeClimb\Api\Model\CallDirection|null $direction direction
      *
      * @return self
      */
@@ -771,7 +725,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets answered_by
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\AnsweredBy|null
      */
     public function getAnsweredBy()
     {
@@ -781,7 +735,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets answered_by
      *
-     * @param string|null $answered_by If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise.
+     * @param \FreeClimb\Api\Model\AnsweredBy|null $answered_by answered_by
      *
      * @return self
      */
