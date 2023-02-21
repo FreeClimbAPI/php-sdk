@@ -79,29 +79,28 @@ class OutDialTest extends TestCase
      */
     public function testPropertyCallingNumber()
     {
-        $this->OutDial->setCallingNumber(12345);
-        $this->assertEquals($this->OutDial->getCallingNumber(), 12345);
-        $this->assertIsNumeric($this->OutDial->getCallingNumber());
+        $this->OutDial->setCallingNumber('TEST_STRING');
+        $this->assertStringContainsString($this->OutDial->getCallingNumber(), 'TEST_STRING');
+        $this->assertIsString($this->OutDial->getCallingNumber());
+        
+
     }
     /**
      * Test attribute "destination"
      */
     public function testPropertyDestination()
     {
-        $this->OutDial->setDestination(12345);
-        $this->assertEquals($this->OutDial->getDestination(), 12345);
-        $this->assertIsNumeric($this->OutDial->getDestination());
+        $this->OutDial->setDestination('TEST_STRING');
+        $this->assertStringContainsString($this->OutDial->getDestination(), 'TEST_STRING');
+        $this->assertIsString($this->OutDial->getDestination());
+        
+
     }
     /**
      * Test attribute "if_machine"
      */
     public function testPropertyIfMachine()
     {
-        $this->OutDial->setIfMachine('TEST_STRING');
-        $this->assertStringContainsString($this->OutDial->getIfMachine(), 'TEST_STRING');
-        $this->assertIsString($this->OutDial->getIfMachine());
-        
-
     }
     /**
      * Test attribute "if_machine_url"

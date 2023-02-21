@@ -62,8 +62,8 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'action_url' => 'string',
         'call_connect_url' => 'string',
-        'calling_number' => 'float',
-        'destination' => 'float',
+        'calling_number' => 'string',
+        'destination' => 'string',
         'if_machine' => '\FreeClimb\Api\Model\IfMachine',
         'if_machine_url' => 'string',
         'send_digits' => 'string',
@@ -323,7 +323,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets calling_number
      *
-     * @return float
+     * @return string
      */
     public function getCallingNumber()
     {
@@ -333,7 +333,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets calling_number
      *
-     * @param float $calling_number he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.
+     * @param string $calling_number he caller ID to show to the called party when FreeClimb calls. This can be one of the following: The To or From number provided in the first Webhook to your webserver. Any phone number you have purchased from FreeClimb.
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets destination
      *
-     * @return float
+     * @return string
      */
     public function getDestination()
     {
@@ -357,7 +357,7 @@ class OutDialAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets destination
      *
-     * @param float $destination E.164 representation of the phone number to Call.
+     * @param string $destination E.164 representation of the phone number to Call.
      *
      * @return self
      */
