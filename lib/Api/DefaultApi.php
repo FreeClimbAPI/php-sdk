@@ -8575,7 +8575,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8588,9 +8588,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\CallList
      */
-    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCalls($active = false, $to = null, $from = null, $call_status = null, $start_time = null, $end_time = null, $parent_call_id = null)
     {
-        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $call_status, $start_time, $end_time, $parent_call_id);
         return $response;
     }
 
@@ -8606,7 +8606,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8619,9 +8619,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\CallList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $call_status = null, $start_time = null, $end_time = null, $parent_call_id = null)
     {
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        $request = $this->listCallsRequest($active, $to, $from, $call_status, $start_time, $end_time, $parent_call_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8713,7 +8713,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8725,9 +8725,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsAsync($active = false, $to = null, $from = null, $call_status = null, $start_time = null, $end_time = null, $parent_call_id = null)
     {
-        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id)
+        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $call_status, $start_time, $end_time, $parent_call_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8747,7 +8747,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8759,10 +8759,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $call_status = null, $start_time = null, $end_time = null, $parent_call_id = null)
     {
         $returnType = '\FreeClimb\Api\Model\CallList';
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        $request = $this->listCallsRequest($active, $to, $from, $call_status, $start_time, $end_time, $parent_call_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8807,7 +8807,7 @@ class DefaultApi
 
      * @param  string $from Only show Calls from this phone number. (optional)
 
-     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
 
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
 
@@ -8819,7 +8819,7 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsRequest($active = false, $to = null, $from = null, $call_status = null, $start_time = null, $end_time = null, $parent_call_id = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
@@ -8870,14 +8870,14 @@ class DefaultApi
             }
         }
         // query params
-        if ($status !== null) {
-            if('form' === 'form' && is_array($status)) {
-                foreach($status as $key => $value) {
+        if ($call_status !== null) {
+            if('form' === 'form' && is_array($call_status)) {
+                foreach($call_status as $key => $value) {
                     $queryParams[$key] = $value;
                 }
             }
             else {
-                $queryParams['status'] = $status;
+                $queryParams['callStatus'] = $call_status;
             }
         }
         // query params
