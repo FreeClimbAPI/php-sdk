@@ -217,7 +217,7 @@ class DefaultApiTest extends TestCase
     public function from_listCalls_test_value():string{
         return 'from_example';
     }
-    public function call_status_listCalls_test_value():string{
+    public function status_listCalls_test_value():string{
         return CallStatus::COMPLETED;
     }
     public function start_time_listCalls_test_value():string{
@@ -1280,7 +1280,7 @@ class DefaultApiTest extends TestCase
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
      * @param  string $to Only show Calls to this phone number. (optional)
      * @param  string $from Only show Calls from this phone number. (optional)
-     * @param  \FreeClimb\Api\Model\CallStatus $call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
+     * @param  \FreeClimb\Api\Model\CallStatus $status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. (optional)
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
@@ -1302,12 +1302,12 @@ class DefaultApiTest extends TestCase
         //$active = $active_test_value;
         //$to = $to_test_value;
         //$from = $from_test_value;
-        //$call_status = $call_status_test_value;
+        //$status = $status_test_value;
         //$start_time = $start_time_test_value;
         //$end_time = $end_time_test_value;
         //$parent_call_id = $parent_call_id_test_value;
         
-        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->call_status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value());
+        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value());
         
         
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList',$response);
