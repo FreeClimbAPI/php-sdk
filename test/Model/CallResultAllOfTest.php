@@ -48,7 +48,7 @@ class CallResultAllOfTest extends TestCase
     /**
      * Test "CallResultAllOf"
      */
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->CallResultAllOf = new CallResultAllOf();
     }
@@ -60,7 +60,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setCallId('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getCallId(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getCallId());
-        
+
 
     }
     /**
@@ -71,7 +71,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setParentCallId('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getParentCallId(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getParentCallId());
-        
+
 
     }
     /**
@@ -82,7 +82,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setAccountId('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getAccountId(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getAccountId());
-        
+
 
     }
     /**
@@ -93,7 +93,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setFrom('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getFrom(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getFrom());
-        
+
 
     }
     /**
@@ -104,7 +104,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setTo('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getTo(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getTo());
-        
+
 
     }
     /**
@@ -115,18 +115,18 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setPhoneNumberId('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getPhoneNumberId(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getPhoneNumberId());
-        
+
 
     }
     /**
      * Test attribute "status"
      */
-    public function testPropertyStatus()
+    public function testPropertyCallStatus()
     {
-        
-        $this->CallResultAllOf->setStatus('queued');
-        $this->assertStringContainsString($this->CallResultAllOf->getStatus(), 'queued');
-        $this->assertIsString($this->CallResultAllOf->getStatus());
+
+        $this->CallResultAllOf->setCallStatus('queued');
+        $this->assertStringContainsString($this->CallResultAllOf->getCallStatus(), 'queued');
+        $this->assertIsString($this->CallResultAllOf->getCallStatus());
 
     }
     /**
@@ -137,7 +137,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setStartTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getStartTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getStartTime());
-        
+
 
     }
     /**
@@ -148,7 +148,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setConnectTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getConnectTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getConnectTime());
-        
+
 
     }
     /**
@@ -159,7 +159,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setEndTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getEndTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getEndTime());
-        
+
 
     }
     /**
@@ -188,7 +188,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setDirection('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getDirection(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getDirection());
-        
+
 
     }
     /**
@@ -199,7 +199,7 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setAnsweredBy('TEST_STRING');
         $this->assertStringContainsString($this->CallResultAllOf->getAnsweredBy(), 'TEST_STRING');
         $this->assertIsString($this->CallResultAllOf->getAnsweredBy());
-        
+
 
     }
     /**

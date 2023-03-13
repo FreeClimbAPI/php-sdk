@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **from** | **string** | Phone number that initiated this Call. | [optional]
 **to** | **string** | Phone number that received this Call. | [optional]
 **phone_number_id** | **string** | If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI). | [optional]
-**status** | [**\FreeClimb\Api\Model\CallStatus**](CallStatus.md) |  | [optional]
+**call_status** | [**\FreeClimb\Api\Model\CallStatus**](CallStatus.md) |  | [optional]
 **start_time** | **string** | Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed. | [optional]
 **connect_time** | **string** | Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed. | [optional]
 **end_time** | **string** | End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully. | [optional]

@@ -48,7 +48,7 @@ class CallResultTest extends TestCase
     /**
      * Test "CallResult"
      */
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->CallResult = new CallResult();
     }
@@ -60,7 +60,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setUri('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getUri(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getUri());
-        
+
 
     }
     /**
@@ -71,7 +71,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setDateCreated('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getDateCreated(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getDateCreated());
-        
+
 
     }
     /**
@@ -82,7 +82,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setDateUpdated('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getDateUpdated(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getDateUpdated());
-        
+
 
     }
     /**
@@ -102,7 +102,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setCallId('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getCallId(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getCallId());
-        
+
 
     }
     /**
@@ -113,7 +113,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setParentCallId('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getParentCallId(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getParentCallId());
-        
+
 
     }
     /**
@@ -124,7 +124,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setAccountId('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getAccountId(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getAccountId());
-        
+
 
     }
     /**
@@ -135,7 +135,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setFrom('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getFrom(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getFrom());
-        
+
 
     }
     /**
@@ -146,7 +146,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setTo('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getTo(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getTo());
-        
+
 
     }
     /**
@@ -157,18 +157,18 @@ class CallResultTest extends TestCase
         $this->CallResult->setPhoneNumberId('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getPhoneNumberId(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getPhoneNumberId());
-        
+
 
     }
     /**
      * Test attribute "status"
      */
-    public function testPropertyStatus()
+    public function testPropertyCallStatus()
     {
-        
-        $this->CallResult->setStatus('queued');
-        $this->assertStringContainsString($this->CallResult->getStatus(), 'queued');
-        $this->assertIsString($this->CallResult->getStatus());
+
+        $this->CallResult->setCallStatus('queued');
+        $this->assertStringContainsString($this->CallResult->getCallStatus(), 'queued');
+        $this->assertIsString($this->CallResult->getCallStatus());
 
     }
     /**
@@ -179,7 +179,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setStartTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getStartTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getStartTime());
-        
+
 
     }
     /**
@@ -190,7 +190,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setConnectTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getConnectTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getConnectTime());
-        
+
 
     }
     /**
@@ -201,7 +201,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setEndTime('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getEndTime(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getEndTime());
-        
+
 
     }
     /**
@@ -230,7 +230,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setDirection('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getDirection(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getDirection());
-        
+
 
     }
     /**
@@ -241,7 +241,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setAnsweredBy('TEST_STRING');
         $this->assertStringContainsString($this->CallResult->getAnsweredBy(), 'TEST_STRING');
         $this->assertIsString($this->CallResult->getAnsweredBy());
-        
+
 
     }
     /**

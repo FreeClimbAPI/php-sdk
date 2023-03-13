@@ -70,7 +70,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'string',
         'to' => 'string',
         'phone_number_id' => 'string',
-        'status' => '\FreeClimb\Api\Model\CallStatus',
+        'call_status' => '\FreeClimb\Api\Model\CallStatus',
         'start_time' => 'string',
         'connect_time' => 'string',
         'end_time' => 'string',
@@ -99,7 +99,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => null,
         'to' => null,
         'phone_number_id' => null,
-        'status' => null,
+        'call_status' => null,
         'start_time' => null,
         'connect_time' => null,
         'end_time' => null,
@@ -147,7 +147,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'from',
         'to' => 'to',
         'phone_number_id' => 'phoneNumberId',
-        'status' => 'status',
+        'call_status' => 'callStatus',
         'start_time' => 'startTime',
         'connect_time' => 'connectTime',
         'end_time' => 'endTime',
@@ -174,7 +174,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'setFrom',
         'to' => 'setTo',
         'phone_number_id' => 'setPhoneNumberId',
-        'status' => 'setStatus',
+        'call_status' => 'setCallStatus',
         'start_time' => 'setStartTime',
         'connect_time' => 'setConnectTime',
         'end_time' => 'setEndTime',
@@ -201,7 +201,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'getFrom',
         'to' => 'getTo',
         'phone_number_id' => 'getPhoneNumberId',
-        'status' => 'getStatus',
+        'call_status' => 'getCallStatus',
         'start_time' => 'getStartTime',
         'connect_time' => 'getConnectTime',
         'end_time' => 'getEndTime',
@@ -279,7 +279,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['from'] = $data['from'] ?? null;
         $this->container['to'] = $data['to'] ?? null;
         $this->container['phone_number_id'] = $data['phone_number_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['call_status'] = $data['call_status'] ?? null;
         $this->container['start_time'] = $data['start_time'] ?? null;
         $this->container['connect_time'] = $data['connect_time'] ?? null;
         $this->container['end_time'] = $data['end_time'] ?? null;
@@ -555,25 +555,25 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets status
+     * Gets call_status
      *
      * @return \FreeClimb\Api\Model\CallStatus|null
      */
-    public function getStatus()
+    public function getCallStatus()
     {
-        return $this->container['status'];
+        return $this->container['call_status'];
     }
 
     /**
-     * Sets status
+     * Sets call_status
      *
-     * @param \FreeClimb\Api\Model\CallStatus|null $status status
+     * @param \FreeClimb\Api\Model\CallStatus|null $call_status call_status
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setCallStatus($call_status)
     {
-        $this->container['status'] = $status;
+        $this->container['call_status'] = $call_status;
 
         return $this;
     }
