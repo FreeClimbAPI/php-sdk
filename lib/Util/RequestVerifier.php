@@ -7,9 +7,9 @@ use FreeClimb\Api\Util\SignatureInformation;
 
 class RequestVerifier
 {
-    public $DEFAULT_TOLERANCE = 5 * 60 * 1000;
+    public const DEFAULT_TOLERANCE = 5 * 60 * 1000;
 
-    function verifyRequestSignature(string $requestBody, string $requestHeader, string $signingSecret, int $tolerance)
+    function verifyRequestSignature(string $requestBody, string $requestHeader, string $signingSecret, int $tolerance = DEFAULT_TOLERANCE)
     {
         $this->checkRequestBody($requestBody);
         $this->checkRequestHeader($requestHeader);
