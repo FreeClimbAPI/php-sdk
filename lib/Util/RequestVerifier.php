@@ -9,15 +9,16 @@ class RequestVerifier
 {
     public const DEFAULT_TOLERANCE = 5 * 60 * 1000;
 
-    function verifyRequestSignature(string $requestBody, string $requestHeader, string $signingSecret, int $tolerance = DEFAULT_TOLERANCE)
+    public static function verifyRequestSignature(string $requestBody, string $requestHeader, string $signingSecret, int $tolerance = DEFAULT_TOLERANCE)
     {
-        $this->checkRequestBody($requestBody);
-        $this->checkRequestHeader($requestHeader);
-        $this->checkSigningSecret($signingSecret);
-        $this->checkTolerance($tolerance);
+        $verifier = new RequestVerifier();
+        $verifier->checkRequestBody($requestBody);
+        $verifier->checkRequestHeader($requestHeader);
+        $verifier->checkSigningSecret($signingSecret);
+        $verifier->checkTolerance($tolerance);
         $info = new SignatureInformation($requestHeader);
-        $this->verifyTolerance($info, $tolerance);
-        $this->verifySignature($info, $requestBody, $requestHeader);
+        $verifier->verifyTolerance($info, $tolerance);
+        $verifier->verifySignature($info, $requestBody, $requestHeader);
     }
     function checkRequestBody(string $requestBody)
     {
