@@ -33,7 +33,7 @@ class SignatureInformation
         return in_array($hashValue, $this->signatures);
     }
 
-    function computeHash(string $requestBody, string $signingSecret)
+    private function computeHash(string $requestBody, string $signingSecret)
     {
         $data = strval($this->requestTimestamp) . "." . $requestBody;
         return hash_hmac('sha256', $data, $signingSecret);
