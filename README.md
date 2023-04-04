@@ -318,25 +318,33 @@ vendor/bin/phpunit
 
 - To verify the signature request, we will need to use the verifySignatureRequest method within the Request Verifier class
 
-  verifySignatureRequest
+  RequestVerifier.verifySignatureRequest()
 
   This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the signature request is valid otherwise it will throw a specific error message depending on which signature request part is causing issues
 
   Example code down below
 
   ```php
-  {
-    $this->requestVerifier = new RequestVerifier();
+	<?php
 
-    $tolerance = 5 * 60;
-    $requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+	namespace FreeClimb\Example;
 
-    $requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
+	use FreeClimb\Api\Util\RequestVerifier;
 
-    $signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
+	class Example
+	{
 
-    $this->requestVerifier->verifyRequestSignature($requestBody, $requestHeader, $signingSecret, $tolerance);
-  }
+    		public function verifyRequestSignatureExample()
+    		{
+        		$tolerance = 5 * 60;
+        		$requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+        		$requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
+        		$signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
+
+        		RequestVerifier::verifyRequestSignature($requestBody, $requestHeader, $signingSecret, $tolerance);
+   		 }
+
+	}
   ```
 
 ## Author
