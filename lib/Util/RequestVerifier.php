@@ -20,14 +20,14 @@ class RequestVerifier
         $verifier->verifyTolerance($info, $tolerance);
         $verifier->verifySignature($info, $requestBody, $requestHeader);
     }
-    function checkRequestBody(string $requestBody)
+    private function checkRequestBody(string $requestBody)
     {
         if ($requestBody === "" or $requestBody === null) {
             throw new Exception('Request Body cannot be empty or null');
         }
     }
 
-    function checkRequestHeader(string $requestHeader)
+    private function checkRequestHeader(string $requestHeader)
     {
         if ($requestHeader === "" or $requestHeader === null) {
             throw new Exception('Error with request header, Request header is empty');
@@ -37,19 +37,19 @@ class RequestVerifier
             throw new Exception("Error with request header, signatures are not present");
         }
     }
-    function checkSigningSecret(string $signingSecret)
+    private function checkSigningSecret(string $signingSecret)
     {
         if ($signingSecret === "" || $signingSecret === null) {
             throw new Exception('Signing secret cannot be empty or null');
         }
     }
-    function checkTolerance(int $tolerance)
+    private function checkTolerance(int $tolerance)
     {
         if ($tolerance <= 0 || $tolerance >= PHP_INT_MAX || $tolerance === NAN) {
             throw new Exception("Tolerance value must be a positive integer");
         }
     }
-    function verifyTolerance(SignatureInformation $info, int $tolerance)
+    private function verifyTolerance(SignatureInformation $info, int $tolerance)
     {
         $currentTime = $info->getCurrentUnixTime();
         if (!$info->isRequestTimeValid($tolerance)) {
@@ -57,7 +57,7 @@ class RequestVerifier
                 . ", CurrentTime: " . strval($currentTime) . ", tolerance: " . $tolerance);
         }
     }
-    function verifySignature(SignatureInformation $info, string $requestBody, string $signingSecret)
+    private function verifySignature(SignatureInformation $info, string $requestBody, string $signingSecret)
     {
         if (!$info->isSignatureSafe($requestBody, $signingSecret)) {
             throw new Exception("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret");
