@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="3.2.1"></a>
+
+## [3.2.1] - 2023-04-24
+
+### Changed
+
+- Fix bug for toPerCLString method for PerCL script
+
 <a name="3.2.0"></a>
 
 ## [3.2.0] - 2023-04-03
