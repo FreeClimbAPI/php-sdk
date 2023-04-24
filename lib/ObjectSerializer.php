@@ -65,9 +65,9 @@ class ObjectSerializer
 
         if (is_object($data)) {
             $value = json_encode($data);
-            $obj_arr = json_decode($value, true);
-            $obj_arr_length = count($obj_arr) - 1;
-            $obj = array($data["command"] => array_slice(json_decode($value, true), 0, $obj_arr_length));
+            $objArr = json_decode($value, true);
+            $objArrLength = count($objArr) - 1;
+            $obj = array($data["command"] => array_slice(json_decode($value, true), 0, $objArrLength));
             return (object) $obj;
         }
     }
