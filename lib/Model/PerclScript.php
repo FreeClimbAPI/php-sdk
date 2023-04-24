@@ -49,28 +49,28 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'PerclScript';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'commands' => '\FreeClimb\Api\Model\PerclCommand[]'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'commands' => null
     ];
@@ -237,7 +237,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists($offset) : bool
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -249,7 +249,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return mixed|null
      */
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset): mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -262,7 +262,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, $value) : void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -278,7 +278,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset($offset) : void
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -290,7 +290,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize(): mixed
     {
         return $this->__toJSON();
     }
@@ -300,7 +300,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
@@ -313,7 +313,7 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue(): string
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
@@ -334,10 +334,8 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toPerCLString() : string
+    public function toPerCLString(): string
     {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this->getCommands()));
+        return json_encode(ObjectSerializer::sanitizeForSerializationPerCL($this->getCommands()), JSON_UNESCAPED_SLASHES);
     }
 }
-
-
