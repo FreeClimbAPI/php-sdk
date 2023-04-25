@@ -66,8 +66,13 @@ class ObjectSerializer
         if (is_object($data)) {
             $value = json_encode($data);
             $objArr = json_decode($value, true);
-            $objArrLength = count($objArr) - 1;
-            $obj = array($data["command"] => array_slice(json_decode($value, true), 0, $objArrLength));
+            $commandValue = $data["command"];
+            $filteredArr = array_filter(
+                $objArr,
+                fn($key) => $key != "command",
+                ARRAY_FILTER_USE_KEY
+            );
+            $obj = array($commandValue => $filteredArr);
             return (object) $obj;
         }
     }
