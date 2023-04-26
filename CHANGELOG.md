@@ -9,9 +9,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
-<a name="4.2.0"></a>
+<a name="4.0.0"></a>
 
-## [4.2.0] - 2023-04-26
+## [4.0.0] - 2023-04-26
 
 ### Added
 
