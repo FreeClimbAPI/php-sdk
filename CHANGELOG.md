@@ -13,9 +13,9 @@ None
 
 ## [3.3.0] - 2023-04-26
 
-### Changed
+### Added
 
-- Fix bug for toPerCLString method for PerCL script
+- Implemented new method (toJSON()) that overwrites the toPerCLString method for PerCL serialization
 
 <a name="3.2.0"></a>
 
