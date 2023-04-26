@@ -14,7 +14,7 @@ class PerclScriptTest extends TestCase
         $getSpeech->setActionUrl("https://example.com/update");
         $getSpeech->setPrompts(array($say));
         $script->setCommands(array($say, $getSpeech));
-        $perclString = $script->toPerCLString();
+        $perclString = $script->toJSON();
         $this->assertEquals("[{\"Say\":{\"text\":\"Hello, World!\",\"loop\":1}},{\"GetSpeech\":{\"actionUrl\":\"https://example.com/update\",\"prompts\":[{\"Say\":{\"text\":\"Hello, World!\",\"loop\":1}}]}}]", $perclString);
     }
 }
