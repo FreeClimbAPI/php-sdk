@@ -103,13 +103,13 @@ class ObjectSerializer
                     }
                 }
             } else {
-                foreach ($data as $property => $value) {
+                foreach($data as $property => $value) {
                     $values[$property] = self::sanitizeForSerialization($value);
                 }
             }
-            return (object) $values;
+            return (object)$values;
         } else {
-            return (string) $data;
+            return (string)$data;
         }
     }
 
@@ -139,8 +139,7 @@ class ObjectSerializer
      */
     public static function sanitizeTimestamp($timestamp)
     {
-        if (!is_string($timestamp))
-            return $timestamp;
+        if (!is_string($timestamp)) return $timestamp;
 
         return preg_replace('/(:\d{2}.\d{6})\d*/', '$1', $timestamp);
     }
@@ -266,7 +265,7 @@ class ObjectSerializer
 
             case 'simple':
             case 'csv':
-            // Deliberate fall through. CSV is default format.
+                // Deliberate fall through. CSV is default format.
             default:
                 return implode(',', $collection);
         }
@@ -353,7 +352,7 @@ class ObjectSerializer
             // determine file name
             if (
                 is_array($httpHeaders)
-                && array_key_exists('Content-Disposition', $httpHeaders)
+                && array_key_exists('Content-Disposition', $httpHeaders) 
                 && preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
             ) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
