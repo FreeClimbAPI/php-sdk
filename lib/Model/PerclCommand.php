@@ -346,7 +346,7 @@ class PerclCommand implements ModelInterface, ArrayAccess, \JsonSerializable
                         }
                     }
                     $percl_info->{$attr} = $next_arr;
-                } else {
+                } else if (!empty($val)){
                     $percl_info->{$attr} = $val;
                 }
             }
