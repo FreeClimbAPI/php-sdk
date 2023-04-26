@@ -54,29 +54,6 @@ class ObjectSerializer
         self::$dateTimeFormat = $format;
     }
 
-    public static function sanitizeForSerializationPerCL($data, $type = null, $format = null)
-    {
-        if (is_array($data)) {
-            foreach ($data as $property => $value) {
-                $data[$property] = self::sanitizeForSerializationPerCL($value);
-            }
-            return $data;
-        }
-
-        if (is_object($data)) {
-            $value = json_encode($data);
-            $objArr = json_decode($value, true);
-            $commandValue = $data["command"];
-            $filteredArr = array_filter(
-                $objArr,
-                fn($key) => $key != "command",
-                ARRAY_FILTER_USE_KEY
-            );
-            $obj = array($commandValue => $filteredArr);
-            return (object) $obj;
-        }
-    }
-
     /**
      * Serialize data
      *
