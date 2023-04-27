@@ -1808,7 +1808,7 @@ Name | Type | Description  | Notes
 ## `listCalls()`
 
 ```php
-listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application): \FreeClimb\Api\Model\CallList
+listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id): \FreeClimb\Api\Model\CallList
 ```
 
 List Calls
@@ -1841,10 +1841,9 @@ $start_time = 'start_time_example'; // string | Only show Calls that started at 
 $end_time = 'end_time_example'; // string | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
 $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned by the call with this ID.
 $application_id = array('application_id_example'); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
-$has_application = True; // bool | Only show calls which are associated with an Application (applicationId != null)
 
 try {
-    $result = $apiInstance->listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application);
+    $result = $apiInstance->listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCalls: ', $e->getMessage(), PHP_EOL;
@@ -1864,7 +1863,6 @@ Name | Type | Description  | Notes
  **end_time** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional]
  **parent_call_id** | **string**| Only show Calls spawned by the call with this ID. | [optional]
  **application_id** | [**string[]**](../Model/string.md)| Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional]
- **has_application** | **bool**| Only show calls which are associated with an Application (applicationId !&#x3D; null) | [optional]
 
 ### Return type
 

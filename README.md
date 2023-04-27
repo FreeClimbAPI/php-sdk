@@ -75,8 +75,8 @@ try {
 ```
 
 ## Using PerCL
-
 The PerclScript class provides a convenient wrapper to handle PerCL generation in your responses. Simply execute `json_encode` with an instance of the `PerclScript` class and you will have `PerclCommands` serialized and formatted the way you need.
+
 
 ```php
 <?php
@@ -119,54 +119,54 @@ json_encode($script);
 
 All URIs are relative to *https://www.freeclimb.com/apiserver*
 
-| Class        | Method                                                                      | HTTP request                                                                      | Description               |
-| ------------ | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------- |
-| _DefaultApi_ | [**buyAPhoneNumber**](docs/Api/DefaultApi.md#buyaphonenumber)               | **POST** /Accounts/{accountId}/IncomingPhoneNumbers                               | Buy a Phone Number        |
-| _DefaultApi_ | [**createAConference**](docs/Api/DefaultApi.md#createaconference)           | **POST** /Accounts/{accountId}/Conferences                                        | Create a Conference       |
-| _DefaultApi_ | [**createAQueue**](docs/Api/DefaultApi.md#createaqueue)                     | **POST** /Accounts/{accountId}/Queues                                             | Create a Queue            |
-| _DefaultApi_ | [**createAnApplication**](docs/Api/DefaultApi.md#createanapplication)       | **POST** /Accounts/{accountId}/Applications                                       | Create an application     |
-| _DefaultApi_ | [**deleteARecording**](docs/Api/DefaultApi.md#deletearecording)             | **DELETE** /Accounts/{accountId}/Recordings/{recordingId}                         | Delete a Recording        |
-| _DefaultApi_ | [**deleteAnApplication**](docs/Api/DefaultApi.md#deleteanapplication)       | **DELETE** /Accounts/{accountId}/Applications/{applicationId}                     | Delete an application     |
-| _DefaultApi_ | [**deleteAnIncomingNumber**](docs/Api/DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}             | Delete an Incoming Number |
-| _DefaultApi_ | [**dequeueAMember**](docs/Api/DefaultApi.md#dequeueamember)                 | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId}                  | Dequeue a Member          |
-| _DefaultApi_ | [**dequeueHeadMember**](docs/Api/DefaultApi.md#dequeueheadmember)           | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front                     | Dequeue Head Member       |
-| _DefaultApi_ | [**downloadARecordingFile**](docs/Api/DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download                   | Download a Recording File |
-| _DefaultApi_ | [**filterLogs**](docs/Api/DefaultApi.md#filterlogs)                         | **POST** /Accounts/{accountId}/Logs                                               | Filter Logs               |
-| _DefaultApi_ | [**getACall**](docs/Api/DefaultApi.md#getacall)                             | **GET** /Accounts/{accountId}/Calls/{callId}                                      | Get a Call                |
-| _DefaultApi_ | [**getAConference**](docs/Api/DefaultApi.md#getaconference)                 | **GET** /Accounts/{accountId}/Conferences/{conferenceId}                          | Get a Conference          |
-| _DefaultApi_ | [**getAMember**](docs/Api/DefaultApi.md#getamember)                         | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/{callId}                   | Get a Member              |
-| _DefaultApi_ | [**getAParticipant**](docs/Api/DefaultApi.md#getaparticipant)               | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}    | Get a Participant         |
-| _DefaultApi_ | [**getAQueue**](docs/Api/DefaultApi.md#getaqueue)                           | **GET** /Accounts/{accountId}/Queues/{queueId}                                    | Get a Queue               |
-| _DefaultApi_ | [**getARecording**](docs/Api/DefaultApi.md#getarecording)                   | **GET** /Accounts/{accountId}/Recordings/{recordingId}                            | Get a Recording           |
-| _DefaultApi_ | [**getAnAccount**](docs/Api/DefaultApi.md#getanaccount)                     | **GET** /Accounts/{accountId}                                                     | Get an Account            |
-| _DefaultApi_ | [**getAnApplication**](docs/Api/DefaultApi.md#getanapplication)             | **GET** /Accounts/{accountId}/Applications/{applicationId}                        | Get an Application        |
-| _DefaultApi_ | [**getAnIncomingNumber**](docs/Api/DefaultApi.md#getanincomingnumber)       | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}                | Get an Incoming Number    |
-| _DefaultApi_ | [**getAnSmsMessage**](docs/Api/DefaultApi.md#getansmsmessage)               | **GET** /Accounts/{accountId}/Messages/{messageId}                                | Get an SMS Message        |
-| _DefaultApi_ | [**getHeadMember**](docs/Api/DefaultApi.md#getheadmember)                   | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front                      | Get Head Member           |
-| _DefaultApi_ | [**listActiveQueues**](docs/Api/DefaultApi.md#listactivequeues)             | **GET** /Accounts/{accountId}/Queues                                              | List Active Queues        |
-| _DefaultApi_ | [**listAllAccountLogs**](docs/Api/DefaultApi.md#listallaccountlogs)         | **GET** /Accounts/{accountId}/Logs                                                | List All Account Logs     |
-| _DefaultApi_ | [**listApplications**](docs/Api/DefaultApi.md#listapplications)             | **GET** /Accounts/{accountId}/Applications                                        | List applications         |
-| _DefaultApi_ | [**listAvailableNumbers**](docs/Api/DefaultApi.md#listavailablenumbers)     | **GET** /AvailablePhoneNumbers                                                    | List available numbers    |
-| _DefaultApi_ | [**listCallLogs**](docs/Api/DefaultApi.md#listcalllogs)                     | **GET** /Accounts/{accountId}/Calls/{callId}/Logs                                 | List Call Logs            |
-| _DefaultApi_ | [**listCallRecordings**](docs/Api/DefaultApi.md#listcallrecordings)         | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings                           | List Call Recordings      |
-| _DefaultApi_ | [**listCalls**](docs/Api/DefaultApi.md#listcalls)                           | **GET** /Accounts/{accountId}/Calls                                               | List Calls                |
-| _DefaultApi_ | [**listConferences**](docs/Api/DefaultApi.md#listconferences)               | **GET** /Accounts/{accountId}/Conferences                                         | List Conferences          |
-| _DefaultApi_ | [**listIncomingNumbers**](docs/Api/DefaultApi.md#listincomingnumbers)       | **GET** /Accounts/{accountId}/IncomingPhoneNumbers                                | List Incoming Numbers     |
-| _DefaultApi_ | [**listMembers**](docs/Api/DefaultApi.md#listmembers)                       | **GET** /Accounts/{accountId}/Queues/{queueId}/Members                            | List Members              |
-| _DefaultApi_ | [**listParticipants**](docs/Api/DefaultApi.md#listparticipants)             | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants             | List Participants         |
-| _DefaultApi_ | [**listRecordings**](docs/Api/DefaultApi.md#listrecordings)                 | **GET** /Accounts/{accountId}/Recordings                                          | List Recordings           |
-| _DefaultApi_ | [**listSmsMessages**](docs/Api/DefaultApi.md#listsmsmessages)               | **GET** /Accounts/{accountId}/Messages                                            | List SMS Messages         |
-| _DefaultApi_ | [**makeACall**](docs/Api/DefaultApi.md#makeacall)                           | **POST** /Accounts/{accountId}/Calls                                              | Make a Call               |
-| _DefaultApi_ | [**removeAParticipant**](docs/Api/DefaultApi.md#removeaparticipant)         | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant      |
-| _DefaultApi_ | [**sendAnSmsMessage**](docs/Api/DefaultApi.md#sendansmsmessage)             | **POST** /Accounts/{accountId}/Messages                                           | Send an SMS Message       |
-| _DefaultApi_ | [**streamARecordingFile**](docs/Api/DefaultApi.md#streamarecordingfile)     | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream                     | Stream a Recording File   |
-| _DefaultApi_ | [**updateAConference**](docs/Api/DefaultApi.md#updateaconference)           | **POST** /Accounts/{accountId}/Conferences/{conferenceId}                         | Update a Conference       |
-| _DefaultApi_ | [**updateALiveCall**](docs/Api/DefaultApi.md#updatealivecall)               | **POST** /Accounts/{accountId}/Calls/{callId}                                     | Update a Live Call        |
-| _DefaultApi_ | [**updateAParticipant**](docs/Api/DefaultApi.md#updateaparticipant)         | **POST** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}   | Update a Participant      |
-| _DefaultApi_ | [**updateAQueue**](docs/Api/DefaultApi.md#updateaqueue)                     | **POST** /Accounts/{accountId}/Queues/{queueId}                                   | Update a Queue            |
-| _DefaultApi_ | [**updateAnAccount**](docs/Api/DefaultApi.md#updateanaccount)               | **POST** /Accounts/{accountId}                                                    | Manage an account         |
-| _DefaultApi_ | [**updateAnApplication**](docs/Api/DefaultApi.md#updateanapplication)       | **POST** /Accounts/{accountId}/Applications/{applicationId}                       | Update an application     |
-| _DefaultApi_ | [**updateAnIncomingNumber**](docs/Api/DefaultApi.md#updateanincomingnumber) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}               | Update an Incoming Number |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**buyAPhoneNumber**](docs/Api/DefaultApi.md#buyaphonenumber) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers | Buy a Phone Number
+*DefaultApi* | [**createAConference**](docs/Api/DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
+*DefaultApi* | [**createAQueue**](docs/Api/DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
+*DefaultApi* | [**createAnApplication**](docs/Api/DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+*DefaultApi* | [**deleteARecording**](docs/Api/DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
+*DefaultApi* | [**deleteAnApplication**](docs/Api/DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
+*DefaultApi* | [**deleteAnIncomingNumber**](docs/Api/DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
+*DefaultApi* | [**dequeueAMember**](docs/Api/DefaultApi.md#dequeueamember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member
+*DefaultApi* | [**dequeueHeadMember**](docs/Api/DefaultApi.md#dequeueheadmember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member
+*DefaultApi* | [**downloadARecordingFile**](docs/Api/DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File
+*DefaultApi* | [**filterLogs**](docs/Api/DefaultApi.md#filterlogs) | **POST** /Accounts/{accountId}/Logs | Filter Logs
+*DefaultApi* | [**getACall**](docs/Api/DefaultApi.md#getacall) | **GET** /Accounts/{accountId}/Calls/{callId} | Get a Call
+*DefaultApi* | [**getAConference**](docs/Api/DefaultApi.md#getaconference) | **GET** /Accounts/{accountId}/Conferences/{conferenceId} | Get a Conference
+*DefaultApi* | [**getAMember**](docs/Api/DefaultApi.md#getamember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Get a Member
+*DefaultApi* | [**getAParticipant**](docs/Api/DefaultApi.md#getaparticipant) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Get a Participant
+*DefaultApi* | [**getAQueue**](docs/Api/DefaultApi.md#getaqueue) | **GET** /Accounts/{accountId}/Queues/{queueId} | Get a Queue
+*DefaultApi* | [**getARecording**](docs/Api/DefaultApi.md#getarecording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording
+*DefaultApi* | [**getAnAccount**](docs/Api/DefaultApi.md#getanaccount) | **GET** /Accounts/{accountId} | Get an Account
+*DefaultApi* | [**getAnApplication**](docs/Api/DefaultApi.md#getanapplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
+*DefaultApi* | [**getAnIncomingNumber**](docs/Api/DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
+*DefaultApi* | [**getAnSmsMessage**](docs/Api/DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
+*DefaultApi* | [**getHeadMember**](docs/Api/DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
+*DefaultApi* | [**listActiveQueues**](docs/Api/DefaultApi.md#listactivequeues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
+*DefaultApi* | [**listAllAccountLogs**](docs/Api/DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
+*DefaultApi* | [**listApplications**](docs/Api/DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
+*DefaultApi* | [**listAvailableNumbers**](docs/Api/DefaultApi.md#listavailablenumbers) | **GET** /AvailablePhoneNumbers | List available numbers
+*DefaultApi* | [**listCallLogs**](docs/Api/DefaultApi.md#listcalllogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs
+*DefaultApi* | [**listCallRecordings**](docs/Api/DefaultApi.md#listcallrecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings
+*DefaultApi* | [**listCalls**](docs/Api/DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls
+*DefaultApi* | [**listConferences**](docs/Api/DefaultApi.md#listconferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences
+*DefaultApi* | [**listIncomingNumbers**](docs/Api/DefaultApi.md#listincomingnumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers
+*DefaultApi* | [**listMembers**](docs/Api/DefaultApi.md#listmembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members
+*DefaultApi* | [**listParticipants**](docs/Api/DefaultApi.md#listparticipants) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants | List Participants
+*DefaultApi* | [**listRecordings**](docs/Api/DefaultApi.md#listrecordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings
+*DefaultApi* | [**listSmsMessages**](docs/Api/DefaultApi.md#listsmsmessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages
+*DefaultApi* | [**makeACall**](docs/Api/DefaultApi.md#makeacall) | **POST** /Accounts/{accountId}/Calls | Make a Call
+*DefaultApi* | [**removeAParticipant**](docs/Api/DefaultApi.md#removeaparticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant
+*DefaultApi* | [**sendAnSmsMessage**](docs/Api/DefaultApi.md#sendansmsmessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message
+*DefaultApi* | [**streamARecordingFile**](docs/Api/DefaultApi.md#streamarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File
+*DefaultApi* | [**updateAConference**](docs/Api/DefaultApi.md#updateaconference) | **POST** /Accounts/{accountId}/Conferences/{conferenceId} | Update a Conference
+*DefaultApi* | [**updateALiveCall**](docs/Api/DefaultApi.md#updatealivecall) | **POST** /Accounts/{accountId}/Calls/{callId} | Update a Live Call
+*DefaultApi* | [**updateAParticipant**](docs/Api/DefaultApi.md#updateaparticipant) | **POST** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Update a Participant
+*DefaultApi* | [**updateAQueue**](docs/Api/DefaultApi.md#updateaqueue) | **POST** /Accounts/{accountId}/Queues/{queueId} | Update a Queue
+*DefaultApi* | [**updateAnAccount**](docs/Api/DefaultApi.md#updateanaccount) | **POST** /Accounts/{accountId} | Manage an account
+*DefaultApi* | [**updateAnApplication**](docs/Api/DefaultApi.md#updateanapplication) | **POST** /Accounts/{accountId}/Applications/{applicationId} | Update an application
+*DefaultApi* | [**updateAnIncomingNumber**](docs/Api/DefaultApi.md#updateanincomingnumber) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Update an Incoming Number
 
 ## Models
 
@@ -357,5 +357,5 @@ support@freeclimb.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0.0`
-  - Package version: `4.1.0`
+    - Package version: `4.1.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
