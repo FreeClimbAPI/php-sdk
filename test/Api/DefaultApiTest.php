@@ -229,6 +229,12 @@ class DefaultApiTest extends TestCase
     public function parent_call_id_listCalls_test_value():string{
         return 'parent_call_id_example';
     }
+    public function application_id_listCalls_test_value():array{
+        return array('AP0123456789ABCDEFabcedf000000000000000001', 'AP0123456789ABCDEFabcedf000000000000000002', "AP0123456789ABCDEFabcedf000000000000000003");
+    }
+    public function has_application_listCalls_test_value():string{
+        return "false"; 
+    }
     public function status_listConferences_test_value():string{
         return 'status_example';
     }
@@ -1284,6 +1290,8 @@ class DefaultApiTest extends TestCase
      * @param  string $start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
      * @param  string $end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. (optional)
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
      */
     public function testListCalls()
     {
@@ -1306,8 +1314,10 @@ class DefaultApiTest extends TestCase
         //$start_time = $start_time_test_value;
         //$end_time = $end_time_test_value;
         //$parent_call_id = $parent_call_id_test_value;
+        //$application_id = $application_id_test_value;
+        //$has_application = $has_application_test_value;
         
-        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value());
+        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->has_application_listCalls_test_value());
         
         
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList',$response);

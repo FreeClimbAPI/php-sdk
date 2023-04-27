@@ -8583,14 +8583,18 @@ class DefaultApi
 
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
 
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\CallList
      */
-    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $has_application = null)
     {
-        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application);
         return $response;
     }
 
@@ -8614,14 +8618,18 @@ class DefaultApi
 
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
 
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\CallList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $has_application = null)
     {
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8721,13 +8729,17 @@ class DefaultApi
 
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
 
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $has_application = null)
     {
-        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id)
+        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8755,14 +8767,18 @@ class DefaultApi
 
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
 
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $has_application = null)
     {
         $returnType = '\FreeClimb\Api\Model\CallList';
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id);
+        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $has_application);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8815,11 +8831,15 @@ class DefaultApi
 
      * @param  string $parent_call_id Only show Calls spawned by the call with this ID. (optional)
 
+     * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
+
+     * @param  bool $has_application Only show calls which are associated with an Application (applicationId !&#x3D; null) (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null)
+    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $has_application = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
@@ -8828,6 +8848,10 @@ class DefaultApi
                 'Missing the required parameter $account_id when calling listCalls'
             );
         }
+        if ($application_id !== null && count($application_id) > 16) {
+            throw new \InvalidArgumentException('invalid value for "$application_id" when calling DefaultApi.listCalls, number of items must be less than or equal to 16.');
+        }
+
 
         $resourcePath = '/Accounts/{accountId}/Calls';
         $formParams = [];
@@ -8911,6 +8935,28 @@ class DefaultApi
             }
             else {
                 $queryParams['parentCallId'] = $parent_call_id;
+            }
+        }
+        // query params
+        if ($application_id !== null) {
+            if('form' === 'form' && is_array($application_id)) {
+                foreach($application_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['applicationId'] = $application_id;
+            }
+        }
+        // query params
+        if ($has_application !== null) {
+            if('form' === 'form' && is_array($has_application)) {
+                foreach($has_application as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['hasApplication'] = $has_application;
             }
         }
 
