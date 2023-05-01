@@ -23,7 +23,8 @@ class SignatureInformationTest extends TestCase
 
     public function testIsRequestTimeValidFalse()
     {
-        $tolerance = 5 * 60 * 10000;
+        $MAX_INTEGER = 2147483647;
+        $tolerance = $MAX_INTEGER - 1679944186;
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), false);
     }
 
