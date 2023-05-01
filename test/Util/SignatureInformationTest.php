@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 class SignatureInformationTest extends TestCase
 {
     protected $signatureInformation;
-
+    private int $timestamp = 1679944186;
     public function setUp(): void
     {
-        $requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+        $requestHeader = "t=" . strval(self::$timestamp) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
         $this->signatureInformation = new SignatureInformation($requestHeader);
     }
 
@@ -24,7 +24,7 @@ class SignatureInformationTest extends TestCase
     public function testIsRequestTimeValidFalse()
     {
         $MAX_INTEGER = 2147483647;
-        $tolerance = $MAX_INTEGER - 1679944186;
+        $tolerance = $MAX_INTEGER - self::$timestamp;
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), false);
     }
 
