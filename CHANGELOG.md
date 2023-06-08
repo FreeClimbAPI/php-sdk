@@ -15,7 +15,7 @@ None
 
 ### Added
 
-- Number management feature for csharp sdk including methods, properties, and testing
+- Number management feature for php sdk including methods, properties, and testing
 
 <a name="4.1.0"></a>
 
