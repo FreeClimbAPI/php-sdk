@@ -1,6 +1,6 @@
 <?php
 /**
- * IncomingNumberRequest
+ * SMSTenDLCPartnerCampaignsListResult
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * IncomingNumberRequest Class Doc Comment
+ * SMSTenDLCPartnerCampaignsListResult Class Doc Comment
  *
  * @category Class
  * @package  FreeClimb\Api
@@ -43,7 +43,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IncomingNumberRequest';
+    protected static $openAPIModelName = 'SMSTenDLCPartnerCampaignsListResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'application_id' => 'string',
-        'alias' => 'string',
-        'campaign_id' => 'string'
+        'total' => 'int',
+        'start' => 'int',
+        'end' => 'int',
+        'page' => 'int',
+        'num_pages' => 'int',
+        'page_size' => 'int',
+        'next_page_uri' => 'string',
+        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
     ];
 
     /**
@@ -73,9 +78,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'application_id' => null,
-        'alias' => null,
-        'campaign_id' => null
+        'total' => null,
+        'start' => null,
+        'end' => null,
+        'page' => null,
+        'num_pages' => null,
+        'page_size' => null,
+        'next_page_uri' => null,
+        'queue_members' => null
     ];
 
     /**
@@ -105,9 +115,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'application_id' => 'applicationId',
-        'alias' => 'alias',
-        'campaign_id' => 'campaignId'
+        'total' => 'total',
+        'start' => 'start',
+        'end' => 'end',
+        'page' => 'page',
+        'num_pages' => 'numPages',
+        'page_size' => 'pageSize',
+        'next_page_uri' => 'nextPageUri',
+        'queue_members' => 'queueMembers'
     ];
 
     /**
@@ -116,9 +131,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'application_id' => 'setApplicationId',
-        'alias' => 'setAlias',
-        'campaign_id' => 'setCampaignId'
+        'total' => 'setTotal',
+        'start' => 'setStart',
+        'end' => 'setEnd',
+        'page' => 'setPage',
+        'num_pages' => 'setNumPages',
+        'page_size' => 'setPageSize',
+        'next_page_uri' => 'setNextPageUri',
+        'queue_members' => 'setQueueMembers'
     ];
 
     /**
@@ -127,9 +147,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'application_id' => 'getApplicationId',
-        'alias' => 'getAlias',
-        'campaign_id' => 'getCampaignId'
+        'total' => 'getTotal',
+        'start' => 'getStart',
+        'end' => 'getEnd',
+        'page' => 'getPage',
+        'num_pages' => 'getNumPages',
+        'page_size' => 'getPageSize',
+        'next_page_uri' => 'getNextPageUri',
+        'queue_members' => 'getQueueMembers'
     ];
 
     /**
@@ -189,9 +214,14 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['application_id'] = $data['application_id'] ?? null;
-        $this->container['alias'] = $data['alias'] ?? null;
-        $this->container['campaign_id'] = $data['campaign_id'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
+        $this->container['start'] = $data['start'] ?? null;
+        $this->container['end'] = $data['end'] ?? null;
+        $this->container['page'] = $data['page'] ?? null;
+        $this->container['num_pages'] = $data['num_pages'] ?? null;
+        $this->container['page_size'] = $data['page_size'] ?? null;
+        $this->container['next_page_uri'] = $data['next_page_uri'] ?? null;
+        $this->container['queue_members'] = $data['queue_members'] ?? null;
     }
 
     /**
@@ -219,73 +249,193 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets application_id
+     * Gets total
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getApplicationId()
+    public function getTotal()
     {
-        return $this->container['application_id'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets application_id
+     * Sets total
      *
-     * @param string|null $application_id ID of the Application that should handle calls to this number.
+     * @param int|null $total Total amount of requested resource.
      *
      * @return self
      */
-    public function setApplicationId($application_id)
+    public function setTotal($total)
     {
-        $this->container['application_id'] = $application_id;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets alias
+     * Gets start
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getAlias()
+    public function getStart()
     {
-        return $this->container['alias'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets alias
+     * Sets start
      *
-     * @param string|null $alias Description for this phone number.
+     * @param int|null $start Resource index at start of current page
      *
      * @return self
      */
-    public function setAlias($alias)
+    public function setStart($start)
     {
-        $this->container['alias'] = $alias;
+        $this->container['start'] = $start;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets end
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getCampaignId()
+    public function getEnd()
     {
-        return $this->container['campaign_id'];
+        return $this->container['end'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets end
      *
-     * @param string|null $campaign_id The campaign ID generated by the campaign registry
+     * @param int|null $end Resource index at end of current page
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setEnd($end)
     {
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['end'] = $end;
+
+        return $this;
+    }
+
+    /**
+     * Gets page
+     *
+     * @return int|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param int|null $page Current page
+     *
+     * @return self
+     */
+    public function setPage($page)
+    {
+        $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets num_pages
+     *
+     * @return int|null
+     */
+    public function getNumPages()
+    {
+        return $this->container['num_pages'];
+    }
+
+    /**
+     * Sets num_pages
+     *
+     * @param int|null $num_pages Total number of pages
+     *
+     * @return self
+     */
+    public function setNumPages($num_pages)
+    {
+        $this->container['num_pages'] = $num_pages;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_size
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['page_size'];
+    }
+
+    /**
+     * Sets page_size
+     *
+     * @param int|null $page_size Number of items per page
+     *
+     * @return self
+     */
+    public function setPageSize($page_size)
+    {
+        $this->container['page_size'] = $page_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_page_uri
+     *
+     * @return string|null
+     */
+    public function getNextPageUri()
+    {
+        return $this->container['next_page_uri'];
+    }
+
+    /**
+     * Sets next_page_uri
+     *
+     * @param string|null $next_page_uri Uri to retrieve the next page of items
+     *
+     * @return self
+     */
+    public function setNextPageUri($next_page_uri)
+    {
+        $this->container['next_page_uri'] = $next_page_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets queue_members
+     *
+     * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null
+     */
+    public function getQueueMembers()
+    {
+        return $this->container['queue_members'];
+    }
+
+    /**
+     * Sets queue_members
+     *
+     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $queue_members queue_members
+     *
+     * @return self
+     */
+    public function setQueueMembers($queue_members)
+    {
+        $this->container['queue_members'] = $queue_members;
 
         return $this;
     }

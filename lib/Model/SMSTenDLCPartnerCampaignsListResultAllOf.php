@@ -1,6 +1,6 @@
 <?php
 /**
- * IncomingNumberRequest
+ * SMSTenDLCPartnerCampaignsListResultAllOf
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * IncomingNumberRequest Class Doc Comment
+ * SMSTenDLCPartnerCampaignsListResultAllOf Class Doc Comment
  *
  * @category Class
  * @package  FreeClimb\Api
@@ -43,7 +43,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IncomingNumberRequest';
+    protected static $openAPIModelName = 'SMSTenDLCPartnerCampaignsListResult_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'application_id' => 'string',
-        'alias' => 'string',
-        'campaign_id' => 'string'
+        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
     ];
 
     /**
@@ -73,9 +71,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'application_id' => null,
-        'alias' => null,
-        'campaign_id' => null
+        'queue_members' => null
     ];
 
     /**
@@ -105,9 +101,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'application_id' => 'applicationId',
-        'alias' => 'alias',
-        'campaign_id' => 'campaignId'
+        'queue_members' => 'queueMembers'
     ];
 
     /**
@@ -116,9 +110,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'application_id' => 'setApplicationId',
-        'alias' => 'setAlias',
-        'campaign_id' => 'setCampaignId'
+        'queue_members' => 'setQueueMembers'
     ];
 
     /**
@@ -127,9 +119,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'application_id' => 'getApplicationId',
-        'alias' => 'getAlias',
-        'campaign_id' => 'getCampaignId'
+        'queue_members' => 'getQueueMembers'
     ];
 
     /**
@@ -189,9 +179,7 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['application_id'] = $data['application_id'] ?? null;
-        $this->container['alias'] = $data['alias'] ?? null;
-        $this->container['campaign_id'] = $data['campaign_id'] ?? null;
+        $this->container['queue_members'] = $data['queue_members'] ?? null;
     }
 
     /**
@@ -219,73 +207,25 @@ class IncomingNumberRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets application_id
+     * Gets queue_members
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null
      */
-    public function getApplicationId()
+    public function getQueueMembers()
     {
-        return $this->container['application_id'];
+        return $this->container['queue_members'];
     }
 
     /**
-     * Sets application_id
+     * Sets queue_members
      *
-     * @param string|null $application_id ID of the Application that should handle calls to this number.
+     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $queue_members queue_members
      *
      * @return self
      */
-    public function setApplicationId($application_id)
+    public function setQueueMembers($queue_members)
     {
-        $this->container['application_id'] = $application_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets alias
-     *
-     * @return string|null
-     */
-    public function getAlias()
-    {
-        return $this->container['alias'];
-    }
-
-    /**
-     * Sets alias
-     *
-     * @param string|null $alias Description for this phone number.
-     *
-     * @return self
-     */
-    public function setAlias($alias)
-    {
-        $this->container['alias'] = $alias;
-
-        return $this;
-    }
-
-    /**
-     * Gets campaign_id
-     *
-     * @return string|null
-     */
-    public function getCampaignId()
-    {
-        return $this->container['campaign_id'];
-    }
-
-    /**
-     * Sets campaign_id
-     *
-     * @param string|null $campaign_id The campaign ID generated by the campaign registry
-     *
-     * @return self
-     */
-    public function setCampaignId($campaign_id)
-    {
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['queue_members'] = $queue_members;
 
         return $this;
     }
