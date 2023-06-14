@@ -60,7 +60,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCBrand[]'
+        'brands' => '\FreeClimb\Api\Model\SMSTenDLCBrand[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'queue_members' => null
+        'brands' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'queue_members' => 'queueMembers'
+        'brands' => 'brands'
     ];
 
     /**
@@ -110,7 +110,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'queue_members' => 'setQueueMembers'
+        'brands' => 'setBrands'
     ];
 
     /**
@@ -119,7 +119,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'queue_members' => 'getQueueMembers'
+        'brands' => 'getBrands'
     ];
 
     /**
@@ -179,7 +179,7 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['queue_members'] = $data['queue_members'] ?? null;
+        $this->container['brands'] = $data['brands'] ?? null;
     }
 
     /**
@@ -207,25 +207,25 @@ class SMSTenDLCBrandsListResultAllOf implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets queue_members
+     * Gets brands
      *
      * @return \FreeClimb\Api\Model\SMSTenDLCBrand[]|null
      */
-    public function getQueueMembers()
+    public function getBrands()
     {
-        return $this->container['queue_members'];
+        return $this->container['brands'];
     }
 
     /**
-     * Sets queue_members
+     * Sets brands
      *
-     * @param \FreeClimb\Api\Model\SMSTenDLCBrand[]|null $queue_members queue_members
+     * @param \FreeClimb\Api\Model\SMSTenDLCBrand[]|null $brands brands
      *
      * @return self
      */
-    public function setQueueMembers($queue_members)
+    public function setBrands($brands)
     {
-        $this->container['queue_members'] = $queue_members;
+        $this->container['brands'] = $brands;
 
         return $this;
     }

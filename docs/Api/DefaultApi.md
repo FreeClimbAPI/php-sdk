@@ -25,13 +25,13 @@ Method | HTTP request | Description
 [**getAnApplication()**](DefaultApi.md#getAnApplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
 [**getAnIncomingNumber()**](DefaultApi.md#getAnIncomingNumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 [**getAnSmsMessage()**](DefaultApi.md#getAnSmsMessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
-[**getAnSmsTenDLCBrands()**](DefaultApi.md#getAnSmsTenDLCBrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brnads
-[**getAnSmsTenDLCCampaigns()**](DefaultApi.md#getAnSmsTenDLCCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
-[**getAnSmsTenDLCPartnerCampaigns()**](DefaultApi.md#getAnSmsTenDLCPartnerCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**getHeadMember()**](DefaultApi.md#getHeadMember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
 [**getTenDLCSmsBrand()**](DefaultApi.md#getTenDLCSmsBrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand
+[**getTenDLCSmsBrands()**](DefaultApi.md#getTenDLCSmsBrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands
 [**getTenDLCSmsCampaign()**](DefaultApi.md#getTenDLCSmsCampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign
+[**getTenDLCSmsCampaigns()**](DefaultApi.md#getTenDLCSmsCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 [**getTenDLCSmsPartnerCampaign()**](DefaultApi.md#getTenDLCSmsPartnerCampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
+[**getTenDLCSmsPartnerCampaigns()**](DefaultApi.md#getTenDLCSmsPartnerCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**listActiveQueues()**](DefaultApi.md#listActiveQueues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**listAllAccountLogs()**](DefaultApi.md#listAllAccountLogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**listApplications()**](DefaultApi.md#listApplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -1361,190 +1361,6 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAnSmsTenDLCBrands()`
-
-```php
-getAnSmsTenDLCBrands($account_id): \FreeClimb\Api\Model\SMSTenDLCBrandsListResult
-```
-
-Get list of SMS 10DLC Brnads
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: fc
-$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_ACCOUNT_ID')
-              ->setPassword('YOUR_API_KEY');
-
-
-$apiInstance = new FreeClimb\Api\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$account_id = 'account_id_example'; // string | ID of the account
-
-try {
-    $result = $apiInstance->getAnSmsTenDLCBrands($account_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getAnSmsTenDLCBrands: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **string**| ID of the account |
-
-### Return type
-
-[**\FreeClimb\Api\Model\SMSTenDLCBrandsListResult**](../Model/SMSTenDLCBrandsListResult.md)
-
-### Authorization
-
-[fc](../../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getAnSmsTenDLCCampaigns()`
-
-```php
-getAnSmsTenDLCCampaigns($account_id, $brand_id): \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult
-```
-
-Get list of SMS 10DLC Campaigns
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: fc
-$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_ACCOUNT_ID')
-              ->setPassword('YOUR_API_KEY');
-
-
-$apiInstance = new FreeClimb\Api\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$account_id = 'account_id_example'; // string | ID of the account
-$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
-
-try {
-    $result = $apiInstance->getAnSmsTenDLCCampaigns($account_id, $brand_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getAnSmsTenDLCCampaigns: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **string**| ID of the account |
- **brand_id** | **string**| The unique identifier for a brand | [optional]
-
-### Return type
-
-[**\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult**](../Model/SMSTenDLCCampaignsListResult.md)
-
-### Authorization
-
-[fc](../../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getAnSmsTenDLCPartnerCampaigns()`
-
-```php
-getAnSmsTenDLCPartnerCampaigns($account_id, $brand_id): \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult
-```
-
-Get list of SMS 10DLC Partner Campaigns
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: fc
-$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_ACCOUNT_ID')
-              ->setPassword('YOUR_API_KEY');
-
-
-$apiInstance = new FreeClimb\Api\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$account_id = 'account_id_example'; // string | ID of the account
-$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
-
-try {
-    $result = $apiInstance->getAnSmsTenDLCPartnerCampaigns($account_id, $brand_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getAnSmsTenDLCPartnerCampaigns: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **string**| ID of the account |
- **brand_id** | **string**| The unique identifier for a brand | [optional]
-
-### Return type
-
-[**\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult**](../Model/SMSTenDLCPartnerCampaignsListResult.md)
-
-### Authorization
-
-[fc](../../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getHeadMember()`
 
 ```php
@@ -1669,6 +1485,66 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTenDLCSmsBrands()`
+
+```php
+getTenDLCSmsBrands($account_id): \FreeClimb\Api\Model\SMSTenDLCBrandsListResult
+```
+
+Get list of SMS 10DLC Brands
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+
+try {
+    $result = $apiInstance->getTenDLCSmsBrands($account_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsBrands: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCBrandsListResult**](../Model/SMSTenDLCBrandsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getTenDLCSmsCampaign()`
 
 ```php
@@ -1731,6 +1607,68 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTenDLCSmsCampaigns()`
+
+```php
+getTenDLCSmsCampaigns($account_id, $brand_id): \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult
+```
+
+Get list of SMS 10DLC Campaigns
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
+try {
+    $result = $apiInstance->getTenDLCSmsCampaigns($account_id, $brand_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsCampaigns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **brand_id** | **string**| The unique identifier for a brand | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult**](../Model/SMSTenDLCCampaignsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getTenDLCSmsPartnerCampaign()`
 
 ```php
@@ -1779,6 +1717,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign**](../Model/SMSTenDLCPartnerCampaign.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsPartnerCampaigns()`
+
+```php
+getTenDLCSmsPartnerCampaigns($account_id, $brand_id): \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult
+```
+
+Get list of SMS 10DLC Partner Campaigns
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
+try {
+    $result = $apiInstance->getTenDLCSmsPartnerCampaigns($account_id, $brand_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsPartnerCampaigns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **brand_id** | **string**| The unique identifier for a brand | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult**](../Model/SMSTenDLCPartnerCampaignsListResult.md)
 
 ### Authorization
 
@@ -2361,7 +2361,7 @@ $application_id = 'application_id_example'; // string | ID of the Application th
 $has_application = false; // bool | Indication of whether the phone number has an application linked to it.
 $voice_enabled = true; // bool | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
 $sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-$has_campaign = True; // bool | Indication of whether the phone number has a campaign accociatied with it
+$has_campaign = True; // bool | Indication of whether the phone number has a campaign associated with it
 $capabilities_voice = True; // bool
 $capabilities_sms = True; // bool
 $capabilities_toll_free = True; // bool
@@ -2390,7 +2390,7 @@ Name | Type | Description  | Notes
  **has_application** | **bool**| Indication of whether the phone number has an application linked to it. | [optional] [default to false]
  **voice_enabled** | **bool**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true]
  **sms_enabled** | **bool**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true]
- **has_campaign** | **bool**| Indication of whether the phone number has a campaign accociatied with it | [optional]
+ **has_campaign** | **bool**| Indication of whether the phone number has a campaign associated with it | [optional]
  **capabilities_voice** | **bool**|  | [optional]
  **capabilities_sms** | **bool**|  | [optional]
  **capabilities_toll_free** | **bool**|  | [optional]

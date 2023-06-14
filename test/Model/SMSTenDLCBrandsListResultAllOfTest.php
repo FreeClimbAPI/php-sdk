@@ -53,11 +53,11 @@ class SMSTenDLCBrandsListResultAllOfTest extends TestCase
         $this->SMSTenDLCBrandsListResultAllOf = new SMSTenDLCBrandsListResultAllOf();
     }
     /**
-     * Test attribute "queue_members"
+     * Test attribute "brands"
      */
-    public function testPropertyQueueMembers()
+    public function testPropertyBrands()
     {
-        $this->SMSTenDLCBrandsListResultAllOf->setQueueMembers(array());
-        $this->assertIsArray($this->SMSTenDLCBrandsListResultAllOf->getQueueMembers());
+        $this->SMSTenDLCBrandsListResultAllOf->setBrands(array());
+        $this->assertIsArray($this->SMSTenDLCBrandsListResultAllOf->getBrands());
     }
 }

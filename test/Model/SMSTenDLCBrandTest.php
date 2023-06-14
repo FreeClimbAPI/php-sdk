@@ -156,8 +156,8 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyEinIssuingCountry()
     {
-        $this->SMSTenDLCBrand->setEinIssuingCountry('CA');
-        $this->assertStringContainsString($this->SMSTenDLCBrand->getEinIssuingCountry(), 'CA');
+        $this->SMSTenDLCBrand->setEinIssuingCountry('TE');
+        $this->assertStringContainsString($this->SMSTenDLCBrand->getEinIssuingCountry(), 'TE');
         $this->assertIsString($this->SMSTenDLCBrand->getEinIssuingCountry());
 
 

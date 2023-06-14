@@ -67,7 +67,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         'num_pages' => 'int',
         'page_size' => 'int',
         'next_page_uri' => 'string',
-        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCBrand[]'
+        'brands' => '\FreeClimb\Api\Model\SMSTenDLCBrand[]'
     ];
 
     /**
@@ -85,7 +85,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         'num_pages' => null,
         'page_size' => null,
         'next_page_uri' => null,
-        'queue_members' => null
+        'brands' => null
     ];
 
     /**
@@ -122,7 +122,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         'num_pages' => 'numPages',
         'page_size' => 'pageSize',
         'next_page_uri' => 'nextPageUri',
-        'queue_members' => 'queueMembers'
+        'brands' => 'brands'
     ];
 
     /**
@@ -138,7 +138,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         'num_pages' => 'setNumPages',
         'page_size' => 'setPageSize',
         'next_page_uri' => 'setNextPageUri',
-        'queue_members' => 'setQueueMembers'
+        'brands' => 'setBrands'
     ];
 
     /**
@@ -154,7 +154,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         'num_pages' => 'getNumPages',
         'page_size' => 'getPageSize',
         'next_page_uri' => 'getNextPageUri',
-        'queue_members' => 'getQueueMembers'
+        'brands' => 'getBrands'
     ];
 
     /**
@@ -221,7 +221,7 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['num_pages'] = $data['num_pages'] ?? null;
         $this->container['page_size'] = $data['page_size'] ?? null;
         $this->container['next_page_uri'] = $data['next_page_uri'] ?? null;
-        $this->container['queue_members'] = $data['queue_members'] ?? null;
+        $this->container['brands'] = $data['brands'] ?? null;
     }
 
     /**
@@ -417,25 +417,25 @@ class SMSTenDLCBrandsListResult implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets queue_members
+     * Gets brands
      *
      * @return \FreeClimb\Api\Model\SMSTenDLCBrand[]|null
      */
-    public function getQueueMembers()
+    public function getBrands()
     {
-        return $this->container['queue_members'];
+        return $this->container['brands'];
     }
 
     /**
-     * Sets queue_members
+     * Sets brands
      *
-     * @param \FreeClimb\Api\Model\SMSTenDLCBrand[]|null $queue_members queue_members
+     * @param \FreeClimb\Api\Model\SMSTenDLCBrand[]|null $brands brands
      *
      * @return self
      */
-    public function setQueueMembers($queue_members)
+    public function setBrands($brands)
     {
-        $this->container['queue_members'] = $queue_members;
+        $this->container['brands'] = $brands;
 
         return $this;
     }

@@ -6302,876 +6302,6 @@ class DefaultApi
     }
 
     /**
-     * Operation getAnSmsTenDLCBrands
-     *
-     * Get list of SMS 10DLC Brnads
-     *
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \FreeClimb\Api\Model\SMSTenDLCBrandsListResult
-     */
-    public function getAnSmsTenDLCBrands()
-    {
-        list($response) = $this->getAnSmsTenDLCBrandsWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation getAnSmsTenDLCBrandsWithHttpInfo
-     *
-     * Get list of SMS 10DLC Brnads
-     *
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \FreeClimb\Api\Model\SMSTenDLCBrandsListResult, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAnSmsTenDLCBrandsWithHttpInfo()
-    {
-        $request = $this->getAnSmsTenDLCBrandsRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAnSmsTenDLCBrandsAsync
-     *
-     * Get list of SMS 10DLC Brnads
-     *
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCBrandsAsync()
-    {
-        return $this->getAnSmsTenDLCBrandsAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAnSmsTenDLCBrandsAsyncWithHttpInfo
-     *
-     * Get list of SMS 10DLC Brnads
-     *
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCBrandsAsyncWithHttpInfo()
-    {
-        $returnType = '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult';
-        $request = $this->getAnSmsTenDLCBrandsRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAnSmsTenDLCBrands'
-     *
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getAnSmsTenDLCBrandsRequest()
-    { 
-        $account_id = $this->config->getUsername();
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling getAnSmsTenDLCBrands'
-            );
-        }
-
-        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/Brands';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($account_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($account_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getAnSmsTenDLCCampaigns
-     *
-     * Get list of SMS 10DLC Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult
-     */
-    public function getAnSmsTenDLCCampaigns($brand_id = null)
-    {
-        list($response) = $this->getAnSmsTenDLCCampaignsWithHttpInfo($brand_id);
-        return $response;
-    }
-
-    /**
-     * Operation getAnSmsTenDLCCampaignsWithHttpInfo
-     *
-     * Get list of SMS 10DLC Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAnSmsTenDLCCampaignsWithHttpInfo($brand_id = null)
-    {
-        $request = $this->getAnSmsTenDLCCampaignsRequest($brand_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAnSmsTenDLCCampaignsAsync
-     *
-     * Get list of SMS 10DLC Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCCampaignsAsync($brand_id = null)
-    {
-        return $this->getAnSmsTenDLCCampaignsAsyncWithHttpInfo($brand_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAnSmsTenDLCCampaignsAsyncWithHttpInfo
-     *
-     * Get list of SMS 10DLC Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCCampaignsAsyncWithHttpInfo($brand_id = null)
-    {
-        $returnType = '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult';
-        $request = $this->getAnSmsTenDLCCampaignsRequest($brand_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAnSmsTenDLCCampaigns'
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getAnSmsTenDLCCampaignsRequest($brand_id = null)
-    { 
-        $account_id = $this->config->getUsername();
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling getAnSmsTenDLCCampaigns'
-            );
-        }
-
-        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/Campaigns';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($brand_id !== null) {
-            if('form' === 'form' && is_array($brand_id)) {
-                foreach($brand_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['brandId'] = $brand_id;
-            }
-        }
-
-
-        // path params
-        if ($account_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($account_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getAnSmsTenDLCPartnerCampaigns
-     *
-     * Get list of SMS 10DLC Partner Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult
-     */
-    public function getAnSmsTenDLCPartnerCampaigns($brand_id = null)
-    {
-        list($response) = $this->getAnSmsTenDLCPartnerCampaignsWithHttpInfo($brand_id);
-        return $response;
-    }
-
-    /**
-     * Operation getAnSmsTenDLCPartnerCampaignsWithHttpInfo
-     *
-     * Get list of SMS 10DLC Partner Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAnSmsTenDLCPartnerCampaignsWithHttpInfo($brand_id = null)
-    {
-        $request = $this->getAnSmsTenDLCPartnerCampaignsRequest($brand_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAnSmsTenDLCPartnerCampaignsAsync
-     *
-     * Get list of SMS 10DLC Partner Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCPartnerCampaignsAsync($brand_id = null)
-    {
-        return $this->getAnSmsTenDLCPartnerCampaignsAsyncWithHttpInfo($brand_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAnSmsTenDLCPartnerCampaignsAsyncWithHttpInfo
-     *
-     * Get list of SMS 10DLC Partner Campaigns
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnSmsTenDLCPartnerCampaignsAsyncWithHttpInfo($brand_id = null)
-    {
-        $returnType = '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult';
-        $request = $this->getAnSmsTenDLCPartnerCampaignsRequest($brand_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAnSmsTenDLCPartnerCampaigns'
-     *
-
-     * @param  string $brand_id The unique identifier for a brand (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getAnSmsTenDLCPartnerCampaignsRequest($brand_id = null)
-    { 
-        $account_id = $this->config->getUsername();
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling getAnSmsTenDLCPartnerCampaigns'
-            );
-        }
-
-        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($brand_id !== null) {
-            if('form' === 'form' && is_array($brand_id)) {
-                foreach($brand_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['brandId'] = $brand_id;
-            }
-        }
-
-
-        // path params
-        if ($account_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($account_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getHeadMember
      *
      * Get Head Member
@@ -7772,6 +6902,282 @@ class DefaultApi
     }
 
     /**
+     * Operation getTenDLCSmsBrands
+     *
+     * Get list of SMS 10DLC Brands
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\SMSTenDLCBrandsListResult
+     */
+    public function getTenDLCSmsBrands()
+    {
+        list($response) = $this->getTenDLCSmsBrandsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getTenDLCSmsBrandsWithHttpInfo
+     *
+     * Get list of SMS 10DLC Brands
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\SMSTenDLCBrandsListResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTenDLCSmsBrandsWithHttpInfo()
+    {
+        $request = $this->getTenDLCSmsBrandsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTenDLCSmsBrandsAsync
+     *
+     * Get list of SMS 10DLC Brands
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsBrandsAsync()
+    {
+        return $this->getTenDLCSmsBrandsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTenDLCSmsBrandsAsyncWithHttpInfo
+     *
+     * Get list of SMS 10DLC Brands
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsBrandsAsyncWithHttpInfo()
+    {
+        $returnType = '\FreeClimb\Api\Model\SMSTenDLCBrandsListResult';
+        $request = $this->getTenDLCSmsBrandsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTenDLCSmsBrands'
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getTenDLCSmsBrandsRequest()
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getTenDLCSmsBrands'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/Brands';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getTenDLCSmsCampaign
      *
      * Get a 10DLC SMS Campaign
@@ -8072,6 +7478,303 @@ class DefaultApi
     }
 
     /**
+     * Operation getTenDLCSmsCampaigns
+     *
+     * Get list of SMS 10DLC Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult
+     */
+    public function getTenDLCSmsCampaigns($brand_id = null)
+    {
+        list($response) = $this->getTenDLCSmsCampaignsWithHttpInfo($brand_id);
+        return $response;
+    }
+
+    /**
+     * Operation getTenDLCSmsCampaignsWithHttpInfo
+     *
+     * Get list of SMS 10DLC Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTenDLCSmsCampaignsWithHttpInfo($brand_id = null)
+    {
+        $request = $this->getTenDLCSmsCampaignsRequest($brand_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTenDLCSmsCampaignsAsync
+     *
+     * Get list of SMS 10DLC Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsCampaignsAsync($brand_id = null)
+    {
+        return $this->getTenDLCSmsCampaignsAsyncWithHttpInfo($brand_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTenDLCSmsCampaignsAsyncWithHttpInfo
+     *
+     * Get list of SMS 10DLC Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsCampaignsAsyncWithHttpInfo($brand_id = null)
+    {
+        $returnType = '\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult';
+        $request = $this->getTenDLCSmsCampaignsRequest($brand_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTenDLCSmsCampaigns'
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getTenDLCSmsCampaignsRequest($brand_id = null)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getTenDLCSmsCampaigns'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/Campaigns';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($brand_id !== null) {
+            if('form' === 'form' && is_array($brand_id)) {
+                foreach($brand_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['brandId'] = $brand_id;
+            }
+        }
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getTenDLCSmsPartnerCampaign
      *
      * Get a 10DLC SMS Partner Campaign
@@ -8305,6 +8008,303 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
                 ObjectSerializer::toPathValue($campaign_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getTenDLCSmsPartnerCampaigns
+     *
+     * Get list of SMS 10DLC Partner Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult
+     */
+    public function getTenDLCSmsPartnerCampaigns($brand_id = null)
+    {
+        list($response) = $this->getTenDLCSmsPartnerCampaignsWithHttpInfo($brand_id);
+        return $response;
+    }
+
+    /**
+     * Operation getTenDLCSmsPartnerCampaignsWithHttpInfo
+     *
+     * Get list of SMS 10DLC Partner Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTenDLCSmsPartnerCampaignsWithHttpInfo($brand_id = null)
+    {
+        $request = $this->getTenDLCSmsPartnerCampaignsRequest($brand_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTenDLCSmsPartnerCampaignsAsync
+     *
+     * Get list of SMS 10DLC Partner Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsPartnerCampaignsAsync($brand_id = null)
+    {
+        return $this->getTenDLCSmsPartnerCampaignsAsyncWithHttpInfo($brand_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTenDLCSmsPartnerCampaignsAsyncWithHttpInfo
+     *
+     * Get list of SMS 10DLC Partner Campaigns
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTenDLCSmsPartnerCampaignsAsyncWithHttpInfo($brand_id = null)
+    {
+        $returnType = '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult';
+        $request = $this->getTenDLCSmsPartnerCampaignsRequest($brand_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTenDLCSmsPartnerCampaigns'
+     *
+
+     * @param  string $brand_id The unique identifier for a brand (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getTenDLCSmsPartnerCampaignsRequest($brand_id = null)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getTenDLCSmsPartnerCampaigns'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($brand_id !== null) {
+            if('form' === 'form' && is_array($brand_id)) {
+                foreach($brand_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['brandId'] = $brand_id;
+            }
+        }
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
                 $resourcePath
             );
         }
@@ -11163,7 +11163,7 @@ class DefaultApi
 
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice capabilities_voice (optional)
 
@@ -11210,7 +11210,7 @@ class DefaultApi
 
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice (optional)
 
@@ -11333,7 +11333,7 @@ class DefaultApi
 
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice (optional)
 
@@ -11383,7 +11383,7 @@ class DefaultApi
 
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice (optional)
 
@@ -11459,7 +11459,7 @@ class DefaultApi
 
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice (optional)
 

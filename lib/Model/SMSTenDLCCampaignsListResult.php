@@ -67,7 +67,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         'num_pages' => 'int',
         'page_size' => 'int',
         'next_page_uri' => 'string',
-        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCCampaign[]'
+        'campaigns' => '\FreeClimb\Api\Model\SMSTenDLCCampaign[]'
     ];
 
     /**
@@ -85,7 +85,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         'num_pages' => null,
         'page_size' => null,
         'next_page_uri' => null,
-        'queue_members' => null
+        'campaigns' => null
     ];
 
     /**
@@ -122,7 +122,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         'num_pages' => 'numPages',
         'page_size' => 'pageSize',
         'next_page_uri' => 'nextPageUri',
-        'queue_members' => 'queueMembers'
+        'campaigns' => 'campaigns'
     ];
 
     /**
@@ -138,7 +138,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         'num_pages' => 'setNumPages',
         'page_size' => 'setPageSize',
         'next_page_uri' => 'setNextPageUri',
-        'queue_members' => 'setQueueMembers'
+        'campaigns' => 'setCampaigns'
     ];
 
     /**
@@ -154,7 +154,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         'num_pages' => 'getNumPages',
         'page_size' => 'getPageSize',
         'next_page_uri' => 'getNextPageUri',
-        'queue_members' => 'getQueueMembers'
+        'campaigns' => 'getCampaigns'
     ];
 
     /**
@@ -221,7 +221,7 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
         $this->container['num_pages'] = $data['num_pages'] ?? null;
         $this->container['page_size'] = $data['page_size'] ?? null;
         $this->container['next_page_uri'] = $data['next_page_uri'] ?? null;
-        $this->container['queue_members'] = $data['queue_members'] ?? null;
+        $this->container['campaigns'] = $data['campaigns'] ?? null;
     }
 
     /**
@@ -417,25 +417,25 @@ class SMSTenDLCCampaignsListResult implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets queue_members
+     * Gets campaigns
      *
      * @return \FreeClimb\Api\Model\SMSTenDLCCampaign[]|null
      */
-    public function getQueueMembers()
+    public function getCampaigns()
     {
-        return $this->container['queue_members'];
+        return $this->container['campaigns'];
     }
 
     /**
-     * Sets queue_members
+     * Sets campaigns
      *
-     * @param \FreeClimb\Api\Model\SMSTenDLCCampaign[]|null $queue_members queue_members
+     * @param \FreeClimb\Api\Model\SMSTenDLCCampaign[]|null $campaigns campaigns
      *
      * @return self
      */
-    public function setQueueMembers($queue_members)
+    public function setCampaigns($campaigns)
     {
-        $this->container['queue_members'] = $queue_members;
+        $this->container['campaigns'] = $campaigns;
 
         return $this;
     }

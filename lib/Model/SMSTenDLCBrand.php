@@ -1379,7 +1379,7 @@ class SMSTenDLCBrand implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets alt_business_id_type
      *
-     * @param string|null $alt_business_id_type alt_business_id_type
+     * @param string|null $alt_business_id_type The type of the Alternative business identifier
      *
      * @return self
      */

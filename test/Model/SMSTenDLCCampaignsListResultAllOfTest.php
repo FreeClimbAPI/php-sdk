@@ -53,11 +53,11 @@ class SMSTenDLCCampaignsListResultAllOfTest extends TestCase
         $this->SMSTenDLCCampaignsListResultAllOf = new SMSTenDLCCampaignsListResultAllOf();
     }
     /**
-     * Test attribute "queue_members"
+     * Test attribute "campaigns"
      */
-    public function testPropertyQueueMembers()
+    public function testPropertyCampaigns()
     {
-        $this->SMSTenDLCCampaignsListResultAllOf->setQueueMembers(array());
-        $this->assertIsArray($this->SMSTenDLCCampaignsListResultAllOf->getQueueMembers());
+        $this->SMSTenDLCCampaignsListResultAllOf->setCampaigns(array());
+        $this->assertIsArray($this->SMSTenDLCCampaignsListResultAllOf->getCampaigns());
     }
 }

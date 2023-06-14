@@ -353,10 +353,10 @@ class DefaultApiTest extends TestCase
     public function date_created_listRecordings_test_value():string {
         return 'date_created_example';
     }
-    public function brand_id_getAnSmsTenDLCCampaigns_test_value(): string{
+    public function brand_id_getTenDLCSmsCampaigns_test_value(): string{
         return "BX56XX4";
     }
-    public function brand_id_getAnSmsTenDLCPartnerCampaigns_test_value(): string{
+    public function brand_id_getTenDLCSmsPartnerCampaigns_test_value(): string{
         return "BX56XX4";
     }
     public function brand_id_getTenDLCSmsBrand_test_value(): string{
@@ -1081,88 +1081,6 @@ class DefaultApiTest extends TestCase
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessageResult',$response);
     }
     /**
-     * Test case for getAnSmsTenDLCBrands
-     *
-     * Get list of SMS 10DLC Brnads.
-     * @param  string $account_id ID of the account (required)
-     */
-    public function testGetAnSmsTenDLCBrands()
-    {
-        $config = Configuration::getDefaultConfiguration()
-            ->setHost('http://127.0.0.1:4010')
-            ->setUsername('YOUR_ACCOUNT_ID')
-            ->setPassword('YOUR_API_KEY');
-
-
-        $apiInstance = new DefaultApi(
-            new Client(),
-            $config
-        );
-
-        //$account_id = $account_id_test_value;
-        
-        $response = $apiInstance->getAnSmsTenDLCBrands();
-        
-        
-        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',$response);
-    }
-    /**
-     * Test case for getAnSmsTenDLCCampaigns
-     *
-     * Get list of SMS 10DLC Campaigns.
-     * @param  string $account_id ID of the account (required)
-     * @param  string $brand_id The unique identifier for a brand (optional)
-     */
-    public function testGetAnSmsTenDLCCampaigns()
-    {
-        $config = Configuration::getDefaultConfiguration()
-            ->setHost('http://127.0.0.1:4010')
-            ->setUsername('YOUR_ACCOUNT_ID')
-            ->setPassword('YOUR_API_KEY');
-
-
-        $apiInstance = new DefaultApi(
-            new Client(),
-            $config
-        );
-
-        //$account_id = $account_id_test_value;
-        //$brand_id = $brand_id_test_value;
-        
-        $response = $apiInstance->getAnSmsTenDLCCampaigns($this->brand_id_getAnSmsTenDLCCampaigns_test_value());
-        
-        
-        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',$response);
-    }
-    /**
-     * Test case for getAnSmsTenDLCPartnerCampaigns
-     *
-     * Get list of SMS 10DLC Partner Campaigns.
-     * @param  string $account_id ID of the account (required)
-     * @param  string $brand_id The unique identifier for a brand (optional)
-     */
-    public function testGetAnSmsTenDLCPartnerCampaigns()
-    {
-        $config = Configuration::getDefaultConfiguration()
-            ->setHost('http://127.0.0.1:4010')
-            ->setUsername('YOUR_ACCOUNT_ID')
-            ->setPassword('YOUR_API_KEY');
-
-
-        $apiInstance = new DefaultApi(
-            new Client(),
-            $config
-        );
-
-        //$account_id = $account_id_test_value;
-        //$brand_id = $brand_id_test_value;
-        
-        $response = $apiInstance->getAnSmsTenDLCPartnerCampaigns($this->brand_id_getAnSmsTenDLCPartnerCampaigns_test_value());
-        
-        
-        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',$response);
-    }
-    /**
      * Test case for getHeadMember
      *
      * Get Head Member.
@@ -1219,6 +1137,32 @@ class DefaultApiTest extends TestCase
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrand',$response);
     }
     /**
+     * Test case for getTenDLCSmsBrands
+     *
+     * Get list of SMS 10DLC Brands.
+     * @param  string $account_id ID of the account (required)
+     */
+    public function testGetTenDLCSmsBrands()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+
+        //$account_id = $account_id_test_value;
+        
+        $response = $apiInstance->getTenDLCSmsBrands();
+        
+        
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',$response);
+    }
+    /**
      * Test case for getTenDLCSmsCampaign
      *
      * Get a 10DLC SMS Campaign.
@@ -1247,6 +1191,34 @@ class DefaultApiTest extends TestCase
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaign',$response);
     }
     /**
+     * Test case for getTenDLCSmsCampaigns
+     *
+     * Get list of SMS 10DLC Campaigns.
+     * @param  string $account_id ID of the account (required)
+     * @param  string $brand_id The unique identifier for a brand (optional)
+     */
+    public function testGetTenDLCSmsCampaigns()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+
+        //$account_id = $account_id_test_value;
+        //$brand_id = $brand_id_test_value;
+        
+        $response = $apiInstance->getTenDLCSmsCampaigns($this->brand_id_getTenDLCSmsCampaigns_test_value());
+        
+        
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',$response);
+    }
+    /**
      * Test case for getTenDLCSmsPartnerCampaign
      *
      * Get a 10DLC SMS Partner Campaign.
@@ -1273,6 +1245,34 @@ class DefaultApiTest extends TestCase
         
         
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign',$response);
+    }
+    /**
+     * Test case for getTenDLCSmsPartnerCampaigns
+     *
+     * Get list of SMS 10DLC Partner Campaigns.
+     * @param  string $account_id ID of the account (required)
+     * @param  string $brand_id The unique identifier for a brand (optional)
+     */
+    public function testGetTenDLCSmsPartnerCampaigns()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+
+        //$account_id = $account_id_test_value;
+        //$brand_id = $brand_id_test_value;
+        
+        $response = $apiInstance->getTenDLCSmsPartnerCampaigns($this->brand_id_getTenDLCSmsPartnerCampaigns_test_value());
+        
+        
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',$response);
     }
     /**
      * Test case for listActiveQueues
@@ -1547,7 +1547,7 @@ class DefaultApiTest extends TestCase
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
      * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
      * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-     * @param  bool $has_campaign Indication of whether the phone number has a campaign accociatied with it (optional)
+     * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
      * @param  bool $capabilities_voice capabilities_voice (optional)
      * @param  bool $capabilities_sms capabilities_sms (optional)
      * @param  bool $capabilities_toll_free capabilities_toll_free (optional)

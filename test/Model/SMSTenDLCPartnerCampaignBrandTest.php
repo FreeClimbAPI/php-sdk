@@ -48,7 +48,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
     /**
      * Test "SMSTenDLCPartnerCampaignBrand"
      */
-    public function setUp(): void
+    public function setUp() : void
     {
         $this->SMSTenDLCPartnerCampaignBrand = new SMSTenDLCPartnerCampaignBrand();
     }
@@ -60,7 +60,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setAccountId('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getAccountId(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getAccountId());
-
+        
 
     }
     /**
@@ -68,10 +68,10 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyBrandId()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TEST');
-        $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId(), 'TEST');
+        $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TEST_STRING');
+        $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId());
-
+        
 
     }
     /**
@@ -82,7 +82,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setFirstName('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getFirstName(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getFirstName());
-
+        
 
     }
     /**
@@ -93,7 +93,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setLastName('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getLastName(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getLastName());
-
+        
 
     }
     /**
@@ -104,7 +104,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setDisplayName('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getDisplayName(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
-
+        
 
     }
     /**
@@ -115,7 +115,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setCompanyName('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getCompanyName(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
-
+        
 
     }
     /**
@@ -126,7 +126,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setPhone('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getPhone(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getPhone());
-
+        
 
     }
     /**
@@ -137,7 +137,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setEmail('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getEmail(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getEmail());
-
+        
 
     }
     /**
@@ -148,7 +148,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->SMSTenDLCPartnerCampaignBrand->setWebsite('TEST_STRING');
         $this->assertStringContainsString($this->SMSTenDLCPartnerCampaignBrand->getWebsite(), 'TEST_STRING');
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getWebsite());
-
+        
 
     }
     /**

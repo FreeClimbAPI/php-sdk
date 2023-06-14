@@ -60,7 +60,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
+        'partner_campaigns' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
     ];
 
     /**
@@ -71,7 +71,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'queue_members' => null
+        'partner_campaigns' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'queue_members' => 'queueMembers'
+        'partner_campaigns' => 'partnerCampaigns'
     ];
 
     /**
@@ -110,7 +110,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'queue_members' => 'setQueueMembers'
+        'partner_campaigns' => 'setPartnerCampaigns'
     ];
 
     /**
@@ -119,7 +119,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'queue_members' => 'getQueueMembers'
+        'partner_campaigns' => 'getPartnerCampaigns'
     ];
 
     /**
@@ -179,7 +179,7 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['queue_members'] = $data['queue_members'] ?? null;
+        $this->container['partner_campaigns'] = $data['partner_campaigns'] ?? null;
     }
 
     /**
@@ -207,25 +207,25 @@ class SMSTenDLCPartnerCampaignsListResultAllOf implements ModelInterface, ArrayA
 
 
     /**
-     * Gets queue_members
+     * Gets partner_campaigns
      *
      * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null
      */
-    public function getQueueMembers()
+    public function getPartnerCampaigns()
     {
-        return $this->container['queue_members'];
+        return $this->container['partner_campaigns'];
     }
 
     /**
-     * Sets queue_members
+     * Sets partner_campaigns
      *
-     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $queue_members queue_members
+     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $partner_campaigns partner_campaigns
      *
      * @return self
      */
-    public function setQueueMembers($queue_members)
+    public function setPartnerCampaigns($partner_campaigns)
     {
-        $this->container['queue_members'] = $queue_members;
+        $this->container['partner_campaigns'] = $partner_campaigns;
 
         return $this;
     }

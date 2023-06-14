@@ -67,7 +67,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         'num_pages' => 'int',
         'page_size' => 'int',
         'next_page_uri' => 'string',
-        'queue_members' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
+        'partner_campaigns' => '\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]'
     ];
 
     /**
@@ -85,7 +85,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         'num_pages' => null,
         'page_size' => null,
         'next_page_uri' => null,
-        'queue_members' => null
+        'partner_campaigns' => null
     ];
 
     /**
@@ -122,7 +122,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         'num_pages' => 'numPages',
         'page_size' => 'pageSize',
         'next_page_uri' => 'nextPageUri',
-        'queue_members' => 'queueMembers'
+        'partner_campaigns' => 'partnerCampaigns'
     ];
 
     /**
@@ -138,7 +138,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         'num_pages' => 'setNumPages',
         'page_size' => 'setPageSize',
         'next_page_uri' => 'setNextPageUri',
-        'queue_members' => 'setQueueMembers'
+        'partner_campaigns' => 'setPartnerCampaigns'
     ];
 
     /**
@@ -154,7 +154,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         'num_pages' => 'getNumPages',
         'page_size' => 'getPageSize',
         'next_page_uri' => 'getNextPageUri',
-        'queue_members' => 'getQueueMembers'
+        'partner_campaigns' => 'getPartnerCampaigns'
     ];
 
     /**
@@ -221,7 +221,7 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
         $this->container['num_pages'] = $data['num_pages'] ?? null;
         $this->container['page_size'] = $data['page_size'] ?? null;
         $this->container['next_page_uri'] = $data['next_page_uri'] ?? null;
-        $this->container['queue_members'] = $data['queue_members'] ?? null;
+        $this->container['partner_campaigns'] = $data['partner_campaigns'] ?? null;
     }
 
     /**
@@ -417,25 +417,25 @@ class SMSTenDLCPartnerCampaignsListResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets queue_members
+     * Gets partner_campaigns
      *
      * @return \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null
      */
-    public function getQueueMembers()
+    public function getPartnerCampaigns()
     {
-        return $this->container['queue_members'];
+        return $this->container['partner_campaigns'];
     }
 
     /**
-     * Sets queue_members
+     * Sets partner_campaigns
      *
-     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $queue_members queue_members
+     * @param \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign[]|null $partner_campaigns partner_campaigns
      *
      * @return self
      */
-    public function setQueueMembers($queue_members)
+    public function setPartnerCampaigns($partner_campaigns)
     {
-        $this->container['queue_members'] = $queue_members;
+        $this->container['partner_campaigns'] = $partner_campaigns;
 
         return $this;
     }

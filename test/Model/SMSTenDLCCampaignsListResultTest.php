@@ -118,11 +118,11 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
 
     }
     /**
-     * Test attribute "queue_members"
+     * Test attribute "campaigns"
      */
-    public function testPropertyQueueMembers()
+    public function testPropertyCampaigns()
     {
-        $this->SMSTenDLCCampaignsListResult->setQueueMembers(array());
-        $this->assertIsArray($this->SMSTenDLCCampaignsListResult->getQueueMembers());
+        $this->SMSTenDLCCampaignsListResult->setCampaigns(array());
+        $this->assertIsArray($this->SMSTenDLCCampaignsListResult->getCampaigns());
     }
 }
