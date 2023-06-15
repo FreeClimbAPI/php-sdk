@@ -26,6 +26,12 @@ Method | HTTP request | Description
 [**getAnIncomingNumber()**](DefaultApi.md#getAnIncomingNumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 [**getAnSmsMessage()**](DefaultApi.md#getAnSmsMessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
 [**getHeadMember()**](DefaultApi.md#getHeadMember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
+[**getTenDLCSmsBrand()**](DefaultApi.md#getTenDLCSmsBrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand
+[**getTenDLCSmsBrands()**](DefaultApi.md#getTenDLCSmsBrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands
+[**getTenDLCSmsCampaign()**](DefaultApi.md#getTenDLCSmsCampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign
+[**getTenDLCSmsCampaigns()**](DefaultApi.md#getTenDLCSmsCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
+[**getTenDLCSmsPartnerCampaign()**](DefaultApi.md#getTenDLCSmsPartnerCampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
+[**getTenDLCSmsPartnerCampaigns()**](DefaultApi.md#getTenDLCSmsPartnerCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**listActiveQueues()**](DefaultApi.md#listActiveQueues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**listAllAccountLogs()**](DefaultApi.md#listAllAccountLogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**listApplications()**](DefaultApi.md#listApplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -55,7 +61,7 @@ Method | HTTP request | Description
 ## `buyAPhoneNumber()`
 
 ```php
-buyAPhoneNumber($account_id, $buy_incoming_number_request): \FreeClimb\Api\Model\IncomingNumberResult
+buyAPhoneNumber($buy_incoming_number_request): \FreeClimb\Api\Model\IncomingNumberResult
 ```
 
 Buy a Phone Number
@@ -83,7 +89,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $buy_incoming_number_request = new \FreeClimb\Api\Model\BuyIncomingNumberRequest(); // \FreeClimb\Api\Model\BuyIncomingNumberRequest | Incoming Number transaction details
 
 try {
-    $result = $apiInstance->buyAPhoneNumber($account_id, $buy_incoming_number_request);
+    $result = $apiInstance->buyAPhoneNumber($buy_incoming_number_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->buyAPhoneNumber: ', $e->getMessage(), PHP_EOL;
@@ -117,7 +123,7 @@ Name | Type | Description  | Notes
 ## `createAConference()`
 
 ```php
-createAConference($account_id, $create_conference_request): \FreeClimb\Api\Model\ConferenceResult
+createAConference($create_conference_request): \FreeClimb\Api\Model\ConferenceResult
 ```
 
 Create a Conference
@@ -145,7 +151,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $create_conference_request = new \FreeClimb\Api\Model\CreateConferenceRequest(); // \FreeClimb\Api\Model\CreateConferenceRequest | Conference to create
 
 try {
-    $result = $apiInstance->createAConference($account_id, $create_conference_request);
+    $result = $apiInstance->createAConference($create_conference_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createAConference: ', $e->getMessage(), PHP_EOL;
@@ -179,7 +185,7 @@ Name | Type | Description  | Notes
 ## `createAQueue()`
 
 ```php
-createAQueue($account_id, $queue_request): \FreeClimb\Api\Model\QueueResult
+createAQueue($queue_request): \FreeClimb\Api\Model\QueueResult
 ```
 
 Create a Queue
@@ -207,7 +213,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $queue_request = new \FreeClimb\Api\Model\QueueRequest(); // \FreeClimb\Api\Model\QueueRequest | Queue details used to create a queue
 
 try {
-    $result = $apiInstance->createAQueue($account_id, $queue_request);
+    $result = $apiInstance->createAQueue($queue_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createAQueue: ', $e->getMessage(), PHP_EOL;
@@ -241,7 +247,7 @@ Name | Type | Description  | Notes
 ## `createAnApplication()`
 
 ```php
-createAnApplication($account_id, $application_request): \FreeClimb\Api\Model\ApplicationResult
+createAnApplication($application_request): \FreeClimb\Api\Model\ApplicationResult
 ```
 
 Create an application
@@ -269,7 +275,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $application_request = new \FreeClimb\Api\Model\ApplicationRequest(); // \FreeClimb\Api\Model\ApplicationRequest | Application Details
 
 try {
-    $result = $apiInstance->createAnApplication($account_id, $application_request);
+    $result = $apiInstance->createAnApplication($application_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createAnApplication: ', $e->getMessage(), PHP_EOL;
@@ -303,7 +309,7 @@ Name | Type | Description  | Notes
 ## `deleteARecording()`
 
 ```php
-deleteARecording($account_id, $recording_id)
+deleteARecording($recording_id)
 ```
 
 Delete a Recording
@@ -331,7 +337,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
 
 try {
-    $apiInstance->deleteARecording($account_id, $recording_id);
+    $apiInstance->deleteARecording($recording_id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteARecording: ', $e->getMessage(), PHP_EOL;
 }
@@ -364,7 +370,7 @@ void (empty response body)
 ## `deleteAnApplication()`
 
 ```php
-deleteAnApplication($account_id, $application_id)
+deleteAnApplication($application_id)
 ```
 
 Delete an application
@@ -392,7 +398,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $application_id = 'application_id_example'; // string | String that uniquely identifies this application resource.
 
 try {
-    $apiInstance->deleteAnApplication($account_id, $application_id);
+    $apiInstance->deleteAnApplication($application_id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteAnApplication: ', $e->getMessage(), PHP_EOL;
 }
@@ -425,7 +431,7 @@ void (empty response body)
 ## `deleteAnIncomingNumber()`
 
 ```php
-deleteAnIncomingNumber($account_id, $phone_number_id)
+deleteAnIncomingNumber($phone_number_id)
 ```
 
 Delete an Incoming Number
@@ -453,7 +459,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $phone_number_id = 'phone_number_id_example'; // string | String that uniquely identifies this phone number resource.
 
 try {
-    $apiInstance->deleteAnIncomingNumber($account_id, $phone_number_id);
+    $apiInstance->deleteAnIncomingNumber($phone_number_id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteAnIncomingNumber: ', $e->getMessage(), PHP_EOL;
 }
@@ -486,7 +492,7 @@ void (empty response body)
 ## `dequeueAMember()`
 
 ```php
-dequeueAMember($account_id, $queue_id, $call_id): \FreeClimb\Api\Model\QueueMember
+dequeueAMember($queue_id, $call_id): \FreeClimb\Api\Model\QueueMember
 ```
 
 Dequeue a Member
@@ -515,7 +521,7 @@ $queue_id = 'queue_id_example'; // string | String that uniquely identifies the 
 $call_id = 'call_id_example'; // string | ID if the Call that the Member belongs to
 
 try {
-    $result = $apiInstance->dequeueAMember($account_id, $queue_id, $call_id);
+    $result = $apiInstance->dequeueAMember($queue_id, $call_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->dequeueAMember: ', $e->getMessage(), PHP_EOL;
@@ -550,7 +556,7 @@ Name | Type | Description  | Notes
 ## `dequeueHeadMember()`
 
 ```php
-dequeueHeadMember($account_id, $queue_id): \FreeClimb\Api\Model\QueueMember
+dequeueHeadMember($queue_id): \FreeClimb\Api\Model\QueueMember
 ```
 
 Dequeue Head Member
@@ -578,7 +584,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies this queue resource.
 
 try {
-    $result = $apiInstance->dequeueHeadMember($account_id, $queue_id);
+    $result = $apiInstance->dequeueHeadMember($queue_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->dequeueHeadMember: ', $e->getMessage(), PHP_EOL;
@@ -612,7 +618,7 @@ Name | Type | Description  | Notes
 ## `downloadARecordingFile()`
 
 ```php
-downloadARecordingFile($account_id, $recording_id): \SplFileObject
+downloadARecordingFile($recording_id): \SplFileObject
 ```
 
 Download a Recording File
@@ -640,7 +646,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
 
 try {
-    $result = $apiInstance->downloadARecordingFile($account_id, $recording_id);
+    $result = $apiInstance->downloadARecordingFile($recording_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->downloadARecordingFile: ', $e->getMessage(), PHP_EOL;
@@ -674,7 +680,7 @@ Name | Type | Description  | Notes
 ## `filterLogs()`
 
 ```php
-filterLogs($account_id, $filter_logs_request): \FreeClimb\Api\Model\LogList
+filterLogs($filter_logs_request): \FreeClimb\Api\Model\LogList
 ```
 
 Filter Logs
@@ -702,7 +708,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $filter_logs_request = new \FreeClimb\Api\Model\FilterLogsRequest(); // \FreeClimb\Api\Model\FilterLogsRequest | Filter logs request paramters
 
 try {
-    $result = $apiInstance->filterLogs($account_id, $filter_logs_request);
+    $result = $apiInstance->filterLogs($filter_logs_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->filterLogs: ', $e->getMessage(), PHP_EOL;
@@ -736,7 +742,7 @@ Name | Type | Description  | Notes
 ## `getACall()`
 
 ```php
-getACall($account_id, $call_id): \FreeClimb\Api\Model\CallResult
+getACall($call_id): \FreeClimb\Api\Model\CallResult
 ```
 
 Get a Call
@@ -764,7 +770,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
 
 try {
-    $result = $apiInstance->getACall($account_id, $call_id);
+    $result = $apiInstance->getACall($call_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getACall: ', $e->getMessage(), PHP_EOL;
@@ -798,7 +804,7 @@ Name | Type | Description  | Notes
 ## `getAConference()`
 
 ```php
-getAConference($account_id, $conference_id): \FreeClimb\Api\Model\ConferenceResult
+getAConference($conference_id): \FreeClimb\Api\Model\ConferenceResult
 ```
 
 Get a Conference
@@ -826,7 +832,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $conference_id = 'conference_id_example'; // string | A string that uniquely identifies this conference resource.
 
 try {
-    $result = $apiInstance->getAConference($account_id, $conference_id);
+    $result = $apiInstance->getAConference($conference_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAConference: ', $e->getMessage(), PHP_EOL;
@@ -860,7 +866,7 @@ Name | Type | Description  | Notes
 ## `getAMember()`
 
 ```php
-getAMember($account_id, $queue_id, $call_id): \FreeClimb\Api\Model\QueueMember
+getAMember($queue_id, $call_id): \FreeClimb\Api\Model\QueueMember
 ```
 
 Get a Member
@@ -889,7 +895,7 @@ $queue_id = 'queue_id_example'; // string | String that uniquely identifies the 
 $call_id = 'call_id_example'; // string | ID of the Call that the Member belongs to
 
 try {
-    $result = $apiInstance->getAMember($account_id, $queue_id, $call_id);
+    $result = $apiInstance->getAMember($queue_id, $call_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAMember: ', $e->getMessage(), PHP_EOL;
@@ -924,7 +930,7 @@ Name | Type | Description  | Notes
 ## `getAParticipant()`
 
 ```php
-getAParticipant($account_id, $conference_id, $call_id): \FreeClimb\Api\Model\ConferenceParticipantResult
+getAParticipant($conference_id, $call_id): \FreeClimb\Api\Model\ConferenceParticipantResult
 ```
 
 Get a Participant
@@ -953,7 +959,7 @@ $conference_id = 'conference_id_example'; // string | ID of the conference this 
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
 
 try {
-    $result = $apiInstance->getAParticipant($account_id, $conference_id, $call_id);
+    $result = $apiInstance->getAParticipant($conference_id, $call_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAParticipant: ', $e->getMessage(), PHP_EOL;
@@ -988,7 +994,7 @@ Name | Type | Description  | Notes
 ## `getAQueue()`
 
 ```php
-getAQueue($account_id, $queue_id): \FreeClimb\Api\Model\QueueResult
+getAQueue($queue_id): \FreeClimb\Api\Model\QueueResult
 ```
 
 Get a Queue
@@ -1016,7 +1022,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $queue_id = 'queue_id_example'; // string | A string that uniquely identifies this queue resource.
 
 try {
-    $result = $apiInstance->getAQueue($account_id, $queue_id);
+    $result = $apiInstance->getAQueue($queue_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAQueue: ', $e->getMessage(), PHP_EOL;
@@ -1050,7 +1056,7 @@ Name | Type | Description  | Notes
 ## `getARecording()`
 
 ```php
-getARecording($account_id, $recording_id): \FreeClimb\Api\Model\RecordingResult
+getARecording($recording_id): \FreeClimb\Api\Model\RecordingResult
 ```
 
 Get a Recording
@@ -1078,7 +1084,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
 
 try {
-    $result = $apiInstance->getARecording($account_id, $recording_id);
+    $result = $apiInstance->getARecording($recording_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getARecording: ', $e->getMessage(), PHP_EOL;
@@ -1112,7 +1118,7 @@ Name | Type | Description  | Notes
 ## `getAnAccount()`
 
 ```php
-getAnAccount($account_id): \FreeClimb\Api\Model\AccountResult
+getAnAccount(): \FreeClimb\Api\Model\AccountResult
 ```
 
 Get an Account
@@ -1139,7 +1145,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
 $account_id = 'account_id_example'; // string | ID of the account
 
 try {
-    $result = $apiInstance->getAnAccount($account_id);
+    $result = $apiInstance->getAnAccount();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAnAccount: ', $e->getMessage(), PHP_EOL;
@@ -1172,7 +1178,7 @@ Name | Type | Description  | Notes
 ## `getAnApplication()`
 
 ```php
-getAnApplication($account_id, $application_id): \FreeClimb\Api\Model\ApplicationResult
+getAnApplication($application_id): \FreeClimb\Api\Model\ApplicationResult
 ```
 
 Get an Application
@@ -1200,7 +1206,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $application_id = 'application_id_example'; // string | A string that uniquely identifies this application resource.
 
 try {
-    $result = $apiInstance->getAnApplication($account_id, $application_id);
+    $result = $apiInstance->getAnApplication($application_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAnApplication: ', $e->getMessage(), PHP_EOL;
@@ -1234,7 +1240,7 @@ Name | Type | Description  | Notes
 ## `getAnIncomingNumber()`
 
 ```php
-getAnIncomingNumber($account_id, $phone_number_id): \FreeClimb\Api\Model\IncomingNumberResult
+getAnIncomingNumber($phone_number_id): \FreeClimb\Api\Model\IncomingNumberResult
 ```
 
 Get an Incoming Number
@@ -1262,7 +1268,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $phone_number_id = 'phone_number_id_example'; // string | String that uniquely identifies this phone number resource.
 
 try {
-    $result = $apiInstance->getAnIncomingNumber($account_id, $phone_number_id);
+    $result = $apiInstance->getAnIncomingNumber($phone_number_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAnIncomingNumber: ', $e->getMessage(), PHP_EOL;
@@ -1296,7 +1302,7 @@ Name | Type | Description  | Notes
 ## `getAnSmsMessage()`
 
 ```php
-getAnSmsMessage($account_id, $message_id): \FreeClimb\Api\Model\MessageResult
+getAnSmsMessage($message_id): \FreeClimb\Api\Model\MessageResult
 ```
 
 Get an SMS Message
@@ -1324,7 +1330,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $message_id = 'message_id_example'; // string | String that uniquely identifies this Message resource.
 
 try {
-    $result = $apiInstance->getAnSmsMessage($account_id, $message_id);
+    $result = $apiInstance->getAnSmsMessage($message_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAnSmsMessage: ', $e->getMessage(), PHP_EOL;
@@ -1358,7 +1364,7 @@ Name | Type | Description  | Notes
 ## `getHeadMember()`
 
 ```php
-getHeadMember($account_id, $queue_id): \FreeClimb\Api\Model\QueueMember
+getHeadMember($queue_id): \FreeClimb\Api\Model\QueueMember
 ```
 
 Get Head Member
@@ -1386,7 +1392,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
 
 try {
-    $result = $apiInstance->getHeadMember($account_id, $queue_id);
+    $result = $apiInstance->getHeadMember($queue_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getHeadMember: ', $e->getMessage(), PHP_EOL;
@@ -1417,10 +1423,380 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTenDLCSmsBrand()`
+
+```php
+getTenDLCSmsBrand($brand_id): \FreeClimb\Api\Model\SMSTenDLCBrand
+```
+
+Get a 10DLC SMS Brand
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$brand_id = 'brand_id_example'; // string | String that uniquely identifies this brand resource.
+
+try {
+    $result = $apiInstance->getTenDLCSmsBrand($brand_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsBrand: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **brand_id** | **string**| String that uniquely identifies this brand resource. |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCBrand**](../Model/SMSTenDLCBrand.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsBrands()`
+
+```php
+getTenDLCSmsBrands(): \FreeClimb\Api\Model\SMSTenDLCBrandsListResult
+```
+
+Get list of SMS 10DLC Brands
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+
+try {
+    $result = $apiInstance->getTenDLCSmsBrands();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsBrands: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCBrandsListResult**](../Model/SMSTenDLCBrandsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsCampaign()`
+
+```php
+getTenDLCSmsCampaign($campaign_id): \FreeClimb\Api\Model\SMSTenDLCCampaign
+```
+
+Get a 10DLC SMS Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this campaign resource.
+
+try {
+    $result = $apiInstance->getTenDLCSmsCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **campaign_id** | **string**| String that uniquely identifies this campaign resource. |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCCampaign**](../Model/SMSTenDLCCampaign.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsCampaigns()`
+
+```php
+getTenDLCSmsCampaigns($brand_id): \FreeClimb\Api\Model\SMSTenDLCCampaignsListResult
+```
+
+Get list of SMS 10DLC Campaigns
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
+try {
+    $result = $apiInstance->getTenDLCSmsCampaigns($brand_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsCampaigns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **brand_id** | **string**| The unique identifier for a brand | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult**](../Model/SMSTenDLCCampaignsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsPartnerCampaign()`
+
+```php
+getTenDLCSmsPartnerCampaign($campaign_id): \FreeClimb\Api\Model\SMSTenDLCPartnerCampaign
+```
+
+Get a 10DLC SMS Partner Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this campaign resource.
+
+try {
+    $result = $apiInstance->getTenDLCSmsPartnerCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsPartnerCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **campaign_id** | **string**| String that uniquely identifies this campaign resource. |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign**](../Model/SMSTenDLCPartnerCampaign.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTenDLCSmsPartnerCampaigns()`
+
+```php
+getTenDLCSmsPartnerCampaigns($brand_id): \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult
+```
+
+Get list of SMS 10DLC Partner Campaigns
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
+try {
+    $result = $apiInstance->getTenDLCSmsPartnerCampaigns($brand_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTenDLCSmsPartnerCampaigns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **brand_id** | **string**| The unique identifier for a brand | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult**](../Model/SMSTenDLCPartnerCampaignsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listActiveQueues()`
 
 ```php
-listActiveQueues($account_id, $alias): \FreeClimb\Api\Model\QueueList
+listActiveQueues($alias): \FreeClimb\Api\Model\QueueList
 ```
 
 List Active Queues
@@ -1448,7 +1824,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $alias = 'alias_example'; // string | Return only the Queue resources with aliases that exactly match this name.
 
 try {
-    $result = $apiInstance->listActiveQueues($account_id, $alias);
+    $result = $apiInstance->listActiveQueues($alias);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listActiveQueues: ', $e->getMessage(), PHP_EOL;
@@ -1482,7 +1858,7 @@ Name | Type | Description  | Notes
 ## `listAllAccountLogs()`
 
 ```php
-listAllAccountLogs($account_id): \FreeClimb\Api\Model\LogList
+listAllAccountLogs(): \FreeClimb\Api\Model\LogList
 ```
 
 List All Account Logs
@@ -1509,7 +1885,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
 $account_id = 'account_id_example'; // string | ID of the account
 
 try {
-    $result = $apiInstance->listAllAccountLogs($account_id);
+    $result = $apiInstance->listAllAccountLogs();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listAllAccountLogs: ', $e->getMessage(), PHP_EOL;
@@ -1542,7 +1918,7 @@ Name | Type | Description  | Notes
 ## `listApplications()`
 
 ```php
-listApplications($account_id, $alias): \FreeClimb\Api\Model\ApplicationList
+listApplications($alias): \FreeClimb\Api\Model\ApplicationList
 ```
 
 List applications
@@ -1570,7 +1946,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $alias = 'alias_example'; // string | Return only applications with aliases that exactly match this value.
 
 try {
-    $result = $apiInstance->listApplications($account_id, $alias);
+    $result = $apiInstance->listApplications($alias);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listApplications: ', $e->getMessage(), PHP_EOL;
@@ -1682,7 +2058,7 @@ Name | Type | Description  | Notes
 ## `listCallLogs()`
 
 ```php
-listCallLogs($account_id, $call_id): \FreeClimb\Api\Model\LogList
+listCallLogs($call_id): \FreeClimb\Api\Model\LogList
 ```
 
 List Call Logs
@@ -1710,7 +2086,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
 
 try {
-    $result = $apiInstance->listCallLogs($account_id, $call_id);
+    $result = $apiInstance->listCallLogs($call_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCallLogs: ', $e->getMessage(), PHP_EOL;
@@ -1744,7 +2120,7 @@ Name | Type | Description  | Notes
 ## `listCallRecordings()`
 
 ```php
-listCallRecordings($account_id, $call_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listCallRecordings($call_id, $date_created): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Call Recordings
@@ -1773,7 +2149,7 @@ $call_id = 'call_id_example'; // string | String that uniquely identifies this c
 $date_created = 'date_created_example'; // string | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
 
 try {
-    $result = $apiInstance->listCallRecordings($account_id, $call_id, $date_created);
+    $result = $apiInstance->listCallRecordings($call_id, $date_created);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCallRecordings: ', $e->getMessage(), PHP_EOL;
@@ -1808,7 +2184,7 @@ Name | Type | Description  | Notes
 ## `listCalls()`
 
 ```php
-listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id): \FreeClimb\Api\Model\CallList
+listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id): \FreeClimb\Api\Model\CallList
 ```
 
 List Calls
@@ -1843,7 +2219,7 @@ $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned 
 $application_id = array('application_id_example'); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
 
 try {
-    $result = $apiInstance->listCalls($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id);
+    $result = $apiInstance->listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCalls: ', $e->getMessage(), PHP_EOL;
@@ -1884,7 +2260,7 @@ Name | Type | Description  | Notes
 ## `listConferences()`
 
 ```php
-listConferences($account_id, $status, $alias, $date_created, $date_updated): \FreeClimb\Api\Model\ConferenceList
+listConferences($status, $alias, $date_created, $date_updated): \FreeClimb\Api\Model\ConferenceList
 ```
 
 List Conferences
@@ -1915,7 +2291,7 @@ $date_created = 'date_created_example'; // string | Only show Conferences that w
 $date_updated = 'date_updated_example'; // string | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
 
 try {
-    $result = $apiInstance->listConferences($account_id, $status, $alias, $date_created, $date_updated);
+    $result = $apiInstance->listConferences($status, $alias, $date_created, $date_updated);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listConferences: ', $e->getMessage(), PHP_EOL;
@@ -1952,7 +2328,7 @@ Name | Type | Description  | Notes
 ## `listIncomingNumbers()`
 
 ```php
-listIncomingNumbers($account_id, $phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet): \FreeClimb\Api\Model\IncomingNumberList
+listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet): \FreeClimb\Api\Model\IncomingNumberList
 ```
 
 List Incoming Numbers
@@ -1985,6 +2361,7 @@ $application_id = 'application_id_example'; // string | ID of the Application th
 $has_application = false; // bool | Indication of whether the phone number has an application linked to it.
 $voice_enabled = true; // bool | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
 $sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+$has_campaign = True; // bool | Indication of whether the phone number has a campaign associated with it
 $capabilities_voice = True; // bool
 $capabilities_sms = True; // bool
 $capabilities_toll_free = True; // bool
@@ -1993,7 +2370,7 @@ $capabilities_short_code = True; // bool
 $offnet = True; // bool | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
 
 try {
-    $result = $apiInstance->listIncomingNumbers($account_id, $phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
+    $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listIncomingNumbers: ', $e->getMessage(), PHP_EOL;
@@ -2013,6 +2390,7 @@ Name | Type | Description  | Notes
  **has_application** | **bool**| Indication of whether the phone number has an application linked to it. | [optional] [default to false]
  **voice_enabled** | **bool**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true]
  **sms_enabled** | **bool**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true]
+ **has_campaign** | **bool**| Indication of whether the phone number has a campaign associated with it | [optional]
  **capabilities_voice** | **bool**|  | [optional]
  **capabilities_sms** | **bool**|  | [optional]
  **capabilities_toll_free** | **bool**|  | [optional]
@@ -2040,7 +2418,7 @@ Name | Type | Description  | Notes
 ## `listMembers()`
 
 ```php
-listMembers($account_id, $queue_id): \FreeClimb\Api\Model\QueueMemberList
+listMembers($queue_id): \FreeClimb\Api\Model\QueueMemberList
 ```
 
 List Members
@@ -2068,7 +2446,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
 
 try {
-    $result = $apiInstance->listMembers($account_id, $queue_id);
+    $result = $apiInstance->listMembers($queue_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listMembers: ', $e->getMessage(), PHP_EOL;
@@ -2102,7 +2480,7 @@ Name | Type | Description  | Notes
 ## `listParticipants()`
 
 ```php
-listParticipants($account_id, $conference_id, $talk, $listen): \FreeClimb\Api\Model\ConferenceParticipantList
+listParticipants($conference_id, $talk, $listen): \FreeClimb\Api\Model\ConferenceParticipantList
 ```
 
 List Participants
@@ -2132,7 +2510,7 @@ $talk = True; // bool | Only show Participants with the talk privilege.
 $listen = True; // bool | Only show Participants with the listen privilege.
 
 try {
-    $result = $apiInstance->listParticipants($account_id, $conference_id, $talk, $listen);
+    $result = $apiInstance->listParticipants($conference_id, $talk, $listen);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listParticipants: ', $e->getMessage(), PHP_EOL;
@@ -2168,7 +2546,7 @@ Name | Type | Description  | Notes
 ## `listRecordings()`
 
 ```php
-listRecordings($account_id, $call_id, $conference_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listRecordings($call_id, $conference_id, $date_created): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Recordings
@@ -2198,7 +2576,7 @@ $conference_id = 'conference_id_example'; // string | Show only Recordings made 
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
 
 try {
-    $result = $apiInstance->listRecordings($account_id, $call_id, $conference_id, $date_created);
+    $result = $apiInstance->listRecordings($call_id, $conference_id, $date_created);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listRecordings: ', $e->getMessage(), PHP_EOL;
@@ -2234,7 +2612,7 @@ Name | Type | Description  | Notes
 ## `listSmsMessages()`
 
 ```php
-listSmsMessages($account_id, $to, $from, $begin_time, $end_time, $direction): \FreeClimb\Api\Model\MessagesList
+listSmsMessages($to, $from, $begin_time, $end_time, $direction): \FreeClimb\Api\Model\MessagesList
 ```
 
 List SMS Messages
@@ -2266,7 +2644,7 @@ $end_time = 'end_time_example'; // string | Only show messages sent at or before
 $direction = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\MessageDirection(); // \FreeClimb\Api\Model\MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
 
 try {
-    $result = $apiInstance->listSmsMessages($account_id, $to, $from, $begin_time, $end_time, $direction);
+    $result = $apiInstance->listSmsMessages($to, $from, $begin_time, $end_time, $direction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listSmsMessages: ', $e->getMessage(), PHP_EOL;
@@ -2304,7 +2682,7 @@ Name | Type | Description  | Notes
 ## `makeACall()`
 
 ```php
-makeACall($account_id, $make_call_request): \FreeClimb\Api\Model\CallResult
+makeACall($make_call_request): \FreeClimb\Api\Model\CallResult
 ```
 
 Make a Call
@@ -2332,7 +2710,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $make_call_request = new \FreeClimb\Api\Model\MakeCallRequest(); // \FreeClimb\Api\Model\MakeCallRequest | Call details for making a call
 
 try {
-    $result = $apiInstance->makeACall($account_id, $make_call_request);
+    $result = $apiInstance->makeACall($make_call_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->makeACall: ', $e->getMessage(), PHP_EOL;
@@ -2366,7 +2744,7 @@ Name | Type | Description  | Notes
 ## `removeAParticipant()`
 
 ```php
-removeAParticipant($account_id, $conference_id, $call_id)
+removeAParticipant($conference_id, $call_id)
 ```
 
 Remove a Participant
@@ -2395,7 +2773,7 @@ $conference_id = 'conference_id_example'; // string | ID of the conference this 
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
 
 try {
-    $apiInstance->removeAParticipant($account_id, $conference_id, $call_id);
+    $apiInstance->removeAParticipant($conference_id, $call_id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->removeAParticipant: ', $e->getMessage(), PHP_EOL;
 }
@@ -2429,7 +2807,7 @@ void (empty response body)
 ## `sendAnSmsMessage()`
 
 ```php
-sendAnSmsMessage($account_id, $message_request): \FreeClimb\Api\Model\MessageResult
+sendAnSmsMessage($message_request): \FreeClimb\Api\Model\MessageResult
 ```
 
 Send an SMS Message
@@ -2457,7 +2835,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $message_request = new \FreeClimb\Api\Model\MessageRequest(); // \FreeClimb\Api\Model\MessageRequest | Details to create a message
 
 try {
-    $result = $apiInstance->sendAnSmsMessage($account_id, $message_request);
+    $result = $apiInstance->sendAnSmsMessage($message_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sendAnSmsMessage: ', $e->getMessage(), PHP_EOL;
@@ -2491,7 +2869,7 @@ Name | Type | Description  | Notes
 ## `streamARecordingFile()`
 
 ```php
-streamARecordingFile($account_id, $recording_id): \SplFileObject
+streamARecordingFile($recording_id): \SplFileObject
 ```
 
 Stream a Recording File
@@ -2519,7 +2897,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
 
 try {
-    $result = $apiInstance->streamARecordingFile($account_id, $recording_id);
+    $result = $apiInstance->streamARecordingFile($recording_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->streamARecordingFile: ', $e->getMessage(), PHP_EOL;
@@ -2553,7 +2931,7 @@ Name | Type | Description  | Notes
 ## `updateAConference()`
 
 ```php
-updateAConference($account_id, $conference_id, $update_conference_request): \FreeClimb\Api\Model\ConferenceResult
+updateAConference($conference_id, $update_conference_request): \FreeClimb\Api\Model\ConferenceResult
 ```
 
 Update a Conference
@@ -2582,7 +2960,7 @@ $conference_id = 'conference_id_example'; // string | String that uniquely ident
 $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(); // \FreeClimb\Api\Model\UpdateConferenceRequest | Conference Details to update
 
 try {
-    $result = $apiInstance->updateAConference($account_id, $conference_id, $update_conference_request);
+    $result = $apiInstance->updateAConference($conference_id, $update_conference_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAConference: ', $e->getMessage(), PHP_EOL;
@@ -2617,7 +2995,7 @@ Name | Type | Description  | Notes
 ## `updateALiveCall()`
 
 ```php
-updateALiveCall($account_id, $call_id, $update_call_request)
+updateALiveCall($call_id, $update_call_request)
 ```
 
 Update a Live Call
@@ -2646,7 +3024,7 @@ $call_id = 'call_id_example'; // string | String that uniquely identifies this c
 $update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(); // \FreeClimb\Api\Model\UpdateCallRequest | Call details to update
 
 try {
-    $apiInstance->updateALiveCall($account_id, $call_id, $update_call_request);
+    $apiInstance->updateALiveCall($call_id, $update_call_request);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateALiveCall: ', $e->getMessage(), PHP_EOL;
 }
@@ -2680,7 +3058,7 @@ void (empty response body)
 ## `updateAParticipant()`
 
 ```php
-updateAParticipant($account_id, $conference_id, $call_id, $update_conference_participant_request): \FreeClimb\Api\Model\ConferenceParticipantResult
+updateAParticipant($conference_id, $call_id, $update_conference_participant_request): \FreeClimb\Api\Model\ConferenceParticipantResult
 ```
 
 Update a Participant
@@ -2710,7 +3088,7 @@ $call_id = 'call_id_example'; // string | ID of the Call associated with this pa
 $update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(); // \FreeClimb\Api\Model\UpdateConferenceParticipantRequest | Conference participant details to update
 
 try {
-    $result = $apiInstance->updateAParticipant($account_id, $conference_id, $call_id, $update_conference_participant_request);
+    $result = $apiInstance->updateAParticipant($conference_id, $call_id, $update_conference_participant_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAParticipant: ', $e->getMessage(), PHP_EOL;
@@ -2746,7 +3124,7 @@ Name | Type | Description  | Notes
 ## `updateAQueue()`
 
 ```php
-updateAQueue($account_id, $queue_id, $queue_request): \FreeClimb\Api\Model\QueueResult
+updateAQueue($queue_id, $queue_request): \FreeClimb\Api\Model\QueueResult
 ```
 
 Update a Queue
@@ -2775,7 +3153,7 @@ $queue_id = 'queue_id_example'; // string | A string that uniquely identifies th
 $queue_request = new \FreeClimb\Api\Model\QueueRequest(); // \FreeClimb\Api\Model\QueueRequest | Queue Details to update
 
 try {
-    $result = $apiInstance->updateAQueue($account_id, $queue_id, $queue_request);
+    $result = $apiInstance->updateAQueue($queue_id, $queue_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAQueue: ', $e->getMessage(), PHP_EOL;
@@ -2810,7 +3188,7 @@ Name | Type | Description  | Notes
 ## `updateAnAccount()`
 
 ```php
-updateAnAccount($account_id, $account_request)
+updateAnAccount($account_request)
 ```
 
 Manage an account
@@ -2838,7 +3216,7 @@ $account_id = 'account_id_example'; // string | ID of the account
 $account_request = new \FreeClimb\Api\Model\AccountRequest(); // \FreeClimb\Api\Model\AccountRequest | Account details to update
 
 try {
-    $apiInstance->updateAnAccount($account_id, $account_request);
+    $apiInstance->updateAnAccount($account_request);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAnAccount: ', $e->getMessage(), PHP_EOL;
 }
@@ -2871,7 +3249,7 @@ void (empty response body)
 ## `updateAnApplication()`
 
 ```php
-updateAnApplication($account_id, $application_id, $application_request): \FreeClimb\Api\Model\ApplicationResult
+updateAnApplication($application_id, $application_request): \FreeClimb\Api\Model\ApplicationResult
 ```
 
 Update an application
@@ -2900,7 +3278,7 @@ $application_id = 'application_id_example'; // string | A string that uniquely i
 $application_request = new \FreeClimb\Api\Model\ApplicationRequest(); // \FreeClimb\Api\Model\ApplicationRequest | Application details to update.
 
 try {
-    $result = $apiInstance->updateAnApplication($account_id, $application_id, $application_request);
+    $result = $apiInstance->updateAnApplication($application_id, $application_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAnApplication: ', $e->getMessage(), PHP_EOL;
@@ -2935,7 +3313,7 @@ Name | Type | Description  | Notes
 ## `updateAnIncomingNumber()`
 
 ```php
-updateAnIncomingNumber($account_id, $phone_number_id, $incoming_number_request): \FreeClimb\Api\Model\IncomingNumberResult
+updateAnIncomingNumber($phone_number_id, $incoming_number_request): \FreeClimb\Api\Model\IncomingNumberResult
 ```
 
 Update an Incoming Number
@@ -2964,7 +3342,7 @@ $phone_number_id = 'phone_number_id_example'; // string | String that uniquely i
 $incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(); // \FreeClimb\Api\Model\IncomingNumberRequest | Incoming Number details to update
 
 try {
-    $result = $apiInstance->updateAnIncomingNumber($account_id, $phone_number_id, $incoming_number_request);
+    $result = $apiInstance->updateAnIncomingNumber($phone_number_id, $incoming_number_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAnIncomingNumber: ', $e->getMessage(), PHP_EOL;
