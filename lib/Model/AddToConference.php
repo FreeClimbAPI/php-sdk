@@ -63,7 +63,7 @@ class AddToConference extends PerclCommand
         'call_control_sequence' => 'string',
         'call_control_url' => 'string',
         'conference_id' => 'string',
-        'call_id' => 'bool',
+        'call_id' => 'string',
         'leave_conference_url' => 'string',
         'listen' => 'bool',
         'notification_url' => 'string',
@@ -357,7 +357,7 @@ class AddToConference extends PerclCommand
     /**
      * Gets call_id
      *
-     * @return bool|null
+     * @return string|null
      */
     public function getCallId()
     {
@@ -367,7 +367,7 @@ class AddToConference extends PerclCommand
     /**
      * Sets call_id
      *
-     * @param bool|null $call_id ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
+     * @param string|null $call_id ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
      *
      * @return self
      */
