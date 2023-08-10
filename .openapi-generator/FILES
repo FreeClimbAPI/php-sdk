@@ -135,6 +135,8 @@ docs/Model/SmsAllOf.md
 docs/Model/StartRecordCall.md
 docs/Model/TerminateConference.md
 docs/Model/TerminateConferenceAllOf.md
+docs/Model/TranscribeUtterance.md
+docs/Model/TranscribeUtteranceRecord.md
 docs/Model/Unpark.md
 docs/Model/UpdateCallRequest.md
 docs/Model/UpdateCallRequestStatus.md
@@ -278,6 +280,8 @@ lib/Model/SmsAllOf.php
 lib/Model/StartRecordCall.php
 lib/Model/TerminateConference.php
 lib/Model/TerminateConferenceAllOf.php
+lib/Model/TranscribeUtterance.php
+lib/Model/TranscribeUtteranceRecord.php
 lib/Model/Unpark.php
 lib/Model/UpdateCallRequest.php
 lib/Model/UpdateCallRequestStatus.php
@@ -286,3 +290,4 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/DefaultApiTest.php

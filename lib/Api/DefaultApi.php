@@ -12729,14 +12729,20 @@ class DefaultApi
 
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\MessagesList
      */
-    public function listSmsMessages($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
+    public function listSmsMessages($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null)
     {
-        list($response) = $this->listSmsMessagesWithHttpInfo($to, $from, $begin_time, $end_time, $direction);
+        list($response) = $this->listSmsMessagesWithHttpInfo($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc);
         return $response;
     }
 
@@ -12756,14 +12762,20 @@ class DefaultApi
 
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\MessagesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listSmsMessagesWithHttpInfo($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
+    public function listSmsMessagesWithHttpInfo($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null)
     {
-        $request = $this->listSmsMessagesRequest($to, $from, $begin_time, $end_time, $direction);
+        $request = $this->listSmsMessagesRequest($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12859,13 +12871,19 @@ class DefaultApi
 
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSmsMessagesAsync($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
+    public function listSmsMessagesAsync($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null)
     {
-        return $this->listSmsMessagesAsyncWithHttpInfo($to, $from, $begin_time, $end_time, $direction)
+        return $this->listSmsMessagesAsyncWithHttpInfo($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12889,14 +12907,20 @@ class DefaultApi
 
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSmsMessagesAsyncWithHttpInfo($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
+    public function listSmsMessagesAsyncWithHttpInfo($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null)
     {
         $returnType = '\FreeClimb\Api\Model\MessagesList';
-        $request = $this->listSmsMessagesRequest($to, $from, $begin_time, $end_time, $direction);
+        $request = $this->listSmsMessagesRequest($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12945,11 +12969,17 @@ class DefaultApi
 
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
 
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listSmsMessagesRequest($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null)
+    public function listSmsMessagesRequest($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
@@ -13019,6 +13049,39 @@ class DefaultApi
             }
             else {
                 $queryParams['direction'] = $direction;
+            }
+        }
+        // query params
+        if ($campaign_id !== null) {
+            if('form' === 'form' && is_array($campaign_id)) {
+                foreach($campaign_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['campaignId'] = $campaign_id;
+            }
+        }
+        // query params
+        if ($brand_id !== null) {
+            if('form' === 'form' && is_array($brand_id)) {
+                foreach($brand_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['brandId'] = $brand_id;
+            }
+        }
+        // query params
+        if ($is10_dlc !== null) {
+            if('form' === 'form' && is_array($is10_dlc)) {
+                foreach($is10_dlc as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['is10DLC'] = $is10_dlc;
             }
         }
 
