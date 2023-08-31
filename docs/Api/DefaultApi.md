@@ -2612,7 +2612,7 @@ Name | Type | Description  | Notes
 ## `listSmsMessages()`
 
 ```php
-listSmsMessages($to, $from, $begin_time, $end_time, $direction): \FreeClimb\Api\Model\MessagesList
+listSmsMessages($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc): \FreeClimb\Api\Model\MessagesList
 ```
 
 List SMS Messages
@@ -2642,9 +2642,12 @@ $from = 'from_example'; // string | Only show Messages from this phone number.
 $begin_time = 'begin_time_example'; // string | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
 $end_time = 'end_time_example'; // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
 $direction = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\MessageDirection(); // \FreeClimb\Api\Model\MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+$campaign_id = 'campaign_id_example'; // string | Only show messages associated with this campaign ID.
+$brand_id = 'brand_id_example'; // string | Only show messages associated with this brand ID
+$is10_dlc = True; // bool | Only show messages that were sent as part of a 10DLC campaign.
 
 try {
-    $result = $apiInstance->listSmsMessages($to, $from, $begin_time, $end_time, $direction);
+    $result = $apiInstance->listSmsMessages($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listSmsMessages: ', $e->getMessage(), PHP_EOL;
@@ -2661,6 +2664,9 @@ Name | Type | Description  | Notes
  **begin_time** | **string**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional]
  **end_time** | **string**| Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional]
  **direction** | [**\FreeClimb\Api\Model\MessageDirection**](../Model/.md)| Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional]
+ **campaign_id** | **string**| Only show messages associated with this campaign ID. | [optional]
+ **brand_id** | **string**| Only show messages associated with this brand ID | [optional]
+ **is10_dlc** | **bool**| Only show messages that were sent as part of a 10DLC campaign. | [optional]
 
 ### Return type
 

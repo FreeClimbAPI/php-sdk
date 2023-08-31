@@ -71,7 +71,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'string',
         'text' => 'string',
         'direction' => 'string',
-        'notification_url' => 'string'
+        'notification_url' => 'string',
+        'brand_id' => 'string',
+        'campaign_id' => 'string',
+        'segment_count' => 'float'
     ];
 
     /**
@@ -93,7 +96,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => null,
         'text' => null,
         'direction' => null,
-        'notification_url' => null
+        'notification_url' => null,
+        'brand_id' => null,
+        'campaign_id' => null,
+        'segment_count' => null
     ];
 
     /**
@@ -134,7 +140,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'to',
         'text' => 'text',
         'direction' => 'direction',
-        'notification_url' => 'notificationUrl'
+        'notification_url' => 'notificationUrl',
+        'brand_id' => 'brandId',
+        'campaign_id' => 'campaignId',
+        'segment_count' => 'segmentCount'
     ];
 
     /**
@@ -154,7 +163,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'setTo',
         'text' => 'setText',
         'direction' => 'setDirection',
-        'notification_url' => 'setNotificationUrl'
+        'notification_url' => 'setNotificationUrl',
+        'brand_id' => 'setBrandId',
+        'campaign_id' => 'setCampaignId',
+        'segment_count' => 'setSegmentCount'
     ];
 
     /**
@@ -174,7 +186,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'getTo',
         'text' => 'getText',
         'direction' => 'getDirection',
-        'notification_url' => 'getNotificationUrl'
+        'notification_url' => 'getNotificationUrl',
+        'brand_id' => 'getBrandId',
+        'campaign_id' => 'getCampaignId',
+        'segment_count' => 'getSegmentCount'
     ];
 
     /**
@@ -246,6 +261,9 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['text'] = $data['text'] ?? null;
         $this->container['direction'] = $data['direction'] ?? null;
         $this->container['notification_url'] = $data['notification_url'] ?? null;
+        $this->container['brand_id'] = $data['brand_id'] ?? null;
+        $this->container['campaign_id'] = $data['campaign_id'] ?? null;
+        $this->container['segment_count'] = $data['segment_count'] ?? null;
     }
 
     /**
@@ -556,6 +574,78 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNotificationUrl($notification_url)
     {
         $this->container['notification_url'] = $notification_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_id
+     *
+     * @return string|null
+     */
+    public function getBrandId()
+    {
+        return $this->container['brand_id'];
+    }
+
+    /**
+     * Sets brand_id
+     *
+     * @param string|null $brand_id The unique identifier for the brand associated with the message
+     *
+     * @return self
+     */
+    public function setBrandId($brand_id)
+    {
+        $this->container['brand_id'] = $brand_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_id
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        return $this->container['campaign_id'];
+    }
+
+    /**
+     * Sets campaign_id
+     *
+     * @param string|null $campaign_id The unique identifier for the campaign associated with the message
+     *
+     * @return self
+     */
+    public function setCampaignId($campaign_id)
+    {
+        $this->container['campaign_id'] = $campaign_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment_count
+     *
+     * @return float|null
+     */
+    public function getSegmentCount()
+    {
+        return $this->container['segment_count'];
+    }
+
+    /**
+     * Sets segment_count
+     *
+     * @param float|null $segment_count The number of segments into which the message was split
+     *
+     * @return self
+     */
+    public function setSegmentCount($segment_count)
+    {
+        $this->container['segment_count'] = $segment_count;
 
         return $this;
     }

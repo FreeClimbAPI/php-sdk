@@ -371,6 +371,15 @@ class DefaultApiTest extends TestCase
     public function has_campaign_listIncomingNumbers_test_value():string {
         return "true";
     }
+    public function campaign_id_listSmsMessages_test_value(): string {
+        return "BX56XX4";
+    }
+    public function brand_id_listSmsMessages_test_value(): string{
+        return "BX56XX4";
+    }
+    public function is10_dlc_listSmsMessages_test_value(): string{
+        return "true";
+    }
     public function queue_request_updateAQueue_test_value():\FreeClimb\Api\Model\QueueRequest{
         return new \FreeClimb\Api\Model\QueueRequest(
         array(
@@ -1692,6 +1701,9 @@ class DefaultApiTest extends TestCase
      * @param  string $begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. (optional)
      * @param  string $end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. (optional)
      * @param  \FreeClimb\Api\Model\MessageDirection $direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. (optional)
+     * @param  string $campaign_id Only show messages associated with this campaign ID. (optional)
+     * @param  string $brand_id Only show messages associated with this brand ID (optional)
+     * @param  bool $is10_dlc Only show messages that were sent as part of a 10DLC campaign. (optional)
      */
     public function testListSmsMessages()
     {
@@ -1712,8 +1724,11 @@ class DefaultApiTest extends TestCase
         //$begin_time = $begin_time_test_value;
         //$end_time = $end_time_test_value;
         //$direction = $direction_test_value;
+        //$campaign_id = $campaign_id_test_value;
+        //$brand_id = $brand_id_test_value;
+        //$is10_dlc = $is10_dlc_test_value;
         
-        $response = $apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value());
+        $response = $apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
         
         
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$response);

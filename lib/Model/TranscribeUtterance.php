@@ -1,6 +1,6 @@
 <?php
 /**
- * MessageResultAllOf
+ * TranscribeUtterance
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * MessageResultAllOf Class Doc Comment
+ * TranscribeUtterance Class Doc Comment
  *
  * @category Class
+ * @description The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MessageResult_allOf';
+    protected static $openAPIModelName = 'TranscribeUtterance';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,17 +61,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_id' => 'string',
-        'message_id' => 'string',
-        'status' => '\FreeClimb\Api\Model\MessageStatus',
-        'from' => 'string',
-        'to' => 'string',
-        'text' => 'string',
-        'direction' => 'string',
-        'notification_url' => 'string',
-        'brand_id' => 'string',
-        'campaign_id' => 'string',
-        'segment_count' => 'float'
+        'action_url' => 'string',
+        'play_beep' => 'bool',
+        'record' => '\FreeClimb\Api\Model\TranscribeUtteranceRecord',
+        'privacy_for_logging' => 'bool',
+        'privacy_for_recording' => 'bool',
+        'prompts' => 'mixed[]'
     ];
 
     /**
@@ -81,17 +77,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account_id' => null,
-        'message_id' => null,
-        'status' => null,
-        'from' => null,
-        'to' => null,
-        'text' => null,
-        'direction' => null,
-        'notification_url' => null,
-        'brand_id' => null,
-        'campaign_id' => null,
-        'segment_count' => null
+        'action_url' => null,
+        'play_beep' => null,
+        'record' => null,
+        'privacy_for_logging' => null,
+        'privacy_for_recording' => null,
+        'prompts' => null
     ];
 
     /**
@@ -121,17 +112,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_id' => 'accountId',
-        'message_id' => 'messageId',
-        'status' => 'status',
-        'from' => 'from',
-        'to' => 'to',
-        'text' => 'text',
-        'direction' => 'direction',
-        'notification_url' => 'notificationUrl',
-        'brand_id' => 'brandId',
-        'campaign_id' => 'campaignId',
-        'segment_count' => 'segmentCount'
+        'action_url' => 'actionUrl',
+        'play_beep' => 'playBeep',
+        'record' => 'record',
+        'privacy_for_logging' => 'privacyForLogging',
+        'privacy_for_recording' => 'privacyForRecording',
+        'prompts' => 'prompts'
     ];
 
     /**
@@ -140,17 +126,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'account_id' => 'setAccountId',
-        'message_id' => 'setMessageId',
-        'status' => 'setStatus',
-        'from' => 'setFrom',
-        'to' => 'setTo',
-        'text' => 'setText',
-        'direction' => 'setDirection',
-        'notification_url' => 'setNotificationUrl',
-        'brand_id' => 'setBrandId',
-        'campaign_id' => 'setCampaignId',
-        'segment_count' => 'setSegmentCount'
+        'action_url' => 'setActionUrl',
+        'play_beep' => 'setPlayBeep',
+        'record' => 'setRecord',
+        'privacy_for_logging' => 'setPrivacyForLogging',
+        'privacy_for_recording' => 'setPrivacyForRecording',
+        'prompts' => 'setPrompts'
     ];
 
     /**
@@ -159,17 +140,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'account_id' => 'getAccountId',
-        'message_id' => 'getMessageId',
-        'status' => 'getStatus',
-        'from' => 'getFrom',
-        'to' => 'getTo',
-        'text' => 'getText',
-        'direction' => 'getDirection',
-        'notification_url' => 'getNotificationUrl',
-        'brand_id' => 'getBrandId',
-        'campaign_id' => 'getCampaignId',
-        'segment_count' => 'getSegmentCount'
+        'action_url' => 'getActionUrl',
+        'play_beep' => 'getPlayBeep',
+        'record' => 'getRecord',
+        'privacy_for_logging' => 'getPrivacyForLogging',
+        'privacy_for_recording' => 'getPrivacyForRecording',
+        'prompts' => 'getPrompts'
     ];
 
     /**
@@ -229,17 +205,12 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_id'] = $data['account_id'] ?? null;
-        $this->container['message_id'] = $data['message_id'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['from'] = $data['from'] ?? null;
-        $this->container['to'] = $data['to'] ?? null;
-        $this->container['text'] = $data['text'] ?? null;
-        $this->container['direction'] = $data['direction'] ?? null;
-        $this->container['notification_url'] = $data['notification_url'] ?? null;
-        $this->container['brand_id'] = $data['brand_id'] ?? null;
-        $this->container['campaign_id'] = $data['campaign_id'] ?? null;
-        $this->container['segment_count'] = $data['segment_count'] ?? null;
+        $this->container['action_url'] = $data['action_url'] ?? null;
+        $this->container['play_beep'] = $data['play_beep'] ?? false;
+        $this->container['record'] = $data['record'] ?? null;
+        $this->container['privacy_for_logging'] = $data['privacy_for_logging'] ?? false;
+        $this->container['privacy_for_recording'] = $data['privacy_for_recording'] ?? false;
+        $this->container['prompts'] = $data['prompts'] ?? null;
     }
 
     /**
@@ -251,6 +222,9 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['action_url'] === null) {
+            $invalidProperties[] = "'action_url' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -267,265 +241,145 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets account_id
+     * Gets action_url
      *
-     * @return string|null
+     * @return string
      */
-    public function getAccountId()
+    public function getActionUrl()
     {
-        return $this->container['account_id'];
+        return $this->container['action_url'];
     }
 
     /**
-     * Sets account_id
+     * Sets action_url
      *
-     * @param string|null $account_id String that uniquely identifies this account resource.
+     * @param string $action_url action_url
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setActionUrl($action_url)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['action_url'] = $action_url;
 
         return $this;
     }
 
     /**
-     * Gets message_id
+     * Gets play_beep
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getMessageId()
+    public function getPlayBeep()
     {
-        return $this->container['message_id'];
+        return $this->container['play_beep'];
     }
 
     /**
-     * Sets message_id
+     * Sets play_beep
      *
-     * @param string|null $message_id String that uniquely identifies this message resource
+     * @param bool|null $play_beep play_beep
      *
      * @return self
      */
-    public function setMessageId($message_id)
+    public function setPlayBeep($play_beep)
     {
-        $this->container['message_id'] = $message_id;
+        $this->container['play_beep'] = $play_beep;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets record
      *
-     * @return \FreeClimb\Api\Model\MessageStatus|null
+     * @return \FreeClimb\Api\Model\TranscribeUtteranceRecord|null
      */
-    public function getStatus()
+    public function getRecord()
     {
-        return $this->container['status'];
+        return $this->container['record'];
     }
 
     /**
-     * Sets status
+     * Sets record
      *
-     * @param \FreeClimb\Api\Model\MessageStatus|null $status status
+     * @param \FreeClimb\Api\Model\TranscribeUtteranceRecord|null $record record
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setRecord($record)
     {
-        $this->container['status'] = $status;
+        $this->container['record'] = $record;
 
         return $this;
     }
 
     /**
-     * Gets from
+     * Gets privacy_for_logging
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getFrom()
+    public function getPrivacyForLogging()
     {
-        return $this->container['from'];
+        return $this->container['privacy_for_logging'];
     }
 
     /**
-     * Sets from
+     * Sets privacy_for_logging
      *
-     * @param string|null $from Phone number in E.164 format that sent the message.
+     * @param bool|null $privacy_for_logging privacy_for_logging
      *
      * @return self
      */
-    public function setFrom($from)
+    public function setPrivacyForLogging($privacy_for_logging)
     {
-        $this->container['from'] = $from;
+        $this->container['privacy_for_logging'] = $privacy_for_logging;
 
         return $this;
     }
 
     /**
-     * Gets to
+     * Gets privacy_for_recording
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getTo()
+    public function getPrivacyForRecording()
     {
-        return $this->container['to'];
+        return $this->container['privacy_for_recording'];
     }
 
     /**
-     * Sets to
+     * Sets privacy_for_recording
      *
-     * @param string|null $to Phone number in E.164 format that received the message.
+     * @param bool|null $privacy_for_recording privacy_for_recording
      *
      * @return self
      */
-    public function setTo($to)
+    public function setPrivacyForRecording($privacy_for_recording)
     {
-        $this->container['to'] = $to;
+        $this->container['privacy_for_recording'] = $privacy_for_recording;
 
         return $this;
     }
 
     /**
-     * Gets text
+     * Gets prompts
      *
-     * @return string|null
+     * @return mixed[]|null
      */
-    public function getText()
+    public function getPrompts()
     {
-        return $this->container['text'];
+        return $this->container['prompts'];
     }
 
     /**
-     * Sets text
+     * Sets prompts
      *
-     * @param string|null $text Message contents
+     * @param mixed[]|null $prompts prompts
      *
      * @return self
      */
-    public function setText($text)
+    public function setPrompts($prompts)
     {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets direction
-     *
-     * @return string|null
-     */
-    public function getDirection()
-    {
-        return $this->container['direction'];
-    }
-
-    /**
-     * Sets direction
-     *
-     * @param string|null $direction Noting whether the message was inbound or outbound
-     *
-     * @return self
-     */
-    public function setDirection($direction)
-    {
-        $this->container['direction'] = $direction;
-
-        return $this;
-    }
-
-    /**
-     * Gets notification_url
-     *
-     * @return string|null
-     */
-    public function getNotificationUrl()
-    {
-        return $this->container['notification_url'];
-    }
-
-    /**
-     * Sets notification_url
-     *
-     * @param string|null $notification_url URL invoked when message sent
-     *
-     * @return self
-     */
-    public function setNotificationUrl($notification_url)
-    {
-        $this->container['notification_url'] = $notification_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets brand_id
-     *
-     * @return string|null
-     */
-    public function getBrandId()
-    {
-        return $this->container['brand_id'];
-    }
-
-    /**
-     * Sets brand_id
-     *
-     * @param string|null $brand_id The unique identifier for the brand associated with the message
-     *
-     * @return self
-     */
-    public function setBrandId($brand_id)
-    {
-        $this->container['brand_id'] = $brand_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets campaign_id
-     *
-     * @return string|null
-     */
-    public function getCampaignId()
-    {
-        return $this->container['campaign_id'];
-    }
-
-    /**
-     * Sets campaign_id
-     *
-     * @param string|null $campaign_id The unique identifier for the campaign associated with the message
-     *
-     * @return self
-     */
-    public function setCampaignId($campaign_id)
-    {
-        $this->container['campaign_id'] = $campaign_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets segment_count
-     *
-     * @return float|null
-     */
-    public function getSegmentCount()
-    {
-        return $this->container['segment_count'];
-    }
-
-    /**
-     * Sets segment_count
-     *
-     * @param float|null $segment_count The number of segments into which the message was split
-     *
-     * @return self
-     */
-    public function setSegmentCount($segment_count)
-    {
-        $this->container['segment_count'] = $segment_count;
+        $this->container['prompts'] = $prompts;
 
         return $this;
     }
