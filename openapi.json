@@ -3328,7 +3328,7 @@
               "prompts": [
                 {
                   "Play": {
-                    "file": "http://dplutil01.vail/~user/prompts/please-record-greeting.wav"
+                    "file": "https://yoursite.com/path/to/please-record-greeting.wav"
                   }
                 }
               ]
