@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 None
+<a name="4.3.3"></a>
+
+## [4.3.3] - 2023-09-21
+
+### Changed
+
+- PHP SDK Unit Tests
 
 <a name="4.3.2"></a>
 
