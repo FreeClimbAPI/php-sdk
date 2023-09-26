@@ -160,9 +160,9 @@ class OutDialTest extends TestCase
     }
 
     /**
-* Test attribute "OutDial"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new OutDial();    
       try {
           $uri1 = "TEST_STRING";
@@ -190,7 +190,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "OutDial"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

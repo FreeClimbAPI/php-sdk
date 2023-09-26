@@ -129,9 +129,9 @@ class CallListTest extends TestCase
     }
 
     /**
-* Test attribute "CallList"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new CallList();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "CallList"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

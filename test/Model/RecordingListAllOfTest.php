@@ -64,9 +64,9 @@ class RecordingListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "RecordingList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new RecordingListAllOf();    
       $testList = [];
       $test1->setRecordings($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "RecordingList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

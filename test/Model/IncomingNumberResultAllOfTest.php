@@ -178,9 +178,9 @@ class IncomingNumberResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "IncomingNumberResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new IncomingNumberResultAllOf();    
       $object = new \FreeClimb\Api\Model\Capabilities();
       $test1->setCapabilities($object);
@@ -201,7 +201,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "IncomingNumberResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

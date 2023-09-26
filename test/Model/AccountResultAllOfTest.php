@@ -129,9 +129,9 @@ class AccountResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "AccountResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AccountResultAllOf();    
       $test1->setAccountId("TS");
       $test1->setApiKey("TS");
@@ -147,7 +147,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AccountResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

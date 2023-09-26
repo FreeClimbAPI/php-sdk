@@ -88,9 +88,9 @@ class ParkTest extends TestCase
     }
 
     /**
-* Test attribute "Park"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Park();    
       try {
           $uri1 = "TEST_STRING";
@@ -111,7 +111,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Park"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -224,9 +224,9 @@ class CallResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "CallResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new CallResultAllOf();    
       $test1->setCallId("TS");
       $test1->setParentCallId("TS");
@@ -250,7 +250,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "CallResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

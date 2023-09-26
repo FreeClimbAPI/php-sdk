@@ -110,9 +110,9 @@ class TranscribeUtteranceTest extends TestCase
     }
 
     /**
-* Test attribute "TranscribeUtterance"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new TranscribeUtterance();    
       $test1->setActionUrl("TS");
       $test1->setPlayBeep(true);
@@ -126,7 +126,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "TranscribeUtterance"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

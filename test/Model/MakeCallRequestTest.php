@@ -161,9 +161,9 @@ class MakeCallRequestTest extends TestCase
     }
 
     /**
-* Test attribute "MakeCallRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MakeCallRequest();    
       $test1->setFrom("TS");
       $test1->setTo("TS");
@@ -181,7 +181,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MakeCallRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

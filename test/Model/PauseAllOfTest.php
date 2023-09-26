@@ -64,9 +64,9 @@ class PauseAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "Pause_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new PauseAllOf();    
       $test1->setLength(1);
 
@@ -75,7 +75,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Pause_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

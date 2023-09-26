@@ -99,9 +99,9 @@ class SmsAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "Sms_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SmsAllOf();    
       $test1->setTo("TS");
       $test1->setFrom("TS");
@@ -113,7 +113,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Sms_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

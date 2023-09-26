@@ -179,9 +179,9 @@ class GetSpeechAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "GetSpeech_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new GetSpeechAllOf();    
       try {
           $uri1 = "TEST_STRING";
@@ -206,7 +206,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "GetSpeech_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -82,9 +82,9 @@ class TranscribeUtteranceRecordTest extends TestCase
     }
 
     /**
-* Test attribute "TranscribeUtterance_record"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new TranscribeUtteranceRecord();    
       $test1->setSaveRecording(true);
       $test1->setMaxLengthSec(1);
@@ -95,7 +95,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "TranscribeUtterance_record"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

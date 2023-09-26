@@ -388,9 +388,9 @@ class SMSTenDLCBrandTest extends TestCase
     }
 
     /**
-* Test attribute "SMSTenDLCBrand"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SMSTenDLCBrand();    
       $test1->setAccountId("TS");
       $test1->setEntityType(SMSTenDLCBrand::PRIVATE_PROFIT);
@@ -430,7 +430,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SMSTenDLCBrand"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

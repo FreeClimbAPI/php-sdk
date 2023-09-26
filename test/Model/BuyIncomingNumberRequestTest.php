@@ -88,9 +88,9 @@ class BuyIncomingNumberRequestTest extends TestCase
     }
 
     /**
-* Test attribute "BuyIncomingNumberRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new BuyIncomingNumberRequest();    
       $test1->setPhoneNumber("TS");
       $test1->setAlias("TS");
@@ -101,7 +101,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "BuyIncomingNumberRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

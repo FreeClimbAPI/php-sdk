@@ -196,9 +196,9 @@ class ApplicationResultTest extends TestCase
     }
 
     /**
-* Test attribute "ApplicationResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ApplicationResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -219,7 +219,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ApplicationResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

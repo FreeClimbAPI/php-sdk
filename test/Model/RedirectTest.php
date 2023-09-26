@@ -66,9 +66,9 @@ class RedirectTest extends TestCase
     }
 
     /**
-* Test attribute "Redirect"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Redirect();    
       try {
           $uri1 = "TEST_STRING";
@@ -82,7 +82,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Redirect"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

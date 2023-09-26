@@ -125,9 +125,9 @@ class AvailableNumberTest extends TestCase
     }
 
     /**
-* Test attribute "AvailableNumber"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AvailableNumber();    
       $object = new \FreeClimb\Api\Model\Capabilities();
       $test1->setCapabilities($object);
@@ -143,7 +143,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AvailableNumber"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

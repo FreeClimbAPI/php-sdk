@@ -88,9 +88,9 @@ class IncomingNumberRequestTest extends TestCase
     }
 
     /**
-* Test attribute "IncomingNumberRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new IncomingNumberRequest();    
       $test1->setApplicationId("TS");
       $test1->setAlias("TS");
@@ -101,7 +101,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "IncomingNumberRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -106,9 +106,9 @@ class SayTest extends TestCase
     }
 
     /**
-* Test attribute "Say"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Say();    
       $test1->setText("TS");
       $test1->setLanguage("TS");
@@ -121,7 +121,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Say"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

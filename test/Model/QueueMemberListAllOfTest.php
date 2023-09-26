@@ -64,9 +64,9 @@ class QueueMemberListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "QueueMemberList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new QueueMemberListAllOf();    
       $testList = [];
       $test1->setQueueMembers($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "QueueMemberList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

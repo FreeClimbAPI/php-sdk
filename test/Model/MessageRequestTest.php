@@ -152,9 +152,9 @@ class MessageRequestTest extends TestCase
     }
 
     /**
-* Test attribute "MessageRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MessageRequest();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -171,7 +171,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MessageRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

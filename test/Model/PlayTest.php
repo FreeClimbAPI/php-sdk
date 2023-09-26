@@ -95,9 +95,9 @@ class PlayTest extends TestCase
     }
 
     /**
-* Test attribute "Play"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Play();    
       $test1->setFile("TS");
       $test1->setLoop(1);
@@ -109,7 +109,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Play"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

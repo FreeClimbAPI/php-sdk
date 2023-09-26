@@ -100,9 +100,9 @@ class CapabilitiesTest extends TestCase
     }
 
     /**
-* Test attribute "Capabilities"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Capabilities();    
       $test1->setVoice(true);
       $test1->setSms(true);
@@ -115,7 +115,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Capabilities"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

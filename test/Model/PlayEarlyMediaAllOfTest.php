@@ -66,9 +66,9 @@ class PlayEarlyMediaAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "PlayEarlyMedia_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new PlayEarlyMediaAllOf();    
       $test1->setFile("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "PlayEarlyMedia_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

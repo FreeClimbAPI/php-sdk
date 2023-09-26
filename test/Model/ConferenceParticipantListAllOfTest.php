@@ -64,9 +64,9 @@ class ConferenceParticipantListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "ConferenceParticipantList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ConferenceParticipantListAllOf();    
       $testList = [];
       $test1->setParticipants($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ConferenceParticipantList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

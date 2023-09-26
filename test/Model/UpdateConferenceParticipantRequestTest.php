@@ -73,9 +73,9 @@ class UpdateConferenceParticipantRequestTest extends TestCase
     }
 
     /**
-* Test attribute "UpdateConferenceParticipantRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new UpdateConferenceParticipantRequest();    
       $test1->setTalk(true);
       $test1->setListen(true);
@@ -85,7 +85,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "UpdateConferenceParticipantRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

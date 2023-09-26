@@ -129,9 +129,9 @@ class ConferenceListTest extends TestCase
     }
 
     /**
-* Test attribute "ConferenceList"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ConferenceList();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ConferenceList"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

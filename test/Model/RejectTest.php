@@ -66,9 +66,9 @@ class RejectTest extends TestCase
     }
 
     /**
-* Test attribute "Reject"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Reject();    
       $test1->setReason("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Reject"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

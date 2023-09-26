@@ -166,9 +166,9 @@ class ConferenceResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "ConferenceResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ConferenceResultAllOf();    
       $test1->setConferenceId("TS");
       $test1->setAccountId("TS");
@@ -187,7 +187,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ConferenceResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

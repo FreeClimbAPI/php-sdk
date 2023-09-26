@@ -157,9 +157,9 @@ class ConferenceParticipantResultTest extends TestCase
     }
 
     /**
-* Test attribute "ConferenceParticipantResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ConferenceParticipantResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -177,7 +177,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ConferenceParticipantResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

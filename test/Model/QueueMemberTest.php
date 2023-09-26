@@ -106,9 +106,9 @@ class QueueMemberTest extends TestCase
     }
 
     /**
-* Test attribute "QueueMember"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new QueueMember();    
       $test1->setUri("TS");
       $test1->setCallId("TS");
@@ -121,7 +121,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "QueueMember"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

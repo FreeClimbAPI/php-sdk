@@ -66,9 +66,9 @@ class RemoveFromConferenceAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "RemoveFromConference_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new RemoveFromConferenceAllOf();    
       $test1->setCallId("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "RemoveFromConference_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

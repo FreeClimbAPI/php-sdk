@@ -129,9 +129,9 @@ class LogListTest extends TestCase
     }
 
     /**
-* Test attribute "LogList"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new LogList();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "LogList"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

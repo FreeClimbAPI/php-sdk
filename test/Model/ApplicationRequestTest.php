@@ -132,9 +132,9 @@ class ApplicationRequestTest extends TestCase
     }
 
     /**
-* Test attribute "ApplicationRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ApplicationRequest();    
       $test1->setAlias("TS");
       $test1->setVoiceUrl("TS");
@@ -149,7 +149,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ApplicationRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

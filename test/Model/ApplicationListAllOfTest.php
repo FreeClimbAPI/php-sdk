@@ -64,9 +64,9 @@ class ApplicationListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "ApplicationList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ApplicationListAllOf();    
       $testList = [];
       $test1->setApplications($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ApplicationList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

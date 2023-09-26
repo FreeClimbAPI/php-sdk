@@ -66,9 +66,9 @@ class PlayEarlyMediaTest extends TestCase
     }
 
     /**
-* Test attribute "PlayEarlyMedia"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new PlayEarlyMedia();    
       $test1->setFile("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "PlayEarlyMedia"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -66,9 +66,9 @@ class TerminateConferenceTest extends TestCase
     }
 
     /**
-* Test attribute "TerminateConference"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new TerminateConference();    
       $test1->setConferenceId("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "TerminateConference"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

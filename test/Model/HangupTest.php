@@ -66,9 +66,9 @@ class HangupTest extends TestCase
     }
 
     /**
-* Test attribute "Hangup"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Hangup();    
       $test1->setReason("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Hangup"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

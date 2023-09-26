@@ -75,9 +75,9 @@ class SetListenTest extends TestCase
     }
 
     /**
-* Test attribute "SetListen"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SetListen();    
       $test1->setCallId("TS");
       $test1->setListen(true);
@@ -87,7 +87,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SetListen"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

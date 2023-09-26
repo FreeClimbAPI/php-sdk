@@ -220,9 +220,9 @@ class IncomingNumberResultTest extends TestCase
     }
 
     /**
-* Test attribute "IncomingNumberResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new IncomingNumberResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -247,7 +247,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "IncomingNumberResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

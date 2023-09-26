@@ -129,9 +129,9 @@ class QueueMemberListTest extends TestCase
     }
 
     /**
-* Test attribute "QueueMemberList"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new QueueMemberList();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "QueueMemberList"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

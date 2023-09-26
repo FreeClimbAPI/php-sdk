@@ -64,9 +64,9 @@ class CallListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "CallList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new CallListAllOf();    
       $testList = [];
       $test1->setCalls($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "CallList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

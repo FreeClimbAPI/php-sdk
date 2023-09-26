@@ -77,9 +77,9 @@ class AccountRequestTest extends TestCase
     }
 
     /**
-* Test attribute "AccountRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AccountRequest();    
       $test1->setAlias("TS");
       $test1->setLabel("TS");
@@ -89,7 +89,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AccountRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

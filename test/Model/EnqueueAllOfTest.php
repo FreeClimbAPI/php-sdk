@@ -99,9 +99,9 @@ class EnqueueAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "Enqueue_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new EnqueueAllOf();    
       try {
           $uri1 = "TEST_STRING";
@@ -123,7 +123,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Enqueue_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

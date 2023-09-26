@@ -191,9 +191,9 @@ class MessageResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "MessageResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MessageResultAllOf();    
       $test1->setAccountId("TS");
       $test1->setMessageId("TS");
@@ -211,7 +211,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MessageResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

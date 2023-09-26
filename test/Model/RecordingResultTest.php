@@ -150,9 +150,9 @@ class RecordingResultTest extends TestCase
     }
 
     /**
-* Test attribute "RecordingResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new RecordingResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -169,7 +169,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "RecordingResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

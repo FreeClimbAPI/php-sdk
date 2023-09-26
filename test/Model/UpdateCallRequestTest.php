@@ -65,9 +65,9 @@ class UpdateCallRequestTest extends TestCase
     }
 
     /**
-* Test attribute "UpdateCallRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new UpdateCallRequest();    
       $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
 
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "UpdateCallRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

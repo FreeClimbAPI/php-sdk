@@ -120,9 +120,9 @@ class PaginationModelTest extends TestCase
     }
 
     /**
-* Test attribute "PaginationModel"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new PaginationModel();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -137,7 +137,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "PaginationModel"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

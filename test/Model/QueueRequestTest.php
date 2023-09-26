@@ -75,9 +75,9 @@ class QueueRequestTest extends TestCase
     }
 
     /**
-* Test attribute "QueueRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new QueueRequest();    
       $test1->setAlias("TS");
       $test1->setMaxSize(1);
@@ -87,7 +87,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "QueueRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

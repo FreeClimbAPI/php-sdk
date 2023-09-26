@@ -110,9 +110,9 @@ class MessageRequestAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "MessageRequest_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MessageRequestAllOf();    
       $test1->setFrom("TS");
       $test1->setTo("TS");
@@ -125,7 +125,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MessageRequest_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

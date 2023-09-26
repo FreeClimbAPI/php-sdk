@@ -90,9 +90,9 @@ class UpdateConferenceRequestTest extends TestCase
     }
 
     /**
-* Test attribute "UpdateConferenceRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new UpdateConferenceRequest();    
       $test1->setAlias("TS");
       $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
@@ -103,7 +103,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "UpdateConferenceRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

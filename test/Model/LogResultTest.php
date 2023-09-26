@@ -128,9 +128,9 @@ class LogResultTest extends TestCase
     }
 
     /**
-* Test attribute "LogResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new LogResult();    
       $test1->setTimestamp(1);
       $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
@@ -146,7 +146,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "LogResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

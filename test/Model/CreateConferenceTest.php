@@ -120,9 +120,9 @@ class CreateConferenceTest extends TestCase
     }
 
     /**
-* Test attribute "CreateConference"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new CreateConference();    
       try {
           $uri1 = "TEST_STRING";
@@ -141,7 +141,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "CreateConference"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

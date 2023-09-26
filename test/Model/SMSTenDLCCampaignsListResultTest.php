@@ -129,9 +129,9 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
     }
 
     /**
-* Test attribute "SMSTenDLCCampaignsListResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SMSTenDLCCampaignsListResult();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SMSTenDLCCampaignsListResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

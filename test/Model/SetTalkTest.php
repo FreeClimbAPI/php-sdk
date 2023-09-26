@@ -75,9 +75,9 @@ class SetTalkTest extends TestCase
     }
 
     /**
-* Test attribute "SetTalk"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SetTalk();    
       $test1->setCallId("TS");
       $test1->setTalk(true);
@@ -87,7 +87,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SetTalk"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -64,9 +64,9 @@ class AvailableNumberListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "AvailableNumberList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AvailableNumberListAllOf();    
       $testList = [];
       $test1->setAvailablePhoneNumbers($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AvailableNumberList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

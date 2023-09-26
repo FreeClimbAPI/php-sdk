@@ -64,9 +64,9 @@ class PerclScriptTest extends TestCase
     }
 
     /**
-* Test attribute "PerclScript"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new PerclScript();    
       $testList = [];
       $test1->setCommands($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "PerclScript"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -66,9 +66,9 @@ class FilterLogsRequestTest extends TestCase
     }
 
     /**
-* Test attribute "FilterLogsRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new FilterLogsRequest();    
       $test1->setPql("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "FilterLogsRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

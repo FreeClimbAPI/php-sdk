@@ -154,9 +154,9 @@ class ApplicationResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "ApplicationResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new ApplicationResultAllOf();    
       $test1->setAccountId("TS");
       $test1->setApplicationId("TS");
@@ -173,7 +173,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "ApplicationResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -142,9 +142,9 @@ class GetDigitsTest extends TestCase
     }
 
     /**
-* Test attribute "GetDigits"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new GetDigits();    
       try {
           $uri1 = "TEST_STRING";
@@ -167,7 +167,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "GetDigits"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

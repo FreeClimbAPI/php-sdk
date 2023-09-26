@@ -64,9 +64,9 @@ class PauseTest extends TestCase
     }
 
     /**
-* Test attribute "Pause"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Pause();    
       $test1->setLength(1);
 
@@ -75,7 +75,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Pause"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

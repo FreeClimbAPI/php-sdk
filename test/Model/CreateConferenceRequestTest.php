@@ -111,9 +111,9 @@ class CreateConferenceRequestTest extends TestCase
     }
 
     /**
-* Test attribute "CreateConferenceRequest"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new CreateConferenceRequest();    
       $test1->setAlias("TS");
       $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
@@ -126,7 +126,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "CreateConferenceRequest"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

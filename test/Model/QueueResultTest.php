@@ -165,9 +165,9 @@ class QueueResultTest extends TestCase
     }
 
     /**
-* Test attribute "QueueResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new QueueResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -187,7 +187,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "QueueResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

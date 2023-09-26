@@ -75,9 +75,9 @@ class SetListenAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "SetListen_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SetListenAllOf();    
       $test1->setCallId("TS");
       $test1->setListen(true);
@@ -87,7 +87,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SetListen_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

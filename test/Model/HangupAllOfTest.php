@@ -66,9 +66,9 @@ class HangupAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "Hangup_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new HangupAllOf();    
       $test1->setReason("TS");
 
@@ -77,7 +77,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Hangup_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

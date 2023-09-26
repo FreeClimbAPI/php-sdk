@@ -122,9 +122,9 @@ class RecordUtteranceTest extends TestCase
     }
 
     /**
-* Test attribute "RecordUtterance"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new RecordUtterance();    
       try {
           $uri1 = "TEST_STRING";
@@ -144,7 +144,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "RecordUtterance"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

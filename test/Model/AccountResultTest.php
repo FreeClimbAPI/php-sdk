@@ -171,9 +171,9 @@ class AccountResultTest extends TestCase
     }
 
     /**
-* Test attribute "AccountResult"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AccountResult();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -193,7 +193,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AccountResult"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -64,9 +64,9 @@ class SMSTenDLCPartnerCampaignsListResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "SMSTenDLCPartnerCampaignsListResult_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();    
       $testList = [];
       $test1->setPartnerCampaigns($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SMSTenDLCPartnerCampaignsListResult_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

@@ -350,9 +350,9 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
     }
 
     /**
-* Test attribute "SMSTenDLCPartnerCampaign"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SMSTenDLCPartnerCampaign();    
       $test1->setAccountId("TS");
       $test1->setCampaignId("TS");
@@ -390,7 +390,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SMSTenDLCPartnerCampaign"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

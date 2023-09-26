@@ -157,9 +157,9 @@ class AddToConferenceTest extends TestCase
     }
 
     /**
-* Test attribute "AddToConference"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AddToConference();    
       $test1->setAllowCallControl(true);
       $test1->setCallControlSequence("TS");
@@ -177,7 +177,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AddToConference"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

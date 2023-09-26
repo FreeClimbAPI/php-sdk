@@ -84,9 +84,9 @@ class SendDigitsTest extends TestCase
     }
 
     /**
-* Test attribute "SendDigits"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new SendDigits();    
       $test1->setDigits("TS");
       $test1->setPauseMs(1);
@@ -97,7 +97,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "SendDigits"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

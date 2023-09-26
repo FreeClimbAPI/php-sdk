@@ -129,9 +129,9 @@ class AvailableNumberListTest extends TestCase
     }
 
     /**
-* Test attribute "AvailableNumberList"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new AvailableNumberList();    
       $test1->setTotal(1);
       $test1->setStart(1);
@@ -148,7 +148,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "AvailableNumberList"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

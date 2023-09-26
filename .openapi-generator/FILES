@@ -290,6 +290,7 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/AccountRequestTest.php
 test/Model/AccountResultAllOfTest.php
 test/Model/AccountResultTest.php
 test/Model/AccountStatusTest.php

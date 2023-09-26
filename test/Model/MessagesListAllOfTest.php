@@ -64,9 +64,9 @@ class MessagesListAllOfTest extends TestCase
     }
 
     /**
-* Test attribute "MessagesList_allOf"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MessagesListAllOf();    
       $testList = [];
       $test1->setMessages($testList);
@@ -76,7 +76,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MessagesList_allOf"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

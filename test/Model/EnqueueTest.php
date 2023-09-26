@@ -99,9 +99,9 @@ class EnqueueTest extends TestCase
     }
 
     /**
-* Test attribute "Enqueue"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new Enqueue();    
       try {
           $uri1 = "TEST_STRING";
@@ -123,7 +123,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "Enqueue"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {

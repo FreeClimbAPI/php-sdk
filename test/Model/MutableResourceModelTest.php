@@ -97,9 +97,9 @@ class MutableResourceModelTest extends TestCase
     }
 
     /**
-* Test attribute "MutableResourceModel"
+* Test attribute toStringTest
 */
-public function toStringTypeTest() {
+public function toStringTest() {
     $test1 = new MutableResourceModel();    
       $test1->setUri("TS");
       $test1->setDateCreated("TS");
@@ -111,7 +111,7 @@ public function toStringTypeTest() {
 }
 
 /**
- * Test attribute "MutableResourceModel"
+ * Test attribute toHeaderValue
  */
 public function toHeaderValueTest()
 {
