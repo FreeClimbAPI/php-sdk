@@ -164,4 +164,50 @@ class QueueResultTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->QueueResult->getSubresourceUris());
     }
 
+    /**
+* Test attribute "QueueResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new QueueResult();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setQueueId("TS");
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+      $test1->setCurrentSize(1);
+      $test1->setAverageQueueRemovalTime(1);
+      $testObject = new stdClass(); 
+      $test1->setSubresourceUris($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "QueueResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new QueueResult();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setQueueId("TS");
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+      $test1->setCurrentSize(1);
+      $test1->setAverageQueueRemovalTime(1);
+      $testObject = new stdClass();
+      $test1->setSubresourceUris($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

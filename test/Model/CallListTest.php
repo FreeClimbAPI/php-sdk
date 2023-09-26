@@ -128,4 +128,44 @@ class CallListTest extends TestCase
         $this->assertIsArray($this->CallList->getCalls());
     }
 
+    /**
+* Test attribute "CallList"
+*/
+public function toStringTypeTest() {
+    $test1 = new CallList();    
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setCalls($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "CallList"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new CallList();
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setCalls($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

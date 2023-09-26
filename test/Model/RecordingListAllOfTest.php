@@ -63,4 +63,30 @@ class RecordingListAllOfTest extends TestCase
         $this->assertIsArray($this->RecordingListAllOf->getRecordings());
     }
 
+    /**
+* Test attribute "RecordingList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new RecordingListAllOf();    
+      $testList = [];
+      $test1->setRecordings($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "RecordingList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new RecordingListAllOf();
+      $testList = [];
+      $test1->setRecordings($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

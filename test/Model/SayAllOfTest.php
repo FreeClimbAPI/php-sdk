@@ -105,4 +105,36 @@ class SayAllOfTest extends TestCase
         $this->assertIsBool($this->SayAllOf->getPrivacyMode());
     }
 
+    /**
+* Test attribute "Say_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new SayAllOf();    
+      $test1->setText("TS");
+      $test1->setLanguage("TS");
+      $test1->setLoop(1);
+      $test1->setConferenceId("TS");
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Say_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SayAllOf();
+      $test1->setText("TS");
+      $test1->setLanguage("TS");
+      $test1->setLoop(1);
+      $test1->setConferenceId("TS");
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

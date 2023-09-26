@@ -170,4 +170,50 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         $this->assertIsInt($this->SMSTenDLCPartnerCampaignBrand->getEvpVettingScore());
     }
 
+    /**
+* Test attribute "SMSTenDLCPartnerCampaignBrand"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCPartnerCampaignBrand();    
+      $test1->setAccountId("TS");
+      $test1->setBrandId("TS");
+      $test1->setFirstName("TS");
+      $test1->setLastName("TS");
+      $test1->setDisplayName("TS");
+      $test1->setCompanyName("TS");
+      $test1->setPhone("TS");
+      $test1->setEmail("TS");
+      $test1->setWebsite("TS");
+      $testMap = [];
+      $test1->setOptionalAttributes($testMap);
+      $test1->setEvpVettingScore(1);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCPartnerCampaignBrand"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCPartnerCampaignBrand();
+      $test1->setAccountId("TS");
+      $test1->setBrandId("TS");
+      $test1->setFirstName("TS");
+      $test1->setLastName("TS");
+      $test1->setDisplayName("TS");
+      $test1->setCompanyName("TS");
+      $test1->setPhone("TS");
+      $test1->setEmail("TS");
+      $test1->setWebsite("TS");
+      $testMap = [];
+      $test1->setOptionalAttributes($testMap);
+      $test1->setEvpVettingScore(1);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

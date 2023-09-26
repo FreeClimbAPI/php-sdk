@@ -119,4 +119,40 @@ class PaginationModelTest extends TestCase
 
     }
 
+    /**
+* Test attribute "PaginationModel"
+*/
+public function toStringTypeTest() {
+    $test1 = new PaginationModel();    
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "PaginationModel"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PaginationModel();
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

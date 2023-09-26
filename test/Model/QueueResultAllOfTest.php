@@ -122,4 +122,42 @@ class QueueResultAllOfTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->QueueResultAllOf->getSubresourceUris());
     }
 
+    /**
+* Test attribute "QueueResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new QueueResultAllOf();    
+      $test1->setAccountId("TS");
+      $test1->setQueueId("TS");
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+      $test1->setCurrentSize(1);
+      $test1->setAverageQueueRemovalTime(1);
+      $testObject = new stdClass(); 
+      $test1->setSubresourceUris($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "QueueResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new QueueResultAllOf();
+      $test1->setAccountId("TS");
+      $test1->setQueueId("TS");
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+      $test1->setCurrentSize(1);
+      $test1->setAverageQueueRemovalTime(1);
+      $testObject = new stdClass();
+      $test1->setSubresourceUris($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

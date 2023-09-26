@@ -156,4 +156,46 @@ class AddToConferenceTest extends TestCase
         $this->assertIsBool($this->AddToConference->getTalk());
     }
 
+    /**
+* Test attribute "AddToConference"
+*/
+public function toStringTypeTest() {
+    $test1 = new AddToConference();    
+      $test1->setAllowCallControl(true);
+      $test1->setCallControlSequence("TS");
+      $test1->setCallControlUrl("TS");
+      $test1->setConferenceId("TS");
+      $test1->setCallId("TS");
+      $test1->setLeaveConferenceUrl("TS");
+      $test1->setListen(true);
+      $test1->setNotificationUrl("TS");
+      $test1->setStartConfOnEnter(true);
+      $test1->setTalk(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "AddToConference"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new AddToConference();
+      $test1->setAllowCallControl(true);
+      $test1->setCallControlSequence("TS");
+      $test1->setCallControlUrl("TS");
+      $test1->setConferenceId("TS");
+      $test1->setCallId("TS");
+      $test1->setLeaveConferenceUrl("TS");
+      $test1->setListen(true);
+      $test1->setNotificationUrl("TS");
+      $test1->setStartConfOnEnter(true);
+      $test1->setTalk(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

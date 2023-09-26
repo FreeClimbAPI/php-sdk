@@ -76,4 +76,30 @@ class AccountRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "AccountRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new AccountRequest();    
+      $test1->setAlias("TS");
+      $test1->setLabel("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "AccountRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new AccountRequest();
+      $test1->setAlias("TS");
+      $test1->setLabel("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

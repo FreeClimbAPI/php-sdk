@@ -83,4 +83,32 @@ class SendDigitsTest extends TestCase
         $this->assertIsBool($this->SendDigits->getPrivacyMode());
     }
 
+    /**
+* Test attribute "SendDigits"
+*/
+public function toStringTypeTest() {
+    $test1 = new SendDigits();    
+      $test1->setDigits("TS");
+      $test1->setPauseMs(1);
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SendDigits"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SendDigits();
+      $test1->setDigits("TS");
+      $test1->setPauseMs(1);
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -65,4 +65,28 @@ class RemoveFromConferenceAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "RemoveFromConference_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new RemoveFromConferenceAllOf();    
+      $test1->setCallId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "RemoveFromConference_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new RemoveFromConferenceAllOf();
+      $test1->setCallId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

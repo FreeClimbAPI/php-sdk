@@ -63,4 +63,30 @@ class QueueMemberListAllOfTest extends TestCase
         $this->assertIsArray($this->QueueMemberListAllOf->getQueueMembers());
     }
 
+    /**
+* Test attribute "QueueMemberList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new QueueMemberListAllOf();    
+      $testList = [];
+      $test1->setQueueMembers($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "QueueMemberList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new QueueMemberListAllOf();
+      $testList = [];
+      $test1->setQueueMembers($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

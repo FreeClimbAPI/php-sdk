@@ -170,4 +170,50 @@ class AccountResultTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->AccountResult->getSubresourceUris());
     }
 
+    /**
+* Test attribute "AccountResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new AccountResult();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setApiKey("TS");
+      $test1->setAlias("TS");
+      $test1->setLabel("TS");
+      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+      $testObject = new stdClass(); 
+      $test1->setSubresourceUris($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "AccountResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new AccountResult();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setApiKey("TS");
+      $test1->setAlias("TS");
+      $test1->setLabel("TS");
+      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+      $testObject = new stdClass();
+      $test1->setSubresourceUris($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -127,4 +127,42 @@ class LogResultTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->LogResult->getMetadata());
     }
 
+    /**
+* Test attribute "LogResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new LogResult();    
+      $test1->setTimestamp(1);
+      $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
+      $test1->setRequestId("TS");
+      $test1->setAccountId("TS");
+      $test1->setCallId("TS");
+      $test1->setMessage("TS");
+      $testObject = new stdClass(); 
+      $test1->setMetadata($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "LogResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new LogResult();
+      $test1->setTimestamp(1);
+      $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
+      $test1->setRequestId("TS");
+      $test1->setAccountId("TS");
+      $test1->setCallId("TS");
+      $test1->setMessage("TS");
+      $testObject = new stdClass();
+      $test1->setMetadata($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

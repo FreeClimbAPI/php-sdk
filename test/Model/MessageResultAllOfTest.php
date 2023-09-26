@@ -190,4 +190,46 @@ class MessageResultAllOfTest extends TestCase
         $this->assertIsNumeric($this->MessageResultAllOf->getSegmentCount());
     }
 
+    /**
+* Test attribute "MessageResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new MessageResultAllOf();    
+      $test1->setAccountId("TS");
+      $test1->setMessageId("TS");
+      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setText("TS");
+      $test1->setDirection("TS");
+      $test1->setNotificationUrl("TS");
+      $test1->setBrandId("TS");
+      $test1->setCampaignId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "MessageResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new MessageResultAllOf();
+      $test1->setAccountId("TS");
+      $test1->setMessageId("TS");
+      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setText("TS");
+      $test1->setDirection("TS");
+      $test1->setNotificationUrl("TS");
+      $test1->setBrandId("TS");
+      $test1->setCampaignId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

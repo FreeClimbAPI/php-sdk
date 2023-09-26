@@ -87,4 +87,32 @@ class BuyIncomingNumberRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "BuyIncomingNumberRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new BuyIncomingNumberRequest();    
+      $test1->setPhoneNumber("TS");
+      $test1->setAlias("TS");
+      $test1->setApplicationId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "BuyIncomingNumberRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new BuyIncomingNumberRequest();
+      $test1->setPhoneNumber("TS");
+      $test1->setAlias("TS");
+      $test1->setApplicationId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

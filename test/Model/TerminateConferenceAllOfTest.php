@@ -65,4 +65,28 @@ class TerminateConferenceAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "TerminateConference_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new TerminateConferenceAllOf();    
+      $test1->setConferenceId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "TerminateConference_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new TerminateConferenceAllOf();
+      $test1->setConferenceId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

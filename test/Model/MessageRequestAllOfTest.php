@@ -109,4 +109,36 @@ class MessageRequestAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "MessageRequest_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new MessageRequestAllOf();    
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setText("TS");
+      $test1->setNotificationUrl("TS");
+      $test1->setAccountId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "MessageRequest_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new MessageRequestAllOf();
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setText("TS");
+      $test1->setNotificationUrl("TS");
+      $test1->setAccountId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

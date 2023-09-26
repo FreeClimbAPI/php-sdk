@@ -128,4 +128,44 @@ class ConferenceParticipantListTest extends TestCase
         $this->assertIsArray($this->ConferenceParticipantList->getParticipants());
     }
 
+    /**
+* Test attribute "ConferenceParticipantList"
+*/
+public function toStringTypeTest() {
+    $test1 = new ConferenceParticipantList();    
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setParticipants($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ConferenceParticipantList"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ConferenceParticipantList();
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setParticipants($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

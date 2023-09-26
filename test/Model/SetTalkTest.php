@@ -74,4 +74,30 @@ class SetTalkTest extends TestCase
         $this->assertIsBool($this->SetTalk->getTalk());
     }
 
+    /**
+* Test attribute "SetTalk"
+*/
+public function toStringTypeTest() {
+    $test1 = new SetTalk();    
+      $test1->setCallId("TS");
+      $test1->setTalk(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SetTalk"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SetTalk();
+      $test1->setCallId("TS");
+      $test1->setTalk(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

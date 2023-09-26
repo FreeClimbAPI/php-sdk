@@ -63,4 +63,30 @@ class MessagesListAllOfTest extends TestCase
         $this->assertIsArray($this->MessagesListAllOf->getMessages());
     }
 
+    /**
+* Test attribute "MessagesList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new MessagesListAllOf();    
+      $testList = [];
+      $test1->setMessages($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "MessagesList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new MessagesListAllOf();
+      $testList = [];
+      $test1->setMessages($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

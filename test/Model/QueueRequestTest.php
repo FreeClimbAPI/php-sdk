@@ -74,4 +74,30 @@ class QueueRequestTest extends TestCase
         $this->assertIsInt($this->QueueRequest->getMaxSize());
     }
 
+    /**
+* Test attribute "QueueRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new QueueRequest();    
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "QueueRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new QueueRequest();
+      $test1->setAlias("TS");
+      $test1->setMaxSize(1);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -165,4 +165,48 @@ class ConferenceResultAllOfTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->ConferenceResultAllOf->getSubresourceUris());
     }
 
+    /**
+* Test attribute "ConferenceResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new ConferenceResultAllOf();    
+      $test1->setConferenceId("TS");
+      $test1->setAccountId("TS");
+      $test1->setAlias("TS");
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setRecord(true);
+      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+      $test1->setWaitUrl("TS");
+      $test1->setActionUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $testObject = new stdClass(); 
+      $test1->setSubresourceUris($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ConferenceResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ConferenceResultAllOf();
+      $test1->setConferenceId("TS");
+      $test1->setAccountId("TS");
+      $test1->setAlias("TS");
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setRecord(true);
+      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+      $test1->setWaitUrl("TS");
+      $test1->setActionUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $testObject = new stdClass();
+      $test1->setSubresourceUris($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

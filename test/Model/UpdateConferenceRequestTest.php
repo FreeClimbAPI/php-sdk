@@ -89,4 +89,32 @@ class UpdateConferenceRequestTest extends TestCase
         $this->assertEquals(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::TERMINATED, $this->UpdateConferenceRequest->getStatus());
     }
 
+    /**
+* Test attribute "UpdateConferenceRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new UpdateConferenceRequest();    
+      $test1->setAlias("TS");
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "UpdateConferenceRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new UpdateConferenceRequest();
+      $test1->setAlias("TS");
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

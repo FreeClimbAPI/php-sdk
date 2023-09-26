@@ -65,4 +65,28 @@ class FilterLogsRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "FilterLogsRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new FilterLogsRequest();    
+      $test1->setPql("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "FilterLogsRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new FilterLogsRequest();
+      $test1->setPql("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

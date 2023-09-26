@@ -87,4 +87,52 @@ class ParkTest extends TestCase
 
     }
 
+    /**
+* Test attribute "Park"
+*/
+public function toStringTypeTest() {
+    $test1 = new Park();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setWaitUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setNotificationUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Park"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new Park();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setWaitUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setNotificationUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -119,4 +119,48 @@ class CreateConferenceTest extends TestCase
 
     }
 
+    /**
+* Test attribute "CreateConference"
+*/
+public function toStringTypeTest() {
+    $test1 = new CreateConference();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setAlias(true);
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setRecord(true);
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setWaitUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "CreateConference"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new CreateConference();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setAlias(true);
+      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+      $test1->setRecord(true);
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setWaitUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

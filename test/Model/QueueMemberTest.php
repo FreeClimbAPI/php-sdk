@@ -105,4 +105,36 @@ class QueueMemberTest extends TestCase
 
     }
 
+    /**
+* Test attribute "QueueMember"
+*/
+public function toStringTypeTest() {
+    $test1 = new QueueMember();    
+      $test1->setUri("TS");
+      $test1->setCallId("TS");
+      $test1->setWaitTime(1);
+      $test1->setPosition(1);
+      $test1->setDateEnqueued("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "QueueMember"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new QueueMember();
+      $test1->setUri("TS");
+      $test1->setCallId("TS");
+      $test1->setWaitTime(1);
+      $test1->setPosition(1);
+      $test1->setDateEnqueued("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

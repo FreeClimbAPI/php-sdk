@@ -63,4 +63,30 @@ class AvailableNumberListAllOfTest extends TestCase
         $this->assertIsArray($this->AvailableNumberListAllOf->getAvailablePhoneNumbers());
     }
 
+    /**
+* Test attribute "AvailableNumberList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new AvailableNumberListAllOf();    
+      $testList = [];
+      $test1->setAvailablePhoneNumbers($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "AvailableNumberList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new AvailableNumberListAllOf();
+      $testList = [];
+      $test1->setAvailablePhoneNumbers($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

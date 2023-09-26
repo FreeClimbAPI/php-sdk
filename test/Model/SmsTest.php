@@ -98,4 +98,34 @@ class SmsTest extends TestCase
 
     }
 
+    /**
+* Test attribute "Sms"
+*/
+public function toStringTypeTest() {
+    $test1 = new Sms();    
+      $test1->setTo("TS");
+      $test1->setFrom("TS");
+      $test1->setText("TS");
+      $test1->setNotificationUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Sms"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new Sms();
+      $test1->setTo("TS");
+      $test1->setFrom("TS");
+      $test1->setText("TS");
+      $test1->setNotificationUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

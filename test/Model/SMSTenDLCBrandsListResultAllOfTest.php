@@ -63,4 +63,30 @@ class SMSTenDLCBrandsListResultAllOfTest extends TestCase
         $this->assertIsArray($this->SMSTenDLCBrandsListResultAllOf->getBrands());
     }
 
+    /**
+* Test attribute "SMSTenDLCBrandsListResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCBrandsListResultAllOf();    
+      $testList = [];
+      $test1->setBrands($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCBrandsListResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCBrandsListResultAllOf();
+      $testList = [];
+      $test1->setBrands($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

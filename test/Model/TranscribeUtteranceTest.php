@@ -109,4 +109,38 @@ class TranscribeUtteranceTest extends TestCase
         $this->assertIsArray($this->TranscribeUtterance->getPrompts());
     }
 
+    /**
+* Test attribute "TranscribeUtterance"
+*/
+public function toStringTypeTest() {
+    $test1 = new TranscribeUtterance();    
+      $test1->setActionUrl("TS");
+      $test1->setPlayBeep(true);
+      $test1->setPrivacyForLogging(true);
+      $test1->setPrivacyForRecording(true);
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setPrompts($testArray);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "TranscribeUtterance"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new TranscribeUtterance();
+      $test1->setActionUrl("TS");
+      $test1->setPlayBeep(true);
+      $test1->setPrivacyForLogging(true);
+      $test1->setPrivacyForRecording(true);
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setPrompts($testArray);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

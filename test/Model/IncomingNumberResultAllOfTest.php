@@ -177,4 +177,52 @@ class IncomingNumberResultAllOfTest extends TestCase
         $this->assertIsBool($this->IncomingNumberResultAllOf->getOffnet());
     }
 
+    /**
+* Test attribute "IncomingNumberResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new IncomingNumberResultAllOf();    
+      $object = new \FreeClimb\Api\Model\Capabilities();
+      $test1->setCapabilities($object);
+      $test1->setCampaignId("TS");
+      $test1->setPhoneNumberId("TS");
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setPhoneNumber("TS");
+      $test1->setAlias("TS");
+      $test1->setRegion("TS");
+      $test1->setCountry("TS");
+      $test1->setVoiceEnabled(true);
+      $test1->setSmsEnabled(true);
+      $test1->setOffnet(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "IncomingNumberResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new IncomingNumberResultAllOf();
+      $object = new \FreeClimb\Api\Model\Capabilities();
+      $test1->setCapabilities($object);
+      $test1->setCampaignId("TS");
+      $test1->setPhoneNumberId("TS");
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setPhoneNumber("TS");
+      $test1->setAlias("TS");
+      $test1->setRegion("TS");
+      $test1->setCountry("TS");
+      $test1->setVoiceEnabled(true);
+      $test1->setSmsEnabled(true);
+      $test1->setOffnet(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

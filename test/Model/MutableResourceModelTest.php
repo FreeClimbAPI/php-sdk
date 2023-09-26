@@ -96,4 +96,34 @@ class MutableResourceModelTest extends TestCase
         $this->assertIsInt($this->MutableResourceModel->getRevision());
     }
 
+    /**
+* Test attribute "MutableResourceModel"
+*/
+public function toStringTypeTest() {
+    $test1 = new MutableResourceModel();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "MutableResourceModel"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new MutableResourceModel();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -65,4 +65,28 @@ class RejectAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "Reject_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new RejectAllOf();    
+      $test1->setReason("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Reject_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new RejectAllOf();
+      $test1->setReason("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

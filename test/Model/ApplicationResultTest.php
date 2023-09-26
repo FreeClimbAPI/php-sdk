@@ -195,4 +195,52 @@ class ApplicationResultTest extends TestCase
 
     }
 
+    /**
+* Test attribute "ApplicationResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new ApplicationResult();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ApplicationResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ApplicationResult();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

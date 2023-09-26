@@ -178,4 +178,60 @@ class GetSpeechTest extends TestCase
         $this->assertIsBool($this->GetSpeech->getPrivacyMode());
     }
 
+    /**
+* Test attribute "GetSpeech"
+*/
+public function toStringTypeTest() {
+    $test1 = new GetSpeech();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
+      $test1->setGrammarFile("TS");
+      $test1->setGrammarRule("TS");
+      $test1->setPlayBeep(true);
+      $testList = [];
+      $test1->setPrompts($testList);
+      $test1->setNoInputTimeoutMs(1);
+      $test1->setRecognitionTimeoutMs(1);
+      $test1->setSpeechCompleteTimeoutMs(1);
+      $test1->setSpeechIncompleteTimeoutMs(1);
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "GetSpeech"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new GetSpeech();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
+      $test1->setGrammarFile("TS");
+      $test1->setGrammarRule("TS");
+      $test1->setPlayBeep(true);
+      $testList = [];
+      $test1->setPrompts($testList);
+      $test1->setNoInputTimeoutMs(1);
+      $test1->setRecognitionTimeoutMs(1);
+      $test1->setSpeechCompleteTimeoutMs(1);
+      $test1->setSpeechIncompleteTimeoutMs(1);
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

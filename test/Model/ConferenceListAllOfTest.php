@@ -63,4 +63,30 @@ class ConferenceListAllOfTest extends TestCase
         $this->assertIsArray($this->ConferenceListAllOf->getConferences());
     }
 
+    /**
+* Test attribute "ConferenceList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new ConferenceListAllOf();    
+      $testList = [];
+      $test1->setConferences($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ConferenceList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ConferenceListAllOf();
+      $testList = [];
+      $test1->setConferences($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

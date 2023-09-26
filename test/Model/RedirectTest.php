@@ -65,4 +65,38 @@ class RedirectTest extends TestCase
 
     }
 
+    /**
+* Test attribute "Redirect"
+*/
+public function toStringTypeTest() {
+    $test1 = new Redirect();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Redirect"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new Redirect();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

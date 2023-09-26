@@ -65,4 +65,28 @@ class PlayEarlyMediaTest extends TestCase
 
     }
 
+    /**
+* Test attribute "PlayEarlyMedia"
+*/
+public function toStringTypeTest() {
+    $test1 = new PlayEarlyMedia();    
+      $test1->setFile("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "PlayEarlyMedia"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PlayEarlyMedia();
+      $test1->setFile("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

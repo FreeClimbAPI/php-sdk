@@ -128,4 +128,44 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsArray($this->SMSTenDLCBrandsListResult->getBrands());
     }
 
+    /**
+* Test attribute "SMSTenDLCBrandsListResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCBrandsListResult();    
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setBrands($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCBrandsListResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCBrandsListResult();
+      $test1->setTotal(1);
+      $test1->setStart(1);
+      $test1->setEnd(1);
+      $test1->setPage(1);
+      $test1->setNumPages(1);
+      $test1->setPageSize(1);
+      $test1->setNextPageUri("TS");
+      $testList = [];
+      $test1->setBrands($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

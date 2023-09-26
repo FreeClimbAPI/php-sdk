@@ -74,4 +74,30 @@ class SetListenAllOfTest extends TestCase
         $this->assertIsBool($this->SetListenAllOf->getListen());
     }
 
+    /**
+* Test attribute "SetListen_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new SetListenAllOf();    
+      $test1->setCallId("TS");
+      $test1->setListen(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SetListen_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SetListenAllOf();
+      $test1->setCallId("TS");
+      $test1->setListen(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -159,4 +159,66 @@ class OutDialAllOfTest extends TestCase
         $this->assertIsBool($this->OutDialAllOf->getPrivacyMode());
     }
 
+    /**
+* Test attribute "OutDial_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new OutDialAllOf();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setCallConnectUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setCallingNumber("TS");
+      $test1->setDestination("TS");
+      $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
+      $test1->setIfMachineUrl("TS");
+      $test1->setSendDigits("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setTimeout(1);
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "OutDial_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new OutDialAllOf();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setCallConnectUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setCallingNumber("TS");
+      $test1->setDestination("TS");
+      $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
+      $test1->setIfMachineUrl("TS");
+      $test1->setSendDigits("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setTimeout(1);
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

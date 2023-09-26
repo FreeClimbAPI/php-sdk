@@ -99,8 +99,8 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyBrandId()
     {
-        $this->SMSTenDLCPartnerCampaign->setBrandId('1234567');
-        $this->assertEquals('1234567', $this->SMSTenDLCPartnerCampaign->getBrandId());
+        $this->SMSTenDLCPartnerCampaign->setBrandId('12345');
+        $this->assertEquals('12345', $this->SMSTenDLCPartnerCampaign->getBrandId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getBrandId());
         
 
@@ -348,5 +348,87 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
         $this->SMSTenDLCPartnerCampaign->setBrand(new \stdClass);
         $this->assertInstanceOf(\stdClass::class, $this->SMSTenDLCPartnerCampaign->getBrand());
     }
+
+    /**
+* Test attribute "SMSTenDLCPartnerCampaign"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCPartnerCampaign();    
+      $test1->setAccountId("TS");
+      $test1->setCampaignId("TS");
+      $test1->setStatus(SMSTenDLCPartnerCampaign::ACTIVE);
+      $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+      $test1->setBrandId("TS");
+      $test1->setUsecase("TS");
+      $test1->setDescription("TS");
+      $test1->setEmbeddedLink(true);
+      $test1->setEmbeddedPhone(true);
+      $test1->setAffiliateMarketing(true);
+      $test1->setNumberPool(true);
+      $test1->setAgeGated(true);
+      $test1->setDirectLending(true);
+      $test1->setSubscriberOptin(true);
+      $test1->setSubscriberOptout(true);
+      $test1->setSubscriberHelp(true);
+      $test1->setSample1("TS");
+      $test1->setSample2("TS");
+      $test1->setSample3("TS");
+      $test1->setSample4("TS");
+      $test1->setSample5("TS");
+      $test1->setMessageFlow("TS");
+      $test1->setHelpMessage("TS");
+      $test1->setOptinKeywords("TS");
+      $test1->setOptoutKeywords("TS");
+      $test1->setHelpKeywords("TS");
+      $test1->setOptinMessage("TS");
+      $test1->setOptoutMessage("TS");
+      $object = new \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand();
+      $test1->setBrand($object);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCPartnerCampaign"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCPartnerCampaign();
+      $test1->setAccountId("TS");
+      $test1->setCampaignId("TS");
+      $test1->setStatus(SMSTenDLCPartnerCampaign::ACTIVE);
+      $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+      $test1->setBrandId("TS");
+      $test1->setUsecase("TS");
+      $test1->setDescription("TS");
+      $test1->setEmbeddedLink(true);
+      $test1->setEmbeddedPhone(true);
+      $test1->setAffiliateMarketing(true);
+      $test1->setNumberPool(true);
+      $test1->setAgeGated(true);
+      $test1->setDirectLending(true);
+      $test1->setSubscriberOptin(true);
+      $test1->setSubscriberOptout(true);
+      $test1->setSubscriberHelp(true);
+      $test1->setSample1("TS");
+      $test1->setSample2("TS");
+      $test1->setSample3("TS");
+      $test1->setSample4("TS");
+      $test1->setSample5("TS");
+      $test1->setMessageFlow("TS");
+      $test1->setHelpMessage("TS");
+      $test1->setOptinKeywords("TS");
+      $test1->setOptoutKeywords("TS");
+      $test1->setHelpKeywords("TS");
+      $test1->setOptinMessage("TS");
+      $test1->setOptoutMessage("TS");
+      $object = new \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand();
+      $test1->setBrand($object);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
 
 }

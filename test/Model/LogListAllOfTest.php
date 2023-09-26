@@ -63,4 +63,30 @@ class LogListAllOfTest extends TestCase
         $this->assertIsArray($this->LogListAllOf->getLogs());
     }
 
+    /**
+* Test attribute "LogList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new LogListAllOf();    
+      $testList = [];
+      $test1->setLogs($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "LogList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new LogListAllOf();
+      $testList = [];
+      $test1->setLogs($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

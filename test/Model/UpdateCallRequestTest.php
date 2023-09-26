@@ -64,4 +64,28 @@ class UpdateCallRequestTest extends TestCase
         $this->assertEquals(\FreeClimb\Api\Model\UpdateCallRequestStatus::COMPLETED, $this->UpdateCallRequest->getStatus());
     }
 
+    /**
+* Test attribute "UpdateCallRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new UpdateCallRequest();    
+      $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "UpdateCallRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new UpdateCallRequest();
+      $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

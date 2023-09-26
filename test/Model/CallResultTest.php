@@ -265,4 +265,66 @@ class CallResultTest extends TestCase
         $this->assertInstanceOf(\stdClass::class, $this->CallResult->getSubresourceUris());
     }
 
+    /**
+* Test attribute "CallResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new CallResult();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setCallId("TS");
+      $test1->setParentCallId("TS");
+      $test1->setAccountId("TS");
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setPhoneNumberId("TS");
+      $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+      $test1->setStartTime("TS");
+      $test1->setConnectTime("TS");
+      $test1->setEndTime("TS");
+      $test1->setDuration(1);
+      $test1->setConnectDuration(1);
+      $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+      $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
+      $testObject = new stdClass(); 
+      $test1->setSubresourceUris($testObject);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "CallResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new CallResult();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setCallId("TS");
+      $test1->setParentCallId("TS");
+      $test1->setAccountId("TS");
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setPhoneNumberId("TS");
+      $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+      $test1->setStartTime("TS");
+      $test1->setConnectTime("TS");
+      $test1->setEndTime("TS");
+      $test1->setDuration(1);
+      $test1->setConnectDuration(1);
+      $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+      $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
+      $testObject = new stdClass();
+      $test1->setSubresourceUris($testObject);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

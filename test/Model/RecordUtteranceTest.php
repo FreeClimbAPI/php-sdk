@@ -121,4 +121,50 @@ class RecordUtteranceTest extends TestCase
         $this->assertIsBool($this->RecordUtterance->getPrivacyMode());
     }
 
+    /**
+* Test attribute "RecordUtterance"
+*/
+public function toStringTypeTest() {
+    $test1 = new RecordUtterance();    
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setSilenceTimeoutMs(1);
+      $test1->setFinishOnKey("TS");
+      $test1->setMaxLengthSec(1);
+      $test1->setPlayBeep(true);
+      $test1->setAutoStart(true);
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "RecordUtterance"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new RecordUtterance();
+      try {
+          $uri1 = "TEST_STRING";
+          $test1->setActionUrl($uri1);
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+      $test1->setSilenceTimeoutMs(1);
+      $test1->setFinishOnKey("TS");
+      $test1->setMaxLengthSec(1);
+      $test1->setPlayBeep(true);
+      $test1->setAutoStart(true);
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

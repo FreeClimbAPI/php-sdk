@@ -63,4 +63,30 @@ class SMSTenDLCPartnerCampaignsListResultAllOfTest extends TestCase
         $this->assertIsArray($this->SMSTenDLCPartnerCampaignsListResultAllOf->getPartnerCampaigns());
     }
 
+    /**
+* Test attribute "SMSTenDLCPartnerCampaignsListResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();    
+      $testList = [];
+      $test1->setPartnerCampaigns($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCPartnerCampaignsListResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCPartnerCampaignsListResultAllOf();
+      $testList = [];
+      $test1->setPartnerCampaigns($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

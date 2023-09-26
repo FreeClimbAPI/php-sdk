@@ -131,4 +131,40 @@ class ApplicationRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "ApplicationRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new ApplicationRequest();    
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ApplicationRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ApplicationRequest();
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

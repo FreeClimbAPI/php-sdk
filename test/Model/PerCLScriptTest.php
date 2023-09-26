@@ -63,4 +63,30 @@ class PerclScriptTest extends TestCase
         $this->assertIsArray($this->PerclScript->getCommands());
     }
 
+    /**
+* Test attribute "PerclScript"
+*/
+public function toStringTypeTest() {
+    $test1 = new PerclScript();    
+      $testList = [];
+      $test1->setCommands($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "PerclScript"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PerclScript();
+      $testList = [];
+      $test1->setCommands($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

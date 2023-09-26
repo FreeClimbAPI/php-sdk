@@ -99,4 +99,36 @@ class CapabilitiesTest extends TestCase
         $this->assertIsBool($this->Capabilities->getShortCode());
     }
 
+    /**
+* Test attribute "Capabilities"
+*/
+public function toStringTypeTest() {
+    $test1 = new Capabilities();    
+      $test1->setVoice(true);
+      $test1->setSms(true);
+      $test1->setTollFree(true);
+      $test1->setTenDlc(true);
+      $test1->setShortCode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Capabilities"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new Capabilities();
+      $test1->setVoice(true);
+      $test1->setSms(true);
+      $test1->setTollFree(true);
+      $test1->setTenDlc(true);
+      $test1->setShortCode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

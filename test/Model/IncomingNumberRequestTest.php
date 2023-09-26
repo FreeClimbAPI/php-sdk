@@ -87,4 +87,32 @@ class IncomingNumberRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "IncomingNumberRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new IncomingNumberRequest();    
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setCampaignId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "IncomingNumberRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new IncomingNumberRequest();
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setCampaignId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

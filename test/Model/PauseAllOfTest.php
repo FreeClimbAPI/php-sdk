@@ -63,4 +63,28 @@ class PauseAllOfTest extends TestCase
         $this->assertIsInt($this->PauseAllOf->getLength());
     }
 
+    /**
+* Test attribute "Pause_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new PauseAllOf();    
+      $test1->setLength(1);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Pause_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PauseAllOf();
+      $test1->setLength(1);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

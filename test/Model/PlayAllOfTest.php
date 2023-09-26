@@ -94,4 +94,34 @@ class PlayAllOfTest extends TestCase
         $this->assertIsBool($this->PlayAllOf->getPrivacyMode());
     }
 
+    /**
+* Test attribute "Play_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new PlayAllOf();    
+      $test1->setFile("TS");
+      $test1->setLoop(1);
+      $test1->setConferenceId("TS");
+      $test1->setPrivacyMode(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Play_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PlayAllOf();
+      $test1->setFile("TS");
+      $test1->setLoop(1);
+      $test1->setConferenceId("TS");
+      $test1->setPrivacyMode(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

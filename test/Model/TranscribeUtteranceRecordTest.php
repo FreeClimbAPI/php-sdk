@@ -81,4 +81,32 @@ class TranscribeUtteranceRecordTest extends TestCase
         $this->assertIsInt($this->TranscribeUtteranceRecord->getRcrdTerminationSilenceTimeMs());
     }
 
+    /**
+* Test attribute "TranscribeUtterance_record"
+*/
+public function toStringTypeTest() {
+    $test1 = new TranscribeUtteranceRecord();    
+      $test1->setSaveRecording(true);
+      $test1->setMaxLengthSec(1);
+      $test1->setRcrdTerminationSilenceTimeMs(1);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "TranscribeUtterance_record"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new TranscribeUtteranceRecord();
+      $test1->setSaveRecording(true);
+      $test1->setMaxLengthSec(1);
+      $test1->setRcrdTerminationSilenceTimeMs(1);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

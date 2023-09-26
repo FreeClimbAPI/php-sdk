@@ -72,4 +72,30 @@ class UpdateConferenceParticipantRequestTest extends TestCase
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->getListen());
     }
 
+    /**
+* Test attribute "UpdateConferenceParticipantRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new UpdateConferenceParticipantRequest();    
+      $test1->setTalk(true);
+      $test1->setListen(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "UpdateConferenceParticipantRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new UpdateConferenceParticipantRequest();
+      $test1->setTalk(true);
+      $test1->setListen(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -156,4 +156,46 @@ class ConferenceParticipantResultTest extends TestCase
         $this->assertIsBool($this->ConferenceParticipantResult->getStartConfOnEnter());
     }
 
+    /**
+* Test attribute "ConferenceParticipantResult"
+*/
+public function toStringTypeTest() {
+    $test1 = new ConferenceParticipantResult();    
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setConferenceId("TS");
+      $test1->setCallId("TS");
+      $test1->setTalk(true);
+      $test1->setListen(true);
+      $test1->setStartConfOnEnter(true);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ConferenceParticipantResult"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ConferenceParticipantResult();
+      $test1->setUri("TS");
+      $test1->setDateCreated("TS");
+      $test1->setDateUpdated("TS");
+      $test1->setRevision(1);
+      $test1->setAccountId("TS");
+      $test1->setConferenceId("TS");
+      $test1->setCallId("TS");
+      $test1->setTalk(true);
+      $test1->setListen(true);
+      $test1->setStartConfOnEnter(true);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

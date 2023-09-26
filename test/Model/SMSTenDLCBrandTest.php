@@ -387,4 +387,90 @@ class SMSTenDLCBrandTest extends TestCase
         $this->assertEquals('2023-09-21 15:30:00', $this->SMSTenDLCBrand->getCreateDate());
     }
 
+    /**
+* Test attribute "SMSTenDLCBrand"
+*/
+public function toStringTypeTest() {
+    $test1 = new SMSTenDLCBrand();    
+      $test1->setAccountId("TS");
+      $test1->setEntityType(SMSTenDLCBrand::PRIVATE_PROFIT);
+      $test1->setCspId("TS");
+      $test1->setBrandId("TS");
+      $test1->setFirstName("TS");
+      $test1->setLastName("TS");
+      $test1->setDisplayName("TS");
+      $test1->setCompanyName("TS");
+      $test1->setEin("TS");
+      $test1->setEinIssuingCountry("TS");
+      $test1->setPhone("TS");
+      $test1->setStreet("TS");
+      $test1->setCity("TS");
+      $test1->setState("TS");
+      $test1->setPostalCode("TS");
+      $test1->setCountry("TS");
+      $test1->setEmail("TS");
+      $test1->setStockSymbol("TS");
+      $test1->setStockExchange(SMSTenDLCBrand::NONE);
+      $test1->setIpAddress("TS");
+      $test1->setWebsite("TS");
+      $test1->setBrandRelationship(SMSTenDLCBrand::BASIC_ACCOUNT);
+      $test1->setVertical("TS");
+      $test1->setAltBusinessId("TS");
+      $test1->setAltBusinessIdType(SMSTenDLCBrand::NONE);
+      $test1->setUniversalEin("TS");
+      $test1->setReferenceId("TS");
+      $testMap = [];
+      $test1->setOptionalAttributes($testMap);
+      $test1->setMock(true);
+      $test1->setIdentityStatus(SMSTenDLCBrand::SELF_DECLARED);
+      $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "SMSTenDLCBrand"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCBrand();
+      $test1->setAccountId("TS");
+      $test1->setEntityType(SMSTenDLCBrand::PRIVATE_PROFIT);
+      $test1->setCspId("TS");
+      $test1->setBrandId("TS");
+      $test1->setFirstName("TS");
+      $test1->setLastName("TS");
+      $test1->setDisplayName("TS");
+      $test1->setCompanyName("TS");
+      $test1->setEin("TS");
+      $test1->setEinIssuingCountry("TS");
+      $test1->setPhone("TS");
+      $test1->setStreet("TS");
+      $test1->setCity("TS");
+      $test1->setState("TS");
+      $test1->setPostalCode("TS");
+      $test1->setCountry("TS");
+      $test1->setEmail("TS");
+      $test1->setStockSymbol("TS");
+      $test1->setStockExchange(SMSTenDLCBrand::NONE);
+      $test1->setIpAddress("TS");
+      $test1->setWebsite("TS");
+      $test1->setBrandRelationship(SMSTenDLCBrand::BASIC_ACCOUNT);
+      $test1->setVertical("TS");
+      $test1->setAltBusinessId("TS");
+      $test1->setAltBusinessIdType(SMSTenDLCBrand::NONE);
+      $test1->setUniversalEin("TS");
+      $test1->setReferenceId("TS");
+      $testMap = [];
+      $test1->setOptionalAttributes($testMap);
+      $test1->setMock(true);
+      $test1->setIdentityStatus(SMSTenDLCBrand::SELF_DECLARED);
+      $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

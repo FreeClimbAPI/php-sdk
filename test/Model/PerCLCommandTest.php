@@ -65,4 +65,28 @@ class PerclCommandTest extends TestCase
 
     }
 
+    /**
+* Test attribute "PerclCommand"
+*/
+public function toStringTypeTest() {
+    $test1 = new PerclCommand();    
+      $test1->setCommand("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "PerclCommand"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new PerclCommand();
+      $test1->setCommand("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

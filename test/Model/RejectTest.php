@@ -65,4 +65,28 @@ class RejectTest extends TestCase
 
     }
 
+    /**
+* Test attribute "Reject"
+*/
+public function toStringTypeTest() {
+    $test1 = new Reject();    
+      $test1->setReason("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "Reject"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new Reject();
+      $test1->setReason("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

@@ -153,4 +153,44 @@ class ApplicationResultAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "ApplicationResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new ApplicationResultAllOf();    
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ApplicationResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ApplicationResultAllOf();
+      $test1->setAccountId("TS");
+      $test1->setApplicationId("TS");
+      $test1->setAlias("TS");
+      $test1->setVoiceUrl("TS");
+      $test1->setVoiceFallbackUrl("TS");
+      $test1->setCallConnectUrl("TS");
+      $test1->setStatusCallbackUrl("TS");
+      $test1->setSmsUrl("TS");
+      $test1->setSmsFallbackUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

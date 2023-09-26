@@ -107,4 +107,36 @@ class RecordingResultAllOfTest extends TestCase
 
     }
 
+    /**
+* Test attribute "RecordingResult_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new RecordingResultAllOf();    
+      $test1->setRecordingId("TS");
+      $test1->setAccountId("TS");
+      $test1->setCallId("TS");
+      $test1->setDurationSec(1);
+      $test1->setConferenceId("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "RecordingResult_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new RecordingResultAllOf();
+      $test1->setRecordingId("TS");
+      $test1->setAccountId("TS");
+      $test1->setCallId("TS");
+      $test1->setDurationSec(1);
+      $test1->setConferenceId("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

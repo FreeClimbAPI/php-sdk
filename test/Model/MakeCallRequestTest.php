@@ -160,4 +160,46 @@ class MakeCallRequestTest extends TestCase
 
     }
 
+    /**
+* Test attribute "MakeCallRequest"
+*/
+public function toStringTypeTest() {
+    $test1 = new MakeCallRequest();    
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setApplicationId("TS");
+      $test1->setSendDigits("TS");
+      $test1->setIfMachine("TS");
+      $test1->setIfMachineUrl("TS");
+      $test1->setTimeout(1);
+      $test1->setParentCallId("TS");
+      $test1->setPrivacyMode(true);
+      $test1->setCallConnectUrl("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "MakeCallRequest"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new MakeCallRequest();
+      $test1->setFrom("TS");
+      $test1->setTo("TS");
+      $test1->setApplicationId("TS");
+      $test1->setSendDigits("TS");
+      $test1->setIfMachine("TS");
+      $test1->setIfMachineUrl("TS");
+      $test1->setTimeout(1);
+      $test1->setParentCallId("TS");
+      $test1->setPrivacyMode(true);
+      $test1->setCallConnectUrl("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

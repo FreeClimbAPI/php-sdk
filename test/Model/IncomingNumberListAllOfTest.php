@@ -63,4 +63,30 @@ class IncomingNumberListAllOfTest extends TestCase
         $this->assertIsArray($this->IncomingNumberListAllOf->getIncomingPhoneNumbers());
     }
 
+    /**
+* Test attribute "IncomingNumberList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new IncomingNumberListAllOf();    
+      $testList = [];
+      $test1->setIncomingPhoneNumbers($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "IncomingNumberList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new IncomingNumberListAllOf();
+      $testList = [];
+      $test1->setIncomingPhoneNumbers($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

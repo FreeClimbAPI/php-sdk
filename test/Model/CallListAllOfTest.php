@@ -63,4 +63,30 @@ class CallListAllOfTest extends TestCase
         $this->assertIsArray($this->CallListAllOf->getCalls());
     }
 
+    /**
+* Test attribute "CallList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new CallListAllOf();    
+      $testList = [];
+      $test1->setCalls($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "CallList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new CallListAllOf();
+      $testList = [];
+      $test1->setCalls($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

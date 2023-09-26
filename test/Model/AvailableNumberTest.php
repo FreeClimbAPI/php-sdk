@@ -124,4 +124,42 @@ class AvailableNumberTest extends TestCase
 
     }
 
+    /**
+* Test attribute "AvailableNumber"
+*/
+public function toStringTypeTest() {
+    $test1 = new AvailableNumber();    
+      $object = new \FreeClimb\Api\Model\Capabilities();
+      $test1->setCapabilities($object);
+      $test1->setCampaignId("TS");
+      $test1->setPhoneNumber("TS");
+      $test1->setVoiceEnabled(true);
+      $test1->setSmsEnabled(true);
+      $test1->setRegion("TS");
+      $test1->setCountry("TS");
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "AvailableNumber"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new AvailableNumber();
+      $object = new \FreeClimb\Api\Model\Capabilities();
+      $test1->setCapabilities($object);
+      $test1->setCampaignId("TS");
+      $test1->setPhoneNumber("TS");
+      $test1->setVoiceEnabled(true);
+      $test1->setSmsEnabled(true);
+      $test1->setRegion("TS");
+      $test1->setCountry("TS");
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }

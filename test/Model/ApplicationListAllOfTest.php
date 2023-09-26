@@ -63,4 +63,30 @@ class ApplicationListAllOfTest extends TestCase
         $this->assertIsArray($this->ApplicationListAllOf->getApplications());
     }
 
+    /**
+* Test attribute "ApplicationList_allOf"
+*/
+public function toStringTypeTest() {
+    $test1 = new ApplicationListAllOf();    
+      $testList = [];
+      $test1->setApplications($testList);
+
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
+
+/**
+ * Test attribute "ApplicationList_allOf"
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new ApplicationListAllOf();
+      $testList = [];
+      $test1->setApplications($testList);
+
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
+
+
 }
