@@ -129,7 +129,7 @@ class AccountResultAllOfTest extends TestCase
     }
 
     /**
-* Test attribute toStringTest
+* Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new AccountResultAllOf();    
@@ -147,7 +147,7 @@ public function toStringTest() {
 }
 
 /**
- * Test attribute toHeaderValue
+ * Test method toHeaderValue
  */
 public function toHeaderValueTest()
 {

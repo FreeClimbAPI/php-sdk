@@ -84,7 +84,7 @@ class SendDigitsAllOfTest extends TestCase
     }
 
     /**
-* Test attribute toStringTest
+* Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new SendDigitsAllOf();    
@@ -97,7 +97,7 @@ public function toStringTest() {
 }
 
 /**
- * Test attribute toHeaderValue
+ * Test method toHeaderValue
  */
 public function toHeaderValueTest()
 {

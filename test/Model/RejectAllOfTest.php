@@ -66,7 +66,7 @@ class RejectAllOfTest extends TestCase
     }
 
     /**
-* Test attribute toStringTest
+* Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new RejectAllOf();    
@@ -77,7 +77,7 @@ public function toStringTest() {
 }
 
 /**
- * Test attribute toHeaderValue
+ * Test method toHeaderValue
  */
 public function toHeaderValueTest()
 {

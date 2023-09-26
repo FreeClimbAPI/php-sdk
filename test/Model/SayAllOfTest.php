@@ -106,7 +106,7 @@ class SayAllOfTest extends TestCase
     }
 
     /**
-* Test attribute toStringTest
+* Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new SayAllOf();    
@@ -121,7 +121,7 @@ public function toStringTest() {
 }
 
 /**
- * Test attribute toHeaderValue
+ * Test method toHeaderValue
  */
 public function toHeaderValueTest()
 {
