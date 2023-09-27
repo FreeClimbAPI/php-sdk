@@ -197,6 +197,8 @@ public function toStringTest() {
       $test1->setPrompts($testList);
       $test1->setNoInputTimeoutMs(1);
       $test1->setRecognitionTimeoutMs(1);
+      $test1->setConfidenceThreshold(1.0);
+      $test1->setSensitivityLevel(1.0);
       $test1->setSpeechCompleteTimeoutMs(1);
       $test1->setSpeechIncompleteTimeoutMs(1);
       $test1->setPrivacyMode(true);
@@ -225,6 +227,8 @@ public function toHeaderValueTest()
       $test1->setPrompts($testList);
       $test1->setNoInputTimeoutMs(1);
       $test1->setRecognitionTimeoutMs(1);
+      $test1->setConfidenceThreshold(1.0);
+      $test1->setSensitivityLevel(1.0);
       $test1->setSpeechCompleteTimeoutMs(1);
       $test1->setSpeechIncompleteTimeoutMs(1);
       $test1->setPrivacyMode(true);

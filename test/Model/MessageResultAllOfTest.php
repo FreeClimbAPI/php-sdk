@@ -205,6 +205,7 @@ public function toStringTest() {
       $test1->setNotificationUrl("TS");
       $test1->setBrandId("TS");
       $test1->setCampaignId("TS");
+      $test1->setSegmentCount(1.0);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -226,6 +227,7 @@ public function toHeaderValueTest()
       $test1->setNotificationUrl("TS");
       $test1->setBrandId("TS");
       $test1->setCampaignId("TS");
+      $test1->setSegmentCount(1.0);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
