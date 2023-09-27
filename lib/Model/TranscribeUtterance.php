@@ -102,7 +102,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -166,7 +166,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function setters()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -176,7 +176,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function getters()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return parent::getters() + self::$getters;
     }
 
     /**
