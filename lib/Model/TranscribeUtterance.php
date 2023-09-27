@@ -49,17 +49,17 @@ class TranscribeUtterance extends PerclCommand
     public const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $openAPIModelName = 'TranscribeUtterance';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $openAPITypes = [
         'action_url' => 'string',
         'play_beep' => 'bool',
@@ -70,12 +70,12 @@ class TranscribeUtterance extends PerclCommand
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     * @phpstan-var array<string, string|null>
-     * @psalm-var array<string, string|null>
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
+      */
     protected static $openAPIFormats = [
         'action_url' => null,
         'play_beep' => null,
@@ -472,3 +472,5 @@ class TranscribeUtterance extends PerclCommand
     }
 
 }
+
+
