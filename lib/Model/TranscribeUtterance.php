@@ -44,7 +44,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializable
+class TranscribeUtterance extends PerclCommand
 {
     public const DISCRIMINATOR = null;
 
@@ -92,7 +92,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -102,7 +102,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -156,7 +156,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -166,7 +166,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -176,7 +176,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -390,7 +390,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists($offset) : bool
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -402,7 +402,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return mixed|null
      */
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset): mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -415,7 +415,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetSet($offset, $value) : void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,7 +431,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset($offset) : void
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -443,7 +443,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
-    public function jsonSerialize() : mixed
+    public function jsonSerialize(): mixed
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -453,7 +453,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
@@ -466,7 +466,7 @@ class TranscribeUtterance implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue(): string
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
