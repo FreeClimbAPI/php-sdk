@@ -20,7 +20,7 @@ class SignatureInformationTest extends TestCase
 
     public function testIsRequestTimeValidTrue()
     {
-        $tolerance = 5 * 60 * 1000;
+        $tolerance = 5 * 60;
         $requestHeader = "t=" . strval(self::$currentTime) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
         $this->signatureInformation = new SignatureInformation($requestHeader);
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), true);
@@ -28,10 +28,10 @@ class SignatureInformationTest extends TestCase
 
     public function testIsRequestTimeValidFalse()
     {
-        $timeCalcuation = self::$currentTime - (600 * 60 * 1000);
+        $timeCalcuation = self::$currentTime - (600 * 60);
         $requestHeader = "t=" . strval($timeCalcuation) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
         $this->signatureInformation = new SignatureInformation($requestHeader);
-        $tolerance = 500 * 60 * 1000;
+        $tolerance = 500 * 60;
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), false);
     }
 
