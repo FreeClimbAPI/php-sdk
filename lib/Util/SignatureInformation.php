@@ -24,7 +24,7 @@ class SignatureInformation
     {
         $currentTime = $this->getCurrentUnixTime();
         $timeCalculation = $this->requestTimestamp + $tolerance;
-        return $timeCalculation < $currentTime;
+        return $currentTime < $timeCalculation;
     }
 
     function isSignatureSafe(string $requestBody, string $signingSecret)

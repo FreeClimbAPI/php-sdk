@@ -8,24 +8,30 @@ use PHPUnit\Framework\TestCase;
 class SignatureInformationTest extends TestCase
 {
     protected $signatureInformation;
-    private int $timestamp = 1679944186;
+    private static int $timestamp = 1679944186;
+    private static int $currentTime;
     private int $MAX_INTEGER = 2147483647;
     public function setUp(): void
     {
         $requestHeader = "t=" . strval(self::$timestamp) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
         $this->signatureInformation = new SignatureInformation($requestHeader);
+        self::$currentTime = $this->signatureInformation->getCurrentUnixTime();
     }
 
     public function testIsRequestTimeValidTrue()
     {
         $tolerance = 5 * 60;
+        $requestHeader = "t=" . strval(self::$currentTime) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+        $this->signatureInformation = new SignatureInformation($requestHeader);
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), true);
     }
 
     public function testIsRequestTimeValidFalse()
     {
-
-        $tolerance = self::$MAX_INTEGER - self::$timestamp;
+        $timeCalcuation = self::$currentTime - (600 * 60);
+        $requestHeader = "t=" . strval($timeCalcuation) . ",v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
+        $this->signatureInformation = new SignatureInformation($requestHeader);
+        $tolerance = 500 * 60;
         $this->assertEquals($this->signatureInformation->isRequestTimeValid($tolerance), false);
     }
 
