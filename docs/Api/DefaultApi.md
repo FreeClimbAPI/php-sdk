@@ -32,6 +32,8 @@ Method | HTTP request | Description
 [**getTenDLCSmsCampaigns()**](DefaultApi.md#getTenDLCSmsCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 [**getTenDLCSmsPartnerCampaign()**](DefaultApi.md#getTenDLCSmsPartnerCampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
 [**getTenDLCSmsPartnerCampaigns()**](DefaultApi.md#getTenDLCSmsPartnerCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
+[**getTollFreeSmsCampaign()**](DefaultApi.md#getTollFreeSmsCampaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
+[**getTollFreeSmsCampaigns()**](DefaultApi.md#getTollFreeSmsCampaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
 [**listActiveQueues()**](DefaultApi.md#listActiveQueues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**listAllAccountLogs()**](DefaultApi.md#listAllAccountLogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**listApplications()**](DefaultApi.md#listApplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -39,6 +41,7 @@ Method | HTTP request | Description
 [**listCallLogs()**](DefaultApi.md#listCallLogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs
 [**listCallRecordings()**](DefaultApi.md#listCallRecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings
 [**listCalls()**](DefaultApi.md#listCalls) | **GET** /Accounts/{accountId}/Calls | List Calls
+[**listConferenceRecordings()**](DefaultApi.md#listConferenceRecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings
 [**listConferences()**](DefaultApi.md#listConferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences
 [**listIncomingNumbers()**](DefaultApi.md#listIncomingNumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers
 [**listMembers()**](DefaultApi.md#listMembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members
@@ -46,6 +49,7 @@ Method | HTTP request | Description
 [**listRecordings()**](DefaultApi.md#listRecordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings
 [**listSmsMessages()**](DefaultApi.md#listSmsMessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages
 [**makeACall()**](DefaultApi.md#makeACall) | **POST** /Accounts/{accountId}/Calls | Make a Call
+[**makeAWebrtcJwt()**](DefaultApi.md#makeAWebrtcJwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling
 [**removeAParticipant()**](DefaultApi.md#removeAParticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant
 [**sendAnSmsMessage()**](DefaultApi.md#sendAnSmsMessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message
 [**streamARecordingFile()**](DefaultApi.md#streamARecordingFile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File
@@ -1793,6 +1797,128 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTollFreeSmsCampaign()`
+
+```php
+getTollFreeSmsCampaign($campaign_id): \FreeClimb\Api\Model\SMSTollFreeCampaign
+```
+
+Get a TollFree SMS Campaign
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this TollFree Campaign resource.
+
+try {
+    $result = $apiInstance->getTollFreeSmsCampaign($campaign_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTollFreeSmsCampaign: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **campaign_id** | **string**| String that uniquely identifies this TollFree Campaign resource. |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTollFreeCampaign**](../Model/SMSTollFreeCampaign.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTollFreeSmsCampaigns()`
+
+```php
+getTollFreeSmsCampaigns(): \FreeClimb\Api\Model\SMSTollFreeCampaignsListResult
+```
+
+Get list of TollFree Campaigns
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+
+try {
+    $result = $apiInstance->getTollFreeSmsCampaigns();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTollFreeSmsCampaigns: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+
+### Return type
+
+[**\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult**](../Model/SMSTollFreeCampaignsListResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listActiveQueues()`
 
 ```php
@@ -2257,6 +2383,72 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listConferenceRecordings()`
+
+```php
+listConferenceRecordings($call_id, $conference_id, $date_created): \FreeClimb\Api\Model\RecordingList
+```
+
+List Conference Recordings
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
+$conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
+$date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+
+try {
+    $result = $apiInstance->listConferenceRecordings($call_id, $conference_id, $date_created);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listConferenceRecordings: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **call_id** | **string**| Show only Recordings made during the Call with this ID. | [optional]
+ **conference_id** | **string**| Show only Recordings made during the conference with this ID. | [optional]
+ **date_created** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\RecordingList**](../Model/RecordingList.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listConferences()`
 
 ```php
@@ -2328,7 +2520,7 @@ Name | Type | Description  | Notes
 ## `listIncomingNumbers()`
 
 ```php
-listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet): \FreeClimb\Api\Model\IncomingNumberList
+listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet): \FreeClimb\Api\Model\IncomingNumberList
 ```
 
 List Incoming Numbers
@@ -2367,10 +2559,11 @@ $capabilities_sms = True; // bool
 $capabilities_toll_free = True; // bool
 $capabilities_ten_dlc = True; // bool
 $capabilities_short_code = True; // bool
+$tfn_campaign_id = 'tfn_campaign_id_example'; // string | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
 $offnet = True; // bool | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
 
 try {
-    $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
+    $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listIncomingNumbers: ', $e->getMessage(), PHP_EOL;
@@ -2396,6 +2589,7 @@ Name | Type | Description  | Notes
  **capabilities_toll_free** | **bool**|  | [optional]
  **capabilities_ten_dlc** | **bool**|  | [optional]
  **capabilities_short_code** | **bool**|  | [optional]
+ **tfn_campaign_id** | **string**| Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. | [optional]
  **offnet** | **bool**| Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional]
 
 ### Return type
@@ -2747,6 +2941,70 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `makeAWebrtcJwt()`
+
+```php
+makeAWebrtcJwt($create_web_rtc_token): string
+```
+
+Make a JWT for WebRTC calling
+
+Make a JWT for WebRTC calling
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$create_web_rtc_token = new \FreeClimb\Api\Model\CreateWebRTCToken(); // \FreeClimb\Api\Model\CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
+
+try {
+    $result = $apiInstance->makeAWebrtcJwt($create_web_rtc_token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->makeAWebrtcJwt: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **create_web_rtc_token** | [**\FreeClimb\Api\Model\CreateWebRTCToken**](../Model/CreateWebRTCToken.md)| Information needed to craft a JWT compatible with the platforms WebRTC APIs |
+
+### Return type
+
+**string**
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `text/plain`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `removeAParticipant()`
 
 ```php
@@ -2937,7 +3195,7 @@ Name | Type | Description  | Notes
 ## `updateAConference()`
 
 ```php
-updateAConference($conference_id, $update_conference_request): \FreeClimb\Api\Model\ConferenceResult
+updateAConference($conference_id, $update_conference_request)
 ```
 
 Update a Conference
@@ -2966,8 +3224,7 @@ $conference_id = 'conference_id_example'; // string | String that uniquely ident
 $update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(); // \FreeClimb\Api\Model\UpdateConferenceRequest | Conference Details to update
 
 try {
-    $result = $apiInstance->updateAConference($conference_id, $update_conference_request);
-    print_r($result);
+    $apiInstance->updateAConference($conference_id, $update_conference_request);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateAConference: ', $e->getMessage(), PHP_EOL;
 }
@@ -2983,7 +3240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\FreeClimb\Api\Model\ConferenceResult**](../Model/ConferenceResult.md)
+void (empty response body)
 
 ### Authorization
 
@@ -2992,7 +3249,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

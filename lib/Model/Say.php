@@ -62,7 +62,6 @@ class Say extends PerclCommand
         'text' => 'string',
         'language' => 'string',
         'loop' => 'int',
-        'conference_id' => 'string',
         'privacy_mode' => 'bool'
     ];
 
@@ -77,7 +76,6 @@ class Say extends PerclCommand
         'text' => null,
         'language' => null,
         'loop' => null,
-        'conference_id' => null,
         'privacy_mode' => null
     ];
 
@@ -111,7 +109,6 @@ class Say extends PerclCommand
         'text' => 'text',
         'language' => 'language',
         'loop' => 'loop',
-        'conference_id' => 'conferenceId',
         'privacy_mode' => 'privacyMode'
     ];
 
@@ -124,7 +121,6 @@ class Say extends PerclCommand
         'text' => 'setText',
         'language' => 'setLanguage',
         'loop' => 'setLoop',
-        'conference_id' => 'setConferenceId',
         'privacy_mode' => 'setPrivacyMode'
     ];
 
@@ -137,7 +133,6 @@ class Say extends PerclCommand
         'text' => 'getText',
         'language' => 'getLanguage',
         'loop' => 'getLoop',
-        'conference_id' => 'getConferenceId',
         'privacy_mode' => 'getPrivacyMode'
     ];
 
@@ -197,7 +192,6 @@ class Say extends PerclCommand
         $this->container['text'] = $data['text'] ?? null;
         $this->container['language'] = $data['language'] ?? null;
         $this->container['loop'] = $data['loop'] ?? 1;
-        $this->container['conference_id'] = $data['conference_id'] ?? null;
         $this->container['privacy_mode'] = $data['privacy_mode'] ?? null;
     }
 
@@ -296,30 +290,6 @@ class Say extends PerclCommand
     public function setLoop($loop)
     {
         $this->container['loop'] = $loop;
-
-        return $this;
-    }
-
-    /**
-     * Gets conference_id
-     *
-     * @return string|null
-     */
-    public function getConferenceId()
-    {
-        return $this->container['conference_id'];
-    }
-
-    /**
-     * Sets conference_id
-     *
-     * @param string|null $conference_id D of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.
-     *
-     * @return self
-     */
-    public function setConferenceId($conference_id)
-    {
-        $this->container['conference_id'] = $conference_id;
 
         return $this;
     }

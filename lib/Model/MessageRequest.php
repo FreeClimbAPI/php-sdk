@@ -68,7 +68,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'string',
         'text' => 'string',
         'notification_url' => 'string',
-        'account_id' => 'string'
+        'media_urls' => 'string[]'
     ];
 
     /**
@@ -87,7 +87,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => null,
         'text' => null,
         'notification_url' => null,
-        'account_id' => null
+        'media_urls' => 'uri'
     ];
 
     /**
@@ -125,7 +125,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'to',
         'text' => 'text',
         'notification_url' => 'notificationUrl',
-        'account_id' => 'accountId'
+        'media_urls' => 'mediaUrls'
     ];
 
     /**
@@ -142,7 +142,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'setTo',
         'text' => 'setText',
         'notification_url' => 'setNotificationUrl',
-        'account_id' => 'setAccountId'
+        'media_urls' => 'setMediaUrls'
     ];
 
     /**
@@ -159,7 +159,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'to' => 'getTo',
         'text' => 'getText',
         'notification_url' => 'getNotificationUrl',
-        'account_id' => 'getAccountId'
+        'media_urls' => 'getMediaUrls'
     ];
 
     /**
@@ -227,7 +227,7 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['to'] = $data['to'] ?? null;
         $this->container['text'] = $data['text'] ?? null;
         $this->container['notification_url'] = $data['notification_url'] ?? null;
-        $this->container['account_id'] = $data['account_id'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
     }
 
     /**
@@ -456,25 +456,25 @@ class MessageRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets account_id
+     * Gets media_urls
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getAccountId()
+    public function getMediaUrls()
     {
-        return $this->container['account_id'];
+        return $this->container['media_urls'];
     }
 
     /**
-     * Sets account_id
+     * Sets media_urls
      *
-     * @param string|null $account_id String that uniquely identifies this account resource.
+     * @param string[]|null $media_urls an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
      *
      * @return self
      */
-    public function setAccountId($account_id)
+    public function setMediaUrls($media_urls)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

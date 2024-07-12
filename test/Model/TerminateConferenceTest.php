@@ -53,24 +53,12 @@ class TerminateConferenceTest extends TestCase
     {
         $this->TerminateConference = new TerminateConference();
     }
-    /**
-     * Test attribute "conference_id"
-     */
-    public function testPropertyConferenceId()
-    {
-        $this->TerminateConference->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->TerminateConference->getConferenceId());
-        $this->assertIsString($this->TerminateConference->getConferenceId());
-        
-
-    }
 
     /**
 * Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new TerminateConference();    
-      $test1->setConferenceId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +70,6 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new TerminateConference();
-      $test1->setConferenceId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

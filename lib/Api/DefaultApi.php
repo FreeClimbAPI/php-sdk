@@ -8372,6 +8372,582 @@ class DefaultApi
     }
 
     /**
+     * Operation getTollFreeSmsCampaign
+     *
+     * Get a TollFree SMS Campaign
+     *
+
+     * @param  string $campaign_id String that uniquely identifies this TollFree Campaign resource. (required)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\SMSTollFreeCampaign
+     */
+    public function getTollFreeSmsCampaign($campaign_id)
+    {
+        list($response) = $this->getTollFreeSmsCampaignWithHttpInfo($campaign_id);
+        return $response;
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignWithHttpInfo
+     *
+     * Get a TollFree SMS Campaign
+     *
+
+     * @param  string $campaign_id String that uniquely identifies this TollFree Campaign resource. (required)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\SMSTollFreeCampaign, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTollFreeSmsCampaignWithHttpInfo($campaign_id)
+    {
+        $request = $this->getTollFreeSmsCampaignRequest($campaign_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\SMSTollFreeCampaign' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTollFreeCampaign', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\SMSTollFreeCampaign';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\SMSTollFreeCampaign',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignAsync
+     *
+     * Get a TollFree SMS Campaign
+     *
+
+     * @param  string $campaign_id String that uniquely identifies this TollFree Campaign resource. (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTollFreeSmsCampaignAsync($campaign_id)
+    {
+        return $this->getTollFreeSmsCampaignAsyncWithHttpInfo($campaign_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignAsyncWithHttpInfo
+     *
+     * Get a TollFree SMS Campaign
+     *
+
+     * @param  string $campaign_id String that uniquely identifies this TollFree Campaign resource. (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTollFreeSmsCampaignAsyncWithHttpInfo($campaign_id)
+    {
+        $returnType = '\FreeClimb\Api\Model\SMSTollFreeCampaign';
+        $request = $this->getTollFreeSmsCampaignRequest($campaign_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTollFreeSmsCampaign'
+     *
+
+     * @param  string $campaign_id String that uniquely identifies this TollFree Campaign resource. (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getTollFreeSmsCampaignRequest($campaign_id)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getTollFreeSmsCampaign'
+            );
+        }
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaign_id when calling getTollFreeSmsCampaign'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($campaign_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaign_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaigns
+     *
+     * Get list of TollFree Campaigns
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\SMSTollFreeCampaignsListResult
+     */
+    public function getTollFreeSmsCampaigns()
+    {
+        list($response) = $this->getTollFreeSmsCampaignsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignsWithHttpInfo
+     *
+     * Get list of TollFree Campaigns
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\SMSTollFreeCampaignsListResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTollFreeSmsCampaignsWithHttpInfo()
+    {
+        $request = $this->getTollFreeSmsCampaignsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignsAsync
+     *
+     * Get list of TollFree Campaigns
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTollFreeSmsCampaignsAsync()
+    {
+        return $this->getTollFreeSmsCampaignsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTollFreeSmsCampaignsAsyncWithHttpInfo
+     *
+     * Get list of TollFree Campaigns
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTollFreeSmsCampaignsAsyncWithHttpInfo()
+    {
+        $returnType = '\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult';
+        $request = $this->getTollFreeSmsCampaignsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTollFreeSmsCampaigns'
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getTollFreeSmsCampaignsRequest()
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getTollFreeSmsCampaigns'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Messages/TollFree/Campaigns';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listActiveQueues
      *
      * List Active Queues
@@ -10782,6 +11358,345 @@ class DefaultApi
     }
 
     /**
+     * Operation listConferenceRecordings
+     *
+     * List Conference Recordings
+     *
+
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+
+     * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\RecordingList
+     */
+    public function listConferenceRecordings($call_id = null, $conference_id = null, $date_created = null)
+    {
+        list($response) = $this->listConferenceRecordingsWithHttpInfo($call_id, $conference_id, $date_created);
+        return $response;
+    }
+
+    /**
+     * Operation listConferenceRecordingsWithHttpInfo
+     *
+     * List Conference Recordings
+     *
+
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+
+     * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\RecordingList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listConferenceRecordingsWithHttpInfo($call_id = null, $conference_id = null, $date_created = null)
+    {
+        $request = $this->listConferenceRecordingsRequest($call_id, $conference_id, $date_created);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\RecordingList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\RecordingList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\RecordingList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\RecordingList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listConferenceRecordingsAsync
+     *
+     * List Conference Recordings
+     *
+
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+
+     * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConferenceRecordingsAsync($call_id = null, $conference_id = null, $date_created = null)
+    {
+        return $this->listConferenceRecordingsAsyncWithHttpInfo($call_id, $conference_id, $date_created)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listConferenceRecordingsAsyncWithHttpInfo
+     *
+     * List Conference Recordings
+     *
+
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+
+     * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConferenceRecordingsAsyncWithHttpInfo($call_id = null, $conference_id = null, $date_created = null)
+    {
+        $returnType = '\FreeClimb\Api\Model\RecordingList';
+        $request = $this->listConferenceRecordingsRequest($call_id, $conference_id, $date_created);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listConferenceRecordings'
+     *
+
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+
+     * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listConferenceRecordingsRequest($call_id = null, $conference_id = null, $date_created = null)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling listConferenceRecordings'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($call_id !== null) {
+            if('form' === 'form' && is_array($call_id)) {
+                foreach($call_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['callId'] = $call_id;
+            }
+        }
+        // query params
+        if ($conference_id !== null) {
+            if('form' === 'form' && is_array($conference_id)) {
+                foreach($conference_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['conferenceId'] = $conference_id;
+            }
+        }
+        // query params
+        if ($date_created !== null) {
+            if('form' === 'form' && is_array($date_created)) {
+                foreach($date_created as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['dateCreated'] = $date_created;
+            }
+        }
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listConferences
      *
      * List Conferences
@@ -11175,6 +12090,8 @@ class DefaultApi
 
      * @param  bool $capabilities_short_code capabilities_short_code (optional)
 
+     * @param  string $tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)
+
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
 
      *
@@ -11182,9 +12099,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\IncomingNumberList
      */
-    public function listIncomingNumbers($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
+    public function listIncomingNumbers($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null)
     {
-        list($response) = $this->listIncomingNumbersWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
+        list($response) = $this->listIncomingNumbersWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
         return $response;
     }
 
@@ -11222,6 +12139,8 @@ class DefaultApi
 
      * @param  bool $capabilities_short_code (optional)
 
+     * @param  string $tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)
+
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
 
      *
@@ -11229,9 +12148,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\IncomingNumberList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listIncomingNumbersWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
+    public function listIncomingNumbersWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null)
     {
-        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
+        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11345,15 +12264,17 @@ class DefaultApi
 
      * @param  bool $capabilities_short_code (optional)
 
+     * @param  string $tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)
+
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
 
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listIncomingNumbersAsync($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
+    public function listIncomingNumbersAsync($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null)
     {
-        return $this->listIncomingNumbersAsyncWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet)
+        return $this->listIncomingNumbersAsyncWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11395,16 +12316,18 @@ class DefaultApi
 
      * @param  bool $capabilities_short_code (optional)
 
+     * @param  string $tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)
+
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
 
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listIncomingNumbersAsyncWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
+    public function listIncomingNumbersAsyncWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null)
     {
         $returnType = '\FreeClimb\Api\Model\IncomingNumberList';
-        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $offnet);
+        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11471,13 +12394,15 @@ class DefaultApi
 
      * @param  bool $capabilities_short_code (optional)
 
+     * @param  string $tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. (optional)
+
      * @param  bool $offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. (optional)
 
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listIncomingNumbersRequest($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $offnet = null)
+    public function listIncomingNumbersRequest($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
@@ -11646,6 +12571,17 @@ class DefaultApi
             }
             else {
                 $queryParams['capabilities.shortCode'] = $capabilities_short_code;
+            }
+        }
+        // query params
+        if ($tfn_campaign_id !== null) {
+            if('form' === 'form' && is_array($tfn_campaign_id)) {
+                foreach($tfn_campaign_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['tfn.campaignId'] = $tfn_campaign_id;
             }
         }
         // query params
@@ -13450,6 +14386,304 @@ class DefaultApi
     }
 
     /**
+     * Operation makeAWebrtcJwt
+     *
+     * Make a JWT for WebRTC calling
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return string
+     */
+    public function makeAWebrtcJwt($create_web_rtc_token)
+    {
+        list($response) = $this->makeAWebrtcJwtWithHttpInfo($create_web_rtc_token);
+        return $response;
+    }
+
+    /**
+     * Operation makeAWebrtcJwtWithHttpInfo
+     *
+     * Make a JWT for WebRTC calling
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function makeAWebrtcJwtWithHttpInfo($create_web_rtc_token)
+    {
+        $request = $this->makeAWebrtcJwtRequest($create_web_rtc_token);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation makeAWebrtcJwtAsync
+     *
+     * Make a JWT for WebRTC calling
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function makeAWebrtcJwtAsync($create_web_rtc_token)
+    {
+        return $this->makeAWebrtcJwtAsyncWithHttpInfo($create_web_rtc_token)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation makeAWebrtcJwtAsyncWithHttpInfo
+     *
+     * Make a JWT for WebRTC calling
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function makeAWebrtcJwtAsyncWithHttpInfo($create_web_rtc_token)
+    {
+        $returnType = 'string';
+        $request = $this->makeAWebrtcJwtRequest($create_web_rtc_token);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'makeAWebrtcJwt'
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function makeAWebrtcJwtRequest($create_web_rtc_token)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling makeAWebrtcJwt'
+            );
+        }
+        // verify the required parameter 'create_web_rtc_token' is set
+        if ($create_web_rtc_token === null || (is_array($create_web_rtc_token) && count($create_web_rtc_token) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_web_rtc_token when calling makeAWebrtcJwt'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/Calls/WebRTC/Token';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($create_web_rtc_token)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_web_rtc_token));
+            } else {
+                $httpBody = $create_web_rtc_token;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation removeAParticipant
      *
      * Remove a Participant
@@ -14339,12 +15573,11 @@ class DefaultApi
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \FreeClimb\Api\Model\ConferenceResult
+     * @return void
      */
     public function updateAConference($conference_id, $update_conference_request = null)
     {
-        list($response) = $this->updateAConferenceWithHttpInfo($conference_id, $update_conference_request);
-        return $response;
+        $this->updateAConferenceWithHttpInfo($conference_id, $update_conference_request);
     }
 
     /**
@@ -14360,7 +15593,7 @@ class DefaultApi
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \FreeClimb\Api\Model\ConferenceResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAConferenceWithHttpInfo($conference_id, $update_conference_request = null)
     {
@@ -14401,44 +15634,10 @@ class DefaultApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\FreeClimb\Api\Model\ConferenceResult' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\ConferenceResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\FreeClimb\Api\Model\ConferenceResult';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\FreeClimb\Api\Model\ConferenceResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
@@ -14484,24 +15683,14 @@ class DefaultApi
      */
     public function updateAConferenceAsyncWithHttpInfo($conference_id, $update_conference_request = null)
     {
-        $returnType = '\FreeClimb\Api\Model\ConferenceResult';
+        $returnType = '';
         $request = $this->updateAConferenceRequest($conference_id, $update_conference_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -14577,11 +15766,11 @@ class DefaultApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 ['application/json']
             );
         }

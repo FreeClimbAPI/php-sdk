@@ -70,7 +70,8 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'notification_url' => 'string',
         'brand_id' => 'string',
         'campaign_id' => 'string',
-        'segment_count' => 'float'
+        'segment_count' => 'float',
+        'media_urls' => 'string[]'
     ];
 
     /**
@@ -91,7 +92,8 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'notification_url' => null,
         'brand_id' => null,
         'campaign_id' => null,
-        'segment_count' => null
+        'segment_count' => null,
+        'media_urls' => 'uri'
     ];
 
     /**
@@ -131,7 +133,8 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'notification_url' => 'notificationUrl',
         'brand_id' => 'brandId',
         'campaign_id' => 'campaignId',
-        'segment_count' => 'segmentCount'
+        'segment_count' => 'segmentCount',
+        'media_urls' => 'mediaUrls'
     ];
 
     /**
@@ -150,7 +153,8 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'notification_url' => 'setNotificationUrl',
         'brand_id' => 'setBrandId',
         'campaign_id' => 'setCampaignId',
-        'segment_count' => 'setSegmentCount'
+        'segment_count' => 'setSegmentCount',
+        'media_urls' => 'setMediaUrls'
     ];
 
     /**
@@ -169,7 +173,8 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         'notification_url' => 'getNotificationUrl',
         'brand_id' => 'getBrandId',
         'campaign_id' => 'getCampaignId',
-        'segment_count' => 'getSegmentCount'
+        'segment_count' => 'getSegmentCount',
+        'media_urls' => 'getMediaUrls'
     ];
 
     /**
@@ -240,6 +245,7 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->container['brand_id'] = $data['brand_id'] ?? null;
         $this->container['campaign_id'] = $data['campaign_id'] ?? null;
         $this->container['segment_count'] = $data['segment_count'] ?? null;
+        $this->container['media_urls'] = $data['media_urls'] ?? null;
     }
 
     /**
@@ -526,6 +532,30 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSegmentCount($segment_count)
     {
         $this->container['segment_count'] = $segment_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets media_urls
+     *
+     * @return string[]|null
+     */
+    public function getMediaUrls()
+    {
+        return $this->container['media_urls'];
+    }
+
+    /**
+     * Sets media_urls
+     *
+     * @param string[]|null $media_urls an array of HTTP URLs which were attached this this message
+     *
+     * @return self
+     */
+    public function setMediaUrls($media_urls)
+    {
+        $this->container['media_urls'] = $media_urls;
 
         return $this;
     }

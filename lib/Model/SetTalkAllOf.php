@@ -60,7 +60,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'call_id' => 'string',
         'talk' => 'bool'
     ];
 
@@ -72,7 +71,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'call_id' => null,
         'talk' => null
     ];
 
@@ -103,7 +101,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'call_id' => 'callId',
         'talk' => 'talk'
     ];
 
@@ -113,7 +110,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'call_id' => 'setCallId',
         'talk' => 'setTalk'
     ];
 
@@ -123,7 +119,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'call_id' => 'getCallId',
         'talk' => 'getTalk'
     ];
 
@@ -184,7 +179,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['call_id'] = $data['call_id'] ?? null;
         $this->container['talk'] = $data['talk'] ?? null;
     }
 
@@ -197,9 +191,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['call_id'] === null) {
-            $invalidProperties[] = "'call_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -214,30 +205,6 @@ class SetTalkAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets call_id
-     *
-     * @return string
-     */
-    public function getCallId()
-    {
-        return $this->container['call_id'];
-    }
-
-    /**
-     * Sets call_id
-     *
-     * @param string $call_id ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
-     *
-     * @return self
-     */
-    public function setCallId($call_id)
-    {
-        $this->container['call_id'] = $call_id;
-
-        return $this;
-    }
 
     /**
      * Gets talk

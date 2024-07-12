@@ -75,7 +75,8 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'country' => 'string',
         'voice_enabled' => 'bool',
         'sms_enabled' => 'bool',
-        'offnet' => 'bool'
+        'offnet' => 'bool',
+        'tfn' => '\FreeClimb\Api\Model\TFN'
     ];
 
     /**
@@ -101,7 +102,8 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'country' => null,
         'voice_enabled' => null,
         'sms_enabled' => null,
-        'offnet' => null
+        'offnet' => null,
+        'tfn' => null
     ];
 
     /**
@@ -146,7 +148,8 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'country' => 'country',
         'voice_enabled' => 'voiceEnabled',
         'sms_enabled' => 'smsEnabled',
-        'offnet' => 'offnet'
+        'offnet' => 'offnet',
+        'tfn' => 'tfn'
     ];
 
     /**
@@ -170,7 +173,8 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'country' => 'setCountry',
         'voice_enabled' => 'setVoiceEnabled',
         'sms_enabled' => 'setSmsEnabled',
-        'offnet' => 'setOffnet'
+        'offnet' => 'setOffnet',
+        'tfn' => 'setTfn'
     ];
 
     /**
@@ -194,7 +198,8 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'country' => 'getCountry',
         'voice_enabled' => 'getVoiceEnabled',
         'sms_enabled' => 'getSmsEnabled',
-        'offnet' => 'getOffnet'
+        'offnet' => 'getOffnet',
+        'tfn' => 'getTfn'
     ];
 
     /**
@@ -270,6 +275,7 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['voice_enabled'] = $data['voice_enabled'] ?? null;
         $this->container['sms_enabled'] = $data['sms_enabled'] ?? null;
         $this->container['offnet'] = $data['offnet'] ?? null;
+        $this->container['tfn'] = $data['tfn'] ?? null;
     }
 
     /**
@@ -680,6 +686,30 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setOffnet($offnet)
     {
         $this->container['offnet'] = $offnet;
+
+        return $this;
+    }
+
+    /**
+     * Gets tfn
+     *
+     * @return \FreeClimb\Api\Model\TFN|null
+     */
+    public function getTfn()
+    {
+        return $this->container['tfn'];
+    }
+
+    /**
+     * Sets tfn
+     *
+     * @param \FreeClimb\Api\Model\TFN|null $tfn tfn
+     *
+     * @return self
+     */
+    public function setTfn($tfn)
+    {
+        $this->container['tfn'] = $tfn;
 
         return $this;
     }

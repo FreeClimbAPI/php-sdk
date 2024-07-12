@@ -53,24 +53,12 @@ class RemoveFromConferenceTest extends TestCase
     {
         $this->RemoveFromConference = new RemoveFromConference();
     }
-    /**
-     * Test attribute "call_id"
-     */
-    public function testPropertyCallId()
-    {
-        $this->RemoveFromConference->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RemoveFromConference->getCallId());
-        $this->assertIsString($this->RemoveFromConference->getCallId());
-        
-
-    }
 
     /**
 * Test method toStringTest
 */
 public function toStringTest() {
     $test1 = new RemoveFromConference();    
-      $test1->setCallId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +70,6 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new RemoveFromConference();
-      $test1->setCallId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

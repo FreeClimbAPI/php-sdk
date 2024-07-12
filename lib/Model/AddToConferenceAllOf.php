@@ -64,7 +64,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'call_control_sequence' => 'string',
         'call_control_url' => 'string',
         'conference_id' => 'string',
-        'call_id' => 'string',
         'leave_conference_url' => 'string',
         'listen' => 'bool',
         'notification_url' => 'string',
@@ -84,7 +83,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'call_control_sequence' => null,
         'call_control_url' => null,
         'conference_id' => null,
-        'call_id' => null,
         'leave_conference_url' => null,
         'listen' => null,
         'notification_url' => null,
@@ -123,7 +121,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'call_control_sequence' => 'callControlSequence',
         'call_control_url' => 'callControlUrl',
         'conference_id' => 'conferenceId',
-        'call_id' => 'callId',
         'leave_conference_url' => 'leaveConferenceUrl',
         'listen' => 'listen',
         'notification_url' => 'notificationUrl',
@@ -141,7 +138,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'call_control_sequence' => 'setCallControlSequence',
         'call_control_url' => 'setCallControlUrl',
         'conference_id' => 'setConferenceId',
-        'call_id' => 'setCallId',
         'leave_conference_url' => 'setLeaveConferenceUrl',
         'listen' => 'setListen',
         'notification_url' => 'setNotificationUrl',
@@ -159,7 +155,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'call_control_sequence' => 'getCallControlSequence',
         'call_control_url' => 'getCallControlUrl',
         'conference_id' => 'getConferenceId',
-        'call_id' => 'getCallId',
         'leave_conference_url' => 'getLeaveConferenceUrl',
         'listen' => 'getListen',
         'notification_url' => 'getNotificationUrl',
@@ -228,7 +223,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['call_control_sequence'] = $data['call_control_sequence'] ?? null;
         $this->container['call_control_url'] = $data['call_control_url'] ?? null;
         $this->container['conference_id'] = $data['conference_id'] ?? null;
-        $this->container['call_id'] = $data['call_id'] ?? null;
         $this->container['leave_conference_url'] = $data['leave_conference_url'] ?? null;
         $this->container['listen'] = $data['listen'] ?? null;
         $this->container['notification_url'] = $data['notification_url'] ?? null;
@@ -355,30 +349,6 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setConferenceId($conference_id)
     {
         $this->container['conference_id'] = $conference_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_id
-     *
-     * @return string|null
-     */
-    public function getCallId()
-    {
-        return $this->container['call_id'];
-    }
-
-    /**
-     * Sets call_id
-     *
-     * @param string|null $call_id ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
-     *
-     * @return self
-     */
-    public function setCallId($call_id)
-    {
-        $this->container['call_id'] = $call_id;
 
         return $this;
     }

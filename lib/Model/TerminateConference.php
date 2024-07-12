@@ -59,7 +59,7 @@ class TerminateConference extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conference_id' => 'string'
+        
     ];
 
     /**
@@ -70,7 +70,7 @@ class TerminateConference extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conference_id' => null
+        
     ];
 
     /**
@@ -100,7 +100,7 @@ class TerminateConference extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'conference_id' => 'conferenceId'
+        
     ];
 
     /**
@@ -109,7 +109,7 @@ class TerminateConference extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'conference_id' => 'setConferenceId'
+        
     ];
 
     /**
@@ -118,7 +118,7 @@ class TerminateConference extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'conference_id' => 'getConferenceId'
+        
     ];
 
     /**
@@ -174,7 +174,6 @@ class TerminateConference extends PerclCommand
     {
         parent::__construct($data);
 
-        $this->container['conference_id'] = $data['conference_id'] ?? null;
     }
 
     /**
@@ -186,9 +185,6 @@ class TerminateConference extends PerclCommand
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['conference_id'] === null) {
-            $invalidProperties[] = "'conference_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -203,30 +199,6 @@ class TerminateConference extends PerclCommand
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets conference_id
-     *
-     * @return string
-     */
-    public function getConferenceId()
-    {
-        return $this->container['conference_id'];
-    }
-
-    /**
-     * Sets conference_id
-     *
-     * @param string $conference_id ID of the conference to terminate.
-     *
-     * @return self
-     */
-    public function setConferenceId($conference_id)
-    {
-        $this->container['conference_id'] = $conference_id;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

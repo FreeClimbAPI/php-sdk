@@ -88,6 +88,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sample5' => 'string',
         'message_flow' => 'string',
         'help_message' => 'string',
+        'optin_keywords' => 'string',
+        'optout_keywords' => 'string',
+        'help_keywords' => 'string',
+        'optin_message' => 'string',
+        'optout_message' => 'string',
         'reference_id' => 'string',
         'mock' => 'bool',
         'next_renewal_or_expiration_date' => '\DateTime'
@@ -129,6 +134,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sample5' => null,
         'message_flow' => null,
         'help_message' => null,
+        'optin_keywords' => null,
+        'optout_keywords' => null,
+        'help_keywords' => null,
+        'optin_message' => null,
+        'optout_message' => null,
         'reference_id' => null,
         'mock' => null,
         'next_renewal_or_expiration_date' => 'date'
@@ -189,6 +199,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sample5' => 'sample5',
         'message_flow' => 'messageFlow',
         'help_message' => 'helpMessage',
+        'optin_keywords' => 'optinKeywords',
+        'optout_keywords' => 'optoutKeywords',
+        'help_keywords' => 'helpKeywords',
+        'optin_message' => 'optinMessage',
+        'optout_message' => 'optoutMessage',
         'reference_id' => 'referenceId',
         'mock' => 'mock',
         'next_renewal_or_expiration_date' => 'nextRenewalOrExpirationDate'
@@ -228,6 +243,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sample5' => 'setSample5',
         'message_flow' => 'setMessageFlow',
         'help_message' => 'setHelpMessage',
+        'optin_keywords' => 'setOptinKeywords',
+        'optout_keywords' => 'setOptoutKeywords',
+        'help_keywords' => 'setHelpKeywords',
+        'optin_message' => 'setOptinMessage',
+        'optout_message' => 'setOptoutMessage',
         'reference_id' => 'setReferenceId',
         'mock' => 'setMock',
         'next_renewal_or_expiration_date' => 'setNextRenewalOrExpirationDate'
@@ -267,6 +287,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sample5' => 'getSample5',
         'message_flow' => 'getMessageFlow',
         'help_message' => 'getHelpMessage',
+        'optin_keywords' => 'getOptinKeywords',
+        'optout_keywords' => 'getOptoutKeywords',
+        'help_keywords' => 'getHelpKeywords',
+        'optin_message' => 'getOptinMessage',
+        'optout_message' => 'getOptoutMessage',
         'reference_id' => 'getReferenceId',
         'mock' => 'getMock',
         'next_renewal_or_expiration_date' => 'getNextRenewalOrExpirationDate'
@@ -372,6 +397,11 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['sample5'] = $data['sample5'] ?? null;
         $this->container['message_flow'] = $data['message_flow'] ?? null;
         $this->container['help_message'] = $data['help_message'] ?? null;
+        $this->container['optin_keywords'] = $data['optin_keywords'] ?? null;
+        $this->container['optout_keywords'] = $data['optout_keywords'] ?? null;
+        $this->container['help_keywords'] = $data['help_keywords'] ?? null;
+        $this->container['optin_message'] = $data['optin_message'] ?? null;
+        $this->container['optout_message'] = $data['optout_message'] ?? null;
         $this->container['reference_id'] = $data['reference_id'] ?? null;
         $this->container['mock'] = $data['mock'] ?? null;
         $this->container['next_renewal_or_expiration_date'] = $data['next_renewal_or_expiration_date'] ?? null;
@@ -455,6 +485,26 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         if (!is_null($this->container['help_message']) && (mb_strlen($this->container['help_message']) > 255)) {
             $invalidProperties[] = "invalid value for 'help_message', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['optin_keywords']) && (mb_strlen($this->container['optin_keywords']) > 255)) {
+            $invalidProperties[] = "invalid value for 'optin_keywords', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['optout_keywords']) && (mb_strlen($this->container['optout_keywords']) > 255)) {
+            $invalidProperties[] = "invalid value for 'optout_keywords', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['help_keywords']) && (mb_strlen($this->container['help_keywords']) > 255)) {
+            $invalidProperties[] = "invalid value for 'help_keywords', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['optin_message']) && (mb_strlen($this->container['optin_message']) > 255)) {
+            $invalidProperties[] = "invalid value for 'optin_message', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['optout_message']) && (mb_strlen($this->container['optout_message']) > 255)) {
+            $invalidProperties[] = "invalid value for 'optout_message', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['reference_id']) && (mb_strlen($this->container['reference_id']) > 50)) {
@@ -1203,6 +1253,146 @@ class SMSTenDLCCampaign implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
 
         $this->container['help_message'] = $help_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets optin_keywords
+     *
+     * @return string|null
+     */
+    public function getOptinKeywords()
+    {
+        return $this->container['optin_keywords'];
+    }
+
+    /**
+     * Sets optin_keywords
+     *
+     * @param string|null $optin_keywords Subscriber opt-in keywords. Multiple keywords are comma separated without space.
+     *
+     * @return self
+     */
+    public function setOptinKeywords($optin_keywords)
+    {
+        if (!is_null($optin_keywords) && (mb_strlen($optin_keywords) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $optin_keywords when calling SMSTenDLCCampaign., must be smaller than or equal to 255.');
+        }
+
+        $this->container['optin_keywords'] = $optin_keywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets optout_keywords
+     *
+     * @return string|null
+     */
+    public function getOptoutKeywords()
+    {
+        return $this->container['optout_keywords'];
+    }
+
+    /**
+     * Sets optout_keywords
+     *
+     * @param string|null $optout_keywords Subscriber opt-out keywords. Multiple keywords are comma separated without space.
+     *
+     * @return self
+     */
+    public function setOptoutKeywords($optout_keywords)
+    {
+        if (!is_null($optout_keywords) && (mb_strlen($optout_keywords) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $optout_keywords when calling SMSTenDLCCampaign., must be smaller than or equal to 255.');
+        }
+
+        $this->container['optout_keywords'] = $optout_keywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets help_keywords
+     *
+     * @return string|null
+     */
+    public function getHelpKeywords()
+    {
+        return $this->container['help_keywords'];
+    }
+
+    /**
+     * Sets help_keywords
+     *
+     * @param string|null $help_keywords Subscriber help keywords. Multiple keywords are comma separated without space.
+     *
+     * @return self
+     */
+    public function setHelpKeywords($help_keywords)
+    {
+        if (!is_null($help_keywords) && (mb_strlen($help_keywords) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $help_keywords when calling SMSTenDLCCampaign., must be smaller than or equal to 255.');
+        }
+
+        $this->container['help_keywords'] = $help_keywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets optin_message
+     *
+     * @return string|null
+     */
+    public function getOptinMessage()
+    {
+        return $this->container['optin_message'];
+    }
+
+    /**
+     * Sets optin_message
+     *
+     * @param string|null $optin_message Subscriber opt-in message.
+     *
+     * @return self
+     */
+    public function setOptinMessage($optin_message)
+    {
+        if (!is_null($optin_message) && (mb_strlen($optin_message) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $optin_message when calling SMSTenDLCCampaign., must be smaller than or equal to 255.');
+        }
+
+        $this->container['optin_message'] = $optin_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets optout_message
+     *
+     * @return string|null
+     */
+    public function getOptoutMessage()
+    {
+        return $this->container['optout_message'];
+    }
+
+    /**
+     * Sets optout_message
+     *
+     * @param string|null $optout_message Subscriber opt-out message.
+     *
+     * @return self
+     */
+    public function setOptoutMessage($optout_message)
+    {
+        if (!is_null($optout_message) && (mb_strlen($optout_message) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $optout_message when calling SMSTenDLCCampaign., must be smaller than or equal to 255.');
+        }
+
+        $this->container['optout_message'] = $optout_message;
 
         return $this;
     }

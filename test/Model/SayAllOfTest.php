@@ -85,17 +85,6 @@ class SayAllOfTest extends TestCase
         $this->assertIsInt($this->SayAllOf->getLoop());
     }
     /**
-     * Test attribute "conference_id"
-     */
-    public function testPropertyConferenceId()
-    {
-        $this->SayAllOf->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SayAllOf->getConferenceId());
-        $this->assertIsString($this->SayAllOf->getConferenceId());
-        
-
-    }
-    /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
@@ -113,7 +102,6 @@ public function toStringTest() {
       $test1->setText("TS");
       $test1->setLanguage("TS");
       $test1->setLoop(1);
-      $test1->setConferenceId("TS");
       $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
@@ -129,7 +117,6 @@ public function toHeaderValueTest()
       $test1->setText("TS");
       $test1->setLanguage("TS");
       $test1->setLoop(1);
-      $test1->setConferenceId("TS");
       $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();

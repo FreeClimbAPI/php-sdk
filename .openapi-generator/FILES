@@ -40,6 +40,7 @@ docs/Model/ConferenceStatus.md
 docs/Model/CreateConference.md
 docs/Model/CreateConferenceAllOf.md
 docs/Model/CreateConferenceRequest.md
+docs/Model/CreateWebRTCToken.md
 docs/Model/Dequeue.md
 docs/Model/Enqueue.md
 docs/Model/EnqueueAllOf.md
@@ -110,7 +111,6 @@ docs/Model/RedirectAllOf.md
 docs/Model/Reject.md
 docs/Model/RejectAllOf.md
 docs/Model/RemoveFromConference.md
-docs/Model/RemoveFromConferenceAllOf.md
 docs/Model/RequestType.md
 docs/Model/SMSTenDLCBrand.md
 docs/Model/SMSTenDLCBrandsListResult.md
@@ -122,6 +122,9 @@ docs/Model/SMSTenDLCPartnerCampaign.md
 docs/Model/SMSTenDLCPartnerCampaignBrand.md
 docs/Model/SMSTenDLCPartnerCampaignsListResult.md
 docs/Model/SMSTenDLCPartnerCampaignsListResultAllOf.md
+docs/Model/SMSTollFreeCampaign.md
+docs/Model/SMSTollFreeCampaignsListResult.md
+docs/Model/SMSTollFreeCampaignsListResultAllOf.md
 docs/Model/Say.md
 docs/Model/SayAllOf.md
 docs/Model/SendDigits.md
@@ -133,8 +136,8 @@ docs/Model/SetTalkAllOf.md
 docs/Model/Sms.md
 docs/Model/SmsAllOf.md
 docs/Model/StartRecordCall.md
+docs/Model/TFN.md
 docs/Model/TerminateConference.md
-docs/Model/TerminateConferenceAllOf.md
 docs/Model/TranscribeUtterance.md
 docs/Model/TranscribeUtteranceRecord.md
 docs/Model/Unpark.md
@@ -184,6 +187,7 @@ lib/Model/ConferenceStatus.php
 lib/Model/CreateConference.php
 lib/Model/CreateConferenceAllOf.php
 lib/Model/CreateConferenceRequest.php
+lib/Model/CreateWebRTCToken.php
 lib/Model/Dequeue.php
 lib/Model/Enqueue.php
 lib/Model/EnqueueAllOf.php
@@ -255,7 +259,6 @@ lib/Model/RedirectAllOf.php
 lib/Model/Reject.php
 lib/Model/RejectAllOf.php
 lib/Model/RemoveFromConference.php
-lib/Model/RemoveFromConferenceAllOf.php
 lib/Model/RequestType.php
 lib/Model/SMSTenDLCBrand.php
 lib/Model/SMSTenDLCBrandsListResult.php
@@ -267,6 +270,9 @@ lib/Model/SMSTenDLCPartnerCampaign.php
 lib/Model/SMSTenDLCPartnerCampaignBrand.php
 lib/Model/SMSTenDLCPartnerCampaignsListResult.php
 lib/Model/SMSTenDLCPartnerCampaignsListResultAllOf.php
+lib/Model/SMSTollFreeCampaign.php
+lib/Model/SMSTollFreeCampaignsListResult.php
+lib/Model/SMSTollFreeCampaignsListResultAllOf.php
 lib/Model/Say.php
 lib/Model/SayAllOf.php
 lib/Model/SendDigits.php
@@ -278,8 +284,8 @@ lib/Model/SetTalkAllOf.php
 lib/Model/Sms.php
 lib/Model/SmsAllOf.php
 lib/Model/StartRecordCall.php
+lib/Model/TFN.php
 lib/Model/TerminateConference.php
-lib/Model/TerminateConferenceAllOf.php
 lib/Model/TranscribeUtterance.php
 lib/Model/TranscribeUtteranceRecord.php
 lib/Model/Unpark.php
@@ -290,3 +296,25 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/DefaultApiTest.php
+test/Model/AddToConferenceAllOfTest.php
+test/Model/AddToConferenceTest.php
+test/Model/GetDigitsAllOfTest.php
+test/Model/GetDigitsTest.php
+test/Model/IncomingNumberResultAllOfTest.php
+test/Model/IncomingNumberResultTest.php
+test/Model/MessageRequestAllOfTest.php
+test/Model/MessageRequestTest.php
+test/Model/MessageResultAllOfTest.php
+test/Model/MessageResultTest.php
+test/Model/PlayAllOfTest.php
+test/Model/PlayTest.php
+test/Model/RemoveFromConferenceTest.php
+test/Model/SMSTenDLCCampaignTest.php
+test/Model/SayAllOfTest.php
+test/Model/SayTest.php
+test/Model/SetListenAllOfTest.php
+test/Model/SetListenTest.php
+test/Model/SetTalkAllOfTest.php
+test/Model/SetTalkTest.php
+test/Model/TerminateConferenceTest.php

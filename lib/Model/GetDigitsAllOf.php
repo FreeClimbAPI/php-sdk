@@ -64,7 +64,7 @@ class GetDigitsAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'digit_timeout_ms' => 'int',
         'finish_on_key' => 'string',
         'flush_buffer' => 'bool',
-        'initial_timeout_ms' => 'string',
+        'initial_timeout_ms' => 'int',
         'max_digits' => 'int',
         'min_digits' => 'int',
         'prompts' => '\FreeClimb\Api\Model\PerclCommand[]',
@@ -356,7 +356,7 @@ class GetDigitsAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets initial_timeout_ms
      *
-     * @return string|null
+     * @return int|null
      */
     public function getInitialTimeoutMs()
     {
@@ -366,7 +366,7 @@ class GetDigitsAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets initial_timeout_ms
      *
-     * @param string|null $initial_timeout_ms Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a `timeout` has occurred and moving on to make the request to the `actionUrl` to submit the results of the `GetDigits` command. This timeout interval begins when all nested commands have been fully executed.
+     * @param int|null $initial_timeout_ms Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a `timeout` has occurred and moving on to make the request to the `actionUrl` to submit the results of the `GetDigits` command. This timeout interval begins when all nested commands have been fully executed.
      *
      * @return self
      */

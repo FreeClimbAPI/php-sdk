@@ -176,6 +176,14 @@ class IncomingNumberResultAllOfTest extends TestCase
         $this->assertTrue($this->IncomingNumberResultAllOf->getOffnet());
         $this->assertIsBool($this->IncomingNumberResultAllOf->getOffnet());
     }
+    /**
+     * Test attribute "tfn"
+     */
+    public function testPropertyTfn()
+    {
+        $this->IncomingNumberResultAllOf->setTfn(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->IncomingNumberResultAllOf->getTfn());
+    }
 
     /**
 * Test method toStringTest
@@ -195,6 +203,8 @@ public function toStringTest() {
       $test1->setVoiceEnabled(true);
       $test1->setSmsEnabled(true);
       $test1->setOffnet(true);
+      $object = new \FreeClimb\Api\Model\TFN();
+      $test1->setTfn($object);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -219,6 +229,8 @@ public function toHeaderValueTest()
       $test1->setVoiceEnabled(true);
       $test1->setSmsEnabled(true);
       $test1->setOffnet(true);
+      $object = new \FreeClimb\Api\Model\TFN();
+      $test1->setTfn($object);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
