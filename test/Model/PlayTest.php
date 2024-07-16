@@ -74,17 +74,6 @@ class PlayTest extends TestCase
         $this->assertIsInt($this->Play->getLoop());
     }
     /**
-     * Test attribute "conference_id"
-     */
-    public function testPropertyConferenceId()
-    {
-        $this->Play->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Play->getConferenceId());
-        $this->assertIsString($this->Play->getConferenceId());
-        
-
-    }
-    /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
@@ -101,7 +90,6 @@ public function toStringTest() {
     $test1 = new Play();    
       $test1->setFile("TS");
       $test1->setLoop(1);
-      $test1->setConferenceId("TS");
       $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
@@ -116,7 +104,6 @@ public function toHeaderValueTest()
     $test1 = new Play();
       $test1->setFile("TS");
       $test1->setLoop(1);
-      $test1->setConferenceId("TS");
       $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();

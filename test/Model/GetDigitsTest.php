@@ -98,11 +98,9 @@ class GetDigitsTest extends TestCase
      */
     public function testPropertyInitialTimeoutMs()
     {
-        $this->GetDigits->setInitialTimeoutMs('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetDigits->getInitialTimeoutMs());
-        $this->assertIsString($this->GetDigits->getInitialTimeoutMs());
-        
-
+        $this->GetDigits->setInitialTimeoutMs(12345);
+        $this->assertEquals(12345, $this->GetDigits->getInitialTimeoutMs());
+        $this->assertIsInt($this->GetDigits->getInitialTimeoutMs());
     }
     /**
      * Test attribute "max_digits"
@@ -155,7 +153,7 @@ public function toStringTest() {
       $test1->setDigitTimeoutMs(1);
       $test1->setFinishOnKey("TS");
       $test1->setFlushBuffer(true);
-      $test1->setInitialTimeoutMs("TS");
+      $test1->setInitialTimeoutMs(1);
       $test1->setMaxDigits(1);
       $test1->setMinDigits(1);
       $testList = [];
@@ -181,7 +179,7 @@ public function toHeaderValueTest()
       $test1->setDigitTimeoutMs(1);
       $test1->setFinishOnKey("TS");
       $test1->setFlushBuffer(true);
-      $test1->setInitialTimeoutMs("TS");
+      $test1->setInitialTimeoutMs(1);
       $test1->setMaxDigits(1);
       $test1->setMinDigits(1);
       $testList = [];

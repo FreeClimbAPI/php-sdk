@@ -54,17 +54,6 @@ class SetTalkTest extends TestCase
         $this->SetTalk = new SetTalk();
     }
     /**
-     * Test attribute "call_id"
-     */
-    public function testPropertyCallId()
-    {
-        $this->SetTalk->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SetTalk->getCallId());
-        $this->assertIsString($this->SetTalk->getCallId());
-        
-
-    }
-    /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
@@ -79,7 +68,6 @@ class SetTalkTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SetTalk();    
-      $test1->setCallId("TS");
       $test1->setTalk(true);
 
     $toString1 = $test1->__toString();
@@ -92,7 +80,6 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SetTalk();
-      $test1->setCallId("TS");
       $test1->setTalk(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();

@@ -54,17 +54,6 @@ class SetListenAllOfTest extends TestCase
         $this->SetListenAllOf = new SetListenAllOf();
     }
     /**
-     * Test attribute "call_id"
-     */
-    public function testPropertyCallId()
-    {
-        $this->SetListenAllOf->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SetListenAllOf->getCallId());
-        $this->assertIsString($this->SetListenAllOf->getCallId());
-        
-
-    }
-    /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
@@ -79,7 +68,6 @@ class SetListenAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SetListenAllOf();    
-      $test1->setCallId("TS");
       $test1->setListen(true);
 
     $toString1 = $test1->__toString();
@@ -92,7 +80,6 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SetListenAllOf();
-      $test1->setCallId("TS");
       $test1->setListen(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();

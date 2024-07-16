@@ -61,7 +61,6 @@ class Play extends PerclCommand
     protected static $openAPITypes = [
         'file' => 'string',
         'loop' => 'int',
-        'conference_id' => 'string',
         'privacy_mode' => 'bool'
     ];
 
@@ -75,7 +74,6 @@ class Play extends PerclCommand
     protected static $openAPIFormats = [
         'file' => null,
         'loop' => null,
-        'conference_id' => null,
         'privacy_mode' => null
     ];
 
@@ -108,7 +106,6 @@ class Play extends PerclCommand
     protected static $attributeMap = [
         'file' => 'file',
         'loop' => 'loop',
-        'conference_id' => 'conferenceId',
         'privacy_mode' => 'privacyMode'
     ];
 
@@ -120,7 +117,6 @@ class Play extends PerclCommand
     protected static $setters = [
         'file' => 'setFile',
         'loop' => 'setLoop',
-        'conference_id' => 'setConferenceId',
         'privacy_mode' => 'setPrivacyMode'
     ];
 
@@ -132,7 +128,6 @@ class Play extends PerclCommand
     protected static $getters = [
         'file' => 'getFile',
         'loop' => 'getLoop',
-        'conference_id' => 'getConferenceId',
         'privacy_mode' => 'getPrivacyMode'
     ];
 
@@ -191,7 +186,6 @@ class Play extends PerclCommand
 
         $this->container['file'] = $data['file'] ?? null;
         $this->container['loop'] = $data['loop'] ?? null;
-        $this->container['conference_id'] = $data['conference_id'] ?? null;
         $this->container['privacy_mode'] = $data['privacy_mode'] ?? null;
     }
 
@@ -266,30 +260,6 @@ class Play extends PerclCommand
     public function setLoop($loop)
     {
         $this->container['loop'] = $loop;
-
-        return $this;
-    }
-
-    /**
-     * Gets conference_id
-     *
-     * @return string|null
-     */
-    public function getConferenceId()
-    {
-        return $this->container['conference_id'];
-    }
-
-    /**
-     * Sets conference_id
-     *
-     * @param string|null $conference_id ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.
-     *
-     * @return self
-     */
-    public function setConferenceId($conference_id)
-    {
-        $this->container['conference_id'] = $conference_id;
 
         return $this;
     }

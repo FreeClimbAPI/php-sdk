@@ -231,6 +231,15 @@ class MessageResultTest extends TestCase
         $this->assertEquals(12345, $this->MessageResult->getSegmentCount());
         $this->assertIsNumeric($this->MessageResult->getSegmentCount());
     }
+    /**
+     * Test attribute "media_urls"
+     */
+    public function testPropertyMediaUrls()
+    {
+        $this->MessageResult->setMediaUrls([]);
+        $this->assertEquals([], $this->MessageResult->getMediaUrls());
+        $this->assertIsArray($this->MessageResult->getMediaUrls());
+    }
 
     /**
 * Test method toStringTest
@@ -252,6 +261,8 @@ public function toStringTest() {
       $test1->setBrandId("TS");
       $test1->setCampaignId("TS");
       $test1->setSegmentCount(1.0);
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setMediaUrls($testArray);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -278,6 +289,8 @@ public function toHeaderValueTest()
       $test1->setBrandId("TS");
       $test1->setCampaignId("TS");
       $test1->setSegmentCount(1.0);
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setMediaUrls($testArray);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

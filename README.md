@@ -149,6 +149,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getTenDLCSmsCampaigns**](docs/Api/DefaultApi.md#gettendlcsmscampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 *DefaultApi* | [**getTenDLCSmsPartnerCampaign**](docs/Api/DefaultApi.md#gettendlcsmspartnercampaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
 *DefaultApi* | [**getTenDLCSmsPartnerCampaigns**](docs/Api/DefaultApi.md#gettendlcsmspartnercampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
+*DefaultApi* | [**getTollFreeSmsCampaign**](docs/Api/DefaultApi.md#gettollfreesmscampaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
+*DefaultApi* | [**getTollFreeSmsCampaigns**](docs/Api/DefaultApi.md#gettollfreesmscampaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
 *DefaultApi* | [**listActiveQueues**](docs/Api/DefaultApi.md#listactivequeues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 *DefaultApi* | [**listAllAccountLogs**](docs/Api/DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 *DefaultApi* | [**listApplications**](docs/Api/DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -156,6 +158,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listCallLogs**](docs/Api/DefaultApi.md#listcalllogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs
 *DefaultApi* | [**listCallRecordings**](docs/Api/DefaultApi.md#listcallrecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings
 *DefaultApi* | [**listCalls**](docs/Api/DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls
+*DefaultApi* | [**listConferenceRecordings**](docs/Api/DefaultApi.md#listconferencerecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings
 *DefaultApi* | [**listConferences**](docs/Api/DefaultApi.md#listconferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences
 *DefaultApi* | [**listIncomingNumbers**](docs/Api/DefaultApi.md#listincomingnumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers
 *DefaultApi* | [**listMembers**](docs/Api/DefaultApi.md#listmembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members
@@ -163,6 +166,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listRecordings**](docs/Api/DefaultApi.md#listrecordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings
 *DefaultApi* | [**listSmsMessages**](docs/Api/DefaultApi.md#listsmsmessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages
 *DefaultApi* | [**makeACall**](docs/Api/DefaultApi.md#makeacall) | **POST** /Accounts/{accountId}/Calls | Make a Call
+*DefaultApi* | [**makeAWebrtcJwt**](docs/Api/DefaultApi.md#makeawebrtcjwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling
 *DefaultApi* | [**removeAParticipant**](docs/Api/DefaultApi.md#removeaparticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant
 *DefaultApi* | [**sendAnSmsMessage**](docs/Api/DefaultApi.md#sendansmsmessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message
 *DefaultApi* | [**streamARecordingFile**](docs/Api/DefaultApi.md#streamarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File
@@ -212,6 +216,7 @@ Class | Method | HTTP request | Description
 - [CreateConference](docs/Model/CreateConference.md)
 - [CreateConferenceAllOf](docs/Model/CreateConferenceAllOf.md)
 - [CreateConferenceRequest](docs/Model/CreateConferenceRequest.md)
+- [CreateWebRTCToken](docs/Model/CreateWebRTCToken.md)
 - [Dequeue](docs/Model/Dequeue.md)
 - [Enqueue](docs/Model/Enqueue.md)
 - [EnqueueAllOf](docs/Model/EnqueueAllOf.md)
@@ -282,7 +287,6 @@ Class | Method | HTTP request | Description
 - [Reject](docs/Model/Reject.md)
 - [RejectAllOf](docs/Model/RejectAllOf.md)
 - [RemoveFromConference](docs/Model/RemoveFromConference.md)
-- [RemoveFromConferenceAllOf](docs/Model/RemoveFromConferenceAllOf.md)
 - [RequestType](docs/Model/RequestType.md)
 - [SMSTenDLCBrand](docs/Model/SMSTenDLCBrand.md)
 - [SMSTenDLCBrandsListResult](docs/Model/SMSTenDLCBrandsListResult.md)
@@ -294,6 +298,9 @@ Class | Method | HTTP request | Description
 - [SMSTenDLCPartnerCampaignBrand](docs/Model/SMSTenDLCPartnerCampaignBrand.md)
 - [SMSTenDLCPartnerCampaignsListResult](docs/Model/SMSTenDLCPartnerCampaignsListResult.md)
 - [SMSTenDLCPartnerCampaignsListResultAllOf](docs/Model/SMSTenDLCPartnerCampaignsListResultAllOf.md)
+- [SMSTollFreeCampaign](docs/Model/SMSTollFreeCampaign.md)
+- [SMSTollFreeCampaignsListResult](docs/Model/SMSTollFreeCampaignsListResult.md)
+- [SMSTollFreeCampaignsListResultAllOf](docs/Model/SMSTollFreeCampaignsListResultAllOf.md)
 - [Say](docs/Model/Say.md)
 - [SayAllOf](docs/Model/SayAllOf.md)
 - [SendDigits](docs/Model/SendDigits.md)
@@ -305,8 +312,8 @@ Class | Method | HTTP request | Description
 - [Sms](docs/Model/Sms.md)
 - [SmsAllOf](docs/Model/SmsAllOf.md)
 - [StartRecordCall](docs/Model/StartRecordCall.md)
+- [TFN](docs/Model/TFN.md)
 - [TerminateConference](docs/Model/TerminateConference.md)
-- [TerminateConferenceAllOf](docs/Model/TerminateConferenceAllOf.md)
 - [TranscribeUtterance](docs/Model/TranscribeUtterance.md)
 - [TranscribeUtteranceRecord](docs/Model/TranscribeUtteranceRecord.md)
 - [Unpark](docs/Model/Unpark.md)
@@ -375,5 +382,5 @@ support@freeclimb.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0.0`
-    - Package version: `4.3.4`
+    - Package version: `4.4.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

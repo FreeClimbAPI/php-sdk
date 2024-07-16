@@ -96,17 +96,6 @@ class AddToConferenceTest extends TestCase
 
     }
     /**
-     * Test attribute "call_id"
-     */
-    public function testPropertyCallId()
-    {
-        $this->AddToConference->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConference->getCallId());
-        $this->assertIsString($this->AddToConference->getCallId());
-        
-
-    }
-    /**
      * Test attribute "leave_conference_url"
      */
     public function testPropertyLeaveConferenceUrl()
@@ -165,7 +154,6 @@ public function toStringTest() {
       $test1->setCallControlSequence("TS");
       $test1->setCallControlUrl("TS");
       $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
       $test1->setLeaveConferenceUrl("TS");
       $test1->setListen(true);
       $test1->setNotificationUrl("TS");
@@ -186,7 +174,6 @@ public function toHeaderValueTest()
       $test1->setCallControlSequence("TS");
       $test1->setCallControlUrl("TS");
       $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
       $test1->setLeaveConferenceUrl("TS");
       $test1->setListen(true);
       $test1->setNotificationUrl("TS");

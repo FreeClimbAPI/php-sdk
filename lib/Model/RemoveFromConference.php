@@ -59,7 +59,7 @@ class RemoveFromConference extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'call_id' => 'string'
+        
     ];
 
     /**
@@ -70,7 +70,7 @@ class RemoveFromConference extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'call_id' => null
+        
     ];
 
     /**
@@ -100,7 +100,7 @@ class RemoveFromConference extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'call_id' => 'callId'
+        
     ];
 
     /**
@@ -109,7 +109,7 @@ class RemoveFromConference extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'call_id' => 'setCallId'
+        
     ];
 
     /**
@@ -118,7 +118,7 @@ class RemoveFromConference extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'call_id' => 'getCallId'
+        
     ];
 
     /**
@@ -174,7 +174,6 @@ class RemoveFromConference extends PerclCommand
     {
         parent::__construct($data);
 
-        $this->container['call_id'] = $data['call_id'] ?? null;
     }
 
     /**
@@ -186,9 +185,6 @@ class RemoveFromConference extends PerclCommand
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['call_id'] === null) {
-            $invalidProperties[] = "'call_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -203,30 +199,6 @@ class RemoveFromConference extends PerclCommand
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets call_id
-     *
-     * @return string
-     */
-    public function getCallId()
-    {
-        return $this->container['call_id'];
-    }
-
-    /**
-     * Sets call_id
-     *
-     * @param string $call_id ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
-     *
-     * @return self
-     */
-    public function setCallId($call_id)
-    {
-        $this->container['call_id'] = $call_id;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

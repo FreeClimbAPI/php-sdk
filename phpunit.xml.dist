@@ -4,16 +4,12 @@
     <include>
       <directory suffix=".php">./lib/Api</directory>
       <directory suffix=".php">./lib/Model</directory>
-      <directory suffix=".php">./lib/PerCL</directory>
-      <directory suffix=".php">./lib/Util</directory>
     </include>
   </coverage>
   <testsuites>
     <testsuite name="tests">
       <directory>./test/Api</directory>
       <directory>./test/Model</directory>
-      <directory>./test/PerCL</directory>
-      <directory>./test/Util</directory>
     </testsuite>
   </testsuites>
   <php>

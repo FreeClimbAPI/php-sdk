@@ -140,15 +140,13 @@ class MessageRequestTest extends TestCase
 
     }
     /**
-     * Test attribute "account_id"
+     * Test attribute "media_urls"
      */
-    public function testPropertyAccountId()
+    public function testPropertyMediaUrls()
     {
-        $this->MessageRequest->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getAccountId());
-        $this->assertIsString($this->MessageRequest->getAccountId());
-        
-
+        $this->MessageRequest->setMediaUrls([]);
+        $this->assertEquals([], $this->MessageRequest->getMediaUrls());
+        $this->assertIsArray($this->MessageRequest->getMediaUrls());
     }
 
     /**
@@ -164,7 +162,8 @@ public function toStringTest() {
       $test1->setTo("TS");
       $test1->setText("TS");
       $test1->setNotificationUrl("TS");
-      $test1->setAccountId("TS");
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setMediaUrls($testArray);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -184,7 +183,8 @@ public function toHeaderValueTest()
       $test1->setTo("TS");
       $test1->setText("TS");
       $test1->setNotificationUrl("TS");
-      $test1->setAccountId("TS");
+      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+      $test1->setMediaUrls($testArray);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

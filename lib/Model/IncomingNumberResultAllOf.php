@@ -71,7 +71,8 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         'country' => 'string',
         'voice_enabled' => 'bool',
         'sms_enabled' => 'bool',
-        'offnet' => 'bool'
+        'offnet' => 'bool',
+        'tfn' => '\FreeClimb\Api\Model\TFN'
     ];
 
     /**
@@ -93,7 +94,8 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         'country' => null,
         'voice_enabled' => null,
         'sms_enabled' => null,
-        'offnet' => null
+        'offnet' => null,
+        'tfn' => null
     ];
 
     /**
@@ -134,7 +136,8 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         'country' => 'country',
         'voice_enabled' => 'voiceEnabled',
         'sms_enabled' => 'smsEnabled',
-        'offnet' => 'offnet'
+        'offnet' => 'offnet',
+        'tfn' => 'tfn'
     ];
 
     /**
@@ -154,7 +157,8 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         'country' => 'setCountry',
         'voice_enabled' => 'setVoiceEnabled',
         'sms_enabled' => 'setSmsEnabled',
-        'offnet' => 'setOffnet'
+        'offnet' => 'setOffnet',
+        'tfn' => 'setTfn'
     ];
 
     /**
@@ -174,7 +178,8 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         'country' => 'getCountry',
         'voice_enabled' => 'getVoiceEnabled',
         'sms_enabled' => 'getSmsEnabled',
-        'offnet' => 'getOffnet'
+        'offnet' => 'getOffnet',
+        'tfn' => 'getTfn'
     ];
 
     /**
@@ -246,6 +251,7 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['voice_enabled'] = $data['voice_enabled'] ?? null;
         $this->container['sms_enabled'] = $data['sms_enabled'] ?? null;
         $this->container['offnet'] = $data['offnet'] ?? null;
+        $this->container['tfn'] = $data['tfn'] ?? null;
     }
 
     /**
@@ -560,6 +566,30 @@ class IncomingNumberResultAllOf implements ModelInterface, ArrayAccess, \JsonSer
     public function setOffnet($offnet)
     {
         $this->container['offnet'] = $offnet;
+
+        return $this;
+    }
+
+    /**
+     * Gets tfn
+     *
+     * @return \FreeClimb\Api\Model\TFN|null
+     */
+    public function getTfn()
+    {
+        return $this->container['tfn'];
+    }
+
+    /**
+     * Sets tfn
+     *
+     * @param \FreeClimb\Api\Model\TFN|null $tfn tfn
+     *
+     * @return self
+     */
+    public function setTfn($tfn)
+    {
+        $this->container['tfn'] = $tfn;
 
         return $this;
     }
