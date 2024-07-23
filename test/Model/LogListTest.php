@@ -58,65 +58,81 @@ class LogListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->LogList->setTotal(12345);
-        $this->assertEquals(12345, $this->LogList->getTotal());
-        $this->assertIsInt($this->LogList->getTotal());
+        
+        
+        $this->LogList->setTotal(1);
+        $this->assertEquals(1, $this->LogList->getTotal());
+        $this->assertIsNumeric($this->LogList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->LogList->setStart(12345);
-        $this->assertEquals(12345, $this->LogList->getStart());
-        $this->assertIsInt($this->LogList->getStart());
+        
+        
+        $this->LogList->setStart(1);
+        $this->assertEquals(1, $this->LogList->getStart());
+        $this->assertIsNumeric($this->LogList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->LogList->setEnd(12345);
-        $this->assertEquals(12345, $this->LogList->getEnd());
-        $this->assertIsInt($this->LogList->getEnd());
+        
+        
+        $this->LogList->setEnd(1);
+        $this->assertEquals(1, $this->LogList->getEnd());
+        $this->assertIsNumeric($this->LogList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->LogList->setPage(12345);
-        $this->assertEquals(12345, $this->LogList->getPage());
-        $this->assertIsInt($this->LogList->getPage());
+        
+        
+        $this->LogList->setPage(1);
+        $this->assertEquals(1, $this->LogList->getPage());
+        $this->assertIsNumeric($this->LogList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->LogList->setNumPages(12345);
-        $this->assertEquals(12345, $this->LogList->getNumPages());
-        $this->assertIsInt($this->LogList->getNumPages());
+        
+        
+        $this->LogList->setNumPages(1);
+        $this->assertEquals(1, $this->LogList->getNumPages());
+        $this->assertIsNumeric($this->LogList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->LogList->setPageSize(12345);
-        $this->assertEquals(12345, $this->LogList->getPageSize());
-        $this->assertIsInt($this->LogList->getPageSize());
+        
+        
+        $this->LogList->setPageSize(1);
+        $this->assertEquals(1, $this->LogList->getPageSize());
+        $this->assertIsNumeric($this->LogList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->LogList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->LogList->getNextPageUri());
+        $this->LogList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->LogList->getNextPageUri());
         $this->assertIsString($this->LogList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "logs"
@@ -133,15 +149,15 @@ class LogListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new LogList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setLogs($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setLogs($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new LogList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setLogs($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setLogs($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

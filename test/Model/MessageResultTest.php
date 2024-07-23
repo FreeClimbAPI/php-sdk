@@ -58,64 +58,57 @@ class MessageResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->MessageResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getUri());
+        $this->MessageResult->setUri('TS');
+        $this->assertEquals('TS', $this->MessageResult->getUri());
         $this->assertIsString($this->MessageResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->MessageResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getDateCreated());
+        $this->MessageResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDateCreated());
         $this->assertIsString($this->MessageResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->MessageResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getDateUpdated());
+        $this->MessageResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDateUpdated());
         $this->assertIsString($this->MessageResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->MessageResult->setRevision(12345);
-        $this->assertEquals(12345, $this->MessageResult->getRevision());
-        $this->assertIsInt($this->MessageResult->getRevision());
+        
+        
+        $this->MessageResult->setRevision(1);
+        $this->assertEquals(1, $this->MessageResult->getRevision());
+        $this->assertIsNumeric($this->MessageResult->getRevision());
+        
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->MessageResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getAccountId());
+        $this->MessageResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getAccountId());
         $this->assertIsString($this->MessageResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "message_id"
      */
     public function testPropertyMessageId()
     {
-        $this->MessageResult->setMessageId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getMessageId());
+        $this->MessageResult->setMessageId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getMessageId());
         $this->assertIsString($this->MessageResult->getMessageId());
-        
-
     }
     /**
      * Test attribute "status"
@@ -150,86 +143,75 @@ class MessageResultTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        $this->MessageResult->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getFrom());
+        $this->MessageResult->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageResult->getFrom());
         $this->assertIsString($this->MessageResult->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->MessageResult->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getTo());
+        $this->MessageResult->setTo('TS');
+        $this->assertEquals('TS', $this->MessageResult->getTo());
         $this->assertIsString($this->MessageResult->getTo());
-        
-
     }
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        $this->MessageResult->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getText());
+        $this->MessageResult->setText('TS');
+        $this->assertEquals('TS', $this->MessageResult->getText());
         $this->assertIsString($this->MessageResult->getText());
-        
-
     }
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        $this->MessageResult->setDirection('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getDirection());
+        $this->MessageResult->setDirection('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDirection());
         $this->assertIsString($this->MessageResult->getDirection());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->MessageResult->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getNotificationUrl());
+        $this->MessageResult->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageResult->getNotificationUrl());
         $this->assertIsString($this->MessageResult->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        $this->MessageResult->setBrandId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getBrandId());
+        $this->MessageResult->setBrandId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getBrandId());
         $this->assertIsString($this->MessageResult->getBrandId());
-        
-
     }
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        $this->MessageResult->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResult->getCampaignId());
+        $this->MessageResult->setCampaignId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getCampaignId());
         $this->assertIsString($this->MessageResult->getCampaignId());
-        
-
     }
     /**
      * Test attribute "segment_count"
      */
     public function testPropertySegmentCount()
     {
-        $this->MessageResult->setSegmentCount(12345);
-        $this->assertEquals(12345, $this->MessageResult->getSegmentCount());
+        
+        
+        $this->MessageResult->setSegmentCount(1);
+        $this->assertEquals(1, $this->MessageResult->getSegmentCount());
         $this->assertIsNumeric($this->MessageResult->getSegmentCount());
+        
     }
     /**
      * Test attribute "media_urls"
@@ -246,23 +228,23 @@ class MessageResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessageResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setMessageId("TS");
-      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setDirection("TS");
-      $test1->setNotificationUrl("TS");
-      $test1->setBrandId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setSegmentCount(1.0);
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setMessageId("TS");
+    $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setDirection("TS");
+    $test1->setNotificationUrl("TS");
+    $test1->setBrandId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setSegmentCount(1);
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -274,23 +256,23 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessageResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setMessageId("TS");
-      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setDirection("TS");
-      $test1->setNotificationUrl("TS");
-      $test1->setBrandId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setSegmentCount(1.0);
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setMessageId("TS");
+    $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setDirection("TS");
+    $test1->setNotificationUrl("TS");
+    $test1->setBrandId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setSegmentCount(1);
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

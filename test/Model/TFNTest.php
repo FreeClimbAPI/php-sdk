@@ -58,11 +58,9 @@ class TFNTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
-        $this->TFN->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->TFN->getCampaignId());
+        $this->TFN->setCampaignId('TS');
+        $this->assertEquals('TS', $this->TFN->getCampaignId());
         $this->assertIsString($this->TFN->getCampaignId());
-        
-
     }
 
     /**
@@ -70,7 +68,7 @@ class TFNTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new TFN();    
-      $test1->setCampaignId("TS");
+    $test1->setCampaignId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new TFN();
-      $test1->setCampaignId("TS");
+    $test1->setCampaignId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

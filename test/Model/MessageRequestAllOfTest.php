@@ -58,44 +58,36 @@ class MessageRequestAllOfTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        $this->MessageRequestAllOf->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequestAllOf->getFrom());
+        $this->MessageRequestAllOf->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageRequestAllOf->getFrom());
         $this->assertIsString($this->MessageRequestAllOf->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->MessageRequestAllOf->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequestAllOf->getTo());
+        $this->MessageRequestAllOf->setTo('TS');
+        $this->assertEquals('TS', $this->MessageRequestAllOf->getTo());
         $this->assertIsString($this->MessageRequestAllOf->getTo());
-        
-
     }
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        $this->MessageRequestAllOf->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequestAllOf->getText());
+        $this->MessageRequestAllOf->setText('TS');
+        $this->assertEquals('TS', $this->MessageRequestAllOf->getText());
         $this->assertIsString($this->MessageRequestAllOf->getText());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->MessageRequestAllOf->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequestAllOf->getNotificationUrl());
+        $this->MessageRequestAllOf->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageRequestAllOf->getNotificationUrl());
         $this->assertIsString($this->MessageRequestAllOf->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "media_urls"
@@ -112,12 +104,12 @@ class MessageRequestAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessageRequestAllOf();    
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -129,12 +121,12 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessageRequestAllOf();
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

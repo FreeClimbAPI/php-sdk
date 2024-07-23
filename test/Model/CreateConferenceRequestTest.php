@@ -58,11 +58,9 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
-        $this->CreateConferenceRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CreateConferenceRequest->getAlias());
+        $this->CreateConferenceRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->CreateConferenceRequest->getAlias());
         $this->assertIsString($this->CreateConferenceRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "play_beep"
@@ -83,8 +81,8 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyRecord()
     {
-        $this->CreateConferenceRequest->setRecord(true);
-        $this->assertTrue($this->CreateConferenceRequest->getRecord());
+        $this->CreateConferenceRequest->setRecord(false);
+        $this->assertFalse($this->CreateConferenceRequest->getRecord());
         $this->assertIsBool($this->CreateConferenceRequest->getRecord());
     }
     /**
@@ -92,22 +90,18 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
-        $this->CreateConferenceRequest->setWaitUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CreateConferenceRequest->getWaitUrl());
+        $this->CreateConferenceRequest->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->CreateConferenceRequest->getWaitUrl());
         $this->assertIsString($this->CreateConferenceRequest->getWaitUrl());
-        
-
     }
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        $this->CreateConferenceRequest->setStatusCallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CreateConferenceRequest->getStatusCallbackUrl());
+        $this->CreateConferenceRequest->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->CreateConferenceRequest->getStatusCallbackUrl());
         $this->assertIsString($this->CreateConferenceRequest->getStatusCallbackUrl());
-        
-
     }
 
     /**
@@ -115,11 +109,11 @@ class CreateConferenceRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new CreateConferenceRequest();    
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setWaitUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setWaitUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -131,11 +125,11 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new CreateConferenceRequest();
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setWaitUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setWaitUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

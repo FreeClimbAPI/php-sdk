@@ -58,75 +58,66 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->SMSTollFreeCampaign->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaign->getAccountId());
+        $this->SMSTollFreeCampaign->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getAccountId());
         $this->assertIsString($this->SMSTollFreeCampaign->getAccountId());
-        
-
     }
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        $this->SMSTollFreeCampaign->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaign->getCampaignId());
+        $this->SMSTollFreeCampaign->setCampaignId('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getCampaignId());
         $this->assertIsString($this->SMSTollFreeCampaign->getCampaignId());
-        
-
     }
     /**
      * Test attribute "use_case"
      */
     public function testPropertyUseCase()
     {
-        $this->SMSTollFreeCampaign->setUseCase('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaign->getUseCase());
+        $this->SMSTollFreeCampaign->setUseCase('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getUseCase());
         $this->assertIsString($this->SMSTollFreeCampaign->getUseCase());
-        
-
     }
     /**
      * Test attribute "registration_status"
      */
     public function testPropertyRegistrationStatus()
     {
-        
         $this->SMSTollFreeCampaign->setRegistrationStatus('UNREGISTERED');
         $this->assertEquals('UNREGISTERED', $this->SMSTollFreeCampaign->getRegistrationStatus());
         $this->assertIsString($this->SMSTollFreeCampaign->getRegistrationStatus());
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->SMSTollFreeCampaign->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaign->getDateCreated());
+        $this->SMSTollFreeCampaign->setDateCreated('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateCreated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->SMSTollFreeCampaign->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaign->getDateUpdated());
+        $this->SMSTollFreeCampaign->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateUpdated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->SMSTollFreeCampaign->setRevision(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaign->getRevision());
-        $this->assertIsInt($this->SMSTollFreeCampaign->getRevision());
+        
+        
+        $this->SMSTollFreeCampaign->setRevision(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaign->getRevision());
+        $this->assertIsNumeric($this->SMSTollFreeCampaign->getRevision());
+        
     }
 
     /**
@@ -134,13 +125,13 @@ class SMSTollFreeCampaignTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SMSTollFreeCampaign();    
-      $test1->setAccountId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setUseCase("TS");
-      $test1->setRegistrationStatus(SMSTollFreeCampaign::UNREGISTERED);
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setUseCase("TS");
+    $test1->setRegistrationStatus(SMSTollFreeCampaign::UNREGISTERED);
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -152,13 +143,13 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SMSTollFreeCampaign();
-      $test1->setAccountId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setUseCase("TS");
-      $test1->setRegistrationStatus(SMSTollFreeCampaign::UNREGISTERED);
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setUseCase("TS");
+    $test1->setRegistrationStatus(SMSTollFreeCampaign::UNREGISTERED);
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

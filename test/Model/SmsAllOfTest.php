@@ -58,44 +58,36 @@ class SmsAllOfTest extends TestCase
      */
     public function testPropertyTo()
     {
-        $this->SmsAllOf->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SmsAllOf->getTo());
+        $this->SmsAllOf->setTo('TS');
+        $this->assertEquals('TS', $this->SmsAllOf->getTo());
         $this->assertIsString($this->SmsAllOf->getTo());
-        
-
     }
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        $this->SmsAllOf->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SmsAllOf->getFrom());
+        $this->SmsAllOf->setFrom('TS');
+        $this->assertEquals('TS', $this->SmsAllOf->getFrom());
         $this->assertIsString($this->SmsAllOf->getFrom());
-        
-
     }
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        $this->SmsAllOf->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SmsAllOf->getText());
+        $this->SmsAllOf->setText('TS');
+        $this->assertEquals('TS', $this->SmsAllOf->getText());
         $this->assertIsString($this->SmsAllOf->getText());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->SmsAllOf->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SmsAllOf->getNotificationUrl());
+        $this->SmsAllOf->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->SmsAllOf->getNotificationUrl());
         $this->assertIsString($this->SmsAllOf->getNotificationUrl());
-        
-
     }
 
     /**
@@ -103,10 +95,10 @@ class SmsAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SmsAllOf();    
-      $test1->setTo("TS");
-      $test1->setFrom("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
+    $test1->setTo("TS");
+    $test1->setFrom("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -118,10 +110,10 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SmsAllOf();
-      $test1->setTo("TS");
-      $test1->setFrom("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
+    $test1->setTo("TS");
+    $test1->setFrom("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

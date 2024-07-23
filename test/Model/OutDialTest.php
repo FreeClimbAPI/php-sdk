@@ -58,44 +58,36 @@ class OutDialTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->OutDial->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getActionUrl());
+        $this->OutDial->setActionUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getActionUrl());
         $this->assertIsString($this->OutDial->getActionUrl());
-        
-
     }
     /**
      * Test attribute "call_connect_url"
      */
     public function testPropertyCallConnectUrl()
     {
-        $this->OutDial->setCallConnectUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getCallConnectUrl());
+        $this->OutDial->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getCallConnectUrl());
         $this->assertIsString($this->OutDial->getCallConnectUrl());
-        
-
     }
     /**
      * Test attribute "calling_number"
      */
     public function testPropertyCallingNumber()
     {
-        $this->OutDial->setCallingNumber('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getCallingNumber());
+        $this->OutDial->setCallingNumber('TS');
+        $this->assertEquals('TS', $this->OutDial->getCallingNumber());
         $this->assertIsString($this->OutDial->getCallingNumber());
-        
-
     }
     /**
      * Test attribute "destination"
      */
     public function testPropertyDestination()
     {
-        $this->OutDial->setDestination('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getDestination());
+        $this->OutDial->setDestination('TS');
+        $this->assertEquals('TS', $this->OutDial->getDestination());
         $this->assertIsString($this->OutDial->getDestination());
-        
-
     }
     /**
      * Test attribute "if_machine"
@@ -112,50 +104,47 @@ class OutDialTest extends TestCase
      */
     public function testPropertyIfMachineUrl()
     {
-        $this->OutDial->setIfMachineUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getIfMachineUrl());
+        $this->OutDial->setIfMachineUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getIfMachineUrl());
         $this->assertIsString($this->OutDial->getIfMachineUrl());
-        
-
     }
     /**
      * Test attribute "send_digits"
      */
     public function testPropertySendDigits()
     {
-        $this->OutDial->setSendDigits('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getSendDigits());
+        $this->OutDial->setSendDigits('TS');
+        $this->assertEquals('TS', $this->OutDial->getSendDigits());
         $this->assertIsString($this->OutDial->getSendDigits());
-        
-
     }
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        $this->OutDial->setStatusCallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->OutDial->getStatusCallbackUrl());
+        $this->OutDial->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getStatusCallbackUrl());
         $this->assertIsString($this->OutDial->getStatusCallbackUrl());
-        
-
     }
     /**
      * Test attribute "timeout"
      */
     public function testPropertyTimeout()
     {
-        $this->OutDial->setTimeout(12345);
-        $this->assertEquals(12345, $this->OutDial->getTimeout());
-        $this->assertIsInt($this->OutDial->getTimeout());
+        
+        
+        $this->OutDial->setTimeout(1);
+        $this->assertEquals(1, $this->OutDial->getTimeout());
+        $this->assertIsNumeric($this->OutDial->getTimeout());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->OutDial->setPrivacyMode(true);
-        $this->assertTrue($this->OutDial->getPrivacyMode());
+        $this->OutDial->setPrivacyMode(false);
+        $this->assertFalse($this->OutDial->getPrivacyMode());
         $this->assertIsBool($this->OutDial->getPrivacyMode());
     }
 
@@ -164,26 +153,26 @@ class OutDialTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new OutDial();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setCallConnectUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setCallingNumber("TS");
-      $test1->setDestination("TS");
-      $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
-      $test1->setIfMachineUrl("TS");
-      $test1->setSendDigits("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $test1->setTimeout(1);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setCallConnectUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setCallingNumber("TS");
+    $test1->setDestination("TS");
+    $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
+    $test1->setIfMachineUrl("TS");
+    $test1->setSendDigits("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $test1->setTimeout(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -195,26 +184,26 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new OutDial();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setCallConnectUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setCallingNumber("TS");
-      $test1->setDestination("TS");
-      $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
-      $test1->setIfMachineUrl("TS");
-      $test1->setSendDigits("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $test1->setTimeout(1);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setCallConnectUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setCallingNumber("TS");
+    $test1->setDestination("TS");
+    $test1->setIfMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
+    $test1->setIfMachineUrl("TS");
+    $test1->setSendDigits("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $test1->setTimeout(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,11 +58,9 @@ class PlayEarlyMediaAllOfTest extends TestCase
      */
     public function testPropertyFile()
     {
-        $this->PlayEarlyMediaAllOf->setFile('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->PlayEarlyMediaAllOf->getFile());
+        $this->PlayEarlyMediaAllOf->setFile('TS');
+        $this->assertEquals('TS', $this->PlayEarlyMediaAllOf->getFile());
         $this->assertIsString($this->PlayEarlyMediaAllOf->getFile());
-        
-
     }
 
     /**
@@ -70,7 +68,7 @@ class PlayEarlyMediaAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new PlayEarlyMediaAllOf();    
-      $test1->setFile("TS");
+    $test1->setFile("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new PlayEarlyMediaAllOf();
-      $test1->setFile("TS");
+    $test1->setFile("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

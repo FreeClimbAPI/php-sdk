@@ -58,8 +58,8 @@ class UpdateConferenceParticipantRequestTest extends TestCase
      */
     public function testPropertyTalk()
     {
-        $this->UpdateConferenceParticipantRequest->setTalk(true);
-        $this->assertTrue($this->UpdateConferenceParticipantRequest->getTalk());
+        $this->UpdateConferenceParticipantRequest->setTalk(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->getTalk());
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->getTalk());
     }
     /**
@@ -67,8 +67,8 @@ class UpdateConferenceParticipantRequestTest extends TestCase
      */
     public function testPropertyListen()
     {
-        $this->UpdateConferenceParticipantRequest->setListen(true);
-        $this->assertTrue($this->UpdateConferenceParticipantRequest->getListen());
+        $this->UpdateConferenceParticipantRequest->setListen(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->getListen());
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->getListen());
     }
 
@@ -77,8 +77,8 @@ class UpdateConferenceParticipantRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new UpdateConferenceParticipantRequest();    
-      $test1->setTalk(true);
-      $test1->setListen(true);
+    $test1->setTalk(true);
+    $test1->setListen(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -90,8 +90,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new UpdateConferenceParticipantRequest();
-      $test1->setTalk(true);
-      $test1->setListen(true);
+    $test1->setTalk(true);
+    $test1->setListen(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

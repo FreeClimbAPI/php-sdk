@@ -58,33 +58,27 @@ class ParkTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
-        $this->Park->setWaitUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Park->getWaitUrl());
+        $this->Park->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->Park->getWaitUrl());
         $this->assertIsString($this->Park->getWaitUrl());
-        
-
     }
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        $this->Park->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Park->getActionUrl());
+        $this->Park->setActionUrl('TS');
+        $this->assertEquals('TS', $this->Park->getActionUrl());
         $this->assertIsString($this->Park->getActionUrl());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->Park->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Park->getNotificationUrl());
+        $this->Park->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->Park->getNotificationUrl());
         $this->assertIsString($this->Park->getNotificationUrl());
-        
-
     }
 
     /**
@@ -92,19 +86,19 @@ class ParkTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Park();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setWaitUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setNotificationUrl("TS");
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setWaitUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setNotificationUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -116,19 +110,19 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Park();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setWaitUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setNotificationUrl("TS");
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setWaitUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setNotificationUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

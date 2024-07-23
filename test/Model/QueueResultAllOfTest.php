@@ -58,60 +58,63 @@ class QueueResultAllOfTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->QueueResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResultAllOf->getAccountId());
+        $this->QueueResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->QueueResultAllOf->getAccountId());
         $this->assertIsString($this->QueueResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        $this->QueueResultAllOf->setQueueId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResultAllOf->getQueueId());
+        $this->QueueResultAllOf->setQueueId('TS');
+        $this->assertEquals('TS', $this->QueueResultAllOf->getQueueId());
         $this->assertIsString($this->QueueResultAllOf->getQueueId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->QueueResultAllOf->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResultAllOf->getAlias());
+        $this->QueueResultAllOf->setAlias('TS');
+        $this->assertEquals('TS', $this->QueueResultAllOf->getAlias());
         $this->assertIsString($this->QueueResultAllOf->getAlias());
-        
-
     }
     /**
      * Test attribute "max_size"
      */
     public function testPropertyMaxSize()
     {
-        $this->QueueResultAllOf->setMaxSize(12345);
-        $this->assertEquals(12345, $this->QueueResultAllOf->getMaxSize());
-        $this->assertIsInt($this->QueueResultAllOf->getMaxSize());
+        
+        
+        $this->QueueResultAllOf->setMaxSize(1);
+        $this->assertEquals(1, $this->QueueResultAllOf->getMaxSize());
+        $this->assertIsNumeric($this->QueueResultAllOf->getMaxSize());
+        
     }
     /**
      * Test attribute "current_size"
      */
     public function testPropertyCurrentSize()
     {
-        $this->QueueResultAllOf->setCurrentSize(12345);
-        $this->assertEquals(12345, $this->QueueResultAllOf->getCurrentSize());
-        $this->assertIsInt($this->QueueResultAllOf->getCurrentSize());
+        
+        
+        $this->QueueResultAllOf->setCurrentSize(1);
+        $this->assertEquals(1, $this->QueueResultAllOf->getCurrentSize());
+        $this->assertIsNumeric($this->QueueResultAllOf->getCurrentSize());
+        
     }
     /**
      * Test attribute "average_queue_removal_time"
      */
     public function testPropertyAverageQueueRemovalTime()
     {
-        $this->QueueResultAllOf->setAverageQueueRemovalTime(12345);
-        $this->assertEquals(12345, $this->QueueResultAllOf->getAverageQueueRemovalTime());
-        $this->assertIsInt($this->QueueResultAllOf->getAverageQueueRemovalTime());
+        
+        
+        $this->QueueResultAllOf->setAverageQueueRemovalTime(1);
+        $this->assertEquals(1, $this->QueueResultAllOf->getAverageQueueRemovalTime());
+        $this->assertIsNumeric($this->QueueResultAllOf->getAverageQueueRemovalTime());
+        
     }
     /**
      * Test attribute "subresource_uris"
@@ -127,14 +130,14 @@ class QueueResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new QueueResultAllOf();    
-      $test1->setAccountId("TS");
-      $test1->setQueueId("TS");
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
-      $test1->setCurrentSize(1);
-      $test1->setAverageQueueRemovalTime(1);
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setAccountId("TS");
+    $test1->setQueueId("TS");
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
+    $test1->setCurrentSize(1);
+    $test1->setAverageQueueRemovalTime(1);
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -146,14 +149,14 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new QueueResultAllOf();
-      $test1->setAccountId("TS");
-      $test1->setQueueId("TS");
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
-      $test1->setCurrentSize(1);
-      $test1->setAverageQueueRemovalTime(1);
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setAccountId("TS");
+    $test1->setQueueId("TS");
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
+    $test1->setCurrentSize(1);
+    $test1->setAverageQueueRemovalTime(1);
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

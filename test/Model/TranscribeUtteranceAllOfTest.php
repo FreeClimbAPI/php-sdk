@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TranscribeUtteranceTest
+ * TranscribeUtteranceAllOfTest
  *
  * PHP version 7.3
  *
@@ -30,88 +30,88 @@
 
 namespace FreeClimb\Api\Test\Model;
 
-use FreeClimb\Api\Model\TranscribeUtterance;
+use FreeClimb\Api\Model\TranscribeUtteranceAllOf;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TranscribeUtteranceTest Class Doc Comment
+ * TranscribeUtteranceAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description TranscribeUtterance
+ * @description The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TranscribeUtteranceTest extends TestCase
+class TranscribeUtteranceAllOfTest extends TestCase
 {
-    protected $TranscribeUtterance;
+    protected $TranscribeUtteranceAllOf;
 
     /**
-     * Test "TranscribeUtterance"
+     * Test "TranscribeUtteranceAllOf"
      */
     public function setUp() : void
     {
-        $this->TranscribeUtterance = new TranscribeUtterance();
+        $this->TranscribeUtteranceAllOf = new TranscribeUtteranceAllOf();
     }
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        $this->TranscribeUtterance->setActionUrl('TS');
-        $this->assertEquals('TS', $this->TranscribeUtterance->getActionUrl());
-        $this->assertIsString($this->TranscribeUtterance->getActionUrl());
+        $this->TranscribeUtteranceAllOf->setActionUrl('TS');
+        $this->assertEquals('TS', $this->TranscribeUtteranceAllOf->getActionUrl());
+        $this->assertIsString($this->TranscribeUtteranceAllOf->getActionUrl());
     }
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        $this->TranscribeUtterance->setPlayBeep(false);
-        $this->assertFalse($this->TranscribeUtterance->getPlayBeep());
-        $this->assertIsBool($this->TranscribeUtterance->getPlayBeep());
+        $this->TranscribeUtteranceAllOf->setPlayBeep(false);
+        $this->assertFalse($this->TranscribeUtteranceAllOf->getPlayBeep());
+        $this->assertIsBool($this->TranscribeUtteranceAllOf->getPlayBeep());
     }
     /**
      * Test attribute "record"
      */
     public function testPropertyRecord()
     {
-        $this->TranscribeUtterance->setRecord(new \stdClass);
-        $this->assertInstanceOf(\stdClass::class, $this->TranscribeUtterance->getRecord());
+        $this->TranscribeUtteranceAllOf->setRecord(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->TranscribeUtteranceAllOf->getRecord());
     }
     /**
      * Test attribute "privacy_for_logging"
      */
     public function testPropertyPrivacyForLogging()
     {
-        $this->TranscribeUtterance->setPrivacyForLogging(false);
-        $this->assertFalse($this->TranscribeUtterance->getPrivacyForLogging());
-        $this->assertIsBool($this->TranscribeUtterance->getPrivacyForLogging());
+        $this->TranscribeUtteranceAllOf->setPrivacyForLogging(false);
+        $this->assertFalse($this->TranscribeUtteranceAllOf->getPrivacyForLogging());
+        $this->assertIsBool($this->TranscribeUtteranceAllOf->getPrivacyForLogging());
     }
     /**
      * Test attribute "privacy_for_recording"
      */
     public function testPropertyPrivacyForRecording()
     {
-        $this->TranscribeUtterance->setPrivacyForRecording(false);
-        $this->assertFalse($this->TranscribeUtterance->getPrivacyForRecording());
-        $this->assertIsBool($this->TranscribeUtterance->getPrivacyForRecording());
+        $this->TranscribeUtteranceAllOf->setPrivacyForRecording(false);
+        $this->assertFalse($this->TranscribeUtteranceAllOf->getPrivacyForRecording());
+        $this->assertIsBool($this->TranscribeUtteranceAllOf->getPrivacyForRecording());
     }
     /**
      * Test attribute "prompts"
      */
     public function testPropertyPrompts()
     {
-        $this->TranscribeUtterance->setPrompts([]);
-        $this->assertEquals([], $this->TranscribeUtterance->getPrompts());
-        $this->assertIsArray($this->TranscribeUtterance->getPrompts());
+        $this->TranscribeUtteranceAllOf->setPrompts([]);
+        $this->assertEquals([], $this->TranscribeUtteranceAllOf->getPrompts());
+        $this->assertIsArray($this->TranscribeUtteranceAllOf->getPrompts());
     }
 
     /**
 * Test method toStringTest
 */
 public function toStringTest() {
-    $test1 = new TranscribeUtterance();    
+    $test1 = new TranscribeUtteranceAllOf();    
     $test1->setActionUrl("TS");
     $test1->setPlayBeep(true);
     $test1->setPrivacyForLogging(true);
@@ -128,7 +128,7 @@ public function toStringTest() {
  */
 public function toHeaderValueTest()
 {
-    $test1 = new TranscribeUtterance();
+    $test1 = new TranscribeUtteranceAllOf();
     $test1->setActionUrl("TS");
     $test1->setPlayBeep(true);
     $test1->setPrivacyForLogging(true);

@@ -58,39 +58,38 @@ class GetDigitsAllOfTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->GetDigitsAllOf->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetDigitsAllOf->getActionUrl());
+        $this->GetDigitsAllOf->setActionUrl('TS');
+        $this->assertEquals('TS', $this->GetDigitsAllOf->getActionUrl());
         $this->assertIsString($this->GetDigitsAllOf->getActionUrl());
-        
-
     }
     /**
      * Test attribute "digit_timeout_ms"
      */
     public function testPropertyDigitTimeoutMs()
     {
-        $this->GetDigitsAllOf->setDigitTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetDigitsAllOf->getDigitTimeoutMs());
-        $this->assertIsInt($this->GetDigitsAllOf->getDigitTimeoutMs());
+        
+        
+        $this->GetDigitsAllOf->setDigitTimeoutMs(1);
+        $this->assertEquals(1, $this->GetDigitsAllOf->getDigitTimeoutMs());
+        $this->assertIsNumeric($this->GetDigitsAllOf->getDigitTimeoutMs());
+        
     }
     /**
      * Test attribute "finish_on_key"
      */
     public function testPropertyFinishOnKey()
     {
-        $this->GetDigitsAllOf->setFinishOnKey('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetDigitsAllOf->getFinishOnKey());
+        $this->GetDigitsAllOf->setFinishOnKey('TS');
+        $this->assertEquals('TS', $this->GetDigitsAllOf->getFinishOnKey());
         $this->assertIsString($this->GetDigitsAllOf->getFinishOnKey());
-        
-
     }
     /**
      * Test attribute "flush_buffer"
      */
     public function testPropertyFlushBuffer()
     {
-        $this->GetDigitsAllOf->setFlushBuffer(true);
-        $this->assertTrue($this->GetDigitsAllOf->getFlushBuffer());
+        $this->GetDigitsAllOf->setFlushBuffer(false);
+        $this->assertFalse($this->GetDigitsAllOf->getFlushBuffer());
         $this->assertIsBool($this->GetDigitsAllOf->getFlushBuffer());
     }
     /**
@@ -98,27 +97,36 @@ class GetDigitsAllOfTest extends TestCase
      */
     public function testPropertyInitialTimeoutMs()
     {
-        $this->GetDigitsAllOf->setInitialTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetDigitsAllOf->getInitialTimeoutMs());
-        $this->assertIsInt($this->GetDigitsAllOf->getInitialTimeoutMs());
+        
+        
+        $this->GetDigitsAllOf->setInitialTimeoutMs(1);
+        $this->assertEquals(1, $this->GetDigitsAllOf->getInitialTimeoutMs());
+        $this->assertIsNumeric($this->GetDigitsAllOf->getInitialTimeoutMs());
+        
     }
     /**
      * Test attribute "max_digits"
      */
     public function testPropertyMaxDigits()
     {
-        $this->GetDigitsAllOf->setMaxDigits(12345);
-        $this->assertEquals(12345, $this->GetDigitsAllOf->getMaxDigits());
-        $this->assertIsInt($this->GetDigitsAllOf->getMaxDigits());
+        
+        
+        $this->GetDigitsAllOf->setMaxDigits(1);
+        $this->assertEquals(1, $this->GetDigitsAllOf->getMaxDigits());
+        $this->assertIsNumeric($this->GetDigitsAllOf->getMaxDigits());
+        
     }
     /**
      * Test attribute "min_digits"
      */
     public function testPropertyMinDigits()
     {
-        $this->GetDigitsAllOf->setMinDigits(12345);
-        $this->assertEquals(12345, $this->GetDigitsAllOf->getMinDigits());
-        $this->assertIsInt($this->GetDigitsAllOf->getMinDigits());
+        
+        
+        $this->GetDigitsAllOf->setMinDigits(1);
+        $this->assertEquals(1, $this->GetDigitsAllOf->getMinDigits());
+        $this->assertIsNumeric($this->GetDigitsAllOf->getMinDigits());
+        
     }
     /**
      * Test attribute "prompts"
@@ -134,8 +142,8 @@ class GetDigitsAllOfTest extends TestCase
      */
     public function testPropertyPrivacyMode()
     {
-        $this->GetDigitsAllOf->setPrivacyMode(true);
-        $this->assertTrue($this->GetDigitsAllOf->getPrivacyMode());
+        $this->GetDigitsAllOf->setPrivacyMode(false);
+        $this->assertFalse($this->GetDigitsAllOf->getPrivacyMode());
         $this->assertIsBool($this->GetDigitsAllOf->getPrivacyMode());
     }
 
@@ -144,21 +152,21 @@ class GetDigitsAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new GetDigitsAllOf();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setDigitTimeoutMs(1);
-      $test1->setFinishOnKey("TS");
-      $test1->setFlushBuffer(true);
-      $test1->setInitialTimeoutMs(1);
-      $test1->setMaxDigits(1);
-      $test1->setMinDigits(1);
-      $testList = [];
-      $test1->setPrompts($testList);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setDigitTimeoutMs(1);
+    $test1->setFinishOnKey("TS");
+    $test1->setFlushBuffer(true);
+    $test1->setInitialTimeoutMs(1);
+    $test1->setMaxDigits(1);
+    $test1->setMinDigits(1);
+    $testList = [];
+    $test1->setPrompts($testList);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -170,21 +178,21 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new GetDigitsAllOf();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setDigitTimeoutMs(1);
-      $test1->setFinishOnKey("TS");
-      $test1->setFlushBuffer(true);
-      $test1->setInitialTimeoutMs(1);
-      $test1->setMaxDigits(1);
-      $test1->setMinDigits(1);
-      $testList = [];
-      $test1->setPrompts($testList);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setDigitTimeoutMs(1);
+    $test1->setFinishOnKey("TS");
+    $test1->setFlushBuffer(true);
+    $test1->setInitialTimeoutMs(1);
+    $test1->setMaxDigits(1);
+    $test1->setMinDigits(1);
+    $testList = [];
+    $test1->setPrompts($testList);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

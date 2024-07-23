@@ -58,42 +58,39 @@ class MutableResourceModelTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->MutableResourceModel->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MutableResourceModel->getUri());
+        $this->MutableResourceModel->setUri('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getUri());
         $this->assertIsString($this->MutableResourceModel->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->MutableResourceModel->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MutableResourceModel->getDateCreated());
+        $this->MutableResourceModel->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getDateCreated());
         $this->assertIsString($this->MutableResourceModel->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->MutableResourceModel->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MutableResourceModel->getDateUpdated());
+        $this->MutableResourceModel->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getDateUpdated());
         $this->assertIsString($this->MutableResourceModel->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->MutableResourceModel->setRevision(12345);
-        $this->assertEquals(12345, $this->MutableResourceModel->getRevision());
-        $this->assertIsInt($this->MutableResourceModel->getRevision());
+        
+        
+        $this->MutableResourceModel->setRevision(1);
+        $this->assertEquals(1, $this->MutableResourceModel->getRevision());
+        $this->assertIsNumeric($this->MutableResourceModel->getRevision());
+        
     }
 
     /**
@@ -101,10 +98,10 @@ class MutableResourceModelTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MutableResourceModel();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -116,10 +113,10 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MutableResourceModel();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

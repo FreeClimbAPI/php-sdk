@@ -68,8 +68,8 @@ class LogListAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new LogListAllOf();    
-      $testList = [];
-      $test1->setLogs($testList);
+    $testList = [];
+    $test1->setLogs($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -81,8 +81,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new LogListAllOf();
-      $testList = [];
-      $test1->setLogs($testList);
+    $testList = [];
+    $test1->setLogs($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

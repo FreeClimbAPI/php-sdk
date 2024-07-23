@@ -58,94 +58,83 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        $this->MakeCallRequest->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getFrom());
+        $this->MakeCallRequest->setFrom('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getFrom());
         $this->assertIsString($this->MakeCallRequest->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->MakeCallRequest->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getTo());
+        $this->MakeCallRequest->setTo('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getTo());
         $this->assertIsString($this->MakeCallRequest->getTo());
-        
-
     }
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        $this->MakeCallRequest->setApplicationId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getApplicationId());
+        $this->MakeCallRequest->setApplicationId('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getApplicationId());
         $this->assertIsString($this->MakeCallRequest->getApplicationId());
-        
-
     }
     /**
      * Test attribute "send_digits"
      */
     public function testPropertySendDigits()
     {
-        $this->MakeCallRequest->setSendDigits('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getSendDigits());
+        $this->MakeCallRequest->setSendDigits('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getSendDigits());
         $this->assertIsString($this->MakeCallRequest->getSendDigits());
-        
-
     }
     /**
      * Test attribute "if_machine"
      */
     public function testPropertyIfMachine()
     {
-        $this->MakeCallRequest->setIfMachine('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getIfMachine());
+        $this->MakeCallRequest->setIfMachine('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getIfMachine());
         $this->assertIsString($this->MakeCallRequest->getIfMachine());
-        
-
     }
     /**
      * Test attribute "if_machine_url"
      */
     public function testPropertyIfMachineUrl()
     {
-        $this->MakeCallRequest->setIfMachineUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getIfMachineUrl());
+        $this->MakeCallRequest->setIfMachineUrl('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getIfMachineUrl());
         $this->assertIsString($this->MakeCallRequest->getIfMachineUrl());
-        
-
     }
     /**
      * Test attribute "timeout"
      */
     public function testPropertyTimeout()
     {
-        $this->MakeCallRequest->setTimeout(12345);
-        $this->assertEquals(12345, $this->MakeCallRequest->getTimeout());
-        $this->assertIsInt($this->MakeCallRequest->getTimeout());
+        
+        
+        $this->MakeCallRequest->setTimeout(1);
+        $this->assertEquals(1, $this->MakeCallRequest->getTimeout());
+        $this->assertIsNumeric($this->MakeCallRequest->getTimeout());
+        
     }
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        $this->MakeCallRequest->setParentCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getParentCallId());
+        $this->MakeCallRequest->setParentCallId('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getParentCallId());
         $this->assertIsString($this->MakeCallRequest->getParentCallId());
-        
-
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->MakeCallRequest->setPrivacyMode(true);
-        $this->assertTrue($this->MakeCallRequest->getPrivacyMode());
+        $this->MakeCallRequest->setPrivacyMode(false);
+        $this->assertFalse($this->MakeCallRequest->getPrivacyMode());
         $this->assertIsBool($this->MakeCallRequest->getPrivacyMode());
     }
     /**
@@ -153,11 +142,9 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyCallConnectUrl()
     {
-        $this->MakeCallRequest->setCallConnectUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MakeCallRequest->getCallConnectUrl());
+        $this->MakeCallRequest->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getCallConnectUrl());
         $this->assertIsString($this->MakeCallRequest->getCallConnectUrl());
-        
-
     }
 
     /**
@@ -165,16 +152,16 @@ class MakeCallRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MakeCallRequest();    
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setApplicationId("TS");
-      $test1->setSendDigits("TS");
-      $test1->setIfMachine("TS");
-      $test1->setIfMachineUrl("TS");
-      $test1->setTimeout(1);
-      $test1->setParentCallId("TS");
-      $test1->setPrivacyMode(true);
-      $test1->setCallConnectUrl("TS");
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setApplicationId("TS");
+    $test1->setSendDigits("TS");
+    $test1->setIfMachine("TS");
+    $test1->setIfMachineUrl("TS");
+    $test1->setTimeout(1);
+    $test1->setParentCallId("TS");
+    $test1->setPrivacyMode(true);
+    $test1->setCallConnectUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -186,16 +173,16 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MakeCallRequest();
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setApplicationId("TS");
-      $test1->setSendDigits("TS");
-      $test1->setIfMachine("TS");
-      $test1->setIfMachineUrl("TS");
-      $test1->setTimeout(1);
-      $test1->setParentCallId("TS");
-      $test1->setPrivacyMode(true);
-      $test1->setCallConnectUrl("TS");
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setApplicationId("TS");
+    $test1->setSendDigits("TS");
+    $test1->setIfMachine("TS");
+    $test1->setIfMachineUrl("TS");
+    $test1->setTimeout(1);
+    $test1->setParentCallId("TS");
+    $test1->setPrivacyMode(true);
+    $test1->setCallConnectUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

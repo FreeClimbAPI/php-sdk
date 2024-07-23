@@ -58,39 +58,38 @@ class SayTest extends TestCase
      */
     public function testPropertyText()
     {
-        $this->Say->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Say->getText());
+        $this->Say->setText('TS');
+        $this->assertEquals('TS', $this->Say->getText());
         $this->assertIsString($this->Say->getText());
-        
-
     }
     /**
      * Test attribute "language"
      */
     public function testPropertyLanguage()
     {
-        $this->Say->setLanguage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Say->getLanguage());
+        $this->Say->setLanguage('TS');
+        $this->assertEquals('TS', $this->Say->getLanguage());
         $this->assertIsString($this->Say->getLanguage());
-        
-
     }
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        $this->Say->setLoop(12345);
-        $this->assertEquals(12345, $this->Say->getLoop());
-        $this->assertIsInt($this->Say->getLoop());
+        
+        
+        $this->Say->setLoop(1);
+        $this->assertEquals(1, $this->Say->getLoop());
+        $this->assertIsNumeric($this->Say->getLoop());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->Say->setPrivacyMode(true);
-        $this->assertTrue($this->Say->getPrivacyMode());
+        $this->Say->setPrivacyMode(false);
+        $this->assertFalse($this->Say->getPrivacyMode());
         $this->assertIsBool($this->Say->getPrivacyMode());
     }
 
@@ -99,10 +98,10 @@ class SayTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Say();    
-      $test1->setText("TS");
-      $test1->setLanguage("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setText("TS");
+    $test1->setLanguage("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -114,10 +113,10 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Say();
-      $test1->setText("TS");
-      $test1->setLanguage("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setText("TS");
+    $test1->setLanguage("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

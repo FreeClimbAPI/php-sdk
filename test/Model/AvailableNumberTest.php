@@ -66,30 +66,26 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
-        $this->AvailableNumber->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AvailableNumber->getCampaignId());
+        $this->AvailableNumber->setCampaignId('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
         $this->assertIsString($this->AvailableNumber->getCampaignId());
-        
-
     }
     /**
      * Test attribute "phone_number"
      */
     public function testPropertyPhoneNumber()
     {
-        $this->AvailableNumber->setPhoneNumber('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AvailableNumber->getPhoneNumber());
+        $this->AvailableNumber->setPhoneNumber('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
         $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-        
-
     }
     /**
      * Test attribute "voice_enabled"
      */
     public function testPropertyVoiceEnabled()
     {
-        $this->AvailableNumber->setVoiceEnabled(true);
-        $this->assertTrue($this->AvailableNumber->getVoiceEnabled());
+        $this->AvailableNumber->setVoiceEnabled(false);
+        $this->assertFalse($this->AvailableNumber->getVoiceEnabled());
         $this->assertIsBool($this->AvailableNumber->getVoiceEnabled());
     }
     /**
@@ -97,8 +93,8 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertySmsEnabled()
     {
-        $this->AvailableNumber->setSmsEnabled(true);
-        $this->assertTrue($this->AvailableNumber->getSmsEnabled());
+        $this->AvailableNumber->setSmsEnabled(false);
+        $this->assertFalse($this->AvailableNumber->getSmsEnabled());
         $this->assertIsBool($this->AvailableNumber->getSmsEnabled());
     }
     /**
@@ -106,22 +102,18 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyRegion()
     {
-        $this->AvailableNumber->setRegion('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AvailableNumber->getRegion());
+        $this->AvailableNumber->setRegion('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
         $this->assertIsString($this->AvailableNumber->getRegion());
-        
-
     }
     /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
     {
-        $this->AvailableNumber->setCountry('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AvailableNumber->getCountry());
+        $this->AvailableNumber->setCountry('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
         $this->assertIsString($this->AvailableNumber->getCountry());
-        
-
     }
 
     /**
@@ -129,14 +121,14 @@ class AvailableNumberTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AvailableNumber();    
-      $object = new \FreeClimb\Api\Model\Capabilities();
-      $test1->setCapabilities($object);
-      $test1->setCampaignId("TS");
-      $test1->setPhoneNumber("TS");
-      $test1->setVoiceEnabled(true);
-      $test1->setSmsEnabled(true);
-      $test1->setRegion("TS");
-      $test1->setCountry("TS");
+    $object = new \FreeClimb\Api\Model\Capabilities();
+    $test1->setCapabilities($object);
+    $test1->setCampaignId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setVoiceEnabled(true);
+    $test1->setSmsEnabled(true);
+    $test1->setRegion("TS");
+    $test1->setCountry("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -148,14 +140,14 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AvailableNumber();
-      $object = new \FreeClimb\Api\Model\Capabilities();
-      $test1->setCapabilities($object);
-      $test1->setCampaignId("TS");
-      $test1->setPhoneNumber("TS");
-      $test1->setVoiceEnabled(true);
-      $test1->setSmsEnabled(true);
-      $test1->setRegion("TS");
-      $test1->setCountry("TS");
+    $object = new \FreeClimb\Api\Model\Capabilities();
+    $test1->setCapabilities($object);
+    $test1->setCampaignId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setVoiceEnabled(true);
+    $test1->setSmsEnabled(true);
+    $test1->setRegion("TS");
+    $test1->setCountry("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TranscribeUtteranceRecordTest
+ * TranscribeUtteranceAllOfRecordTest
  *
  * PHP version 7.3
  *
@@ -30,65 +30,69 @@
 
 namespace FreeClimb\Api\Test\Model;
 
-use FreeClimb\Api\Model\TranscribeUtteranceRecord;
+use FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TranscribeUtteranceRecordTest Class Doc Comment
+ * TranscribeUtteranceAllOfRecordTest Class Doc Comment
  *
  * @category    Class
- * @description TranscribeUtteranceRecord
+ * @description TranscribeUtteranceAllOfRecord
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TranscribeUtteranceRecordTest extends TestCase
+class TranscribeUtteranceAllOfRecordTest extends TestCase
 {
-    protected $TranscribeUtteranceRecord;
+    protected $TranscribeUtteranceAllOfRecord;
 
     /**
-     * Test "TranscribeUtteranceRecord"
+     * Test "TranscribeUtteranceAllOfRecord"
      */
     public function setUp() : void
     {
-        $this->TranscribeUtteranceRecord = new TranscribeUtteranceRecord();
+        $this->TranscribeUtteranceAllOfRecord = new TranscribeUtteranceAllOfRecord();
     }
     /**
      * Test attribute "save_recording"
      */
     public function testPropertySaveRecording()
     {
-        $this->TranscribeUtteranceRecord->setSaveRecording(true);
-        $this->assertTrue($this->TranscribeUtteranceRecord->getSaveRecording());
-        $this->assertIsBool($this->TranscribeUtteranceRecord->getSaveRecording());
+        $this->TranscribeUtteranceAllOfRecord->setSaveRecording(false);
+        $this->assertFalse($this->TranscribeUtteranceAllOfRecord->getSaveRecording());
+        $this->assertIsBool($this->TranscribeUtteranceAllOfRecord->getSaveRecording());
     }
     /**
      * Test attribute "max_length_sec"
      */
     public function testPropertyMaxLengthSec()
     {
-        $this->TranscribeUtteranceRecord->setMaxLengthSec(60);
-        $this->assertEquals(60, $this->TranscribeUtteranceRecord->getMaxLengthSec());
-        $this->assertIsInt($this->TranscribeUtteranceRecord->getMaxLengthSec());
+        $this->TranscribeUtteranceAllOfRecord->setMaxLengthSec(60);
+        $this->assertEquals(60, $this->TranscribeUtteranceAllOfRecord->getMaxLengthSec());
+        $this->assertIsNumeric($this->TranscribeUtteranceAllOfRecord->getMaxLengthSec());
+        
+        
     }
     /**
      * Test attribute "rcrd_termination_silence_time_ms"
      */
     public function testPropertyRcrdTerminationSilenceTimeMs()
     {
-        $this->TranscribeUtteranceRecord->setRcrdTerminationSilenceTimeMs(60);
-        $this->assertEquals(60, $this->TranscribeUtteranceRecord->getRcrdTerminationSilenceTimeMs());
-        $this->assertIsInt($this->TranscribeUtteranceRecord->getRcrdTerminationSilenceTimeMs());
+        $this->TranscribeUtteranceAllOfRecord->setRcrdTerminationSilenceTimeMs(3000);
+        $this->assertEquals(3000, $this->TranscribeUtteranceAllOfRecord->getRcrdTerminationSilenceTimeMs());
+        $this->assertIsNumeric($this->TranscribeUtteranceAllOfRecord->getRcrdTerminationSilenceTimeMs());
+        
+        
     }
 
     /**
 * Test method toStringTest
 */
 public function toStringTest() {
-    $test1 = new TranscribeUtteranceRecord();    
-      $test1->setSaveRecording(true);
-      $test1->setMaxLengthSec(1);
-      $test1->setRcrdTerminationSilenceTimeMs(1);
+    $test1 = new TranscribeUtteranceAllOfRecord();    
+    $test1->setSaveRecording(true);
+    $test1->setMaxLengthSec(60);
+    $test1->setRcrdTerminationSilenceTimeMs(3000);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -99,10 +103,10 @@ public function toStringTest() {
  */
 public function toHeaderValueTest()
 {
-    $test1 = new TranscribeUtteranceRecord();
-      $test1->setSaveRecording(true);
-      $test1->setMaxLengthSec(1);
-      $test1->setRcrdTerminationSilenceTimeMs(1);
+    $test1 = new TranscribeUtteranceAllOfRecord();
+    $test1->setSaveRecording(true);
+    $test1->setMaxLengthSec(60);
+    $test1->setRcrdTerminationSilenceTimeMs(3000);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

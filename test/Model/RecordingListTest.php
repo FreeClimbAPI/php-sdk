@@ -58,65 +58,81 @@ class RecordingListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->RecordingList->setTotal(12345);
-        $this->assertEquals(12345, $this->RecordingList->getTotal());
-        $this->assertIsInt($this->RecordingList->getTotal());
+        
+        
+        $this->RecordingList->setTotal(1);
+        $this->assertEquals(1, $this->RecordingList->getTotal());
+        $this->assertIsNumeric($this->RecordingList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->RecordingList->setStart(12345);
-        $this->assertEquals(12345, $this->RecordingList->getStart());
-        $this->assertIsInt($this->RecordingList->getStart());
+        
+        
+        $this->RecordingList->setStart(1);
+        $this->assertEquals(1, $this->RecordingList->getStart());
+        $this->assertIsNumeric($this->RecordingList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->RecordingList->setEnd(12345);
-        $this->assertEquals(12345, $this->RecordingList->getEnd());
-        $this->assertIsInt($this->RecordingList->getEnd());
+        
+        
+        $this->RecordingList->setEnd(1);
+        $this->assertEquals(1, $this->RecordingList->getEnd());
+        $this->assertIsNumeric($this->RecordingList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->RecordingList->setPage(12345);
-        $this->assertEquals(12345, $this->RecordingList->getPage());
-        $this->assertIsInt($this->RecordingList->getPage());
+        
+        
+        $this->RecordingList->setPage(1);
+        $this->assertEquals(1, $this->RecordingList->getPage());
+        $this->assertIsNumeric($this->RecordingList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->RecordingList->setNumPages(12345);
-        $this->assertEquals(12345, $this->RecordingList->getNumPages());
-        $this->assertIsInt($this->RecordingList->getNumPages());
+        
+        
+        $this->RecordingList->setNumPages(1);
+        $this->assertEquals(1, $this->RecordingList->getNumPages());
+        $this->assertIsNumeric($this->RecordingList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->RecordingList->setPageSize(12345);
-        $this->assertEquals(12345, $this->RecordingList->getPageSize());
-        $this->assertIsInt($this->RecordingList->getPageSize());
+        
+        
+        $this->RecordingList->setPageSize(1);
+        $this->assertEquals(1, $this->RecordingList->getPageSize());
+        $this->assertIsNumeric($this->RecordingList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->RecordingList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordingList->getNextPageUri());
+        $this->RecordingList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->RecordingList->getNextPageUri());
         $this->assertIsString($this->RecordingList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "recordings"
@@ -133,15 +149,15 @@ class RecordingListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new RecordingList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setRecordings($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setRecordings($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new RecordingList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setRecordings($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setRecordings($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

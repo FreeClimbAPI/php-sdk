@@ -58,86 +58,75 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->MessageRequest->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getUri());
+        $this->MessageRequest->setUri('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getUri());
         $this->assertIsString($this->MessageRequest->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->MessageRequest->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getDateCreated());
+        $this->MessageRequest->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getDateCreated());
         $this->assertIsString($this->MessageRequest->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->MessageRequest->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getDateUpdated());
+        $this->MessageRequest->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getDateUpdated());
         $this->assertIsString($this->MessageRequest->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->MessageRequest->setRevision(12345);
-        $this->assertEquals(12345, $this->MessageRequest->getRevision());
-        $this->assertIsInt($this->MessageRequest->getRevision());
+        
+        
+        $this->MessageRequest->setRevision(1);
+        $this->assertEquals(1, $this->MessageRequest->getRevision());
+        $this->assertIsNumeric($this->MessageRequest->getRevision());
+        
     }
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        $this->MessageRequest->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getFrom());
+        $this->MessageRequest->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getFrom());
         $this->assertIsString($this->MessageRequest->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->MessageRequest->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getTo());
+        $this->MessageRequest->setTo('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getTo());
         $this->assertIsString($this->MessageRequest->getTo());
-        
-
     }
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        $this->MessageRequest->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getText());
+        $this->MessageRequest->setText('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getText());
         $this->assertIsString($this->MessageRequest->getText());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->MessageRequest->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageRequest->getNotificationUrl());
+        $this->MessageRequest->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getNotificationUrl());
         $this->assertIsString($this->MessageRequest->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "media_urls"
@@ -154,16 +143,16 @@ class MessageRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessageRequest();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -175,16 +164,16 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessageRequest();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setNotificationUrl("TS");
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setNotificationUrl("TS");
+    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
+    $test1->setMediaUrls($testArray);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

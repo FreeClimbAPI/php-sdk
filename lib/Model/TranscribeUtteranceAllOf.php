@@ -1,6 +1,6 @@
 <?php
 /**
- * TranscribeUtterance
+ * TranscribeUtteranceAllOf
  *
  * PHP version 7.3
  *
@@ -28,12 +28,15 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * TranscribeUtterance Class Doc Comment
+ * TranscribeUtteranceAllOf Class Doc Comment
  *
  * @category Class
+ * @description The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -41,7 +44,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TranscribeUtterance extends PerclCommand
+class TranscribeUtteranceAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +53,7 @@ class TranscribeUtterance extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TranscribeUtterance';
+    protected static $openAPIModelName = 'TranscribeUtterance_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -89,7 +92,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -99,7 +102,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -153,7 +156,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -163,7 +166,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -173,7 +176,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -187,6 +190,12 @@ class TranscribeUtterance extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -196,8 +205,6 @@ class TranscribeUtterance extends PerclCommand
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
         $this->container['action_url'] = $data['action_url'] ?? null;
         $this->container['play_beep'] = $data['play_beep'] ?? false;
         $this->container['record'] = $data['record'] ?? null;
@@ -213,7 +220,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         if ($this->container['action_url'] === null) {
             $invalidProperties[] = "'action_url' can't be null";
