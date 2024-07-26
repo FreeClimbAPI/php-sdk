@@ -243,8 +243,8 @@ public function toStringTest() {
     $test1->setBrandId("TS");
     $test1->setCampaignId("TS");
     $test1->setSegmentCount(1);
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setMediaUrls($testArray);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -271,8 +271,8 @@ public function toHeaderValueTest()
     $test1->setBrandId("TS");
     $test1->setCampaignId("TS");
     $test1->setSegmentCount(1);
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setMediaUrls($testArray);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

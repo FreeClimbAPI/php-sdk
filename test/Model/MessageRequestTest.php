@@ -151,8 +151,8 @@ public function toStringTest() {
     $test1->setTo("TS");
     $test1->setText("TS");
     $test1->setNotificationUrl("TS");
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setMediaUrls($testArray);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -172,8 +172,8 @@ public function toHeaderValueTest()
     $test1->setTo("TS");
     $test1->setText("TS");
     $test1->setNotificationUrl("TS");
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setMediaUrls($testArray);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

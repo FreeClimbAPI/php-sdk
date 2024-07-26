@@ -1521,8 +1521,8 @@ class DefaultApiTest extends TestCase
      *
      * List Conference Recordings.
      * @param  string $account_id ID of the account (required)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
      * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
      */
     public function testListConferenceRecordings()
@@ -1539,11 +1539,11 @@ class DefaultApiTest extends TestCase
         );
 
         //$account_id = $account_id_test_value;
-        //$call_id = $call_id_test_value;
         //$conference_id = $conference_id_test_value;
+        //$call_id = $call_id_test_value;
         //$date_created = $date_created_test_value;
         
-        $response = $apiInstance->listConferenceRecordings($this->call_id_listConferenceRecordings_test_value(), $this->conference_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
+        $response = $apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$response);
     }
     /**

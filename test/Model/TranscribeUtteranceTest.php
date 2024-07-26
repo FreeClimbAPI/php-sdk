@@ -118,8 +118,8 @@ public function toStringTest() {
     $test1->setRecord($object);
     $test1->setPrivacyForLogging(true);
     $test1->setPrivacyForRecording(true);
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setPrompts($testArray);
+    $testList = [];
+    $test1->setPrompts($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -137,8 +137,8 @@ public function toHeaderValueTest()
     $test1->setRecord($object);
     $test1->setPrivacyForLogging(true);
     $test1->setPrivacyForRecording(true);
-    $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-    $test1->setPrompts($testArray);
+    $testList = [];
+    $test1->setPrompts($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
