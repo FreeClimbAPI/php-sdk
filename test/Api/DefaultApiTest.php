@@ -1812,7 +1812,7 @@ class DefaultApiTest extends TestCase
         
         $response = $apiInstance->makeAWebrtcJwt($this->create_web_rtc_token_makeAWebrtcJwt_test_value());
         
-        $this->assertIsstring($response);
+        $this->assertIsString($response);
     }
     /**
      * Test case for removeAParticipant

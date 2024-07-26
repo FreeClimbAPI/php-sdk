@@ -114,6 +114,8 @@ public function toStringTest() {
     $test1 = new TranscribeUtteranceAllOf();    
     $test1->setActionUrl("TS");
     $test1->setPlayBeep(true);
+    $object = new \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord();
+    $test1->setRecord($object);
     $test1->setPrivacyForLogging(true);
     $test1->setPrivacyForRecording(true);
     $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
@@ -131,6 +133,8 @@ public function toHeaderValueTest()
     $test1 = new TranscribeUtteranceAllOf();
     $test1->setActionUrl("TS");
     $test1->setPlayBeep(true);
+    $object = new \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord();
+    $test1->setRecord($object);
     $test1->setPrivacyForLogging(true);
     $test1->setPrivacyForRecording(true);
     $testArray = ["ElementOne", "ElementTwo", "ElementThree"];

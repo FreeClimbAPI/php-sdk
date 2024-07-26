@@ -54,26 +54,4 @@ class RemoveFromConferenceTest extends TestCase
         $this->RemoveFromConference = new RemoveFromConference();
     }
 
-    /**
-* Test method toStringTest
-*/
-public function toStringTest() {
-    $test1 = new RemoveFromConference();    
-
-    $toString1 = $test1->__toString();
-    assert(is_string($toString1));
-}
-
-/**
- * Test method toHeaderValue
- */
-public function toHeaderValueTest()
-{
-    $test1 = new RemoveFromConference();
-
-    $toHeaderValue1 = $test1->toHeaderValue();
-    assert(is_string($toHeaderValue1));
-}
-
-
 }

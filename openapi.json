@@ -534,8 +534,7 @@
         "x-percl-command": true,
         "allOf": [
           {
-            "$ref": "#/components/schemas/PerclCommand",
-            "x-is-uri": true
+            "$ref": "#/components/schemas/PerclCommand"
           },
           {
             "type": "object",
@@ -688,7 +687,8 @@
                 "description": "When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.",
                 "type": "string",
                 "format": "uri",
-                "x-is-uri": true
+                "x-is-uri": true,
+                "x-is-url": true
               },
               "grammarType": {
                 "$ref": "#/components/schemas/GrammarType"
@@ -1007,6 +1007,7 @@
       "RemoveFromConference": {
         "description": "The `RemoveFromConference` command removes a Participant from a Conference but does not hang up. Instead, the Call is simply unbridged and what happens next with the Call is determined by the PerCL returned in response to the `leaveConferenceUrl` attribute.",
         "x-percl-command": true,
+        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1162,6 +1163,7 @@
       "TerminateConference": {
         "description": "The `TerminateConference` command terminates an existing Conference. Any active participants are hung up on by FreeClimb. If this is not the desired behavior, use the `RemoveFromConference` command to unbridge Calls that should not be hung up. Note: The Call requesting TerminateConference must be on the same Conference for this command to execute.",
         "x-percl-command": true,
+        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -3385,6 +3387,7 @@
               },
               "record": {
                 "type": "object",
+                "x-is-object": true,
                 "properties": {
                   "saveRecording": {
                     "type": "boolean",
