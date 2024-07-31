@@ -1,6 +1,6 @@
 <?php
 /**
- * TerminateConferenceAllOf
+ * TranscribeUtteranceAllOf
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * TerminateConferenceAllOf Class Doc Comment
+ * TranscribeUtteranceAllOf Class Doc Comment
  *
  * @category Class
+ * @description The &#x60;TranscribeUtterance&#x60; command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  &#x60;TranscribeUtterance&#x60; is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the &#x60;PerCL&#x60; returned in response of the &#x60;actionUrl&#x60;. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class TranscribeUtteranceAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TerminateConference_allOf';
+    protected static $openAPIModelName = 'TranscribeUtterance_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +61,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conference_id' => 'string'
+        'action_url' => 'string',
+        'play_beep' => 'bool',
+        'record' => '\FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord',
+        'privacy_for_logging' => 'bool',
+        'privacy_for_recording' => 'bool',
+        'prompts' => 'mixed[]'
     ];
 
     /**
@@ -71,7 +77,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conference_id' => null
+        'action_url' => null,
+        'play_beep' => null,
+        'record' => null,
+        'privacy_for_logging' => null,
+        'privacy_for_recording' => null,
+        'prompts' => null
     ];
 
     /**
@@ -101,7 +112,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'conference_id' => 'conferenceId'
+        'action_url' => 'actionUrl',
+        'play_beep' => 'playBeep',
+        'record' => 'record',
+        'privacy_for_logging' => 'privacyForLogging',
+        'privacy_for_recording' => 'privacyForRecording',
+        'prompts' => 'prompts'
     ];
 
     /**
@@ -110,7 +126,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'conference_id' => 'setConferenceId'
+        'action_url' => 'setActionUrl',
+        'play_beep' => 'setPlayBeep',
+        'record' => 'setRecord',
+        'privacy_for_logging' => 'setPrivacyForLogging',
+        'privacy_for_recording' => 'setPrivacyForRecording',
+        'prompts' => 'setPrompts'
     ];
 
     /**
@@ -119,7 +140,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'conference_id' => 'getConferenceId'
+        'action_url' => 'getActionUrl',
+        'play_beep' => 'getPlayBeep',
+        'record' => 'getRecord',
+        'privacy_for_logging' => 'getPrivacyForLogging',
+        'privacy_for_recording' => 'getPrivacyForRecording',
+        'prompts' => 'getPrompts'
     ];
 
     /**
@@ -179,7 +205,12 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['conference_id'] = $data['conference_id'] ?? null;
+        $this->container['action_url'] = $data['action_url'] ?? null;
+        $this->container['play_beep'] = $data['play_beep'] ?? false;
+        $this->container['record'] = $data['record'] ?? null;
+        $this->container['privacy_for_logging'] = $data['privacy_for_logging'] ?? false;
+        $this->container['privacy_for_recording'] = $data['privacy_for_recording'] ?? false;
+        $this->container['prompts'] = $data['prompts'] ?? null;
     }
 
     /**
@@ -191,8 +222,8 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['conference_id'] === null) {
-            $invalidProperties[] = "'conference_id' can't be null";
+        if ($this->container['action_url'] === null) {
+            $invalidProperties[] = "'action_url' can't be null";
         }
         return $invalidProperties;
     }
@@ -210,25 +241,145 @@ class TerminateConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets conference_id
+     * Gets action_url
      *
      * @return string
      */
-    public function getConferenceId()
+    public function getActionUrl()
     {
-        return $this->container['conference_id'];
+        return $this->container['action_url'];
     }
 
     /**
-     * Sets conference_id
+     * Sets action_url
      *
-     * @param string $conference_id ID of the conference to terminate.
+     * @param string $action_url action_url
      *
      * @return self
      */
-    public function setConferenceId($conference_id)
+    public function setActionUrl($action_url)
     {
-        $this->container['conference_id'] = $conference_id;
+        $this->container['action_url'] = $action_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets play_beep
+     *
+     * @return bool|null
+     */
+    public function getPlayBeep()
+    {
+        return $this->container['play_beep'];
+    }
+
+    /**
+     * Sets play_beep
+     *
+     * @param bool|null $play_beep play_beep
+     *
+     * @return self
+     */
+    public function setPlayBeep($play_beep)
+    {
+        $this->container['play_beep'] = $play_beep;
+
+        return $this;
+    }
+
+    /**
+     * Gets record
+     *
+     * @return \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord|null
+     */
+    public function getRecord()
+    {
+        return $this->container['record'];
+    }
+
+    /**
+     * Sets record
+     *
+     * @param \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord|null $record record
+     *
+     * @return self
+     */
+    public function setRecord($record)
+    {
+        $this->container['record'] = $record;
+
+        return $this;
+    }
+
+    /**
+     * Gets privacy_for_logging
+     *
+     * @return bool|null
+     */
+    public function getPrivacyForLogging()
+    {
+        return $this->container['privacy_for_logging'];
+    }
+
+    /**
+     * Sets privacy_for_logging
+     *
+     * @param bool|null $privacy_for_logging privacy_for_logging
+     *
+     * @return self
+     */
+    public function setPrivacyForLogging($privacy_for_logging)
+    {
+        $this->container['privacy_for_logging'] = $privacy_for_logging;
+
+        return $this;
+    }
+
+    /**
+     * Gets privacy_for_recording
+     *
+     * @return bool|null
+     */
+    public function getPrivacyForRecording()
+    {
+        return $this->container['privacy_for_recording'];
+    }
+
+    /**
+     * Sets privacy_for_recording
+     *
+     * @param bool|null $privacy_for_recording privacy_for_recording
+     *
+     * @return self
+     */
+    public function setPrivacyForRecording($privacy_for_recording)
+    {
+        $this->container['privacy_for_recording'] = $privacy_for_recording;
+
+        return $this;
+    }
+
+    /**
+     * Gets prompts
+     *
+     * @return mixed[]|null
+     */
+    public function getPrompts()
+    {
+        return $this->container['prompts'];
+    }
+
+    /**
+     * Sets prompts
+     *
+     * @param mixed[]|null $prompts prompts
+     *
+     * @return self
+     */
+    public function setPrompts($prompts)
+    {
+        $this->container['prompts'] = $prompts;
 
         return $this;
     }

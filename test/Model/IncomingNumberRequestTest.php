@@ -58,33 +58,27 @@ class IncomingNumberRequestTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
-        $this->IncomingNumberRequest->setApplicationId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberRequest->getApplicationId());
+        $this->IncomingNumberRequest->setApplicationId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberRequest->getApplicationId());
         $this->assertIsString($this->IncomingNumberRequest->getApplicationId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->IncomingNumberRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberRequest->getAlias());
+        $this->IncomingNumberRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->IncomingNumberRequest->getAlias());
         $this->assertIsString($this->IncomingNumberRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        $this->IncomingNumberRequest->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberRequest->getCampaignId());
+        $this->IncomingNumberRequest->setCampaignId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberRequest->getCampaignId());
         $this->assertIsString($this->IncomingNumberRequest->getCampaignId());
-        
-
     }
 
     /**
@@ -92,9 +86,9 @@ class IncomingNumberRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new IncomingNumberRequest();    
-      $test1->setApplicationId("TS");
-      $test1->setAlias("TS");
-      $test1->setCampaignId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setAlias("TS");
+    $test1->setCampaignId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -106,9 +100,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new IncomingNumberRequest();
-      $test1->setApplicationId("TS");
-      $test1->setAlias("TS");
-      $test1->setCampaignId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setAlias("TS");
+    $test1->setCampaignId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

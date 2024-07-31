@@ -58,65 +58,81 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->SMSTenDLCCampaignsListResult->setTotal(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getTotal());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getTotal());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setTotal(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getTotal());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->SMSTenDLCCampaignsListResult->setStart(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getStart());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getStart());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setStart(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getStart());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->SMSTenDLCCampaignsListResult->setEnd(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getEnd());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getEnd());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setEnd(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getEnd());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->SMSTenDLCCampaignsListResult->setPage(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getPage());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getPage());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setPage(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getPage());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->SMSTenDLCCampaignsListResult->setNumPages(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getNumPages());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getNumPages());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setNumPages(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getNumPages());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->SMSTenDLCCampaignsListResult->setPageSize(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCCampaignsListResult->getPageSize());
-        $this->assertIsInt($this->SMSTenDLCCampaignsListResult->getPageSize());
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setPageSize(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getPageSize());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->SMSTenDLCCampaignsListResult->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaignsListResult->getNextPageUri());
+        $this->SMSTenDLCCampaignsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCCampaignsListResult->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "campaigns"
@@ -133,15 +149,15 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SMSTenDLCCampaignsListResult();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setCampaigns($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setCampaigns($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SMSTenDLCCampaignsListResult();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setCampaigns($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setCampaigns($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

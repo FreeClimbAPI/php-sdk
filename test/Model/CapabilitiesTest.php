@@ -58,8 +58,8 @@ class CapabilitiesTest extends TestCase
      */
     public function testPropertyVoice()
     {
-        $this->Capabilities->setVoice(true);
-        $this->assertTrue($this->Capabilities->getVoice());
+        $this->Capabilities->setVoice(false);
+        $this->assertFalse($this->Capabilities->getVoice());
         $this->assertIsBool($this->Capabilities->getVoice());
     }
     /**
@@ -67,8 +67,8 @@ class CapabilitiesTest extends TestCase
      */
     public function testPropertySms()
     {
-        $this->Capabilities->setSms(true);
-        $this->assertTrue($this->Capabilities->getSms());
+        $this->Capabilities->setSms(false);
+        $this->assertFalse($this->Capabilities->getSms());
         $this->assertIsBool($this->Capabilities->getSms());
     }
     /**
@@ -76,8 +76,8 @@ class CapabilitiesTest extends TestCase
      */
     public function testPropertyTollFree()
     {
-        $this->Capabilities->setTollFree(true);
-        $this->assertTrue($this->Capabilities->getTollFree());
+        $this->Capabilities->setTollFree(false);
+        $this->assertFalse($this->Capabilities->getTollFree());
         $this->assertIsBool($this->Capabilities->getTollFree());
     }
     /**
@@ -85,8 +85,8 @@ class CapabilitiesTest extends TestCase
      */
     public function testPropertyTenDlc()
     {
-        $this->Capabilities->setTenDlc(true);
-        $this->assertTrue($this->Capabilities->getTenDlc());
+        $this->Capabilities->setTenDlc(false);
+        $this->assertFalse($this->Capabilities->getTenDlc());
         $this->assertIsBool($this->Capabilities->getTenDlc());
     }
     /**
@@ -94,8 +94,8 @@ class CapabilitiesTest extends TestCase
      */
     public function testPropertyShortCode()
     {
-        $this->Capabilities->setShortCode(true);
-        $this->assertTrue($this->Capabilities->getShortCode());
+        $this->Capabilities->setShortCode(false);
+        $this->assertFalse($this->Capabilities->getShortCode());
         $this->assertIsBool($this->Capabilities->getShortCode());
     }
 
@@ -104,11 +104,11 @@ class CapabilitiesTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Capabilities();    
-      $test1->setVoice(true);
-      $test1->setSms(true);
-      $test1->setTollFree(true);
-      $test1->setTenDlc(true);
-      $test1->setShortCode(true);
+    $test1->setVoice(true);
+    $test1->setSms(true);
+    $test1->setTollFree(true);
+    $test1->setTenDlc(true);
+    $test1->setShortCode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -120,11 +120,11 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Capabilities();
-      $test1->setVoice(true);
-      $test1->setSms(true);
-      $test1->setTollFree(true);
-      $test1->setTenDlc(true);
-      $test1->setShortCode(true);
+    $test1->setVoice(true);
+    $test1->setSms(true);
+    $test1->setTollFree(true);
+    $test1->setTenDlc(true);
+    $test1->setShortCode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

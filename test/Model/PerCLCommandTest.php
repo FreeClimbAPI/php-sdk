@@ -58,11 +58,9 @@ class PerclCommandTest extends TestCase
      */
     public function testPropertyCommand()
     {
-        $this->PerclCommand->setCommand('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->PerclCommand->getCommand());
+        $this->PerclCommand->setCommand('TS');
+        $this->assertEquals('TS', $this->PerclCommand->getCommand());
         $this->assertIsString($this->PerclCommand->getCommand());
-        
-
     }
 
     /**
@@ -70,7 +68,7 @@ class PerclCommandTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new PerclCommand();    
-      $test1->setCommand("TS");
+    $test1->setCommand("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new PerclCommand();
-      $test1->setCommand("TS");
+    $test1->setCommand("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

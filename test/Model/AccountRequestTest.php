@@ -58,22 +58,18 @@ class AccountRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
-        $this->AccountRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountRequest->getAlias());
+        $this->AccountRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->AccountRequest->getAlias());
         $this->assertIsString($this->AccountRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "label"
      */
     public function testPropertyLabel()
     {
-        $this->AccountRequest->setLabel('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountRequest->getLabel());
+        $this->AccountRequest->setLabel('TS');
+        $this->assertEquals('TS', $this->AccountRequest->getLabel());
         $this->assertIsString($this->AccountRequest->getLabel());
-        
-
     }
 
     /**
@@ -81,8 +77,8 @@ class AccountRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AccountRequest();    
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -94,8 +90,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AccountRequest();
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,11 +58,9 @@ class RedirectAllOfTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->RedirectAllOf->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RedirectAllOf->getActionUrl());
+        $this->RedirectAllOf->setActionUrl('TS');
+        $this->assertEquals('TS', $this->RedirectAllOf->getActionUrl());
         $this->assertIsString($this->RedirectAllOf->getActionUrl());
-        
-
     }
 
     /**
@@ -70,12 +68,12 @@ class RedirectAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new RedirectAllOf();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -87,12 +85,12 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new RedirectAllOf();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

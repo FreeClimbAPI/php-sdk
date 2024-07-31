@@ -58,33 +58,27 @@ class BuyIncomingNumberRequestTest extends TestCase
      */
     public function testPropertyPhoneNumber()
     {
-        $this->BuyIncomingNumberRequest->setPhoneNumber('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->BuyIncomingNumberRequest->getPhoneNumber());
+        $this->BuyIncomingNumberRequest->setPhoneNumber('TS');
+        $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getPhoneNumber());
         $this->assertIsString($this->BuyIncomingNumberRequest->getPhoneNumber());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->BuyIncomingNumberRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->BuyIncomingNumberRequest->getAlias());
+        $this->BuyIncomingNumberRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getAlias());
         $this->assertIsString($this->BuyIncomingNumberRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        $this->BuyIncomingNumberRequest->setApplicationId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->BuyIncomingNumberRequest->getApplicationId());
+        $this->BuyIncomingNumberRequest->setApplicationId('TS');
+        $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getApplicationId());
         $this->assertIsString($this->BuyIncomingNumberRequest->getApplicationId());
-        
-
     }
 
     /**
@@ -92,9 +86,9 @@ class BuyIncomingNumberRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new BuyIncomingNumberRequest();    
-      $test1->setPhoneNumber("TS");
-      $test1->setAlias("TS");
-      $test1->setApplicationId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setAlias("TS");
+    $test1->setApplicationId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -106,9 +100,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new BuyIncomingNumberRequest();
-      $test1->setPhoneNumber("TS");
-      $test1->setAlias("TS");
-      $test1->setApplicationId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setAlias("TS");
+    $test1->setApplicationId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

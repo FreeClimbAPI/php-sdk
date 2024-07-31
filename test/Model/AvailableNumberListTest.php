@@ -58,65 +58,81 @@ class AvailableNumberListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->AvailableNumberList->setTotal(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getTotal());
-        $this->assertIsInt($this->AvailableNumberList->getTotal());
+        
+        
+        $this->AvailableNumberList->setTotal(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getTotal());
+        $this->assertIsNumeric($this->AvailableNumberList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->AvailableNumberList->setStart(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getStart());
-        $this->assertIsInt($this->AvailableNumberList->getStart());
+        
+        
+        $this->AvailableNumberList->setStart(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getStart());
+        $this->assertIsNumeric($this->AvailableNumberList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->AvailableNumberList->setEnd(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getEnd());
-        $this->assertIsInt($this->AvailableNumberList->getEnd());
+        
+        
+        $this->AvailableNumberList->setEnd(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getEnd());
+        $this->assertIsNumeric($this->AvailableNumberList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->AvailableNumberList->setPage(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getPage());
-        $this->assertIsInt($this->AvailableNumberList->getPage());
+        
+        
+        $this->AvailableNumberList->setPage(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getPage());
+        $this->assertIsNumeric($this->AvailableNumberList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->AvailableNumberList->setNumPages(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getNumPages());
-        $this->assertIsInt($this->AvailableNumberList->getNumPages());
+        
+        
+        $this->AvailableNumberList->setNumPages(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getNumPages());
+        $this->assertIsNumeric($this->AvailableNumberList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->AvailableNumberList->setPageSize(12345);
-        $this->assertEquals(12345, $this->AvailableNumberList->getPageSize());
-        $this->assertIsInt($this->AvailableNumberList->getPageSize());
+        
+        
+        $this->AvailableNumberList->setPageSize(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getPageSize());
+        $this->assertIsNumeric($this->AvailableNumberList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->AvailableNumberList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AvailableNumberList->getNextPageUri());
+        $this->AvailableNumberList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->AvailableNumberList->getNextPageUri());
         $this->assertIsString($this->AvailableNumberList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "available_phone_numbers"
@@ -133,15 +149,15 @@ class AvailableNumberListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AvailableNumberList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setAvailablePhoneNumbers($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setAvailablePhoneNumbers($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AvailableNumberList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setAvailablePhoneNumbers($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setAvailablePhoneNumbers($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

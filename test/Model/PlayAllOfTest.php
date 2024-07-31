@@ -58,28 +58,29 @@ class PlayAllOfTest extends TestCase
      */
     public function testPropertyFile()
     {
-        $this->PlayAllOf->setFile('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->PlayAllOf->getFile());
+        $this->PlayAllOf->setFile('TS');
+        $this->assertEquals('TS', $this->PlayAllOf->getFile());
         $this->assertIsString($this->PlayAllOf->getFile());
-        
-
     }
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        $this->PlayAllOf->setLoop(12345);
-        $this->assertEquals(12345, $this->PlayAllOf->getLoop());
-        $this->assertIsInt($this->PlayAllOf->getLoop());
+        
+        
+        $this->PlayAllOf->setLoop(1);
+        $this->assertEquals(1, $this->PlayAllOf->getLoop());
+        $this->assertIsNumeric($this->PlayAllOf->getLoop());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->PlayAllOf->setPrivacyMode(true);
-        $this->assertTrue($this->PlayAllOf->getPrivacyMode());
+        $this->PlayAllOf->setPrivacyMode(false);
+        $this->assertFalse($this->PlayAllOf->getPrivacyMode());
         $this->assertIsBool($this->PlayAllOf->getPrivacyMode());
     }
 
@@ -88,9 +89,9 @@ class PlayAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new PlayAllOf();    
-      $test1->setFile("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setFile("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -102,9 +103,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new PlayAllOf();
-      $test1->setFile("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setFile("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

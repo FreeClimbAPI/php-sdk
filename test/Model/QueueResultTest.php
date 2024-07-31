@@ -58,102 +58,102 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->QueueResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getUri());
+        $this->QueueResult->setUri('TS');
+        $this->assertEquals('TS', $this->QueueResult->getUri());
         $this->assertIsString($this->QueueResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->QueueResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getDateCreated());
+        $this->QueueResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->QueueResult->getDateCreated());
         $this->assertIsString($this->QueueResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->QueueResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getDateUpdated());
+        $this->QueueResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->QueueResult->getDateUpdated());
         $this->assertIsString($this->QueueResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->QueueResult->setRevision(12345);
-        $this->assertEquals(12345, $this->QueueResult->getRevision());
-        $this->assertIsInt($this->QueueResult->getRevision());
+        
+        
+        $this->QueueResult->setRevision(1);
+        $this->assertEquals(1, $this->QueueResult->getRevision());
+        $this->assertIsNumeric($this->QueueResult->getRevision());
+        
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->QueueResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getAccountId());
+        $this->QueueResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->QueueResult->getAccountId());
         $this->assertIsString($this->QueueResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        $this->QueueResult->setQueueId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getQueueId());
+        $this->QueueResult->setQueueId('TS');
+        $this->assertEquals('TS', $this->QueueResult->getQueueId());
         $this->assertIsString($this->QueueResult->getQueueId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->QueueResult->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueResult->getAlias());
+        $this->QueueResult->setAlias('TS');
+        $this->assertEquals('TS', $this->QueueResult->getAlias());
         $this->assertIsString($this->QueueResult->getAlias());
-        
-
     }
     /**
      * Test attribute "max_size"
      */
     public function testPropertyMaxSize()
     {
-        $this->QueueResult->setMaxSize(12345);
-        $this->assertEquals(12345, $this->QueueResult->getMaxSize());
-        $this->assertIsInt($this->QueueResult->getMaxSize());
+        
+        
+        $this->QueueResult->setMaxSize(1);
+        $this->assertEquals(1, $this->QueueResult->getMaxSize());
+        $this->assertIsNumeric($this->QueueResult->getMaxSize());
+        
     }
     /**
      * Test attribute "current_size"
      */
     public function testPropertyCurrentSize()
     {
-        $this->QueueResult->setCurrentSize(12345);
-        $this->assertEquals(12345, $this->QueueResult->getCurrentSize());
-        $this->assertIsInt($this->QueueResult->getCurrentSize());
+        
+        
+        $this->QueueResult->setCurrentSize(1);
+        $this->assertEquals(1, $this->QueueResult->getCurrentSize());
+        $this->assertIsNumeric($this->QueueResult->getCurrentSize());
+        
     }
     /**
      * Test attribute "average_queue_removal_time"
      */
     public function testPropertyAverageQueueRemovalTime()
     {
-        $this->QueueResult->setAverageQueueRemovalTime(12345);
-        $this->assertEquals(12345, $this->QueueResult->getAverageQueueRemovalTime());
-        $this->assertIsInt($this->QueueResult->getAverageQueueRemovalTime());
+        
+        
+        $this->QueueResult->setAverageQueueRemovalTime(1);
+        $this->assertEquals(1, $this->QueueResult->getAverageQueueRemovalTime());
+        $this->assertIsNumeric($this->QueueResult->getAverageQueueRemovalTime());
+        
     }
     /**
      * Test attribute "subresource_uris"
@@ -169,18 +169,18 @@ class QueueResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new QueueResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setQueueId("TS");
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
-      $test1->setCurrentSize(1);
-      $test1->setAverageQueueRemovalTime(1);
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setQueueId("TS");
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
+    $test1->setCurrentSize(1);
+    $test1->setAverageQueueRemovalTime(1);
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -192,18 +192,18 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new QueueResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setQueueId("TS");
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
-      $test1->setCurrentSize(1);
-      $test1->setAverageQueueRemovalTime(1);
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setQueueId("TS");
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
+    $test1->setCurrentSize(1);
+    $test1->setAverageQueueRemovalTime(1);
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

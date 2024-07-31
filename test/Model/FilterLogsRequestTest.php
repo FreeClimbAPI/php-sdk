@@ -58,11 +58,9 @@ class FilterLogsRequestTest extends TestCase
      */
     public function testPropertyPql()
     {
-        $this->FilterLogsRequest->setPql('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->FilterLogsRequest->getPql());
+        $this->FilterLogsRequest->setPql('TS');
+        $this->assertEquals('TS', $this->FilterLogsRequest->getPql());
         $this->assertIsString($this->FilterLogsRequest->getPql());
-        
-
     }
 
     /**
@@ -70,7 +68,7 @@ class FilterLogsRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new FilterLogsRequest();    
-      $test1->setPql("TS");
+    $test1->setPql("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new FilterLogsRequest();
-      $test1->setPql("TS");
+    $test1->setPql("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

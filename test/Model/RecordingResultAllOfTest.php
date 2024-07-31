@@ -58,53 +58,48 @@ class RecordingResultAllOfTest extends TestCase
      */
     public function testPropertyRecordingId()
     {
-        $this->RecordingResultAllOf->setRecordingId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordingResultAllOf->getRecordingId());
+        $this->RecordingResultAllOf->setRecordingId('TS');
+        $this->assertEquals('TS', $this->RecordingResultAllOf->getRecordingId());
         $this->assertIsString($this->RecordingResultAllOf->getRecordingId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->RecordingResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordingResultAllOf->getAccountId());
+        $this->RecordingResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->RecordingResultAllOf->getAccountId());
         $this->assertIsString($this->RecordingResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        $this->RecordingResultAllOf->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordingResultAllOf->getCallId());
+        $this->RecordingResultAllOf->setCallId('TS');
+        $this->assertEquals('TS', $this->RecordingResultAllOf->getCallId());
         $this->assertIsString($this->RecordingResultAllOf->getCallId());
-        
-
     }
     /**
      * Test attribute "duration_sec"
      */
     public function testPropertyDurationSec()
     {
-        $this->RecordingResultAllOf->setDurationSec(12345);
-        $this->assertEquals(12345, $this->RecordingResultAllOf->getDurationSec());
-        $this->assertIsInt($this->RecordingResultAllOf->getDurationSec());
+        
+        
+        $this->RecordingResultAllOf->setDurationSec(1);
+        $this->assertEquals(1, $this->RecordingResultAllOf->getDurationSec());
+        $this->assertIsNumeric($this->RecordingResultAllOf->getDurationSec());
+        
     }
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        $this->RecordingResultAllOf->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordingResultAllOf->getConferenceId());
+        $this->RecordingResultAllOf->setConferenceId('TS');
+        $this->assertEquals('TS', $this->RecordingResultAllOf->getConferenceId());
         $this->assertIsString($this->RecordingResultAllOf->getConferenceId());
-        
-
     }
 
     /**
@@ -112,11 +107,11 @@ class RecordingResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new RecordingResultAllOf();    
-      $test1->setRecordingId("TS");
-      $test1->setAccountId("TS");
-      $test1->setCallId("TS");
-      $test1->setDurationSec(1);
-      $test1->setConferenceId("TS");
+    $test1->setRecordingId("TS");
+    $test1->setAccountId("TS");
+    $test1->setCallId("TS");
+    $test1->setDurationSec(1);
+    $test1->setConferenceId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -128,11 +123,11 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new RecordingResultAllOf();
-      $test1->setRecordingId("TS");
-      $test1->setAccountId("TS");
-      $test1->setCallId("TS");
-      $test1->setDurationSec(1);
-      $test1->setConferenceId("TS");
+    $test1->setRecordingId("TS");
+    $test1->setAccountId("TS");
+    $test1->setCallId("TS");
+    $test1->setDurationSec(1);
+    $test1->setConferenceId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

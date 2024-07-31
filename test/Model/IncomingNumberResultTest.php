@@ -58,42 +58,39 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->IncomingNumberResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getUri());
+        $this->IncomingNumberResult->setUri('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getUri());
         $this->assertIsString($this->IncomingNumberResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->IncomingNumberResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getDateCreated());
+        $this->IncomingNumberResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getDateCreated());
         $this->assertIsString($this->IncomingNumberResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->IncomingNumberResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getDateUpdated());
+        $this->IncomingNumberResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getDateUpdated());
         $this->assertIsString($this->IncomingNumberResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->IncomingNumberResult->setRevision(12345);
-        $this->assertEquals(12345, $this->IncomingNumberResult->getRevision());
-        $this->assertIsInt($this->IncomingNumberResult->getRevision());
+        
+        
+        $this->IncomingNumberResult->setRevision(1);
+        $this->assertEquals(1, $this->IncomingNumberResult->getRevision());
+        $this->assertIsNumeric($this->IncomingNumberResult->getRevision());
+        
     }
     /**
      * Test attribute "capabilities"
@@ -108,96 +105,80 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
-        $this->IncomingNumberResult->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getCampaignId());
+        $this->IncomingNumberResult->setCampaignId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getCampaignId());
         $this->assertIsString($this->IncomingNumberResult->getCampaignId());
-        
-
     }
     /**
      * Test attribute "phone_number_id"
      */
     public function testPropertyPhoneNumberId()
     {
-        $this->IncomingNumberResult->setPhoneNumberId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getPhoneNumberId());
+        $this->IncomingNumberResult->setPhoneNumberId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumberId());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumberId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->IncomingNumberResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getAccountId());
+        $this->IncomingNumberResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getAccountId());
         $this->assertIsString($this->IncomingNumberResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        $this->IncomingNumberResult->setApplicationId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getApplicationId());
+        $this->IncomingNumberResult->setApplicationId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getApplicationId());
         $this->assertIsString($this->IncomingNumberResult->getApplicationId());
-        
-
     }
     /**
      * Test attribute "phone_number"
      */
     public function testPropertyPhoneNumber()
     {
-        $this->IncomingNumberResult->setPhoneNumber('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getPhoneNumber());
+        $this->IncomingNumberResult->setPhoneNumber('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumber());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumber());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->IncomingNumberResult->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getAlias());
+        $this->IncomingNumberResult->setAlias('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getAlias());
         $this->assertIsString($this->IncomingNumberResult->getAlias());
-        
-
     }
     /**
      * Test attribute "region"
      */
     public function testPropertyRegion()
     {
-        $this->IncomingNumberResult->setRegion('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getRegion());
+        $this->IncomingNumberResult->setRegion('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getRegion());
         $this->assertIsString($this->IncomingNumberResult->getRegion());
-        
-
     }
     /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
     {
-        $this->IncomingNumberResult->setCountry('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->IncomingNumberResult->getCountry());
+        $this->IncomingNumberResult->setCountry('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getCountry());
         $this->assertIsString($this->IncomingNumberResult->getCountry());
-        
-
     }
     /**
      * Test attribute "voice_enabled"
      */
     public function testPropertyVoiceEnabled()
     {
-        $this->IncomingNumberResult->setVoiceEnabled(true);
-        $this->assertTrue($this->IncomingNumberResult->getVoiceEnabled());
+        $this->IncomingNumberResult->setVoiceEnabled(false);
+        $this->assertFalse($this->IncomingNumberResult->getVoiceEnabled());
         $this->assertIsBool($this->IncomingNumberResult->getVoiceEnabled());
     }
     /**
@@ -205,8 +186,8 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertySmsEnabled()
     {
-        $this->IncomingNumberResult->setSmsEnabled(true);
-        $this->assertTrue($this->IncomingNumberResult->getSmsEnabled());
+        $this->IncomingNumberResult->setSmsEnabled(false);
+        $this->assertFalse($this->IncomingNumberResult->getSmsEnabled());
         $this->assertIsBool($this->IncomingNumberResult->getSmsEnabled());
     }
     /**
@@ -214,8 +195,8 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyOffnet()
     {
-        $this->IncomingNumberResult->setOffnet(true);
-        $this->assertTrue($this->IncomingNumberResult->getOffnet());
+        $this->IncomingNumberResult->setOffnet(false);
+        $this->assertFalse($this->IncomingNumberResult->getOffnet());
         $this->assertIsBool($this->IncomingNumberResult->getOffnet());
     }
     /**
@@ -232,25 +213,25 @@ class IncomingNumberResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new IncomingNumberResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $object = new \FreeClimb\Api\Model\Capabilities();
-      $test1->setCapabilities($object);
-      $test1->setCampaignId("TS");
-      $test1->setPhoneNumberId("TS");
-      $test1->setAccountId("TS");
-      $test1->setApplicationId("TS");
-      $test1->setPhoneNumber("TS");
-      $test1->setAlias("TS");
-      $test1->setRegion("TS");
-      $test1->setCountry("TS");
-      $test1->setVoiceEnabled(true);
-      $test1->setSmsEnabled(true);
-      $test1->setOffnet(true);
-      $object = new \FreeClimb\Api\Model\TFN();
-      $test1->setTfn($object);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $object = new \FreeClimb\Api\Model\Capabilities();
+    $test1->setCapabilities($object);
+    $test1->setCampaignId("TS");
+    $test1->setPhoneNumberId("TS");
+    $test1->setAccountId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setAlias("TS");
+    $test1->setRegion("TS");
+    $test1->setCountry("TS");
+    $test1->setVoiceEnabled(true);
+    $test1->setSmsEnabled(true);
+    $test1->setOffnet(true);
+    $object = new \FreeClimb\Api\Model\TFN();
+    $test1->setTfn($object);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -262,25 +243,25 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new IncomingNumberResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $object = new \FreeClimb\Api\Model\Capabilities();
-      $test1->setCapabilities($object);
-      $test1->setCampaignId("TS");
-      $test1->setPhoneNumberId("TS");
-      $test1->setAccountId("TS");
-      $test1->setApplicationId("TS");
-      $test1->setPhoneNumber("TS");
-      $test1->setAlias("TS");
-      $test1->setRegion("TS");
-      $test1->setCountry("TS");
-      $test1->setVoiceEnabled(true);
-      $test1->setSmsEnabled(true);
-      $test1->setOffnet(true);
-      $object = new \FreeClimb\Api\Model\TFN();
-      $test1->setTfn($object);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $object = new \FreeClimb\Api\Model\Capabilities();
+    $test1->setCapabilities($object);
+    $test1->setCampaignId("TS");
+    $test1->setPhoneNumberId("TS");
+    $test1->setAccountId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setPhoneNumber("TS");
+    $test1->setAlias("TS");
+    $test1->setRegion("TS");
+    $test1->setCountry("TS");
+    $test1->setVoiceEnabled(true);
+    $test1->setSmsEnabled(true);
+    $test1->setOffnet(true);
+    $object = new \FreeClimb\Api\Model\TFN();
+    $test1->setTfn($object);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

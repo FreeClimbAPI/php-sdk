@@ -58,11 +58,9 @@ class UpdateConferenceRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
-        $this->UpdateConferenceRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->UpdateConferenceRequest->getAlias());
+        $this->UpdateConferenceRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->UpdateConferenceRequest->getAlias());
         $this->assertIsString($this->UpdateConferenceRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "play_beep"
@@ -94,9 +92,9 @@ class UpdateConferenceRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new UpdateConferenceRequest();    
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -108,9 +106,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new UpdateConferenceRequest();
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setStatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

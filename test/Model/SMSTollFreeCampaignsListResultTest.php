@@ -58,65 +58,81 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->SMSTollFreeCampaignsListResult->setTotal(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getTotal());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getTotal());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setTotal(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getTotal());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->SMSTollFreeCampaignsListResult->setStart(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getStart());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getStart());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setStart(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getStart());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->SMSTollFreeCampaignsListResult->setEnd(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getEnd());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getEnd());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setEnd(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getEnd());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->SMSTollFreeCampaignsListResult->setPage(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getPage());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getPage());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setPage(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getPage());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->SMSTollFreeCampaignsListResult->setNumPages(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getNumPages());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getNumPages());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setNumPages(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getNumPages());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->SMSTollFreeCampaignsListResult->setPageSize(12345);
-        $this->assertEquals(12345, $this->SMSTollFreeCampaignsListResult->getPageSize());
-        $this->assertIsInt($this->SMSTollFreeCampaignsListResult->getPageSize());
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setPageSize(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getPageSize());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->SMSTollFreeCampaignsListResult->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTollFreeCampaignsListResult->getNextPageUri());
+        $this->SMSTollFreeCampaignsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTollFreeCampaignsListResult->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "brands"
@@ -133,15 +149,15 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SMSTollFreeCampaignsListResult();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setBrands($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setBrands($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SMSTollFreeCampaignsListResult();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setBrands($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setBrands($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,28 +58,29 @@ class PlayTest extends TestCase
      */
     public function testPropertyFile()
     {
-        $this->Play->setFile('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Play->getFile());
+        $this->Play->setFile('TS');
+        $this->assertEquals('TS', $this->Play->getFile());
         $this->assertIsString($this->Play->getFile());
-        
-
     }
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        $this->Play->setLoop(12345);
-        $this->assertEquals(12345, $this->Play->getLoop());
-        $this->assertIsInt($this->Play->getLoop());
+        
+        
+        $this->Play->setLoop(1);
+        $this->assertEquals(1, $this->Play->getLoop());
+        $this->assertIsNumeric($this->Play->getLoop());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->Play->setPrivacyMode(true);
-        $this->assertTrue($this->Play->getPrivacyMode());
+        $this->Play->setPrivacyMode(false);
+        $this->assertFalse($this->Play->getPrivacyMode());
         $this->assertIsBool($this->Play->getPrivacyMode());
     }
 
@@ -88,9 +89,9 @@ class PlayTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Play();    
-      $test1->setFile("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setFile("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -102,9 +103,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Play();
-      $test1->setFile("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setFile("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

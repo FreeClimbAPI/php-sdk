@@ -58,65 +58,81 @@ class ConferenceParticipantListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->ConferenceParticipantList->setTotal(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getTotal());
-        $this->assertIsInt($this->ConferenceParticipantList->getTotal());
+        
+        
+        $this->ConferenceParticipantList->setTotal(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getTotal());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->ConferenceParticipantList->setStart(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getStart());
-        $this->assertIsInt($this->ConferenceParticipantList->getStart());
+        
+        
+        $this->ConferenceParticipantList->setStart(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getStart());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->ConferenceParticipantList->setEnd(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getEnd());
-        $this->assertIsInt($this->ConferenceParticipantList->getEnd());
+        
+        
+        $this->ConferenceParticipantList->setEnd(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getEnd());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->ConferenceParticipantList->setPage(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getPage());
-        $this->assertIsInt($this->ConferenceParticipantList->getPage());
+        
+        
+        $this->ConferenceParticipantList->setPage(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getPage());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->ConferenceParticipantList->setNumPages(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getNumPages());
-        $this->assertIsInt($this->ConferenceParticipantList->getNumPages());
+        
+        
+        $this->ConferenceParticipantList->setNumPages(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getNumPages());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->ConferenceParticipantList->setPageSize(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantList->getPageSize());
-        $this->assertIsInt($this->ConferenceParticipantList->getPageSize());
+        
+        
+        $this->ConferenceParticipantList->setPageSize(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getPageSize());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->ConferenceParticipantList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantList->getNextPageUri());
+        $this->ConferenceParticipantList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantList->getNextPageUri());
         $this->assertIsString($this->ConferenceParticipantList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "participants"
@@ -133,15 +149,15 @@ class ConferenceParticipantListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ConferenceParticipantList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setParticipants($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setParticipants($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ConferenceParticipantList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setParticipants($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setParticipants($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

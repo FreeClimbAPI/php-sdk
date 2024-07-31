@@ -58,75 +58,66 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->ConferenceResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getUri());
+        $this->ConferenceResult->setUri('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getUri());
         $this->assertIsString($this->ConferenceResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->ConferenceResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getDateCreated());
+        $this->ConferenceResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getDateCreated());
         $this->assertIsString($this->ConferenceResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->ConferenceResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getDateUpdated());
+        $this->ConferenceResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getDateUpdated());
         $this->assertIsString($this->ConferenceResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->ConferenceResult->setRevision(12345);
-        $this->assertEquals(12345, $this->ConferenceResult->getRevision());
-        $this->assertIsInt($this->ConferenceResult->getRevision());
+        
+        
+        $this->ConferenceResult->setRevision(1);
+        $this->assertEquals(1, $this->ConferenceResult->getRevision());
+        $this->assertIsNumeric($this->ConferenceResult->getRevision());
+        
     }
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        $this->ConferenceResult->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getConferenceId());
+        $this->ConferenceResult->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getConferenceId());
         $this->assertIsString($this->ConferenceResult->getConferenceId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->ConferenceResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getAccountId());
+        $this->ConferenceResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getAccountId());
         $this->assertIsString($this->ConferenceResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->ConferenceResult->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getAlias());
+        $this->ConferenceResult->setAlias('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getAlias());
         $this->assertIsString($this->ConferenceResult->getAlias());
-        
-
     }
     /**
      * Test attribute "play_beep"
@@ -147,8 +138,8 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyRecord()
     {
-        $this->ConferenceResult->setRecord(true);
-        $this->assertTrue($this->ConferenceResult->getRecord());
+        $this->ConferenceResult->setRecord(false);
+        $this->assertFalse($this->ConferenceResult->getRecord());
         $this->assertIsBool($this->ConferenceResult->getRecord());
     }
     /**
@@ -170,33 +161,27 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
-        $this->ConferenceResult->setWaitUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getWaitUrl());
+        $this->ConferenceResult->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getWaitUrl());
         $this->assertIsString($this->ConferenceResult->getWaitUrl());
-        
-
     }
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        $this->ConferenceResult->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getActionUrl());
+        $this->ConferenceResult->setActionUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getActionUrl());
         $this->assertIsString($this->ConferenceResult->getActionUrl());
-        
-
     }
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        $this->ConferenceResult->setStatusCallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResult->getStatusCallbackUrl());
+        $this->ConferenceResult->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResult->getStatusCallbackUrl());
         $this->assertIsString($this->ConferenceResult->getStatusCallbackUrl());
-        
-
     }
     /**
      * Test attribute "subresource_uris"
@@ -212,21 +197,21 @@ class ConferenceResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ConferenceResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setConferenceId("TS");
-      $test1->setAccountId("TS");
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
-      $test1->setWaitUrl("TS");
-      $test1->setActionUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setConferenceId("TS");
+    $test1->setAccountId("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+    $test1->setWaitUrl("TS");
+    $test1->setActionUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -238,21 +223,21 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ConferenceResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setConferenceId("TS");
-      $test1->setAccountId("TS");
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
-      $test1->setWaitUrl("TS");
-      $test1->setActionUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setConferenceId("TS");
+    $test1->setAccountId("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+    $test1->setWaitUrl("TS");
+    $test1->setActionUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

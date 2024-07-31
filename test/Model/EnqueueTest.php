@@ -58,44 +58,36 @@ class EnqueueTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->Enqueue->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Enqueue->getActionUrl());
+        $this->Enqueue->setActionUrl('TS');
+        $this->assertEquals('TS', $this->Enqueue->getActionUrl());
         $this->assertIsString($this->Enqueue->getActionUrl());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->Enqueue->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Enqueue->getNotificationUrl());
+        $this->Enqueue->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->Enqueue->getNotificationUrl());
         $this->assertIsString($this->Enqueue->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        $this->Enqueue->setQueueId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Enqueue->getQueueId());
+        $this->Enqueue->setQueueId('TS');
+        $this->assertEquals('TS', $this->Enqueue->getQueueId());
         $this->assertIsString($this->Enqueue->getQueueId());
-        
-
     }
     /**
      * Test attribute "wait_url"
      */
     public function testPropertyWaitUrl()
     {
-        $this->Enqueue->setWaitUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->Enqueue->getWaitUrl());
+        $this->Enqueue->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->Enqueue->getWaitUrl());
         $this->assertIsString($this->Enqueue->getWaitUrl());
-        
-
     }
 
     /**
@@ -103,20 +95,20 @@ class EnqueueTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Enqueue();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setNotificationUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setQueueId("TS");
-      $test1->setWaitUrl("TS");
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setNotificationUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setQueueId("TS");
+    $test1->setWaitUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -128,20 +120,20 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Enqueue();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setNotificationUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setQueueId("TS");
-      $test1->setWaitUrl("TS");
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setNotificationUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setQueueId("TS");
+    $test1->setWaitUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

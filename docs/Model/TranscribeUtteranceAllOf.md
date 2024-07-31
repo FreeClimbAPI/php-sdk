@@ -1,4 +1,4 @@
-# # TranscribeUtterance
+# # TranscribeUtteranceAllOf
 
 ## Properties
 

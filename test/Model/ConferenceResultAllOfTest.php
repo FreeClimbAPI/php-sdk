@@ -58,33 +58,27 @@ class ConferenceResultAllOfTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
-        $this->ConferenceResultAllOf->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getConferenceId());
+        $this->ConferenceResultAllOf->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getConferenceId());
         $this->assertIsString($this->ConferenceResultAllOf->getConferenceId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->ConferenceResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getAccountId());
+        $this->ConferenceResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getAccountId());
         $this->assertIsString($this->ConferenceResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->ConferenceResultAllOf->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getAlias());
+        $this->ConferenceResultAllOf->setAlias('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getAlias());
         $this->assertIsString($this->ConferenceResultAllOf->getAlias());
-        
-
     }
     /**
      * Test attribute "play_beep"
@@ -105,8 +99,8 @@ class ConferenceResultAllOfTest extends TestCase
      */
     public function testPropertyRecord()
     {
-        $this->ConferenceResultAllOf->setRecord(true);
-        $this->assertTrue($this->ConferenceResultAllOf->getRecord());
+        $this->ConferenceResultAllOf->setRecord(false);
+        $this->assertFalse($this->ConferenceResultAllOf->getRecord());
         $this->assertIsBool($this->ConferenceResultAllOf->getRecord());
     }
     /**
@@ -128,33 +122,27 @@ class ConferenceResultAllOfTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
-        $this->ConferenceResultAllOf->setWaitUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getWaitUrl());
+        $this->ConferenceResultAllOf->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getWaitUrl());
         $this->assertIsString($this->ConferenceResultAllOf->getWaitUrl());
-        
-
     }
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        $this->ConferenceResultAllOf->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getActionUrl());
+        $this->ConferenceResultAllOf->setActionUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getActionUrl());
         $this->assertIsString($this->ConferenceResultAllOf->getActionUrl());
-        
-
     }
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        $this->ConferenceResultAllOf->setStatusCallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceResultAllOf->getStatusCallbackUrl());
+        $this->ConferenceResultAllOf->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceResultAllOf->getStatusCallbackUrl());
         $this->assertIsString($this->ConferenceResultAllOf->getStatusCallbackUrl());
-        
-
     }
     /**
      * Test attribute "subresource_uris"
@@ -170,17 +158,17 @@ class ConferenceResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ConferenceResultAllOf();    
-      $test1->setConferenceId("TS");
-      $test1->setAccountId("TS");
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
-      $test1->setWaitUrl("TS");
-      $test1->setActionUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setConferenceId("TS");
+    $test1->setAccountId("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+    $test1->setWaitUrl("TS");
+    $test1->setActionUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -192,17 +180,17 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ConferenceResultAllOf();
-      $test1->setConferenceId("TS");
-      $test1->setAccountId("TS");
-      $test1->setAlias("TS");
-      $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
-      $test1->setRecord(true);
-      $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
-      $test1->setWaitUrl("TS");
-      $test1->setActionUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setConferenceId("TS");
+    $test1->setAccountId("TS");
+    $test1->setAlias("TS");
+    $test1->setPlayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+    $test1->setRecord(true);
+    $test1->setStatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+    $test1->setWaitUrl("TS");
+    $test1->setActionUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,41 +58,35 @@ class ConferenceParticipantResultAllOfTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->ConferenceParticipantResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResultAllOf->getAccountId());
+        $this->ConferenceParticipantResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResultAllOf->getAccountId());
         $this->assertIsString($this->ConferenceParticipantResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        $this->ConferenceParticipantResultAllOf->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResultAllOf->getConferenceId());
+        $this->ConferenceParticipantResultAllOf->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResultAllOf->getConferenceId());
         $this->assertIsString($this->ConferenceParticipantResultAllOf->getConferenceId());
-        
-
     }
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        $this->ConferenceParticipantResultAllOf->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResultAllOf->getCallId());
+        $this->ConferenceParticipantResultAllOf->setCallId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResultAllOf->getCallId());
         $this->assertIsString($this->ConferenceParticipantResultAllOf->getCallId());
-        
-
     }
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        $this->ConferenceParticipantResultAllOf->setTalk(true);
-        $this->assertTrue($this->ConferenceParticipantResultAllOf->getTalk());
+        $this->ConferenceParticipantResultAllOf->setTalk(false);
+        $this->assertFalse($this->ConferenceParticipantResultAllOf->getTalk());
         $this->assertIsBool($this->ConferenceParticipantResultAllOf->getTalk());
     }
     /**
@@ -100,8 +94,8 @@ class ConferenceParticipantResultAllOfTest extends TestCase
      */
     public function testPropertyListen()
     {
-        $this->ConferenceParticipantResultAllOf->setListen(true);
-        $this->assertTrue($this->ConferenceParticipantResultAllOf->getListen());
+        $this->ConferenceParticipantResultAllOf->setListen(false);
+        $this->assertFalse($this->ConferenceParticipantResultAllOf->getListen());
         $this->assertIsBool($this->ConferenceParticipantResultAllOf->getListen());
     }
     /**
@@ -109,8 +103,8 @@ class ConferenceParticipantResultAllOfTest extends TestCase
      */
     public function testPropertyStartConfOnEnter()
     {
-        $this->ConferenceParticipantResultAllOf->setStartConfOnEnter(true);
-        $this->assertTrue($this->ConferenceParticipantResultAllOf->getStartConfOnEnter());
+        $this->ConferenceParticipantResultAllOf->setStartConfOnEnter(false);
+        $this->assertFalse($this->ConferenceParticipantResultAllOf->getStartConfOnEnter());
         $this->assertIsBool($this->ConferenceParticipantResultAllOf->getStartConfOnEnter());
     }
 
@@ -119,12 +113,12 @@ class ConferenceParticipantResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ConferenceParticipantResultAllOf();    
-      $test1->setAccountId("TS");
-      $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
-      $test1->setTalk(true);
-      $test1->setListen(true);
-      $test1->setStartConfOnEnter(true);
+    $test1->setAccountId("TS");
+    $test1->setConferenceId("TS");
+    $test1->setCallId("TS");
+    $test1->setTalk(true);
+    $test1->setListen(true);
+    $test1->setStartConfOnEnter(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -136,12 +130,12 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ConferenceParticipantResultAllOf();
-      $test1->setAccountId("TS");
-      $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
-      $test1->setTalk(true);
-      $test1->setListen(true);
-      $test1->setStartConfOnEnter(true);
+    $test1->setAccountId("TS");
+    $test1->setConferenceId("TS");
+    $test1->setCallId("TS");
+    $test1->setTalk(true);
+    $test1->setListen(true);
+    $test1->setStartConfOnEnter(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

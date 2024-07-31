@@ -58,28 +58,29 @@ class SendDigitsTest extends TestCase
      */
     public function testPropertyDigits()
     {
-        $this->SendDigits->setDigits('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SendDigits->getDigits());
+        $this->SendDigits->setDigits('TS');
+        $this->assertEquals('TS', $this->SendDigits->getDigits());
         $this->assertIsString($this->SendDigits->getDigits());
-        
-
     }
     /**
      * Test attribute "pause_ms"
      */
     public function testPropertyPauseMs()
     {
-        $this->SendDigits->setPauseMs(12345);
-        $this->assertEquals(12345, $this->SendDigits->getPauseMs());
-        $this->assertIsInt($this->SendDigits->getPauseMs());
+        
+        
+        $this->SendDigits->setPauseMs(1);
+        $this->assertEquals(1, $this->SendDigits->getPauseMs());
+        $this->assertIsNumeric($this->SendDigits->getPauseMs());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->SendDigits->setPrivacyMode(true);
-        $this->assertTrue($this->SendDigits->getPrivacyMode());
+        $this->SendDigits->setPrivacyMode(false);
+        $this->assertFalse($this->SendDigits->getPrivacyMode());
         $this->assertIsBool($this->SendDigits->getPrivacyMode());
     }
 
@@ -88,9 +89,9 @@ class SendDigitsTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SendDigits();    
-      $test1->setDigits("TS");
-      $test1->setPauseMs(1);
-      $test1->setPrivacyMode(true);
+    $test1->setDigits("TS");
+    $test1->setPauseMs(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -102,9 +103,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SendDigits();
-      $test1->setDigits("TS");
-      $test1->setPauseMs(1);
-      $test1->setPrivacyMode(true);
+    $test1->setDigits("TS");
+    $test1->setPauseMs(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

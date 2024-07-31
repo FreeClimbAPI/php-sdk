@@ -58,99 +58,81 @@ class ApplicationResultAllOfTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->ApplicationResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getAccountId());
+        $this->ApplicationResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getAccountId());
         $this->assertIsString($this->ApplicationResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        $this->ApplicationResultAllOf->setApplicationId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getApplicationId());
+        $this->ApplicationResultAllOf->setApplicationId('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getApplicationId());
         $this->assertIsString($this->ApplicationResultAllOf->getApplicationId());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->ApplicationResultAllOf->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getAlias());
+        $this->ApplicationResultAllOf->setAlias('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getAlias());
         $this->assertIsString($this->ApplicationResultAllOf->getAlias());
-        
-
     }
     /**
      * Test attribute "voice_url"
      */
     public function testPropertyVoiceUrl()
     {
-        $this->ApplicationResultAllOf->setVoiceUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getVoiceUrl());
+        $this->ApplicationResultAllOf->setVoiceUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getVoiceUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getVoiceUrl());
-        
-
     }
     /**
      * Test attribute "voice_fallback_url"
      */
     public function testPropertyVoiceFallbackUrl()
     {
-        $this->ApplicationResultAllOf->setVoiceFallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getVoiceFallbackUrl());
+        $this->ApplicationResultAllOf->setVoiceFallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getVoiceFallbackUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getVoiceFallbackUrl());
-        
-
     }
     /**
      * Test attribute "call_connect_url"
      */
     public function testPropertyCallConnectUrl()
     {
-        $this->ApplicationResultAllOf->setCallConnectUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getCallConnectUrl());
+        $this->ApplicationResultAllOf->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getCallConnectUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getCallConnectUrl());
-        
-
     }
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        $this->ApplicationResultAllOf->setStatusCallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getStatusCallbackUrl());
+        $this->ApplicationResultAllOf->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getStatusCallbackUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getStatusCallbackUrl());
-        
-
     }
     /**
      * Test attribute "sms_url"
      */
     public function testPropertySmsUrl()
     {
-        $this->ApplicationResultAllOf->setSmsUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getSmsUrl());
+        $this->ApplicationResultAllOf->setSmsUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getSmsUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getSmsUrl());
-        
-
     }
     /**
      * Test attribute "sms_fallback_url"
      */
     public function testPropertySmsFallbackUrl()
     {
-        $this->ApplicationResultAllOf->setSmsFallbackUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationResultAllOf->getSmsFallbackUrl());
+        $this->ApplicationResultAllOf->setSmsFallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationResultAllOf->getSmsFallbackUrl());
         $this->assertIsString($this->ApplicationResultAllOf->getSmsFallbackUrl());
-        
-
     }
 
     /**
@@ -158,15 +140,15 @@ class ApplicationResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ApplicationResultAllOf();    
-      $test1->setAccountId("TS");
-      $test1->setApplicationId("TS");
-      $test1->setAlias("TS");
-      $test1->setVoiceUrl("TS");
-      $test1->setVoiceFallbackUrl("TS");
-      $test1->setCallConnectUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $test1->setSmsUrl("TS");
-      $test1->setSmsFallbackUrl("TS");
+    $test1->setAccountId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setAlias("TS");
+    $test1->setVoiceUrl("TS");
+    $test1->setVoiceFallbackUrl("TS");
+    $test1->setCallConnectUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $test1->setSmsUrl("TS");
+    $test1->setSmsFallbackUrl("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -178,15 +160,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ApplicationResultAllOf();
-      $test1->setAccountId("TS");
-      $test1->setApplicationId("TS");
-      $test1->setAlias("TS");
-      $test1->setVoiceUrl("TS");
-      $test1->setVoiceFallbackUrl("TS");
-      $test1->setCallConnectUrl("TS");
-      $test1->setStatusCallbackUrl("TS");
-      $test1->setSmsUrl("TS");
-      $test1->setSmsFallbackUrl("TS");
+    $test1->setAccountId("TS");
+    $test1->setApplicationId("TS");
+    $test1->setAlias("TS");
+    $test1->setVoiceUrl("TS");
+    $test1->setVoiceFallbackUrl("TS");
+    $test1->setCallConnectUrl("TS");
+    $test1->setStatusCallbackUrl("TS");
+    $test1->setSmsUrl("TS");
+    $test1->setSmsFallbackUrl("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,83 +58,74 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->ConferenceParticipantResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getUri());
+        $this->ConferenceParticipantResult->setUri('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getUri());
         $this->assertIsString($this->ConferenceParticipantResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->ConferenceParticipantResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getDateCreated());
+        $this->ConferenceParticipantResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateCreated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->ConferenceParticipantResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getDateUpdated());
+        $this->ConferenceParticipantResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateUpdated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->ConferenceParticipantResult->setRevision(12345);
-        $this->assertEquals(12345, $this->ConferenceParticipantResult->getRevision());
-        $this->assertIsInt($this->ConferenceParticipantResult->getRevision());
+        
+        
+        $this->ConferenceParticipantResult->setRevision(1);
+        $this->assertEquals(1, $this->ConferenceParticipantResult->getRevision());
+        $this->assertIsNumeric($this->ConferenceParticipantResult->getRevision());
+        
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->ConferenceParticipantResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getAccountId());
+        $this->ConferenceParticipantResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getAccountId());
         $this->assertIsString($this->ConferenceParticipantResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        $this->ConferenceParticipantResult->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getConferenceId());
+        $this->ConferenceParticipantResult->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getConferenceId());
         $this->assertIsString($this->ConferenceParticipantResult->getConferenceId());
-        
-
     }
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        $this->ConferenceParticipantResult->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ConferenceParticipantResult->getCallId());
+        $this->ConferenceParticipantResult->setCallId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getCallId());
         $this->assertIsString($this->ConferenceParticipantResult->getCallId());
-        
-
     }
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        $this->ConferenceParticipantResult->setTalk(true);
-        $this->assertTrue($this->ConferenceParticipantResult->getTalk());
+        $this->ConferenceParticipantResult->setTalk(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getTalk());
         $this->assertIsBool($this->ConferenceParticipantResult->getTalk());
     }
     /**
@@ -142,8 +133,8 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyListen()
     {
-        $this->ConferenceParticipantResult->setListen(true);
-        $this->assertTrue($this->ConferenceParticipantResult->getListen());
+        $this->ConferenceParticipantResult->setListen(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getListen());
         $this->assertIsBool($this->ConferenceParticipantResult->getListen());
     }
     /**
@@ -151,8 +142,8 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyStartConfOnEnter()
     {
-        $this->ConferenceParticipantResult->setStartConfOnEnter(true);
-        $this->assertTrue($this->ConferenceParticipantResult->getStartConfOnEnter());
+        $this->ConferenceParticipantResult->setStartConfOnEnter(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getStartConfOnEnter());
         $this->assertIsBool($this->ConferenceParticipantResult->getStartConfOnEnter());
     }
 
@@ -161,16 +152,16 @@ class ConferenceParticipantResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ConferenceParticipantResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
-      $test1->setTalk(true);
-      $test1->setListen(true);
-      $test1->setStartConfOnEnter(true);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setConferenceId("TS");
+    $test1->setCallId("TS");
+    $test1->setTalk(true);
+    $test1->setListen(true);
+    $test1->setStartConfOnEnter(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -182,16 +173,16 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ConferenceParticipantResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setConferenceId("TS");
-      $test1->setCallId("TS");
-      $test1->setTalk(true);
-      $test1->setListen(true);
-      $test1->setStartConfOnEnter(true);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setConferenceId("TS");
+    $test1->setCallId("TS");
+    $test1->setTalk(true);
+    $test1->setListen(true);
+    $test1->setStartConfOnEnter(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

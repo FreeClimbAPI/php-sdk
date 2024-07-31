@@ -58,99 +58,81 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getAccountId());
+        $this->SMSTenDLCPartnerCampaignBrand->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getAccountId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getAccountId());
-        
-
     }
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getBrandId());
+        $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getBrandId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId());
-        
-
     }
     /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setFirstName('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getFirstName());
+        $this->SMSTenDLCPartnerCampaignBrand->setFirstName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getFirstName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getFirstName());
-        
-
     }
     /**
      * Test attribute "last_name"
      */
     public function testPropertyLastName()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setLastName('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getLastName());
+        $this->SMSTenDLCPartnerCampaignBrand->setLastName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getLastName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getLastName());
-        
-
     }
     /**
      * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setDisplayName('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
+        $this->SMSTenDLCPartnerCampaignBrand->setDisplayName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
-        
-
     }
     /**
      * Test attribute "company_name"
      */
     public function testPropertyCompanyName()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setCompanyName('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
+        $this->SMSTenDLCPartnerCampaignBrand->setCompanyName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
-        
-
     }
     /**
      * Test attribute "phone"
      */
     public function testPropertyPhone()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setPhone('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getPhone());
+        $this->SMSTenDLCPartnerCampaignBrand->setPhone('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getPhone());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getPhone());
-        
-
     }
     /**
      * Test attribute "email"
      */
     public function testPropertyEmail()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setEmail('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getEmail());
+        $this->SMSTenDLCPartnerCampaignBrand->setEmail('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getEmail());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getEmail());
-        
-
     }
     /**
      * Test attribute "website"
      */
     public function testPropertyWebsite()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setWebsite('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCPartnerCampaignBrand->getWebsite());
+        $this->SMSTenDLCPartnerCampaignBrand->setWebsite('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getWebsite());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getWebsite());
-        
-
     }
     /**
      * Test attribute "optional_attributes"
@@ -165,9 +147,12 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyEvpVettingScore()
     {
-        $this->SMSTenDLCPartnerCampaignBrand->setEvpVettingScore(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCPartnerCampaignBrand->getEvpVettingScore());
-        $this->assertIsInt($this->SMSTenDLCPartnerCampaignBrand->getEvpVettingScore());
+        
+        
+        $this->SMSTenDLCPartnerCampaignBrand->setEvpVettingScore(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignBrand->getEvpVettingScore());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignBrand->getEvpVettingScore());
+        
     }
 
     /**
@@ -175,18 +160,18 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SMSTenDLCPartnerCampaignBrand();    
-      $test1->setAccountId("TS");
-      $test1->setBrandId("TS");
-      $test1->setFirstName("TS");
-      $test1->setLastName("TS");
-      $test1->setDisplayName("TS");
-      $test1->setCompanyName("TS");
-      $test1->setPhone("TS");
-      $test1->setEmail("TS");
-      $test1->setWebsite("TS");
-      $testMap = [];
-      $test1->setOptionalAttributes($testMap);
-      $test1->setEvpVettingScore(1);
+    $test1->setAccountId("TS");
+    $test1->setBrandId("TS");
+    $test1->setFirstName("TS");
+    $test1->setLastName("TS");
+    $test1->setDisplayName("TS");
+    $test1->setCompanyName("TS");
+    $test1->setPhone("TS");
+    $test1->setEmail("TS");
+    $test1->setWebsite("TS");
+    $testMap = [];
+    $test1->setOptionalAttributes($testMap);
+    $test1->setEvpVettingScore(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -198,18 +183,18 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SMSTenDLCPartnerCampaignBrand();
-      $test1->setAccountId("TS");
-      $test1->setBrandId("TS");
-      $test1->setFirstName("TS");
-      $test1->setLastName("TS");
-      $test1->setDisplayName("TS");
-      $test1->setCompanyName("TS");
-      $test1->setPhone("TS");
-      $test1->setEmail("TS");
-      $test1->setWebsite("TS");
-      $testMap = [];
-      $test1->setOptionalAttributes($testMap);
-      $test1->setEvpVettingScore(1);
+    $test1->setAccountId("TS");
+    $test1->setBrandId("TS");
+    $test1->setFirstName("TS");
+    $test1->setLastName("TS");
+    $test1->setDisplayName("TS");
+    $test1->setCompanyName("TS");
+    $test1->setPhone("TS");
+    $test1->setEmail("TS");
+    $test1->setWebsite("TS");
+    $testMap = [];
+    $test1->setOptionalAttributes($testMap);
+    $test1->setEvpVettingScore(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

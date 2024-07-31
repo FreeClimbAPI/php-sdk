@@ -54,26 +54,4 @@ class TerminateConferenceTest extends TestCase
         $this->TerminateConference = new TerminateConference();
     }
 
-    /**
-* Test method toStringTest
-*/
-public function toStringTest() {
-    $test1 = new TerminateConference();    
-
-    $toString1 = $test1->__toString();
-    assert(is_string($toString1));
-}
-
-/**
- * Test method toHeaderValue
- */
-public function toHeaderValueTest()
-{
-    $test1 = new TerminateConference();
-
-    $toHeaderValue1 = $test1->toHeaderValue();
-    assert(is_string($toHeaderValue1));
-}
-
-
 }

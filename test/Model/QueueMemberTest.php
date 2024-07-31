@@ -58,51 +58,51 @@ class QueueMemberTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->QueueMember->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueMember->getUri());
+        $this->QueueMember->setUri('TS');
+        $this->assertEquals('TS', $this->QueueMember->getUri());
         $this->assertIsString($this->QueueMember->getUri());
-        
-
     }
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        $this->QueueMember->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueMember->getCallId());
+        $this->QueueMember->setCallId('TS');
+        $this->assertEquals('TS', $this->QueueMember->getCallId());
         $this->assertIsString($this->QueueMember->getCallId());
-        
-
     }
     /**
      * Test attribute "wait_time"
      */
     public function testPropertyWaitTime()
     {
-        $this->QueueMember->setWaitTime(12345);
-        $this->assertEquals(12345, $this->QueueMember->getWaitTime());
-        $this->assertIsInt($this->QueueMember->getWaitTime());
+        
+        
+        $this->QueueMember->setWaitTime(1);
+        $this->assertEquals(1, $this->QueueMember->getWaitTime());
+        $this->assertIsNumeric($this->QueueMember->getWaitTime());
+        
     }
     /**
      * Test attribute "position"
      */
     public function testPropertyPosition()
     {
-        $this->QueueMember->setPosition(12345);
-        $this->assertEquals(12345, $this->QueueMember->getPosition());
-        $this->assertIsInt($this->QueueMember->getPosition());
+        
+        
+        $this->QueueMember->setPosition(1);
+        $this->assertEquals(1, $this->QueueMember->getPosition());
+        $this->assertIsNumeric($this->QueueMember->getPosition());
+        
     }
     /**
      * Test attribute "date_enqueued"
      */
     public function testPropertyDateEnqueued()
     {
-        $this->QueueMember->setDateEnqueued('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueMember->getDateEnqueued());
+        $this->QueueMember->setDateEnqueued('TS');
+        $this->assertEquals('TS', $this->QueueMember->getDateEnqueued());
         $this->assertIsString($this->QueueMember->getDateEnqueued());
-        
-
     }
 
     /**
@@ -110,11 +110,11 @@ class QueueMemberTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new QueueMember();    
-      $test1->setUri("TS");
-      $test1->setCallId("TS");
-      $test1->setWaitTime(1);
-      $test1->setPosition(1);
-      $test1->setDateEnqueued("TS");
+    $test1->setUri("TS");
+    $test1->setCallId("TS");
+    $test1->setWaitTime(1);
+    $test1->setPosition(1);
+    $test1->setDateEnqueued("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -126,11 +126,11 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new QueueMember();
-      $test1->setUri("TS");
-      $test1->setCallId("TS");
-      $test1->setWaitTime(1);
-      $test1->setPosition(1);
-      $test1->setDateEnqueued("TS");
+    $test1->setUri("TS");
+    $test1->setCallId("TS");
+    $test1->setWaitTime(1);
+    $test1->setPosition(1);
+    $test1->setDateEnqueued("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

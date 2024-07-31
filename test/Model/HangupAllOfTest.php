@@ -58,11 +58,9 @@ class HangupAllOfTest extends TestCase
      */
     public function testPropertyReason()
     {
-        $this->HangupAllOf->setReason('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->HangupAllOf->getReason());
+        $this->HangupAllOf->setReason('TS');
+        $this->assertEquals('TS', $this->HangupAllOf->getReason());
         $this->assertIsString($this->HangupAllOf->getReason());
-        
-
     }
 
     /**
@@ -70,7 +68,7 @@ class HangupAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new HangupAllOf();    
-      $test1->setReason("TS");
+    $test1->setReason("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -82,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new HangupAllOf();
-      $test1->setReason("TS");
+    $test1->setReason("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

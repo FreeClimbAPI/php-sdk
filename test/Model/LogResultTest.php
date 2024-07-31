@@ -58,9 +58,12 @@ class LogResultTest extends TestCase
      */
     public function testPropertyTimestamp()
     {
-        $this->LogResult->setTimestamp(12345);
-        $this->assertEquals(12345, $this->LogResult->getTimestamp());
-        $this->assertIsInt($this->LogResult->getTimestamp());
+        
+        
+        $this->LogResult->setTimestamp(1);
+        $this->assertEquals(1, $this->LogResult->getTimestamp());
+        $this->assertIsNumeric($this->LogResult->getTimestamp());
+        
     }
     /**
      * Test attribute "level"
@@ -79,44 +82,36 @@ class LogResultTest extends TestCase
      */
     public function testPropertyRequestId()
     {
-        $this->LogResult->setRequestId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->LogResult->getRequestId());
+        $this->LogResult->setRequestId('TS');
+        $this->assertEquals('TS', $this->LogResult->getRequestId());
         $this->assertIsString($this->LogResult->getRequestId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->LogResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->LogResult->getAccountId());
+        $this->LogResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->LogResult->getAccountId());
         $this->assertIsString($this->LogResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        $this->LogResult->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->LogResult->getCallId());
+        $this->LogResult->setCallId('TS');
+        $this->assertEquals('TS', $this->LogResult->getCallId());
         $this->assertIsString($this->LogResult->getCallId());
-        
-
     }
     /**
      * Test attribute "message"
      */
     public function testPropertyMessage()
     {
-        $this->LogResult->setMessage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->LogResult->getMessage());
+        $this->LogResult->setMessage('TS');
+        $this->assertEquals('TS', $this->LogResult->getMessage());
         $this->assertIsString($this->LogResult->getMessage());
-        
-
     }
     /**
      * Test attribute "metadata"
@@ -132,14 +127,14 @@ class LogResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new LogResult();    
-      $test1->setTimestamp(1);
-      $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
-      $test1->setRequestId("TS");
-      $test1->setAccountId("TS");
-      $test1->setCallId("TS");
-      $test1->setMessage("TS");
-      $testObject = new stdClass(); 
-      $test1->setMetadata($testObject);
+    $test1->setTimestamp(1);
+    $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
+    $test1->setRequestId("TS");
+    $test1->setAccountId("TS");
+    $test1->setCallId("TS");
+    $test1->setMessage("TS");
+    $testObject = new stdClass(); 
+    $test1->setMetadata($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -151,14 +146,14 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new LogResult();
-      $test1->setTimestamp(1);
-      $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
-      $test1->setRequestId("TS");
-      $test1->setAccountId("TS");
-      $test1->setCallId("TS");
-      $test1->setMessage("TS");
-      $testObject = new stdClass();
-      $test1->setMetadata($testObject);
+    $test1->setTimestamp(1);
+    $test1->setLevel(\FreeClimb\Api\Model\LogLevel::INFO);
+    $test1->setRequestId("TS");
+    $test1->setAccountId("TS");
+    $test1->setCallId("TS");
+    $test1->setMessage("TS");
+    $testObject = new stdClass();
+    $test1->setMetadata($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

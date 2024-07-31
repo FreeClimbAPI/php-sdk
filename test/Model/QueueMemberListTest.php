@@ -58,65 +58,81 @@ class QueueMemberListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->QueueMemberList->setTotal(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getTotal());
-        $this->assertIsInt($this->QueueMemberList->getTotal());
+        
+        
+        $this->QueueMemberList->setTotal(1);
+        $this->assertEquals(1, $this->QueueMemberList->getTotal());
+        $this->assertIsNumeric($this->QueueMemberList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->QueueMemberList->setStart(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getStart());
-        $this->assertIsInt($this->QueueMemberList->getStart());
+        
+        
+        $this->QueueMemberList->setStart(1);
+        $this->assertEquals(1, $this->QueueMemberList->getStart());
+        $this->assertIsNumeric($this->QueueMemberList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->QueueMemberList->setEnd(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getEnd());
-        $this->assertIsInt($this->QueueMemberList->getEnd());
+        
+        
+        $this->QueueMemberList->setEnd(1);
+        $this->assertEquals(1, $this->QueueMemberList->getEnd());
+        $this->assertIsNumeric($this->QueueMemberList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->QueueMemberList->setPage(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getPage());
-        $this->assertIsInt($this->QueueMemberList->getPage());
+        
+        
+        $this->QueueMemberList->setPage(1);
+        $this->assertEquals(1, $this->QueueMemberList->getPage());
+        $this->assertIsNumeric($this->QueueMemberList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->QueueMemberList->setNumPages(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getNumPages());
-        $this->assertIsInt($this->QueueMemberList->getNumPages());
+        
+        
+        $this->QueueMemberList->setNumPages(1);
+        $this->assertEquals(1, $this->QueueMemberList->getNumPages());
+        $this->assertIsNumeric($this->QueueMemberList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->QueueMemberList->setPageSize(12345);
-        $this->assertEquals(12345, $this->QueueMemberList->getPageSize());
-        $this->assertIsInt($this->QueueMemberList->getPageSize());
+        
+        
+        $this->QueueMemberList->setPageSize(1);
+        $this->assertEquals(1, $this->QueueMemberList->getPageSize());
+        $this->assertIsNumeric($this->QueueMemberList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->QueueMemberList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueMemberList->getNextPageUri());
+        $this->QueueMemberList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->QueueMemberList->getNextPageUri());
         $this->assertIsString($this->QueueMemberList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "queue_members"
@@ -133,15 +149,15 @@ class QueueMemberListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new QueueMemberList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setQueueMembers($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setQueueMembers($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new QueueMemberList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setQueueMembers($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setQueueMembers($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

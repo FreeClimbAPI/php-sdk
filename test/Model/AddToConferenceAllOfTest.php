@@ -58,8 +58,8 @@ class AddToConferenceAllOfTest extends TestCase
      */
     public function testPropertyAllowCallControl()
     {
-        $this->AddToConferenceAllOf->setAllowCallControl(true);
-        $this->assertTrue($this->AddToConferenceAllOf->getAllowCallControl());
+        $this->AddToConferenceAllOf->setAllowCallControl(false);
+        $this->assertFalse($this->AddToConferenceAllOf->getAllowCallControl());
         $this->assertIsBool($this->AddToConferenceAllOf->getAllowCallControl());
     }
     /**
@@ -67,52 +67,44 @@ class AddToConferenceAllOfTest extends TestCase
      */
     public function testPropertyCallControlSequence()
     {
-        $this->AddToConferenceAllOf->setCallControlSequence('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConferenceAllOf->getCallControlSequence());
+        $this->AddToConferenceAllOf->setCallControlSequence('TS');
+        $this->assertEquals('TS', $this->AddToConferenceAllOf->getCallControlSequence());
         $this->assertIsString($this->AddToConferenceAllOf->getCallControlSequence());
-        
-
     }
     /**
      * Test attribute "call_control_url"
      */
     public function testPropertyCallControlUrl()
     {
-        $this->AddToConferenceAllOf->setCallControlUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConferenceAllOf->getCallControlUrl());
+        $this->AddToConferenceAllOf->setCallControlUrl('TS');
+        $this->assertEquals('TS', $this->AddToConferenceAllOf->getCallControlUrl());
         $this->assertIsString($this->AddToConferenceAllOf->getCallControlUrl());
-        
-
     }
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        $this->AddToConferenceAllOf->setConferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConferenceAllOf->getConferenceId());
+        $this->AddToConferenceAllOf->setConferenceId('TS');
+        $this->assertEquals('TS', $this->AddToConferenceAllOf->getConferenceId());
         $this->assertIsString($this->AddToConferenceAllOf->getConferenceId());
-        
-
     }
     /**
      * Test attribute "leave_conference_url"
      */
     public function testPropertyLeaveConferenceUrl()
     {
-        $this->AddToConferenceAllOf->setLeaveConferenceUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConferenceAllOf->getLeaveConferenceUrl());
+        $this->AddToConferenceAllOf->setLeaveConferenceUrl('TS');
+        $this->assertEquals('TS', $this->AddToConferenceAllOf->getLeaveConferenceUrl());
         $this->assertIsString($this->AddToConferenceAllOf->getLeaveConferenceUrl());
-        
-
     }
     /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
     {
-        $this->AddToConferenceAllOf->setListen(true);
-        $this->assertTrue($this->AddToConferenceAllOf->getListen());
+        $this->AddToConferenceAllOf->setListen(false);
+        $this->assertFalse($this->AddToConferenceAllOf->getListen());
         $this->assertIsBool($this->AddToConferenceAllOf->getListen());
     }
     /**
@@ -120,19 +112,17 @@ class AddToConferenceAllOfTest extends TestCase
      */
     public function testPropertyNotificationUrl()
     {
-        $this->AddToConferenceAllOf->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AddToConferenceAllOf->getNotificationUrl());
+        $this->AddToConferenceAllOf->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->AddToConferenceAllOf->getNotificationUrl());
         $this->assertIsString($this->AddToConferenceAllOf->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "start_conf_on_enter"
      */
     public function testPropertyStartConfOnEnter()
     {
-        $this->AddToConferenceAllOf->setStartConfOnEnter(true);
-        $this->assertTrue($this->AddToConferenceAllOf->getStartConfOnEnter());
+        $this->AddToConferenceAllOf->setStartConfOnEnter(false);
+        $this->assertFalse($this->AddToConferenceAllOf->getStartConfOnEnter());
         $this->assertIsBool($this->AddToConferenceAllOf->getStartConfOnEnter());
     }
     /**
@@ -140,8 +130,8 @@ class AddToConferenceAllOfTest extends TestCase
      */
     public function testPropertyTalk()
     {
-        $this->AddToConferenceAllOf->setTalk(true);
-        $this->assertTrue($this->AddToConferenceAllOf->getTalk());
+        $this->AddToConferenceAllOf->setTalk(false);
+        $this->assertFalse($this->AddToConferenceAllOf->getTalk());
         $this->assertIsBool($this->AddToConferenceAllOf->getTalk());
     }
 
@@ -150,15 +140,15 @@ class AddToConferenceAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AddToConferenceAllOf();    
-      $test1->setAllowCallControl(true);
-      $test1->setCallControlSequence("TS");
-      $test1->setCallControlUrl("TS");
-      $test1->setConferenceId("TS");
-      $test1->setLeaveConferenceUrl("TS");
-      $test1->setListen(true);
-      $test1->setNotificationUrl("TS");
-      $test1->setStartConfOnEnter(true);
-      $test1->setTalk(true);
+    $test1->setAllowCallControl(true);
+    $test1->setCallControlSequence("TS");
+    $test1->setCallControlUrl("TS");
+    $test1->setConferenceId("TS");
+    $test1->setLeaveConferenceUrl("TS");
+    $test1->setListen(true);
+    $test1->setNotificationUrl("TS");
+    $test1->setStartConfOnEnter(true);
+    $test1->setTalk(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -170,15 +160,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AddToConferenceAllOf();
-      $test1->setAllowCallControl(true);
-      $test1->setCallControlSequence("TS");
-      $test1->setCallControlUrl("TS");
-      $test1->setConferenceId("TS");
-      $test1->setLeaveConferenceUrl("TS");
-      $test1->setListen(true);
-      $test1->setNotificationUrl("TS");
-      $test1->setStartConfOnEnter(true);
-      $test1->setTalk(true);
+    $test1->setAllowCallControl(true);
+    $test1->setCallControlSequence("TS");
+    $test1->setCallControlUrl("TS");
+    $test1->setConferenceId("TS");
+    $test1->setLeaveConferenceUrl("TS");
+    $test1->setListen(true);
+    $test1->setNotificationUrl("TS");
+    $test1->setStartConfOnEnter(true);
+    $test1->setTalk(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

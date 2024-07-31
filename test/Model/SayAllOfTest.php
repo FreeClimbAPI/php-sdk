@@ -58,39 +58,38 @@ class SayAllOfTest extends TestCase
      */
     public function testPropertyText()
     {
-        $this->SayAllOf->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SayAllOf->getText());
+        $this->SayAllOf->setText('TS');
+        $this->assertEquals('TS', $this->SayAllOf->getText());
         $this->assertIsString($this->SayAllOf->getText());
-        
-
     }
     /**
      * Test attribute "language"
      */
     public function testPropertyLanguage()
     {
-        $this->SayAllOf->setLanguage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SayAllOf->getLanguage());
+        $this->SayAllOf->setLanguage('TS');
+        $this->assertEquals('TS', $this->SayAllOf->getLanguage());
         $this->assertIsString($this->SayAllOf->getLanguage());
-        
-
     }
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        $this->SayAllOf->setLoop(12345);
-        $this->assertEquals(12345, $this->SayAllOf->getLoop());
-        $this->assertIsInt($this->SayAllOf->getLoop());
+        
+        
+        $this->SayAllOf->setLoop(1);
+        $this->assertEquals(1, $this->SayAllOf->getLoop());
+        $this->assertIsNumeric($this->SayAllOf->getLoop());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->SayAllOf->setPrivacyMode(true);
-        $this->assertTrue($this->SayAllOf->getPrivacyMode());
+        $this->SayAllOf->setPrivacyMode(false);
+        $this->assertFalse($this->SayAllOf->getPrivacyMode());
         $this->assertIsBool($this->SayAllOf->getPrivacyMode());
     }
 
@@ -99,10 +98,10 @@ class SayAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SayAllOf();    
-      $test1->setText("TS");
-      $test1->setLanguage("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setText("TS");
+    $test1->setLanguage("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -114,10 +113,10 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SayAllOf();
-      $test1->setText("TS");
-      $test1->setLanguage("TS");
-      $test1->setLoop(1);
-      $test1->setPrivacyMode(true);
+    $test1->setText("TS");
+    $test1->setLanguage("TS");
+    $test1->setLoop(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

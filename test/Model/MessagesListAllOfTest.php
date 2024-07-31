@@ -68,8 +68,8 @@ class MessagesListAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessagesListAllOf();    
-      $testList = [];
-      $test1->setMessages($testList);
+    $testList = [];
+    $test1->setMessages($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -81,8 +81,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessagesListAllOf();
-      $testList = [];
-      $test1->setMessages($testList);
+    $testList = [];
+    $test1->setMessages($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

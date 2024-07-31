@@ -11363,9 +11363,9 @@ class DefaultApi
      * List Conference Recordings
      *
 
-     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
 
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
@@ -11374,9 +11374,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\RecordingList
      */
-    public function listConferenceRecordings($call_id = null, $conference_id = null, $date_created = null)
+    public function listConferenceRecordings($conference_id, $call_id = null, $date_created = null)
     {
-        list($response) = $this->listConferenceRecordingsWithHttpInfo($call_id, $conference_id, $date_created);
+        list($response) = $this->listConferenceRecordingsWithHttpInfo($conference_id, $call_id, $date_created);
         return $response;
     }
 
@@ -11386,9 +11386,9 @@ class DefaultApi
      * List Conference Recordings
      *
 
-     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
 
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
@@ -11397,9 +11397,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\RecordingList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listConferenceRecordingsWithHttpInfo($call_id = null, $conference_id = null, $date_created = null)
+    public function listConferenceRecordingsWithHttpInfo($conference_id, $call_id = null, $date_created = null)
     {
-        $request = $this->listConferenceRecordingsRequest($call_id, $conference_id, $date_created);
+        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11485,9 +11485,9 @@ class DefaultApi
      * List Conference Recordings
      *
 
-     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
 
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
@@ -11495,9 +11495,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConferenceRecordingsAsync($call_id = null, $conference_id = null, $date_created = null)
+    public function listConferenceRecordingsAsync($conference_id, $call_id = null, $date_created = null)
     {
-        return $this->listConferenceRecordingsAsyncWithHttpInfo($call_id, $conference_id, $date_created)
+        return $this->listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id, $date_created)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11511,9 +11511,9 @@ class DefaultApi
      * List Conference Recordings
      *
 
-     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
 
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
@@ -11521,10 +11521,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConferenceRecordingsAsyncWithHttpInfo($call_id = null, $conference_id = null, $date_created = null)
+    public function listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id = null, $date_created = null)
     {
         $returnType = '\FreeClimb\Api\Model\RecordingList';
-        $request = $this->listConferenceRecordingsRequest($call_id, $conference_id, $date_created);
+        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11563,9 +11563,9 @@ class DefaultApi
      * Create request for operation 'listConferenceRecordings'
      *
 
-     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
+     * @param  string $conference_id Show only Recordings made during the conference with this ID. (required)
 
-     * @param  string $conference_id Show only Recordings made during the conference with this ID. (optional)
+     * @param  string $call_id Show only Recordings made during the Call with this ID. (optional)
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
@@ -11573,13 +11573,19 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listConferenceRecordingsRequest($call_id = null, $conference_id = null, $date_created = null)
+    public function listConferenceRecordingsRequest($conference_id, $call_id = null, $date_created = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
         if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $account_id when calling listConferenceRecordings'
+            );
+        }
+        // verify the required parameter 'conference_id' is set
+        if ($conference_id === null || (is_array($conference_id) && count($conference_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $conference_id when calling listConferenceRecordings'
             );
         }
 
@@ -11602,17 +11608,6 @@ class DefaultApi
             }
         }
         // query params
-        if ($conference_id !== null) {
-            if('form' === 'form' && is_array($conference_id)) {
-                foreach($conference_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['conferenceId'] = $conference_id;
-            }
-        }
-        // query params
         if ($date_created !== null) {
             if('form' === 'form' && is_array($date_created)) {
                 foreach($date_created as $key => $value) {
@@ -11630,6 +11625,14 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'accountId' . '}',
                 ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($conference_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'conferenceId' . '}',
+                ObjectSerializer::toPathValue($conference_id),
                 $resourcePath
             );
         }

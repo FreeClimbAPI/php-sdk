@@ -58,65 +58,81 @@ class MessagesListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->MessagesList->setTotal(12345);
-        $this->assertEquals(12345, $this->MessagesList->getTotal());
-        $this->assertIsInt($this->MessagesList->getTotal());
+        
+        
+        $this->MessagesList->setTotal(1);
+        $this->assertEquals(1, $this->MessagesList->getTotal());
+        $this->assertIsNumeric($this->MessagesList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->MessagesList->setStart(12345);
-        $this->assertEquals(12345, $this->MessagesList->getStart());
-        $this->assertIsInt($this->MessagesList->getStart());
+        
+        
+        $this->MessagesList->setStart(1);
+        $this->assertEquals(1, $this->MessagesList->getStart());
+        $this->assertIsNumeric($this->MessagesList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->MessagesList->setEnd(12345);
-        $this->assertEquals(12345, $this->MessagesList->getEnd());
-        $this->assertIsInt($this->MessagesList->getEnd());
+        
+        
+        $this->MessagesList->setEnd(1);
+        $this->assertEquals(1, $this->MessagesList->getEnd());
+        $this->assertIsNumeric($this->MessagesList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->MessagesList->setPage(12345);
-        $this->assertEquals(12345, $this->MessagesList->getPage());
-        $this->assertIsInt($this->MessagesList->getPage());
+        
+        
+        $this->MessagesList->setPage(1);
+        $this->assertEquals(1, $this->MessagesList->getPage());
+        $this->assertIsNumeric($this->MessagesList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->MessagesList->setNumPages(12345);
-        $this->assertEquals(12345, $this->MessagesList->getNumPages());
-        $this->assertIsInt($this->MessagesList->getNumPages());
+        
+        
+        $this->MessagesList->setNumPages(1);
+        $this->assertEquals(1, $this->MessagesList->getNumPages());
+        $this->assertIsNumeric($this->MessagesList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->MessagesList->setPageSize(12345);
-        $this->assertEquals(12345, $this->MessagesList->getPageSize());
-        $this->assertIsInt($this->MessagesList->getPageSize());
+        
+        
+        $this->MessagesList->setPageSize(1);
+        $this->assertEquals(1, $this->MessagesList->getPageSize());
+        $this->assertIsNumeric($this->MessagesList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->MessagesList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessagesList->getNextPageUri());
+        $this->MessagesList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->MessagesList->getNextPageUri());
         $this->assertIsString($this->MessagesList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "messages"
@@ -133,15 +149,15 @@ class MessagesListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessagesList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setMessages($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setMessages($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessagesList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setMessages($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setMessages($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

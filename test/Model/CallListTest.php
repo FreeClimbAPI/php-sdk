@@ -58,65 +58,81 @@ class CallListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->CallList->setTotal(12345);
-        $this->assertEquals(12345, $this->CallList->getTotal());
-        $this->assertIsInt($this->CallList->getTotal());
+        
+        
+        $this->CallList->setTotal(1);
+        $this->assertEquals(1, $this->CallList->getTotal());
+        $this->assertIsNumeric($this->CallList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->CallList->setStart(12345);
-        $this->assertEquals(12345, $this->CallList->getStart());
-        $this->assertIsInt($this->CallList->getStart());
+        
+        
+        $this->CallList->setStart(1);
+        $this->assertEquals(1, $this->CallList->getStart());
+        $this->assertIsNumeric($this->CallList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->CallList->setEnd(12345);
-        $this->assertEquals(12345, $this->CallList->getEnd());
-        $this->assertIsInt($this->CallList->getEnd());
+        
+        
+        $this->CallList->setEnd(1);
+        $this->assertEquals(1, $this->CallList->getEnd());
+        $this->assertIsNumeric($this->CallList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->CallList->setPage(12345);
-        $this->assertEquals(12345, $this->CallList->getPage());
-        $this->assertIsInt($this->CallList->getPage());
+        
+        
+        $this->CallList->setPage(1);
+        $this->assertEquals(1, $this->CallList->getPage());
+        $this->assertIsNumeric($this->CallList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->CallList->setNumPages(12345);
-        $this->assertEquals(12345, $this->CallList->getNumPages());
-        $this->assertIsInt($this->CallList->getNumPages());
+        
+        
+        $this->CallList->setNumPages(1);
+        $this->assertEquals(1, $this->CallList->getNumPages());
+        $this->assertIsNumeric($this->CallList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->CallList->setPageSize(12345);
-        $this->assertEquals(12345, $this->CallList->getPageSize());
-        $this->assertIsInt($this->CallList->getPageSize());
+        
+        
+        $this->CallList->setPageSize(1);
+        $this->assertEquals(1, $this->CallList->getPageSize());
+        $this->assertIsNumeric($this->CallList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->CallList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallList->getNextPageUri());
+        $this->CallList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->CallList->getNextPageUri());
         $this->assertIsString($this->CallList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "calls"
@@ -133,15 +149,15 @@ class CallListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new CallList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setCalls($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setCalls($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new CallList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setCalls($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setCalls($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

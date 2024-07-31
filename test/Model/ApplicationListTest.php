@@ -58,65 +58,81 @@ class ApplicationListTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->ApplicationList->setTotal(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getTotal());
-        $this->assertIsInt($this->ApplicationList->getTotal());
+        
+        
+        $this->ApplicationList->setTotal(1);
+        $this->assertEquals(1, $this->ApplicationList->getTotal());
+        $this->assertIsNumeric($this->ApplicationList->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->ApplicationList->setStart(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getStart());
-        $this->assertIsInt($this->ApplicationList->getStart());
+        
+        
+        $this->ApplicationList->setStart(1);
+        $this->assertEquals(1, $this->ApplicationList->getStart());
+        $this->assertIsNumeric($this->ApplicationList->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->ApplicationList->setEnd(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getEnd());
-        $this->assertIsInt($this->ApplicationList->getEnd());
+        
+        
+        $this->ApplicationList->setEnd(1);
+        $this->assertEquals(1, $this->ApplicationList->getEnd());
+        $this->assertIsNumeric($this->ApplicationList->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->ApplicationList->setPage(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getPage());
-        $this->assertIsInt($this->ApplicationList->getPage());
+        
+        
+        $this->ApplicationList->setPage(1);
+        $this->assertEquals(1, $this->ApplicationList->getPage());
+        $this->assertIsNumeric($this->ApplicationList->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->ApplicationList->setNumPages(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getNumPages());
-        $this->assertIsInt($this->ApplicationList->getNumPages());
+        
+        
+        $this->ApplicationList->setNumPages(1);
+        $this->assertEquals(1, $this->ApplicationList->getNumPages());
+        $this->assertIsNumeric($this->ApplicationList->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->ApplicationList->setPageSize(12345);
-        $this->assertEquals(12345, $this->ApplicationList->getPageSize());
-        $this->assertIsInt($this->ApplicationList->getPageSize());
+        
+        
+        $this->ApplicationList->setPageSize(1);
+        $this->assertEquals(1, $this->ApplicationList->getPageSize());
+        $this->assertIsNumeric($this->ApplicationList->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->ApplicationList->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->ApplicationList->getNextPageUri());
+        $this->ApplicationList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->ApplicationList->getNextPageUri());
         $this->assertIsString($this->ApplicationList->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "applications"
@@ -133,15 +149,15 @@ class ApplicationListTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new ApplicationList();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setApplications($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setApplications($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new ApplicationList();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setApplications($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setApplications($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

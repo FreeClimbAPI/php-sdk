@@ -58,11 +58,9 @@ class GetSpeechAllOfTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->GetSpeechAllOf->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetSpeechAllOf->getActionUrl());
+        $this->GetSpeechAllOf->setActionUrl('TS');
+        $this->assertEquals('TS', $this->GetSpeechAllOf->getActionUrl());
         $this->assertIsString($this->GetSpeechAllOf->getActionUrl());
-        
-
     }
     /**
      * Test attribute "grammar_type"
@@ -79,30 +77,26 @@ class GetSpeechAllOfTest extends TestCase
      */
     public function testPropertyGrammarFile()
     {
-        $this->GetSpeechAllOf->setGrammarFile('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetSpeechAllOf->getGrammarFile());
+        $this->GetSpeechAllOf->setGrammarFile('TS');
+        $this->assertEquals('TS', $this->GetSpeechAllOf->getGrammarFile());
         $this->assertIsString($this->GetSpeechAllOf->getGrammarFile());
-        
-
     }
     /**
      * Test attribute "grammar_rule"
      */
     public function testPropertyGrammarRule()
     {
-        $this->GetSpeechAllOf->setGrammarRule('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->GetSpeechAllOf->getGrammarRule());
+        $this->GetSpeechAllOf->setGrammarRule('TS');
+        $this->assertEquals('TS', $this->GetSpeechAllOf->getGrammarRule());
         $this->assertIsString($this->GetSpeechAllOf->getGrammarRule());
-        
-
     }
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        $this->GetSpeechAllOf->setPlayBeep(true);
-        $this->assertTrue($this->GetSpeechAllOf->getPlayBeep());
+        $this->GetSpeechAllOf->setPlayBeep(false);
+        $this->assertFalse($this->GetSpeechAllOf->getPlayBeep());
         $this->assertIsBool($this->GetSpeechAllOf->getPlayBeep());
     }
     /**
@@ -119,62 +113,80 @@ class GetSpeechAllOfTest extends TestCase
      */
     public function testPropertyNoInputTimeoutMs()
     {
-        $this->GetSpeechAllOf->setNoInputTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getNoInputTimeoutMs());
-        $this->assertIsInt($this->GetSpeechAllOf->getNoInputTimeoutMs());
+        
+        
+        $this->GetSpeechAllOf->setNoInputTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getNoInputTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeechAllOf->getNoInputTimeoutMs());
+        
     }
     /**
      * Test attribute "recognition_timeout_ms"
      */
     public function testPropertyRecognitionTimeoutMs()
     {
-        $this->GetSpeechAllOf->setRecognitionTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getRecognitionTimeoutMs());
-        $this->assertIsInt($this->GetSpeechAllOf->getRecognitionTimeoutMs());
+        
+        
+        $this->GetSpeechAllOf->setRecognitionTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getRecognitionTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeechAllOf->getRecognitionTimeoutMs());
+        
     }
     /**
      * Test attribute "confidence_threshold"
      */
     public function testPropertyConfidenceThreshold()
     {
-        $this->GetSpeechAllOf->setConfidenceThreshold(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getConfidenceThreshold());
+        
+        
+        $this->GetSpeechAllOf->setConfidenceThreshold(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getConfidenceThreshold());
         $this->assertIsNumeric($this->GetSpeechAllOf->getConfidenceThreshold());
+        
     }
     /**
      * Test attribute "sensitivity_level"
      */
     public function testPropertySensitivityLevel()
     {
-        $this->GetSpeechAllOf->setSensitivityLevel(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getSensitivityLevel());
+        
+        
+        $this->GetSpeechAllOf->setSensitivityLevel(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getSensitivityLevel());
         $this->assertIsNumeric($this->GetSpeechAllOf->getSensitivityLevel());
+        
     }
     /**
      * Test attribute "speech_complete_timeout_ms"
      */
     public function testPropertySpeechCompleteTimeoutMs()
     {
-        $this->GetSpeechAllOf->setSpeechCompleteTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getSpeechCompleteTimeoutMs());
-        $this->assertIsInt($this->GetSpeechAllOf->getSpeechCompleteTimeoutMs());
+        
+        
+        $this->GetSpeechAllOf->setSpeechCompleteTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getSpeechCompleteTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeechAllOf->getSpeechCompleteTimeoutMs());
+        
     }
     /**
      * Test attribute "speech_incomplete_timeout_ms"
      */
     public function testPropertySpeechIncompleteTimeoutMs()
     {
-        $this->GetSpeechAllOf->setSpeechIncompleteTimeoutMs(12345);
-        $this->assertEquals(12345, $this->GetSpeechAllOf->getSpeechIncompleteTimeoutMs());
-        $this->assertIsInt($this->GetSpeechAllOf->getSpeechIncompleteTimeoutMs());
+        
+        
+        $this->GetSpeechAllOf->setSpeechIncompleteTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeechAllOf->getSpeechIncompleteTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeechAllOf->getSpeechIncompleteTimeoutMs());
+        
     }
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        $this->GetSpeechAllOf->setPrivacyMode(true);
-        $this->assertTrue($this->GetSpeechAllOf->getPrivacyMode());
+        $this->GetSpeechAllOf->setPrivacyMode(false);
+        $this->assertFalse($this->GetSpeechAllOf->getPrivacyMode());
         $this->assertIsBool($this->GetSpeechAllOf->getPrivacyMode());
     }
 
@@ -183,25 +195,25 @@ class GetSpeechAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new GetSpeechAllOf();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
-      $test1->setGrammarFile("TS");
-      $test1->setGrammarRule("TS");
-      $test1->setPlayBeep(true);
-      $testList = [];
-      $test1->setPrompts($testList);
-      $test1->setNoInputTimeoutMs(1);
-      $test1->setRecognitionTimeoutMs(1);
-      $test1->setConfidenceThreshold(1.0);
-      $test1->setSensitivityLevel(1.0);
-      $test1->setSpeechCompleteTimeoutMs(1);
-      $test1->setSpeechIncompleteTimeoutMs(1);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
+    $test1->setGrammarFile("TS");
+    $test1->setGrammarRule("TS");
+    $test1->setPlayBeep(true);
+    $testList = [];
+    $test1->setPrompts($testList);
+    $test1->setNoInputTimeoutMs(1);
+    $test1->setRecognitionTimeoutMs(1);
+    $test1->setConfidenceThreshold(1);
+    $test1->setSensitivityLevel(1);
+    $test1->setSpeechCompleteTimeoutMs(1);
+    $test1->setSpeechIncompleteTimeoutMs(1);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -213,25 +225,25 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new GetSpeechAllOf();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
-      $test1->setGrammarFile("TS");
-      $test1->setGrammarRule("TS");
-      $test1->setPlayBeep(true);
-      $testList = [];
-      $test1->setPrompts($testList);
-      $test1->setNoInputTimeoutMs(1);
-      $test1->setRecognitionTimeoutMs(1);
-      $test1->setConfidenceThreshold(1.0);
-      $test1->setSensitivityLevel(1.0);
-      $test1->setSpeechCompleteTimeoutMs(1);
-      $test1->setSpeechIncompleteTimeoutMs(1);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setGrammarType(\FreeClimb\Api\Model\GrammarType::URL);
+    $test1->setGrammarFile("TS");
+    $test1->setGrammarRule("TS");
+    $test1->setPlayBeep(true);
+    $testList = [];
+    $test1->setPrompts($testList);
+    $test1->setNoInputTimeoutMs(1);
+    $test1->setRecognitionTimeoutMs(1);
+    $test1->setConfidenceThreshold(1);
+    $test1->setSensitivityLevel(1);
+    $test1->setSpeechCompleteTimeoutMs(1);
+    $test1->setSpeechIncompleteTimeoutMs(1);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

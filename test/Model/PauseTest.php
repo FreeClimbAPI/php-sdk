@@ -58,9 +58,12 @@ class PauseTest extends TestCase
      */
     public function testPropertyLength()
     {
-        $this->Pause->setLength(12345);
-        $this->assertEquals(12345, $this->Pause->getLength());
-        $this->assertIsInt($this->Pause->getLength());
+        
+        
+        $this->Pause->setLength(1);
+        $this->assertEquals(1, $this->Pause->getLength());
+        $this->assertIsNumeric($this->Pause->getLength());
+        
     }
 
     /**
@@ -68,7 +71,7 @@ class PauseTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new Pause();    
-      $test1->setLength(1);
+    $test1->setLength(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -80,7 +83,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new Pause();
-      $test1->setLength(1);
+    $test1->setLength(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
