@@ -2949,8 +2949,6 @@ makeAWebrtcJwt($create_web_rtc_token): string
 
 Make a JWT for WebRTC calling
 
-Make a JWT for WebRTC calling
-
 ### Example
 
 ```php
