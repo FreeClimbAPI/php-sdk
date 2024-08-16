@@ -58,65 +58,81 @@ class PaginationModelTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->PaginationModel->setTotal(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getTotal());
-        $this->assertIsInt($this->PaginationModel->getTotal());
+        
+        
+        $this->PaginationModel->setTotal(1);
+        $this->assertEquals(1, $this->PaginationModel->getTotal());
+        $this->assertIsNumeric($this->PaginationModel->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->PaginationModel->setStart(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getStart());
-        $this->assertIsInt($this->PaginationModel->getStart());
+        
+        
+        $this->PaginationModel->setStart(1);
+        $this->assertEquals(1, $this->PaginationModel->getStart());
+        $this->assertIsNumeric($this->PaginationModel->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->PaginationModel->setEnd(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getEnd());
-        $this->assertIsInt($this->PaginationModel->getEnd());
+        
+        
+        $this->PaginationModel->setEnd(1);
+        $this->assertEquals(1, $this->PaginationModel->getEnd());
+        $this->assertIsNumeric($this->PaginationModel->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->PaginationModel->setPage(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getPage());
-        $this->assertIsInt($this->PaginationModel->getPage());
+        
+        
+        $this->PaginationModel->setPage(1);
+        $this->assertEquals(1, $this->PaginationModel->getPage());
+        $this->assertIsNumeric($this->PaginationModel->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->PaginationModel->setNumPages(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getNumPages());
-        $this->assertIsInt($this->PaginationModel->getNumPages());
+        
+        
+        $this->PaginationModel->setNumPages(1);
+        $this->assertEquals(1, $this->PaginationModel->getNumPages());
+        $this->assertIsNumeric($this->PaginationModel->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->PaginationModel->setPageSize(12345);
-        $this->assertEquals(12345, $this->PaginationModel->getPageSize());
-        $this->assertIsInt($this->PaginationModel->getPageSize());
+        
+        
+        $this->PaginationModel->setPageSize(1);
+        $this->assertEquals(1, $this->PaginationModel->getPageSize());
+        $this->assertIsNumeric($this->PaginationModel->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->PaginationModel->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->PaginationModel->getNextPageUri());
+        $this->PaginationModel->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->PaginationModel->getNextPageUri());
         $this->assertIsString($this->PaginationModel->getNextPageUri());
-        
-
     }
 
     /**
@@ -124,13 +140,13 @@ class PaginationModelTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new PaginationModel();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -142,13 +158,13 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new PaginationModel();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

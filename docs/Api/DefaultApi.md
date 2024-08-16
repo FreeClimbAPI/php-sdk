@@ -2386,7 +2386,7 @@ Name | Type | Description  | Notes
 ## `listConferenceRecordings()`
 
 ```php
-listConferenceRecordings($call_id, $conference_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listConferenceRecordings($conference_id, $call_id, $date_created): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Conference Recordings
@@ -2411,12 +2411,12 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     $config
 );
 $account_id = 'account_id_example'; // string | ID of the account
-$call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
 $conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
+$call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
 
 try {
-    $result = $apiInstance->listConferenceRecordings($call_id, $conference_id, $date_created);
+    $result = $apiInstance->listConferenceRecordings($conference_id, $call_id, $date_created);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listConferenceRecordings: ', $e->getMessage(), PHP_EOL;
@@ -2428,8 +2428,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **string**| ID of the account |
+ **conference_id** | **string**| Show only Recordings made during the conference with this ID. |
  **call_id** | **string**| Show only Recordings made during the Call with this ID. | [optional]
- **conference_id** | **string**| Show only Recordings made during the conference with this ID. | [optional]
  **date_created** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional]
 
 ### Return type
@@ -2946,8 +2946,6 @@ Name | Type | Description  | Notes
 ```php
 makeAWebrtcJwt($create_web_rtc_token): string
 ```
-
-Make a JWT for WebRTC calling
 
 Make a JWT for WebRTC calling
 

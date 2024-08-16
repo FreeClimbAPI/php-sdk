@@ -49,7 +49,7 @@ class SMSTenDLCCampaignTest extends TestCase
     /**
      * Test "SMSTenDLCCampaign"
      */
-    public function setUp(): void
+    public function setUp() : void
     {
         $this->SMSTenDLCCampaign = new SMSTenDLCCampaign();
     }
@@ -58,55 +58,45 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->SMSTenDLCCampaign->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getAccountId());
+        $this->SMSTenDLCCampaign->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getAccountId());
         $this->assertIsString($this->SMSTenDLCCampaign->getAccountId());
-
-
     }
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        $this->SMSTenDLCCampaign->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getCampaignId());
+        $this->SMSTenDLCCampaign->setCampaignId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getCampaignId());
         $this->assertIsString($this->SMSTenDLCCampaign->getCampaignId());
-
-
     }
     /**
      * Test attribute "csp_id"
      */
     public function testPropertyCspId()
     {
-        $this->SMSTenDLCCampaign->setCspId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getCspId());
+        $this->SMSTenDLCCampaign->setCspId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getCspId());
         $this->assertIsString($this->SMSTenDLCCampaign->getCspId());
-
-
     }
     /**
      * Test attribute "reseller_id"
      */
     public function testPropertyResellerId()
     {
-        $this->SMSTenDLCCampaign->setResellerId('TEST');
-        $this->assertEquals('TEST', $this->SMSTenDLCCampaign->getResellerId());
+        $this->SMSTenDLCCampaign->setResellerId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getResellerId());
         $this->assertIsString($this->SMSTenDLCCampaign->getResellerId());
-
-
     }
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-
         $this->SMSTenDLCCampaign->setStatus('ACTIVE');
         $this->assertEquals('ACTIVE', $this->SMSTenDLCCampaign->getStatus());
         $this->assertIsString($this->SMSTenDLCCampaign->getStatus());
-
     }
     /**
      * Test attribute "create_date"
@@ -121,8 +111,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyAutoRenewal()
     {
-        $this->SMSTenDLCCampaign->setAutoRenewal(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getAutoRenewal());
+        $this->SMSTenDLCCampaign->setAutoRenewal(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getAutoRenewal());
         $this->assertIsBool($this->SMSTenDLCCampaign->getAutoRenewal());
     }
     /**
@@ -138,22 +128,18 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyBrandId()
     {
-        $this->SMSTenDLCCampaign->setBrandId('TEST');
-        $this->assertEquals('TEST', $this->SMSTenDLCCampaign->getBrandId());
+        $this->SMSTenDLCCampaign->setBrandId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getBrandId());
         $this->assertIsString($this->SMSTenDLCCampaign->getBrandId());
-
-
     }
     /**
      * Test attribute "usecase"
      */
     public function testPropertyUsecase()
     {
-        $this->SMSTenDLCCampaign->setUsecase('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getUsecase());
+        $this->SMSTenDLCCampaign->setUsecase('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getUsecase());
         $this->assertIsString($this->SMSTenDLCCampaign->getUsecase());
-
-
     }
     /**
      * Test attribute "sub_usecases"
@@ -169,19 +155,17 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        $this->SMSTenDLCCampaign->setDescription('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getDescription());
+        $this->SMSTenDLCCampaign->setDescription('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getDescription());
         $this->assertIsString($this->SMSTenDLCCampaign->getDescription());
-
-
     }
     /**
      * Test attribute "embedded_link"
      */
     public function testPropertyEmbeddedLink()
     {
-        $this->SMSTenDLCCampaign->setEmbeddedLink(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getEmbeddedLink());
+        $this->SMSTenDLCCampaign->setEmbeddedLink(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getEmbeddedLink());
         $this->assertIsBool($this->SMSTenDLCCampaign->getEmbeddedLink());
     }
     /**
@@ -189,8 +173,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyEmbeddedPhone()
     {
-        $this->SMSTenDLCCampaign->setEmbeddedPhone(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getEmbeddedPhone());
+        $this->SMSTenDLCCampaign->setEmbeddedPhone(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getEmbeddedPhone());
         $this->assertIsBool($this->SMSTenDLCCampaign->getEmbeddedPhone());
     }
     /**
@@ -198,8 +182,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyAffiliateMarketing()
     {
-        $this->SMSTenDLCCampaign->setAffiliateMarketing(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getAffiliateMarketing());
+        $this->SMSTenDLCCampaign->setAffiliateMarketing(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getAffiliateMarketing());
         $this->assertIsBool($this->SMSTenDLCCampaign->getAffiliateMarketing());
     }
     /**
@@ -207,8 +191,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyNumberPool()
     {
-        $this->SMSTenDLCCampaign->setNumberPool(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getNumberPool());
+        $this->SMSTenDLCCampaign->setNumberPool(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getNumberPool());
         $this->assertIsBool($this->SMSTenDLCCampaign->getNumberPool());
     }
     /**
@@ -216,8 +200,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyAgeGated()
     {
-        $this->SMSTenDLCCampaign->setAgeGated(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getAgeGated());
+        $this->SMSTenDLCCampaign->setAgeGated(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getAgeGated());
         $this->assertIsBool($this->SMSTenDLCCampaign->getAgeGated());
     }
     /**
@@ -225,8 +209,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertyDirectLending()
     {
-        $this->SMSTenDLCCampaign->setDirectLending(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getDirectLending());
+        $this->SMSTenDLCCampaign->setDirectLending(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getDirectLending());
         $this->assertIsBool($this->SMSTenDLCCampaign->getDirectLending());
     }
     /**
@@ -234,8 +218,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertySubscriberOptin()
     {
-        $this->SMSTenDLCCampaign->setSubscriberOptin(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getSubscriberOptin());
+        $this->SMSTenDLCCampaign->setSubscriberOptin(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getSubscriberOptin());
         $this->assertIsBool($this->SMSTenDLCCampaign->getSubscriberOptin());
     }
     /**
@@ -243,8 +227,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertySubscriberOptout()
     {
-        $this->SMSTenDLCCampaign->setSubscriberOptout(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getSubscriberOptout());
+        $this->SMSTenDLCCampaign->setSubscriberOptout(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getSubscriberOptout());
         $this->assertIsBool($this->SMSTenDLCCampaign->getSubscriberOptout());
     }
     /**
@@ -252,8 +236,8 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertySubscriberHelp()
     {
-        $this->SMSTenDLCCampaign->setSubscriberHelp(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getSubscriberHelp());
+        $this->SMSTenDLCCampaign->setSubscriberHelp(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getSubscriberHelp());
         $this->assertIsBool($this->SMSTenDLCCampaign->getSubscriberHelp());
     }
     /**
@@ -261,151 +245,125 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function testPropertySample1()
     {
-        $this->SMSTenDLCCampaign->setSample1('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getSample1());
+        $this->SMSTenDLCCampaign->setSample1('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getSample1());
         $this->assertIsString($this->SMSTenDLCCampaign->getSample1());
-
-
     }
     /**
      * Test attribute "sample2"
      */
     public function testPropertySample2()
     {
-        $this->SMSTenDLCCampaign->setSample2('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getSample2());
+        $this->SMSTenDLCCampaign->setSample2('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getSample2());
         $this->assertIsString($this->SMSTenDLCCampaign->getSample2());
-
-
     }
     /**
      * Test attribute "sample3"
      */
     public function testPropertySample3()
     {
-        $this->SMSTenDLCCampaign->setSample3('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getSample3());
+        $this->SMSTenDLCCampaign->setSample3('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getSample3());
         $this->assertIsString($this->SMSTenDLCCampaign->getSample3());
-
-
     }
     /**
      * Test attribute "sample4"
      */
     public function testPropertySample4()
     {
-        $this->SMSTenDLCCampaign->setSample4('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getSample4());
+        $this->SMSTenDLCCampaign->setSample4('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getSample4());
         $this->assertIsString($this->SMSTenDLCCampaign->getSample4());
-
-
     }
     /**
      * Test attribute "sample5"
      */
     public function testPropertySample5()
     {
-        $this->SMSTenDLCCampaign->setSample5('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getSample5());
+        $this->SMSTenDLCCampaign->setSample5('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getSample5());
         $this->assertIsString($this->SMSTenDLCCampaign->getSample5());
-
-
     }
     /**
      * Test attribute "message_flow"
      */
     public function testPropertyMessageFlow()
     {
-        $this->SMSTenDLCCampaign->setMessageFlow('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getMessageFlow());
+        $this->SMSTenDLCCampaign->setMessageFlow('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getMessageFlow());
         $this->assertIsString($this->SMSTenDLCCampaign->getMessageFlow());
-
-
     }
     /**
      * Test attribute "help_message"
      */
     public function testPropertyHelpMessage()
     {
-        $this->SMSTenDLCCampaign->setHelpMessage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getHelpMessage());
+        $this->SMSTenDLCCampaign->setHelpMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getHelpMessage());
         $this->assertIsString($this->SMSTenDLCCampaign->getHelpMessage());
-
-
     }
     /**
      * Test attribute "optin_keywords"
      */
     public function testPropertyOptinKeywords()
     {
-        $this->SMSTenDLCCampaign->setOptinKeywords('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getOptinKeywords());
+        $this->SMSTenDLCCampaign->setOptinKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getOptinKeywords());
         $this->assertIsString($this->SMSTenDLCCampaign->getOptinKeywords());
-
-
     }
     /**
      * Test attribute "optout_keywords"
      */
     public function testPropertyOptoutKeywords()
     {
-        $this->SMSTenDLCCampaign->setOptoutKeywords('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getOptoutKeywords());
+        $this->SMSTenDLCCampaign->setOptoutKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getOptoutKeywords());
         $this->assertIsString($this->SMSTenDLCCampaign->getOptoutKeywords());
-
-
     }
     /**
      * Test attribute "help_keywords"
      */
     public function testPropertyHelpKeywords()
     {
-        $this->SMSTenDLCCampaign->setHelpKeywords('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getHelpKeywords());
+        $this->SMSTenDLCCampaign->setHelpKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getHelpKeywords());
         $this->assertIsString($this->SMSTenDLCCampaign->getHelpKeywords());
-
-
     }
     /**
      * Test attribute "optin_message"
      */
     public function testPropertyOptinMessage()
     {
-        $this->SMSTenDLCCampaign->setOptinMessage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getOptinMessage());
+        $this->SMSTenDLCCampaign->setOptinMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getOptinMessage());
         $this->assertIsString($this->SMSTenDLCCampaign->getOptinMessage());
-
-
     }
     /**
      * Test attribute "optout_message"
      */
     public function testPropertyOptoutMessage()
     {
-        $this->SMSTenDLCCampaign->setOptoutMessage('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getOptoutMessage());
+        $this->SMSTenDLCCampaign->setOptoutMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getOptoutMessage());
         $this->assertIsString($this->SMSTenDLCCampaign->getOptoutMessage());
-
-
     }
     /**
      * Test attribute "reference_id"
      */
     public function testPropertyReferenceId()
     {
-        $this->SMSTenDLCCampaign->setReferenceId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCCampaign->getReferenceId());
+        $this->SMSTenDLCCampaign->setReferenceId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaign->getReferenceId());
         $this->assertIsString($this->SMSTenDLCCampaign->getReferenceId());
-
-
     }
     /**
      * Test attribute "mock"
      */
     public function testPropertyMock()
     {
-        $this->SMSTenDLCCampaign->setMock(true);
-        $this->assertTrue($this->SMSTenDLCCampaign->getMock());
+        $this->SMSTenDLCCampaign->setMock(false);
+        $this->assertFalse($this->SMSTenDLCCampaign->getMock());
         $this->assertIsBool($this->SMSTenDLCCampaign->getMock());
     }
     /**
@@ -418,100 +376,99 @@ class SMSTenDLCCampaignTest extends TestCase
     }
 
     /**
-     * Test method toStringTest
-     */
-    public function toStringTest()
-    {
-        $test1 = new SMSTenDLCCampaign();
-        $test1->setAccountId("TS");
-        $test1->setCampaignId("TS");
-        $test1->setCspId("TS");
-        $test1->setResellerId("TS");
-        $test1->setStatus(SMSTenDLCCampaign::ACTIVE);
-        $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
-        $test1->setAutoRenewal(true);
-        $test1->setBilledDate(new DateTime("2022-07-05T15:17:05Z"));
-        $test1->setBrandId("TS");
-        $test1->setUsecase("TS");
-        $testSet = [];
-        $test1->setSubUsecases($testSet);
-        $test1->setDescription("TS");
-        $test1->setEmbeddedLink(true);
-        $test1->setEmbeddedPhone(true);
-        $test1->setAffiliateMarketing(true);
-        $test1->setNumberPool(true);
-        $test1->setAgeGated(true);
-        $test1->setDirectLending(true);
-        $test1->setSubscriberOptin(true);
-        $test1->setSubscriberOptout(true);
-        $test1->setSubscriberHelp(true);
-        $test1->setSample1("TS");
-        $test1->setSample2("TS");
-        $test1->setSample3("TS");
-        $test1->setSample4("TS");
-        $test1->setSample5("TS");
-        $test1->setMessageFlow("TS");
-        $test1->setHelpMessage("TS");
-        $test1->setOptinKeywords("TS");
-        $test1->setOptoutKeywords("TS");
-        $test1->setHelpKeywords("TS");
-        $test1->setOptinMessage("TS");
-        $test1->setOptoutMessage("TS");
-        $test1->setReferenceId("TS");
-        $test1->setMock(true);
-        $test1->setNextRenewalOrExpirationDate(new DateTime("2000-01-01"));
+* Test method toStringTest
+*/
+public function toStringTest() {
+    $test1 = new SMSTenDLCCampaign();    
+    $test1->setAccountId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setCspId("TS");
+    $test1->setResellerId("TS");
+    $test1->setStatus(SMSTenDLCCampaign::ACTIVE);
+    $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+    $test1->setAutoRenewal(true);
+    $test1->setBilledDate(new DateTime("2022-07-05T15:17:05Z"));
+    $test1->setBrandId("TS");
+    $test1->setUsecase("TS");
+    $testSet = [];
+    $test1->setSubUsecases($testSet);
+    $test1->setDescription("TS");
+    $test1->setEmbeddedLink(true);
+    $test1->setEmbeddedPhone(true);
+    $test1->setAffiliateMarketing(true);
+    $test1->setNumberPool(true);
+    $test1->setAgeGated(true);
+    $test1->setDirectLending(true);
+    $test1->setSubscriberOptin(true);
+    $test1->setSubscriberOptout(true);
+    $test1->setSubscriberHelp(true);
+    $test1->setSample1("TS");
+    $test1->setSample2("TS");
+    $test1->setSample3("TS");
+    $test1->setSample4("TS");
+    $test1->setSample5("TS");
+    $test1->setMessageFlow("TS");
+    $test1->setHelpMessage("TS");
+    $test1->setOptinKeywords("TS");
+    $test1->setOptoutKeywords("TS");
+    $test1->setHelpKeywords("TS");
+    $test1->setOptinMessage("TS");
+    $test1->setOptoutMessage("TS");
+    $test1->setReferenceId("TS");
+    $test1->setMock(true);
+    $test1->setNextRenewalOrExpirationDate(new DateTime("2000-01-01"));
 
-        $toString1 = $test1->__toString();
-        assert(is_string($toString1));
-    }
+    $toString1 = $test1->__toString();
+    assert(is_string($toString1));
+}
 
-    /**
-     * Test method toHeaderValue
-     */
-    public function toHeaderValueTest()
-    {
-        $test1 = new SMSTenDLCCampaign();
-        $test1->setAccountId("TS");
-        $test1->setCampaignId("TS");
-        $test1->setCspId("TS");
-        $test1->setResellerId("TS");
-        $test1->setStatus(SMSTenDLCCampaign::ACTIVE);
-        $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
-        $test1->setAutoRenewal(true);
-        $test1->setBilledDate(new DateTime("2022-07-05T15:17:05Z"));
-        $test1->setBrandId("TS");
-        $test1->setUsecase("TS");
-        $testSet = [];
-        $test1->setSubUsecases($testSet);
-        $test1->setDescription("TS");
-        $test1->setEmbeddedLink(true);
-        $test1->setEmbeddedPhone(true);
-        $test1->setAffiliateMarketing(true);
-        $test1->setNumberPool(true);
-        $test1->setAgeGated(true);
-        $test1->setDirectLending(true);
-        $test1->setSubscriberOptin(true);
-        $test1->setSubscriberOptout(true);
-        $test1->setSubscriberHelp(true);
-        $test1->setSample1("TS");
-        $test1->setSample2("TS");
-        $test1->setSample3("TS");
-        $test1->setSample4("TS");
-        $test1->setSample5("TS");
-        $test1->setMessageFlow("TS");
-        $test1->setHelpMessage("TS");
-        $test1->setOptinKeywords("TS");
-        $test1->setOptoutKeywords("TS");
-        $test1->setHelpKeywords("TS");
-        $test1->setOptinMessage("TS");
-        $test1->setOptoutMessage("TS");
-        $test1->setReferenceId("TS");
-        $test1->setMock(true);
-        $test1->setNextRenewalOrExpirationDate(new DateTime("2000-01-01"));
+/**
+ * Test method toHeaderValue
+ */
+public function toHeaderValueTest()
+{
+    $test1 = new SMSTenDLCCampaign();
+    $test1->setAccountId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setCspId("TS");
+    $test1->setResellerId("TS");
+    $test1->setStatus(SMSTenDLCCampaign::ACTIVE);
+    $test1->setCreateDate(new DateTime("2022-07-05T15:17:05Z"));
+    $test1->setAutoRenewal(true);
+    $test1->setBilledDate(new DateTime("2022-07-05T15:17:05Z"));
+    $test1->setBrandId("TS");
+    $test1->setUsecase("TS");
+    $testSet = [];
+    $test1->setSubUsecases($testSet);
+    $test1->setDescription("TS");
+    $test1->setEmbeddedLink(true);
+    $test1->setEmbeddedPhone(true);
+    $test1->setAffiliateMarketing(true);
+    $test1->setNumberPool(true);
+    $test1->setAgeGated(true);
+    $test1->setDirectLending(true);
+    $test1->setSubscriberOptin(true);
+    $test1->setSubscriberOptout(true);
+    $test1->setSubscriberHelp(true);
+    $test1->setSample1("TS");
+    $test1->setSample2("TS");
+    $test1->setSample3("TS");
+    $test1->setSample4("TS");
+    $test1->setSample5("TS");
+    $test1->setMessageFlow("TS");
+    $test1->setHelpMessage("TS");
+    $test1->setOptinKeywords("TS");
+    $test1->setOptoutKeywords("TS");
+    $test1->setHelpKeywords("TS");
+    $test1->setOptinMessage("TS");
+    $test1->setOptoutMessage("TS");
+    $test1->setReferenceId("TS");
+    $test1->setMock(true);
+    $test1->setNextRenewalOrExpirationDate(new DateTime("2000-01-01"));
 
-        $toHeaderValue1 = $test1->toHeaderValue();
-        assert(is_string($toHeaderValue1));
-    }
+    $toHeaderValue1 = $test1->toHeaderValue();
+    assert(is_string($toHeaderValue1));
+}
 
 
 }

@@ -58,48 +58,50 @@ class RecordUtteranceTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
-        $this->RecordUtterance->setActionUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordUtterance->getActionUrl());
+        $this->RecordUtterance->setActionUrl('TS');
+        $this->assertEquals('TS', $this->RecordUtterance->getActionUrl());
         $this->assertIsString($this->RecordUtterance->getActionUrl());
-        
-
     }
     /**
      * Test attribute "silence_timeout_ms"
      */
     public function testPropertySilenceTimeoutMs()
     {
-        $this->RecordUtterance->setSilenceTimeoutMs(12345);
-        $this->assertEquals(12345, $this->RecordUtterance->getSilenceTimeoutMs());
-        $this->assertIsInt($this->RecordUtterance->getSilenceTimeoutMs());
+        
+        
+        $this->RecordUtterance->setSilenceTimeoutMs(1);
+        $this->assertEquals(1, $this->RecordUtterance->getSilenceTimeoutMs());
+        $this->assertIsNumeric($this->RecordUtterance->getSilenceTimeoutMs());
+        
     }
     /**
      * Test attribute "finish_on_key"
      */
     public function testPropertyFinishOnKey()
     {
-        $this->RecordUtterance->setFinishOnKey('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->RecordUtterance->getFinishOnKey());
+        $this->RecordUtterance->setFinishOnKey('TS');
+        $this->assertEquals('TS', $this->RecordUtterance->getFinishOnKey());
         $this->assertIsString($this->RecordUtterance->getFinishOnKey());
-        
-
     }
     /**
      * Test attribute "max_length_sec"
      */
     public function testPropertyMaxLengthSec()
     {
-        $this->RecordUtterance->setMaxLengthSec(12345);
-        $this->assertEquals(12345, $this->RecordUtterance->getMaxLengthSec());
-        $this->assertIsInt($this->RecordUtterance->getMaxLengthSec());
+        
+        
+        $this->RecordUtterance->setMaxLengthSec(1);
+        $this->assertEquals(1, $this->RecordUtterance->getMaxLengthSec());
+        $this->assertIsNumeric($this->RecordUtterance->getMaxLengthSec());
+        
     }
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        $this->RecordUtterance->setPlayBeep(true);
-        $this->assertTrue($this->RecordUtterance->getPlayBeep());
+        $this->RecordUtterance->setPlayBeep(false);
+        $this->assertFalse($this->RecordUtterance->getPlayBeep());
         $this->assertIsBool($this->RecordUtterance->getPlayBeep());
     }
     /**
@@ -107,8 +109,8 @@ class RecordUtteranceTest extends TestCase
      */
     public function testPropertyAutoStart()
     {
-        $this->RecordUtterance->setAutoStart(true);
-        $this->assertTrue($this->RecordUtterance->getAutoStart());
+        $this->RecordUtterance->setAutoStart(false);
+        $this->assertFalse($this->RecordUtterance->getAutoStart());
         $this->assertIsBool($this->RecordUtterance->getAutoStart());
     }
     /**
@@ -116,8 +118,8 @@ class RecordUtteranceTest extends TestCase
      */
     public function testPropertyPrivacyMode()
     {
-        $this->RecordUtterance->setPrivacyMode(true);
-        $this->assertTrue($this->RecordUtterance->getPrivacyMode());
+        $this->RecordUtterance->setPrivacyMode(false);
+        $this->assertFalse($this->RecordUtterance->getPrivacyMode());
         $this->assertIsBool($this->RecordUtterance->getPrivacyMode());
     }
 
@@ -126,18 +128,18 @@ class RecordUtteranceTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new RecordUtterance();    
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setSilenceTimeoutMs(1);
-      $test1->setFinishOnKey("TS");
-      $test1->setMaxLengthSec(1);
-      $test1->setPlayBeep(true);
-      $test1->setAutoStart(true);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setSilenceTimeoutMs(1);
+    $test1->setFinishOnKey("TS");
+    $test1->setMaxLengthSec(1);
+    $test1->setPlayBeep(true);
+    $test1->setAutoStart(true);
+    $test1->setPrivacyMode(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -149,18 +151,18 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new RecordUtterance();
-      try {
-          $uri1 = "TEST_STRING";
-          $test1->setActionUrl($uri1);
-      } catch (Exception $e) {
-          echo $e->getMessage();
-      }
-      $test1->setSilenceTimeoutMs(1);
-      $test1->setFinishOnKey("TS");
-      $test1->setMaxLengthSec(1);
-      $test1->setPlayBeep(true);
-      $test1->setAutoStart(true);
-      $test1->setPrivacyMode(true);
+    try {
+        $uri1 = "TEST_STRING";
+        $test1->setActionUrl($uri1);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $test1->setSilenceTimeoutMs(1);
+    $test1->setFinishOnKey("TS");
+    $test1->setMaxLengthSec(1);
+    $test1->setPlayBeep(true);
+    $test1->setAutoStart(true);
+    $test1->setPrivacyMode(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

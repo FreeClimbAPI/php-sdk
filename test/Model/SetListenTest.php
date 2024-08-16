@@ -58,8 +58,8 @@ class SetListenTest extends TestCase
      */
     public function testPropertyListen()
     {
-        $this->SetListen->setListen(true);
-        $this->assertTrue($this->SetListen->getListen());
+        $this->SetListen->setListen(false);
+        $this->assertFalse($this->SetListen->getListen());
         $this->assertIsBool($this->SetListen->getListen());
     }
 
@@ -68,7 +68,7 @@ class SetListenTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SetListen();    
-      $test1->setListen(true);
+    $test1->setListen(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -80,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SetListen();
-      $test1->setListen(true);
+    $test1->setListen(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

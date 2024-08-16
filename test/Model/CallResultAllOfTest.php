@@ -58,66 +58,54 @@ class CallResultAllOfTest extends TestCase
      */
     public function testPropertyCallId()
     {
-        $this->CallResultAllOf->setCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getCallId());
+        $this->CallResultAllOf->setCallId('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getCallId());
         $this->assertIsString($this->CallResultAllOf->getCallId());
-        
-
     }
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        $this->CallResultAllOf->setParentCallId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getParentCallId());
+        $this->CallResultAllOf->setParentCallId('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getParentCallId());
         $this->assertIsString($this->CallResultAllOf->getParentCallId());
-        
-
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->CallResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getAccountId());
+        $this->CallResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getAccountId());
         $this->assertIsString($this->CallResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        $this->CallResultAllOf->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getFrom());
+        $this->CallResultAllOf->setFrom('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getFrom());
         $this->assertIsString($this->CallResultAllOf->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->CallResultAllOf->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getTo());
+        $this->CallResultAllOf->setTo('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getTo());
         $this->assertIsString($this->CallResultAllOf->getTo());
-        
-
     }
     /**
      * Test attribute "phone_number_id"
      */
     public function testPropertyPhoneNumberId()
     {
-        $this->CallResultAllOf->setPhoneNumberId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getPhoneNumberId());
+        $this->CallResultAllOf->setPhoneNumberId('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getPhoneNumberId());
         $this->assertIsString($this->CallResultAllOf->getPhoneNumberId());
-        
-
     }
     /**
      * Test attribute "call_status"
@@ -146,51 +134,51 @@ class CallResultAllOfTest extends TestCase
      */
     public function testPropertyStartTime()
     {
-        $this->CallResultAllOf->setStartTime('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getStartTime());
+        $this->CallResultAllOf->setStartTime('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getStartTime());
         $this->assertIsString($this->CallResultAllOf->getStartTime());
-        
-
     }
     /**
      * Test attribute "connect_time"
      */
     public function testPropertyConnectTime()
     {
-        $this->CallResultAllOf->setConnectTime('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getConnectTime());
+        $this->CallResultAllOf->setConnectTime('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getConnectTime());
         $this->assertIsString($this->CallResultAllOf->getConnectTime());
-        
-
     }
     /**
      * Test attribute "end_time"
      */
     public function testPropertyEndTime()
     {
-        $this->CallResultAllOf->setEndTime('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CallResultAllOf->getEndTime());
+        $this->CallResultAllOf->setEndTime('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getEndTime());
         $this->assertIsString($this->CallResultAllOf->getEndTime());
-        
-
     }
     /**
      * Test attribute "duration"
      */
     public function testPropertyDuration()
     {
-        $this->CallResultAllOf->setDuration(12345);
-        $this->assertEquals(12345, $this->CallResultAllOf->getDuration());
-        $this->assertIsInt($this->CallResultAllOf->getDuration());
+        
+        
+        $this->CallResultAllOf->setDuration(1);
+        $this->assertEquals(1, $this->CallResultAllOf->getDuration());
+        $this->assertIsNumeric($this->CallResultAllOf->getDuration());
+        
     }
     /**
      * Test attribute "connect_duration"
      */
     public function testPropertyConnectDuration()
     {
-        $this->CallResultAllOf->setConnectDuration(12345);
-        $this->assertEquals(12345, $this->CallResultAllOf->getConnectDuration());
-        $this->assertIsInt($this->CallResultAllOf->getConnectDuration());
+        
+        
+        $this->CallResultAllOf->setConnectDuration(1);
+        $this->assertEquals(1, $this->CallResultAllOf->getConnectDuration());
+        $this->assertIsNumeric($this->CallResultAllOf->getConnectDuration());
+        
     }
     /**
      * Test attribute "direction"
@@ -228,22 +216,22 @@ class CallResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new CallResultAllOf();    
-      $test1->setCallId("TS");
-      $test1->setParentCallId("TS");
-      $test1->setAccountId("TS");
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setPhoneNumberId("TS");
-      $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
-      $test1->setStartTime("TS");
-      $test1->setConnectTime("TS");
-      $test1->setEndTime("TS");
-      $test1->setDuration(1);
-      $test1->setConnectDuration(1);
-      $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
-      $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setCallId("TS");
+    $test1->setParentCallId("TS");
+    $test1->setAccountId("TS");
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setPhoneNumberId("TS");
+    $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+    $test1->setStartTime("TS");
+    $test1->setConnectTime("TS");
+    $test1->setEndTime("TS");
+    $test1->setDuration(1);
+    $test1->setConnectDuration(1);
+    $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+    $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -255,22 +243,22 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new CallResultAllOf();
-      $test1->setCallId("TS");
-      $test1->setParentCallId("TS");
-      $test1->setAccountId("TS");
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setPhoneNumberId("TS");
-      $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
-      $test1->setStartTime("TS");
-      $test1->setConnectTime("TS");
-      $test1->setEndTime("TS");
-      $test1->setDuration(1);
-      $test1->setConnectDuration(1);
-      $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
-      $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setCallId("TS");
+    $test1->setParentCallId("TS");
+    $test1->setAccountId("TS");
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setPhoneNumberId("TS");
+    $test1->setCallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+    $test1->setStartTime("TS");
+    $test1->setConnectTime("TS");
+    $test1->setEndTime("TS");
+    $test1->setDuration(1);
+    $test1->setConnectDuration(1);
+    $test1->setDirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+    $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

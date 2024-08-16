@@ -58,44 +58,36 @@ class AccountResultAllOfTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->AccountResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResultAllOf->getAccountId());
+        $this->AccountResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->AccountResultAllOf->getAccountId());
         $this->assertIsString($this->AccountResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "api_key"
      */
     public function testPropertyApiKey()
     {
-        $this->AccountResultAllOf->setApiKey('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResultAllOf->getApiKey());
+        $this->AccountResultAllOf->setApiKey('TS');
+        $this->assertEquals('TS', $this->AccountResultAllOf->getApiKey());
         $this->assertIsString($this->AccountResultAllOf->getApiKey());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->AccountResultAllOf->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResultAllOf->getAlias());
+        $this->AccountResultAllOf->setAlias('TS');
+        $this->assertEquals('TS', $this->AccountResultAllOf->getAlias());
         $this->assertIsString($this->AccountResultAllOf->getAlias());
-        
-
     }
     /**
      * Test attribute "label"
      */
     public function testPropertyLabel()
     {
-        $this->AccountResultAllOf->setLabel('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResultAllOf->getLabel());
+        $this->AccountResultAllOf->setLabel('TS');
+        $this->assertEquals('TS', $this->AccountResultAllOf->getLabel());
         $this->assertIsString($this->AccountResultAllOf->getLabel());
-        
-
     }
     /**
      * Test attribute "type"
@@ -133,14 +125,14 @@ class AccountResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AccountResultAllOf();    
-      $test1->setAccountId("TS");
-      $test1->setApiKey("TS");
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
-      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
-      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setAccountId("TS");
+    $test1->setApiKey("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
+    $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+    $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -152,14 +144,14 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AccountResultAllOf();
-      $test1->setAccountId("TS");
-      $test1->setApiKey("TS");
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
-      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
-      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setAccountId("TS");
+    $test1->setApiKey("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
+    $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+    $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

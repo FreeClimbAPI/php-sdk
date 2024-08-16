@@ -1,6 +1,6 @@
 <?php
 /**
- * RemoveFromConferenceAllOf
+ * TranscribeUtteranceAllOfRecord
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * RemoveFromConferenceAllOf Class Doc Comment
+ * TranscribeUtteranceAllOfRecord Class Doc Comment
  *
  * @category Class
  * @package  FreeClimb\Api
@@ -43,7 +43,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class TranscribeUtteranceAllOfRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RemoveFromConference_allOf';
+    protected static $openAPIModelName = 'TranscribeUtterance_allOf_record';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'call_id' => 'string'
+        'save_recording' => 'bool',
+        'max_length_sec' => 'int',
+        'rcrd_termination_silence_time_ms' => 'int'
     ];
 
     /**
@@ -71,7 +73,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'call_id' => null
+        'save_recording' => null,
+        'max_length_sec' => null,
+        'rcrd_termination_silence_time_ms' => null
     ];
 
     /**
@@ -101,7 +105,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'call_id' => 'callId'
+        'save_recording' => 'saveRecording',
+        'max_length_sec' => 'maxLengthSec',
+        'rcrd_termination_silence_time_ms' => 'rcrdTerminationSilenceTimeMs'
     ];
 
     /**
@@ -110,7 +116,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'call_id' => 'setCallId'
+        'save_recording' => 'setSaveRecording',
+        'max_length_sec' => 'setMaxLengthSec',
+        'rcrd_termination_silence_time_ms' => 'setRcrdTerminationSilenceTimeMs'
     ];
 
     /**
@@ -119,7 +127,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'call_id' => 'getCallId'
+        'save_recording' => 'getSaveRecording',
+        'max_length_sec' => 'getMaxLengthSec',
+        'rcrd_termination_silence_time_ms' => 'getRcrdTerminationSilenceTimeMs'
     ];
 
     /**
@@ -179,7 +189,9 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['call_id'] = $data['call_id'] ?? null;
+        $this->container['save_recording'] = $data['save_recording'] ?? false;
+        $this->container['max_length_sec'] = $data['max_length_sec'] ?? 60;
+        $this->container['rcrd_termination_silence_time_ms'] = $data['rcrd_termination_silence_time_ms'] ?? null;
     }
 
     /**
@@ -191,9 +203,22 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['call_id'] === null) {
-            $invalidProperties[] = "'call_id' can't be null";
+        if (!is_null($this->container['max_length_sec']) && ($this->container['max_length_sec'] > 60)) {
+            $invalidProperties[] = "invalid value for 'max_length_sec', must be smaller than or equal to 60.";
         }
+
+        if (!is_null($this->container['max_length_sec']) && ($this->container['max_length_sec'] < 1)) {
+            $invalidProperties[] = "invalid value for 'max_length_sec', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['rcrd_termination_silence_time_ms']) && ($this->container['rcrd_termination_silence_time_ms'] > 3000)) {
+            $invalidProperties[] = "invalid value for 'rcrd_termination_silence_time_ms', must be smaller than or equal to 3000.";
+        }
+
+        if (!is_null($this->container['rcrd_termination_silence_time_ms']) && ($this->container['rcrd_termination_silence_time_ms'] <= 0)) {
+            $invalidProperties[] = "invalid value for 'rcrd_termination_silence_time_ms', must be bigger than 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -210,25 +235,89 @@ class RemoveFromConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets call_id
+     * Gets save_recording
      *
-     * @return string
+     * @return bool|null
      */
-    public function getCallId()
+    public function getSaveRecording()
     {
-        return $this->container['call_id'];
+        return $this->container['save_recording'];
     }
 
     /**
-     * Sets call_id
+     * Sets save_recording
      *
-     * @param string $call_id ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
+     * @param bool|null $save_recording save_recording
      *
      * @return self
      */
-    public function setCallId($call_id)
+    public function setSaveRecording($save_recording)
     {
-        $this->container['call_id'] = $call_id;
+        $this->container['save_recording'] = $save_recording;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_length_sec
+     *
+     * @return int|null
+     */
+    public function getMaxLengthSec()
+    {
+        return $this->container['max_length_sec'];
+    }
+
+    /**
+     * Sets max_length_sec
+     *
+     * @param int|null $max_length_sec max_length_sec
+     *
+     * @return self
+     */
+    public function setMaxLengthSec($max_length_sec)
+    {
+
+        if (!is_null($max_length_sec) && ($max_length_sec > 60)) {
+            throw new \InvalidArgumentException('invalid value for $max_length_sec when calling TranscribeUtteranceAllOfRecord., must be smaller than or equal to 60.');
+        }
+        if (!is_null($max_length_sec) && ($max_length_sec < 1)) {
+            throw new \InvalidArgumentException('invalid value for $max_length_sec when calling TranscribeUtteranceAllOfRecord., must be bigger than or equal to 1.');
+        }
+
+        $this->container['max_length_sec'] = $max_length_sec;
+
+        return $this;
+    }
+
+    /**
+     * Gets rcrd_termination_silence_time_ms
+     *
+     * @return int|null
+     */
+    public function getRcrdTerminationSilenceTimeMs()
+    {
+        return $this->container['rcrd_termination_silence_time_ms'];
+    }
+
+    /**
+     * Sets rcrd_termination_silence_time_ms
+     *
+     * @param int|null $rcrd_termination_silence_time_ms rcrd_termination_silence_time_ms
+     *
+     * @return self
+     */
+    public function setRcrdTerminationSilenceTimeMs($rcrd_termination_silence_time_ms)
+    {
+
+        if (!is_null($rcrd_termination_silence_time_ms) && ($rcrd_termination_silence_time_ms > 3000)) {
+            throw new \InvalidArgumentException('invalid value for $rcrd_termination_silence_time_ms when calling TranscribeUtteranceAllOfRecord., must be smaller than or equal to 3000.');
+        }
+        if (!is_null($rcrd_termination_silence_time_ms) && ($rcrd_termination_silence_time_ms <= 0)) {
+            throw new \InvalidArgumentException('invalid value for $rcrd_termination_silence_time_ms when calling TranscribeUtteranceAllOfRecord., must be bigger than 0.');
+        }
+
+        $this->container['rcrd_termination_silence_time_ms'] = $rcrd_termination_silence_time_ms;
 
         return $this;
     }

@@ -69,7 +69,7 @@ class UpdateCallRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new UpdateCallRequest();    
-      $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
+    $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -81,7 +81,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new UpdateCallRequest();
-      $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
+    $test1->setStatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,8 +58,8 @@ class SetTalkAllOfTest extends TestCase
      */
     public function testPropertyTalk()
     {
-        $this->SetTalkAllOf->setTalk(true);
-        $this->assertTrue($this->SetTalkAllOf->getTalk());
+        $this->SetTalkAllOf->setTalk(false);
+        $this->assertFalse($this->SetTalkAllOf->getTalk());
         $this->assertIsBool($this->SetTalkAllOf->getTalk());
     }
 
@@ -68,7 +68,7 @@ class SetTalkAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SetTalkAllOf();    
-      $test1->setTalk(true);
+    $test1->setTalk(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -80,7 +80,7 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SetTalkAllOf();
-      $test1->setTalk(true);
+    $test1->setTalk(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

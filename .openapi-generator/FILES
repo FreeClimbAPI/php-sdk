@@ -139,7 +139,8 @@ docs/Model/StartRecordCall.md
 docs/Model/TFN.md
 docs/Model/TerminateConference.md
 docs/Model/TranscribeUtterance.md
-docs/Model/TranscribeUtteranceRecord.md
+docs/Model/TranscribeUtteranceAllOf.md
+docs/Model/TranscribeUtteranceAllOfRecord.md
 docs/Model/Unpark.md
 docs/Model/UpdateCallRequest.md
 docs/Model/UpdateCallRequestStatus.md
@@ -287,7 +288,8 @@ lib/Model/StartRecordCall.php
 lib/Model/TFN.php
 lib/Model/TerminateConference.php
 lib/Model/TranscribeUtterance.php
-lib/Model/TranscribeUtteranceRecord.php
+lib/Model/TranscribeUtteranceAllOf.php
+lib/Model/TranscribeUtteranceAllOfRecord.php
 lib/Model/Unpark.php
 lib/Model/UpdateCallRequest.php
 lib/Model/UpdateCallRequestStatus.php

@@ -28,8 +28,6 @@
  */
 
 namespace FreeClimb\Api\Model;
-
-use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
@@ -63,7 +61,7 @@ class TranscribeUtterance extends PerclCommand
     protected static $openAPITypes = [
         'action_url' => 'string',
         'play_beep' => 'bool',
-        'record' => '\FreeClimb\Api\Model\TranscribeUtteranceRecord',
+        'record' => '\FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord',
         'privacy_for_logging' => 'bool',
         'privacy_for_recording' => 'bool',
         'prompts' => 'mixed[]'
@@ -190,12 +188,6 @@ class TranscribeUtterance extends PerclCommand
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -205,6 +197,8 @@ class TranscribeUtterance extends PerclCommand
      */
     public function __construct(array $data = null)
     {
+        parent::__construct($data);
+
         $this->container['action_url'] = $data['action_url'] ?? null;
         $this->container['play_beep'] = $data['play_beep'] ?? false;
         $this->container['record'] = $data['record'] ?? null;
@@ -220,7 +214,7 @@ class TranscribeUtterance extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         if ($this->container['action_url'] === null) {
             $invalidProperties[] = "'action_url' can't be null";
@@ -291,7 +285,7 @@ class TranscribeUtterance extends PerclCommand
     /**
      * Gets record
      *
-     * @return \FreeClimb\Api\Model\TranscribeUtteranceRecord|null
+     * @return \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord|null
      */
     public function getRecord()
     {
@@ -301,7 +295,7 @@ class TranscribeUtterance extends PerclCommand
     /**
      * Sets record
      *
-     * @param \FreeClimb\Api\Model\TranscribeUtteranceRecord|null $record record
+     * @param \FreeClimb\Api\Model\TranscribeUtteranceAllOfRecord|null $record record
      *
      * @return self
      */
@@ -390,7 +384,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return boolean
      */
-    public function offsetExists($offset): bool
+    public function offsetExists($offset) : bool
     {
         return isset($this->container[$offset]);
     }
@@ -402,7 +396,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return mixed|null
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -415,7 +409,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return void
      */
-    public function offsetSet($offset, $value): void
+    public function offsetSet($offset, $value) : void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,7 +425,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return void
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset($offset) : void
     {
         unset($this->container[$offset]);
     }
@@ -443,7 +437,7 @@ class TranscribeUtterance extends PerclCommand
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
-    public function jsonSerialize(): mixed
+    public function jsonSerialize() : mixed
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -453,7 +447,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return string
      */
-    public function __toString(): string
+    public function __toString() : string
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
@@ -466,7 +460,7 @@ class TranscribeUtterance extends PerclCommand
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue() : string
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

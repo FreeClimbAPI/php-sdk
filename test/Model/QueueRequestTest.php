@@ -58,20 +58,21 @@ class QueueRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
-        $this->QueueRequest->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->QueueRequest->getAlias());
+        $this->QueueRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->QueueRequest->getAlias());
         $this->assertIsString($this->QueueRequest->getAlias());
-        
-
     }
     /**
      * Test attribute "max_size"
      */
     public function testPropertyMaxSize()
     {
-        $this->QueueRequest->setMaxSize(12345);
-        $this->assertEquals(12345, $this->QueueRequest->getMaxSize());
-        $this->assertIsInt($this->QueueRequest->getMaxSize());
+        
+        
+        $this->QueueRequest->setMaxSize(1);
+        $this->assertEquals(1, $this->QueueRequest->getMaxSize());
+        $this->assertIsNumeric($this->QueueRequest->getMaxSize());
+        
     }
 
     /**
@@ -79,8 +80,8 @@ class QueueRequestTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new QueueRequest();    
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -92,8 +93,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new QueueRequest();
-      $test1->setAlias("TS");
-      $test1->setMaxSize(1);
+    $test1->setAlias("TS");
+    $test1->setMaxSize(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

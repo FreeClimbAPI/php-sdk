@@ -58,86 +58,75 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyUri()
     {
-        $this->AccountResult->setUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getUri());
+        $this->AccountResult->setUri('TS');
+        $this->assertEquals('TS', $this->AccountResult->getUri());
         $this->assertIsString($this->AccountResult->getUri());
-        
-
     }
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        $this->AccountResult->setDateCreated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getDateCreated());
+        $this->AccountResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->AccountResult->getDateCreated());
         $this->assertIsString($this->AccountResult->getDateCreated());
-        
-
     }
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        $this->AccountResult->setDateUpdated('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getDateUpdated());
+        $this->AccountResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->AccountResult->getDateUpdated());
         $this->assertIsString($this->AccountResult->getDateUpdated());
-        
-
     }
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        $this->AccountResult->setRevision(12345);
-        $this->assertEquals(12345, $this->AccountResult->getRevision());
-        $this->assertIsInt($this->AccountResult->getRevision());
+        
+        
+        $this->AccountResult->setRevision(1);
+        $this->assertEquals(1, $this->AccountResult->getRevision());
+        $this->assertIsNumeric($this->AccountResult->getRevision());
+        
     }
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        $this->AccountResult->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getAccountId());
+        $this->AccountResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->AccountResult->getAccountId());
         $this->assertIsString($this->AccountResult->getAccountId());
-        
-
     }
     /**
      * Test attribute "api_key"
      */
     public function testPropertyApiKey()
     {
-        $this->AccountResult->setApiKey('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getApiKey());
+        $this->AccountResult->setApiKey('TS');
+        $this->assertEquals('TS', $this->AccountResult->getApiKey());
         $this->assertIsString($this->AccountResult->getApiKey());
-        
-
     }
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        $this->AccountResult->setAlias('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getAlias());
+        $this->AccountResult->setAlias('TS');
+        $this->assertEquals('TS', $this->AccountResult->getAlias());
         $this->assertIsString($this->AccountResult->getAlias());
-        
-
     }
     /**
      * Test attribute "label"
      */
     public function testPropertyLabel()
     {
-        $this->AccountResult->setLabel('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->AccountResult->getLabel());
+        $this->AccountResult->setLabel('TS');
+        $this->assertEquals('TS', $this->AccountResult->getLabel());
         $this->assertIsString($this->AccountResult->getLabel());
-        
-
     }
     /**
      * Test attribute "type"
@@ -175,18 +164,18 @@ class AccountResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new AccountResult();    
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setApiKey("TS");
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
-      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
-      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
-      $testObject = new stdClass(); 
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setApiKey("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
+    $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+    $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+    $testObject = new stdClass(); 
+    $test1->setSubresourceUris($testObject);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -198,18 +187,18 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new AccountResult();
-      $test1->setUri("TS");
-      $test1->setDateCreated("TS");
-      $test1->setDateUpdated("TS");
-      $test1->setRevision(1);
-      $test1->setAccountId("TS");
-      $test1->setApiKey("TS");
-      $test1->setAlias("TS");
-      $test1->setLabel("TS");
-      $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
-      $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
-      $testObject = new stdClass();
-      $test1->setSubresourceUris($testObject);
+    $test1->setUri("TS");
+    $test1->setDateCreated("TS");
+    $test1->setDateUpdated("TS");
+    $test1->setRevision(1);
+    $test1->setAccountId("TS");
+    $test1->setApiKey("TS");
+    $test1->setAlias("TS");
+    $test1->setLabel("TS");
+    $test1->setType(\FreeClimb\Api\Model\AccountType::TRIAL);
+    $test1->setStatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+    $testObject = new stdClass();
+    $test1->setSubresourceUris($testObject);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

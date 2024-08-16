@@ -68,8 +68,8 @@ class PerclScriptTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new PerclScript();    
-      $testList = [];
-      $test1->setCommands($testList);
+    $testList = [];
+    $test1->setCommands($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -81,8 +81,8 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new PerclScript();
-      $testList = [];
-      $test1->setCommands($testList);
+    $testList = [];
+    $test1->setCommands($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

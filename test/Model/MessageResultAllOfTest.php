@@ -58,22 +58,18 @@ class MessageResultAllOfTest extends TestCase
      */
     public function testPropertyAccountId()
     {
-        $this->MessageResultAllOf->setAccountId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getAccountId());
+        $this->MessageResultAllOf->setAccountId('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getAccountId());
         $this->assertIsString($this->MessageResultAllOf->getAccountId());
-        
-
     }
     /**
      * Test attribute "message_id"
      */
     public function testPropertyMessageId()
     {
-        $this->MessageResultAllOf->setMessageId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getMessageId());
+        $this->MessageResultAllOf->setMessageId('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getMessageId());
         $this->assertIsString($this->MessageResultAllOf->getMessageId());
-        
-
     }
     /**
      * Test attribute "status"
@@ -108,86 +104,75 @@ class MessageResultAllOfTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        $this->MessageResultAllOf->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getFrom());
+        $this->MessageResultAllOf->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getFrom());
         $this->assertIsString($this->MessageResultAllOf->getFrom());
-        
-
     }
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        $this->MessageResultAllOf->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getTo());
+        $this->MessageResultAllOf->setTo('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getTo());
         $this->assertIsString($this->MessageResultAllOf->getTo());
-        
-
     }
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        $this->MessageResultAllOf->setText('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getText());
+        $this->MessageResultAllOf->setText('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getText());
         $this->assertIsString($this->MessageResultAllOf->getText());
-        
-
     }
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        $this->MessageResultAllOf->setDirection('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getDirection());
+        $this->MessageResultAllOf->setDirection('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getDirection());
         $this->assertIsString($this->MessageResultAllOf->getDirection());
-        
-
     }
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        $this->MessageResultAllOf->setNotificationUrl('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getNotificationUrl());
+        $this->MessageResultAllOf->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getNotificationUrl());
         $this->assertIsString($this->MessageResultAllOf->getNotificationUrl());
-        
-
     }
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        $this->MessageResultAllOf->setBrandId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getBrandId());
+        $this->MessageResultAllOf->setBrandId('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getBrandId());
         $this->assertIsString($this->MessageResultAllOf->getBrandId());
-        
-
     }
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        $this->MessageResultAllOf->setCampaignId('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->MessageResultAllOf->getCampaignId());
+        $this->MessageResultAllOf->setCampaignId('TS');
+        $this->assertEquals('TS', $this->MessageResultAllOf->getCampaignId());
         $this->assertIsString($this->MessageResultAllOf->getCampaignId());
-        
-
     }
     /**
      * Test attribute "segment_count"
      */
     public function testPropertySegmentCount()
     {
-        $this->MessageResultAllOf->setSegmentCount(12345);
-        $this->assertEquals(12345, $this->MessageResultAllOf->getSegmentCount());
+        
+        
+        $this->MessageResultAllOf->setSegmentCount(1);
+        $this->assertEquals(1, $this->MessageResultAllOf->getSegmentCount());
         $this->assertIsNumeric($this->MessageResultAllOf->getSegmentCount());
+        
     }
     /**
      * Test attribute "media_urls"
@@ -204,19 +189,19 @@ class MessageResultAllOfTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new MessageResultAllOf();    
-      $test1->setAccountId("TS");
-      $test1->setMessageId("TS");
-      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setDirection("TS");
-      $test1->setNotificationUrl("TS");
-      $test1->setBrandId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setSegmentCount(1.0);
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setAccountId("TS");
+    $test1->setMessageId("TS");
+    $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setDirection("TS");
+    $test1->setNotificationUrl("TS");
+    $test1->setBrandId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setSegmentCount(1);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -228,19 +213,19 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new MessageResultAllOf();
-      $test1->setAccountId("TS");
-      $test1->setMessageId("TS");
-      $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
-      $test1->setFrom("TS");
-      $test1->setTo("TS");
-      $test1->setText("TS");
-      $test1->setDirection("TS");
-      $test1->setNotificationUrl("TS");
-      $test1->setBrandId("TS");
-      $test1->setCampaignId("TS");
-      $test1->setSegmentCount(1.0);
-      $testArray = ["ElementOne", "ElementTwo", "ElementThree"];
-      $test1->setMediaUrls($testArray);
+    $test1->setAccountId("TS");
+    $test1->setMessageId("TS");
+    $test1->setStatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+    $test1->setFrom("TS");
+    $test1->setTo("TS");
+    $test1->setText("TS");
+    $test1->setDirection("TS");
+    $test1->setNotificationUrl("TS");
+    $test1->setBrandId("TS");
+    $test1->setCampaignId("TS");
+    $test1->setSegmentCount(1);
+    $testList = [];
+    $test1->setMediaUrls($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

@@ -58,31 +58,30 @@ class CreateWebRTCTokenTest extends TestCase
      */
     public function testPropertyTo()
     {
-        $this->CreateWebRTCToken->setTo('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CreateWebRTCToken->getTo());
+        $this->CreateWebRTCToken->setTo('TS');
+        $this->assertEquals('TS', $this->CreateWebRTCToken->getTo());
         $this->assertIsString($this->CreateWebRTCToken->getTo());
-        
-
     }
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        $this->CreateWebRTCToken->setFrom('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->CreateWebRTCToken->getFrom());
+        $this->CreateWebRTCToken->setFrom('TS');
+        $this->assertEquals('TS', $this->CreateWebRTCToken->getFrom());
         $this->assertIsString($this->CreateWebRTCToken->getFrom());
-        
-
     }
     /**
      * Test attribute "uses"
      */
     public function testPropertyUses()
     {
-        $this->CreateWebRTCToken->setUses(12345);
-        $this->assertEquals(12345, $this->CreateWebRTCToken->getUses());
-        $this->assertIsInt($this->CreateWebRTCToken->getUses());
+        
+        $this->CreateWebRTCToken->setUses(1);
+        $this->assertEquals(1, $this->CreateWebRTCToken->getUses());
+        $this->assertIsNumeric($this->CreateWebRTCToken->getUses());
+        
+        
     }
 
     /**
@@ -90,9 +89,9 @@ class CreateWebRTCTokenTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new CreateWebRTCToken();    
-      $test1->setTo("TS");
-      $test1->setFrom("TS");
-      $test1->setUses(1);
+    $test1->setTo("TS");
+    $test1->setFrom("TS");
+    $test1->setUses(1);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -104,9 +103,9 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new CreateWebRTCToken();
-      $test1->setTo("TS");
-      $test1->setFrom("TS");
-      $test1->setUses(1);
+    $test1->setTo("TS");
+    $test1->setFrom("TS");
+    $test1->setUses(1);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

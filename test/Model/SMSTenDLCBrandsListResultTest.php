@@ -58,65 +58,81 @@ class SMSTenDLCBrandsListResultTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        $this->SMSTenDLCBrandsListResult->setTotal(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getTotal());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getTotal());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setTotal(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getTotal());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getTotal());
+        
     }
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        $this->SMSTenDLCBrandsListResult->setStart(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getStart());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getStart());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setStart(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getStart());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getStart());
+        
     }
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        $this->SMSTenDLCBrandsListResult->setEnd(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getEnd());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getEnd());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setEnd(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getEnd());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getEnd());
+        
     }
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        $this->SMSTenDLCBrandsListResult->setPage(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getPage());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getPage());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setPage(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getPage());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getPage());
+        
     }
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        $this->SMSTenDLCBrandsListResult->setNumPages(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getNumPages());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getNumPages());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setNumPages(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getNumPages());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getNumPages());
+        
     }
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        $this->SMSTenDLCBrandsListResult->setPageSize(12345);
-        $this->assertEquals(12345, $this->SMSTenDLCBrandsListResult->getPageSize());
-        $this->assertIsInt($this->SMSTenDLCBrandsListResult->getPageSize());
+        
+        
+        $this->SMSTenDLCBrandsListResult->setPageSize(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getPageSize());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getPageSize());
+        
     }
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        $this->SMSTenDLCBrandsListResult->setNextPageUri('TEST_STRING');
-        $this->assertEquals('TEST_STRING', $this->SMSTenDLCBrandsListResult->getNextPageUri());
+        $this->SMSTenDLCBrandsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrandsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCBrandsListResult->getNextPageUri());
-        
-
     }
     /**
      * Test attribute "brands"
@@ -133,15 +149,15 @@ class SMSTenDLCBrandsListResultTest extends TestCase
 */
 public function toStringTest() {
     $test1 = new SMSTenDLCBrandsListResult();    
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setBrands($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setBrands($testList);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -153,15 +169,15 @@ public function toStringTest() {
 public function toHeaderValueTest()
 {
     $test1 = new SMSTenDLCBrandsListResult();
-      $test1->setTotal(1);
-      $test1->setStart(1);
-      $test1->setEnd(1);
-      $test1->setPage(1);
-      $test1->setNumPages(1);
-      $test1->setPageSize(1);
-      $test1->setNextPageUri("TS");
-      $testList = [];
-      $test1->setBrands($testList);
+    $test1->setTotal(1);
+    $test1->setStart(1);
+    $test1->setEnd(1);
+    $test1->setPage(1);
+    $test1->setNumPages(1);
+    $test1->setPageSize(1);
+    $test1->setNextPageUri("TS");
+    $testList = [];
+    $test1->setBrands($testList);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
