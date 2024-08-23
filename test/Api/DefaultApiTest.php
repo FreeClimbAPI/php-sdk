@@ -1790,7 +1790,6 @@ class DefaultApiTest extends TestCase
      * Test case for makeAWebrtcJwt
      *
      * Make a JWT for WebRTC calling.
-     * Make a JWT for WebRTC calling
      * @param  string $account_id ID of the account (required)
      * @param  \FreeClimb\Api\Model\CreateWebRTCToken $create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs (required)
      */
