@@ -17665,7 +17665,7 @@ class DefaultApi
         return $options;
     }
 
-        /**
+    /**
      * Operation getNextPage
      *
      * Get next page of resource
@@ -17676,9 +17676,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\PaginationModel
      */
-    public function getNextPage($resourcePath)
+    public function getNextPage($initialResponse)
     {
-        list($response) = $this->getNextPageWithHttpInfo($resourcePath);
+        list($response) = $this->getNextPageWithHttpInfo($initialResponse);
         return $response;
     }
 
@@ -17693,9 +17693,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\PaginationModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getNextPageWithHttpInfo($resourcePath)
+    public function getNextPageWithHttpInfo($initialResponse)
     {
-        $request = $this->getNextPageRequest($resourcePath);
+        $request = $this->getNextPageRequest($initialResponse['next_page_uri']);
 
         try {
             $options = $this->createHttpClientOption();
@@ -17737,13 +17737,13 @@ class DefaultApi
                     $content = (string) $response->getBody();
 
                     return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PaginationModel', []),
+                        ObjectSerializer::deserialize($content, get_class($initialResponse), []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\FreeClimb\Api\Model\PaginationModel';
+            $returnType = get_class($initialResponse);
             $content = (string) $response->getBody();
 
             return [
