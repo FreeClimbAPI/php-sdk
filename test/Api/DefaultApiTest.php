@@ -2089,4 +2089,32 @@ class DefaultApiTest extends TestCase
         $response = $apiInstance->updateAnIncomingNumber($this->phone_number_id_updateAnIncomingNumber_test_value(), $this->incoming_number_request_updateAnIncomingNumber_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
+
+    /**
+     * Test case for getNextPage
+     *
+     * Get next page of resource.
+     * @param  string $account_id ID of the account (required)
+     */
+    public function testGetNextPage()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Calls';
+        // echo "next_page_uri";
+        // echo $response;
+        $nextPageResponse = $apiInstance->getNextPage($response['next_page_uri']);
+        echo $nextPageResponse;
+        $this->assertInstanceOf('\FreeClimb\Api\Model\CallList',$nextPageResponse);
+    }
 }

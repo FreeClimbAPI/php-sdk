@@ -34,7 +34,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * AddToConference Class Doc Comment
  *
  * @category Class
- * @description The &#x60;AddToConference&#x60; command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via &#x60;AddToConference&#x60;.
+ * @description The &#x60;AddToConference&#x60; command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via &#x60;AddToConference&#x60;.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
