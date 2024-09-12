@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.5.0"></a>
+
+## [4.5.0] - 2024-09-11
+
+### Added
+
+- Pagination functionality for PHP SDK
+
 <a name="4.4.2"></a>
 
 ## [4.4.2] - 2024-07-23

@@ -17664,4 +17664,164 @@ class DefaultApi
 
         return $options;
     }
+
+    /**
+     * Operation getNextPage
+     *
+     * Get next page of resource
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\PaginationModel
+     */
+    public function getNextPage($initialResponse)
+    {
+        list($response) = $this->getNextPageWithHttpInfo($initialResponse);
+        return $response;
+    }
+
+    /**
+     * Operation getNextPageWithHttpInfo
+     *
+     * Get next page or resource
+     *
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\PaginationModel, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getNextPageWithHttpInfo($initialResponse)
+    {
+        $request = $this->getNextPageRequest($initialResponse['next_page_uri']);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    $content = (string) $response->getBody();
+
+                    return [
+                        ObjectSerializer::deserialize($content, get_class($initialResponse), []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = get_class($initialResponse);
+            $content = (string) $response->getBody();
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PaginationModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Create request for operation 'getNextPage'
+     *
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getNextPageRequest($resourcePath)
+    {
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling getNextPage'
+            );
+        }
+        
+        $formParams = [];
+        $httpBody = '';
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            []
+        );
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headers
+        );
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+    }
 }

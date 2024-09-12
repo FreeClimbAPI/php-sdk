@@ -2089,4 +2089,436 @@ class DefaultApiTest extends TestCase
         $response = $apiInstance->updateAnIncomingNumber($this->phone_number_id_updateAnIncomingNumber_test_value(), $this->incoming_number_request_updateAnIncomingNumber_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
+    /**
+     * Test case for getNextPage of getTenDLCSmsBrands
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageGetTenDLCSmsBrands()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->getTenDLCSmsBrands();
+        $response['next_page_uri'] = '/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of getTenDLCSmsCampaigns
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageGetTenDLCSmsCampaigns()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->getTenDLCSmsCampaigns($this->brand_id_getTenDLCSmsCampaigns_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Messages/10DLC/Campaigns?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of getTenDLCSmsPartnerCampaigns
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageGetTenDLCSmsPartnerCampaigns()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->getTenDLCSmsPartnerCampaigns($this->brand_id_getTenDLCSmsPartnerCampaigns_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of getTollFreeSmsCampaigns
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageGetTollFreeSmsCampaigns()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->getTollFreeSmsCampaigns();
+        $response['next_page_uri'] = '/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listActiveQueues
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListActiveQueues()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listActiveQueues($this->alias_listActiveQueues_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Queues?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\QueueList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listAllAccountLogs
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListAllAccountLogs()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listAllAccountLogs();
+        $response['next_page_uri'] = '/Accounts/{accountId}/Logs?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\LogList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listApplications
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListApplications()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listApplications($this->alias_listApplications_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Applications?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listAvailableNumbers
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListAvailableNumbers()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listAvailableNumbers($this->phone_number_listAvailableNumbers_test_value(), $this->region_listAvailableNumbers_test_value(), $this->country_listAvailableNumbers_test_value(), $this->voice_enabled_listAvailableNumbers_test_value(), $this->sms_enabled_listAvailableNumbers_test_value(), $this->capabilities_voice_listAvailableNumbers_test_value(), $this->capabilities_sms_listAvailableNumbers_test_value(), $this->capabilities_toll_free_listAvailableNumbers_test_value(), $this->capabilities_ten_dlc_listAvailableNumbers_test_value(), $this->capabilities_short_code_listAvailableNumbers_test_value());
+        $response['next_page_uri'] = '/AvailablePhoneNumbers?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\AvailableNumberList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listCallLogs
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListCallLogs()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listCallLogs($this->call_id_listCallLogs_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\LogList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listCallRecordings
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListCallRecordings()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listCalls
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListCalls()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Calls?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\CallList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listConferenceRecordings
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListConferenceRecordings()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listConferences
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListConferences()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listConferences($this->status_listConferences_test_value(), $this->alias_listConferences_test_value(), $this->date_created_listConferences_test_value(), $this->date_updated_listConferences_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Conferences?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listIncomingNumbers
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListIncomingNumbers()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->voice_enabled_listIncomingNumbers_test_value(), $this->sms_enabled_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listMembers
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListMembers()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listMembers($this->queue_id_listMembers_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMemberList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listParticipants
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListParticipants()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listRecordings
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListRecordings()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Recordings?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listSmsMessages
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListSmsMessages()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+        
+        $response = $apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Messages?cursor=1';
+        $nextPageResponse = $apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$nextPageResponse);
+    }
 }

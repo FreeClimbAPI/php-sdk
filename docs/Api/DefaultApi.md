@@ -60,7 +60,7 @@ Method | HTTP request | Description
 [**updateAnAccount()**](DefaultApi.md#updateAnAccount) | **POST** /Accounts/{accountId} | Manage an account
 [**updateAnApplication()**](DefaultApi.md#updateAnApplication) | **POST** /Accounts/{accountId}/Applications/{applicationId} | Update an application
 [**updateAnIncomingNumber()**](DefaultApi.md#updateAnIncomingNumber) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Update an Incoming Number
-
+[**getNextPage**](DefaultApi.md#getNextPage) | **GET** /Accounts/{accountId}/{nextPageUri} | Get Next Page of Resource Data
 
 ## `buyAPhoneNumber()`
 
@@ -124,6 +124,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `createAConference()`
 
 ```php
@@ -185,6 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `createAQueue()`
 
@@ -248,6 +250,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `createAnApplication()`
 
 ```php
@@ -310,6 +313,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `deleteARecording()`
 
 ```php
@@ -370,6 +374,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `deleteAnApplication()`
 
@@ -432,6 +437,7 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `deleteAnIncomingNumber()`
 
 ```php
@@ -492,6 +498,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `dequeueAMember()`
 
@@ -557,6 +564,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `dequeueHeadMember()`
 
 ```php
@@ -618,6 +626,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `downloadARecordingFile()`
 
@@ -681,6 +690,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `filterLogs()`
 
 ```php
@@ -742,6 +752,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getACall()`
 
@@ -805,6 +816,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getAConference()`
 
 ```php
@@ -866,6 +878,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getAMember()`
 
@@ -931,6 +944,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getAParticipant()`
 
 ```php
@@ -995,6 +1009,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getAQueue()`
 
 ```php
@@ -1056,6 +1071,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getARecording()`
 
@@ -1119,6 +1135,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getAnAccount()`
 
 ```php
@@ -1178,6 +1195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getAnApplication()`
 
@@ -1241,6 +1259,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getAnIncomingNumber()`
 
 ```php
@@ -1302,6 +1321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getAnSmsMessage()`
 
@@ -1365,6 +1385,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getHeadMember()`
 
 ```php
@@ -1426,6 +1447,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getTenDLCSmsBrand()`
 
@@ -1489,6 +1511,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getTenDLCSmsBrands()`
 
 ```php
@@ -1548,6 +1571,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getTenDLCSmsCampaign()`
 
@@ -1611,6 +1635,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getTenDLCSmsCampaigns()`
 
 ```php
@@ -1672,6 +1697,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getTenDLCSmsPartnerCampaign()`
 
@@ -1735,6 +1761,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getTenDLCSmsPartnerCampaigns()`
 
 ```php
@@ -1796,6 +1823,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `getTollFreeSmsCampaign()`
 
@@ -1859,6 +1887,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `getTollFreeSmsCampaigns()`
 
 ```php
@@ -1918,6 +1947,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listActiveQueues()`
 
@@ -1981,6 +2011,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `listAllAccountLogs()`
 
 ```php
@@ -2040,6 +2071,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listApplications()`
 
@@ -2102,6 +2134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listAvailableNumbers()`
 
@@ -2181,6 +2214,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `listCallLogs()`
 
 ```php
@@ -2242,6 +2276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listCallRecordings()`
 
@@ -2306,6 +2341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listCalls()`
 
@@ -2383,6 +2419,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `listConferenceRecordings()`
 
 ```php
@@ -2448,6 +2485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listConferences()`
 
@@ -2516,6 +2554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listIncomingNumbers()`
 
@@ -2609,6 +2648,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `listMembers()`
 
 ```php
@@ -2670,6 +2710,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listParticipants()`
 
@@ -2737,6 +2778,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `listRecordings()`
 
 ```php
@@ -2802,6 +2844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `listSmsMessages()`
 
@@ -2879,6 +2922,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `makeACall()`
 
 ```php
@@ -2941,6 +2985,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `makeAWebrtcJwt()`
 
 ```php
@@ -3002,6 +3047,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `removeAParticipant()`
 
@@ -3066,6 +3112,7 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `sendAnSmsMessage()`
 
 ```php
@@ -3128,6 +3175,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `streamARecordingFile()`
 
 ```php
@@ -3189,6 +3237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `updateAConference()`
 
@@ -3253,6 +3302,7 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `updateALiveCall()`
 
 ```php
@@ -3315,6 +3365,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `updateAParticipant()`
 
@@ -3382,6 +3433,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `updateAQueue()`
 
 ```php
@@ -3446,6 +3498,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `updateAnAccount()`
 
 ```php
@@ -3506,6 +3559,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
+
 
 ## `updateAnApplication()`
 
@@ -3571,6 +3625,7 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+
 ## `updateAnIncomingNumber()`
 
 ```php
@@ -3621,6 +3676,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FreeClimb\Api\Model\IncomingNumberResult**](../Model/IncomingNumberResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+
+## `getNextPage()`
+
+```php
+getNextPage($initialResponse): get_class($initialResponse)
+```
+
+Get Next Page of Resource
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$config = Configuration::getDefaultConfiguration()
+    ->setHost('http://127.0.0.1:4010')
+    ->setUsername('YOUR_ACCOUNT_ID')
+    ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new DefaultApi(
+    new Client(),
+    $config
+);
+
+$response = $apiInstance->listApplications($this->alias_listApplications_test_value());
+$nextPageResponse = $apiInstance->getNextPage($response);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **initialResponse** | **object**| Initital response of resource intending to fetch |
+
+### Return type
+
+get_class($intialResponse)
 
 ### Authorization
 
