@@ -28,6 +28,8 @@ docs/Model/CallResult.md
 docs/Model/CallResultAllOf.md
 docs/Model/CallStatus.md
 docs/Model/Capabilities.md
+docs/Model/CompletionRequest.md
+docs/Model/CompletionResult.md
 docs/Model/ConferenceList.md
 docs/Model/ConferenceListAllOf.md
 docs/Model/ConferenceParticipantList.md
@@ -176,6 +178,8 @@ lib/Model/CallResult.php
 lib/Model/CallResultAllOf.php
 lib/Model/CallStatus.php
 lib/Model/Capabilities.php
+lib/Model/CompletionRequest.php
+lib/Model/CompletionResult.php
 lib/Model/ConferenceList.php
 lib/Model/ConferenceListAllOf.php
 lib/Model/ConferenceParticipantList.php
@@ -298,3 +302,4 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/DefaultApiTest.php
