@@ -486,11 +486,11 @@ class DefaultApiTest extends TestCase
         ));
     }
 
-    public function knowledge_base_id_knowledgebaseCompletion_test_value(){
+    public function knowledge_base_id_createKnowledgeBaseCompletion_test_value(){
         return 'knowledge_base_id_example';
     }
 
-    public function completion_request_knowledgebaseCompletion_test_value(){
+    public function completion_request_createKnowledgeBaseCompletion_test_value(){
         return new \FreeClimb\Api\Model\CompletionRequest(array(
         "query" => "query_example",
         ));
@@ -637,6 +637,34 @@ class DefaultApiTest extends TestCase
         
         $response = $apiInstance->createAnApplication($this->application_request_createAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
+    }
+    /**
+     * Test case for createKnowledgeBaseCompletion
+     *
+     * Query the knowledge base.
+     * @param  string $account_id ID of the account (required)
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+     */
+    public function testCreateKnowledgeBaseCompletion()
+    {
+        $config = Configuration::getDefaultConfiguration()
+            ->setHost('http://127.0.0.1:4010')
+            ->setUsername('YOUR_ACCOUNT_ID')
+            ->setPassword('YOUR_API_KEY');
+
+
+        $apiInstance = new DefaultApi(
+            new Client(),
+            $config
+        );
+
+        //$account_id = $account_id_test_value;
+        //$knowledge_base_id = $knowledge_base_id_test_value;
+        //$completion_request = $completion_request_test_value;
+        
+        $response = $apiInstance->createKnowledgeBaseCompletion($this->knowledge_base_id_createKnowledgeBaseCompletion_test_value(), $this->completion_request_createKnowledgeBaseCompletion_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\CompletionResult',$response);
     }
     /**
      * Test case for deleteARecording
@@ -1313,34 +1341,6 @@ class DefaultApiTest extends TestCase
         
         $response = $apiInstance->getTollFreeSmsCampaigns();
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult',$response);
-    }
-    /**
-     * Test case for knowledgebaseCompletion
-     *
-     * Query the knowledge base.
-     * @param  string $account_id ID of the account (required)
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-     */
-    public function testKnowledgebaseCompletion()
-    {
-        $config = Configuration::getDefaultConfiguration()
-            ->setHost('http://127.0.0.1:4010')
-            ->setUsername('YOUR_ACCOUNT_ID')
-            ->setPassword('YOUR_API_KEY');
-
-
-        $apiInstance = new DefaultApi(
-            new Client(),
-            $config
-        );
-
-        //$account_id = $account_id_test_value;
-        //$knowledge_base_id = $knowledge_base_id_test_value;
-        //$completion_request = $completion_request_test_value;
-        
-        $response = $apiInstance->knowledgebaseCompletion($this->knowledge_base_id_knowledgebaseCompletion_test_value(), $this->completion_request_knowledgebaseCompletion_test_value());
-        $this->assertInstanceOf('\FreeClimb\Api\Model\CompletionResult',$response);
     }
     /**
      * Test case for listActiveQueues

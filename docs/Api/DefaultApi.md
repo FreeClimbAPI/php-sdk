@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**createAConference()**](DefaultApi.md#createAConference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 [**createAQueue()**](DefaultApi.md#createAQueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
 [**createAnApplication()**](DefaultApi.md#createAnApplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+[**createKnowledgeBaseCompletion()**](DefaultApi.md#createKnowledgeBaseCompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 [**deleteARecording()**](DefaultApi.md#deleteARecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
 [**deleteAnApplication()**](DefaultApi.md#deleteAnApplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
 [**deleteAnIncomingNumber()**](DefaultApi.md#deleteAnIncomingNumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
@@ -34,7 +35,6 @@ Method | HTTP request | Description
 [**getTenDLCSmsPartnerCampaigns()**](DefaultApi.md#getTenDLCSmsPartnerCampaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 [**getTollFreeSmsCampaign()**](DefaultApi.md#getTollFreeSmsCampaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
 [**getTollFreeSmsCampaigns()**](DefaultApi.md#getTollFreeSmsCampaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
-[**knowledgebaseCompletion()**](DefaultApi.md#knowledgebaseCompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 [**listActiveQueues()**](DefaultApi.md#listActiveQueues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 [**listAllAccountLogs()**](DefaultApi.md#listAllAccountLogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 [**listApplications()**](DefaultApi.md#listApplications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -300,6 +300,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FreeClimb\Api\Model\ApplicationResult**](../Model/ApplicationResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+
+## `createKnowledgeBaseCompletion()`
+
+```php
+createKnowledgeBaseCompletion($knowledge_base_id, $completion_request): \FreeClimb\Api\Model\CompletionResult
+```
+
+Query the knowledge base
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_id = 'account_id_example'; // string | ID of the account
+$knowledge_base_id = 'knowledge_base_id_example'; // string | A string that uniquely identifies the KnowledgeBase resource.
+$completion_request = new \FreeClimb\Api\Model\CompletionRequest(); // \FreeClimb\Api\Model\CompletionRequest | Completion request details
+
+try {
+    $result = $apiInstance->createKnowledgeBaseCompletion($knowledge_base_id, $completion_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->createKnowledgeBaseCompletion: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **knowledge_base_id** | **string**| A string that uniquely identifies the KnowledgeBase resource. |
+ **completion_request** | [**\FreeClimb\Api\Model\CompletionRequest**](../Model/CompletionRequest.md)| Completion request details | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\CompletionResult**](../Model/CompletionResult.md)
 
 ### Authorization
 
@@ -1943,71 +2008,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-
-## `knowledgebaseCompletion()`
-
-```php
-knowledgebaseCompletion($knowledge_base_id, $completion_request): \FreeClimb\Api\Model\CompletionResult
-```
-
-Query the knowledge base
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: fc
-$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_ACCOUNT_ID')
-              ->setPassword('YOUR_API_KEY');
-
-
-$apiInstance = new FreeClimb\Api\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$account_id = 'account_id_example'; // string | ID of the account
-$knowledge_base_id = 'knowledge_base_id_example'; // string | A string that uniquely identifies the KnowledgeBase resource.
-$completion_request = new \FreeClimb\Api\Model\CompletionRequest(); // \FreeClimb\Api\Model\CompletionRequest | Completion request details
-
-try {
-    $result = $apiInstance->knowledgebaseCompletion($knowledge_base_id, $completion_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->knowledgebaseCompletion: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **string**| ID of the account |
- **knowledge_base_id** | **string**| A string that uniquely identifies the KnowledgeBase resource. |
- **completion_request** | [**\FreeClimb\Api\Model\CompletionRequest**](../Model/CompletionRequest.md)| Completion request details | [optional]
-
-### Return type
-
-[**\FreeClimb\Api\Model\CompletionResult**](../Model/CompletionResult.md)
-
-### Authorization
-
-[fc](../../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

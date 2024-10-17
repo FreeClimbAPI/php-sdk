@@ -1291,6 +1291,322 @@ class DefaultApi
     }
 
     /**
+     * Operation createKnowledgeBaseCompletion
+     *
+     * Query the knowledge base
+     *
+
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\CompletionResult
+     */
+    public function createKnowledgeBaseCompletion($knowledge_base_id, $completion_request = null)
+    {
+        list($response) = $this->createKnowledgeBaseCompletionWithHttpInfo($knowledge_base_id, $completion_request);
+        return $response;
+    }
+
+    /**
+     * Operation createKnowledgeBaseCompletionWithHttpInfo
+     *
+     * Query the knowledge base
+     *
+
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\CompletionResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createKnowledgeBaseCompletionWithHttpInfo($knowledge_base_id, $completion_request = null)
+    {
+        $request = $this->createKnowledgeBaseCompletionRequest($knowledge_base_id, $completion_request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\CompletionResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\CompletionResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\FreeClimb\Api\Model\CompletionResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\CompletionResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createKnowledgeBaseCompletionAsync
+     *
+     * Query the knowledge base
+     *
+
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createKnowledgeBaseCompletionAsync($knowledge_base_id, $completion_request = null)
+    {
+        return $this->createKnowledgeBaseCompletionAsyncWithHttpInfo($knowledge_base_id, $completion_request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createKnowledgeBaseCompletionAsyncWithHttpInfo
+     *
+     * Query the knowledge base
+     *
+
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createKnowledgeBaseCompletionAsyncWithHttpInfo($knowledge_base_id, $completion_request = null)
+    {
+        $returnType = '\FreeClimb\Api\Model\CompletionResult';
+        $request = $this->createKnowledgeBaseCompletionRequest($knowledge_base_id, $completion_request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createKnowledgeBaseCompletion'
+     *
+
+     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
+
+     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
+
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createKnowledgeBaseCompletionRequest($knowledge_base_id, $completion_request = null)
+    { 
+        $account_id = $this->config->getUsername();
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account_id when calling createKnowledgeBaseCompletion'
+            );
+        }
+        // verify the required parameter 'knowledge_base_id' is set
+        if ($knowledge_base_id === null || (is_array($knowledge_base_id) && count($knowledge_base_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $knowledge_base_id when calling createKnowledgeBaseCompletion'
+            );
+        }
+
+        $resourcePath = '/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($knowledge_base_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'knowledgeBaseId' . '}',
+                ObjectSerializer::toPathValue($knowledge_base_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($completion_request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($completion_request));
+            } else {
+                $httpBody = $completion_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation deleteARecording
      *
      * Delete a Recording
@@ -8941,322 +9257,6 @@ class DefaultApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation knowledgebaseCompletion
-     *
-     * Query the knowledge base
-     *
-
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \FreeClimb\Api\Model\CompletionResult
-     */
-    public function knowledgebaseCompletion($knowledge_base_id, $completion_request = null)
-    {
-        list($response) = $this->knowledgebaseCompletionWithHttpInfo($knowledge_base_id, $completion_request);
-        return $response;
-    }
-
-    /**
-     * Operation knowledgebaseCompletionWithHttpInfo
-     *
-     * Query the knowledge base
-     *
-
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-
-     *
-     * @throws \FreeClimb\Api\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \FreeClimb\Api\Model\CompletionResult, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function knowledgebaseCompletionWithHttpInfo($knowledge_base_id, $completion_request = null)
-    {
-        $request = $this->knowledgebaseCompletionRequest($knowledge_base_id, $completion_request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\FreeClimb\Api\Model\CompletionResult' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\CompletionResult', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\FreeClimb\Api\Model\CompletionResult';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\FreeClimb\Api\Model\CompletionResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation knowledgebaseCompletionAsync
-     *
-     * Query the knowledge base
-     *
-
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function knowledgebaseCompletionAsync($knowledge_base_id, $completion_request = null)
-    {
-        return $this->knowledgebaseCompletionAsyncWithHttpInfo($knowledge_base_id, $completion_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation knowledgebaseCompletionAsyncWithHttpInfo
-     *
-     * Query the knowledge base
-     *
-
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function knowledgebaseCompletionAsyncWithHttpInfo($knowledge_base_id, $completion_request = null)
-    {
-        $returnType = '\FreeClimb\Api\Model\CompletionResult';
-        $request = $this->knowledgebaseCompletionRequest($knowledge_base_id, $completion_request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'knowledgebaseCompletion'
-     *
-
-     * @param  string $knowledge_base_id A string that uniquely identifies the KnowledgeBase resource. (required)
-
-     * @param  \FreeClimb\Api\Model\CompletionRequest $completion_request Completion request details (optional)
-
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function knowledgebaseCompletionRequest($knowledge_base_id, $completion_request = null)
-    { 
-        $account_id = $this->config->getUsername();
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling knowledgebaseCompletion'
-            );
-        }
-        // verify the required parameter 'knowledge_base_id' is set
-        if ($knowledge_base_id === null || (is_array($knowledge_base_id) && count($knowledge_base_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $knowledge_base_id when calling knowledgebaseCompletion'
-            );
-        }
-
-        $resourcePath = '/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($account_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'accountId' . '}',
-                ObjectSerializer::toPathValue($account_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($knowledge_base_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'knowledgeBaseId' . '}',
-                ObjectSerializer::toPathValue($knowledge_base_id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($completion_request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($completion_request));
-            } else {
-                $httpBody = $completion_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
