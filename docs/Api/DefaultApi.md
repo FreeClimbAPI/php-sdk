@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**createAConference()**](DefaultApi.md#createAConference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 [**createAQueue()**](DefaultApi.md#createAQueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
 [**createAnApplication()**](DefaultApi.md#createAnApplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+[**createKnowledgeBaseCompletion()**](DefaultApi.md#createKnowledgeBaseCompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 [**deleteARecording()**](DefaultApi.md#deleteARecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
 [**deleteAnApplication()**](DefaultApi.md#deleteAnApplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
 [**deleteAnIncomingNumber()**](DefaultApi.md#deleteAnIncomingNumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
@@ -89,8 +90,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$buy_incoming_number_request = new \FreeClimb\Api\Model\BuyIncomingNumberRequest(); // \FreeClimb\Api\Model\BuyIncomingNumberRequest | Incoming Number transaction details
+
+$buy_incoming_number_request = new \FreeClimb\Api\Model\BuyIncomingNumberRequest(phone_number={ Phone number to purchase in E.164 format (as returned in the list of Available Phone Numbers). }, alias={ Description for this new incoming phone number (max 64 characters). }, application_id={ ID of the application that should handle phone calls to the number. }); // \FreeClimb\Api\Model\BuyIncomingNumberRequest | Incoming Number transaction details
 
 try {
     $result = $apiInstance->buyAPhoneNumber($buy_incoming_number_request);
@@ -152,8 +153,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$create_conference_request = new \FreeClimb\Api\Model\CreateConferenceRequest(); // \FreeClimb\Api\Model\CreateConferenceRequest | Conference to create
+
+$create_conference_request = new \FreeClimb\Api\Model\CreateConferenceRequest(alias={ A description for this Conference. Maximum 64 characters. }, play_beep={  }, record={ Setting to `true` records the entire Conference. }, wait_url={ If specified, a URL for the audio file that provides custom hold music for the Conference when it is in the populated state. Otherwise, FreeClimb uses a system default audio file. This is always fetched using HTTP GET and is fetched just once &mdash; when the Conference is created. }, status_callback_url={ This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below). }); // \FreeClimb\Api\Model\CreateConferenceRequest | Conference to create
 
 try {
     $result = $apiInstance->createAConference($create_conference_request);
@@ -215,8 +216,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$queue_request = new \FreeClimb\Api\Model\QueueRequest(); // \FreeClimb\Api\Model\QueueRequest | Queue details used to create a queue
+
+$queue_request = new \FreeClimb\Api\Model\QueueRequest(alias={ Description for this Queue. Max length is 64 characters. }, max_size={ Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. }); // \FreeClimb\Api\Model\QueueRequest | Queue details used to create a queue
 
 try {
     $result = $apiInstance->createAQueue($queue_request);
@@ -278,8 +279,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$application_request = new \FreeClimb\Api\Model\ApplicationRequest(); // \FreeClimb\Api\Model\ApplicationRequest | Application Details
+
+$application_request = new \FreeClimb\Api\Model\ApplicationRequest(alias={ A human readable description of the application, with maximum length 64 characters. }, voice_url={ The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls. }, voice_fallback_url={ The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call. }, call_connect_url={ The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call. }, status_callback_url={ The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored. }, sms_url={ The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }, sms_fallback_url={ The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }); // \FreeClimb\Api\Model\ApplicationRequest | Application Details
 
 try {
     $result = $apiInstance->createAnApplication($application_request);
@@ -299,6 +300,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FreeClimb\Api\Model\ApplicationResult**](../Model/ApplicationResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+
+## `createKnowledgeBaseCompletion()`
+
+```php
+createKnowledgeBaseCompletion($knowledge_base_id, $completion_request): \FreeClimb\Api\Model\CompletionResult
+```
+
+Query the knowledge base
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+$knowledge_base_id = 'knowledge_base_id_example'; // string | A string that uniquely identifies the KnowledgeBase resource.
+
+$completion_request = new \FreeClimb\Api\Model\CompletionRequest(query={ Question to ask the Knowledge Base }); // \FreeClimb\Api\Model\CompletionRequest | Completion request details
+
+try {
+    $result = $apiInstance->createKnowledgeBaseCompletion($knowledge_base_id, $completion_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->createKnowledgeBaseCompletion: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **string**| ID of the account |
+ **knowledge_base_id** | **string**| A string that uniquely identifies the KnowledgeBase resource. |
+ **completion_request** | [**\FreeClimb\Api\Model\CompletionRequest**](../Model/CompletionRequest.md)| Completion request details | [optional]
+
+### Return type
+
+[**\FreeClimb\Api\Model\CompletionResult**](../Model/CompletionResult.md)
 
 ### Authorization
 
@@ -341,8 +408,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
+
 
 try {
     $apiInstance->deleteARecording($recording_id);
@@ -403,8 +471,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $application_id = 'application_id_example'; // string | String that uniquely identifies this application resource.
+
 
 try {
     $apiInstance->deleteAnApplication($application_id);
@@ -465,8 +534,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $phone_number_id = 'phone_number_id_example'; // string | String that uniquely identifies this phone number resource.
+
 
 try {
     $apiInstance->deleteAnIncomingNumber($phone_number_id);
@@ -527,9 +597,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
+
 $call_id = 'call_id_example'; // string | ID if the Call that the Member belongs to
+
 
 try {
     $result = $apiInstance->dequeueAMember($queue_id, $call_id);
@@ -592,8 +664,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies this queue resource.
+
 
 try {
     $result = $apiInstance->dequeueHeadMember($queue_id);
@@ -655,8 +728,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
+
 
 try {
     $result = $apiInstance->downloadARecordingFile($recording_id);
@@ -718,8 +792,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$filter_logs_request = new \FreeClimb\Api\Model\FilterLogsRequest(); // \FreeClimb\Api\Model\FilterLogsRequest | Filter logs request paramters
+
+$filter_logs_request = new \FreeClimb\Api\Model\FilterLogsRequest(pql={ The filter query for retrieving logs. See **Performance Query Language** below. }); // \FreeClimb\Api\Model\FilterLogsRequest | Filter logs request paramters
 
 try {
     $result = $apiInstance->filterLogs($filter_logs_request);
@@ -781,8 +855,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
+
 
 try {
     $result = $apiInstance->getACall($call_id);
@@ -844,8 +919,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | A string that uniquely identifies this conference resource.
+
 
 try {
     $result = $apiInstance->getAConference($conference_id);
@@ -907,9 +983,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
+
 $call_id = 'call_id_example'; // string | ID of the Call that the Member belongs to
+
 
 try {
     $result = $apiInstance->getAMember($queue_id, $call_id);
@@ -972,9 +1050,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | ID of the conference this participant is in.
+
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
+
 
 try {
     $result = $apiInstance->getAParticipant($conference_id, $call_id);
@@ -1037,8 +1117,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | A string that uniquely identifies this queue resource.
+
 
 try {
     $result = $apiInstance->getAQueue($queue_id);
@@ -1100,8 +1181,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
+
 
 try {
     $result = $apiInstance->getARecording($recording_id);
@@ -1163,7 +1245,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 
 try {
     $result = $apiInstance->getAnAccount();
@@ -1224,8 +1306,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $application_id = 'application_id_example'; // string | A string that uniquely identifies this application resource.
+
 
 try {
     $result = $apiInstance->getAnApplication($application_id);
@@ -1287,8 +1370,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $phone_number_id = 'phone_number_id_example'; // string | String that uniquely identifies this phone number resource.
+
 
 try {
     $result = $apiInstance->getAnIncomingNumber($phone_number_id);
@@ -1350,8 +1434,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $message_id = 'message_id_example'; // string | String that uniquely identifies this Message resource.
+
 
 try {
     $result = $apiInstance->getAnSmsMessage($message_id);
@@ -1413,8 +1498,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
+
 
 try {
     $result = $apiInstance->getHeadMember($queue_id);
@@ -1476,8 +1562,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $brand_id = 'brand_id_example'; // string | String that uniquely identifies this brand resource.
+
 
 try {
     $result = $apiInstance->getTenDLCSmsBrand($brand_id);
@@ -1539,7 +1626,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 
 try {
     $result = $apiInstance->getTenDLCSmsBrands();
@@ -1600,8 +1687,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this campaign resource.
+
 
 try {
     $result = $apiInstance->getTenDLCSmsCampaign($campaign_id);
@@ -1663,8 +1751,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
 
 try {
     $result = $apiInstance->getTenDLCSmsCampaigns($brand_id);
@@ -1726,8 +1815,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this campaign resource.
+
 
 try {
     $result = $apiInstance->getTenDLCSmsPartnerCampaign($campaign_id);
@@ -1789,8 +1879,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $brand_id = 'brand_id_example'; // string | The unique identifier for a brand
+
 
 try {
     $result = $apiInstance->getTenDLCSmsPartnerCampaigns($brand_id);
@@ -1852,8 +1943,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $campaign_id = 'campaign_id_example'; // string | String that uniquely identifies this TollFree Campaign resource.
+
 
 try {
     $result = $apiInstance->getTollFreeSmsCampaign($campaign_id);
@@ -1915,7 +2007,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 
 try {
     $result = $apiInstance->getTollFreeSmsCampaigns();
@@ -1976,8 +2068,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $alias = 'alias_example'; // string | Return only the Queue resources with aliases that exactly match this name.
+
 
 try {
     $result = $apiInstance->listActiveQueues($alias);
@@ -2039,7 +2132,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 
 try {
     $result = $apiInstance->listAllAccountLogs();
@@ -2100,8 +2193,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $alias = 'alias_example'; // string | Return only applications with aliases that exactly match this value.
+
 
 try {
     $result = $apiInstance->listApplications($alias);
@@ -2163,16 +2257,27 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $phone_number = 'phone_number_example'; // string | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
+
 $region = 'region_example'; // string | State or province of this phone number.
+
 $country = 'country_example'; // string | Country of this phone number.
+
 $voice_enabled = true; // bool | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+
 $sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+
 $capabilities_voice = True; // bool
+
 $capabilities_sms = True; // bool
+
 $capabilities_toll_free = True; // bool
+
 $capabilities_ten_dlc = True; // bool
+
 $capabilities_short_code = True; // bool
+
 
 try {
     $result = $apiInstance->listAvailableNumbers($phone_number, $region, $country, $voice_enabled, $sms_enabled, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code);
@@ -2242,8 +2347,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
+
 
 try {
     $result = $apiInstance->listCallLogs($call_id);
@@ -2305,9 +2411,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
+
 $date_created = 'date_created_example'; // string | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+
 
 try {
     $result = $apiInstance->listCallRecordings($call_id, $date_created);
@@ -2370,15 +2478,21 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $active = false; // bool | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
+
 $to = 'to_example'; // string | Only show Calls to this phone number.
+
 $from = 'from_example'; // string | Only show Calls from this phone number.
-$status = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\CallStatus(); // \FreeClimb\Api\Model\CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
+
+$status = new \FreeClimb\Api\Model\CallStatus(); // \FreeClimb\Api\Model\CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
 $start_time = 'start_time_example'; // string | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
+
 $end_time = 'end_time_example'; // string | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
+
 $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned by the call with this ID.
-$application_id = array('application_id_example'); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+
+$application_id = new string[](); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
 
 try {
     $result = $apiInstance->listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id);
@@ -2447,10 +2561,13 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
+
 $call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
+
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+
 
 try {
     $result = $apiInstance->listConferenceRecordings($conference_id, $call_id, $date_created);
@@ -2514,11 +2631,15 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $status = 'status_example'; // string | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`.
+
 $alias = 'alias_example'; // string | List Conferences whose alias exactly matches this string.
+
 $date_created = 'date_created_example'; // string | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*.
+
 $date_updated = 'date_updated_example'; // string | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
+
 
 try {
     $result = $apiInstance->listConferences($status, $alias, $date_created, $date_updated);
@@ -2583,23 +2704,39 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $phone_number = 'phone_number_example'; // string | Only show incoming phone number resources that match this PCRE-compatible regular expression.
+
 $alias = 'alias_example'; // string | Only show incoming phone numbers with aliases that exactly match this value.
+
 $region = 'region_example'; // string | State or province of this phone number.
+
 $country = 'country_example'; // string | Country of this phone number.
+
 $application_id = 'application_id_example'; // string | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+
 $has_application = false; // bool | Indication of whether the phone number has an application linked to it.
+
 $voice_enabled = true; // bool | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+
 $sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+
 $has_campaign = True; // bool | Indication of whether the phone number has a campaign associated with it
+
 $capabilities_voice = True; // bool
+
 $capabilities_sms = True; // bool
+
 $capabilities_toll_free = True; // bool
+
 $capabilities_ten_dlc = True; // bool
+
 $capabilities_short_code = True; // bool
+
 $tfn_campaign_id = 'tfn_campaign_id_example'; // string | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
+
 $offnet = True; // bool | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
+
 
 try {
     $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
@@ -2676,8 +2813,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | String that uniquely identifies the Queue that the Member belongs to.
+
 
 try {
     $result = $apiInstance->listMembers($queue_id);
@@ -2739,10 +2877,13 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | ID of the conference this participant is in.
+
 $talk = True; // bool | Only show Participants with the talk privilege.
+
 $listen = True; // bool | Only show Participants with the listen privilege.
+
 
 try {
     $result = $apiInstance->listParticipants($conference_id, $talk, $listen);
@@ -2806,10 +2947,13 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
+
 $conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
+
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+
 
 try {
     $result = $apiInstance->listRecordings($call_id, $conference_id, $date_created);
@@ -2873,15 +3017,22 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $to = 'to_example'; // string | Only show Messages to this phone number.
+
 $from = 'from_example'; // string | Only show Messages from this phone number.
+
 $begin_time = 'begin_time_example'; // string | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
+
 $end_time = 'end_time_example'; // string | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-$direction = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\MessageDirection(); // \FreeClimb\Api\Model\MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+
+$direction = new \FreeClimb\Api\Model\MessageDirection(); // \FreeClimb\Api\Model\MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
 $campaign_id = 'campaign_id_example'; // string | Only show messages associated with this campaign ID.
+
 $brand_id = 'brand_id_example'; // string | Only show messages associated with this brand ID
+
 $is10_dlc = True; // bool | Only show messages that were sent as part of a 10DLC campaign.
+
 
 try {
     $result = $apiInstance->listSmsMessages($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc);
@@ -2950,8 +3101,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$make_call_request = new \FreeClimb\Api\Model\MakeCallRequest(); // \FreeClimb\Api\Model\MakeCallRequest | Call details for making a call
+
+$make_call_request = new \FreeClimb\Api\Model\MakeCallRequest(from={ Phone number to use as the caller ID. This can be: (a) The To or From number provided in FreeClimb's initial request to your app or (b) Any incoming phone number you have purchased from FreeClimb. }, to={ Phone number to place the Call to. }, application_id={ Required if no `parentCallId` or `callConnectUrl` has been provided. ID of the application FreeClimb should use to handle this phone call. FreeClimb will use the `callConnectUrl` and `statusCallbackUrl` set on the application unless the `callConnectUrl` attribute is also provided with the request. In this case, the URL specified in that `callConnectUrl` attribute will be used as a replacement of the `callConnectUrl` originally assigned in the application. If the `callConnectUrl` is not set as either an attribute of the request or as part of the specified application, an error will be provided. The application’s voiceUrl parameter is not used for outbound calls. }, send_digits={ String of digits to dial after connecting to the number. It can include digits `0-9`, `*`, and `#`, and allows embedding a pause between the output of individual digits. The default pause is 500 milliseconds. So, a string such as *1234#* will be played in 2 seconds because of the 4 standard pauses implied within the string. A custom pause is specified by including a positive integer wrapped in curly braces: {n}. For more information, see **sendDigits examples** below. }, if_machine={ Specifies how FreeClimb should handle this Call if an answering machine answers it. }, if_machine_url={ This attribute specifies a URL to which FreeClimb will make a POST request when an answering machine or a fax machine is detected. This URL is required if the ifMachine flag is set to redirect. When ifMachine is set to hangup, ifMachineUrl must not be included in the request. For more information, see **ifMachineUrl example** below. }, timeout={ Number of seconds that FreeClimb should allow the phone to ring before assuming there is no answer. Default is 30 seconds. Maximum allowed ring-time is determined by the target phone's provider. Note that most providers limit ring-time to 120 seconds. }, parent_call_id={ Required if no `applicationId` or `callConnectUrl` has been provided. The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing. An outbound call is considered to be in progress once the `outdialConnect` or `outdialApiConnect` webhook is invoked. An inbound call is ringing when the inbound webhook is invoked. If a `callConnectUrl` attribute is also included with the `parentCallId` in the request, this URL will be used as a replacement of the `callConnectUrl` originally assigned in the parent call. }, privacy_mode={ Activate privacy mode in order to obscure log data that can potentially expose private information. }, call_connect_url={ The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. }); // \FreeClimb\Api\Model\MakeCallRequest | Call details for making a call
 
 try {
     $result = $apiInstance->makeACall($make_call_request);
@@ -3013,8 +3164,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$create_web_rtc_token = new \FreeClimb\Api\Model\CreateWebRTCToken(); // \FreeClimb\Api\Model\CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
+
+$create_web_rtc_token = new \FreeClimb\Api\Model\CreateWebRTCToken(to={ E.164 formatted phone number to which calls using this token will be made. }, from={ E.164 formatted phone number owned by the reqeusting account from which calls using this token will be made. }, uses={ number of times this token may be used for a WebRTC call }); // \FreeClimb\Api\Model\CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
 
 try {
     $result = $apiInstance->makeAWebrtcJwt($create_web_rtc_token);
@@ -3076,9 +3227,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | ID of the conference this participant is in.
+
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
+
 
 try {
     $apiInstance->removeAParticipant($conference_id, $call_id);
@@ -3140,7 +3293,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $message_request = new \FreeClimb\Api\Model\MessageRequest(); // \FreeClimb\Api\Model\MessageRequest | Details to create a message
 
 try {
@@ -3203,8 +3356,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $recording_id = 'recording_id_example'; // string | String that uniquely identifies this recording resource.
+
 
 try {
     $result = $apiInstance->streamARecordingFile($recording_id);
@@ -3266,9 +3420,10 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | String that uniquely identifies this conference resource.
-$update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(); // \FreeClimb\Api\Model\UpdateConferenceRequest | Conference Details to update
+
+$update_conference_request = new \FreeClimb\Api\Model\UpdateConferenceRequest(alias={ Description for this conference. Maximum 64 characters. }, play_beep={  }, status={  }); // \FreeClimb\Api\Model\UpdateConferenceRequest | Conference Details to update
 
 try {
     $apiInstance->updateAConference($conference_id, $update_conference_request);
@@ -3330,9 +3485,10 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
-$update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(); // \FreeClimb\Api\Model\UpdateCallRequest | Call details to update
+
+$update_call_request = new \FreeClimb\Api\Model\UpdateCallRequest(status={  }); // \FreeClimb\Api\Model\UpdateCallRequest | Call details to update
 
 try {
     $apiInstance->updateALiveCall($call_id, $update_call_request);
@@ -3394,10 +3550,12 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $conference_id = 'conference_id_example'; // string | ID of the conference this participant is in.
+
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
-$update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(); // \FreeClimb\Api\Model\UpdateConferenceParticipantRequest | Conference participant details to update
+
+$update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }); // \FreeClimb\Api\Model\UpdateConferenceParticipantRequest | Conference participant details to update
 
 try {
     $result = $apiInstance->updateAParticipant($conference_id, $call_id, $update_conference_participant_request);
@@ -3461,9 +3619,10 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $queue_id = 'queue_id_example'; // string | A string that uniquely identifies this Queue resource.
-$queue_request = new \FreeClimb\Api\Model\QueueRequest(); // \FreeClimb\Api\Model\QueueRequest | Queue Details to update
+
+$queue_request = new \FreeClimb\Api\Model\QueueRequest(alias={ Description for this Queue. Max length is 64 characters. }, max_size={ Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize. }); // \FreeClimb\Api\Model\QueueRequest | Queue Details to update
 
 try {
     $result = $apiInstance->updateAQueue($queue_id, $queue_request);
@@ -3526,8 +3685,8 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
-$account_request = new \FreeClimb\Api\Model\AccountRequest(); // \FreeClimb\Api\Model\AccountRequest | Account details to update
+
+$account_request = new \FreeClimb\Api\Model\AccountRequest(alias={ Description for this account. }, label={ Group to which this account belongs. }); // \FreeClimb\Api\Model\AccountRequest | Account details to update
 
 try {
     $apiInstance->updateAnAccount($account_request);
@@ -3588,9 +3747,10 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $application_id = 'application_id_example'; // string | A string that uniquely identifies this application resource.
-$application_request = new \FreeClimb\Api\Model\ApplicationRequest(); // \FreeClimb\Api\Model\ApplicationRequest | Application details to update.
+
+$application_request = new \FreeClimb\Api\Model\ApplicationRequest(alias={ A human readable description of the application, with maximum length 64 characters. }, voice_url={ The URL that FreeClimb will request when an inbound call arrives on a phone number assigned to this application. Used only for inbound calls. }, voice_fallback_url={ The URL that FreeClimb will request if it times out waiting for a response from the voiceUrl. Used for inbound calls only. Note: A PerCL response is expected to control the inbound call. }, call_connect_url={ The URL that FreeClimb will request when an outbound call request is complete. Used for outbound calls only.  Note: A PerCL response is expected if the outbound call is connected (status=InProgress) to control the call. }, status_callback_url={ The URL that FreeClimb will request to pass call status (such as call ended) to the application.  Note: This is a notification only; any PerCL returned will be ignored. }, sms_url={ The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }, sms_fallback_url={ The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. }); // \FreeClimb\Api\Model\ApplicationRequest | Application details to update.
 
 try {
     $result = $apiInstance->updateAnApplication($application_id, $application_request);
@@ -3653,9 +3813,10 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_id = 'account_id_example'; // string | ID of the account
+
 $phone_number_id = 'phone_number_id_example'; // string | String that uniquely identifies this phone number resource.
-$incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(); // \FreeClimb\Api\Model\IncomingNumberRequest | Incoming Number details to update
+
+$incoming_number_request = new \FreeClimb\Api\Model\IncomingNumberRequest(application_id={ ID of the Application that should handle calls to this number. }, alias={ Description for this phone number. }, campaign_id={ The campaign ID generated by the campaign registry }); // \FreeClimb\Api\Model\IncomingNumberRequest | Incoming Number details to update
 
 try {
     $result = $apiInstance->updateAnIncomingNumber($phone_number_id, $incoming_number_request);
