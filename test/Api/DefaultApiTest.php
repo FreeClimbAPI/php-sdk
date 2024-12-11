@@ -66,7 +66,7 @@ class DefaultApiTest extends TestCase
             ->setPassword('YOUR_API_KEY');
 
 
-        $static::$apiInstance = new DefaultApi(
+        static::$apiInstance = new DefaultApi(
             new Client(),
             $config
         );
@@ -538,7 +538,7 @@ class DefaultApiTest extends TestCase
         //$buy_incoming_number_request = $buy_incoming_number_request_test_value;
         
         
-        $response = $static::$apiInstance->buyAPhoneNumber($this->buy_incoming_number_request_buyAPhoneNumber_test_value());
+        $response = static::$apiInstance->buyAPhoneNumber($this->buy_incoming_number_request_buyAPhoneNumber_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
 
@@ -554,7 +554,7 @@ class DefaultApiTest extends TestCase
         //$create_conference_request = $create_conference_request_test_value;
         
         
-        $response = $static::$apiInstance->createAConference($this->create_conference_request_createAConference_test_value());
+        $response = static::$apiInstance->createAConference($this->create_conference_request_createAConference_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceResult',$response);
     }
 
@@ -570,7 +570,7 @@ class DefaultApiTest extends TestCase
         //$queue_request = $queue_request_test_value;
         
         
-        $response = $static::$apiInstance->createAQueue($this->queue_request_createAQueue_test_value());
+        $response = static::$apiInstance->createAQueue($this->queue_request_createAQueue_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueResult',$response);
     }
 
@@ -586,7 +586,7 @@ class DefaultApiTest extends TestCase
         //$application_request = $application_request_test_value;
         
         
-        $response = $static::$apiInstance->createAnApplication($this->application_request_createAnApplication_test_value());
+        $response = static::$apiInstance->createAnApplication($this->application_request_createAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
     }
 
@@ -604,7 +604,7 @@ class DefaultApiTest extends TestCase
         //$completion_request = $completion_request_test_value;
         
         
-        $response = $static::$apiInstance->createKnowledgeBaseCompletion($this->knowledge_base_id_createKnowledgeBaseCompletion_test_value(), $this->completion_request_createKnowledgeBaseCompletion_test_value());
+        $response = static::$apiInstance->createKnowledgeBaseCompletion($this->knowledge_base_id_createKnowledgeBaseCompletion_test_value(), $this->completion_request_createKnowledgeBaseCompletion_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CompletionResult',$response);
     }
 
@@ -620,7 +620,7 @@ class DefaultApiTest extends TestCase
         //$recording_id = $recording_id_test_value;
         
         
-        $response = $static::$apiInstance->deleteARecording($this->recording_id_deleteARecording_test_value());
+        $response = static::$apiInstance->deleteARecording($this->recording_id_deleteARecording_test_value());
         $this->assertNull($response);
     }
 
@@ -636,7 +636,7 @@ class DefaultApiTest extends TestCase
         //$application_id = $application_id_test_value;
         
         
-        $response = $static::$apiInstance->deleteAnApplication($this->application_id_deleteAnApplication_test_value());
+        $response = static::$apiInstance->deleteAnApplication($this->application_id_deleteAnApplication_test_value());
         $this->assertNull($response);
     }
 
@@ -652,7 +652,7 @@ class DefaultApiTest extends TestCase
         //$phone_number_id = $phone_number_id_test_value;
         
         
-        $response = $static::$apiInstance->deleteAnIncomingNumber($this->phone_number_id_deleteAnIncomingNumber_test_value());
+        $response = static::$apiInstance->deleteAnIncomingNumber($this->phone_number_id_deleteAnIncomingNumber_test_value());
         $this->assertNull($response);
     }
 
@@ -670,7 +670,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->dequeueAMember($this->queue_id_dequeueAMember_test_value(), $this->call_id_dequeueAMember_test_value());
+        $response = static::$apiInstance->dequeueAMember($this->queue_id_dequeueAMember_test_value(), $this->call_id_dequeueAMember_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMember',$response);
     }
 
@@ -686,7 +686,7 @@ class DefaultApiTest extends TestCase
         //$queue_id = $queue_id_test_value;
         
         
-        $response = $static::$apiInstance->dequeueHeadMember($this->queue_id_dequeueHeadMember_test_value());
+        $response = static::$apiInstance->dequeueHeadMember($this->queue_id_dequeueHeadMember_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMember',$response);
     }
 
@@ -702,7 +702,7 @@ class DefaultApiTest extends TestCase
         //$recording_id = $recording_id_test_value;
         
         
-        $response = $static::$apiInstance->downloadARecordingFile($this->recording_id_downloadARecordingFile_test_value());
+        $response = static::$apiInstance->downloadARecordingFile($this->recording_id_downloadARecordingFile_test_value());
         $this->assertInstanceOf('\SplFileObject',$response);
     }
 
@@ -718,7 +718,7 @@ class DefaultApiTest extends TestCase
         //$filter_logs_request = $filter_logs_request_test_value;
         
         
-        $response = $static::$apiInstance->filterLogs($this->filter_logs_request_filterLogs_test_value());
+        $response = static::$apiInstance->filterLogs($this->filter_logs_request_filterLogs_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\LogList',$response);
     }
 
@@ -734,7 +734,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->getACall($this->call_id_getACall_test_value());
+        $response = static::$apiInstance->getACall($this->call_id_getACall_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallResult',$response);
     }
 
@@ -750,7 +750,7 @@ class DefaultApiTest extends TestCase
         //$conference_id = $conference_id_test_value;
         
         
-        $response = $static::$apiInstance->getAConference($this->conference_id_getAConference_test_value());
+        $response = static::$apiInstance->getAConference($this->conference_id_getAConference_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceResult',$response);
     }
 
@@ -768,7 +768,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->getAMember($this->queue_id_getAMember_test_value(), $this->call_id_getAMember_test_value());
+        $response = static::$apiInstance->getAMember($this->queue_id_getAMember_test_value(), $this->call_id_getAMember_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMember',$response);
     }
 
@@ -786,7 +786,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->getAParticipant($this->conference_id_getAParticipant_test_value(), $this->call_id_getAParticipant_test_value());
+        $response = static::$apiInstance->getAParticipant($this->conference_id_getAParticipant_test_value(), $this->call_id_getAParticipant_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantResult',$response);
     }
 
@@ -802,7 +802,7 @@ class DefaultApiTest extends TestCase
         //$queue_id = $queue_id_test_value;
         
         
-        $response = $static::$apiInstance->getAQueue($this->queue_id_getAQueue_test_value());
+        $response = static::$apiInstance->getAQueue($this->queue_id_getAQueue_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueResult',$response);
     }
 
@@ -818,7 +818,7 @@ class DefaultApiTest extends TestCase
         //$recording_id = $recording_id_test_value;
         
         
-        $response = $static::$apiInstance->getARecording($this->recording_id_getARecording_test_value());
+        $response = static::$apiInstance->getARecording($this->recording_id_getARecording_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingResult',$response);
     }
 
@@ -832,7 +832,7 @@ class DefaultApiTest extends TestCase
     {
         
         
-        $response = $static::$apiInstance->getAnAccount();
+        $response = static::$apiInstance->getAnAccount();
         $this->assertInstanceOf('\FreeClimb\Api\Model\AccountResult',$response);
     }
 
@@ -848,7 +848,7 @@ class DefaultApiTest extends TestCase
         //$application_id = $application_id_test_value;
         
         
-        $response = $static::$apiInstance->getAnApplication($this->application_id_getAnApplication_test_value());
+        $response = static::$apiInstance->getAnApplication($this->application_id_getAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
     }
 
@@ -864,7 +864,7 @@ class DefaultApiTest extends TestCase
         //$phone_number_id = $phone_number_id_test_value;
         
         
-        $response = $static::$apiInstance->getAnIncomingNumber($this->phone_number_id_getAnIncomingNumber_test_value());
+        $response = static::$apiInstance->getAnIncomingNumber($this->phone_number_id_getAnIncomingNumber_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
 
@@ -880,7 +880,7 @@ class DefaultApiTest extends TestCase
         //$message_id = $message_id_test_value;
         
         
-        $response = $static::$apiInstance->getAnSmsMessage($this->message_id_getAnSmsMessage_test_value());
+        $response = static::$apiInstance->getAnSmsMessage($this->message_id_getAnSmsMessage_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessageResult',$response);
     }
 
@@ -896,7 +896,7 @@ class DefaultApiTest extends TestCase
         //$queue_id = $queue_id_test_value;
         
         
-        $response = $static::$apiInstance->getHeadMember($this->queue_id_getHeadMember_test_value());
+        $response = static::$apiInstance->getHeadMember($this->queue_id_getHeadMember_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMember',$response);
     }
 
@@ -912,7 +912,7 @@ class DefaultApiTest extends TestCase
         //$brand_id = $brand_id_test_value;
         
         
-        $response = $static::$apiInstance->getTenDLCSmsBrand($this->brand_id_getTenDLCSmsBrand_test_value());
+        $response = static::$apiInstance->getTenDLCSmsBrand($this->brand_id_getTenDLCSmsBrand_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrand',$response);
     }
 
@@ -926,7 +926,7 @@ class DefaultApiTest extends TestCase
     {
         
         
-        $response = $static::$apiInstance->getTenDLCSmsBrands();
+        $response = static::$apiInstance->getTenDLCSmsBrands();
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCBrandsListResult',$response);
     }
 
@@ -942,7 +942,7 @@ class DefaultApiTest extends TestCase
         //$campaign_id = $campaign_id_test_value;
         
         
-        $response = $static::$apiInstance->getTenDLCSmsCampaign($this->campaign_id_getTenDLCSmsCampaign_test_value());
+        $response = static::$apiInstance->getTenDLCSmsCampaign($this->campaign_id_getTenDLCSmsCampaign_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaign',$response);
     }
 
@@ -958,7 +958,7 @@ class DefaultApiTest extends TestCase
         //$brand_id = $brand_id_test_value;
         
         
-        $response = $static::$apiInstance->getTenDLCSmsCampaigns($this->brand_id_getTenDLCSmsCampaigns_test_value());
+        $response = static::$apiInstance->getTenDLCSmsCampaigns($this->brand_id_getTenDLCSmsCampaigns_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCCampaignsListResult',$response);
     }
 
@@ -974,7 +974,7 @@ class DefaultApiTest extends TestCase
         //$campaign_id = $campaign_id_test_value;
         
         
-        $response = $static::$apiInstance->getTenDLCSmsPartnerCampaign($this->campaign_id_getTenDLCSmsPartnerCampaign_test_value());
+        $response = static::$apiInstance->getTenDLCSmsPartnerCampaign($this->campaign_id_getTenDLCSmsPartnerCampaign_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaign',$response);
     }
 
@@ -990,7 +990,7 @@ class DefaultApiTest extends TestCase
         //$brand_id = $brand_id_test_value;
         
         
-        $response = $static::$apiInstance->getTenDLCSmsPartnerCampaigns($this->brand_id_getTenDLCSmsPartnerCampaigns_test_value());
+        $response = static::$apiInstance->getTenDLCSmsPartnerCampaigns($this->brand_id_getTenDLCSmsPartnerCampaigns_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignsListResult',$response);
     }
 
@@ -1006,7 +1006,7 @@ class DefaultApiTest extends TestCase
         //$campaign_id = $campaign_id_test_value;
         
         
-        $response = $static::$apiInstance->getTollFreeSmsCampaign($this->campaign_id_getTollFreeSmsCampaign_test_value());
+        $response = static::$apiInstance->getTollFreeSmsCampaign($this->campaign_id_getTollFreeSmsCampaign_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTollFreeCampaign',$response);
     }
 
@@ -1020,7 +1020,7 @@ class DefaultApiTest extends TestCase
     {
         
         
-        $response = $static::$apiInstance->getTollFreeSmsCampaigns();
+        $response = static::$apiInstance->getTollFreeSmsCampaigns();
         $this->assertInstanceOf('\FreeClimb\Api\Model\SMSTollFreeCampaignsListResult',$response);
     }
 
@@ -1036,7 +1036,7 @@ class DefaultApiTest extends TestCase
         //$alias = $alias_test_value;
         
         
-        $response = $static::$apiInstance->listActiveQueues($this->alias_listActiveQueues_test_value());
+        $response = static::$apiInstance->listActiveQueues($this->alias_listActiveQueues_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueList',$response);
     }
 
@@ -1050,7 +1050,7 @@ class DefaultApiTest extends TestCase
     {
         
         
-        $response = $static::$apiInstance->listAllAccountLogs();
+        $response = static::$apiInstance->listAllAccountLogs();
         $this->assertInstanceOf('\FreeClimb\Api\Model\LogList',$response);
     }
 
@@ -1066,7 +1066,7 @@ class DefaultApiTest extends TestCase
         //$alias = $alias_test_value;
         
         
-        $response = $static::$apiInstance->listApplications($this->alias_listApplications_test_value());
+        $response = static::$apiInstance->listApplications($this->alias_listApplications_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationList',$response);
     }
 
@@ -1100,7 +1100,7 @@ class DefaultApiTest extends TestCase
         //$capabilities_short_code = $capabilities_short_code_test_value;
         
         
-        $response = $static::$apiInstance->listAvailableNumbers($this->phone_number_listAvailableNumbers_test_value(), $this->region_listAvailableNumbers_test_value(), $this->country_listAvailableNumbers_test_value(), $this->voice_enabled_listAvailableNumbers_test_value(), $this->sms_enabled_listAvailableNumbers_test_value(), $this->capabilities_voice_listAvailableNumbers_test_value(), $this->capabilities_sms_listAvailableNumbers_test_value(), $this->capabilities_toll_free_listAvailableNumbers_test_value(), $this->capabilities_ten_dlc_listAvailableNumbers_test_value(), $this->capabilities_short_code_listAvailableNumbers_test_value());
+        $response = static::$apiInstance->listAvailableNumbers($this->phone_number_listAvailableNumbers_test_value(), $this->region_listAvailableNumbers_test_value(), $this->country_listAvailableNumbers_test_value(), $this->voice_enabled_listAvailableNumbers_test_value(), $this->sms_enabled_listAvailableNumbers_test_value(), $this->capabilities_voice_listAvailableNumbers_test_value(), $this->capabilities_sms_listAvailableNumbers_test_value(), $this->capabilities_toll_free_listAvailableNumbers_test_value(), $this->capabilities_ten_dlc_listAvailableNumbers_test_value(), $this->capabilities_short_code_listAvailableNumbers_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\AvailableNumberList',$response);
     }
 
@@ -1116,7 +1116,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->listCallLogs($this->call_id_listCallLogs_test_value());
+        $response = static::$apiInstance->listCallLogs($this->call_id_listCallLogs_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\LogList',$response);
     }
 
@@ -1134,7 +1134,7 @@ class DefaultApiTest extends TestCase
         //$date_created = $date_created_test_value;
         
         
-        $response = $static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value());
+        $response = static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$response);
     }
 
@@ -1164,7 +1164,7 @@ class DefaultApiTest extends TestCase
         //$application_id = $application_id_test_value;
         
         
-        $response = $static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
+        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList',$response);
     }
 
@@ -1184,7 +1184,7 @@ class DefaultApiTest extends TestCase
         //$date_created = $date_created_test_value;
         
         
-        $response = $static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
+        $response = static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$response);
     }
 
@@ -1206,7 +1206,7 @@ class DefaultApiTest extends TestCase
         //$date_updated = $date_updated_test_value;
         
         
-        $response = $static::$apiInstance->listConferences($this->status_listConferences_test_value(), $this->alias_listConferences_test_value(), $this->date_created_listConferences_test_value(), $this->date_updated_listConferences_test_value());
+        $response = static::$apiInstance->listConferences($this->status_listConferences_test_value(), $this->alias_listConferences_test_value(), $this->date_created_listConferences_test_value(), $this->date_updated_listConferences_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceList',$response);
     }
 
@@ -1252,7 +1252,7 @@ class DefaultApiTest extends TestCase
         //$offnet = $offnet_test_value;
         
         
-        $response = $static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->voice_enabled_listIncomingNumbers_test_value(), $this->sms_enabled_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
+        $response = static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->voice_enabled_listIncomingNumbers_test_value(), $this->sms_enabled_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberList',$response);
     }
 
@@ -1268,7 +1268,7 @@ class DefaultApiTest extends TestCase
         //$queue_id = $queue_id_test_value;
         
         
-        $response = $static::$apiInstance->listMembers($this->queue_id_listMembers_test_value());
+        $response = static::$apiInstance->listMembers($this->queue_id_listMembers_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueMemberList',$response);
     }
 
@@ -1290,7 +1290,7 @@ class DefaultApiTest extends TestCase
         //$dtmf_pass_through = $dtmf_pass_through_test_value;
         
         
-        $response = $static::$apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value(), $this->dtmf_pass_through_listParticipants_test_value());
+        $response = static::$apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value(), $this->dtmf_pass_through_listParticipants_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantList',$response);
     }
 
@@ -1310,7 +1310,7 @@ class DefaultApiTest extends TestCase
         //$date_created = $date_created_test_value;
         
         
-        $response = $static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value());
+        $response = static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList',$response);
     }
 
@@ -1340,7 +1340,7 @@ class DefaultApiTest extends TestCase
         //$is10_dlc = $is10_dlc_test_value;
         
         
-        $response = $static::$apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
+        $response = static::$apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$response);
     }
 
@@ -1356,7 +1356,7 @@ class DefaultApiTest extends TestCase
         //$make_call_request = $make_call_request_test_value;
         
         
-        $response = $static::$apiInstance->makeACall($this->make_call_request_makeACall_test_value());
+        $response = static::$apiInstance->makeACall($this->make_call_request_makeACall_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallResult',$response);
     }
 
@@ -1372,7 +1372,7 @@ class DefaultApiTest extends TestCase
         //$create_web_rtc_token = $create_web_rtc_token_test_value;
         
         
-        $response = $static::$apiInstance->makeAWebrtcJwt($this->create_web_rtc_token_makeAWebrtcJwt_test_value());
+        $response = static::$apiInstance->makeAWebrtcJwt($this->create_web_rtc_token_makeAWebrtcJwt_test_value());
         
         $this->assertIsString($response);
     }
@@ -1391,7 +1391,7 @@ class DefaultApiTest extends TestCase
         //$call_id = $call_id_test_value;
         
         
-        $response = $static::$apiInstance->removeAParticipant($this->conference_id_removeAParticipant_test_value(), $this->call_id_removeAParticipant_test_value());
+        $response = static::$apiInstance->removeAParticipant($this->conference_id_removeAParticipant_test_value(), $this->call_id_removeAParticipant_test_value());
         $this->assertNull($response);
     }
 
@@ -1407,7 +1407,7 @@ class DefaultApiTest extends TestCase
         //$message_request = $message_request_test_value;
         
         
-        $response = $static::$apiInstance->sendAnSmsMessage($this->message_request_sendAnSmsMessage_test_value());
+        $response = static::$apiInstance->sendAnSmsMessage($this->message_request_sendAnSmsMessage_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\MessageResult',$response);
     }
 
@@ -1423,7 +1423,7 @@ class DefaultApiTest extends TestCase
         //$recording_id = $recording_id_test_value;
         
         
-        $response = $static::$apiInstance->streamARecordingFile($this->recording_id_streamARecordingFile_test_value());
+        $response = static::$apiInstance->streamARecordingFile($this->recording_id_streamARecordingFile_test_value());
         $this->assertInstanceOf('\SplFileObject',$response);
     }
 
@@ -1441,7 +1441,7 @@ class DefaultApiTest extends TestCase
         //$update_conference_request = $update_conference_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAConference($this->conference_id_updateAConference_test_value(), $this->update_conference_request_updateAConference_test_value());
+        $response = static::$apiInstance->updateAConference($this->conference_id_updateAConference_test_value(), $this->update_conference_request_updateAConference_test_value());
         $this->assertNull($response);
     }
 
@@ -1459,7 +1459,7 @@ class DefaultApiTest extends TestCase
         //$update_call_request = $update_call_request_test_value;
         
         
-        $response = $static::$apiInstance->updateALiveCall($this->call_id_updateALiveCall_test_value(), $this->update_call_request_updateALiveCall_test_value());
+        $response = static::$apiInstance->updateALiveCall($this->call_id_updateALiveCall_test_value(), $this->update_call_request_updateALiveCall_test_value());
         $this->assertNull($response);
     }
 
@@ -1479,7 +1479,7 @@ class DefaultApiTest extends TestCase
         //$update_conference_participant_request = $update_conference_participant_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAParticipant($this->conference_id_updateAParticipant_test_value(), $this->call_id_updateAParticipant_test_value(), $this->update_conference_participant_request_updateAParticipant_test_value());
+        $response = static::$apiInstance->updateAParticipant($this->conference_id_updateAParticipant_test_value(), $this->call_id_updateAParticipant_test_value(), $this->update_conference_participant_request_updateAParticipant_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantResult',$response);
     }
 
@@ -1497,7 +1497,7 @@ class DefaultApiTest extends TestCase
         //$queue_request = $queue_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAQueue($this->queue_id_updateAQueue_test_value(), $this->queue_request_updateAQueue_test_value());
+        $response = static::$apiInstance->updateAQueue($this->queue_id_updateAQueue_test_value(), $this->queue_request_updateAQueue_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\QueueResult',$response);
     }
 
@@ -1513,7 +1513,7 @@ class DefaultApiTest extends TestCase
         //$account_request = $account_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAnAccount($this->account_request_updateAnAccount_test_value());
+        $response = static::$apiInstance->updateAnAccount($this->account_request_updateAnAccount_test_value());
         $this->assertNull($response);
     }
 
@@ -1531,7 +1531,7 @@ class DefaultApiTest extends TestCase
         //$application_request = $application_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAnApplication($this->application_id_updateAnApplication_test_value(), $this->application_request_updateAnApplication_test_value());
+        $response = static::$apiInstance->updateAnApplication($this->application_id_updateAnApplication_test_value(), $this->application_request_updateAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult',$response);
     }
 
@@ -1549,7 +1549,7 @@ class DefaultApiTest extends TestCase
         //$incoming_number_request = $incoming_number_request_test_value;
         
         
-        $response = $static::$apiInstance->updateAnIncomingNumber($this->phone_number_id_updateAnIncomingNumber_test_value(), $this->incoming_number_request_updateAnIncomingNumber_test_value());
+        $response = static::$apiInstance->updateAnIncomingNumber($this->phone_number_id_updateAnIncomingNumber_test_value(), $this->incoming_number_request_updateAnIncomingNumber_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberResult',$response);
     }
 }
