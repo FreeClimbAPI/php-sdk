@@ -38,6 +38,8 @@ use FreeClimb\Api\Model\MessageDirection;
 use FreeClimb\Api\Model\PlayBeep;
 use FreeClimb\Api\Model\UpdateCallRequestStatus;
 use FreeClimb\Api\Model\UpdateConferenceRequestStatus;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 
 /**
  * DefaultApiTest Class Doc Comment
