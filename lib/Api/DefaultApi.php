@@ -307,7 +307,7 @@ class DefaultApi
      */
     public function buyAPhoneNumber($buy_incoming_number_request, string $contentType = self::contentTypes['buyAPhoneNumber'][0])
     {
-        list($response) = $this->buyAPhoneNumberWithHttpInfo($account_id, $buy_incoming_number_request, $contentType);
+        list($response) = $this->buyAPhoneNumberWithHttpInfo($buy_incoming_number_request, $contentType);
         return $response;
     }     
     /**
@@ -637,7 +637,7 @@ class DefaultApi
      */
     public function createAConference($create_conference_request = null, string $contentType = self::contentTypes['createAConference'][0])
     {
-        list($response) = $this->createAConferenceWithHttpInfo($account_id, $create_conference_request, $contentType);
+        list($response) = $this->createAConferenceWithHttpInfo($create_conference_request, $contentType);
         return $response;
     }     
     /**
@@ -961,7 +961,7 @@ class DefaultApi
      */
     public function createAQueue($queue_request = null, string $contentType = self::contentTypes['createAQueue'][0])
     {
-        list($response) = $this->createAQueueWithHttpInfo($account_id, $queue_request, $contentType);
+        list($response) = $this->createAQueueWithHttpInfo($queue_request, $contentType);
         return $response;
     }     
     /**
@@ -1285,7 +1285,7 @@ class DefaultApi
      */
     public function createAnApplication($application_request = null, string $contentType = self::contentTypes['createAnApplication'][0])
     {
-        list($response) = $this->createAnApplicationWithHttpInfo($account_id, $application_request, $contentType);
+        list($response) = $this->createAnApplicationWithHttpInfo($application_request, $contentType);
         return $response;
     }     
     /**
@@ -1611,7 +1611,7 @@ class DefaultApi
      */
     public function createKnowledgeBaseCompletion($knowledge_base_id, $completion_request = null, string $contentType = self::contentTypes['createKnowledgeBaseCompletion'][0])
     {
-        list($response) = $this->createKnowledgeBaseCompletionWithHttpInfo($account_id, $knowledge_base_id, $completion_request, $contentType);
+        list($response) = $this->createKnowledgeBaseCompletionWithHttpInfo($knowledge_base_id, $completion_request, $contentType);
         return $response;
     }     
     /**
@@ -1958,7 +1958,7 @@ class DefaultApi
      */
     public function deleteARecording($recording_id, string $contentType = self::contentTypes['deleteARecording'][0])
     {
-        $this->deleteARecordingWithHttpInfo($account_id, $recording_id, $contentType);
+        $this->deleteARecordingWithHttpInfo($recording_id, $contentType);
     }     
     /**
      * Operation deleteARecordingWithHttpInfo
@@ -2198,7 +2198,7 @@ class DefaultApi
      */
     public function deleteAnApplication($application_id, string $contentType = self::contentTypes['deleteAnApplication'][0])
     {
-        $this->deleteAnApplicationWithHttpInfo($account_id, $application_id, $contentType);
+        $this->deleteAnApplicationWithHttpInfo($application_id, $contentType);
     }     
     /**
      * Operation deleteAnApplicationWithHttpInfo
@@ -2438,7 +2438,7 @@ class DefaultApi
      */
     public function deleteAnIncomingNumber($phone_number_id, string $contentType = self::contentTypes['deleteAnIncomingNumber'][0])
     {
-        $this->deleteAnIncomingNumberWithHttpInfo($account_id, $phone_number_id, $contentType);
+        $this->deleteAnIncomingNumberWithHttpInfo($phone_number_id, $contentType);
     }     
     /**
      * Operation deleteAnIncomingNumberWithHttpInfo
@@ -2680,7 +2680,7 @@ class DefaultApi
      */
     public function dequeueAMember($queue_id, $call_id, string $contentType = self::contentTypes['dequeueAMember'][0])
     {
-        list($response) = $this->dequeueAMemberWithHttpInfo($account_id, $queue_id, $call_id, $contentType);
+        list($response) = $this->dequeueAMemberWithHttpInfo($queue_id, $call_id, $contentType);
         return $response;
     }     
     /**
@@ -3034,7 +3034,7 @@ class DefaultApi
      */
     public function dequeueHeadMember($queue_id, string $contentType = self::contentTypes['dequeueHeadMember'][0])
     {
-        list($response) = $this->dequeueHeadMemberWithHttpInfo($account_id, $queue_id, $contentType);
+        list($response) = $this->dequeueHeadMemberWithHttpInfo($queue_id, $contentType);
         return $response;
     }     
     /**
@@ -3365,7 +3365,7 @@ class DefaultApi
      */
     public function downloadARecordingFile($recording_id, string $contentType = self::contentTypes['downloadARecordingFile'][0])
     {
-        list($response) = $this->downloadARecordingFileWithHttpInfo($account_id, $recording_id, $contentType);
+        list($response) = $this->downloadARecordingFileWithHttpInfo($recording_id, $contentType);
         return $response;
     }     
     /**
@@ -3696,7 +3696,7 @@ class DefaultApi
      */
     public function filterLogs($filter_logs_request, string $contentType = self::contentTypes['filterLogs'][0])
     {
-        list($response) = $this->filterLogsWithHttpInfo($account_id, $filter_logs_request, $contentType);
+        list($response) = $this->filterLogsWithHttpInfo($filter_logs_request, $contentType);
         return $response;
     }     
     /**
@@ -4026,7 +4026,7 @@ class DefaultApi
      */
     public function getACall($call_id, string $contentType = self::contentTypes['getACall'][0])
     {
-        list($response) = $this->getACallWithHttpInfo($account_id, $call_id, $contentType);
+        list($response) = $this->getACallWithHttpInfo($call_id, $contentType);
         return $response;
     }     
     /**
@@ -4357,7 +4357,7 @@ class DefaultApi
      */
     public function getAConference($conference_id, string $contentType = self::contentTypes['getAConference'][0])
     {
-        list($response) = $this->getAConferenceWithHttpInfo($account_id, $conference_id, $contentType);
+        list($response) = $this->getAConferenceWithHttpInfo($conference_id, $contentType);
         return $response;
     }     
     /**
@@ -4690,7 +4690,7 @@ class DefaultApi
      */
     public function getAMember($queue_id, $call_id, string $contentType = self::contentTypes['getAMember'][0])
     {
-        list($response) = $this->getAMemberWithHttpInfo($account_id, $queue_id, $call_id, $contentType);
+        list($response) = $this->getAMemberWithHttpInfo($queue_id, $call_id, $contentType);
         return $response;
     }     
     /**
@@ -5046,7 +5046,7 @@ class DefaultApi
      */
     public function getAParticipant($conference_id, $call_id, string $contentType = self::contentTypes['getAParticipant'][0])
     {
-        list($response) = $this->getAParticipantWithHttpInfo($account_id, $conference_id, $call_id, $contentType);
+        list($response) = $this->getAParticipantWithHttpInfo($conference_id, $call_id, $contentType);
         return $response;
     }     
     /**
@@ -5400,7 +5400,7 @@ class DefaultApi
      */
     public function getAQueue($queue_id, string $contentType = self::contentTypes['getAQueue'][0])
     {
-        list($response) = $this->getAQueueWithHttpInfo($account_id, $queue_id, $contentType);
+        list($response) = $this->getAQueueWithHttpInfo($queue_id, $contentType);
         return $response;
     }     
     /**
@@ -5731,7 +5731,7 @@ class DefaultApi
      */
     public function getARecording($recording_id, string $contentType = self::contentTypes['getARecording'][0])
     {
-        list($response) = $this->getARecordingWithHttpInfo($account_id, $recording_id, $contentType);
+        list($response) = $this->getARecordingWithHttpInfo($recording_id, $contentType);
         return $response;
     }     
     /**
@@ -6060,7 +6060,7 @@ class DefaultApi
      */
     public function getAnAccount(string $contentType = self::contentTypes['getAnAccount'][0])
     {
-        list($response) = $this->getAnAccountWithHttpInfo($account_id, $contentType);
+        list($response) = $this->getAnAccountWithHttpInfo($contentType);
         return $response;
     }     
     /**
@@ -6368,7 +6368,7 @@ class DefaultApi
      */
     public function getAnApplication($application_id, string $contentType = self::contentTypes['getAnApplication'][0])
     {
-        list($response) = $this->getAnApplicationWithHttpInfo($account_id, $application_id, $contentType);
+        list($response) = $this->getAnApplicationWithHttpInfo($application_id, $contentType);
         return $response;
     }     
     /**
@@ -6699,7 +6699,7 @@ class DefaultApi
      */
     public function getAnIncomingNumber($phone_number_id, string $contentType = self::contentTypes['getAnIncomingNumber'][0])
     {
-        list($response) = $this->getAnIncomingNumberWithHttpInfo($account_id, $phone_number_id, $contentType);
+        list($response) = $this->getAnIncomingNumberWithHttpInfo($phone_number_id, $contentType);
         return $response;
     }     
     /**
@@ -7030,7 +7030,7 @@ class DefaultApi
      */
     public function getAnSmsMessage($message_id, string $contentType = self::contentTypes['getAnSmsMessage'][0])
     {
-        list($response) = $this->getAnSmsMessageWithHttpInfo($account_id, $message_id, $contentType);
+        list($response) = $this->getAnSmsMessageWithHttpInfo($message_id, $contentType);
         return $response;
     }     
     /**
@@ -7361,7 +7361,7 @@ class DefaultApi
      */
     public function getHeadMember($queue_id, string $contentType = self::contentTypes['getHeadMember'][0])
     {
-        list($response) = $this->getHeadMemberWithHttpInfo($account_id, $queue_id, $contentType);
+        list($response) = $this->getHeadMemberWithHttpInfo($queue_id, $contentType);
         return $response;
     }     
     /**
@@ -7692,7 +7692,7 @@ class DefaultApi
      */
     public function getTenDLCSmsBrand($brand_id, string $contentType = self::contentTypes['getTenDLCSmsBrand'][0])
     {
-        list($response) = $this->getTenDLCSmsBrandWithHttpInfo($account_id, $brand_id, $contentType);
+        list($response) = $this->getTenDLCSmsBrandWithHttpInfo($brand_id, $contentType);
         return $response;
     }     
     /**
@@ -8021,7 +8021,7 @@ class DefaultApi
      */
     public function getTenDLCSmsBrands(string $contentType = self::contentTypes['getTenDLCSmsBrands'][0])
     {
-        list($response) = $this->getTenDLCSmsBrandsWithHttpInfo($account_id, $contentType);
+        list($response) = $this->getTenDLCSmsBrandsWithHttpInfo($contentType);
         return $response;
     }     
     /**
@@ -8329,7 +8329,7 @@ class DefaultApi
      */
     public function getTenDLCSmsCampaign($campaign_id, string $contentType = self::contentTypes['getTenDLCSmsCampaign'][0])
     {
-        list($response) = $this->getTenDLCSmsCampaignWithHttpInfo($account_id, $campaign_id, $contentType);
+        list($response) = $this->getTenDLCSmsCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }     
     /**
@@ -8660,7 +8660,7 @@ class DefaultApi
      */
     public function getTenDLCSmsCampaigns($brand_id = null, string $contentType = self::contentTypes['getTenDLCSmsCampaigns'][0])
     {
-        list($response) = $this->getTenDLCSmsCampaignsWithHttpInfo($account_id, $brand_id, $contentType);
+        list($response) = $this->getTenDLCSmsCampaignsWithHttpInfo($brand_id, $contentType);
         return $response;
     }     
     /**
@@ -8986,7 +8986,7 @@ class DefaultApi
      */
     public function getTenDLCSmsPartnerCampaign($campaign_id, string $contentType = self::contentTypes['getTenDLCSmsPartnerCampaign'][0])
     {
-        list($response) = $this->getTenDLCSmsPartnerCampaignWithHttpInfo($account_id, $campaign_id, $contentType);
+        list($response) = $this->getTenDLCSmsPartnerCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }     
     /**
@@ -9317,7 +9317,7 @@ class DefaultApi
      */
     public function getTenDLCSmsPartnerCampaigns($brand_id = null, string $contentType = self::contentTypes['getTenDLCSmsPartnerCampaigns'][0])
     {
-        list($response) = $this->getTenDLCSmsPartnerCampaignsWithHttpInfo($account_id, $brand_id, $contentType);
+        list($response) = $this->getTenDLCSmsPartnerCampaignsWithHttpInfo($brand_id, $contentType);
         return $response;
     }     
     /**
@@ -9643,7 +9643,7 @@ class DefaultApi
      */
     public function getTollFreeSmsCampaign($campaign_id, string $contentType = self::contentTypes['getTollFreeSmsCampaign'][0])
     {
-        list($response) = $this->getTollFreeSmsCampaignWithHttpInfo($account_id, $campaign_id, $contentType);
+        list($response) = $this->getTollFreeSmsCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }     
     /**
@@ -9972,7 +9972,7 @@ class DefaultApi
      */
     public function getTollFreeSmsCampaigns(string $contentType = self::contentTypes['getTollFreeSmsCampaigns'][0])
     {
-        list($response) = $this->getTollFreeSmsCampaignsWithHttpInfo($account_id, $contentType);
+        list($response) = $this->getTollFreeSmsCampaignsWithHttpInfo($contentType);
         return $response;
     }     
     /**
@@ -10280,7 +10280,7 @@ class DefaultApi
      */
     public function listActiveQueues($alias = null, string $contentType = self::contentTypes['listActiveQueues'][0])
     {
-        list($response) = $this->listActiveQueuesWithHttpInfo($account_id, $alias, $contentType);
+        list($response) = $this->listActiveQueuesWithHttpInfo($alias, $contentType);
         return $response;
     }     
     /**
@@ -10604,7 +10604,7 @@ class DefaultApi
      */
     public function listAllAccountLogs(string $contentType = self::contentTypes['listAllAccountLogs'][0])
     {
-        list($response) = $this->listAllAccountLogsWithHttpInfo($account_id, $contentType);
+        list($response) = $this->listAllAccountLogsWithHttpInfo($contentType);
         return $response;
     }     
     /**
@@ -10912,7 +10912,7 @@ class DefaultApi
      */
     public function listApplications($alias = null, string $contentType = self::contentTypes['listApplications'][0])
     {
-        list($response) = $this->listApplicationsWithHttpInfo($account_id, $alias, $contentType);
+        list($response) = $this->listApplicationsWithHttpInfo($alias, $contentType);
         return $response;
     }     
     /**
@@ -11736,7 +11736,7 @@ class DefaultApi
      */
     public function listCallLogs($call_id, string $contentType = self::contentTypes['listCallLogs'][0])
     {
-        list($response) = $this->listCallLogsWithHttpInfo($account_id, $call_id, $contentType);
+        list($response) = $this->listCallLogsWithHttpInfo($call_id, $contentType);
         return $response;
     }     
     /**
@@ -12069,7 +12069,7 @@ class DefaultApi
      */
     public function listCallRecordings($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
-        list($response) = $this->listCallRecordingsWithHttpInfo($account_id, $call_id, $date_created, $contentType);
+        list($response) = $this->listCallRecordingsWithHttpInfo($call_id, $date_created, $contentType);
         return $response;
     }     
     /**
@@ -12432,7 +12432,7 @@ class DefaultApi
      */
     public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        list($response) = $this->listCallsWithHttpInfo($account_id, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType);
+        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType);
         return $response;
     }     
     /**
@@ -12891,7 +12891,7 @@ class DefaultApi
      */
     public function listConferenceRecordings($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
-        list($response) = $this->listConferenceRecordingsWithHttpInfo($account_id, $conference_id, $call_id, $date_created, $contentType);
+        list($response) = $this->listConferenceRecordingsWithHttpInfo($conference_id, $call_id, $date_created, $contentType);
         return $response;
     }     
     /**
@@ -13264,7 +13264,7 @@ class DefaultApi
      */
     public function listConferences($status = null, $alias = null, $date_created = null, $date_updated = null, string $contentType = self::contentTypes['listConferences'][0])
     {
-        list($response) = $this->listConferencesWithHttpInfo($account_id, $status, $alias, $date_created, $date_updated, $contentType);
+        list($response) = $this->listConferencesWithHttpInfo($status, $alias, $date_created, $date_updated, $contentType);
         return $response;
     }     
     /**
@@ -13674,7 +13674,7 @@ class DefaultApi
      */
     public function listIncomingNumbers($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
-        list($response) = $this->listIncomingNumbersWithHttpInfo($account_id, $phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
+        list($response) = $this->listIncomingNumbersWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
         return $response;
     }     
     /**
@@ -14270,7 +14270,7 @@ class DefaultApi
      */
     public function listMembers($queue_id, string $contentType = self::contentTypes['listMembers'][0])
     {
-        list($response) = $this->listMembersWithHttpInfo($account_id, $queue_id, $contentType);
+        list($response) = $this->listMembersWithHttpInfo($queue_id, $contentType);
         return $response;
     }     
     /**
@@ -14607,7 +14607,7 @@ class DefaultApi
      */
     public function listParticipants($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null, string $contentType = self::contentTypes['listParticipants'][0])
     {
-        list($response) = $this->listParticipantsWithHttpInfo($account_id, $conference_id, $talk, $listen, $dtmf_pass_through, $contentType);
+        list($response) = $this->listParticipantsWithHttpInfo($conference_id, $talk, $listen, $dtmf_pass_through, $contentType);
         return $response;
     }     
     /**
@@ -14996,7 +14996,7 @@ class DefaultApi
      */
     public function listRecordings($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
-        list($response) = $this->listRecordingsWithHttpInfo($account_id, $call_id, $conference_id, $date_created, $contentType);
+        list($response) = $this->listRecordingsWithHttpInfo($call_id, $conference_id, $date_created, $contentType);
         return $response;
     }     
     /**
@@ -15372,7 +15372,7 @@ class DefaultApi
      */
     public function listSmsMessages($to = null, $from = null, $begin_time = null, $end_time = null, $direction = null, $campaign_id = null, $brand_id = null, $is10_dlc = null, string $contentType = self::contentTypes['listSmsMessages'][0])
     {
-        list($response) = $this->listSmsMessagesWithHttpInfo($account_id, $to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc, $contentType);
+        list($response) = $this->listSmsMessagesWithHttpInfo($to, $from, $begin_time, $end_time, $direction, $campaign_id, $brand_id, $is10_dlc, $contentType);
         return $response;
     }     
     /**
@@ -15824,7 +15824,7 @@ class DefaultApi
      */
     public function makeACall($make_call_request = null, string $contentType = self::contentTypes['makeACall'][0])
     {
-        list($response) = $this->makeACallWithHttpInfo($account_id, $make_call_request, $contentType);
+        list($response) = $this->makeACallWithHttpInfo($make_call_request, $contentType);
         return $response;
     }     
     /**
@@ -16148,7 +16148,7 @@ class DefaultApi
      */
     public function makeAWebrtcJwt($create_web_rtc_token, string $contentType = self::contentTypes['makeAWebrtcJwt'][0])
     {
-        list($response) = $this->makeAWebrtcJwtWithHttpInfo($account_id, $create_web_rtc_token, $contentType);
+        list($response) = $this->makeAWebrtcJwtWithHttpInfo($create_web_rtc_token, $contentType);
         return $response;
     }     
     /**
@@ -16480,7 +16480,7 @@ class DefaultApi
      */
     public function removeAParticipant($conference_id, $call_id, string $contentType = self::contentTypes['removeAParticipant'][0])
     {
-        $this->removeAParticipantWithHttpInfo($account_id, $conference_id, $call_id, $contentType);
+        $this->removeAParticipantWithHttpInfo($conference_id, $call_id, $contentType);
     }     
     /**
      * Operation removeAParticipantWithHttpInfo
@@ -16743,7 +16743,7 @@ class DefaultApi
      */
     public function sendAnSmsMessage($message_request, string $contentType = self::contentTypes['sendAnSmsMessage'][0])
     {
-        list($response) = $this->sendAnSmsMessageWithHttpInfo($account_id, $message_request, $contentType);
+        list($response) = $this->sendAnSmsMessageWithHttpInfo($message_request, $contentType);
         return $response;
     }     
     /**
@@ -17073,7 +17073,7 @@ class DefaultApi
      */
     public function streamARecordingFile($recording_id, string $contentType = self::contentTypes['streamARecordingFile'][0])
     {
-        list($response) = $this->streamARecordingFileWithHttpInfo($account_id, $recording_id, $contentType);
+        list($response) = $this->streamARecordingFileWithHttpInfo($recording_id, $contentType);
         return $response;
     }     
     /**
@@ -17406,7 +17406,7 @@ class DefaultApi
      */
     public function updateAConference($conference_id, $update_conference_request = null, string $contentType = self::contentTypes['updateAConference'][0])
     {
-        $this->updateAConferenceWithHttpInfo($account_id, $conference_id, $update_conference_request, $contentType);
+        $this->updateAConferenceWithHttpInfo($conference_id, $update_conference_request, $contentType);
     }     
     /**
      * Operation updateAConferenceWithHttpInfo
@@ -17664,7 +17664,7 @@ class DefaultApi
      */
     public function updateALiveCall($call_id, $update_call_request, string $contentType = self::contentTypes['updateALiveCall'][0])
     {
-        $this->updateALiveCallWithHttpInfo($account_id, $call_id, $update_call_request, $contentType);
+        $this->updateALiveCallWithHttpInfo($call_id, $update_call_request, $contentType);
     }     
     /**
      * Operation updateALiveCallWithHttpInfo
@@ -17930,7 +17930,7 @@ class DefaultApi
      */
     public function updateAParticipant($conference_id, $call_id, $update_conference_participant_request = null, string $contentType = self::contentTypes['updateAParticipant'][0])
     {
-        list($response) = $this->updateAParticipantWithHttpInfo($account_id, $conference_id, $call_id, $update_conference_participant_request, $contentType);
+        list($response) = $this->updateAParticipantWithHttpInfo($conference_id, $call_id, $update_conference_participant_request, $contentType);
         return $response;
     }     
     /**
@@ -18302,7 +18302,7 @@ class DefaultApi
      */
     public function updateAQueue($queue_id, $queue_request = null, string $contentType = self::contentTypes['updateAQueue'][0])
     {
-        list($response) = $this->updateAQueueWithHttpInfo($account_id, $queue_id, $queue_request, $contentType);
+        list($response) = $this->updateAQueueWithHttpInfo($queue_id, $queue_request, $contentType);
         return $response;
     }     
     /**
@@ -18649,7 +18649,7 @@ class DefaultApi
      */
     public function updateAnAccount($account_request = null, string $contentType = self::contentTypes['updateAnAccount'][0])
     {
-        $this->updateAnAccountWithHttpInfo($account_id, $account_request, $contentType);
+        $this->updateAnAccountWithHttpInfo($account_request, $contentType);
     }     
     /**
      * Operation updateAnAccountWithHttpInfo
@@ -18884,7 +18884,7 @@ class DefaultApi
      */
     public function updateAnApplication($application_id, $application_request = null, string $contentType = self::contentTypes['updateAnApplication'][0])
     {
-        list($response) = $this->updateAnApplicationWithHttpInfo($account_id, $application_id, $application_request, $contentType);
+        list($response) = $this->updateAnApplicationWithHttpInfo($application_id, $application_request, $contentType);
         return $response;
     }     
     /**
@@ -19233,7 +19233,7 @@ class DefaultApi
      */
     public function updateAnIncomingNumber($phone_number_id, $incoming_number_request = null, string $contentType = self::contentTypes['updateAnIncomingNumber'][0])
     {
-        list($response) = $this->updateAnIncomingNumberWithHttpInfo($account_id, $phone_number_id, $incoming_number_request, $contentType);
+        list($response) = $this->updateAnIncomingNumberWithHttpInfo($phone_number_id, $incoming_number_request, $contentType);
         return $response;
     }     
     /**
