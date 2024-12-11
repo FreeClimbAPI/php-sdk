@@ -507,7 +507,7 @@ class DefaultApiTest extends TestCase
             ->setPassword('YOUR_API_KEY');
 
 
-        $apiInstance = new DefaultApi(
+        $this->$apiInstance = new DefaultApi(
             new Client(),
             $config
         );
