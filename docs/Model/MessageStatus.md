@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-| **NEW** | **MessageStatus** |  | Represented in PHP as 'new' |
+| **_NEW** | **MessageStatus** |  | Represented in PHP as 'new' |
 | **QUEUED** | **MessageStatus** |  | Represented in PHP as 'queued' |
 | **REJECTED** | **MessageStatus** |  | Represented in PHP as 'rejected' |
 | **SENDING** | **MessageStatus** |  | Represented in PHP as 'sending' |

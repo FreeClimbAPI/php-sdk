@@ -2268,15 +2268,15 @@ $voice_enabled = true; // bool | Indicates whether the phone number can handle C
 
 $sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
 
-$capabilities_voice = True; // bool
+$capabilities_voice = True; // bool | 
 
-$capabilities_sms = True; // bool
+$capabilities_sms = True; // bool | 
 
-$capabilities_toll_free = True; // bool
+$capabilities_toll_free = True; // bool | 
 
-$capabilities_ten_dlc = True; // bool
+$capabilities_ten_dlc = True; // bool | 
 
-$capabilities_short_code = True; // bool
+$capabilities_short_code = True; // bool | 
 
 
 try {
@@ -2723,15 +2723,15 @@ $sms_enabled = true; // bool | Indication of whether the phone number can handle
 
 $has_campaign = True; // bool | Indication of whether the phone number has a campaign associated with it
 
-$capabilities_voice = True; // bool
+$capabilities_voice = True; // bool | 
 
-$capabilities_sms = True; // bool
+$capabilities_sms = True; // bool | 
 
-$capabilities_toll_free = True; // bool
+$capabilities_toll_free = True; // bool | 
 
-$capabilities_ten_dlc = True; // bool
+$capabilities_ten_dlc = True; // bool | 
 
-$capabilities_short_code = True; // bool
+$capabilities_short_code = True; // bool | 
 
 $tfn_campaign_id = 'tfn_campaign_id_example'; // string | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
 
@@ -2853,7 +2853,7 @@ Name | Type | Description  | Notes
 ## `listParticipants()`
 
 ```php
-listParticipants($conference_id, $talk, $listen): \FreeClimb\Api\Model\ConferenceParticipantList
+listParticipants($conference_id, $talk, $listen, $dtmf_pass_through): \FreeClimb\Api\Model\ConferenceParticipantList
 ```
 
 List Participants
@@ -2884,9 +2884,11 @@ $talk = True; // bool | Only show Participants with the talk privilege.
 
 $listen = True; // bool | Only show Participants with the listen privilege.
 
+$dtmf_pass_through = True; // bool | Only show Participants with the dtmfPassThrough privilege.
+
 
 try {
-    $result = $apiInstance->listParticipants($conference_id, $talk, $listen);
+    $result = $apiInstance->listParticipants($conference_id, $talk, $listen, $dtmf_pass_through);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listParticipants: ', $e->getMessage(), PHP_EOL;
@@ -2901,6 +2903,7 @@ Name | Type | Description  | Notes
  **conference_id** | **string**| ID of the conference this participant is in. |
  **talk** | **bool**| Only show Participants with the talk privilege. | [optional]
  **listen** | **bool**| Only show Participants with the listen privilege. | [optional]
+ **dtmf_pass_through** | **bool**| Only show Participants with the dtmfPassThrough privilege. | [optional]
 
 ### Return type
 
@@ -3555,7 +3558,7 @@ $conference_id = 'conference_id_example'; // string | ID of the conference this 
 
 $call_id = 'call_id_example'; // string | ID of the Call associated with this participant.
 
-$update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }); // \FreeClimb\Api\Model\UpdateConferenceParticipantRequest | Conference participant details to update
+$update_conference_participant_request = new \FreeClimb\Api\Model\UpdateConferenceParticipantRequest(talk={ (Optional) Default is `true`. Setting to `false` mutes the Participant. FreeClimb returns an error and ignores any other value. }, listen={ (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value. }, dtmf_pass_through={ (Optional) Default is `true`. Setting to `false` mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value. }); // \FreeClimb\Api\Model\UpdateConferenceParticipantRequest | Conference participant details to update
 
 try {
     $result = $apiInstance->updateAParticipant($conference_id, $call_id, $update_conference_participant_request);
