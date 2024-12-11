@@ -24,7 +24,13 @@ jobs:
           php_version: '8.4'
       - name: Validate composer.json and composer.lock
         run: composer validate
+        with:
+          php_version: '8.4'
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
+        with:
+          php_version: '8.4'
       - name: Run test suite
         run: ./vendor/bin/phpunit
+        with:
+          php_version: '8.4'
