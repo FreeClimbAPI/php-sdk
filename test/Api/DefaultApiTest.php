@@ -32,6 +32,12 @@ use \FreeClimb\Api\Configuration;
 use \FreeClimb\Api\ApiException;
 use \FreeClimb\Api\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
+use FreeClimb\Api\Api\DefaultApi;
+use FreeClimb\Api\Model\CallStatus;
+use FreeClimb\Api\Model\MessageDirection;
+use FreeClimb\Api\Model\PlayBeep;
+use FreeClimb\Api\Model\UpdateCallRequestStatus;
+use FreeClimb\Api\Model\UpdateConferenceRequestStatus;
 
 /**
  * DefaultApiTest Class Doc Comment
