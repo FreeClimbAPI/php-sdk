@@ -21,7 +21,7 @@ jobs:
       - name: Establish php runtime
         uses: php-actions/composer@v6
         with:
-          php-version: '8.4'
+          php_version: '8.4'
       - name: Validate composer.json and composer.lock
         run: composer validate
       - name: Cache Composer packages
