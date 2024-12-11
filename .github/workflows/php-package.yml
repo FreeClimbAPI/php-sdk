@@ -19,18 +19,12 @@ jobs:
           yarn install
           ./node_modules/.bin/prism mock -h 127.0.0.1 openapi.json &
       - name: Establish php runtime
-        uses: php-actions/composer@v6
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: '8.4'
+          php-version: '8.4'
       - name: Validate composer.json and composer.lock
         run: composer validate
-        with:
-          php_version: '8.4'
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-        with:
-          php_version: '8.4'
       - name: Run test suite
         run: ./vendor/bin/phpunit
-        with:
-          php_version: '8.4'
