@@ -580,6 +580,7 @@ class CreateConference extends PerclCommand
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
 }
 
 

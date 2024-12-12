@@ -406,6 +406,29 @@ class PerclScript implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Gets a JSON
+     * representation of the current commands in the valid PerCL response format
+     *
+     * @return string
+     */
+    public function __toJSON()
+    {
+        return json_encode(ObjectSerializer::sanitizeForSerialization($this->getCommands()));
+    }
+
+    /**
+     * Gets a JSON
+     * representation of the current commands in the valid PerCL response format - public method
+     *
+     * @return string
+     */
+    public function toJSON(): string
+    {
+        $perclCommandsArr = array_map(fn($command) => $command->toPerclObject(), $this->getCommands());
+        return json_encode($perclCommandsArr, JSON_UNESCAPED_SLASHES);
+    }    
 }
 
 

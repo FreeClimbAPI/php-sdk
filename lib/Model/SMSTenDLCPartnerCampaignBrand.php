@@ -814,6 +814,7 @@ class SMSTenDLCPartnerCampaignBrand implements ModelInterface, ArrayAccess, \Jso
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
 }
 
 

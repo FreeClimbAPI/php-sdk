@@ -972,6 +972,7 @@ class RecordWebhook extends Webhook
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
 }
 
 

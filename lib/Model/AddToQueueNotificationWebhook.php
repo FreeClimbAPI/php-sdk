@@ -693,6 +693,7 @@ class AddToQueueNotificationWebhook extends Webhook
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
 }
 
 

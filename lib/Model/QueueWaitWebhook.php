@@ -802,6 +802,7 @@ class QueueWaitWebhook extends Webhook
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
 }
 
 
