@@ -508,7 +508,7 @@ class DefaultApiTest extends TestCase
     }
 
     public function dtmf_pass_through_listParticipants_test_value(){
-        return true;
+        return "true";
     }
     /**
      * Setup before running each test case
