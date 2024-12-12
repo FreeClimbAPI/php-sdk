@@ -44,11 +44,13 @@ class LogLevel
     /**
      * Possible values of this enum
      */
+    
     public const INFO = 'info';
-
+    
     public const WARNING = 'warning';
-
+    
     public const ERROR = 'error';
+    
 
     /**
      * Gets allowable values of the enum
@@ -57,9 +59,13 @@ class LogLevel
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::INFO,
+            
             self::WARNING,
-            self::ERROR
+            
+            self::ERROR            
+
         ];
     }
 }

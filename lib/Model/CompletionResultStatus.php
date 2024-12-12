@@ -44,9 +44,11 @@ class CompletionResultStatus
     /**
      * Possible values of this enum
      */
+    
     public const SUCCESS = 'success';
-
+    
     public const NO_CONTEXT = 'no_context';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class CompletionResultStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::SUCCESS,
-            self::NO_CONTEXT
+            
+            self::NO_CONTEXT            
+
         ];
     }
 }

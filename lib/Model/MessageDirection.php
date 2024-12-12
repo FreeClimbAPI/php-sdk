@@ -43,9 +43,11 @@ class MessageDirection
     /**
      * Possible values of this enum
      */
+    
     public const INBOUND = 'inbound';
-
+    
     public const OUTBOUND = 'outbound';
+    
 
     /**
      * Gets allowable values of the enum
@@ -54,8 +56,11 @@ class MessageDirection
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::INBOUND,
-            self::OUTBOUND
+            
+            self::OUTBOUND            
+
         ];
     }
 }

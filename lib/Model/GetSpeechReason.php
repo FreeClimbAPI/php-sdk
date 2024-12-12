@@ -43,17 +43,19 @@ class GetSpeechReason
     /**
      * Possible values of this enum
      */
+    
     public const ERROR = 'error';
-
+    
     public const HANGUP = 'hangup';
-
+    
     public const DIGIT = 'digit';
-
+    
     public const NO_INPUT = 'noInput';
-
+    
     public const NO_MATCH = 'noMatch';
-
+    
     public const RECOGNITION = 'recognition';
+    
 
     /**
      * Gets allowable values of the enum
@@ -62,12 +64,19 @@ class GetSpeechReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::ERROR,
+            
             self::HANGUP,
+            
             self::DIGIT,
+            
             self::NO_INPUT,
+            
             self::NO_MATCH,
-            self::RECOGNITION
+            
+            self::RECOGNITION            
+
         ];
     }
 }

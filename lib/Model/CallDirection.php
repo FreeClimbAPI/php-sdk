@@ -44,11 +44,13 @@ class CallDirection
     /**
      * Possible values of this enum
      */
+    
     public const INBOUND = 'inbound';
-
+    
     public const OUTBOUND_API = 'outboundAPI';
-
+    
     public const OUTBOUND_DIAL = 'outboundDial';
+    
 
     /**
      * Gets allowable values of the enum
@@ -57,9 +59,13 @@ class CallDirection
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::INBOUND,
+            
             self::OUTBOUND_API,
-            self::OUTBOUND_DIAL
+            
+            self::OUTBOUND_DIAL            
+
         ];
     }
 }

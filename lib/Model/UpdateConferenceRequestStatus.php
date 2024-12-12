@@ -44,9 +44,9 @@ class UpdateConferenceRequestStatus
     /**
      * Possible values of this enum
      */
-    public const _EMPTY = 'empty';
-
-    public const TERMINATED = 'terminated';
+    public const EMPTY = "empty";
+    public const TERMINATED = "terminated";
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,7 +55,8 @@ class UpdateConferenceRequestStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::_EMPTY,
+            
+            self::EMPTY,
             self::TERMINATED
         ];
     }

@@ -44,15 +44,17 @@ class SMSTenDLCBrandEntityType
     /**
      * Possible values of this enum
      */
+    
     public const PRIVATE_PROFIT = 'PRIVATE_PROFIT';
-
+    
     public const PUBLIC_PROFIT = 'PUBLIC_PROFIT';
-
+    
     public const NON_PROFIT = 'NON_PROFIT';
-
+    
     public const GOVERNMENT = 'GOVERNMENT';
-
+    
     public const SOLE_PROPRIETOR = 'SOLE_PROPRIETOR';
+    
 
     /**
      * Gets allowable values of the enum
@@ -61,11 +63,17 @@ class SMSTenDLCBrandEntityType
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::PRIVATE_PROFIT,
+            
             self::PUBLIC_PROFIT,
+            
             self::NON_PROFIT,
+            
             self::GOVERNMENT,
-            self::SOLE_PROPRIETOR
+            
+            self::SOLE_PROPRIETOR            
+
         ];
     }
 }

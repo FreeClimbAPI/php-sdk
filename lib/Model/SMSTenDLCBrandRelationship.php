@@ -44,15 +44,17 @@ class SMSTenDLCBrandRelationship
     /**
      * Possible values of this enum
      */
+    
     public const BASIC_ACCOUNT = 'BASIC_ACCOUNT';
-
+    
     public const SMALL_ACCOUNT = 'SMALL_ACCOUNT';
-
+    
     public const MEDIUM_ACCOUNT = 'MEDIUM_ACCOUNT';
-
+    
     public const LARGE_ACCOUNT = 'LARGE_ACCOUNT';
-
+    
     public const KEY_ACCOUNT = 'KEY_ACCOUNT';
+    
 
     /**
      * Gets allowable values of the enum
@@ -61,11 +63,17 @@ class SMSTenDLCBrandRelationship
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::BASIC_ACCOUNT,
+            
             self::SMALL_ACCOUNT,
+            
             self::MEDIUM_ACCOUNT,
+            
             self::LARGE_ACCOUNT,
-            self::KEY_ACCOUNT
+            
+            self::KEY_ACCOUNT            
+
         ];
     }
 }

@@ -43,15 +43,17 @@ class TranscribeReason
     /**
      * Possible values of this enum
      */
+    
     public const INTERNAL_ERROR = 'internalError';
-
+    
     public const HANGUP = 'hangup';
-
+    
     public const MAX_LENGTH = 'maxLength';
-
+    
     public const DIGIT = 'digit';
-
+    
     public const NO_INPUT = 'noInput';
+    
 
     /**
      * Gets allowable values of the enum
@@ -60,11 +62,17 @@ class TranscribeReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::INTERNAL_ERROR,
+            
             self::HANGUP,
+            
             self::MAX_LENGTH,
+            
             self::DIGIT,
-            self::NO_INPUT
+            
+            self::NO_INPUT            
+
         ];
     }
 }

@@ -44,13 +44,15 @@ class SMSTenDLCBrandIdentityStatus
     /**
      * Possible values of this enum
      */
+    
     public const SELF_DECLARED = 'SELF_DECLARED';
-
+    
     public const UNVERIFIED = 'UNVERIFIED';
-
+    
     public const VERIFIED = 'VERIFIED';
-
+    
     public const VETTED_VERIFIED = 'VETTED_VERIFIED';
+    
 
     /**
      * Gets allowable values of the enum
@@ -59,10 +61,15 @@ class SMSTenDLCBrandIdentityStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::SELF_DECLARED,
+            
             self::UNVERIFIED,
+            
             self::VERIFIED,
-            self::VETTED_VERIFIED
+            
+            self::VETTED_VERIFIED            
+
         ];
     }
 }

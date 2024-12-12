@@ -43,11 +43,13 @@ class BargeInReason
     /**
      * Possible values of this enum
      */
+    
     public const NO_BARGE_IN = 'noBargeIn';
-
+    
     public const BARGE_IN_BY_DTMF = 'bargeInByDTMF';
-
+    
     public const BARGE_IN_BY_ENERGY = 'bargeInByEnergy';
+    
 
     /**
      * Gets allowable values of the enum
@@ -56,9 +58,13 @@ class BargeInReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::NO_BARGE_IN,
+            
             self::BARGE_IN_BY_DTMF,
-            self::BARGE_IN_BY_ENERGY
+            
+            self::BARGE_IN_BY_ENERGY            
+
         ];
     }
 }

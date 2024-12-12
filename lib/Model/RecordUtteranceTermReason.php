@@ -43,13 +43,15 @@ class RecordUtteranceTermReason
     /**
      * Possible values of this enum
      */
+    
     public const FINISH_KEY = 'finishKey';
-
+    
     public const TIMEOUT = 'timeout';
-
+    
     public const HANGUP = 'hangup';
-
+    
     public const MAX_LENGTH = 'maxLength';
+    
 
     /**
      * Gets allowable values of the enum
@@ -58,10 +60,15 @@ class RecordUtteranceTermReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::FINISH_KEY,
+            
             self::TIMEOUT,
+            
             self::HANGUP,
-            self::MAX_LENGTH
+            
+            self::MAX_LENGTH            
+
         ];
     }
 }

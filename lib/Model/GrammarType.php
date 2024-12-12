@@ -44,9 +44,11 @@ class GrammarType
     /**
      * Possible values of this enum
      */
+    
     public const URL = 'URL';
-
+    
     public const BUILT_IN = 'BUILTIN';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class GrammarType
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::URL,
-            self::BUILT_IN
+            
+            self::BUILT_IN            
+
         ];
     }
 }

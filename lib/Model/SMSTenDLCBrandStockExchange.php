@@ -44,59 +44,61 @@ class SMSTenDLCBrandStockExchange
     /**
      * Possible values of this enum
      */
+    
     public const NONE = 'NONE';
-
+    
     public const NASDAQ = 'NASDAQ';
-
+    
     public const NYSE = 'NYSE';
-
+    
     public const AMEX = 'AMEX';
-
+    
     public const AMX = 'AMX';
-
+    
     public const ASX = 'ASX';
-
+    
     public const B3 = 'B3';
-
+    
     public const BME = 'BME';
-
+    
     public const BSE = 'BSE';
-
+    
     public const FRA = 'FRA';
-
+    
     public const ICEX = 'ICEX';
-
+    
     public const JPX = 'JPX';
-
+    
     public const JSE = 'JSE';
-
+    
     public const KRX = 'KRX';
-
+    
     public const LON = 'LON';
-
+    
     public const NSE = 'NSE';
-
+    
     public const OMX = 'OMX';
-
+    
     public const SEHK = 'SEHK';
-
+    
     public const SGX = 'SGX';
-
+    
     public const SSE = 'SSE';
-
+    
     public const STO = 'STO';
-
+    
     public const SWX = 'SWX';
-
+    
     public const SZSE = 'SZSE';
-
+    
     public const TSX = 'TSX';
-
+    
     public const TWSE = 'TWSE';
-
+    
     public const VSE = 'VSE';
-
+    
     public const OTHER = 'OTHER';
+    
 
     /**
      * Gets allowable values of the enum
@@ -105,33 +107,61 @@ class SMSTenDLCBrandStockExchange
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::NONE,
+            
             self::NASDAQ,
+            
             self::NYSE,
+            
             self::AMEX,
+            
             self::AMX,
+            
             self::ASX,
+            
             self::B3,
+            
             self::BME,
+            
             self::BSE,
+            
             self::FRA,
+            
             self::ICEX,
+            
             self::JPX,
+            
             self::JSE,
+            
             self::KRX,
+            
             self::LON,
+            
             self::NSE,
+            
             self::OMX,
+            
             self::SEHK,
+            
             self::SGX,
+            
             self::SSE,
+            
             self::STO,
+            
             self::SWX,
+            
             self::SZSE,
+            
             self::TSX,
+            
             self::TWSE,
+            
             self::VSE,
-            self::OTHER
+            
+            self::OTHER            
+
         ];
     }
 }

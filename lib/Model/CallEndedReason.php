@@ -44,51 +44,53 @@ class CallEndedReason
     /**
      * Possible values of this enum
      */
+    
     public const BUSY = 'busy';
-
+    
     public const FAILED = 'failed';
-
+    
     public const NO_ANSWER = 'noAnswer';
-
+    
     public const CALL_CANCELED = 'callCanceled';
-
+    
     public const FAR_END_HANGUP = 'farEndHangup';
-
+    
     public const APP_HANGUP = 'appHangup';
-
+    
     public const APP_REJECT = 'appReject';
-
+    
     public const APP_NO_PERCL = 'appNoPercl';
-
+    
     public const APP_INVALID_PERCL = 'appInvalidPercl';
-
+    
     public const CONFERENCE_TERMINATED = 'conferenceTerminated';
-
+    
     public const CONFERENCE_EMPTIED = 'conferenceEmptied';
-
+    
     public const REMOVED_FROM_CONFERENCE = 'removedFromConference';
-
+    
     public const MACHINE_DETECTED = 'machineDetected';
-
+    
     public const WEBHOOK_FAILED = 'webhookFailed';
-
+    
     public const WEBHOOK_INVALID_RESPONSE = 'webhookInvalidResponse';
-
+    
     public const VOICE_DISABLED = 'voiceDisabled';
-
+    
     public const CONFIG_ERROR_NO_APPLICATION = 'configErrorNoApplication';
-
+    
     public const CONFIG_ERROR_NO_VOICE_URL = 'configErrorNoVoiceUrl';
-
+    
     public const MAX_REDIRECTS_ERROR = 'maxRedirectsError';
-
+    
     public const PERCL_PROCESSING_ERROR = 'perclProcessingError';
-
+    
     public const INTERNAL_ERROR = 'internalError';
-
+    
     public const GRPC_HANGUP = 'grpcHangup';
-
+    
     public const MAX_DURATION = 'maxDuration';
+    
 
     /**
      * Gets allowable values of the enum
@@ -97,29 +99,53 @@ class CallEndedReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::BUSY,
+            
             self::FAILED,
+            
             self::NO_ANSWER,
+            
             self::CALL_CANCELED,
+            
             self::FAR_END_HANGUP,
+            
             self::APP_HANGUP,
+            
             self::APP_REJECT,
+            
             self::APP_NO_PERCL,
+            
             self::APP_INVALID_PERCL,
+            
             self::CONFERENCE_TERMINATED,
+            
             self::CONFERENCE_EMPTIED,
+            
             self::REMOVED_FROM_CONFERENCE,
+            
             self::MACHINE_DETECTED,
+            
             self::WEBHOOK_FAILED,
+            
             self::WEBHOOK_INVALID_RESPONSE,
+            
             self::VOICE_DISABLED,
+            
             self::CONFIG_ERROR_NO_APPLICATION,
+            
             self::CONFIG_ERROR_NO_VOICE_URL,
+            
             self::MAX_REDIRECTS_ERROR,
+            
             self::PERCL_PROCESSING_ERROR,
+            
             self::INTERNAL_ERROR,
+            
             self::GRPC_HANGUP,
-            self::MAX_DURATION
+            
+            self::MAX_DURATION            
+
         ];
     }
 }

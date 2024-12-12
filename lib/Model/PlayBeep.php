@@ -44,13 +44,15 @@ class PlayBeep
     /**
      * Possible values of this enum
      */
+    
     public const ALWAYS = 'always';
-
+    
     public const NEVER = 'never';
-
+    
     public const ENTRY_ONLY = 'entryOnly';
-
+    
     public const EXIT_ONLY = 'exitOnly';
+    
 
     /**
      * Gets allowable values of the enum
@@ -59,10 +61,15 @@ class PlayBeep
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::ALWAYS,
+            
             self::NEVER,
+            
             self::ENTRY_ONLY,
-            self::EXIT_ONLY
+            
+            self::EXIT_ONLY            
+
         ];
     }
 }

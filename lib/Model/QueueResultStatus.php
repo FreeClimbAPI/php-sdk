@@ -43,13 +43,15 @@ class QueueResultStatus
     /**
      * Possible values of this enum
      */
+    
     public const QUEUE_FULL = 'queueFull';
-
+    
     public const DEQUEUED = 'dequeued';
-
+    
     public const HANGUP = 'hangup';
-
+    
     public const SYSTEM_ERROR = 'systemError';
+    
 
     /**
      * Gets allowable values of the enum
@@ -58,10 +60,15 @@ class QueueResultStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::QUEUE_FULL,
+            
             self::DEQUEUED,
+            
             self::HANGUP,
-            self::SYSTEM_ERROR
+            
+            self::SYSTEM_ERROR            
+
         ];
     }
 }

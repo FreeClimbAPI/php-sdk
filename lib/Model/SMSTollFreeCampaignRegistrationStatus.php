@@ -44,15 +44,17 @@ class SMSTollFreeCampaignRegistrationStatus
     /**
      * Possible values of this enum
      */
+    
     public const UNREGISTERED = 'UNREGISTERED';
-
+    
     public const INITIATED = 'INITIATED';
-
+    
     public const PENDING = 'PENDING';
-
+    
     public const DECLINED = 'DECLINED';
-
+    
     public const REGISTERED = 'REGISTERED';
+    
 
     /**
      * Gets allowable values of the enum
@@ -61,11 +63,17 @@ class SMSTollFreeCampaignRegistrationStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::UNREGISTERED,
+            
             self::INITIATED,
+            
             self::PENDING,
+            
             self::DECLINED,
-            self::REGISTERED
+            
+            self::REGISTERED            
+
         ];
     }
 }

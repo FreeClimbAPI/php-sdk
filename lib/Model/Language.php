@@ -43,57 +43,59 @@ class Language
     /**
      * Possible values of this enum
      */
+    
     public const CATALAN = 'ca-ES';
-
+    
     public const DANISH = 'da-DK';
-
+    
     public const GERMAN = 'de-DE';
-
+    
     public const ENGLISH_AU = 'en-AU';
-
+    
     public const ENGLISH_CA = 'en-CA';
-
+    
     public const ENGLISH_UK = 'en-GB';
-
+    
     public const ENGLISH_IN = 'en-IN';
-
+    
     public const ENGLISH_US = 'en-US';
-
+    
     public const ENGLISH_ES = 'es-ES';
-
+    
     public const ENGLISH_MX = 'es-MX';
-
+    
     public const FINNISH = 'fi-FI';
-
+    
     public const FRENCH_CA = 'fr-CA';
-
+    
     public const FRENCH_FR = 'fr-FR';
-
+    
     public const ITALIAN = 'it-IT';
-
+    
     public const JAPANESE = 'ja-JP';
-
+    
     public const KOREAN = 'ko-KR';
-
+    
     public const NORWEGIAN = 'nb-NO';
-
+    
     public const DUTCH = 'nl-NL';
-
+    
     public const POLISH = 'pl-PL';
-
+    
     public const PORTUGESE_BR = 'pt-BR';
-
+    
     public const PORTUGESE_PT = 'pt-PT';
-
+    
     public const RUSSIAN = 'ru-RU';
-
+    
     public const SWEDISH = 'sv-SE';
-
+    
     public const CHINESE_CN = 'zh-CN';
-
+    
     public const CHINESE_HK = 'zh-HK';
-
+    
     public const CHINESE_TW = 'zh-TW';
+    
 
     /**
      * Gets allowable values of the enum
@@ -102,32 +104,59 @@ class Language
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::CATALAN,
+            
             self::DANISH,
+            
             self::GERMAN,
+            
             self::ENGLISH_AU,
+            
             self::ENGLISH_CA,
+            
             self::ENGLISH_UK,
+            
             self::ENGLISH_IN,
+            
             self::ENGLISH_US,
+            
             self::ENGLISH_ES,
+            
             self::ENGLISH_MX,
+            
             self::FINNISH,
+            
             self::FRENCH_CA,
+            
             self::FRENCH_FR,
+            
             self::ITALIAN,
+            
             self::JAPANESE,
+            
             self::KOREAN,
+            
             self::NORWEGIAN,
+            
             self::DUTCH,
+            
             self::POLISH,
+            
             self::PORTUGESE_BR,
+            
             self::PORTUGESE_PT,
+            
             self::RUSSIAN,
+            
             self::SWEDISH,
+            
             self::CHINESE_CN,
+            
             self::CHINESE_HK,
-            self::CHINESE_TW
+            
+            self::CHINESE_TW            
+
         ];
     }
 }

@@ -44,9 +44,11 @@ class IfMachine
     /**
      * Possible values of this enum
      */
+    
     public const REDIRECT = 'redirect';
-
+    
     public const HANGUP = 'hangup';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class IfMachine
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::REDIRECT,
-            self::HANGUP
+            
+            self::HANGUP            
+
         ];
     }
 }

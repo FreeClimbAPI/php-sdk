@@ -656,6 +656,10 @@
         "type": "string",
         "enum": ["empty", "terminated"],
         "x-enum-varnames": ["EMPTY", "TERMINATED"],
+        "x-php-enum-mapping": [
+          { "enum": "empty", "varname": "EMPTY"},
+          { "enum": "terminated", "varname": "TERMINATED" }
+        ],
         "x-enum": true,
         "description": "New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**"
       },

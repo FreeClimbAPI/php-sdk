@@ -43,9 +43,11 @@ class TranscribeTermReason
     /**
      * Possible values of this enum
      */
+    
     public const ERROR = 'error';
-
+    
     public const COMPLETED = 'completed';
+    
 
     /**
      * Gets allowable values of the enum
@@ -54,8 +56,11 @@ class TranscribeTermReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::ERROR,
-            self::COMPLETED
+            
+            self::COMPLETED            
+
         ];
     }
 }

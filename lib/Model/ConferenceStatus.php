@@ -44,13 +44,15 @@ class ConferenceStatus
     /**
      * Possible values of this enum
      */
+    
     public const _EMPTY = 'empty';
-
+    
     public const POPULATED = 'populated';
-
+    
     public const IN_PROGRESS = 'inProgress';
-
+    
     public const TERMINATED = 'terminated';
+    
 
     /**
      * Gets allowable values of the enum
@@ -59,10 +61,15 @@ class ConferenceStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::_EMPTY,
+            
             self::POPULATED,
+            
             self::IN_PROGRESS,
-            self::TERMINATED
+            
+            self::TERMINATED            
+
         ];
     }
 }

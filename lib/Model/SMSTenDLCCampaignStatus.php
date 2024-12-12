@@ -44,9 +44,11 @@ class SMSTenDLCCampaignStatus
     /**
      * Possible values of this enum
      */
+    
     public const ACTIVE = 'ACTIVE';
-
+    
     public const EXPIRED = 'EXPIRED';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class SMSTenDLCCampaignStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::ACTIVE,
-            self::EXPIRED
+            
+            self::EXPIRED            
+
         ];
     }
 }

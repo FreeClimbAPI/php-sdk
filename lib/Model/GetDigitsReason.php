@@ -44,13 +44,15 @@ class GetDigitsReason
     /**
      * Possible values of this enum
      */
+    
     public const FINISH_KEY = 'finishKey';
-
+    
     public const TIMEOUT = 'timeout';
-
+    
     public const MAX_DIGITS = 'maxDigits';
-
+    
     public const TONE = 'tone';
+    
 
     /**
      * Gets allowable values of the enum
@@ -59,10 +61,15 @@ class GetDigitsReason
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::FINISH_KEY,
+            
             self::TIMEOUT,
+            
             self::MAX_DIGITS,
-            self::TONE
+            
+            self::TONE            
+
         ];
     }
 }

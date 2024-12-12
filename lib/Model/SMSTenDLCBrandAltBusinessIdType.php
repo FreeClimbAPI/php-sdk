@@ -44,13 +44,15 @@ class SMSTenDLCBrandAltBusinessIdType
     /**
      * Possible values of this enum
      */
+    
     public const NONE = 'NONE';
-
+    
     public const DUNS = 'DUNS';
-
+    
     public const GIIN = 'GIIN';
-
+    
     public const LEI = 'LEI';
+    
 
     /**
      * Gets allowable values of the enum
@@ -59,10 +61,15 @@ class SMSTenDLCBrandAltBusinessIdType
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::NONE,
+            
             self::DUNS,
+            
             self::GIIN,
-            self::LEI
+            
+            self::LEI            
+
         ];
     }
 }

@@ -43,9 +43,11 @@ class MachineType
     /**
      * Possible values of this enum
      */
+    
     public const ANSWERING_MACHINE = 'answering machine';
-
+    
     public const FAX_MODEM = 'fax modem';
+    
 
     /**
      * Gets allowable values of the enum
@@ -54,8 +56,11 @@ class MachineType
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::ANSWERING_MACHINE,
-            self::FAX_MODEM
+            
+            self::FAX_MODEM            
+
         ];
     }
 }

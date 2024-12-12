@@ -44,9 +44,11 @@ class AnsweredBy
     /**
      * Possible values of this enum
      */
+    
     public const HUMAN = 'human';
-
+    
     public const MACHINE = 'machine';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class AnsweredBy
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::HUMAN,
-            self::MACHINE
+            
+            self::MACHINE            
+
         ];
     }
 }

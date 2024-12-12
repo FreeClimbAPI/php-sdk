@@ -44,9 +44,11 @@ class UpdateCallRequestStatus
     /**
      * Possible values of this enum
      */
+    
     public const CANCELED = 'canceled';
-
+    
     public const COMPLETED = 'completed';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class UpdateCallRequestStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::CANCELED,
-            self::COMPLETED
+            
+            self::COMPLETED            
+
         ];
     }
 }

@@ -44,11 +44,13 @@ class AccountStatus
     /**
      * Possible values of this enum
      */
+    
     public const CLOSED = 'closed';
-
+    
     public const SUSPENDED = 'suspended';
-
+    
     public const ACTIVE = 'active';
+    
 
     /**
      * Gets allowable values of the enum
@@ -57,9 +59,13 @@ class AccountStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::CLOSED,
+            
             self::SUSPENDED,
-            self::ACTIVE
+            
+            self::ACTIVE            
+
         ];
     }
 }

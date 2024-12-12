@@ -44,21 +44,23 @@ class CallStatus
     /**
      * Possible values of this enum
      */
+    
     public const QUEUED = 'queued';
-
+    
     public const RINGING = 'ringing';
-
+    
     public const IN_PROGRESS = 'inProgress';
-
+    
     public const CANCELED = 'canceled';
-
+    
     public const COMPLETED = 'completed';
-
+    
     public const FAILED = 'failed';
-
+    
     public const BUSY = 'busy';
-
+    
     public const NO_ANSWER = 'noAnswer';
+    
 
     /**
      * Gets allowable values of the enum
@@ -67,14 +69,23 @@ class CallStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::QUEUED,
+            
             self::RINGING,
+            
             self::IN_PROGRESS,
+            
             self::CANCELED,
+            
             self::COMPLETED,
+            
             self::FAILED,
+            
             self::BUSY,
-            self::NO_ANSWER
+            
+            self::NO_ANSWER            
+
         ];
     }
 }

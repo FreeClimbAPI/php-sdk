@@ -44,9 +44,11 @@ class AccountType
     /**
      * Possible values of this enum
      */
+    
     public const TRIAL = 'trial';
-
+    
     public const FULL = 'full';
+    
 
     /**
      * Gets allowable values of the enum
@@ -55,8 +57,11 @@ class AccountType
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::TRIAL,
-            self::FULL
+            
+            self::FULL            
+
         ];
     }
 }

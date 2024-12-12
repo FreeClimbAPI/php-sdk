@@ -44,27 +44,29 @@ class MessageStatus
     /**
      * Possible values of this enum
      */
+    
     public const _NEW = 'new';
-
+    
     public const QUEUED = 'queued';
-
+    
     public const REJECTED = 'rejected';
-
+    
     public const SENDING = 'sending';
-
+    
     public const SENT = 'sent';
-
+    
     public const FAILED = 'failed';
-
+    
     public const RECEIVED = 'received';
-
+    
     public const UNDELIVERED = 'undelivered';
-
+    
     public const EXPIRED = 'expired';
-
+    
     public const DELETED = 'deleted';
-
+    
     public const UNKNOWN = 'unknown';
+    
 
     /**
      * Gets allowable values of the enum
@@ -73,17 +75,29 @@ class MessageStatus
     public static function getAllowableEnumValues()
     {
         return [
+            
             self::_NEW,
+            
             self::QUEUED,
+            
             self::REJECTED,
+            
             self::SENDING,
+            
             self::SENT,
+            
             self::FAILED,
+            
             self::RECEIVED,
+            
             self::UNDELIVERED,
+            
             self::EXPIRED,
+            
             self::DELETED,
-            self::UNKNOWN
+            
+            self::UNKNOWN            
+
         ];
     }
 }

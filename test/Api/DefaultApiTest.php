@@ -506,6 +506,10 @@ class DefaultApiTest extends TestCase
         "query" => "query_example",
         ));
     }
+
+    public function dtmf_pass_through_listParticipants_test_value(){
+        return true;
+    }
     /**
      * Setup before running each test case
      */
