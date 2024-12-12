@@ -55,6 +55,7 @@ class CallControlWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallControlWebhook = new CallControlWebhook();
     }
 
     /**
@@ -79,49 +80,49 @@ class CallControlWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallControlWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->CallControlWebhook->getRequestType());
+        $this->assertIsString($this->CallControlWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallControlWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->CallControlWebhook->getCallId());
+        $this->assertIsString($this->CallControlWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallControlWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->CallControlWebhook->getAccountId());
+        $this->assertIsString($this->CallControlWebhook->getAccountId());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallControlWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->CallControlWebhook->getConferenceId());
+        $this->assertIsString($this->CallControlWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "digits"
      */
     public function testPropertyDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallControlWebhook->setDigits('TS');
+        $this->assertEquals('TS', $this->CallControlWebhook->getDigits());
+        $this->assertIsString($this->CallControlWebhook->getDigits());
     }
 }

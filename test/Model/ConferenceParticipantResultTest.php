@@ -55,6 +55,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ConferenceParticipantResult = new ConferenceParticipantResult();
     }
 
     /**
@@ -79,103 +80,106 @@ class ConferenceParticipantResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setUri('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getUri());
+        $this->assertIsString($this->ConferenceParticipantResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateCreated());
+        $this->assertIsString($this->ConferenceParticipantResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateUpdated());
+        $this->assertIsString($this->ConferenceParticipantResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantResult->setrevision(1);
+        $this->assertEquals(1, $this->ConferenceParticipantResult->getrevision());
+        $this->assertIsNumeric($this->ConferenceParticipantResult->getrevision());
+        
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getAccountId());
+        $this->assertIsString($this->ConferenceParticipantResult->getAccountId());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getConferenceId());
+        $this->assertIsString($this->ConferenceParticipantResult->getConferenceId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setCallId('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantResult->getCallId());
+        $this->assertIsString($this->ConferenceParticipantResult->getCallId());
     }
-
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->settalk(false);
+        $this->assertFalse($this->ConferenceParticipantResult->gettalk());
+        $this->assertIsBool($this->ConferenceParticipantResult->gettalk());
     }
-
     /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setlisten(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getlisten());
+        $this->assertIsBool($this->ConferenceParticipantResult->getlisten());
     }
-
     /**
      * Test attribute "dtmf_pass_through"
      */
     public function testPropertyDtmfPassThrough()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setdtmfPassThrough(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getdtmfPassThrough());
+        $this->assertIsBool($this->ConferenceParticipantResult->getdtmfPassThrough());
     }
-
     /**
      * Test attribute "start_conf_on_enter"
      */
     public function testPropertyStartConfOnEnter()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantResult->setstartConfOnEnter(false);
+        $this->assertFalse($this->ConferenceParticipantResult->getstartConfOnEnter());
+        $this->assertIsBool($this->ConferenceParticipantResult->getstartConfOnEnter());
     }
 }

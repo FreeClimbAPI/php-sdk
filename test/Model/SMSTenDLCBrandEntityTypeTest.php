@@ -55,6 +55,7 @@ class SMSTenDLCBrandEntityTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandEntityType = new SMSTenDLCBrandEntityType();
     }
 
     /**

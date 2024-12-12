@@ -55,6 +55,7 @@ class ApplicationRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ApplicationRequest = new ApplicationRequest();
     }
 
     /**
@@ -79,67 +80,67 @@ class ApplicationRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getAlias());
+        $this->assertIsString($this->ApplicationRequest->getAlias());
     }
-
     /**
      * Test attribute "voice_url"
      */
     public function testPropertyVoiceUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setVoiceUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getVoiceUrl());
+        $this->assertIsString($this->ApplicationRequest->getVoiceUrl());
     }
-
     /**
      * Test attribute "voice_fallback_url"
      */
     public function testPropertyVoiceFallbackUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setVoiceFallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getVoiceFallbackUrl());
+        $this->assertIsString($this->ApplicationRequest->getVoiceFallbackUrl());
     }
-
     /**
      * Test attribute "call_connect_url"
      */
     public function testPropertyCallConnectUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getCallConnectUrl());
+        $this->assertIsString($this->ApplicationRequest->getCallConnectUrl());
     }
-
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getStatusCallbackUrl());
+        $this->assertIsString($this->ApplicationRequest->getStatusCallbackUrl());
     }
-
     /**
      * Test attribute "sms_url"
      */
     public function testPropertySmsUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setSmsUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getSmsUrl());
+        $this->assertIsString($this->ApplicationRequest->getSmsUrl());
     }
-
     /**
      * Test attribute "sms_fallback_url"
      */
     public function testPropertySmsFallbackUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationRequest->setSmsFallbackUrl('TS');
+        $this->assertEquals('TS', $this->ApplicationRequest->getSmsFallbackUrl());
+        $this->assertIsString($this->ApplicationRequest->getSmsFallbackUrl());
     }
 }

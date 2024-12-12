@@ -55,6 +55,7 @@ class QueueListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->QueueList = new QueueList();
     }
 
     /**
@@ -79,76 +80,94 @@ class QueueListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->settotal(1);
+        $this->assertEquals(1, $this->QueueList->gettotal());
+        $this->assertIsNumeric($this->QueueList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->setstart(1);
+        $this->assertEquals(1, $this->QueueList->getstart());
+        $this->assertIsNumeric($this->QueueList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->setend(1);
+        $this->assertEquals(1, $this->QueueList->getend());
+        $this->assertIsNumeric($this->QueueList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->setpage(1);
+        $this->assertEquals(1, $this->QueueList->getpage());
+        $this->assertIsNumeric($this->QueueList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->setnumPages(1);
+        $this->assertEquals(1, $this->QueueList->getnumPages());
+        $this->assertIsNumeric($this->QueueList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueList->setpageSize(1);
+        $this->assertEquals(1, $this->QueueList->getpageSize());
+        $this->assertIsNumeric($this->QueueList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->QueueList->getNextPageUri());
+        $this->assertIsString($this->QueueList->getNextPageUri());
     }
-
     /**
      * Test attribute "queues"
      */
     public function testPropertyQueues()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueList->setqueues([]);
+        $this->assertEquals([], $this->QueueList->getqueues());
+        $this->assertIsArray($this->QueueList->getqueues());
     }
 }

@@ -55,6 +55,7 @@ class IfMachineTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->IfMachine = new IfMachine();
     }
 
     /**

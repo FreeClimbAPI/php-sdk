@@ -55,6 +55,7 @@ class CapabilitiesTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Capabilities = new Capabilities();
     }
 
     /**
@@ -79,49 +80,49 @@ class CapabilitiesTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "voice"
      */
     public function testPropertyVoice()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Capabilities->setvoice(false);
+        $this->assertFalse($this->Capabilities->getvoice());
+        $this->assertIsBool($this->Capabilities->getvoice());
     }
-
     /**
      * Test attribute "sms"
      */
     public function testPropertySms()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Capabilities->setsms(false);
+        $this->assertFalse($this->Capabilities->getsms());
+        $this->assertIsBool($this->Capabilities->getsms());
     }
-
     /**
      * Test attribute "toll_free"
      */
     public function testPropertyTollFree()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Capabilities->settollFree(false);
+        $this->assertFalse($this->Capabilities->gettollFree());
+        $this->assertIsBool($this->Capabilities->gettollFree());
     }
-
     /**
      * Test attribute "ten_dlc"
      */
     public function testPropertyTenDlc()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Capabilities->settenDlc(false);
+        $this->assertFalse($this->Capabilities->gettenDlc());
+        $this->assertIsBool($this->Capabilities->gettenDlc());
     }
-
     /**
      * Test attribute "short_code"
      */
     public function testPropertyShortCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Capabilities->setshortCode(false);
+        $this->assertFalse($this->Capabilities->getshortCode());
+        $this->assertIsBool($this->Capabilities->getshortCode());
     }
 }

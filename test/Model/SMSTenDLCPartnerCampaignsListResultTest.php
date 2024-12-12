@@ -55,6 +55,7 @@ class SMSTenDLCPartnerCampaignsListResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCPartnerCampaignsListResult = new SMSTenDLCPartnerCampaignsListResult();
     }
 
     /**
@@ -79,76 +80,94 @@ class SMSTenDLCPartnerCampaignsListResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->settotal(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->gettotal());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->setstart(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->getstart());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->setend(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->getend());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->setpage(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->getpage());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->setnumPages(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->getnumPages());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignsListResult->setpageSize(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignsListResult->getpageSize());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignsListResult->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignsListResult->getNextPageUri());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignsListResult->getNextPageUri());
     }
-
     /**
      * Test attribute "partner_campaigns"
      */
     public function testPropertyPartnerCampaigns()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignsListResult->setpartnerCampaigns([]);
+        $this->assertEquals([], $this->SMSTenDLCPartnerCampaignsListResult->getpartnerCampaigns());
+        $this->assertIsArray($this->SMSTenDLCPartnerCampaignsListResult->getpartnerCampaigns());
     }
 }

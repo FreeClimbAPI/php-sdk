@@ -55,6 +55,7 @@ class GetSpeechReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GetSpeechReason = new GetSpeechReason();
     }
 
     /**

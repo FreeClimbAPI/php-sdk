@@ -55,6 +55,7 @@ class GetDigitsReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GetDigitsReason = new GetDigitsReason();
     }
 
     /**

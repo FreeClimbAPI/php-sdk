@@ -55,6 +55,7 @@ class CallDirectionTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallDirection = new CallDirection();
     }
 
     /**

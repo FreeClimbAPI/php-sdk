@@ -55,6 +55,7 @@ class CallResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallResult = new CallResult();
     }
 
     /**
@@ -79,184 +80,209 @@ class CallResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setUri('TS');
+        $this->assertEquals('TS', $this->CallResult->getUri());
+        $this->assertIsString($this->CallResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->CallResult->getDateCreated());
+        $this->assertIsString($this->CallResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->CallResult->getDateUpdated());
+        $this->assertIsString($this->CallResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->CallResult->setrevision(1);
+        $this->assertEquals(1, $this->CallResult->getrevision());
+        $this->assertIsNumeric($this->CallResult->getrevision());
+        
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setCallId('TS');
+        $this->assertEquals('TS', $this->CallResult->getCallId());
+        $this->assertIsString($this->CallResult->getCallId());
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setParentCallId('TS');
+        $this->assertEquals('TS', $this->CallResult->getParentCallId());
+        $this->assertIsString($this->CallResult->getParentCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->CallResult->getAccountId());
+        $this->assertIsString($this->CallResult->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setFrom('TS');
+        $this->assertEquals('TS', $this->CallResult->getFrom());
+        $this->assertIsString($this->CallResult->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setTo('TS');
+        $this->assertEquals('TS', $this->CallResult->getTo());
+        $this->assertIsString($this->CallResult->getTo());
     }
-
     /**
      * Test attribute "phone_number_id"
      */
     public function testPropertyPhoneNumberId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setPhoneNumberId('TS');
+        $this->assertEquals('TS', $this->CallResult->getPhoneNumberId());
+        $this->assertIsString($this->CallResult->getPhoneNumberId());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->CallResult->getcallStatus());
+        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->CallResult->getcallStatus());
     }
-
     /**
      * Test attribute "start_time"
      */
     public function testPropertyStartTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setStartTime('TS');
+        $this->assertEquals('TS', $this->CallResult->getStartTime());
+        $this->assertIsString($this->CallResult->getStartTime());
     }
-
     /**
      * Test attribute "connect_time"
      */
     public function testPropertyConnectTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setConnectTime('TS');
+        $this->assertEquals('TS', $this->CallResult->getConnectTime());
+        $this->assertIsString($this->CallResult->getConnectTime());
     }
-
     /**
      * Test attribute "end_time"
      */
     public function testPropertyEndTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setEndTime('TS');
+        $this->assertEquals('TS', $this->CallResult->getEndTime());
+        $this->assertIsString($this->CallResult->getEndTime());
     }
-
     /**
      * Test attribute "duration"
      */
     public function testPropertyDuration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->CallResult->setduration(1);
+        $this->assertEquals(1, $this->CallResult->getduration());
+        $this->assertIsNumeric($this->CallResult->getduration());
+        
     }
-
     /**
      * Test attribute "connect_duration"
      */
     public function testPropertyConnectDuration()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->CallResult->setconnectDuration(1);
+        $this->assertEquals(1, $this->CallResult->getconnectDuration());
+        $this->assertIsNumeric($this->CallResult->getconnectDuration());
+        
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->CallResult->getdirection());
+        $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->CallResult->getdirection());
+        $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->CallResult->getdirection());
     }
-
     /**
      * Test attribute "answered_by"
      */
     public function testPropertyAnsweredBy()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setansweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
+        $this->assertEquals(\FreeClimb\Api\Model\AnsweredBy::HUMAN, $this->CallResult->getansweredBy());
+        $this->CallResult->setansweredBy(\FreeClimb\Api\Model\AnsweredBy::MACHINE);
+        $this->assertEquals(\FreeClimb\Api\Model\AnsweredBy::MACHINE, $this->CallResult->getansweredBy());
     }
-
     /**
      * Test attribute "subresource_uris"
      */
     public function testPropertySubresourceUris()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setsubresourceUris(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->CallResult->getsubresourceUris());
     }
-
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallResult->setApplicationId('TS');
+        $this->assertEquals('TS', $this->CallResult->getApplicationId());
+        $this->assertIsString($this->CallResult->getApplicationId());
     }
 }

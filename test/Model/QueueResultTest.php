@@ -55,6 +55,7 @@ class QueueResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->QueueResult = new QueueResult();
     }
 
     /**
@@ -79,103 +80,114 @@ class QueueResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setUri('TS');
+        $this->assertEquals('TS', $this->QueueResult->getUri());
+        $this->assertIsString($this->QueueResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->QueueResult->getDateCreated());
+        $this->assertIsString($this->QueueResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->QueueResult->getDateUpdated());
+        $this->assertIsString($this->QueueResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueResult->setrevision(1);
+        $this->assertEquals(1, $this->QueueResult->getrevision());
+        $this->assertIsNumeric($this->QueueResult->getrevision());
+        
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->QueueResult->getAccountId());
+        $this->assertIsString($this->QueueResult->getAccountId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setQueueId('TS');
+        $this->assertEquals('TS', $this->QueueResult->getQueueId());
+        $this->assertIsString($this->QueueResult->getQueueId());
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setAlias('TS');
+        $this->assertEquals('TS', $this->QueueResult->getAlias());
+        $this->assertIsString($this->QueueResult->getAlias());
     }
-
     /**
      * Test attribute "max_size"
      */
     public function testPropertyMaxSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueResult->setmaxSize(1);
+        $this->assertEquals(1, $this->QueueResult->getmaxSize());
+        $this->assertIsNumeric($this->QueueResult->getmaxSize());
+        
     }
-
     /**
      * Test attribute "current_size"
      */
     public function testPropertyCurrentSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueResult->setcurrentSize(1);
+        $this->assertEquals(1, $this->QueueResult->getcurrentSize());
+        $this->assertIsNumeric($this->QueueResult->getcurrentSize());
+        
     }
-
     /**
      * Test attribute "average_queue_removal_time"
      */
     public function testPropertyAverageQueueRemovalTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueResult->setaverageQueueRemovalTime(1);
+        $this->assertEquals(1, $this->QueueResult->getaverageQueueRemovalTime());
+        $this->assertIsNumeric($this->QueueResult->getaverageQueueRemovalTime());
+        
     }
-
     /**
      * Test attribute "subresource_uris"
      */
     public function testPropertySubresourceUris()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueResult->setsubresourceUris(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->QueueResult->getsubresourceUris());
     }
 }

@@ -55,6 +55,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AddToQueueNotificationWebhook = new AddToQueueNotificationWebhook();
     }
 
     /**
@@ -79,85 +80,101 @@ class AddToQueueNotificationWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getRequestType());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getCallId());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getAccountId());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getFrom());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getTo());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->AddToQueueNotificationWebhook->getcallStatus());
+        $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->AddToQueueNotificationWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->AddToQueueNotificationWebhook->getdirection());
+        $this->AddToQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->AddToQueueNotificationWebhook->getdirection());
+        $this->AddToQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->AddToQueueNotificationWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getConferenceId());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToQueueNotificationWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getQueueId());
+        $this->assertIsString($this->AddToQueueNotificationWebhook->getQueueId());
     }
 }

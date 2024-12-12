@@ -55,6 +55,7 @@ class PaginationModelTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->PaginationModel = new PaginationModel();
     }
 
     /**
@@ -79,67 +80,85 @@ class PaginationModelTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->settotal(1);
+        $this->assertEquals(1, $this->PaginationModel->gettotal());
+        $this->assertIsNumeric($this->PaginationModel->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->setstart(1);
+        $this->assertEquals(1, $this->PaginationModel->getstart());
+        $this->assertIsNumeric($this->PaginationModel->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->setend(1);
+        $this->assertEquals(1, $this->PaginationModel->getend());
+        $this->assertIsNumeric($this->PaginationModel->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->setpage(1);
+        $this->assertEquals(1, $this->PaginationModel->getpage());
+        $this->assertIsNumeric($this->PaginationModel->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->setnumPages(1);
+        $this->assertEquals(1, $this->PaginationModel->getnumPages());
+        $this->assertIsNumeric($this->PaginationModel->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->PaginationModel->setpageSize(1);
+        $this->assertEquals(1, $this->PaginationModel->getpageSize());
+        $this->assertIsNumeric($this->PaginationModel->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->PaginationModel->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->PaginationModel->getNextPageUri());
+        $this->assertIsString($this->PaginationModel->getNextPageUri());
     }
 }

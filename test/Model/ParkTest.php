@@ -55,6 +55,7 @@ class ParkTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Park = new Park();
     }
 
     /**
@@ -79,31 +80,31 @@ class ParkTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "wait_url"
      */
     public function testPropertyWaitUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Park->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->Park->getWaitUrl());
+        $this->assertIsString($this->Park->getWaitUrl());
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Park->setActionUrl('TS');
+        $this->assertEquals('TS', $this->Park->getActionUrl());
+        $this->assertIsString($this->Park->getActionUrl());
     }
-
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Park->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->Park->getNotificationUrl());
+        $this->assertIsString($this->Park->getNotificationUrl());
     }
 }

@@ -55,6 +55,7 @@ class FilterLogsRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->FilterLogsRequest = new FilterLogsRequest();
     }
 
     /**
@@ -79,13 +80,13 @@ class FilterLogsRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "pql"
      */
     public function testPropertyPql()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->FilterLogsRequest->setPql('TS');
+        $this->assertEquals('TS', $this->FilterLogsRequest->getPql());
+        $this->assertIsString($this->FilterLogsRequest->getPql());
     }
 }

@@ -55,6 +55,7 @@ class RejectTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Reject = new Reject();
     }
 
     /**
@@ -79,13 +80,13 @@ class RejectTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "reason"
      */
     public function testPropertyReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Reject->setReason('TS');
+        $this->assertEquals('TS', $this->Reject->getReason());
+        $this->assertIsString($this->Reject->getReason());
     }
 }

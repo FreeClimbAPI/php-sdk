@@ -55,6 +55,7 @@ class SMSTenDLCBrandAltBusinessIdTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandAltBusinessIdType = new SMSTenDLCBrandAltBusinessIdType();
     }
 
     /**

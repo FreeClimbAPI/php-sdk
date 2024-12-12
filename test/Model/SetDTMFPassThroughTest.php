@@ -55,6 +55,7 @@ class SetDTMFPassThroughTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SetDTMFPassThrough = new SetDTMFPassThrough();
     }
 
     /**
@@ -79,13 +80,13 @@ class SetDTMFPassThroughTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "dtmf_pass_through"
      */
     public function testPropertyDtmfPassThrough()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SetDTMFPassThrough->setdtmfPassThrough(false);
+        $this->assertFalse($this->SetDTMFPassThrough->getdtmfPassThrough());
+        $this->assertIsBool($this->SetDTMFPassThrough->getdtmfPassThrough());
     }
 }

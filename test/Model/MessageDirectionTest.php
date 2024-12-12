@@ -55,6 +55,7 @@ class MessageDirectionTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessageDirection = new MessageDirection();
     }
 
     /**

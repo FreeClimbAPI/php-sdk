@@ -55,6 +55,7 @@ class AccountResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AccountResult = new AccountResult();
     }
 
     /**
@@ -79,103 +80,109 @@ class AccountResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setUri('TS');
+        $this->assertEquals('TS', $this->AccountResult->getUri());
+        $this->assertIsString($this->AccountResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->AccountResult->getDateCreated());
+        $this->assertIsString($this->AccountResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->AccountResult->getDateUpdated());
+        $this->assertIsString($this->AccountResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AccountResult->setrevision(1);
+        $this->assertEquals(1, $this->AccountResult->getrevision());
+        $this->assertIsNumeric($this->AccountResult->getrevision());
+        
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->AccountResult->getAccountId());
+        $this->assertIsString($this->AccountResult->getAccountId());
     }
-
     /**
      * Test attribute "api_key"
      */
     public function testPropertyApiKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setApiKey('TS');
+        $this->assertEquals('TS', $this->AccountResult->getApiKey());
+        $this->assertIsString($this->AccountResult->getApiKey());
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setAlias('TS');
+        $this->assertEquals('TS', $this->AccountResult->getAlias());
+        $this->assertIsString($this->AccountResult->getAlias());
     }
-
     /**
      * Test attribute "label"
      */
     public function testPropertyLabel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setLabel('TS');
+        $this->assertEquals('TS', $this->AccountResult->getLabel());
+        $this->assertIsString($this->AccountResult->getLabel());
     }
-
     /**
      * Test attribute "type"
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->settype(\FreeClimb\Api\Model\AccountType::TRIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\AccountType::TRIAL, $this->AccountResult->gettype());
+        $this->AccountResult->settype(\FreeClimb\Api\Model\AccountType::FULL);
+        $this->assertEquals(\FreeClimb\Api\Model\AccountType::FULL, $this->AccountResult->gettype());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setstatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
+        $this->assertEquals(\FreeClimb\Api\Model\AccountStatus::CLOSED, $this->AccountResult->getstatus());
+        $this->AccountResult->setstatus(\FreeClimb\Api\Model\AccountStatus::SUSPENDED);
+        $this->assertEquals(\FreeClimb\Api\Model\AccountStatus::SUSPENDED, $this->AccountResult->getstatus());
+        $this->AccountResult->setstatus(\FreeClimb\Api\Model\AccountStatus::ACTIVE);
+        $this->assertEquals(\FreeClimb\Api\Model\AccountStatus::ACTIVE, $this->AccountResult->getstatus());
     }
-
     /**
      * Test attribute "subresource_uris"
      */
     public function testPropertySubresourceUris()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountResult->setsubresourceUris(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->AccountResult->getsubresourceUris());
     }
 }

@@ -55,6 +55,7 @@ class UpdateConferenceRequestStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->UpdateConferenceRequestStatus = new UpdateConferenceRequestStatus();
     }
 
     /**

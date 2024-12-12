@@ -55,6 +55,7 @@ class ConferenceRecordingStatusWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ConferenceRecordingStatusWebhook = new ConferenceRecordingStatusWebhook();
     }
 
     /**
@@ -79,121 +80,145 @@ class ConferenceRecordingStatusWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getRequestType());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getCallId());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getAccountId());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getFrom());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getTo());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->ConferenceRecordingStatusWebhook->getcallStatus());
+        $this->ConferenceRecordingStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->ConferenceRecordingStatusWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->ConferenceRecordingStatusWebhook->getdirection());
+        $this->ConferenceRecordingStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->ConferenceRecordingStatusWebhook->getdirection());
+        $this->ConferenceRecordingStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->ConferenceRecordingStatusWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getConferenceId());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getQueueId());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getQueueId());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
+        $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::EMPTY, $this->ConferenceRecordingStatusWebhook->getstatus());
+        $this->ConferenceRecordingStatusWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::POPULATED);
+        $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::POPULATED, $this->ConferenceRecordingStatusWebhook->getstatus());
+        $this->ConferenceRecordingStatusWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::IN_PROGRESS, $this->ConferenceRecordingStatusWebhook->getstatus());
+        $this->ConferenceRecordingStatusWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED);
+        $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED, $this->ConferenceRecordingStatusWebhook->getstatus());
     }
-
     /**
      * Test attribute "recording_url"
      */
     public function testPropertyRecordingUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setRecordingUrl('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getRecordingUrl());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getRecordingUrl());
     }
-
     /**
      * Test attribute "recording_id"
      */
     public function testPropertyRecordingId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceRecordingStatusWebhook->setRecordingId('TS');
+        $this->assertEquals('TS', $this->ConferenceRecordingStatusWebhook->getRecordingId());
+        $this->assertIsString($this->ConferenceRecordingStatusWebhook->getRecordingId());
     }
-
     /**
      * Test attribute "recording_duration_sec"
      */
     public function testPropertyRecordingDurationSec()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceRecordingStatusWebhook->setrecordingDurationSec(1);
+        $this->assertEquals(1, $this->ConferenceRecordingStatusWebhook->getrecordingDurationSec());
+        $this->assertIsNumeric($this->ConferenceRecordingStatusWebhook->getrecordingDurationSec());
+        
     }
 }

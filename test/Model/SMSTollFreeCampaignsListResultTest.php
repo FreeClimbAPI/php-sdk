@@ -55,6 +55,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTollFreeCampaignsListResult = new SMSTollFreeCampaignsListResult();
     }
 
     /**
@@ -79,76 +80,94 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->settotal(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->gettotal());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setstart(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getstart());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setend(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getend());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setpage(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getpage());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setnumPages(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getnumPages());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaignsListResult->setpageSize(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaignsListResult->getpageSize());
+        $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaignsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaignsListResult->getNextPageUri());
+        $this->assertIsString($this->SMSTollFreeCampaignsListResult->getNextPageUri());
     }
-
     /**
      * Test attribute "brands"
      */
     public function testPropertyBrands()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaignsListResult->setbrands([]);
+        $this->assertEquals([], $this->SMSTollFreeCampaignsListResult->getbrands());
+        $this->assertIsArray($this->SMSTollFreeCampaignsListResult->getbrands());
     }
 }

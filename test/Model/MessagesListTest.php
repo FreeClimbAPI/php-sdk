@@ -55,6 +55,7 @@ class MessagesListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessagesList = new MessagesList();
     }
 
     /**
@@ -79,76 +80,94 @@ class MessagesListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->settotal(1);
+        $this->assertEquals(1, $this->MessagesList->gettotal());
+        $this->assertIsNumeric($this->MessagesList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->setstart(1);
+        $this->assertEquals(1, $this->MessagesList->getstart());
+        $this->assertIsNumeric($this->MessagesList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->setend(1);
+        $this->assertEquals(1, $this->MessagesList->getend());
+        $this->assertIsNumeric($this->MessagesList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->setpage(1);
+        $this->assertEquals(1, $this->MessagesList->getpage());
+        $this->assertIsNumeric($this->MessagesList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->setnumPages(1);
+        $this->assertEquals(1, $this->MessagesList->getnumPages());
+        $this->assertIsNumeric($this->MessagesList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessagesList->setpageSize(1);
+        $this->assertEquals(1, $this->MessagesList->getpageSize());
+        $this->assertIsNumeric($this->MessagesList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessagesList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->MessagesList->getNextPageUri());
+        $this->assertIsString($this->MessagesList->getNextPageUri());
     }
-
     /**
      * Test attribute "messages"
      */
     public function testPropertyMessages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessagesList->setmessages([]);
+        $this->assertEquals([], $this->MessagesList->getmessages());
+        $this->assertIsArray($this->MessagesList->getmessages());
     }
 }

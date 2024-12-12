@@ -55,6 +55,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCPartnerCampaignBrand = new SMSTenDLCPartnerCampaignBrand();
     }
 
     /**
@@ -79,103 +80,105 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getAccountId());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getAccountId());
     }
-
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getBrandId());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId());
     }
-
     /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setFirstName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getFirstName());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getFirstName());
     }
-
     /**
      * Test attribute "last_name"
      */
     public function testPropertyLastName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setLastName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getLastName());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getLastName());
     }
-
     /**
      * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setDisplayName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
     }
-
     /**
      * Test attribute "company_name"
      */
     public function testPropertyCompanyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setCompanyName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
     }
-
     /**
      * Test attribute "phone"
      */
     public function testPropertyPhone()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setPhone('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getPhone());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getPhone());
     }
-
     /**
      * Test attribute "email"
      */
     public function testPropertyEmail()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setEmail('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getEmail());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getEmail());
     }
-
     /**
      * Test attribute "website"
      */
     public function testPropertyWebsite()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setWebsite('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getWebsite());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getWebsite());
     }
-
     /**
      * Test attribute "optional_attributes"
      */
     public function testPropertyOptionalAttributes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaignBrand->setoptionalAttributes(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->SMSTenDLCPartnerCampaignBrand->getoptionalAttributes());
     }
-
     /**
      * Test attribute "evp_vetting_score"
      */
     public function testPropertyEvpVettingScore()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCPartnerCampaignBrand->setevpVettingScore(1);
+        $this->assertEquals(1, $this->SMSTenDLCPartnerCampaignBrand->getevpVettingScore());
+        $this->assertIsNumeric($this->SMSTenDLCPartnerCampaignBrand->getevpVettingScore());
+        
     }
 }

@@ -55,6 +55,7 @@ class TerminateConferenceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TerminateConference = new TerminateConference();
     }
 
     /**

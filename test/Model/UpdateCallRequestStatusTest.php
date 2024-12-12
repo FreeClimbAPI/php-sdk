@@ -55,6 +55,7 @@ class UpdateCallRequestStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->UpdateCallRequestStatus = new UpdateCallRequestStatus();
     }
 
     /**

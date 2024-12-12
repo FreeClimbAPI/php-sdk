@@ -55,6 +55,7 @@ class TranscribeUtteranceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TranscribeUtterance = new TranscribeUtterance();
     }
 
     /**
@@ -79,58 +80,57 @@ class TranscribeUtteranceTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setActionUrl('TS');
+        $this->assertEquals('TS', $this->TranscribeUtterance->getActionUrl());
+        $this->assertIsString($this->TranscribeUtterance->getActionUrl());
     }
-
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setplayBeep(false);
+        $this->assertFalse($this->TranscribeUtterance->getplayBeep());
+        $this->assertIsBool($this->TranscribeUtterance->getplayBeep());
     }
-
     /**
      * Test attribute "record"
      */
     public function testPropertyRecord()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setrecord(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->TranscribeUtterance->getrecord());
     }
-
     /**
      * Test attribute "privacy_for_logging"
      */
     public function testPropertyPrivacyForLogging()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setprivacyForLogging(false);
+        $this->assertFalse($this->TranscribeUtterance->getprivacyForLogging());
+        $this->assertIsBool($this->TranscribeUtterance->getprivacyForLogging());
     }
-
     /**
      * Test attribute "privacy_for_recording"
      */
     public function testPropertyPrivacyForRecording()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setprivacyForRecording(false);
+        $this->assertFalse($this->TranscribeUtterance->getprivacyForRecording());
+        $this->assertIsBool($this->TranscribeUtterance->getprivacyForRecording());
     }
-
     /**
      * Test attribute "prompts"
      */
     public function testPropertyPrompts()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtterance->setprompts([]);
+        $this->assertEquals([], $this->TranscribeUtterance->getprompts());
+        $this->assertIsArray($this->TranscribeUtterance->getprompts());
     }
 }

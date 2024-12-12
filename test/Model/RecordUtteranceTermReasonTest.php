@@ -55,6 +55,7 @@ class RecordUtteranceTermReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RecordUtteranceTermReason = new RecordUtteranceTermReason();
     }
 
     /**

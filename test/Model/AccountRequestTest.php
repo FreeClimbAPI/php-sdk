@@ -55,6 +55,7 @@ class AccountRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AccountRequest = new AccountRequest();
     }
 
     /**
@@ -79,22 +80,22 @@ class AccountRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->AccountRequest->getAlias());
+        $this->assertIsString($this->AccountRequest->getAlias());
     }
-
     /**
      * Test attribute "label"
      */
     public function testPropertyLabel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AccountRequest->setLabel('TS');
+        $this->assertEquals('TS', $this->AccountRequest->getLabel());
+        $this->assertIsString($this->AccountRequest->getLabel());
     }
 }

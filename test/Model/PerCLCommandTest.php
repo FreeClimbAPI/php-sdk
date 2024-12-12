@@ -55,6 +55,7 @@ class PerclCommandTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->PerclCommand = new PerclCommand();
     }
 
     /**
@@ -79,13 +80,13 @@ class PerclCommandTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "command"
      */
     public function testPropertyCommand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->PerclCommand->setCommand('TS');
+        $this->assertEquals('TS', $this->PerclCommand->getCommand());
+        $this->assertIsString($this->PerclCommand->getCommand());
     }
 }

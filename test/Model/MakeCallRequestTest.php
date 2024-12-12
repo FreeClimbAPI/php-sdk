@@ -55,6 +55,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MakeCallRequest = new MakeCallRequest();
     }
 
     /**
@@ -79,94 +80,97 @@ class MakeCallRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setFrom('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getFrom());
+        $this->assertIsString($this->MakeCallRequest->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setTo('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getTo());
+        $this->assertIsString($this->MakeCallRequest->getTo());
     }
-
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setApplicationId('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getApplicationId());
+        $this->assertIsString($this->MakeCallRequest->getApplicationId());
     }
-
     /**
      * Test attribute "send_digits"
      */
     public function testPropertySendDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setSendDigits('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getSendDigits());
+        $this->assertIsString($this->MakeCallRequest->getSendDigits());
     }
-
     /**
      * Test attribute "if_machine"
      */
     public function testPropertyIfMachine()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setIfMachine('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getIfMachine());
+        $this->assertIsString($this->MakeCallRequest->getIfMachine());
     }
-
     /**
      * Test attribute "if_machine_url"
      */
     public function testPropertyIfMachineUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setIfMachineUrl('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getIfMachineUrl());
+        $this->assertIsString($this->MakeCallRequest->getIfMachineUrl());
     }
-
     /**
      * Test attribute "timeout"
      */
     public function testPropertyTimeout()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MakeCallRequest->settimeout(1);
+        $this->assertEquals(1, $this->MakeCallRequest->gettimeout());
+        $this->assertIsNumeric($this->MakeCallRequest->gettimeout());
+        
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setParentCallId('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getParentCallId());
+        $this->assertIsString($this->MakeCallRequest->getParentCallId());
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setprivacyMode(false);
+        $this->assertFalse($this->MakeCallRequest->getprivacyMode());
+        $this->assertIsBool($this->MakeCallRequest->getprivacyMode());
     }
-
     /**
      * Test attribute "call_connect_url"
      */
     public function testPropertyCallConnectUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MakeCallRequest->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->MakeCallRequest->getCallConnectUrl());
+        $this->assertIsString($this->MakeCallRequest->getCallConnectUrl());
     }
 }

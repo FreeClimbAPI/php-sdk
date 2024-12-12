@@ -55,6 +55,7 @@ class CreateWebRTCTokenTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CreateWebRTCToken = new CreateWebRTCToken();
     }
 
     /**
@@ -79,31 +80,34 @@ class CreateWebRTCTokenTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateWebRTCToken->setTo('TS');
+        $this->assertEquals('TS', $this->CreateWebRTCToken->getTo());
+        $this->assertIsString($this->CreateWebRTCToken->getTo());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateWebRTCToken->setFrom('TS');
+        $this->assertEquals('TS', $this->CreateWebRTCToken->getFrom());
+        $this->assertIsString($this->CreateWebRTCToken->getFrom());
     }
-
     /**
      * Test attribute "uses"
      */
     public function testPropertyUses()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        $this->CreateWebRTCToken->setuses(1);
+        $this->assertEquals(1, $this->CreateWebRTCToken->getuses());
+        $this->assertIsNumeric($this->CreateWebRTCToken->getuses());
+        
+        
     }
 }

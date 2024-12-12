@@ -55,6 +55,7 @@ class UpdateConferenceParticipantRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->UpdateConferenceParticipantRequest = new UpdateConferenceParticipantRequest();
     }
 
     /**
@@ -79,31 +80,31 @@ class UpdateConferenceParticipantRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceParticipantRequest->settalk(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->gettalk());
+        $this->assertIsBool($this->UpdateConferenceParticipantRequest->gettalk());
     }
-
     /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceParticipantRequest->setlisten(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->getlisten());
+        $this->assertIsBool($this->UpdateConferenceParticipantRequest->getlisten());
     }
-
     /**
      * Test attribute "dtmf_pass_through"
      */
     public function testPropertyDtmfPassThrough()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceParticipantRequest->setdtmfPassThrough(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->getdtmfPassThrough());
+        $this->assertIsBool($this->UpdateConferenceParticipantRequest->getdtmfPassThrough());
     }
 }

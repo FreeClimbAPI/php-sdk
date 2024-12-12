@@ -55,6 +55,7 @@ class ApplicationListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ApplicationList = new ApplicationList();
     }
 
     /**
@@ -79,76 +80,94 @@ class ApplicationListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->settotal(1);
+        $this->assertEquals(1, $this->ApplicationList->gettotal());
+        $this->assertIsNumeric($this->ApplicationList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->setstart(1);
+        $this->assertEquals(1, $this->ApplicationList->getstart());
+        $this->assertIsNumeric($this->ApplicationList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->setend(1);
+        $this->assertEquals(1, $this->ApplicationList->getend());
+        $this->assertIsNumeric($this->ApplicationList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->setpage(1);
+        $this->assertEquals(1, $this->ApplicationList->getpage());
+        $this->assertIsNumeric($this->ApplicationList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->setnumPages(1);
+        $this->assertEquals(1, $this->ApplicationList->getnumPages());
+        $this->assertIsNumeric($this->ApplicationList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ApplicationList->setpageSize(1);
+        $this->assertEquals(1, $this->ApplicationList->getpageSize());
+        $this->assertIsNumeric($this->ApplicationList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->ApplicationList->getNextPageUri());
+        $this->assertIsString($this->ApplicationList->getNextPageUri());
     }
-
     /**
      * Test attribute "applications"
      */
     public function testPropertyApplications()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ApplicationList->setapplications([]);
+        $this->assertEquals([], $this->ApplicationList->getapplications());
+        $this->assertIsArray($this->ApplicationList->getapplications());
     }
 }

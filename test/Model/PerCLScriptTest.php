@@ -55,6 +55,7 @@ class PerclScriptTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->PerclScript = new PerclScript();
     }
 
     /**
@@ -79,13 +80,13 @@ class PerclScriptTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "commands"
      */
     public function testPropertyCommands()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->PerclScript->setcommands([]);
+        $this->assertEquals([], $this->PerclScript->getcommands());
+        $this->assertIsArray($this->PerclScript->getcommands());
     }
 }

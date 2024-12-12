@@ -55,6 +55,7 @@ class GrammarFileBuiltInTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GrammarFileBuiltIn = new GrammarFileBuiltIn();
     }
 
     /**

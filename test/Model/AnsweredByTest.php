@@ -55,6 +55,7 @@ class AnsweredByTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AnsweredBy = new AnsweredBy();
     }
 
     /**

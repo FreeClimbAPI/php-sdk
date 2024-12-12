@@ -55,6 +55,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GetSpeechWebhook = new GetSpeechWebhook();
     }
 
     /**
@@ -79,157 +80,188 @@ class GetSpeechWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getRequestType());
+        $this->assertIsString($this->GetSpeechWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getCallId());
+        $this->assertIsString($this->GetSpeechWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getAccountId());
+        $this->assertIsString($this->GetSpeechWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getFrom());
+        $this->assertIsString($this->GetSpeechWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getTo());
+        $this->assertIsString($this->GetSpeechWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->GetSpeechWebhook->getcallStatus());
+        $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->GetSpeechWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->GetSpeechWebhook->getdirection());
+        $this->GetSpeechWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->GetSpeechWebhook->getdirection());
+        $this->GetSpeechWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->GetSpeechWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getConferenceId());
+        $this->assertIsString($this->GetSpeechWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getQueueId());
+        $this->assertIsString($this->GetSpeechWebhook->getQueueId());
     }
-
     /**
      * Test attribute "reason"
      */
     public function testPropertyReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::ERROR, $this->GetSpeechWebhook->getreason());
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::HANGUP, $this->GetSpeechWebhook->getreason());
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::DIGIT);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::DIGIT, $this->GetSpeechWebhook->getreason());
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::NO_INPUT);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::NO_INPUT, $this->GetSpeechWebhook->getreason());
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::NO_MATCH);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::NO_MATCH, $this->GetSpeechWebhook->getreason());
+        $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::RECOGNITION);
+        $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::RECOGNITION, $this->GetSpeechWebhook->getreason());
     }
-
     /**
      * Test attribute "recognition_result"
      */
     public function testPropertyRecognitionResult()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setRecognitionResult('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getRecognitionResult());
+        $this->assertIsString($this->GetSpeechWebhook->getRecognitionResult());
     }
-
     /**
      * Test attribute "confidence"
      */
     public function testPropertyConfidence()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeechWebhook->setconfidence(1);
+        $this->assertEquals(1, $this->GetSpeechWebhook->getconfidence());
+        $this->assertIsNumeric($this->GetSpeechWebhook->getconfidence());
+        
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setParentCallId('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getParentCallId());
+        $this->assertIsString($this->GetSpeechWebhook->getParentCallId());
     }
-
     /**
      * Test attribute "completion_reason"
      */
     public function testPropertyCompletionReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setCompletionReason('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionReason());
+        $this->assertIsString($this->GetSpeechWebhook->getCompletionReason());
     }
-
     /**
      * Test attribute "completion_cause"
      */
     public function testPropertyCompletionCause()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setCompletionCause('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionCause());
+        $this->assertIsString($this->GetSpeechWebhook->getCompletionCause());
     }
-
     /**
      * Test attribute "mrcp_code"
      */
     public function testPropertyMrcpCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeechWebhook->setmrcpCode(1);
+        $this->assertEquals(1, $this->GetSpeechWebhook->getmrcpCode());
+        $this->assertIsNumeric($this->GetSpeechWebhook->getmrcpCode());
+        
     }
-
     /**
      * Test attribute "mrcp_diagnostic"
      */
     public function testPropertyMrcpDiagnostic()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeechWebhook->setMrcpDiagnostic('TS');
+        $this->assertEquals('TS', $this->GetSpeechWebhook->getMrcpDiagnostic());
+        $this->assertIsString($this->GetSpeechWebhook->getMrcpDiagnostic());
     }
 }

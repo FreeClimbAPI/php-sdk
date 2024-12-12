@@ -55,6 +55,7 @@ class MachineTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MachineType = new MachineType();
     }
 
     /**

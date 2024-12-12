@@ -55,6 +55,7 @@ class GetSpeechTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GetSpeech = new GetSpeech();
     }
 
     /**
@@ -79,121 +80,140 @@ class GetSpeechTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setActionUrl('TS');
+        $this->assertEquals('TS', $this->GetSpeech->getActionUrl());
+        $this->assertIsString($this->GetSpeech->getActionUrl());
     }
-
     /**
      * Test attribute "grammar_type"
      */
     public function testPropertyGrammarType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setgrammarType(\FreeClimb\Api\Model\GrammarType::URL);
+        $this->assertEquals(\FreeClimb\Api\Model\GrammarType::URL, $this->GetSpeech->getgrammarType());
+        $this->GetSpeech->setgrammarType(\FreeClimb\Api\Model\GrammarType::BUILT_IN);
+        $this->assertEquals(\FreeClimb\Api\Model\GrammarType::BUILT_IN, $this->GetSpeech->getgrammarType());
     }
-
     /**
      * Test attribute "grammar_file"
      */
     public function testPropertyGrammarFile()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setGrammarFile('TS');
+        $this->assertEquals('TS', $this->GetSpeech->getGrammarFile());
+        $this->assertIsString($this->GetSpeech->getGrammarFile());
     }
-
     /**
      * Test attribute "grammar_rule"
      */
     public function testPropertyGrammarRule()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setGrammarRule('TS');
+        $this->assertEquals('TS', $this->GetSpeech->getGrammarRule());
+        $this->assertIsString($this->GetSpeech->getGrammarRule());
     }
-
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setplayBeep(false);
+        $this->assertFalse($this->GetSpeech->getplayBeep());
+        $this->assertIsBool($this->GetSpeech->getplayBeep());
     }
-
     /**
      * Test attribute "prompts"
      */
     public function testPropertyPrompts()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setprompts([]);
+        $this->assertEquals([], $this->GetSpeech->getprompts());
+        $this->assertIsArray($this->GetSpeech->getprompts());
     }
-
     /**
      * Test attribute "no_input_timeout_ms"
      */
     public function testPropertyNoInputTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setnoInputTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeech->getnoInputTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeech->getnoInputTimeoutMs());
+        
     }
-
     /**
      * Test attribute "recognition_timeout_ms"
      */
     public function testPropertyRecognitionTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setrecognitionTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeech->getrecognitionTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeech->getrecognitionTimeoutMs());
+        
     }
-
     /**
      * Test attribute "confidence_threshold"
      */
     public function testPropertyConfidenceThreshold()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setconfidenceThreshold(1);
+        $this->assertEquals(1, $this->GetSpeech->getconfidenceThreshold());
+        $this->assertIsNumeric($this->GetSpeech->getconfidenceThreshold());
+        
     }
-
     /**
      * Test attribute "sensitivity_level"
      */
     public function testPropertySensitivityLevel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setsensitivityLevel(1);
+        $this->assertEquals(1, $this->GetSpeech->getsensitivityLevel());
+        $this->assertIsNumeric($this->GetSpeech->getsensitivityLevel());
+        
     }
-
     /**
      * Test attribute "speech_complete_timeout_ms"
      */
     public function testPropertySpeechCompleteTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setspeechCompleteTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeech->getspeechCompleteTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeech->getspeechCompleteTimeoutMs());
+        
     }
-
     /**
      * Test attribute "speech_incomplete_timeout_ms"
      */
     public function testPropertySpeechIncompleteTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetSpeech->setspeechIncompleteTimeoutMs(1);
+        $this->assertEquals(1, $this->GetSpeech->getspeechIncompleteTimeoutMs());
+        $this->assertIsNumeric($this->GetSpeech->getspeechIncompleteTimeoutMs());
+        
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetSpeech->setprivacyMode(false);
+        $this->assertFalse($this->GetSpeech->getprivacyMode());
+        $this->assertIsBool($this->GetSpeech->getprivacyMode());
     }
 }

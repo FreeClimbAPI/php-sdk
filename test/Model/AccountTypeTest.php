@@ -55,6 +55,7 @@ class AccountTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AccountType = new AccountType();
     }
 
     /**

@@ -55,6 +55,7 @@ class RecordingResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RecordingResult = new RecordingResult();
     }
 
     /**
@@ -79,85 +80,91 @@ class RecordingResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setUri('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getUri());
+        $this->assertIsString($this->RecordingResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getDateCreated());
+        $this->assertIsString($this->RecordingResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getDateUpdated());
+        $this->assertIsString($this->RecordingResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingResult->setrevision(1);
+        $this->assertEquals(1, $this->RecordingResult->getrevision());
+        $this->assertIsNumeric($this->RecordingResult->getrevision());
+        
     }
-
     /**
      * Test attribute "recording_id"
      */
     public function testPropertyRecordingId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setRecordingId('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getRecordingId());
+        $this->assertIsString($this->RecordingResult->getRecordingId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getAccountId());
+        $this->assertIsString($this->RecordingResult->getAccountId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setCallId('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getCallId());
+        $this->assertIsString($this->RecordingResult->getCallId());
     }
-
     /**
      * Test attribute "duration_sec"
      */
     public function testPropertyDurationSec()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingResult->setdurationSec(1);
+        $this->assertEquals(1, $this->RecordingResult->getdurationSec());
+        $this->assertIsNumeric($this->RecordingResult->getdurationSec());
+        
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingResult->setConferenceId('TS');
+        $this->assertEquals('TS', $this->RecordingResult->getConferenceId());
+        $this->assertIsString($this->RecordingResult->getConferenceId());
     }
 }

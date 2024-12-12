@@ -55,6 +55,7 @@ class SMSTenDLCBrandStockExchangeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandStockExchange = new SMSTenDLCBrandStockExchange();
     }
 
     /**

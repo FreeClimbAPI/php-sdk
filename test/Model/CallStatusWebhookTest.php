@@ -55,6 +55,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallStatusWebhook = new CallStatusWebhook();
     }
 
     /**
@@ -79,94 +80,153 @@ class CallStatusWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getRequestType());
+        $this->assertIsString($this->CallStatusWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getCallId());
+        $this->assertIsString($this->CallStatusWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getAccountId());
+        $this->assertIsString($this->CallStatusWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getFrom());
+        $this->assertIsString($this->CallStatusWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getTo());
+        $this->assertIsString($this->CallStatusWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->CallStatusWebhook->getcallStatus());
+        $this->CallStatusWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->CallStatusWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "call_ended_reason"
      */
     public function testPropertyCallEndedReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::BUSY, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::FAILED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::NO_ANSWER, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::CALL_CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::CALL_CANCELED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::FAR_END_HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::FAR_END_HANGUP, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::APP_HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::APP_HANGUP, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::APP_REJECT);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::APP_REJECT, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::APP_NO_PERCL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::APP_NO_PERCL, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::APP_INVALID_PERCL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::APP_INVALID_PERCL, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::CONFERENCE_TERMINATED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::CONFERENCE_TERMINATED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::CONFERENCE_EMPTIED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::CONFERENCE_EMPTIED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::REMOVED_FROM_CONFERENCE);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::REMOVED_FROM_CONFERENCE, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::MACHINE_DETECTED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::MACHINE_DETECTED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::WEBHOOK_FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::WEBHOOK_FAILED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::WEBHOOK_INVALID_RESPONSE);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::WEBHOOK_INVALID_RESPONSE, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::VOICE_DISABLED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::VOICE_DISABLED, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::CONFIG_ERROR_NO_APPLICATION);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::CONFIG_ERROR_NO_APPLICATION, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::CONFIG_ERROR_NO_VOICE_URL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::CONFIG_ERROR_NO_VOICE_URL, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::MAX_REDIRECTS_ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::MAX_REDIRECTS_ERROR, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::PERCL_PROCESSING_ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::PERCL_PROCESSING_ERROR, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::INTERNAL_ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::INTERNAL_ERROR, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::GRPC_HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::GRPC_HANGUP, $this->CallStatusWebhook->getcallEndedReason());
+        $this->CallStatusWebhook->setcallEndedReason(\FreeClimb\Api\Model\CallEndedReason::MAX_DURATION);
+        $this->assertEquals(\FreeClimb\Api\Model\CallEndedReason::MAX_DURATION, $this->CallStatusWebhook->getcallEndedReason());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->CallStatusWebhook->getdirection());
+        $this->CallStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->CallStatusWebhook->getdirection());
+        $this->CallStatusWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->CallStatusWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getConferenceId());
+        $this->assertIsString($this->CallStatusWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CallStatusWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->CallStatusWebhook->getQueueId());
+        $this->assertIsString($this->CallStatusWebhook->getQueueId());
     }
 }

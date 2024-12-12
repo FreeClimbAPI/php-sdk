@@ -55,6 +55,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TranscribeWebhook = new TranscribeWebhook();
     }
 
     /**
@@ -79,211 +80,248 @@ class TranscribeWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getRequestType());
+        $this->assertIsString($this->TranscribeWebhook->getRequestType());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getAccountId());
+        $this->assertIsString($this->TranscribeWebhook->getAccountId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getCallId());
+        $this->assertIsString($this->TranscribeWebhook->getCallId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getFrom());
+        $this->assertIsString($this->TranscribeWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getTo());
+        $this->assertIsString($this->TranscribeWebhook->getTo());
     }
-
     /**
      * Test attribute "recording_id"
      */
     public function testPropertyRecordingId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setRecordingId('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingId());
+        $this->assertIsString($this->TranscribeWebhook->getRecordingId());
     }
-
     /**
      * Test attribute "recording_url"
      */
     public function testPropertyRecordingUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setRecordingUrl('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingUrl());
+        $this->assertIsString($this->TranscribeWebhook->getRecordingUrl());
     }
-
     /**
      * Test attribute "recording_size"
      */
     public function testPropertyRecordingSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setrecordingSize(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getrecordingSize());
+        $this->assertIsNumeric($this->TranscribeWebhook->getrecordingSize());
+        
     }
-
     /**
      * Test attribute "recording_format"
      */
     public function testPropertyRecordingFormat()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setRecordingFormat('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingFormat());
+        $this->assertIsString($this->TranscribeWebhook->getRecordingFormat());
     }
-
     /**
      * Test attribute "recording_duration_ms"
      */
     public function testPropertyRecordingDurationMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setrecordingDurationMs(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getrecordingDurationMs());
+        $this->assertIsNumeric($this->TranscribeWebhook->getrecordingDurationMs());
+        
     }
-
     /**
      * Test attribute "term_reason"
      */
     public function testPropertyTermReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->settermReason(\FreeClimb\Api\Model\TranscribeTermReason::ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeTermReason::ERROR, $this->TranscribeWebhook->gettermReason());
+        $this->TranscribeWebhook->settermReason(\FreeClimb\Api\Model\TranscribeTermReason::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeTermReason::COMPLETED, $this->TranscribeWebhook->gettermReason());
     }
-
     /**
      * Test attribute "record_term_reason"
      */
     public function testPropertyRecordTermReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::FINISH_KEY);
+        $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::FINISH_KEY, $this->TranscribeWebhook->getrecordTermReason());
+        $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::TIMEOUT);
+        $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::TIMEOUT, $this->TranscribeWebhook->getrecordTermReason());
+        $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::HANGUP, $this->TranscribeWebhook->getrecordTermReason());
+        $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH);
+        $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH, $this->TranscribeWebhook->getrecordTermReason());
     }
-
     /**
      * Test attribute "digit"
      */
     public function testPropertyDigit()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setDigit('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getDigit());
+        $this->assertIsString($this->TranscribeWebhook->getDigit());
     }
-
     /**
      * Test attribute "privacy_for_logging"
      */
     public function testPropertyPrivacyForLogging()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setprivacyForLogging(false);
+        $this->assertFalse($this->TranscribeWebhook->getprivacyForLogging());
+        $this->assertIsBool($this->TranscribeWebhook->getprivacyForLogging());
     }
-
     /**
      * Test attribute "privacy_for_recording"
      */
     public function testPropertyPrivacyForRecording()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setprivacyForRecording(false);
+        $this->assertFalse($this->TranscribeWebhook->getprivacyForRecording());
+        $this->assertIsBool($this->TranscribeWebhook->getprivacyForRecording());
     }
-
     /**
      * Test attribute "barge_in_reason"
      */
     public function testPropertyBargeInReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setbargeInReason(\FreeClimb\Api\Model\BargeInReason::NO_BARGE_IN);
+        $this->assertEquals(\FreeClimb\Api\Model\BargeInReason::NO_BARGE_IN, $this->TranscribeWebhook->getbargeInReason());
+        $this->TranscribeWebhook->setbargeInReason(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_DTMF);
+        $this->assertEquals(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_DTMF, $this->TranscribeWebhook->getbargeInReason());
+        $this->TranscribeWebhook->setbargeInReason(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_ENERGY);
+        $this->assertEquals(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_ENERGY, $this->TranscribeWebhook->getbargeInReason());
     }
-
     /**
      * Test attribute "barged_in_prompt_no"
      */
     public function testPropertyBargedInPromptNo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setbargedInPromptNo(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getbargedInPromptNo());
+        $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptNo());
+        
     }
-
     /**
      * Test attribute "barged_in_prompt_ms"
      */
     public function testPropertyBargedInPromptMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setbargedInPromptMs(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getbargedInPromptMs());
+        $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptMs());
+        
     }
-
     /**
      * Test attribute "barged_in_prompt_loop_no"
      */
     public function testPropertyBargedInPromptLoopNo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setbargedInPromptLoopNo(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getbargedInPromptLoopNo());
+        $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptLoopNo());
+        
     }
-
     /**
      * Test attribute "barge_in_time_ms"
      */
     public function testPropertyBargeInTimeMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->setbargeInTimeMs(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->getbargeInTimeMs());
+        $this->assertIsNumeric($this->TranscribeWebhook->getbargeInTimeMs());
+        
     }
-
     /**
      * Test attribute "transcript"
      */
     public function testPropertyTranscript()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->setTranscript('TS');
+        $this->assertEquals('TS', $this->TranscribeWebhook->getTranscript());
+        $this->assertIsString($this->TranscribeWebhook->getTranscript());
     }
-
     /**
      * Test attribute "transcribe_reason"
      */
     public function testPropertyTranscribeReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::INTERNAL_ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::INTERNAL_ERROR, $this->TranscribeWebhook->gettranscribeReason());
+        $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::HANGUP, $this->TranscribeWebhook->gettranscribeReason());
+        $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::MAX_LENGTH);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::MAX_LENGTH, $this->TranscribeWebhook->gettranscribeReason());
+        $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::DIGIT);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::DIGIT, $this->TranscribeWebhook->gettranscribeReason());
+        $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::NO_INPUT);
+        $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::NO_INPUT, $this->TranscribeWebhook->gettranscribeReason());
     }
-
     /**
      * Test attribute "transcription_duration_ms"
      */
     public function testPropertyTranscriptionDurationMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->TranscribeWebhook->settranscriptionDurationMs(1);
+        $this->assertEquals(1, $this->TranscribeWebhook->gettranscriptionDurationMs());
+        $this->assertIsNumeric($this->TranscribeWebhook->gettranscriptionDurationMs());
+        
     }
 }

@@ -55,6 +55,7 @@ class OutDialConnectWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->OutDialConnectWebhook = new OutDialConnectWebhook();
     }
 
     /**
@@ -79,94 +80,110 @@ class OutDialConnectWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getRequestType());
+        $this->assertIsString($this->OutDialConnectWebhook->getRequestType());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getAccountId());
+        $this->assertIsString($this->OutDialConnectWebhook->getAccountId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getCallId());
+        $this->assertIsString($this->OutDialConnectWebhook->getCallId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getFrom());
+        $this->assertIsString($this->OutDialConnectWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getTo());
+        $this->assertIsString($this->OutDialConnectWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->OutDialConnectWebhook->getcallStatus());
+        $this->OutDialConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->OutDialConnectWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->OutDialConnectWebhook->getdirection());
+        $this->OutDialConnectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->OutDialConnectWebhook->getdirection());
+        $this->OutDialConnectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->OutDialConnectWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getConferenceId());
+        $this->assertIsString($this->OutDialConnectWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getQueueId());
+        $this->assertIsString($this->OutDialConnectWebhook->getQueueId());
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDialConnectWebhook->setParentCallId('TS');
+        $this->assertEquals('TS', $this->OutDialConnectWebhook->getParentCallId());
+        $this->assertIsString($this->OutDialConnectWebhook->getParentCallId());
     }
 }

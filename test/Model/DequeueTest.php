@@ -55,6 +55,7 @@ class DequeueTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Dequeue = new Dequeue();
     }
 
     /**

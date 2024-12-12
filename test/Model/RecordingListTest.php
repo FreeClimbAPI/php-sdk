@@ -55,6 +55,7 @@ class RecordingListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RecordingList = new RecordingList();
     }
 
     /**
@@ -79,76 +80,94 @@ class RecordingListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->settotal(1);
+        $this->assertEquals(1, $this->RecordingList->gettotal());
+        $this->assertIsNumeric($this->RecordingList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->setstart(1);
+        $this->assertEquals(1, $this->RecordingList->getstart());
+        $this->assertIsNumeric($this->RecordingList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->setend(1);
+        $this->assertEquals(1, $this->RecordingList->getend());
+        $this->assertIsNumeric($this->RecordingList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->setpage(1);
+        $this->assertEquals(1, $this->RecordingList->getpage());
+        $this->assertIsNumeric($this->RecordingList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->setnumPages(1);
+        $this->assertEquals(1, $this->RecordingList->getnumPages());
+        $this->assertIsNumeric($this->RecordingList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordingList->setpageSize(1);
+        $this->assertEquals(1, $this->RecordingList->getpageSize());
+        $this->assertIsNumeric($this->RecordingList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->RecordingList->getNextPageUri());
+        $this->assertIsString($this->RecordingList->getNextPageUri());
     }
-
     /**
      * Test attribute "recordings"
      */
     public function testPropertyRecordings()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordingList->setrecordings([]);
+        $this->assertEquals([], $this->RecordingList->getrecordings());
+        $this->assertIsArray($this->RecordingList->getrecordings());
     }
 }

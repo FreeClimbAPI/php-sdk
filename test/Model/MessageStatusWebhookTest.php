@@ -55,6 +55,7 @@ class MessageStatusWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessageStatusWebhook = new MessageStatusWebhook();
     }
 
     /**
@@ -79,103 +80,122 @@ class MessageStatusWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getRequestType());
+        $this->assertIsString($this->MessageStatusWebhook->getRequestType());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getAccountId());
+        $this->assertIsString($this->MessageStatusWebhook->getAccountId());
     }
-
     /**
      * Test attribute "message_id"
      */
     public function testPropertyMessageId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setMessageId('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getMessageId());
+        $this->assertIsString($this->MessageStatusWebhook->getMessageId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getCallId());
+        $this->assertIsString($this->MessageStatusWebhook->getCallId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getFrom());
+        $this->assertIsString($this->MessageStatusWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getTo());
+        $this->assertIsString($this->MessageStatusWebhook->getTo());
     }
-
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setText('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getText());
+        $this->assertIsString($this->MessageStatusWebhook->getText());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setDirection('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getDirection());
+        $this->assertIsString($this->MessageStatusWebhook->getDirection());
     }
-
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setApplicationId('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getApplicationId());
+        $this->assertIsString($this->MessageStatusWebhook->getApplicationId());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::NEW, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::QUEUED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::REJECTED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::REJECTED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::SENDING);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::SENDING, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::SENT);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::SENT, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::FAILED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::RECEIVED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::RECEIVED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::UNDELIVERED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNDELIVERED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::EXPIRED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::EXPIRED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::DELETED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::DELETED, $this->MessageStatusWebhook->getstatus());
+        $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::UNKNOWN);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNKNOWN, $this->MessageStatusWebhook->getstatus());
     }
-
     /**
      * Test attribute "phone_number_id"
      */
     public function testPropertyPhoneNumberId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageStatusWebhook->setPhoneNumberId('TS');
+        $this->assertEquals('TS', $this->MessageStatusWebhook->getPhoneNumberId());
+        $this->assertIsString($this->MessageStatusWebhook->getPhoneNumberId());
     }
 }

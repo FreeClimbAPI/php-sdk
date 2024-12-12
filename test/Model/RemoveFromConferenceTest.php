@@ -55,6 +55,7 @@ class RemoveFromConferenceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RemoveFromConference = new RemoveFromConference();
     }
 
     /**

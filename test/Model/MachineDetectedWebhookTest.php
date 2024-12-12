@@ -55,6 +55,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MachineDetectedWebhook = new MachineDetectedWebhook();
     }
 
     /**
@@ -79,103 +80,120 @@ class MachineDetectedWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getRequestType());
+        $this->assertIsString($this->MachineDetectedWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getCallId());
+        $this->assertIsString($this->MachineDetectedWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getAccountId());
+        $this->assertIsString($this->MachineDetectedWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getFrom());
+        $this->assertIsString($this->MachineDetectedWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getTo());
+        $this->assertIsString($this->MachineDetectedWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->MachineDetectedWebhook->getcallStatus());
+        $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->MachineDetectedWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->MachineDetectedWebhook->getdirection());
+        $this->MachineDetectedWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->MachineDetectedWebhook->getdirection());
+        $this->MachineDetectedWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->MachineDetectedWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getConferenceId());
+        $this->assertIsString($this->MachineDetectedWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getQueueId());
+        $this->assertIsString($this->MachineDetectedWebhook->getQueueId());
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setParentCallId('TS');
+        $this->assertEquals('TS', $this->MachineDetectedWebhook->getParentCallId());
+        $this->assertIsString($this->MachineDetectedWebhook->getParentCallId());
     }
-
     /**
      * Test attribute "machine_type"
      */
     public function testPropertyMachineType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MachineDetectedWebhook->setmachineType(\FreeClimb\Api\Model\MachineType::ANSWERING_MACHINE);
+        $this->assertEquals(\FreeClimb\Api\Model\MachineType::ANSWERING_MACHINE, $this->MachineDetectedWebhook->getmachineType());
+        $this->MachineDetectedWebhook->setmachineType(\FreeClimb\Api\Model\MachineType::FAX_MODEM);
+        $this->assertEquals(\FreeClimb\Api\Model\MachineType::FAX_MODEM, $this->MachineDetectedWebhook->getmachineType());
     }
 }

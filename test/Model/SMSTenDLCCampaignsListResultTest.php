@@ -55,6 +55,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCCampaignsListResult = new SMSTenDLCCampaignsListResult();
     }
 
     /**
@@ -79,76 +80,94 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->settotal(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->gettotal());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setstart(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getstart());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setend(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getend());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setpage(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getpage());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setnumPages(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getnumPages());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCCampaignsListResult->setpageSize(1);
+        $this->assertEquals(1, $this->SMSTenDLCCampaignsListResult->getpageSize());
+        $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCCampaignsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCCampaignsListResult->getNextPageUri());
+        $this->assertIsString($this->SMSTenDLCCampaignsListResult->getNextPageUri());
     }
-
     /**
      * Test attribute "campaigns"
      */
     public function testPropertyCampaigns()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCCampaignsListResult->setcampaigns([]);
+        $this->assertEquals([], $this->SMSTenDLCCampaignsListResult->getcampaigns());
+        $this->assertIsArray($this->SMSTenDLCCampaignsListResult->getcampaigns());
     }
 }

@@ -55,6 +55,7 @@ class TranscribeUtteranceRecordTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TranscribeUtteranceRecord = new TranscribeUtteranceRecord();
     }
 
     /**
@@ -79,31 +80,35 @@ class TranscribeUtteranceRecordTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "save_recording"
      */
     public function testPropertySaveRecording()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtteranceRecord->setsaveRecording(false);
+        $this->assertFalse($this->TranscribeUtteranceRecord->getsaveRecording());
+        $this->assertIsBool($this->TranscribeUtteranceRecord->getsaveRecording());
     }
-
     /**
      * Test attribute "max_length_sec"
      */
     public function testPropertyMaxLengthSec()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtteranceRecord->setmaxLengthSec(60);
+        $this->assertEquals(60, $this->TranscribeUtteranceRecord->getmaxLengthSec());
+        $this->assertIsNumeric($this->TranscribeUtteranceRecord->getmaxLengthSec());
+        
+        
     }
-
     /**
      * Test attribute "rcrd_termination_silence_time_ms"
      */
     public function testPropertyRcrdTerminationSilenceTimeMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TranscribeUtteranceRecord->setrcrdTerminationSilenceTimeMs(3000);
+        $this->assertEquals(3000, $this->TranscribeUtteranceRecord->getrcrdTerminationSilenceTimeMs());
+        $this->assertIsNumeric($this->TranscribeUtteranceRecord->getrcrdTerminationSilenceTimeMs());
+        
+        
     }
 }

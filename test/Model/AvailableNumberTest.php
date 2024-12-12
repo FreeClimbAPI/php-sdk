@@ -55,6 +55,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AvailableNumber = new AvailableNumber();
     }
 
     /**
@@ -79,67 +80,66 @@ class AvailableNumberTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "capabilities"
      */
     public function testPropertyCapabilities()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setcapabilities(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setCampaignId('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
+        $this->assertIsString($this->AvailableNumber->getCampaignId());
     }
-
     /**
      * Test attribute "phone_number"
      */
     public function testPropertyPhoneNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setPhoneNumber('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
+        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
     }
-
     /**
      * Test attribute "voice_enabled"
      */
     public function testPropertyVoiceEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setvoiceEnabled(false);
+        $this->assertFalse($this->AvailableNumber->getvoiceEnabled());
+        $this->assertIsBool($this->AvailableNumber->getvoiceEnabled());
     }
-
     /**
      * Test attribute "sms_enabled"
      */
     public function testPropertySmsEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setsmsEnabled(false);
+        $this->assertFalse($this->AvailableNumber->getsmsEnabled());
+        $this->assertIsBool($this->AvailableNumber->getsmsEnabled());
     }
-
     /**
      * Test attribute "region"
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setRegion('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
+        $this->assertIsString($this->AvailableNumber->getRegion());
     }
-
     /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumber->setCountry('TS');
+        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
+        $this->assertIsString($this->AvailableNumber->getCountry());
     }
 }

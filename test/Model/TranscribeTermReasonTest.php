@@ -55,6 +55,7 @@ class TranscribeTermReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TranscribeTermReason = new TranscribeTermReason();
     }
 
     /**

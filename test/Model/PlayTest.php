@@ -55,6 +55,7 @@ class PlayTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Play = new Play();
     }
 
     /**
@@ -79,31 +80,34 @@ class PlayTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "file"
      */
     public function testPropertyFile()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Play->setFile('TS');
+        $this->assertEquals('TS', $this->Play->getFile());
+        $this->assertIsString($this->Play->getFile());
     }
-
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->Play->setloop(1);
+        $this->assertEquals(1, $this->Play->getloop());
+        $this->assertIsNumeric($this->Play->getloop());
+        
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Play->setprivacyMode(false);
+        $this->assertFalse($this->Play->getprivacyMode());
+        $this->assertIsBool($this->Play->getprivacyMode());
     }
 }

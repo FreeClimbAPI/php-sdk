@@ -55,6 +55,7 @@ class CompletionRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CompletionRequest = new CompletionRequest();
     }
 
     /**
@@ -79,13 +80,13 @@ class CompletionRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "query"
      */
     public function testPropertyQuery()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CompletionRequest->setQuery('TS');
+        $this->assertEquals('TS', $this->CompletionRequest->getQuery());
+        $this->assertIsString($this->CompletionRequest->getQuery());
     }
 }

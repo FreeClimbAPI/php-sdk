@@ -55,6 +55,7 @@ class CallEndedReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallEndedReason = new CallEndedReason();
     }
 
     /**

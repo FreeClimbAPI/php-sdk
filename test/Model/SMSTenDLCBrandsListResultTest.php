@@ -55,6 +55,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandsListResult = new SMSTenDLCBrandsListResult();
     }
 
     /**
@@ -79,76 +80,94 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->settotal(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->gettotal());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->setstart(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getstart());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->setend(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getend());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->setpage(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getpage());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->setnumPages(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getnumPages());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTenDLCBrandsListResult->setpageSize(1);
+        $this->assertEquals(1, $this->SMSTenDLCBrandsListResult->getpageSize());
+        $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrandsListResult->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrandsListResult->getNextPageUri());
+        $this->assertIsString($this->SMSTenDLCBrandsListResult->getNextPageUri());
     }
-
     /**
      * Test attribute "brands"
      */
     public function testPropertyBrands()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrandsListResult->setbrands([]);
+        $this->assertEquals([], $this->SMSTenDLCBrandsListResult->getbrands());
+        $this->assertIsArray($this->SMSTenDLCBrandsListResult->getbrands());
     }
 }

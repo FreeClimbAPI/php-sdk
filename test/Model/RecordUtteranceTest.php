@@ -55,6 +55,7 @@ class RecordUtteranceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RecordUtterance = new RecordUtterance();
     }
 
     /**
@@ -79,67 +80,73 @@ class RecordUtteranceTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordUtterance->setActionUrl('TS');
+        $this->assertEquals('TS', $this->RecordUtterance->getActionUrl());
+        $this->assertIsString($this->RecordUtterance->getActionUrl());
     }
-
     /**
      * Test attribute "silence_timeout_ms"
      */
     public function testPropertySilenceTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordUtterance->setsilenceTimeoutMs(1);
+        $this->assertEquals(1, $this->RecordUtterance->getsilenceTimeoutMs());
+        $this->assertIsNumeric($this->RecordUtterance->getsilenceTimeoutMs());
+        
     }
-
     /**
      * Test attribute "finish_on_key"
      */
     public function testPropertyFinishOnKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordUtterance->setFinishOnKey('TS');
+        $this->assertEquals('TS', $this->RecordUtterance->getFinishOnKey());
+        $this->assertIsString($this->RecordUtterance->getFinishOnKey());
     }
-
     /**
      * Test attribute "max_length_sec"
      */
     public function testPropertyMaxLengthSec()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->RecordUtterance->setmaxLengthSec(1);
+        $this->assertEquals(1, $this->RecordUtterance->getmaxLengthSec());
+        $this->assertIsNumeric($this->RecordUtterance->getmaxLengthSec());
+        
     }
-
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordUtterance->setplayBeep(false);
+        $this->assertFalse($this->RecordUtterance->getplayBeep());
+        $this->assertIsBool($this->RecordUtterance->getplayBeep());
     }
-
     /**
      * Test attribute "auto_start"
      */
     public function testPropertyAutoStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordUtterance->setautoStart(false);
+        $this->assertFalse($this->RecordUtterance->getautoStart());
+        $this->assertIsBool($this->RecordUtterance->getautoStart());
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RecordUtterance->setprivacyMode(false);
+        $this->assertFalse($this->RecordUtterance->getprivacyMode());
+        $this->assertIsBool($this->RecordUtterance->getprivacyMode());
     }
 }

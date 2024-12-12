@@ -55,6 +55,7 @@ class OutDialTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->OutDial = new OutDial();
     }
 
     /**
@@ -79,94 +80,98 @@ class OutDialTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setActionUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getActionUrl());
+        $this->assertIsString($this->OutDial->getActionUrl());
     }
-
     /**
      * Test attribute "call_connect_url"
      */
     public function testPropertyCallConnectUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setCallConnectUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getCallConnectUrl());
+        $this->assertIsString($this->OutDial->getCallConnectUrl());
     }
-
     /**
      * Test attribute "calling_number"
      */
     public function testPropertyCallingNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setCallingNumber('TS');
+        $this->assertEquals('TS', $this->OutDial->getCallingNumber());
+        $this->assertIsString($this->OutDial->getCallingNumber());
     }
-
     /**
      * Test attribute "destination"
      */
     public function testPropertyDestination()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setDestination('TS');
+        $this->assertEquals('TS', $this->OutDial->getDestination());
+        $this->assertIsString($this->OutDial->getDestination());
     }
-
     /**
      * Test attribute "if_machine"
      */
     public function testPropertyIfMachine()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setifMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
+        $this->assertEquals(\FreeClimb\Api\Model\IfMachine::REDIRECT, $this->OutDial->getifMachine());
+        $this->OutDial->setifMachine(\FreeClimb\Api\Model\IfMachine::HANGUP);
+        $this->assertEquals(\FreeClimb\Api\Model\IfMachine::HANGUP, $this->OutDial->getifMachine());
     }
-
     /**
      * Test attribute "if_machine_url"
      */
     public function testPropertyIfMachineUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setIfMachineUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getIfMachineUrl());
+        $this->assertIsString($this->OutDial->getIfMachineUrl());
     }
-
     /**
      * Test attribute "send_digits"
      */
     public function testPropertySendDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setSendDigits('TS');
+        $this->assertEquals('TS', $this->OutDial->getSendDigits());
+        $this->assertIsString($this->OutDial->getSendDigits());
     }
-
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->OutDial->getStatusCallbackUrl());
+        $this->assertIsString($this->OutDial->getStatusCallbackUrl());
     }
-
     /**
      * Test attribute "timeout"
      */
     public function testPropertyTimeout()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->OutDial->settimeout(1);
+        $this->assertEquals(1, $this->OutDial->gettimeout());
+        $this->assertIsNumeric($this->OutDial->gettimeout());
+        
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->OutDial->setprivacyMode(false);
+        $this->assertFalse($this->OutDial->getprivacyMode());
+        $this->assertIsBool($this->OutDial->getprivacyMode());
     }
 }

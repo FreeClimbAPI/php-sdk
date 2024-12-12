@@ -55,6 +55,7 @@ class HangupTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Hangup = new Hangup();
     }
 
     /**
@@ -79,13 +80,13 @@ class HangupTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "reason"
      */
     public function testPropertyReason()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Hangup->setReason('TS');
+        $this->assertEquals('TS', $this->Hangup->getReason());
+        $this->assertIsString($this->Hangup->getReason());
     }
 }

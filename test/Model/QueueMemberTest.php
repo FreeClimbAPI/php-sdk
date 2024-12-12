@@ -55,6 +55,7 @@ class QueueMemberTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->QueueMember = new QueueMember();
     }
 
     /**
@@ -79,49 +80,55 @@ class QueueMemberTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueMember->setUri('TS');
+        $this->assertEquals('TS', $this->QueueMember->getUri());
+        $this->assertIsString($this->QueueMember->getUri());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueMember->setCallId('TS');
+        $this->assertEquals('TS', $this->QueueMember->getCallId());
+        $this->assertIsString($this->QueueMember->getCallId());
     }
-
     /**
      * Test attribute "wait_time"
      */
     public function testPropertyWaitTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueMember->setwaitTime(1);
+        $this->assertEquals(1, $this->QueueMember->getwaitTime());
+        $this->assertIsNumeric($this->QueueMember->getwaitTime());
+        
     }
-
     /**
      * Test attribute "position"
      */
     public function testPropertyPosition()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueMember->setposition(1);
+        $this->assertEquals(1, $this->QueueMember->getposition());
+        $this->assertIsNumeric($this->QueueMember->getposition());
+        
     }
-
     /**
      * Test attribute "date_enqueued"
      */
     public function testPropertyDateEnqueued()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueMember->setDateEnqueued('TS');
+        $this->assertEquals('TS', $this->QueueMember->getDateEnqueued());
+        $this->assertIsString($this->QueueMember->getDateEnqueued());
     }
 }

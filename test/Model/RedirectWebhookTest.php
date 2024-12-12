@@ -55,6 +55,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RedirectWebhook = new RedirectWebhook();
     }
 
     /**
@@ -79,94 +80,110 @@ class RedirectWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getRequestType());
+        $this->assertIsString($this->RedirectWebhook->getRequestType());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getAccountId());
+        $this->assertIsString($this->RedirectWebhook->getAccountId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getCallId());
+        $this->assertIsString($this->RedirectWebhook->getCallId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getFrom());
+        $this->assertIsString($this->RedirectWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getTo());
+        $this->assertIsString($this->RedirectWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->RedirectWebhook->getcallStatus());
+        $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->RedirectWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->RedirectWebhook->getdirection());
+        $this->RedirectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->RedirectWebhook->getdirection());
+        $this->RedirectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->RedirectWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getConferenceId());
+        $this->assertIsString($this->RedirectWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getQueueId());
+        $this->assertIsString($this->RedirectWebhook->getQueueId());
     }
-
     /**
      * Test attribute "parent_call_id"
      */
     public function testPropertyParentCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->RedirectWebhook->setParentCallId('TS');
+        $this->assertEquals('TS', $this->RedirectWebhook->getParentCallId());
+        $this->assertIsString($this->RedirectWebhook->getParentCallId());
     }
 }

@@ -55,6 +55,7 @@ class AccountStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AccountStatus = new AccountStatus();
     }
 
     /**

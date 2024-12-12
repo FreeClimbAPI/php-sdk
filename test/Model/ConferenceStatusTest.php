@@ -55,6 +55,7 @@ class ConferenceStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ConferenceStatus = new ConferenceStatus();
     }
 
     /**

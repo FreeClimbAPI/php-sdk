@@ -55,6 +55,7 @@ class UpdateConferenceRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->UpdateConferenceRequest = new UpdateConferenceRequest();
     }
 
     /**
@@ -79,31 +80,37 @@ class UpdateConferenceRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->UpdateConferenceRequest->getAlias());
+        $this->assertIsString($this->UpdateConferenceRequest->getAlias());
     }
-
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::ALWAYS, $this->UpdateConferenceRequest->getplayBeep());
+        $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::NEVER);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::NEVER, $this->UpdateConferenceRequest->getplayBeep());
+        $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ENTRY_ONLY);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::ENTRY_ONLY, $this->UpdateConferenceRequest->getplayBeep());
+        $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY, $this->UpdateConferenceRequest->getplayBeep());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateConferenceRequest->setstatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);
+        $this->assertEquals(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY, $this->UpdateConferenceRequest->getstatus());
+        $this->UpdateConferenceRequest->setstatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::TERMINATED);
+        $this->assertEquals(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::TERMINATED, $this->UpdateConferenceRequest->getstatus());
     }
 }

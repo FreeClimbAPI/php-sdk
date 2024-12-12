@@ -55,6 +55,7 @@ class CompletionResultStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CompletionResultStatus = new CompletionResultStatus();
     }
 
     /**

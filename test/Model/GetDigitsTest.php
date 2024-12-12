@@ -55,6 +55,7 @@ class GetDigitsTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GetDigits = new GetDigits();
     }
 
     /**
@@ -79,85 +80,97 @@ class GetDigitsTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetDigits->setActionUrl('TS');
+        $this->assertEquals('TS', $this->GetDigits->getActionUrl());
+        $this->assertIsString($this->GetDigits->getActionUrl());
     }
-
     /**
      * Test attribute "digit_timeout_ms"
      */
     public function testPropertyDigitTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetDigits->setdigitTimeoutMs(1);
+        $this->assertEquals(1, $this->GetDigits->getdigitTimeoutMs());
+        $this->assertIsNumeric($this->GetDigits->getdigitTimeoutMs());
+        
     }
-
     /**
      * Test attribute "finish_on_key"
      */
     public function testPropertyFinishOnKey()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetDigits->setFinishOnKey('TS');
+        $this->assertEquals('TS', $this->GetDigits->getFinishOnKey());
+        $this->assertIsString($this->GetDigits->getFinishOnKey());
     }
-
     /**
      * Test attribute "flush_buffer"
      */
     public function testPropertyFlushBuffer()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetDigits->setflushBuffer(false);
+        $this->assertFalse($this->GetDigits->getflushBuffer());
+        $this->assertIsBool($this->GetDigits->getflushBuffer());
     }
-
     /**
      * Test attribute "initial_timeout_ms"
      */
     public function testPropertyInitialTimeoutMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetDigits->setinitialTimeoutMs(1);
+        $this->assertEquals(1, $this->GetDigits->getinitialTimeoutMs());
+        $this->assertIsNumeric($this->GetDigits->getinitialTimeoutMs());
+        
     }
-
     /**
      * Test attribute "max_digits"
      */
     public function testPropertyMaxDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetDigits->setmaxDigits(1);
+        $this->assertEquals(1, $this->GetDigits->getmaxDigits());
+        $this->assertIsNumeric($this->GetDigits->getmaxDigits());
+        
     }
-
     /**
      * Test attribute "min_digits"
      */
     public function testPropertyMinDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->GetDigits->setminDigits(1);
+        $this->assertEquals(1, $this->GetDigits->getminDigits());
+        $this->assertIsNumeric($this->GetDigits->getminDigits());
+        
     }
-
     /**
      * Test attribute "prompts"
      */
     public function testPropertyPrompts()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetDigits->setprompts([]);
+        $this->assertEquals([], $this->GetDigits->getprompts());
+        $this->assertIsArray($this->GetDigits->getprompts());
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->GetDigits->setprivacyMode(false);
+        $this->assertFalse($this->GetDigits->getprivacyMode());
+        $this->assertIsBool($this->GetDigits->getprivacyMode());
     }
 }

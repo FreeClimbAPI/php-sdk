@@ -55,6 +55,7 @@ class RedirectTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Redirect = new Redirect();
     }
 
     /**
@@ -79,13 +80,13 @@ class RedirectTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Redirect->setActionUrl('TS');
+        $this->assertEquals('TS', $this->Redirect->getActionUrl());
+        $this->assertIsString($this->Redirect->getActionUrl());
     }
 }

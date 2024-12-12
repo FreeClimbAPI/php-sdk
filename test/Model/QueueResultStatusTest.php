@@ -55,6 +55,7 @@ class QueueResultStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->QueueResultStatus = new QueueResultStatus();
     }
 
     /**

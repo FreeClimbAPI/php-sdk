@@ -55,6 +55,7 @@ class MessageResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessageResult = new MessageResult();
     }
 
     /**
@@ -79,148 +80,173 @@ class MessageResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setUri('TS');
+        $this->assertEquals('TS', $this->MessageResult->getUri());
+        $this->assertIsString($this->MessageResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDateCreated());
+        $this->assertIsString($this->MessageResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDateUpdated());
+        $this->assertIsString($this->MessageResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessageResult->setrevision(1);
+        $this->assertEquals(1, $this->MessageResult->getrevision());
+        $this->assertIsNumeric($this->MessageResult->getrevision());
+        
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getAccountId());
+        $this->assertIsString($this->MessageResult->getAccountId());
     }
-
     /**
      * Test attribute "message_id"
      */
     public function testPropertyMessageId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setMessageId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getMessageId());
+        $this->assertIsString($this->MessageResult->getMessageId());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::NEW);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::NEW, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::QUEUED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::REJECTED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::REJECTED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::SENDING);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::SENDING, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::SENT);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::SENT, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::FAILED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::RECEIVED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::RECEIVED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::UNDELIVERED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNDELIVERED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::EXPIRED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::EXPIRED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::DELETED);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::DELETED, $this->MessageResult->getstatus());
+        $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::UNKNOWN);
+        $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNKNOWN, $this->MessageResult->getstatus());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageResult->getFrom());
+        $this->assertIsString($this->MessageResult->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setTo('TS');
+        $this->assertEquals('TS', $this->MessageResult->getTo());
+        $this->assertIsString($this->MessageResult->getTo());
     }
-
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setText('TS');
+        $this->assertEquals('TS', $this->MessageResult->getText());
+        $this->assertIsString($this->MessageResult->getText());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setDirection('TS');
+        $this->assertEquals('TS', $this->MessageResult->getDirection());
+        $this->assertIsString($this->MessageResult->getDirection());
     }
-
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageResult->getNotificationUrl());
+        $this->assertIsString($this->MessageResult->getNotificationUrl());
     }
-
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setBrandId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getBrandId());
+        $this->assertIsString($this->MessageResult->getBrandId());
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setCampaignId('TS');
+        $this->assertEquals('TS', $this->MessageResult->getCampaignId());
+        $this->assertIsString($this->MessageResult->getCampaignId());
     }
-
     /**
      * Test attribute "segment_count"
      */
     public function testPropertySegmentCount()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessageResult->setsegmentCount(1);
+        $this->assertEquals(1, $this->MessageResult->getsegmentCount());
+        $this->assertIsNumeric($this->MessageResult->getsegmentCount());
+        
     }
-
     /**
      * Test attribute "media_urls"
      */
     public function testPropertyMediaUrls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageResult->setmediaUrls([]);
+        $this->assertEquals([], $this->MessageResult->getmediaUrls());
+        $this->assertIsArray($this->MessageResult->getmediaUrls());
     }
 }

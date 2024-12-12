@@ -55,6 +55,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->DequeueWebhook = new DequeueWebhook();
     }
 
     /**
@@ -79,103 +80,122 @@ class DequeueWebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getRequestType());
+        $this->assertIsString($this->DequeueWebhook->getRequestType());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setCallId('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getCallId());
+        $this->assertIsString($this->DequeueWebhook->getCallId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setAccountId('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getAccountId());
+        $this->assertIsString($this->DequeueWebhook->getAccountId());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setFrom('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getFrom());
+        $this->assertIsString($this->DequeueWebhook->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setTo('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getTo());
+        $this->assertIsString($this->DequeueWebhook->getTo());
     }
-
     /**
      * Test attribute "call_status"
      */
     public function testPropertyCallStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->DequeueWebhook->getcallStatus());
+        $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->DequeueWebhook->getcallStatus());
     }
-
     /**
      * Test attribute "direction"
      */
     public function testPropertyDirection()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::INBOUND, $this->DequeueWebhook->getdirection());
+        $this->DequeueWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_API, $this->DequeueWebhook->getdirection());
+        $this->DequeueWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
+        $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->DequeueWebhook->getdirection());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setConferenceId('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getConferenceId());
+        $this->assertIsString($this->DequeueWebhook->getConferenceId());
     }
-
     /**
      * Test attribute "queue_id"
      */
     public function testPropertyQueueId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setQueueId('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getQueueId());
+        $this->assertIsString($this->DequeueWebhook->getQueueId());
     }
-
     /**
      * Test attribute "queue_result"
      */
     public function testPropertyQueueResult()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->DequeueWebhook->setQueueResult('TS');
+        $this->assertEquals('TS', $this->DequeueWebhook->getQueueResult());
+        $this->assertIsString($this->DequeueWebhook->getQueueResult());
     }
-
     /**
      * Test attribute "queue_time"
      */
     public function testPropertyQueueTime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->DequeueWebhook->setqueueTime(1);
+        $this->assertEquals(1, $this->DequeueWebhook->getqueueTime());
+        $this->assertIsNumeric($this->DequeueWebhook->getqueueTime());
+        
     }
 }

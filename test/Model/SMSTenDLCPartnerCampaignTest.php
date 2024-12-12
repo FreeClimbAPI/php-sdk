@@ -55,6 +55,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCPartnerCampaign = new SMSTenDLCPartnerCampaign();
     }
 
     /**
@@ -79,265 +80,264 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getAccountId());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getAccountId());
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setCampaignId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getCampaignId());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getCampaignId());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setstatus(\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignStatus::ACTIVE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignStatus::ACTIVE, $this->SMSTenDLCPartnerCampaign->getstatus());
+        $this->SMSTenDLCPartnerCampaign->setstatus(\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignStatus::EXPIRED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCPartnerCampaignStatus::EXPIRED, $this->SMSTenDLCPartnerCampaign->getstatus());
     }
-
     /**
      * Test attribute "create_date"
      */
     public function testPropertyCreateDate()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setcreateDate('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->SMSTenDLCPartnerCampaign->getcreateDate());
     }
-
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setBrandId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getBrandId());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getBrandId());
     }
-
     /**
      * Test attribute "usecase"
      */
     public function testPropertyUsecase()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setUsecase('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getUsecase());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getUsecase());
     }
-
     /**
      * Test attribute "description"
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setDescription('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getDescription());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getDescription());
     }
-
     /**
      * Test attribute "embedded_link"
      */
     public function testPropertyEmbeddedLink()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setembeddedLink(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getembeddedLink());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getembeddedLink());
     }
-
     /**
      * Test attribute "embedded_phone"
      */
     public function testPropertyEmbeddedPhone()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setembeddedPhone(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getembeddedPhone());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getembeddedPhone());
     }
-
     /**
      * Test attribute "affiliate_marketing"
      */
     public function testPropertyAffiliateMarketing()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setaffiliateMarketing(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getaffiliateMarketing());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getaffiliateMarketing());
     }
-
     /**
      * Test attribute "number_pool"
      */
     public function testPropertyNumberPool()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setnumberPool(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getnumberPool());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getnumberPool());
     }
-
     /**
      * Test attribute "age_gated"
      */
     public function testPropertyAgeGated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setageGated(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getageGated());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getageGated());
     }
-
     /**
      * Test attribute "direct_lending"
      */
     public function testPropertyDirectLending()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setdirectLending(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getdirectLending());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getdirectLending());
     }
-
     /**
      * Test attribute "subscriber_optin"
      */
     public function testPropertySubscriberOptin()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setsubscriberOptin(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getsubscriberOptin());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getsubscriberOptin());
     }
-
     /**
      * Test attribute "subscriber_optout"
      */
     public function testPropertySubscriberOptout()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setsubscriberOptout(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getsubscriberOptout());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getsubscriberOptout());
     }
-
     /**
      * Test attribute "subscriber_help"
      */
     public function testPropertySubscriberHelp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setsubscriberHelp(false);
+        $this->assertFalse($this->SMSTenDLCPartnerCampaign->getsubscriberHelp());
+        $this->assertIsBool($this->SMSTenDLCPartnerCampaign->getsubscriberHelp());
     }
-
     /**
      * Test attribute "sample1"
      */
     public function testPropertySample1()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setSample1('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample1());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample1());
     }
-
     /**
      * Test attribute "sample2"
      */
     public function testPropertySample2()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setSample2('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample2());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample2());
     }
-
     /**
      * Test attribute "sample3"
      */
     public function testPropertySample3()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setSample3('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample3());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample3());
     }
-
     /**
      * Test attribute "sample4"
      */
     public function testPropertySample4()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setSample4('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample4());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample4());
     }
-
     /**
      * Test attribute "sample5"
      */
     public function testPropertySample5()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setSample5('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample5());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample5());
     }
-
     /**
      * Test attribute "message_flow"
      */
     public function testPropertyMessageFlow()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setMessageFlow('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getMessageFlow());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getMessageFlow());
     }
-
     /**
      * Test attribute "help_message"
      */
     public function testPropertyHelpMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setHelpMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getHelpMessage());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getHelpMessage());
     }
-
     /**
      * Test attribute "optin_keywords"
      */
     public function testPropertyOptinKeywords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setOptinKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptinKeywords());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptinKeywords());
     }
-
     /**
      * Test attribute "optout_keywords"
      */
     public function testPropertyOptoutKeywords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setOptoutKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptoutKeywords());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptoutKeywords());
     }
-
     /**
      * Test attribute "help_keywords"
      */
     public function testPropertyHelpKeywords()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setHelpKeywords('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getHelpKeywords());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getHelpKeywords());
     }
-
     /**
      * Test attribute "optin_message"
      */
     public function testPropertyOptinMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setOptinMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptinMessage());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptinMessage());
     }
-
     /**
      * Test attribute "optout_message"
      */
     public function testPropertyOptoutMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setOptoutMessage('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptoutMessage());
+        $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptoutMessage());
     }
-
     /**
      * Test attribute "brand"
      */
     public function testPropertyBrand()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCPartnerCampaign->setbrand(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->SMSTenDLCPartnerCampaign->getbrand());
     }
 }

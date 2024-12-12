@@ -55,6 +55,7 @@ class SetListenTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SetListen = new SetListen();
     }
 
     /**
@@ -79,13 +80,13 @@ class SetListenTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SetListen->setlisten(false);
+        $this->assertFalse($this->SetListen->getlisten());
+        $this->assertIsBool($this->SetListen->getlisten());
     }
 }

@@ -55,6 +55,7 @@ class GrammarTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->GrammarType = new GrammarType();
     }
 
     /**

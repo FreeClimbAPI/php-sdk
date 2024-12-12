@@ -55,6 +55,7 @@ class UpdateCallRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->UpdateCallRequest = new UpdateCallRequest();
     }
 
     /**
@@ -79,13 +80,14 @@ class UpdateCallRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->UpdateCallRequest->setstatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED, $this->UpdateCallRequest->getstatus());
+        $this->UpdateCallRequest->setstatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\UpdateCallRequestStatus::COMPLETED, $this->UpdateCallRequest->getstatus());
     }
 }

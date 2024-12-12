@@ -55,6 +55,7 @@ class SMSTenDLCBrandIdentityStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandIdentityStatus = new SMSTenDLCBrandIdentityStatus();
     }
 
     /**

@@ -55,6 +55,7 @@ class CompletionResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CompletionResult = new CompletionResult();
     }
 
     /**
@@ -79,22 +80,23 @@ class CompletionResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "response"
      */
     public function testPropertyResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CompletionResult->setResponse('TS');
+        $this->assertEquals('TS', $this->CompletionResult->getResponse());
+        $this->assertIsString($this->CompletionResult->getResponse());
     }
-
     /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CompletionResult->setstatus(\FreeClimb\Api\Model\CompletionResultStatus::SUCCESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CompletionResultStatus::SUCCESS, $this->CompletionResult->getstatus());
+        $this->CompletionResult->setstatus(\FreeClimb\Api\Model\CompletionResultStatus::NO_CONTEXT);
+        $this->assertEquals(\FreeClimb\Api\Model\CompletionResultStatus::NO_CONTEXT, $this->CompletionResult->getstatus());
     }
 }

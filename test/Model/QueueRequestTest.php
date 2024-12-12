@@ -55,6 +55,7 @@ class QueueRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->QueueRequest = new QueueRequest();
     }
 
     /**
@@ -79,22 +80,25 @@ class QueueRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->QueueRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->QueueRequest->getAlias());
+        $this->assertIsString($this->QueueRequest->getAlias());
     }
-
     /**
      * Test attribute "max_size"
      */
     public function testPropertyMaxSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->QueueRequest->setmaxSize(1);
+        $this->assertEquals(1, $this->QueueRequest->getmaxSize());
+        $this->assertIsNumeric($this->QueueRequest->getmaxSize());
+        
     }
 }

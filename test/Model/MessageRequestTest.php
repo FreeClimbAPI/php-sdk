@@ -55,6 +55,7 @@ class MessageRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessageRequest = new MessageRequest();
     }
 
     /**
@@ -79,85 +80,88 @@ class MessageRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setUri('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getUri());
+        $this->assertIsString($this->MessageRequest->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getDateCreated());
+        $this->assertIsString($this->MessageRequest->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getDateUpdated());
+        $this->assertIsString($this->MessageRequest->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MessageRequest->setrevision(1);
+        $this->assertEquals(1, $this->MessageRequest->getrevision());
+        $this->assertIsNumeric($this->MessageRequest->getrevision());
+        
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setFrom('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getFrom());
+        $this->assertIsString($this->MessageRequest->getFrom());
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setTo('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getTo());
+        $this->assertIsString($this->MessageRequest->getTo());
     }
-
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setText('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getText());
+        $this->assertIsString($this->MessageRequest->getText());
     }
-
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->MessageRequest->getNotificationUrl());
+        $this->assertIsString($this->MessageRequest->getNotificationUrl());
     }
-
     /**
      * Test attribute "media_urls"
      */
     public function testPropertyMediaUrls()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MessageRequest->setmediaUrls([]);
+        $this->assertEquals([], $this->MessageRequest->getmediaUrls());
+        $this->assertIsArray($this->MessageRequest->getmediaUrls());
     }
 }

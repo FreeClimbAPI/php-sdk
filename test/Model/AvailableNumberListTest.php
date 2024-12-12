@@ -55,6 +55,7 @@ class AvailableNumberListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AvailableNumberList = new AvailableNumberList();
     }
 
     /**
@@ -79,76 +80,94 @@ class AvailableNumberListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->settotal(1);
+        $this->assertEquals(1, $this->AvailableNumberList->gettotal());
+        $this->assertIsNumeric($this->AvailableNumberList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->setstart(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getstart());
+        $this->assertIsNumeric($this->AvailableNumberList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->setend(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getend());
+        $this->assertIsNumeric($this->AvailableNumberList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->setpage(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getpage());
+        $this->assertIsNumeric($this->AvailableNumberList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->setnumPages(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getnumPages());
+        $this->assertIsNumeric($this->AvailableNumberList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->AvailableNumberList->setpageSize(1);
+        $this->assertEquals(1, $this->AvailableNumberList->getpageSize());
+        $this->assertIsNumeric($this->AvailableNumberList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumberList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->AvailableNumberList->getNextPageUri());
+        $this->assertIsString($this->AvailableNumberList->getNextPageUri());
     }
-
     /**
      * Test attribute "available_phone_numbers"
      */
     public function testPropertyAvailablePhoneNumbers()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AvailableNumberList->setavailablePhoneNumbers([]);
+        $this->assertEquals([], $this->AvailableNumberList->getavailablePhoneNumbers());
+        $this->assertIsArray($this->AvailableNumberList->getavailablePhoneNumbers());
     }
 }

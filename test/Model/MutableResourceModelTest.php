@@ -55,6 +55,7 @@ class MutableResourceModelTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MutableResourceModel = new MutableResourceModel();
     }
 
     /**
@@ -79,40 +80,43 @@ class MutableResourceModelTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MutableResourceModel->setUri('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getUri());
+        $this->assertIsString($this->MutableResourceModel->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MutableResourceModel->setDateCreated('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getDateCreated());
+        $this->assertIsString($this->MutableResourceModel->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->MutableResourceModel->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->MutableResourceModel->getDateUpdated());
+        $this->assertIsString($this->MutableResourceModel->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->MutableResourceModel->setrevision(1);
+        $this->assertEquals(1, $this->MutableResourceModel->getrevision());
+        $this->assertIsNumeric($this->MutableResourceModel->getrevision());
+        
     }
 }

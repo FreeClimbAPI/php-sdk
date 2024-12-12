@@ -55,6 +55,7 @@ class ConferenceParticipantListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->ConferenceParticipantList = new ConferenceParticipantList();
     }
 
     /**
@@ -79,76 +80,94 @@ class ConferenceParticipantListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->settotal(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->gettotal());
+        $this->assertIsNumeric($this->ConferenceParticipantList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->setstart(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getstart());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->setend(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getend());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->setpage(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getpage());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->setnumPages(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getnumPages());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->ConferenceParticipantList->setpageSize(1);
+        $this->assertEquals(1, $this->ConferenceParticipantList->getpageSize());
+        $this->assertIsNumeric($this->ConferenceParticipantList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->ConferenceParticipantList->getNextPageUri());
+        $this->assertIsString($this->ConferenceParticipantList->getNextPageUri());
     }
-
     /**
      * Test attribute "participants"
      */
     public function testPropertyParticipants()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->ConferenceParticipantList->setparticipants([]);
+        $this->assertEquals([], $this->ConferenceParticipantList->getparticipants());
+        $this->assertIsArray($this->ConferenceParticipantList->getparticipants());
     }
 }

@@ -55,6 +55,7 @@ class WebhookTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Webhook = new Webhook();
     }
 
     /**
@@ -79,13 +80,13 @@ class WebhookTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "request_type"
      */
     public function testPropertyRequestType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Webhook->setRequestType('TS');
+        $this->assertEquals('TS', $this->Webhook->getRequestType());
+        $this->assertIsString($this->Webhook->getRequestType());
     }
 }

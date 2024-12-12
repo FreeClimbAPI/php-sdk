@@ -55,6 +55,7 @@ class RequestTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->RequestType = new RequestType();
     }
 
     /**

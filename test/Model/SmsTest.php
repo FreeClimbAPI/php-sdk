@@ -55,6 +55,7 @@ class SmsTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Sms = new Sms();
     }
 
     /**
@@ -79,40 +80,40 @@ class SmsTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "to"
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Sms->setTo('TS');
+        $this->assertEquals('TS', $this->Sms->getTo());
+        $this->assertIsString($this->Sms->getTo());
     }
-
     /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Sms->setFrom('TS');
+        $this->assertEquals('TS', $this->Sms->getFrom());
+        $this->assertIsString($this->Sms->getFrom());
     }
-
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Sms->setText('TS');
+        $this->assertEquals('TS', $this->Sms->getText());
+        $this->assertIsString($this->Sms->getText());
     }
-
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Sms->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->Sms->getNotificationUrl());
+        $this->assertIsString($this->Sms->getNotificationUrl());
     }
 }

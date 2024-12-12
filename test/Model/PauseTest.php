@@ -55,6 +55,7 @@ class PauseTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Pause = new Pause();
     }
 
     /**
@@ -79,13 +80,16 @@ class PauseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "length"
      */
     public function testPropertyLength()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->Pause->setlength(1);
+        $this->assertEquals(1, $this->Pause->getlength());
+        $this->assertIsNumeric($this->Pause->getlength());
+        
     }
 }

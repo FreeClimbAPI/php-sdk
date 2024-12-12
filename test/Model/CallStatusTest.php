@@ -55,6 +55,7 @@ class CallStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CallStatus = new CallStatus();
     }
 
     /**

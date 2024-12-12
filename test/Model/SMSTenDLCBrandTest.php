@@ -55,6 +55,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrand = new SMSTenDLCBrand();
     }
 
     /**
@@ -79,283 +80,356 @@ class SMSTenDLCBrandTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getAccountId());
+        $this->assertIsString($this->SMSTenDLCBrand->getAccountId());
     }
-
     /**
      * Test attribute "entity_type"
      */
     public function testPropertyEntityType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::PRIVATE_PROFIT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::PRIVATE_PROFIT, $this->SMSTenDLCBrand->getentityType());
+        $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::PUBLIC_PROFIT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::PUBLIC_PROFIT, $this->SMSTenDLCBrand->getentityType());
+        $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::NON_PROFIT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::NON_PROFIT, $this->SMSTenDLCBrand->getentityType());
+        $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::GOVERNMENT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::GOVERNMENT, $this->SMSTenDLCBrand->getentityType());
+        $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::SOLE_PROPRIETOR);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::SOLE_PROPRIETOR, $this->SMSTenDLCBrand->getentityType());
     }
-
     /**
      * Test attribute "csp_id"
      */
     public function testPropertyCspId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setCspId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getCspId());
+        $this->assertIsString($this->SMSTenDLCBrand->getCspId());
     }
-
     /**
      * Test attribute "brand_id"
      */
     public function testPropertyBrandId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setBrandId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getBrandId());
+        $this->assertIsString($this->SMSTenDLCBrand->getBrandId());
     }
-
     /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setFirstName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getFirstName());
+        $this->assertIsString($this->SMSTenDLCBrand->getFirstName());
     }
-
     /**
      * Test attribute "last_name"
      */
     public function testPropertyLastName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setLastName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getLastName());
+        $this->assertIsString($this->SMSTenDLCBrand->getLastName());
     }
-
     /**
      * Test attribute "display_name"
      */
     public function testPropertyDisplayName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setDisplayName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getDisplayName());
+        $this->assertIsString($this->SMSTenDLCBrand->getDisplayName());
     }
-
     /**
      * Test attribute "company_name"
      */
     public function testPropertyCompanyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setCompanyName('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getCompanyName());
+        $this->assertIsString($this->SMSTenDLCBrand->getCompanyName());
     }
-
     /**
      * Test attribute "ein"
      */
     public function testPropertyEin()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setEin('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getEin());
+        $this->assertIsString($this->SMSTenDLCBrand->getEin());
     }
-
     /**
      * Test attribute "ein_issuing_country"
      */
     public function testPropertyEinIssuingCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setEinIssuingCountry('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getEinIssuingCountry());
+        $this->assertIsString($this->SMSTenDLCBrand->getEinIssuingCountry());
     }
-
     /**
      * Test attribute "phone"
      */
     public function testPropertyPhone()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setPhone('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getPhone());
+        $this->assertIsString($this->SMSTenDLCBrand->getPhone());
     }
-
     /**
      * Test attribute "street"
      */
     public function testPropertyStreet()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setStreet('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getStreet());
+        $this->assertIsString($this->SMSTenDLCBrand->getStreet());
     }
-
     /**
      * Test attribute "city"
      */
     public function testPropertyCity()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setCity('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getCity());
+        $this->assertIsString($this->SMSTenDLCBrand->getCity());
     }
-
     /**
      * Test attribute "state"
      */
     public function testPropertyState()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setState('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getState());
+        $this->assertIsString($this->SMSTenDLCBrand->getState());
     }
-
     /**
      * Test attribute "postal_code"
      */
     public function testPropertyPostalCode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setPostalCode('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getPostalCode());
+        $this->assertIsString($this->SMSTenDLCBrand->getPostalCode());
     }
-
     /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setCountry('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getCountry());
+        $this->assertIsString($this->SMSTenDLCBrand->getCountry());
     }
-
     /**
      * Test attribute "email"
      */
     public function testPropertyEmail()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setEmail('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getEmail());
+        $this->assertIsString($this->SMSTenDLCBrand->getEmail());
     }
-
     /**
      * Test attribute "stock_symbol"
      */
     public function testPropertyStockSymbol()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setStockSymbol('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getStockSymbol());
+        $this->assertIsString($this->SMSTenDLCBrand->getStockSymbol());
     }
-
     /**
      * Test attribute "stock_exchange"
      */
     public function testPropertyStockExchange()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NONE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NONE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NASDAQ);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NASDAQ, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NYSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NYSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::AMEX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::AMEX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::AMX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::AMX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::ASX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::ASX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::B3);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::B3, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::BME);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::BME, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::BSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::BSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::FRA);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::FRA, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::ICEX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::ICEX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::JPX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::JPX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::JSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::JSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::KRX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::KRX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::LON);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::LON, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OMX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OMX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SEHK);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SEHK, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SGX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SGX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::STO);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::STO, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SWX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SWX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SZSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::SZSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::TSX);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::TSX, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::TWSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::TWSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::VSE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::VSE, $this->SMSTenDLCBrand->getstockExchange());
+        $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OTHER);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OTHER, $this->SMSTenDLCBrand->getstockExchange());
     }
-
     /**
      * Test attribute "ip_address"
      */
     public function testPropertyIpAddress()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setIpAddress('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getIpAddress());
+        $this->assertIsString($this->SMSTenDLCBrand->getIpAddress());
     }
-
     /**
      * Test attribute "website"
      */
     public function testPropertyWebsite()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setWebsite('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getWebsite());
+        $this->assertIsString($this->SMSTenDLCBrand->getWebsite());
     }
-
     /**
      * Test attribute "brand_relationship"
      */
     public function testPropertyBrandRelationship()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::BASIC_ACCOUNT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::BASIC_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
+        $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::SMALL_ACCOUNT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::SMALL_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
+        $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::MEDIUM_ACCOUNT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::MEDIUM_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
+        $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::LARGE_ACCOUNT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::LARGE_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
+        $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::KEY_ACCOUNT);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::KEY_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
     }
-
     /**
      * Test attribute "vertical"
      */
     public function testPropertyVertical()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setVertical('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getVertical());
+        $this->assertIsString($this->SMSTenDLCBrand->getVertical());
     }
-
     /**
      * Test attribute "alt_business_id"
      */
     public function testPropertyAltBusinessId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setAltBusinessId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getAltBusinessId());
+        $this->assertIsString($this->SMSTenDLCBrand->getAltBusinessId());
     }
-
     /**
      * Test attribute "alt_business_id_type"
      */
     public function testPropertyAltBusinessIdType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::NONE);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::NONE, $this->SMSTenDLCBrand->getaltBusinessIdType());
+        $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::DUNS);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::DUNS, $this->SMSTenDLCBrand->getaltBusinessIdType());
+        $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::GIIN);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::GIIN, $this->SMSTenDLCBrand->getaltBusinessIdType());
+        $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::LEI);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::LEI, $this->SMSTenDLCBrand->getaltBusinessIdType());
     }
-
     /**
      * Test attribute "universal_ein"
      */
     public function testPropertyUniversalEin()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setUniversalEin('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getUniversalEin());
+        $this->assertIsString($this->SMSTenDLCBrand->getUniversalEin());
     }
-
     /**
      * Test attribute "reference_id"
      */
     public function testPropertyReferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setReferenceId('TS');
+        $this->assertEquals('TS', $this->SMSTenDLCBrand->getReferenceId());
+        $this->assertIsString($this->SMSTenDLCBrand->getReferenceId());
     }
-
     /**
      * Test attribute "optional_attributes"
      */
     public function testPropertyOptionalAttributes()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setoptionalAttributes(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->SMSTenDLCBrand->getoptionalAttributes());
     }
-
     /**
      * Test attribute "mock"
      */
     public function testPropertyMock()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setmock(false);
+        $this->assertFalse($this->SMSTenDLCBrand->getmock());
+        $this->assertIsBool($this->SMSTenDLCBrand->getmock());
     }
-
     /**
      * Test attribute "identity_status"
      */
     public function testPropertyIdentityStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::SELF_DECLARED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::SELF_DECLARED, $this->SMSTenDLCBrand->getidentityStatus());
+        $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::UNVERIFIED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::UNVERIFIED, $this->SMSTenDLCBrand->getidentityStatus());
+        $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VERIFIED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VERIFIED, $this->SMSTenDLCBrand->getidentityStatus());
+        $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VETTED_VERIFIED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VETTED_VERIFIED, $this->SMSTenDLCBrand->getidentityStatus());
     }
-
     /**
      * Test attribute "create_date"
      */
     public function testPropertyCreateDate()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTenDLCBrand->setcreateDate('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->SMSTenDLCBrand->getcreateDate());
     }
 }

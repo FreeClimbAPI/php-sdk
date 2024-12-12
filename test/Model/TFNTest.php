@@ -55,6 +55,7 @@ class TFNTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->TFN = new TFN();
     }
 
     /**
@@ -79,13 +80,13 @@ class TFNTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->TFN->setCampaignId('TS');
+        $this->assertEquals('TS', $this->TFN->getCampaignId());
+        $this->assertIsString($this->TFN->getCampaignId());
     }
 }

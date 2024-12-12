@@ -55,6 +55,7 @@ class SMSTenDLCBrandRelationshipTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTenDLCBrandRelationship = new SMSTenDLCBrandRelationship();
     }
 
     /**

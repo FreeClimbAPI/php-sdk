@@ -55,6 +55,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->IncomingNumberResult = new IncomingNumberResult();
     }
 
     /**
@@ -79,157 +80,158 @@ class IncomingNumberResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "uri"
      */
     public function testPropertyUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setUri('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getUri());
+        $this->assertIsString($this->IncomingNumberResult->getUri());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setDateCreated('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getDateCreated());
+        $this->assertIsString($this->IncomingNumberResult->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getDateUpdated());
+        $this->assertIsString($this->IncomingNumberResult->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberResult->setrevision(1);
+        $this->assertEquals(1, $this->IncomingNumberResult->getrevision());
+        $this->assertIsNumeric($this->IncomingNumberResult->getrevision());
+        
     }
-
     /**
      * Test attribute "capabilities"
      */
     public function testPropertyCapabilities()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setcapabilities(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->IncomingNumberResult->getcapabilities());
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setCampaignId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getCampaignId());
+        $this->assertIsString($this->IncomingNumberResult->getCampaignId());
     }
-
     /**
      * Test attribute "phone_number_id"
      */
     public function testPropertyPhoneNumberId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setPhoneNumberId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumberId());
+        $this->assertIsString($this->IncomingNumberResult->getPhoneNumberId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getAccountId());
+        $this->assertIsString($this->IncomingNumberResult->getAccountId());
     }
-
     /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setApplicationId('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getApplicationId());
+        $this->assertIsString($this->IncomingNumberResult->getApplicationId());
     }
-
     /**
      * Test attribute "phone_number"
      */
     public function testPropertyPhoneNumber()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setPhoneNumber('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumber());
+        $this->assertIsString($this->IncomingNumberResult->getPhoneNumber());
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setAlias('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getAlias());
+        $this->assertIsString($this->IncomingNumberResult->getAlias());
     }
-
     /**
      * Test attribute "region"
      */
     public function testPropertyRegion()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setRegion('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getRegion());
+        $this->assertIsString($this->IncomingNumberResult->getRegion());
     }
-
     /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setCountry('TS');
+        $this->assertEquals('TS', $this->IncomingNumberResult->getCountry());
+        $this->assertIsString($this->IncomingNumberResult->getCountry());
     }
-
     /**
      * Test attribute "voice_enabled"
      */
     public function testPropertyVoiceEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setvoiceEnabled(false);
+        $this->assertFalse($this->IncomingNumberResult->getvoiceEnabled());
+        $this->assertIsBool($this->IncomingNumberResult->getvoiceEnabled());
     }
-
     /**
      * Test attribute "sms_enabled"
      */
     public function testPropertySmsEnabled()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setsmsEnabled(false);
+        $this->assertFalse($this->IncomingNumberResult->getsmsEnabled());
+        $this->assertIsBool($this->IncomingNumberResult->getsmsEnabled());
     }
-
     /**
      * Test attribute "offnet"
      */
     public function testPropertyOffnet()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->setoffnet(false);
+        $this->assertFalse($this->IncomingNumberResult->getoffnet());
+        $this->assertIsBool($this->IncomingNumberResult->getoffnet());
     }
-
     /**
      * Test attribute "tfn"
      */
     public function testPropertyTfn()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberResult->settfn(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->IncomingNumberResult->gettfn());
     }
 }

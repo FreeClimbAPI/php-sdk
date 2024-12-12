@@ -55,6 +55,7 @@ class LogResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->LogResult = new LogResult();
     }
 
     /**
@@ -79,67 +80,72 @@ class LogResultTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "timestamp"
      */
     public function testPropertyTimestamp()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->LogResult->settimestamp(1);
+        $this->assertEquals(1, $this->LogResult->gettimestamp());
+        $this->assertIsNumeric($this->LogResult->gettimestamp());
+        
     }
-
     /**
      * Test attribute "level"
      */
     public function testPropertyLevel()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setlevel(\FreeClimb\Api\Model\LogLevel::INFO);
+        $this->assertEquals(\FreeClimb\Api\Model\LogLevel::INFO, $this->LogResult->getlevel());
+        $this->LogResult->setlevel(\FreeClimb\Api\Model\LogLevel::WARNING);
+        $this->assertEquals(\FreeClimb\Api\Model\LogLevel::WARNING, $this->LogResult->getlevel());
+        $this->LogResult->setlevel(\FreeClimb\Api\Model\LogLevel::ERROR);
+        $this->assertEquals(\FreeClimb\Api\Model\LogLevel::ERROR, $this->LogResult->getlevel());
     }
-
     /**
      * Test attribute "request_id"
      */
     public function testPropertyRequestId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setRequestId('TS');
+        $this->assertEquals('TS', $this->LogResult->getRequestId());
+        $this->assertIsString($this->LogResult->getRequestId());
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setAccountId('TS');
+        $this->assertEquals('TS', $this->LogResult->getAccountId());
+        $this->assertIsString($this->LogResult->getAccountId());
     }
-
     /**
      * Test attribute "call_id"
      */
     public function testPropertyCallId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setCallId('TS');
+        $this->assertEquals('TS', $this->LogResult->getCallId());
+        $this->assertIsString($this->LogResult->getCallId());
     }
-
     /**
      * Test attribute "message"
      */
     public function testPropertyMessage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setMessage('TS');
+        $this->assertEquals('TS', $this->LogResult->getMessage());
+        $this->assertIsString($this->LogResult->getMessage());
     }
-
     /**
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->LogResult->setmetadata(new \stdClass);
+        $this->assertInstanceOf(\stdClass::class, $this->LogResult->getmetadata());
     }
 }

@@ -55,6 +55,7 @@ class CreateConferenceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->CreateConference = new CreateConference();
     }
 
     /**
@@ -79,58 +80,63 @@ class CreateConferenceTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "action_url"
      */
     public function testPropertyActionUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setActionUrl('TS');
+        $this->assertEquals('TS', $this->CreateConference->getActionUrl());
+        $this->assertIsString($this->CreateConference->getActionUrl());
     }
-
     /**
      * Test attribute "alias"
      */
     public function testPropertyAlias()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setalias(false);
+        $this->assertFalse($this->CreateConference->getalias());
+        $this->assertIsBool($this->CreateConference->getalias());
     }
-
     /**
      * Test attribute "play_beep"
      */
     public function testPropertyPlayBeep()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::ALWAYS, $this->CreateConference->getplayBeep());
+        $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::NEVER);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::NEVER, $this->CreateConference->getplayBeep());
+        $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ENTRY_ONLY);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::ENTRY_ONLY, $this->CreateConference->getplayBeep());
+        $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY);
+        $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY, $this->CreateConference->getplayBeep());
     }
-
     /**
      * Test attribute "record"
      */
     public function testPropertyRecord()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setrecord(false);
+        $this->assertFalse($this->CreateConference->getrecord());
+        $this->assertIsBool($this->CreateConference->getrecord());
     }
-
     /**
      * Test attribute "status_callback_url"
      */
     public function testPropertyStatusCallbackUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setStatusCallbackUrl('TS');
+        $this->assertEquals('TS', $this->CreateConference->getStatusCallbackUrl());
+        $this->assertIsString($this->CreateConference->getStatusCallbackUrl());
     }
-
     /**
      * Test attribute "wait_url"
      */
     public function testPropertyWaitUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->CreateConference->setWaitUrl('TS');
+        $this->assertEquals('TS', $this->CreateConference->getWaitUrl());
+        $this->assertIsString($this->CreateConference->getWaitUrl());
     }
 }

@@ -55,6 +55,7 @@ class SendDigitsTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SendDigits = new SendDigits();
     }
 
     /**
@@ -79,31 +80,34 @@ class SendDigitsTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "digits"
      */
     public function testPropertyDigits()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SendDigits->setDigits('TS');
+        $this->assertEquals('TS', $this->SendDigits->getDigits());
+        $this->assertIsString($this->SendDigits->getDigits());
     }
-
     /**
      * Test attribute "pause_ms"
      */
     public function testPropertyPauseMs()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SendDigits->setpauseMs(1);
+        $this->assertEquals(1, $this->SendDigits->getpauseMs());
+        $this->assertIsNumeric($this->SendDigits->getpauseMs());
+        
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SendDigits->setprivacyMode(false);
+        $this->assertFalse($this->SendDigits->getprivacyMode());
+        $this->assertIsBool($this->SendDigits->getprivacyMode());
     }
 }

@@ -55,6 +55,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTollFreeCampaign = new SMSTollFreeCampaign();
     }
 
     /**
@@ -79,67 +80,77 @@ class SMSTollFreeCampaignTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "account_id"
      */
     public function testPropertyAccountId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setAccountId('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getAccountId());
+        $this->assertIsString($this->SMSTollFreeCampaign->getAccountId());
     }
-
     /**
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setCampaignId('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getCampaignId());
+        $this->assertIsString($this->SMSTollFreeCampaign->getCampaignId());
     }
-
     /**
      * Test attribute "use_case"
      */
     public function testPropertyUseCase()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setUseCase('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getUseCase());
+        $this->assertIsString($this->SMSTollFreeCampaign->getUseCase());
     }
-
     /**
      * Test attribute "registration_status"
      */
     public function testPropertyRegistrationStatus()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::UNREGISTERED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::UNREGISTERED, $this->SMSTollFreeCampaign->getregistrationStatus());
+        $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::INITIATED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::INITIATED, $this->SMSTollFreeCampaign->getregistrationStatus());
+        $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::PENDING);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::PENDING, $this->SMSTollFreeCampaign->getregistrationStatus());
+        $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::DECLINED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::DECLINED, $this->SMSTollFreeCampaign->getregistrationStatus());
+        $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED);
+        $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED, $this->SMSTollFreeCampaign->getregistrationStatus());
     }
-
     /**
      * Test attribute "date_created"
      */
     public function testPropertyDateCreated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setDateCreated('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateCreated());
+        $this->assertIsString($this->SMSTollFreeCampaign->getDateCreated());
     }
-
     /**
      * Test attribute "date_updated"
      */
     public function testPropertyDateUpdated()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SMSTollFreeCampaign->setDateUpdated('TS');
+        $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateUpdated());
+        $this->assertIsString($this->SMSTollFreeCampaign->getDateUpdated());
     }
-
     /**
      * Test attribute "revision"
      */
     public function testPropertyRevision()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->SMSTollFreeCampaign->setrevision(1);
+        $this->assertEquals(1, $this->SMSTollFreeCampaign->getrevision());
+        $this->assertIsNumeric($this->SMSTollFreeCampaign->getrevision());
+        
     }
 }

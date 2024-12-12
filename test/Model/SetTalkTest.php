@@ -55,6 +55,7 @@ class SetTalkTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SetTalk = new SetTalk();
     }
 
     /**
@@ -79,13 +80,13 @@ class SetTalkTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->SetTalk->settalk(false);
+        $this->assertFalse($this->SetTalk->gettalk());
+        $this->assertIsBool($this->SetTalk->gettalk());
     }
 }

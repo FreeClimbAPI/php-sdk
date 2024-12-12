@@ -55,6 +55,7 @@ class PlayEarlyMediaTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->PlayEarlyMedia = new PlayEarlyMedia();
     }
 
     /**
@@ -79,13 +80,13 @@ class PlayEarlyMediaTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "file"
      */
     public function testPropertyFile()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->PlayEarlyMedia->setFile('TS');
+        $this->assertEquals('TS', $this->PlayEarlyMedia->getFile());
+        $this->assertIsString($this->PlayEarlyMedia->getFile());
     }
 }

@@ -55,6 +55,7 @@ class AddToConferenceTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->AddToConference = new AddToConference();
     }
 
     /**
@@ -79,94 +80,94 @@ class AddToConferenceTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "allow_call_control"
      */
     public function testPropertyAllowCallControl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setallowCallControl(false);
+        $this->assertFalse($this->AddToConference->getallowCallControl());
+        $this->assertIsBool($this->AddToConference->getallowCallControl());
     }
-
     /**
      * Test attribute "call_control_sequence"
      */
     public function testPropertyCallControlSequence()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setCallControlSequence('TS');
+        $this->assertEquals('TS', $this->AddToConference->getCallControlSequence());
+        $this->assertIsString($this->AddToConference->getCallControlSequence());
     }
-
     /**
      * Test attribute "call_control_url"
      */
     public function testPropertyCallControlUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setCallControlUrl('TS');
+        $this->assertEquals('TS', $this->AddToConference->getCallControlUrl());
+        $this->assertIsString($this->AddToConference->getCallControlUrl());
     }
-
     /**
      * Test attribute "conference_id"
      */
     public function testPropertyConferenceId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setConferenceId('TS');
+        $this->assertEquals('TS', $this->AddToConference->getConferenceId());
+        $this->assertIsString($this->AddToConference->getConferenceId());
     }
-
     /**
      * Test attribute "leave_conference_url"
      */
     public function testPropertyLeaveConferenceUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setLeaveConferenceUrl('TS');
+        $this->assertEquals('TS', $this->AddToConference->getLeaveConferenceUrl());
+        $this->assertIsString($this->AddToConference->getLeaveConferenceUrl());
     }
-
     /**
      * Test attribute "listen"
      */
     public function testPropertyListen()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setlisten(false);
+        $this->assertFalse($this->AddToConference->getlisten());
+        $this->assertIsBool($this->AddToConference->getlisten());
     }
-
     /**
      * Test attribute "notification_url"
      */
     public function testPropertyNotificationUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setNotificationUrl('TS');
+        $this->assertEquals('TS', $this->AddToConference->getNotificationUrl());
+        $this->assertIsString($this->AddToConference->getNotificationUrl());
     }
-
     /**
      * Test attribute "start_conf_on_enter"
      */
     public function testPropertyStartConfOnEnter()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setstartConfOnEnter(false);
+        $this->assertFalse($this->AddToConference->getstartConfOnEnter());
+        $this->assertIsBool($this->AddToConference->getstartConfOnEnter());
     }
-
     /**
      * Test attribute "talk"
      */
     public function testPropertyTalk()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->settalk(false);
+        $this->assertFalse($this->AddToConference->gettalk());
+        $this->assertIsBool($this->AddToConference->gettalk());
     }
-
     /**
      * Test attribute "dtmf_pass_through"
      */
     public function testPropertyDtmfPassThrough()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->AddToConference->setdtmfPassThrough(false);
+        $this->assertFalse($this->AddToConference->getdtmfPassThrough());
+        $this->assertIsBool($this->AddToConference->getdtmfPassThrough());
     }
 }

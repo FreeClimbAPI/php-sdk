@@ -55,6 +55,7 @@ class IncomingNumberListTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->IncomingNumberList = new IncomingNumberList();
     }
 
     /**
@@ -79,76 +80,94 @@ class IncomingNumberListTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "total"
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->settotal(1);
+        $this->assertEquals(1, $this->IncomingNumberList->gettotal());
+        $this->assertIsNumeric($this->IncomingNumberList->gettotal());
+        
     }
-
     /**
      * Test attribute "start"
      */
     public function testPropertyStart()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->setstart(1);
+        $this->assertEquals(1, $this->IncomingNumberList->getstart());
+        $this->assertIsNumeric($this->IncomingNumberList->getstart());
+        
     }
-
     /**
      * Test attribute "end"
      */
     public function testPropertyEnd()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->setend(1);
+        $this->assertEquals(1, $this->IncomingNumberList->getend());
+        $this->assertIsNumeric($this->IncomingNumberList->getend());
+        
     }
-
     /**
      * Test attribute "page"
      */
     public function testPropertyPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->setpage(1);
+        $this->assertEquals(1, $this->IncomingNumberList->getpage());
+        $this->assertIsNumeric($this->IncomingNumberList->getpage());
+        
     }
-
     /**
      * Test attribute "num_pages"
      */
     public function testPropertyNumPages()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->setnumPages(1);
+        $this->assertEquals(1, $this->IncomingNumberList->getnumPages());
+        $this->assertIsNumeric($this->IncomingNumberList->getnumPages());
+        
     }
-
     /**
      * Test attribute "page_size"
      */
     public function testPropertyPageSize()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->IncomingNumberList->setpageSize(1);
+        $this->assertEquals(1, $this->IncomingNumberList->getpageSize());
+        $this->assertIsNumeric($this->IncomingNumberList->getpageSize());
+        
     }
-
     /**
      * Test attribute "next_page_uri"
      */
     public function testPropertyNextPageUri()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberList->setNextPageUri('TS');
+        $this->assertEquals('TS', $this->IncomingNumberList->getNextPageUri());
+        $this->assertIsString($this->IncomingNumberList->getNextPageUri());
     }
-
     /**
      * Test attribute "incoming_phone_numbers"
      */
     public function testPropertyIncomingPhoneNumbers()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->IncomingNumberList->setincomingPhoneNumbers([]);
+        $this->assertEquals([], $this->IncomingNumberList->getincomingPhoneNumbers());
+        $this->assertIsArray($this->IncomingNumberList->getincomingPhoneNumbers());
     }
 }

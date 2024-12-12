@@ -55,6 +55,7 @@ class PlayBeepTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->PlayBeep = new PlayBeep();
     }
 
     /**

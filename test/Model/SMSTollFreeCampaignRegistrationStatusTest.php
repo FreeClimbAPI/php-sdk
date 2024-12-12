@@ -55,6 +55,7 @@ class SMSTollFreeCampaignRegistrationStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->SMSTollFreeCampaignRegistrationStatus = new SMSTollFreeCampaignRegistrationStatus();
     }
 
     /**

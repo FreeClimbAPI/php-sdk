@@ -55,6 +55,7 @@ class SayTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->Say = new Say();
     }
 
     /**
@@ -79,40 +80,43 @@ class SayTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
     /**
      * Test attribute "text"
      */
     public function testPropertyText()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Say->setText('TS');
+        $this->assertEquals('TS', $this->Say->getText());
+        $this->assertIsString($this->Say->getText());
     }
-
     /**
      * Test attribute "language"
      */
     public function testPropertyLanguage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Say->setLanguage('TS');
+        $this->assertEquals('TS', $this->Say->getLanguage());
+        $this->assertIsString($this->Say->getLanguage());
     }
-
     /**
      * Test attribute "loop"
      */
     public function testPropertyLoop()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        
+        
+        $this->Say->setloop(1);
+        $this->assertEquals(1, $this->Say->getloop());
+        $this->assertIsNumeric($this->Say->getloop());
+        
     }
-
     /**
      * Test attribute "privacy_mode"
      */
     public function testPropertyPrivacyMode()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->Say->setprivacyMode(false);
+        $this->assertFalse($this->Say->getprivacyMode());
+        $this->assertIsBool($this->Say->getprivacyMode());
     }
 }

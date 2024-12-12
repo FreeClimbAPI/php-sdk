@@ -55,6 +55,7 @@ class MessageStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->MessageStatus = new MessageStatus();
     }
 
     /**
