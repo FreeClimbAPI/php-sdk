@@ -30,6 +30,7 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use FreeClimb\Api\Model\ConferenceParticipantList;
 
 /**
  * ConferenceParticipantListTest Class Doc Comment

@@ -30,6 +30,7 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use FreeClimb\Api\Model\AvailableNumber;
 
 /**
  * AvailableNumberTest Class Doc Comment

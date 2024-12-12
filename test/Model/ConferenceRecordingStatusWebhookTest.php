@@ -30,6 +30,7 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use FreeClimb\Api\Model\ConferenceRecordingStatusWebhook;
 
 /**
  * ConferenceRecordingStatusWebhookTest Class Doc Comment

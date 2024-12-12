@@ -30,6 +30,7 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use FreeClimb\Api\Model\DequeueWebhook;
 
 /**
  * DequeueWebhookTest Class Doc Comment
