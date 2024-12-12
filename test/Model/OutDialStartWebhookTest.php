@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\OutDialStartWebhook;
 
 /**
  * OutDialStartWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\OutDialStartWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class OutDialStartWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class OutDialStartWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->OutDialStartWebhook = new OutDialStartWebhook();
+        $this->OutDialStartWebhook = new \FreeClimb\Api\Model\OutDialStartWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class OutDialStartWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "OutDialStartWebhook"
-     */
-    public function testOutDialStartWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

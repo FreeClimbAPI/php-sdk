@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Capabilities;
 
 /**
  * CapabilitiesTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Capabilities;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CapabilitiesTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CapabilitiesTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Capabilities = new Capabilities();
+        $this->Capabilities = new \FreeClimb\Api\Model\Capabilities();
     }
 
     /**
@@ -73,14 +72,6 @@ class CapabilitiesTest extends TestCase
     {
     }
 
-    /**
-     * Test "Capabilities"
-     */
-    public function testCapabilities()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "voice"
      */

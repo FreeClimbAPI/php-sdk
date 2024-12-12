@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\LogList;
 
 /**
  * LogListTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\LogList;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class LogListTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class LogListTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->LogList = new LogList();
+        $this->LogList = new \FreeClimb\Api\Model\LogList();
     }
 
     /**
@@ -73,14 +72,6 @@ class LogListTest extends TestCase
     {
     }
 
-    /**
-     * Test "LogList"
-     */
-    public function testLogList()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

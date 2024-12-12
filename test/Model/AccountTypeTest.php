@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AccountType;
 
 /**
  * AccountTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AccountType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AccountTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AccountTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AccountType = new AccountType();
+        $this->AccountType = new \FreeClimb\Api\Model\AccountType();
     }
 
     /**
@@ -73,12 +72,4 @@ class AccountTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "AccountType"
-     */
-    public function testAccountType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CallStatus;
 
 /**
  * CallStatusTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CallStatus;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CallStatusTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CallStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CallStatus = new CallStatus();
+        $this->CallStatus = new \FreeClimb\Api\Model\CallStatus();
     }
 
     /**
@@ -73,12 +72,4 @@ class CallStatusTest extends TestCase
     {
     }
 
-    /**
-     * Test "CallStatus"
-     */
-    public function testCallStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

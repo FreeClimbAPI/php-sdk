@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\QueueResult;
 
 /**
  * QueueResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\QueueResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class QueueResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class QueueResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->QueueResult = new QueueResult();
+        $this->QueueResult = new \FreeClimb\Api\Model\QueueResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class QueueResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "QueueResult"
-     */
-    public function testQueueResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

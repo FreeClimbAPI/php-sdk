@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Sms;
 
 /**
  * SmsTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Sms;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SmsTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SmsTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Sms = new Sms();
+        $this->Sms = new \FreeClimb\Api\Model\Sms();
     }
 
     /**
@@ -73,14 +72,6 @@ class SmsTest extends TestCase
     {
     }
 
-    /**
-     * Test "Sms"
-     */
-    public function testSms()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "to"
      */

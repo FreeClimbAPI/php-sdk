@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\OutDial;
 
 /**
  * OutDialTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\OutDial;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class OutDialTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class OutDialTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->OutDial = new OutDial();
+        $this->OutDial = new \FreeClimb\Api\Model\OutDial();
     }
 
     /**
@@ -73,14 +72,6 @@ class OutDialTest extends TestCase
     {
     }
 
-    /**
-     * Test "OutDial"
-     */
-    public function testOutDial()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "action_url"
      */

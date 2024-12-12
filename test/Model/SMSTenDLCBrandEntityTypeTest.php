@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandEntityType;
 
 /**
  * SMSTenDLCBrandEntityTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandEntityType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandEntityTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandEntityTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandEntityType = new SMSTenDLCBrandEntityType();
+        $this->SMSTenDLCBrandEntityType = new \FreeClimb\Api\Model\SMSTenDLCBrandEntityType();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTenDLCBrandEntityTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandEntityType"
-     */
-    public function testSMSTenDLCBrandEntityType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

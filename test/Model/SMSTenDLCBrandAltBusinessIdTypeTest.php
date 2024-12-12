@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType;
 
 /**
  * SMSTenDLCBrandAltBusinessIdTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandAltBusinessIdTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandAltBusinessIdTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandAltBusinessIdType = new SMSTenDLCBrandAltBusinessIdType();
+        $this->SMSTenDLCBrandAltBusinessIdType = new \FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTenDLCBrandAltBusinessIdTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandAltBusinessIdType"
-     */
-    public function testSMSTenDLCBrandAltBusinessIdType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

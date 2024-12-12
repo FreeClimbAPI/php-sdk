@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\PaginationModel;
 
 /**
  * PaginationModelTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\PaginationModel;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PaginationModelTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PaginationModelTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->PaginationModel = new PaginationModel();
+        $this->PaginationModel = new \FreeClimb\Api\Model\PaginationModel();
     }
 
     /**
@@ -73,14 +72,6 @@ class PaginationModelTest extends TestCase
     {
     }
 
-    /**
-     * Test "PaginationModel"
-     */
-    public function testPaginationModel()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

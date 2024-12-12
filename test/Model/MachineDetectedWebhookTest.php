@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MachineDetectedWebhook;
 
 /**
  * MachineDetectedWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MachineDetectedWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MachineDetectedWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MachineDetectedWebhook = new MachineDetectedWebhook();
+        $this->MachineDetectedWebhook = new \FreeClimb\Api\Model\MachineDetectedWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class MachineDetectedWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "MachineDetectedWebhook"
-     */
-    public function testMachineDetectedWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

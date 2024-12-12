@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GetDigitsReason;
 
 /**
  * GetDigitsReasonTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GetDigitsReason;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GetDigitsReasonTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GetDigitsReasonTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GetDigitsReason = new GetDigitsReason();
+        $this->GetDigitsReason = new \FreeClimb\Api\Model\GetDigitsReason();
     }
 
     /**
@@ -73,12 +72,4 @@ class GetDigitsReasonTest extends TestCase
     {
     }
 
-    /**
-     * Test "GetDigitsReason"
-     */
-    public function testGetDigitsReason()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

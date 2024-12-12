@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MessageStatusWebhook;
 
 /**
  * MessageStatusWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MessageStatusWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MessageStatusWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MessageStatusWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MessageStatusWebhook = new MessageStatusWebhook();
+        $this->MessageStatusWebhook = new \FreeClimb\Api\Model\MessageStatusWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class MessageStatusWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "MessageStatusWebhook"
-     */
-    public function testMessageStatusWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

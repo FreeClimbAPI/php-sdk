@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GrammarType;
 
 /**
  * GrammarTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GrammarType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GrammarTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GrammarTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GrammarType = new GrammarType();
+        $this->GrammarType = new \FreeClimb\Api\Model\GrammarType();
     }
 
     /**
@@ -73,12 +72,4 @@ class GrammarTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "GrammarType"
-     */
-    public function testGrammarType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

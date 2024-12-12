@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RemoveFromConference;
 
 /**
  * RemoveFromConferenceTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RemoveFromConference;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RemoveFromConferenceTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RemoveFromConferenceTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RemoveFromConference = new RemoveFromConference();
+        $this->RemoveFromConference = new \FreeClimb\Api\Model\RemoveFromConference();
     }
 
     /**
@@ -73,12 +72,4 @@ class RemoveFromConferenceTest extends TestCase
     {
     }
 
-    /**
-     * Test "RemoveFromConference"
-     */
-    public function testRemoveFromConference()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Reject;
 
 /**
  * RejectTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Reject;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RejectTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RejectTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Reject = new Reject();
+        $this->Reject = new \FreeClimb\Api\Model\Reject();
     }
 
     /**
@@ -73,14 +72,6 @@ class RejectTest extends TestCase
     {
     }
 
-    /**
-     * Test "Reject"
-     */
-    public function testReject()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "reason"
      */

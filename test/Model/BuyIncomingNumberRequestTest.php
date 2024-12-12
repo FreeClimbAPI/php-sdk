@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\BuyIncomingNumberRequest;
 
 /**
  * BuyIncomingNumberRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\BuyIncomingNumberRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class BuyIncomingNumberRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class BuyIncomingNumberRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->BuyIncomingNumberRequest = new BuyIncomingNumberRequest();
+        $this->BuyIncomingNumberRequest = new \FreeClimb\Api\Model\BuyIncomingNumberRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class BuyIncomingNumberRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "BuyIncomingNumberRequest"
-     */
-    public function testBuyIncomingNumberRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "phone_number"
      */

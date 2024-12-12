@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\BargeInReason;
 
 /**
  * BargeInReasonTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\BargeInReason;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class BargeInReasonTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class BargeInReasonTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->BargeInReason = new BargeInReason();
+        $this->BargeInReason = new \FreeClimb\Api\Model\BargeInReason();
     }
 
     /**
@@ -73,12 +72,4 @@ class BargeInReasonTest extends TestCase
     {
     }
 
-    /**
-     * Test "BargeInReason"
-     */
-    public function testBargeInReason()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

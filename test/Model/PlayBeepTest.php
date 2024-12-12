@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\PlayBeep;
 
 /**
  * PlayBeepTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\PlayBeep;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PlayBeepTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PlayBeepTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->PlayBeep = new PlayBeep();
+        $this->PlayBeep = new \FreeClimb\Api\Model\PlayBeep();
     }
 
     /**
@@ -73,12 +72,4 @@ class PlayBeepTest extends TestCase
     {
     }
 
-    /**
-     * Test "PlayBeep"
-     */
-    public function testPlayBeep()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **direction** | [**\FreeClimb\Api\Model\CallDirection**](CallDirection.md) |  | [optional]
 **conference_id** | **string** | This is only populated if request pertains to a Conference. Otherwise, it is set to null. | [optional]
 **queue_id** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional]
-**parent_call_id** | **mixed** |  | [optional]
+**parent_call_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

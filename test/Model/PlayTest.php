@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Play;
 
 /**
  * PlayTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Play;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PlayTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PlayTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Play = new Play();
+        $this->Play = new \FreeClimb\Api\Model\Play();
     }
 
     /**
@@ -73,14 +72,6 @@ class PlayTest extends TestCase
     {
     }
 
-    /**
-     * Test "Play"
-     */
-    public function testPlay()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "file"
      */

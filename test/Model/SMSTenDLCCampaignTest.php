@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCCampaign;
 
 /**
  * SMSTenDLCCampaignTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCCampaign;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCCampaignTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCCampaignTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCCampaign = new SMSTenDLCCampaign();
+        $this->SMSTenDLCCampaign = new \FreeClimb\Api\Model\SMSTenDLCCampaign();
     }
 
     /**
@@ -73,14 +72,6 @@ class SMSTenDLCCampaignTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCCampaign"
-     */
-    public function testSMSTenDLCCampaign()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "account_id"
      */

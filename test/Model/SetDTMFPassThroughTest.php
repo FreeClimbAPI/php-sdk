@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SetDTMFPassThrough;
 
 /**
  * SetDTMFPassThroughTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SetDTMFPassThrough;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SetDTMFPassThroughTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SetDTMFPassThroughTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SetDTMFPassThrough = new SetDTMFPassThrough();
+        $this->SetDTMFPassThrough = new \FreeClimb\Api\Model\SetDTMFPassThrough();
     }
 
     /**
@@ -73,14 +72,6 @@ class SetDTMFPassThroughTest extends TestCase
     {
     }
 
-    /**
-     * Test "SetDTMFPassThrough"
-     */
-    public function testSetDTMFPassThrough()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "dtmf_pass_through"
      */

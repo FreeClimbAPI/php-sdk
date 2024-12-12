@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\LogLevel;
 
 /**
  * LogLevelTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\LogLevel;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class LogLevelTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class LogLevelTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->LogLevel = new LogLevel();
+        $this->LogLevel = new \FreeClimb\Api\Model\LogLevel();
     }
 
     /**
@@ -73,12 +72,4 @@ class LogLevelTest extends TestCase
     {
     }
 
-    /**
-     * Test "LogLevel"
-     */
-    public function testLogLevel()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

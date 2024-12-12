@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MessagesList;
 
 /**
  * MessagesListTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MessagesList;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MessagesListTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MessagesListTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MessagesList = new MessagesList();
+        $this->MessagesList = new \FreeClimb\Api\Model\MessagesList();
     }
 
     /**
@@ -73,14 +72,6 @@ class MessagesListTest extends TestCase
     {
     }
 
-    /**
-     * Test "MessagesList"
-     */
-    public function testMessagesList()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

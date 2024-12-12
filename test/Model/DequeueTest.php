@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Dequeue;
 
 /**
  * DequeueTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Dequeue;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class DequeueTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class DequeueTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Dequeue = new Dequeue();
+        $this->Dequeue = new \FreeClimb\Api\Model\Dequeue();
     }
 
     /**
@@ -73,12 +72,4 @@ class DequeueTest extends TestCase
     {
     }
 
-    /**
-     * Test "Dequeue"
-     */
-    public function testDequeue()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

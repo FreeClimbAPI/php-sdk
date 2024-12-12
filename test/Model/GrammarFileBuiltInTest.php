@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GrammarFileBuiltIn;
 
 /**
  * GrammarFileBuiltInTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GrammarFileBuiltIn;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GrammarFileBuiltInTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GrammarFileBuiltInTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GrammarFileBuiltIn = new GrammarFileBuiltIn();
+        $this->GrammarFileBuiltIn = new \FreeClimb\Api\Model\GrammarFileBuiltIn();
     }
 
     /**
@@ -73,12 +72,4 @@ class GrammarFileBuiltInTest extends TestCase
     {
     }
 
-    /**
-     * Test "GrammarFileBuiltIn"
-     */
-    public function testGrammarFileBuiltIn()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

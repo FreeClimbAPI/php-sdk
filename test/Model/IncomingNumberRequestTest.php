@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\IncomingNumberRequest;
 
 /**
  * IncomingNumberRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\IncomingNumberRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class IncomingNumberRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class IncomingNumberRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->IncomingNumberRequest = new IncomingNumberRequest();
+        $this->IncomingNumberRequest = new \FreeClimb\Api\Model\IncomingNumberRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class IncomingNumberRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "IncomingNumberRequest"
-     */
-    public function testIncomingNumberRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "application_id"
      */

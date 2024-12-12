@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RequestType;
 
 /**
  * RequestTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RequestType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RequestTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RequestTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RequestType = new RequestType();
+        $this->RequestType = new \FreeClimb\Api\Model\RequestType();
     }
 
     /**
@@ -73,12 +72,4 @@ class RequestTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "RequestType"
-     */
-    public function testRequestType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

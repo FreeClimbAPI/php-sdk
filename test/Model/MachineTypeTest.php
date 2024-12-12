@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MachineType;
 
 /**
  * MachineTypeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MachineType;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MachineTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MachineTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MachineType = new MachineType();
+        $this->MachineType = new \FreeClimb\Api\Model\MachineType();
     }
 
     /**
@@ -73,12 +72,4 @@ class MachineTypeTest extends TestCase
     {
     }
 
-    /**
-     * Test "MachineType"
-     */
-    public function testMachineType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

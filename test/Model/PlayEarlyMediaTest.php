@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\PlayEarlyMedia;
 
 /**
  * PlayEarlyMediaTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\PlayEarlyMedia;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PlayEarlyMediaTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PlayEarlyMediaTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->PlayEarlyMedia = new PlayEarlyMedia();
+        $this->PlayEarlyMedia = new \FreeClimb\Api\Model\PlayEarlyMedia();
     }
 
     /**
@@ -73,14 +72,6 @@ class PlayEarlyMediaTest extends TestCase
     {
     }
 
-    /**
-     * Test "PlayEarlyMedia"
-     */
-    public function testPlayEarlyMedia()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "file"
      */

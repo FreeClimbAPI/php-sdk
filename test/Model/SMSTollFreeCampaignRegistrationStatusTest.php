@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus;
 
 /**
  * SMSTollFreeCampaignRegistrationStatusTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTollFreeCampaignRegistrationStatusTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTollFreeCampaignRegistrationStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTollFreeCampaignRegistrationStatus = new SMSTollFreeCampaignRegistrationStatus();
+        $this->SMSTollFreeCampaignRegistrationStatus = new \FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTollFreeCampaignRegistrationStatusTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTollFreeCampaignRegistrationStatus"
-     */
-    public function testSMSTollFreeCampaignRegistrationStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

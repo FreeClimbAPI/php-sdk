@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Redirect;
 
 /**
  * RedirectTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Redirect;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RedirectTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RedirectTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Redirect = new Redirect();
+        $this->Redirect = new \FreeClimb\Api\Model\Redirect();
     }
 
     /**
@@ -73,14 +72,6 @@ class RedirectTest extends TestCase
     {
     }
 
-    /**
-     * Test "Redirect"
-     */
-    public function testRedirect()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "action_url"
      */

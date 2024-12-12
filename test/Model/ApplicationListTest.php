@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\ApplicationList;
 
 /**
  * ApplicationListTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\ApplicationList;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class ApplicationListTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class ApplicationListTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->ApplicationList = new ApplicationList();
+        $this->ApplicationList = new \FreeClimb\Api\Model\ApplicationList();
     }
 
     /**
@@ -73,14 +72,6 @@ class ApplicationListTest extends TestCase
     {
     }
 
-    /**
-     * Test "ApplicationList"
-     */
-    public function testApplicationList()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

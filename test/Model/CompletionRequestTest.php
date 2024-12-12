@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CompletionRequest;
 
 /**
  * CompletionRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CompletionRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CompletionRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CompletionRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CompletionRequest = new CompletionRequest();
+        $this->CompletionRequest = new \FreeClimb\Api\Model\CompletionRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class CompletionRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "CompletionRequest"
-     */
-    public function testCompletionRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "query"
      */

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GetSpeechWebhook;
 
 /**
  * GetSpeechWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GetSpeechWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GetSpeechWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GetSpeechWebhook = new GetSpeechWebhook();
+        $this->GetSpeechWebhook = new \FreeClimb\Api\Model\GetSpeechWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class GetSpeechWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "GetSpeechWebhook"
-     */
-    public function testGetSpeechWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

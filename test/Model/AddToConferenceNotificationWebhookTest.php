@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AddToConferenceNotificationWebhook;
 
 /**
  * AddToConferenceNotificationWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AddToConferenceNotificationWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AddToConferenceNotificationWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AddToConferenceNotificationWebhook = new AddToConferenceNotificationWebhook();
+        $this->AddToConferenceNotificationWebhook = new \FreeClimb\Api\Model\AddToConferenceNotificationWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class AddToConferenceNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "AddToConferenceNotificationWebhook"
-     */
-    public function testAddToConferenceNotificationWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

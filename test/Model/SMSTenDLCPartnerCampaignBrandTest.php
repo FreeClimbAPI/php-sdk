@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand;
 
 /**
  * SMSTenDLCPartnerCampaignBrandTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCPartnerCampaignBrandTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCPartnerCampaignBrand = new SMSTenDLCPartnerCampaignBrand();
+        $this->SMSTenDLCPartnerCampaignBrand = new \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand();
     }
 
     /**
@@ -73,14 +72,6 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCPartnerCampaignBrand"
-     */
-    public function testSMSTenDLCPartnerCampaignBrand()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "account_id"
      */

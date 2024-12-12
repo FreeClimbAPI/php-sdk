@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GetDigitsWebhook;
 
 /**
  * GetDigitsWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GetDigitsWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GetDigitsWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GetDigitsWebhook = new GetDigitsWebhook();
+        $this->GetDigitsWebhook = new \FreeClimb\Api\Model\GetDigitsWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class GetDigitsWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "GetDigitsWebhook"
-     */
-    public function testGetDigitsWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AddToQueueNotificationWebhook;
 
 /**
  * AddToQueueNotificationWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AddToQueueNotificationWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AddToQueueNotificationWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AddToQueueNotificationWebhook = new AddToQueueNotificationWebhook();
+        $this->AddToQueueNotificationWebhook = new \FreeClimb\Api\Model\AddToQueueNotificationWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class AddToQueueNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "AddToQueueNotificationWebhook"
-     */
-    public function testAddToQueueNotificationWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

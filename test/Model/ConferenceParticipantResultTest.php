@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\ConferenceParticipantResult;
 
 /**
  * ConferenceParticipantResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\ConferenceParticipantResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class ConferenceParticipantResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->ConferenceParticipantResult = new ConferenceParticipantResult();
+        $this->ConferenceParticipantResult = new \FreeClimb\Api\Model\ConferenceParticipantResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class ConferenceParticipantResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "ConferenceParticipantResult"
-     */
-    public function testConferenceParticipantResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

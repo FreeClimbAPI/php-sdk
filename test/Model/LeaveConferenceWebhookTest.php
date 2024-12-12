@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\LeaveConferenceWebhook;
 
 /**
  * LeaveConferenceWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\LeaveConferenceWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class LeaveConferenceWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->LeaveConferenceWebhook = new LeaveConferenceWebhook();
+        $this->LeaveConferenceWebhook = new \FreeClimb\Api\Model\LeaveConferenceWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class LeaveConferenceWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "LeaveConferenceWebhook"
-     */
-    public function testLeaveConferenceWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

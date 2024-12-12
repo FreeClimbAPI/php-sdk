@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook;
 
 /**
  * RemoveFromQueueNotificationWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RemoveFromQueueNotificationWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RemoveFromQueueNotificationWebhook = new RemoveFromQueueNotificationWebhook();
+        $this->RemoveFromQueueNotificationWebhook = new \FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "RemoveFromQueueNotificationWebhook"
-     */
-    public function testRemoveFromQueueNotificationWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

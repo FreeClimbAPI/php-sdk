@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CompletionResult;
 
 /**
  * CompletionResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CompletionResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CompletionResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CompletionResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CompletionResult = new CompletionResult();
+        $this->CompletionResult = new \FreeClimb\Api\Model\CompletionResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class CompletionResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "CompletionResult"
-     */
-    public function testCompletionResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "response"
      */

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandsListResult;
 
 /**
  * SMSTenDLCBrandsListResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandsListResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandsListResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandsListResult = new SMSTenDLCBrandsListResult();
+        $this->SMSTenDLCBrandsListResult = new \FreeClimb\Api\Model\SMSTenDLCBrandsListResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class SMSTenDLCBrandsListResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandsListResult"
-     */
-    public function testSMSTenDLCBrandsListResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

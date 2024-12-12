@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandStockExchange;
 
 /**
  * SMSTenDLCBrandStockExchangeTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandStockExchange;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandStockExchangeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandStockExchangeTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandStockExchange = new SMSTenDLCBrandStockExchange();
+        $this->SMSTenDLCBrandStockExchange = new \FreeClimb\Api\Model\SMSTenDLCBrandStockExchange();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTenDLCBrandStockExchangeTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandStockExchange"
-     */
-    public function testSMSTenDLCBrandStockExchange()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

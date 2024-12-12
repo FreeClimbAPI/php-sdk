@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\ApplicationResult;
 
 /**
  * ApplicationResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\ApplicationResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class ApplicationResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class ApplicationResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->ApplicationResult = new ApplicationResult();
+        $this->ApplicationResult = new \FreeClimb\Api\Model\ApplicationResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class ApplicationResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "ApplicationResult"
-     */
-    public function testApplicationResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

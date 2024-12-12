@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CallEndedReason;
 
 /**
  * CallEndedReasonTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CallEndedReason;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CallEndedReasonTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CallEndedReasonTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CallEndedReason = new CallEndedReason();
+        $this->CallEndedReason = new \FreeClimb\Api\Model\CallEndedReason();
     }
 
     /**
@@ -73,12 +72,4 @@ class CallEndedReasonTest extends TestCase
     {
     }
 
-    /**
-     * Test "CallEndedReason"
-     */
-    public function testCallEndedReason()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

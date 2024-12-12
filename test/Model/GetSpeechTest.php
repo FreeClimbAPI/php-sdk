@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\GetSpeech;
 
 /**
  * GetSpeechTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\GetSpeech;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class GetSpeechTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class GetSpeechTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->GetSpeech = new GetSpeech();
+        $this->GetSpeech = new \FreeClimb\Api\Model\GetSpeech();
     }
 
     /**
@@ -73,14 +72,6 @@ class GetSpeechTest extends TestCase
     {
     }
 
-    /**
-     * Test "GetSpeech"
-     */
-    public function testGetSpeech()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "action_url"
      */

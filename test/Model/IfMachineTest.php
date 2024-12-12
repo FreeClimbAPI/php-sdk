@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\IfMachine;
 
 /**
  * IfMachineTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\IfMachine;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class IfMachineTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class IfMachineTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->IfMachine = new IfMachine();
+        $this->IfMachine = new \FreeClimb\Api\Model\IfMachine();
     }
 
     /**
@@ -73,12 +72,4 @@ class IfMachineTest extends TestCase
     {
     }
 
-    /**
-     * Test "IfMachine"
-     */
-    public function testIfMachine()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Say;
 
 /**
  * SayTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Say;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SayTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SayTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Say = new Say();
+        $this->Say = new \FreeClimb\Api\Model\Say();
     }
 
     /**
@@ -73,14 +72,6 @@ class SayTest extends TestCase
     {
     }
 
-    /**
-     * Test "Say"
-     */
-    public function testSay()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "text"
      */

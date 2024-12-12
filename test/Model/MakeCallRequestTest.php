@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MakeCallRequest;
 
 /**
  * MakeCallRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MakeCallRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MakeCallRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MakeCallRequest = new MakeCallRequest();
+        $this->MakeCallRequest = new \FreeClimb\Api\Model\MakeCallRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class MakeCallRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "MakeCallRequest"
-     */
-    public function testMakeCallRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "from"
      */

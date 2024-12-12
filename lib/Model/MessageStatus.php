@@ -44,28 +44,17 @@ class MessageStatus
     /**
      * Possible values of this enum
      */
-    
-    public const _NEW = 'new';
-    
-    public const QUEUED = 'queued';
-    
-    public const REJECTED = 'rejected';
-    
-    public const SENDING = 'sending';
-    
-    public const SENT = 'sent';
-    
-    public const FAILED = 'failed';
-    
-    public const RECEIVED = 'received';
-    
-    public const UNDELIVERED = 'undelivered';
-    
-    public const EXPIRED = 'expired';
-    
-    public const DELETED = 'deleted';
-    
-    public const UNKNOWN = 'unknown';
+    public const NEW = "new";
+    public const QUEUED = "queued";
+    public const REJECTED = "rejected";
+    public const SENDING = "sending";
+    public const SENT = "sent";
+    public const FAILED = "failed";
+    public const RECEIVED = "received";
+    public const UNDELIVERED = "undelivered";
+    public const EXPIRED = "expired";
+    public const DELETED = "deleted";
+    public const UNKNOWN = "unknown";
     
 
     /**
@@ -76,28 +65,17 @@ class MessageStatus
     {
         return [
             
-            self::_NEW,
-            
+            self::NEW,
             self::QUEUED,
-            
             self::REJECTED,
-            
             self::SENDING,
-            
             self::SENT,
-            
             self::FAILED,
-            
             self::RECEIVED,
-            
             self::UNDELIVERED,
-            
             self::EXPIRED,
-            
             self::DELETED,
-            
-            self::UNKNOWN            
-
+            self::UNKNOWN
         ];
     }
 }

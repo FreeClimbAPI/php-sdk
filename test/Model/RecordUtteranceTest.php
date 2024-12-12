@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RecordUtterance;
 
 /**
  * RecordUtteranceTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RecordUtterance;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RecordUtteranceTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RecordUtteranceTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RecordUtterance = new RecordUtterance();
+        $this->RecordUtterance = new \FreeClimb\Api\Model\RecordUtterance();
     }
 
     /**
@@ -73,14 +72,6 @@ class RecordUtteranceTest extends TestCase
     {
     }
 
-    /**
-     * Test "RecordUtterance"
-     */
-    public function testRecordUtterance()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "action_url"
      */

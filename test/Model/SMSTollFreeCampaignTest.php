@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTollFreeCampaign;
 
 /**
  * SMSTollFreeCampaignTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTollFreeCampaign;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTollFreeCampaignTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTollFreeCampaign = new SMSTollFreeCampaign();
+        $this->SMSTollFreeCampaign = new \FreeClimb\Api\Model\SMSTollFreeCampaign();
     }
 
     /**
@@ -73,14 +72,6 @@ class SMSTollFreeCampaignTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTollFreeCampaign"
-     */
-    public function testSMSTollFreeCampaign()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "account_id"
      */

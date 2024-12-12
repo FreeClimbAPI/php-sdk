@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\TFN;
 
 /**
  * TFNTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\TFN;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class TFNTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class TFNTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->TFN = new TFN();
+        $this->TFN = new \FreeClimb\Api\Model\TFN();
     }
 
     /**
@@ -73,14 +72,6 @@ class TFNTest extends TestCase
     {
     }
 
-    /**
-     * Test "TFN"
-     */
-    public function testTFN()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "campaign_id"
      */

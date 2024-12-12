@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\LogResult;
 
 /**
  * LogResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\LogResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class LogResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class LogResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->LogResult = new LogResult();
+        $this->LogResult = new \FreeClimb\Api\Model\LogResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class LogResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "LogResult"
-     */
-    public function testLogResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "timestamp"
      */

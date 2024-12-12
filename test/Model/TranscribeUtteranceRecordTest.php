@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\TranscribeUtteranceRecord;
 
 /**
  * TranscribeUtteranceRecordTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\TranscribeUtteranceRecord;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class TranscribeUtteranceRecordTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class TranscribeUtteranceRecordTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->TranscribeUtteranceRecord = new TranscribeUtteranceRecord();
+        $this->TranscribeUtteranceRecord = new \FreeClimb\Api\Model\TranscribeUtteranceRecord();
     }
 
     /**
@@ -73,14 +72,6 @@ class TranscribeUtteranceRecordTest extends TestCase
     {
     }
 
-    /**
-     * Test "TranscribeUtteranceRecord"
-     */
-    public function testTranscribeUtteranceRecord()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "save_recording"
      */

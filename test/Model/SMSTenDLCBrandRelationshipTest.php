@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandRelationship;
 
 /**
  * SMSTenDLCBrandRelationshipTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandRelationship;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandRelationshipTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandRelationshipTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandRelationship = new SMSTenDLCBrandRelationship();
+        $this->SMSTenDLCBrandRelationship = new \FreeClimb\Api\Model\SMSTenDLCBrandRelationship();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTenDLCBrandRelationshipTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandRelationship"
-     */
-    public function testSMSTenDLCBrandRelationship()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

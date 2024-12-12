@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AnsweredBy;
 
 /**
  * AnsweredByTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AnsweredBy;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AnsweredByTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AnsweredByTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AnsweredBy = new AnsweredBy();
+        $this->AnsweredBy = new \FreeClimb\Api\Model\AnsweredBy();
     }
 
     /**
@@ -73,12 +72,4 @@ class AnsweredByTest extends TestCase
     {
     }
 
-    /**
-     * Test "AnsweredBy"
-     */
-    public function testAnsweredBy()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

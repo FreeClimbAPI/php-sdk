@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RedirectWebhook;
 
 /**
  * RedirectWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RedirectWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RedirectWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RedirectWebhook = new RedirectWebhook();
+        $this->RedirectWebhook = new \FreeClimb\Api\Model\RedirectWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class RedirectWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "RedirectWebhook"
-     */
-    public function testRedirectWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

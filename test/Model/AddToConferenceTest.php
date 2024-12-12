@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AddToConference;
 
 /**
  * AddToConferenceTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AddToConference;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AddToConferenceTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AddToConferenceTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AddToConference = new AddToConference();
+        $this->AddToConference = new \FreeClimb\Api\Model\AddToConference();
     }
 
     /**
@@ -73,14 +72,6 @@ class AddToConferenceTest extends TestCase
     {
     }
 
-    /**
-     * Test "AddToConference"
-     */
-    public function testAddToConference()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "allow_call_control"
      */

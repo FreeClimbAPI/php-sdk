@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AccountRequest;
 
 /**
  * AccountRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AccountRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AccountRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AccountRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AccountRequest = new AccountRequest();
+        $this->AccountRequest = new \FreeClimb\Api\Model\AccountRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class AccountRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "AccountRequest"
-     */
-    public function testAccountRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "alias"
      */

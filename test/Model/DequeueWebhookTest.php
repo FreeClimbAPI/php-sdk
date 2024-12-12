@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\DequeueWebhook;
 
 /**
  * DequeueWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\DequeueWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class DequeueWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->DequeueWebhook = new DequeueWebhook();
+        $this->DequeueWebhook = new \FreeClimb\Api\Model\DequeueWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class DequeueWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "DequeueWebhook"
-     */
-    public function testDequeueWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

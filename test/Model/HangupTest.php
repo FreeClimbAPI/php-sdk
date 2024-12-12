@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Hangup;
 
 /**
  * HangupTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Hangup;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class HangupTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class HangupTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Hangup = new Hangup();
+        $this->Hangup = new \FreeClimb\Api\Model\Hangup();
     }
 
     /**
@@ -73,14 +72,6 @@ class HangupTest extends TestCase
     {
     }
 
-    /**
-     * Test "Hangup"
-     */
-    public function testHangup()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "reason"
      */

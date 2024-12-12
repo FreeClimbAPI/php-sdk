@@ -44,14 +44,10 @@ class ConferenceStatus
     /**
      * Possible values of this enum
      */
-    
-    public const _EMPTY = 'empty';
-    
-    public const POPULATED = 'populated';
-    
-    public const IN_PROGRESS = 'inProgress';
-    
-    public const TERMINATED = 'terminated';
+    public const EMPTY = "empty";
+    public const POPULATED = "populated";
+    public const IN_PROGRESS = "inProgress";
+    public const TERMINATED = "terminated";
     
 
     /**
@@ -62,14 +58,10 @@ class ConferenceStatus
     {
         return [
             
-            self::_EMPTY,
-            
+            self::EMPTY,
             self::POPULATED,
-            
             self::IN_PROGRESS,
-            
-            self::TERMINATED            
-
+            self::TERMINATED
         ];
     }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\AvailableNumber;
 
 /**
  * AvailableNumberTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\AvailableNumber;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class AvailableNumberTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new AvailableNumber();
+        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
     }
 
     /**
@@ -73,14 +72,6 @@ class AvailableNumberTest extends TestCase
     {
     }
 
-    /**
-     * Test "AvailableNumber"
-     */
-    public function testAvailableNumber()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "capabilities"
      */

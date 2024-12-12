@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\TranscribeTermReason;
 
 /**
  * TranscribeTermReasonTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\TranscribeTermReason;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class TranscribeTermReasonTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class TranscribeTermReasonTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->TranscribeTermReason = new TranscribeTermReason();
+        $this->TranscribeTermReason = new \FreeClimb\Api\Model\TranscribeTermReason();
     }
 
     /**
@@ -73,12 +72,4 @@ class TranscribeTermReasonTest extends TestCase
     {
     }
 
-    /**
-     * Test "TranscribeTermReason"
-     */
-    public function testTranscribeTermReason()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Unpark;
 
 /**
  * UnparkTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Unpark;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class UnparkTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class UnparkTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Unpark = new Unpark();
+        $this->Unpark = new \FreeClimb\Api\Model\Unpark();
     }
 
     /**
@@ -73,12 +72,4 @@ class UnparkTest extends TestCase
     {
     }
 
-    /**
-     * Test "Unpark"
-     */
-    public function testUnpark()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

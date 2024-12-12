@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Language;
 
 /**
  * LanguageTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Language;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class LanguageTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class LanguageTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Language = new Language();
+        $this->Language = new \FreeClimb\Api\Model\Language();
     }
 
     /**
@@ -73,12 +72,4 @@ class LanguageTest extends TestCase
     {
     }
 
-    /**
-     * Test "Language"
-     */
-    public function testLanguage()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

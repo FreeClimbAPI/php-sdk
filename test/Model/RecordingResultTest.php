@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\RecordingResult;
 
 /**
  * RecordingResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\RecordingResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class RecordingResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class RecordingResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->RecordingResult = new RecordingResult();
+        $this->RecordingResult = new \FreeClimb\Api\Model\RecordingResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class RecordingResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "RecordingResult"
-     */
-    public function testRecordingResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

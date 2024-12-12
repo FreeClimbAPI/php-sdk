@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\TerminateConference;
 
 /**
  * TerminateConferenceTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\TerminateConference;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class TerminateConferenceTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class TerminateConferenceTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->TerminateConference = new TerminateConference();
+        $this->TerminateConference = new \FreeClimb\Api\Model\TerminateConference();
     }
 
     /**
@@ -73,12 +72,4 @@ class TerminateConferenceTest extends TestCase
     {
     }
 
-    /**
-     * Test "TerminateConference"
-     */
-    public function testTerminateConference()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CreateWebRTCToken;
 
 /**
  * CreateWebRTCTokenTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CreateWebRTCToken;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CreateWebRTCTokenTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CreateWebRTCTokenTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CreateWebRTCToken = new CreateWebRTCToken();
+        $this->CreateWebRTCToken = new \FreeClimb\Api\Model\CreateWebRTCToken();
     }
 
     /**
@@ -73,14 +72,6 @@ class CreateWebRTCTokenTest extends TestCase
     {
     }
 
-    /**
-     * Test "CreateWebRTCToken"
-     */
-    public function testCreateWebRTCToken()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "to"
      */

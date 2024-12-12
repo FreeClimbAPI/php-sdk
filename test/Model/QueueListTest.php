@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\QueueList;
 
 /**
  * QueueListTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\QueueList;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class QueueListTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class QueueListTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->QueueList = new QueueList();
+        $this->QueueList = new \FreeClimb\Api\Model\QueueList();
     }
 
     /**
@@ -73,14 +72,6 @@ class QueueListTest extends TestCase
     {
     }
 
-    /**
-     * Test "QueueList"
-     */
-    public function testQueueList()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "total"
      */

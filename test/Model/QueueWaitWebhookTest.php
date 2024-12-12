@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\QueueWaitWebhook;
 
 /**
  * QueueWaitWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\QueueWaitWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class QueueWaitWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->QueueWaitWebhook = new QueueWaitWebhook();
+        $this->QueueWaitWebhook = new \FreeClimb\Api\Model\QueueWaitWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class QueueWaitWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "QueueWaitWebhook"
-     */
-    public function testQueueWaitWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

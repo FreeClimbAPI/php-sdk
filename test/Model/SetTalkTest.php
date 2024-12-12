@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SetTalk;
 
 /**
  * SetTalkTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SetTalk;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SetTalkTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SetTalkTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SetTalk = new SetTalk();
+        $this->SetTalk = new \FreeClimb\Api\Model\SetTalk();
     }
 
     /**
@@ -73,14 +72,6 @@ class SetTalkTest extends TestCase
     {
     }
 
-    /**
-     * Test "SetTalk"
-     */
-    public function testSetTalk()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "talk"
      */

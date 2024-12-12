@@ -269,6 +269,12 @@
           { "enum": "inProgress", "varname": "IN_PROGRESS"}, 
           { "enum": "terminated", "varname": "TERMINATED" }
         ],
+        "x-php-enum-mapping": [
+          { "enum": "empty",      "varname": "EMPTY"},
+          { "enum": "populated",  "varname": "POPULATED"},
+          { "enum": "inProgress", "varname": "IN_PROGRESS"},
+          { "enum": "terminated", "varname": "TERMINATED" }
+        ],
         "x-enum": true,
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
       },
@@ -494,6 +500,19 @@
           "EXPIRED",
           "DELETED",
           "UNKNOWN"
+        ],
+        "x-php-enum-mapping": [
+           { "enum": "new",        "varname": "NEW"},
+           { "enum": "queued",     "varname": "QUEUED"},
+           { "enum": "rejected",   "varname": "REJECTED"},
+           { "enum": "sending",    "varname": "SENDING"},
+           { "enum": "sent",       "varname": "SENT"},
+           { "enum": "failed",     "varname": "FAILED"},
+           { "enum": "received",   "varname": "RECEIVED"},
+           { "enum": "undelivered","varname": "UNDELIVERED"},
+           { "enum": "expired",    "varname": "EXPIRED"},
+           { "enum": "deleted",    "varname": "DELETED"},
+           { "enum": "unknown",    "varname": "UNKNOWN" }
         ],
         "x-enum": true
       },
@@ -1582,6 +1601,7 @@
                 "nullable": true
               },
               "parentCallId": {
+                "type": "string",
                 "nullable": true
               }
             }

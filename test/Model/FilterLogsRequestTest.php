@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\FilterLogsRequest;
 
 /**
  * FilterLogsRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\FilterLogsRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class FilterLogsRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class FilterLogsRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->FilterLogsRequest = new FilterLogsRequest();
+        $this->FilterLogsRequest = new \FreeClimb\Api\Model\FilterLogsRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class FilterLogsRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "FilterLogsRequest"
-     */
-    public function testFilterLogsRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "pql"
      */

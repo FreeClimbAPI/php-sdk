@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SetListen;
 
 /**
  * SetListenTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SetListen;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SetListenTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SetListenTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SetListen = new SetListen();
+        $this->SetListen = new \FreeClimb\Api\Model\SetListen();
     }
 
     /**
@@ -73,14 +72,6 @@ class SetListenTest extends TestCase
     {
     }
 
-    /**
-     * Test "SetListen"
-     */
-    public function testSetListen()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "listen"
      */

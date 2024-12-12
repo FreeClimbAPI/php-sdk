@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Park;
 
 /**
  * ParkTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Park;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class ParkTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class ParkTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Park = new Park();
+        $this->Park = new \FreeClimb\Api\Model\Park();
     }
 
     /**
@@ -73,14 +72,6 @@ class ParkTest extends TestCase
     {
     }
 
-    /**
-     * Test "Park"
-     */
-    public function testPark()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "wait_url"
      */

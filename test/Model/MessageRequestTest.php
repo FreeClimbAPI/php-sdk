@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MessageRequest;
 
 /**
  * MessageRequestTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MessageRequest;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MessageRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MessageRequestTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MessageRequest = new MessageRequest();
+        $this->MessageRequest = new \FreeClimb\Api\Model\MessageRequest();
     }
 
     /**
@@ -73,14 +72,6 @@ class MessageRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test "MessageRequest"
-     */
-    public function testMessageRequest()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

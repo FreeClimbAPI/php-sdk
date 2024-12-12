@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\CallDirection;
 
 /**
  * CallDirectionTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\CallDirection;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class CallDirectionTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class CallDirectionTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CallDirection = new CallDirection();
+        $this->CallDirection = new \FreeClimb\Api\Model\CallDirection();
     }
 
     /**
@@ -73,12 +72,4 @@ class CallDirectionTest extends TestCase
     {
     }
 
-    /**
-     * Test "CallDirection"
-     */
-    public function testCallDirection()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

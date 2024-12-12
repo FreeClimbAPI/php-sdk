@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\MessageDirection;
 
 /**
  * MessageDirectionTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\MessageDirection;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class MessageDirectionTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class MessageDirectionTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->MessageDirection = new MessageDirection();
+        $this->MessageDirection = new \FreeClimb\Api\Model\MessageDirection();
     }
 
     /**
@@ -73,12 +72,4 @@ class MessageDirectionTest extends TestCase
     {
     }
 
-    /**
-     * Test "MessageDirection"
-     */
-    public function testMessageDirection()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\Pause;
 
 /**
  * PauseTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\Pause;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PauseTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PauseTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->Pause = new Pause();
+        $this->Pause = new \FreeClimb\Api\Model\Pause();
     }
 
     /**
@@ -73,14 +72,6 @@ class PauseTest extends TestCase
     {
     }
 
-    /**
-     * Test "Pause"
-     */
-    public function testPause()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "length"
      */

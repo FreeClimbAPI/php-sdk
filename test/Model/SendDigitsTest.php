@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SendDigits;
 
 /**
  * SendDigitsTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SendDigits;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SendDigitsTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SendDigitsTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SendDigits = new SendDigits();
+        $this->SendDigits = new \FreeClimb\Api\Model\SendDigits();
     }
 
     /**
@@ -73,14 +72,6 @@ class SendDigitsTest extends TestCase
     {
     }
 
-    /**
-     * Test "SendDigits"
-     */
-    public function testSendDigits()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "digits"
      */

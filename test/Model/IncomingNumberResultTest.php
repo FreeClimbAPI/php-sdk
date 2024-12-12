@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\IncomingNumberResult;
 
 /**
  * IncomingNumberResultTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\IncomingNumberResult;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class IncomingNumberResultTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->IncomingNumberResult = new IncomingNumberResult();
+        $this->IncomingNumberResult = new \FreeClimb\Api\Model\IncomingNumberResult();
     }
 
     /**
@@ -73,14 +72,6 @@ class IncomingNumberResultTest extends TestCase
     {
     }
 
-    /**
-     * Test "IncomingNumberResult"
-     */
-    public function testIncomingNumberResult()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "uri"
      */

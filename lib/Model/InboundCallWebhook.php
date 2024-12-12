@@ -66,7 +66,7 @@ class InboundCallWebhook extends Webhook
         'direction' => '\FreeClimb\Api\Model\CallDirection',
         'conference_id' => 'string',
         'queue_id' => 'string',
-        'parent_call_id' => 'mixed'
+        'parent_call_id' => 'string'
     ];
 
     /**
@@ -290,7 +290,7 @@ class InboundCallWebhook extends Webhook
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
 
@@ -622,7 +622,7 @@ class InboundCallWebhook extends Webhook
     /**
      * Gets parent_call_id
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getParentCallId()
     {
@@ -632,7 +632,7 @@ class InboundCallWebhook extends Webhook
     /**
      * Sets parent_call_id
      *
-     * @param mixed|null $parent_call_id parent_call_id
+     * @param string|null $parent_call_id parent_call_id
      *
      * @return self
      */

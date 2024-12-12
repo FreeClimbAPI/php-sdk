@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus;
 
 /**
  * SMSTenDLCBrandIdentityStatusTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class SMSTenDLCBrandIdentityStatusTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class SMSTenDLCBrandIdentityStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SMSTenDLCBrandIdentityStatus = new SMSTenDLCBrandIdentityStatus();
+        $this->SMSTenDLCBrandIdentityStatus = new \FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus();
     }
 
     /**
@@ -73,12 +72,4 @@ class SMSTenDLCBrandIdentityStatusTest extends TestCase
     {
     }
 
-    /**
-     * Test "SMSTenDLCBrandIdentityStatus"
-     */
-    public function testSMSTenDLCBrandIdentityStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

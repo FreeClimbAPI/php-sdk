@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\TranscribeWebhook;
 
 /**
  * TranscribeWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\TranscribeWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class TranscribeWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->TranscribeWebhook = new TranscribeWebhook();
+        $this->TranscribeWebhook = new \FreeClimb\Api\Model\TranscribeWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class TranscribeWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "TranscribeWebhook"
-     */
-    public function testTranscribeWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

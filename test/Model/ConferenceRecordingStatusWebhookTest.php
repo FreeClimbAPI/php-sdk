@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\ConferenceRecordingStatusWebhook;
 
 /**
  * ConferenceRecordingStatusWebhookTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\ConferenceRecordingStatusWebhook;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class ConferenceRecordingStatusWebhookTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class ConferenceRecordingStatusWebhookTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->ConferenceRecordingStatusWebhook = new ConferenceRecordingStatusWebhook();
+        $this->ConferenceRecordingStatusWebhook = new \FreeClimb\Api\Model\ConferenceRecordingStatusWebhook();
     }
 
     /**
@@ -73,14 +72,6 @@ class ConferenceRecordingStatusWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test "ConferenceRecordingStatusWebhook"
-     */
-    public function testConferenceRecordingStatusWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "request_type"
      */

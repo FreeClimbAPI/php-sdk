@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\PerclCommand;
 
 /**
  * PerclCommandTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\PerclCommand;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PerclCommandTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PerclCommandTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->PerclCommand = new PerclCommand();
+        $this->PerclCommand = new \FreeClimb\Api\Model\PerclCommand();
     }
 
     /**
@@ -73,14 +72,6 @@ class PerclCommandTest extends TestCase
     {
     }
 
-    /**
-     * Test "PerclCommand"
-     */
-    public function testPerclCommand()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "command"
      */

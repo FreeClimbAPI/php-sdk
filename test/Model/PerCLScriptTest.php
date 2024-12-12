@@ -30,7 +30,6 @@
 namespace FreeClimb\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-use FreeClimb\Api\Model\PerclScript;
 
 /**
  * PerclScriptTest Class Doc Comment
@@ -41,9 +40,9 @@ use FreeClimb\Api\Model\PerclScript;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
+#[\AllowDynamicProperties]
 class PerclScriptTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +55,7 @@ class PerclScriptTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->PerclScript = new PerclScript();
+        $this->PerclScript = new \FreeClimb\Api\Model\PerclScript();
     }
 
     /**
@@ -73,14 +72,6 @@ class PerclScriptTest extends TestCase
     {
     }
 
-    /**
-     * Test "PerclScript"
-     */
-    public function testPerclScript()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
     /**
      * Test attribute "commands"
      */
