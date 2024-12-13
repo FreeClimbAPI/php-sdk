@@ -162,4 +162,11 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getUri());
         $this->assertIsString($this->MessageDeliveryWebhook->getUri());
     }
+    /**
+     * Test attribute "MessageDeliveryWebhook::deserialize"
+     */
+    public function testDeserializeMessageDeliveryWebhook() {
+        $json = "{\"requestType\":\"messageDelivery\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\MessageDeliveryWebhook::class, \FreeClimb\Api\Model\MessageDeliveryWebhook::deserialize($json));
+    }
 }

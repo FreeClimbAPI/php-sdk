@@ -188,4 +188,11 @@ class MachineDetectedWebhookTest extends TestCase
         $this->MachineDetectedWebhook->setmachineType(\FreeClimb\Api\Model\MachineType::FAX_MODEM);
         $this->assertEquals(\FreeClimb\Api\Model\MachineType::FAX_MODEM, $this->MachineDetectedWebhook->getmachineType());
     }
+    /**
+     * Test attribute "MachineDetectedWebhook::deserialize"
+     */
+    public function testDeserializeMachineDetectedWebhook() {
+        $json = "{\"requestType\":\"machineDetected\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\MachineDetectedWebhook::class, \FreeClimb\Api\Model\MachineDetectedWebhook::deserialize($json));
+    }
 }

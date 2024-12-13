@@ -742,6 +742,10 @@ class InboundCallWebhook extends Webhook
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
+    public static function deserialize(string $payload) {
+        $content = json_decode($payload, false, 512, JSON_THROW_ON_ERROR);
+        return ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\InboundCallWebhook', []);
+    }
 }
 
 

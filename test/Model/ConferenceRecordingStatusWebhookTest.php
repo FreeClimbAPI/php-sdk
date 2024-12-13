@@ -213,4 +213,11 @@ class ConferenceRecordingStatusWebhookTest extends TestCase
         $this->assertIsNumeric($this->ConferenceRecordingStatusWebhook->getrecordingDurationSec());
         
     }
+    /**
+     * Test attribute "ConferenceRecordingStatusWebhook::deserialize"
+     */
+    public function testDeserializeConferenceRecordingStatusWebhook() {
+        $json = "{\"requestType\":\"conferenceRecordingStatus\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\ConferenceRecordingStatusWebhook::class, \FreeClimb\Api\Model\ConferenceRecordingStatusWebhook::deserialize($json));
+    }
 }

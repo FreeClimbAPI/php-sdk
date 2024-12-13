@@ -316,4 +316,11 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->gettranscriptionDurationMs());
         
     }
+    /**
+     * Test attribute "TranscribeWebhook::deserialize"
+     */
+    public function testDeserializeTranscribeWebhook() {
+        $json = "{\"requestType\":\"transcribe\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\TranscribeWebhook::class, \FreeClimb\Api\Model\TranscribeWebhook::deserialize($json));
+    }
 }

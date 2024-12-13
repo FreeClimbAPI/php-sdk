@@ -178,4 +178,11 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getParentCallId());
         $this->assertIsString($this->InboundCallWebhook->getParentCallId());
     }
+    /**
+     * Test attribute "InboundCallWebhook::deserialize"
+     */
+    public function testDeserializeInboundCallWebhook() {
+        $json = "{\"requestType\":\"inboundCall\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\InboundCallWebhook::class, \FreeClimb\Api\Model\InboundCallWebhook::deserialize($json));
+    }
 }

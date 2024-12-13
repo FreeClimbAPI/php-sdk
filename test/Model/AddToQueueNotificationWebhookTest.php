@@ -169,4 +169,11 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getQueueId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getQueueId());
     }
+    /**
+     * Test attribute "AddToQueueNotificationWebhook::deserialize"
+     */
+    public function testDeserializeAddToQueueNotificationWebhook() {
+        $json = "{\"requestType\":\"addToQueueNotification\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\AddToQueueNotificationWebhook::class, \FreeClimb\Api\Model\AddToQueueNotificationWebhook::deserialize($json));
+    }
 }

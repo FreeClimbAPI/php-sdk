@@ -169,4 +169,11 @@ class LeaveConferenceWebhookTest extends TestCase
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getQueueId());
         $this->assertIsString($this->LeaveConferenceWebhook->getQueueId());
     }
+    /**
+     * Test attribute "LeaveConferenceWebhook::deserialize"
+     */
+    public function testDeserializeLeaveConferenceWebhook() {
+        $json = "{\"requestType\":\"leaveConference\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\LeaveConferenceWebhook::class, \FreeClimb\Api\Model\LeaveConferenceWebhook::deserialize($json));
+    }
 }

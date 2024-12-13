@@ -190,4 +190,11 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getPhoneNumberId());
         $this->assertIsString($this->MessageStatusWebhook->getPhoneNumberId());
     }
+    /**
+     * Test attribute "MessageStatusWebhook::deserialize"
+     */
+    public function testDeserializeMessageStatusWebhook() {
+        $json = "{\"requestType\":\"messageStatus\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\MessageStatusWebhook::class, \FreeClimb\Api\Model\MessageStatusWebhook::deserialize($json));
+    }
 }

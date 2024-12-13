@@ -221,4 +221,11 @@ class CallStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallStatusWebhook->getQueueId());
         $this->assertIsString($this->CallStatusWebhook->getQueueId());
     }
+    /**
+     * Test attribute "CallStatusWebhook::deserialize"
+     */
+    public function testDeserializeCallStatusWebhook() {
+        $json = "{\"requestType\":\"callStatus\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\CallStatusWebhook::class, \FreeClimb\Api\Model\CallStatusWebhook::deserialize($json));
+    }
 }

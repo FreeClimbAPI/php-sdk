@@ -249,4 +249,11 @@ class RecordWebhookTest extends TestCase
         $this->assertFalse($this->RecordWebhook->getprivacyMode());
         $this->assertIsBool($this->RecordWebhook->getprivacyMode());
     }
+    /**
+     * Test attribute "RecordWebhook::deserialize"
+     */
+    public function testDeserializeRecordWebhook() {
+        $json = "{\"requestType\":\"record\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\RecordWebhook::class, \FreeClimb\Api\Model\RecordWebhook::deserialize($json));
+    }
 }

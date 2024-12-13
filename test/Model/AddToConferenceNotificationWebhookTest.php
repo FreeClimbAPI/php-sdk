@@ -213,4 +213,11 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertIsNumeric($this->AddToConferenceNotificationWebhook->getrecordingDurationSec());
         
     }
+    /**
+     * Test attribute "AddToConferenceNotificationWebhook::deserialize"
+     */
+    public function testDeserializeAddToConferenceNotificationWebhook() {
+        $json = "{\"requestType\":\"addToConferenceNotification\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\AddToConferenceNotificationWebhook::class, \FreeClimb\Api\Model\AddToConferenceNotificationWebhook::deserialize($json));
+    }
 }

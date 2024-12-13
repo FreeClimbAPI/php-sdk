@@ -256,4 +256,11 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getMrcpDiagnostic());
         $this->assertIsString($this->GetSpeechWebhook->getMrcpDiagnostic());
     }
+    /**
+     * Test attribute "GetSpeechWebhook::deserialize"
+     */
+    public function testDeserializeGetSpeechWebhook() {
+        $json = "{\"requestType\":\"getSpeech\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\GetSpeechWebhook::class, \FreeClimb\Api\Model\GetSpeechWebhook::deserialize($json));
+    }
 }

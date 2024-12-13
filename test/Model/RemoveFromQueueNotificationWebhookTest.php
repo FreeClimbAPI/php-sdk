@@ -195,4 +195,11 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertIsNumeric($this->RemoveFromQueueNotificationWebhook->getqueueTime());
         
     }
+    /**
+     * Test attribute "RemoveFromQueueNotificationWebhook::deserialize"
+     */
+    public function testDeserializeRemoveFromQueueNotificationWebhook() {
+        $json = "{\"requestType\":\"removeFromQueueNotification\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook::class, \FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook::deserialize($json));
+    }
 }

@@ -178,4 +178,11 @@ class OutDialApiConnectWebhookTest extends TestCase
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getParentCallId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getParentCallId());
     }
+    /**
+     * Test attribute "OutDialApiConnectWebhook::deserialize"
+     */
+    public function testDeserializeOutDialApiConnectWebhook() {
+        $json = "{\"requestType\":\"outDialApiConnect\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\OutDialApiConnectWebhook::class, \FreeClimb\Api\Model\OutDialApiConnectWebhook::deserialize($json));
+    }
 }

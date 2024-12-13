@@ -117,4 +117,11 @@ class CallControlWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallControlWebhook->getDigits());
         $this->assertIsString($this->CallControlWebhook->getDigits());
     }
+    /**
+     * Test attribute "CallControlWebhook::deserialize"
+     */
+    public function testDeserializeCallControlWebhook() {
+        $json = "{\"requestType\":\"callControl\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\CallControlWebhook::class, \FreeClimb\Api\Model\CallControlWebhook::deserialize($json));
+    }
 }

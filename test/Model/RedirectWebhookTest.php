@@ -178,4 +178,11 @@ class RedirectWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RedirectWebhook->getParentCallId());
         $this->assertIsString($this->RedirectWebhook->getParentCallId());
     }
+    /**
+     * Test attribute "RedirectWebhook::deserialize"
+     */
+    public function testDeserializeRedirectWebhook() {
+        $json = "{\"requestType\":\"redirect\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\RedirectWebhook::class, \FreeClimb\Api\Model\RedirectWebhook::deserialize($json));
+    }
 }

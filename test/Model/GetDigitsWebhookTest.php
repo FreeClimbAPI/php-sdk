@@ -201,4 +201,11 @@ class GetDigitsWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetDigitsWebhook->getParentCallId());
         $this->assertIsString($this->GetDigitsWebhook->getParentCallId());
     }
+    /**
+     * Test attribute "GetDigitsWebhook::deserialize"
+     */
+    public function testDeserializeGetDigitsWebhook() {
+        $json = "{\"requestType\":\"getDigits\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\GetDigitsWebhook::class, \FreeClimb\Api\Model\GetDigitsWebhook::deserialize($json));
+    }
 }

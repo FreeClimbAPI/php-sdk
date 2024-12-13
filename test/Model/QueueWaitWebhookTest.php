@@ -202,4 +202,11 @@ class QueueWaitWebhookTest extends TestCase
         $this->assertIsNumeric($this->QueueWaitWebhook->getcurrentQueueSize());
         
     }
+    /**
+     * Test attribute "QueueWaitWebhook::deserialize"
+     */
+    public function testDeserializeQueueWaitWebhook() {
+        $json = "{\"requestType\":\"queueWait\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\QueueWaitWebhook::class, \FreeClimb\Api\Model\QueueWaitWebhook::deserialize($json));
+    }
 }

@@ -190,4 +190,11 @@ class DequeueWebhookTest extends TestCase
         $this->assertIsNumeric($this->DequeueWebhook->getqueueTime());
         
     }
+    /**
+     * Test attribute "DequeueWebhook::deserialize"
+     */
+    public function testDeserializeDequeueWebhook() {
+        $json = "{\"requestType\":\"dequeue\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\DequeueWebhook::class, \FreeClimb\Api\Model\DequeueWebhook::deserialize($json));
+    }
 }

@@ -187,4 +187,11 @@ class OutDialStartWebhookTest extends TestCase
         $this->assertEquals('TS', $this->OutDialStartWebhook->getParentCallId());
         $this->assertIsString($this->OutDialStartWebhook->getParentCallId());
     }
+    /**
+     * Test attribute "OutDialStartWebhook::deserialize"
+     */
+    public function testDeserializeOutDialStartWebhook() {
+        $json = "{\"requestType\":\"outDialStart\"}";
+        $this->assertInstanceOf(\FreeClimb\Api\Model\OutDialStartWebhook::class, \FreeClimb\Api\Model\OutDialStartWebhook::deserialize($json));
+    }
 }
