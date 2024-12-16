@@ -61,7 +61,8 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'talk' => 'bool',
-        'listen' => 'bool'
+        'listen' => 'bool',
+        'dtmf_pass_through' => 'bool'
     ];
 
     /**
@@ -73,7 +74,8 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'talk' => null,
-        'listen' => null
+        'listen' => null,
+        'dtmf_pass_through' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'talk' => 'talk',
-        'listen' => 'listen'
+        'listen' => 'listen',
+        'dtmf_pass_through' => 'dtmfPassThrough'
     ];
 
     /**
@@ -114,7 +117,8 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'talk' => 'setTalk',
-        'listen' => 'setListen'
+        'listen' => 'setListen',
+        'dtmf_pass_through' => 'setDtmfPassThrough'
     ];
 
     /**
@@ -124,7 +128,8 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'talk' => 'getTalk',
-        'listen' => 'getListen'
+        'listen' => 'getListen',
+        'dtmf_pass_through' => 'getDtmfPassThrough'
     ];
 
     /**
@@ -186,6 +191,7 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
     {
         $this->container['talk'] = $data['talk'] ?? null;
         $this->container['listen'] = $data['listen'] ?? null;
+        $this->container['dtmf_pass_through'] = $data['dtmf_pass_through'] ?? null;
     }
 
     /**
@@ -256,6 +262,30 @@ class UpdateConferenceParticipantRequest implements ModelInterface, ArrayAccess,
     public function setListen($listen)
     {
         $this->container['listen'] = $listen;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtmf_pass_through
+     *
+     * @return bool|null
+     */
+    public function getDtmfPassThrough()
+    {
+        return $this->container['dtmf_pass_through'];
+    }
+
+    /**
+     * Sets dtmf_pass_through
+     *
+     * @param bool|null $dtmf_pass_through (Optional) Default is `true`. Setting to `false` mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
+     *
+     * @return self
+     */
+    public function setDtmfPassThrough($dtmf_pass_through)
+    {
+        $this->container['dtmf_pass_through'] = $dtmf_pass_through;
 
         return $this;
     }

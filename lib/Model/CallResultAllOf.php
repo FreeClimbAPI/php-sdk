@@ -74,7 +74,8 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'connect_duration' => 'int',
         'direction' => '\FreeClimb\Api\Model\CallDirection',
         'answered_by' => '\FreeClimb\Api\Model\AnsweredBy',
-        'subresource_uris' => 'object'
+        'subresource_uris' => 'object',
+        'application_id' => 'string'
     ];
 
     /**
@@ -99,7 +100,8 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'connect_duration' => null,
         'direction' => null,
         'answered_by' => null,
-        'subresource_uris' => null
+        'subresource_uris' => null,
+        'application_id' => null
     ];
 
     /**
@@ -143,7 +145,8 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'connect_duration' => 'connectDuration',
         'direction' => 'direction',
         'answered_by' => 'answeredBy',
-        'subresource_uris' => 'subresourceUris'
+        'subresource_uris' => 'subresourceUris',
+        'application_id' => 'applicationId'
     ];
 
     /**
@@ -166,7 +169,8 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'connect_duration' => 'setConnectDuration',
         'direction' => 'setDirection',
         'answered_by' => 'setAnsweredBy',
-        'subresource_uris' => 'setSubresourceUris'
+        'subresource_uris' => 'setSubresourceUris',
+        'application_id' => 'setApplicationId'
     ];
 
     /**
@@ -189,7 +193,8 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         'connect_duration' => 'getConnectDuration',
         'direction' => 'getDirection',
         'answered_by' => 'getAnsweredBy',
-        'subresource_uris' => 'getSubresourceUris'
+        'subresource_uris' => 'getSubresourceUris',
+        'application_id' => 'getApplicationId'
     ];
 
     /**
@@ -264,6 +269,7 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['direction'] = $data['direction'] ?? null;
         $this->container['answered_by'] = $data['answered_by'] ?? null;
         $this->container['subresource_uris'] = $data['subresource_uris'] ?? null;
+        $this->container['application_id'] = $data['application_id'] ?? null;
     }
 
     /**
@@ -646,6 +652,30 @@ class CallResultAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubresourceUris($subresource_uris)
     {
         $this->container['subresource_uris'] = $subresource_uris;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string|null
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string|null $application_id ApplicationId associated with the Call.
+     *
+     * @return self
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }

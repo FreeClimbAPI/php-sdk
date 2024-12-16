@@ -37,7 +37,7 @@ use PHPUnit\Framework\TestCase;
  * SetTalkTest Class Doc Comment
  *
  * @category    Class
- * @description The &#x60;SetTalk&#x60; command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If &#39;true&#39;, no audio from that Participant is shared with the other Participants of the Conference.
+ * @description The &#x60;SetTalk&#x60; command enables or disables the talk privilege for this Conference Participant. If &#39;true&#39;, no audio from that Participant is shared with the other Participants of the Conference.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

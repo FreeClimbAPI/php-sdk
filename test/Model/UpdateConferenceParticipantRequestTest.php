@@ -71,6 +71,15 @@ class UpdateConferenceParticipantRequestTest extends TestCase
         $this->assertFalse($this->UpdateConferenceParticipantRequest->getListen());
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->getListen());
     }
+    /**
+     * Test attribute "dtmf_pass_through"
+     */
+    public function testPropertyDtmfPassThrough()
+    {
+        $this->UpdateConferenceParticipantRequest->setDtmfPassThrough(false);
+        $this->assertFalse($this->UpdateConferenceParticipantRequest->getDtmfPassThrough());
+        $this->assertIsBool($this->UpdateConferenceParticipantRequest->getDtmfPassThrough());
+    }
 
     /**
 * Test method toStringTest
@@ -79,6 +88,7 @@ public function toStringTest() {
     $test1 = new UpdateConferenceParticipantRequest();    
     $test1->setTalk(true);
     $test1->setListen(true);
+    $test1->setDtmfPassThrough(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -92,6 +102,7 @@ public function toHeaderValueTest()
     $test1 = new UpdateConferenceParticipantRequest();
     $test1->setTalk(true);
     $test1->setListen(true);
+    $test1->setDtmfPassThrough(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

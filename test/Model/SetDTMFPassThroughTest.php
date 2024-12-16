@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SetListenTest
+ * SetDTMFPassThroughTest
  *
  * PHP version 7.3
  *
@@ -30,45 +30,45 @@
 
 namespace FreeClimb\Api\Test\Model;
 
-use FreeClimb\Api\Model\SetListen;
+use FreeClimb\Api\Model\SetDTMFPassThrough;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SetListenTest Class Doc Comment
+ * SetDTMFPassThroughTest Class Doc Comment
  *
  * @category    Class
- * @description The &#x60;SetListen&#x60; command enables or disables the listen privilege for this Conference Participant. The Participant can hear what the other participants are saying only if this privilege is enabled.
+ * @description The &#x60;SetDTMFPassThrough&#x60; command enables or disables the dtmfPassThrough privilege for this Conference Participant. If &#39;true&#39;, DTMFs will be passed through from this Participant to all other Participants in the Conference
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SetListenTest extends TestCase
+class SetDTMFPassThroughTest extends TestCase
 {
-    protected $SetListen;
+    protected $SetDTMFPassThrough;
 
     /**
-     * Test "SetListen"
+     * Test "SetDTMFPassThrough"
      */
     public function setUp() : void
     {
-        $this->SetListen = new SetListen();
+        $this->SetDTMFPassThrough = new SetDTMFPassThrough();
     }
     /**
-     * Test attribute "listen"
+     * Test attribute "dtmf_pass_through"
      */
-    public function testPropertyListen()
+    public function testPropertyDtmfPassThrough()
     {
-        $this->SetListen->setListen(false);
-        $this->assertFalse($this->SetListen->getListen());
-        $this->assertIsBool($this->SetListen->getListen());
+        $this->SetDTMFPassThrough->setDtmfPassThrough(false);
+        $this->assertFalse($this->SetDTMFPassThrough->getDtmfPassThrough());
+        $this->assertIsBool($this->SetDTMFPassThrough->getDtmfPassThrough());
     }
 
     /**
 * Test method toStringTest
 */
 public function toStringTest() {
-    $test1 = new SetListen();    
-    $test1->setListen(true);
+    $test1 = new SetDTMFPassThrough();    
+    $test1->setDtmfPassThrough(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -79,8 +79,8 @@ public function toStringTest() {
  */
 public function toHeaderValueTest()
 {
-    $test1 = new SetListen();
-    $test1->setListen(true);
+    $test1 = new SetDTMFPassThrough();
+    $test1->setDtmfPassThrough(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));
