@@ -13299,14 +13299,16 @@ class DefaultApi
 
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
 
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\ConferenceParticipantList
      */
-    public function listParticipants($conference_id, $talk = null, $listen = null)
+    public function listParticipants($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null)
     {
-        list($response) = $this->listParticipantsWithHttpInfo($conference_id, $talk, $listen);
+        list($response) = $this->listParticipantsWithHttpInfo($conference_id, $talk, $listen, $dtmf_pass_through);
         return $response;
     }
 
@@ -13322,14 +13324,16 @@ class DefaultApi
 
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
 
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
+
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\ConferenceParticipantList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listParticipantsWithHttpInfo($conference_id, $talk = null, $listen = null)
+    public function listParticipantsWithHttpInfo($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null)
     {
-        $request = $this->listParticipantsRequest($conference_id, $talk, $listen);
+        $request = $this->listParticipantsRequest($conference_id, $talk, $listen, $dtmf_pass_through);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13421,13 +13425,15 @@ class DefaultApi
 
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
 
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listParticipantsAsync($conference_id, $talk = null, $listen = null)
+    public function listParticipantsAsync($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null)
     {
-        return $this->listParticipantsAsyncWithHttpInfo($conference_id, $talk, $listen)
+        return $this->listParticipantsAsyncWithHttpInfo($conference_id, $talk, $listen, $dtmf_pass_through)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13447,14 +13453,16 @@ class DefaultApi
 
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
 
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listParticipantsAsyncWithHttpInfo($conference_id, $talk = null, $listen = null)
+    public function listParticipantsAsyncWithHttpInfo($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null)
     {
         $returnType = '\FreeClimb\Api\Model\ConferenceParticipantList';
-        $request = $this->listParticipantsRequest($conference_id, $talk, $listen);
+        $request = $this->listParticipantsRequest($conference_id, $talk, $listen, $dtmf_pass_through);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13499,11 +13507,13 @@ class DefaultApi
 
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
 
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
+
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listParticipantsRequest($conference_id, $talk = null, $listen = null)
+    public function listParticipantsRequest($conference_id, $talk = null, $listen = null, $dtmf_pass_through = null)
     { 
         $account_id = $this->config->getUsername();
         // verify the required parameter 'account_id' is set
@@ -13546,6 +13556,17 @@ class DefaultApi
             }
             else {
                 $queryParams['listen'] = $listen;
+            }
+        }
+        // query params
+        if ($dtmf_pass_through !== null) {
+            if('form' === 'form' && is_array($dtmf_pass_through)) {
+                foreach($dtmf_pass_through as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['dtmfPassThrough'] = $dtmf_pass_through;
             }
         }
 

@@ -99,6 +99,15 @@ class ConferenceParticipantResultAllOfTest extends TestCase
         $this->assertIsBool($this->ConferenceParticipantResultAllOf->getListen());
     }
     /**
+     * Test attribute "dtmf_pass_through"
+     */
+    public function testPropertyDtmfPassThrough()
+    {
+        $this->ConferenceParticipantResultAllOf->setDtmfPassThrough(false);
+        $this->assertFalse($this->ConferenceParticipantResultAllOf->getDtmfPassThrough());
+        $this->assertIsBool($this->ConferenceParticipantResultAllOf->getDtmfPassThrough());
+    }
+    /**
      * Test attribute "start_conf_on_enter"
      */
     public function testPropertyStartConfOnEnter()
@@ -118,6 +127,7 @@ public function toStringTest() {
     $test1->setCallId("TS");
     $test1->setTalk(true);
     $test1->setListen(true);
+    $test1->setDtmfPassThrough(true);
     $test1->setStartConfOnEnter(true);
 
     $toString1 = $test1->__toString();
@@ -135,6 +145,7 @@ public function toHeaderValueTest()
     $test1->setCallId("TS");
     $test1->setTalk(true);
     $test1->setListen(true);
+    $test1->setDtmfPassThrough(true);
     $test1->setStartConfOnEnter(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();

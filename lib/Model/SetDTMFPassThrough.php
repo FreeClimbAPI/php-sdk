@@ -1,6 +1,6 @@
 <?php
 /**
- * SetTalk
+ * SetDTMFPassThrough
  *
  * PHP version 7.3
  *
@@ -31,10 +31,10 @@ namespace FreeClimb\Api\Model;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * SetTalk Class Doc Comment
+ * SetDTMFPassThrough Class Doc Comment
  *
  * @category Class
- * @description The &#x60;SetTalk&#x60; command enables or disables the talk privilege for this Conference Participant. If &#39;true&#39;, no audio from that Participant is shared with the other Participants of the Conference.
+ * @description The &#x60;SetDTMFPassThrough&#x60; command enables or disables the dtmfPassThrough privilege for this Conference Participant. If &#39;true&#39;, DTMFs will be passed through from this Participant to all other Participants in the Conference
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -42,7 +42,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SetTalk extends PerclCommand
+class SetDTMFPassThrough extends PerclCommand
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SetTalk extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SetTalk';
+    protected static $openAPIModelName = 'SetDTMFPassThrough';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class SetTalk extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'talk' => 'bool'
+        'dtmf_pass_through' => 'bool'
     ];
 
     /**
@@ -70,7 +70,7 @@ class SetTalk extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'talk' => null
+        'dtmf_pass_through' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class SetTalk extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'talk' => 'talk'
+        'dtmf_pass_through' => 'dtmfPassThrough'
     ];
 
     /**
@@ -109,7 +109,7 @@ class SetTalk extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'talk' => 'setTalk'
+        'dtmf_pass_through' => 'setDtmfPassThrough'
     ];
 
     /**
@@ -118,7 +118,7 @@ class SetTalk extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'talk' => 'getTalk'
+        'dtmf_pass_through' => 'getDtmfPassThrough'
     ];
 
     /**
@@ -174,7 +174,7 @@ class SetTalk extends PerclCommand
     {
         parent::__construct($data);
 
-        $this->container['talk'] = $data['talk'] ?? null;
+        $this->container['dtmf_pass_through'] = $data['dtmf_pass_through'] ?? null;
     }
 
     /**
@@ -202,25 +202,25 @@ class SetTalk extends PerclCommand
 
 
     /**
-     * Gets talk
+     * Gets dtmf_pass_through
      *
      * @return bool|null
      */
-    public function getTalk()
+    public function getDtmfPassThrough()
     {
-        return $this->container['talk'];
+        return $this->container['dtmf_pass_through'];
     }
 
     /**
-     * Sets talk
+     * Sets dtmf_pass_through
      *
-     * @param bool|null $talk Specifying `false` mutes the Participant.
+     * @param bool|null $dtmf_pass_through Specifying `false` mutes the Participant's dtmf audio.
      *
      * @return self
      */
-    public function setTalk($talk)
+    public function setDtmfPassThrough($dtmf_pass_through)
     {
-        $this->container['talk'] = $talk;
+        $this->container['dtmf_pass_through'] = $dtmf_pass_through;
 
         return $this;
     }

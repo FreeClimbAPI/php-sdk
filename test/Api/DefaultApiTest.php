@@ -496,6 +496,10 @@ class DefaultApiTest extends TestCase
         ));
     }
 
+    public function dtmf_pass_through_listParticipants_test_value(){
+        return "true"; 
+    }
+
     /**
      * Setup before running any test cases
      */
@@ -1706,6 +1710,7 @@ class DefaultApiTest extends TestCase
      * @param  string $conference_id ID of the conference this participant is in. (required)
      * @param  bool $talk Only show Participants with the talk privilege. (optional)
      * @param  bool $listen Only show Participants with the listen privilege. (optional)
+     * @param  bool $dtmf_pass_through Only show Participants with the dtmfPassThrough privilege. (optional)
      */
     public function testListParticipants()
     {
@@ -1724,8 +1729,9 @@ class DefaultApiTest extends TestCase
         //$conference_id = $conference_id_test_value;
         //$talk = $talk_test_value;
         //$listen = $listen_test_value;
+        //$dtmf_pass_through = $dtmf_pass_through_test_value;
         
-        $response = $apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value());
+        $response = $apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value(), $this->dtmf_pass_through_listParticipants_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantList',$response);
     }
     /**
@@ -2506,7 +2512,7 @@ class DefaultApiTest extends TestCase
             $config
         );
         
-        $response = $apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value());
+        $response = $apiInstance->listParticipants($this->conference_id_listParticipants_test_value(), $this->talk_listParticipants_test_value(), $this->listen_listParticipants_test_value(), $this->dtmf_pass_through_listParticipants_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1';
         $nextPageResponse = $apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceParticipantList',$nextPageResponse);

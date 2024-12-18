@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **direction** | [**\FreeClimb\Api\Model\CallDirection**](CallDirection.md) |  | [optional]
 **answered_by** | [**\FreeClimb\Api\Model\AnsweredBy**](AnsweredBy.md) |  | [optional]
 **subresource_uris** | **object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional]
+**application_id** | **string** | ApplicationId associated with the Call. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

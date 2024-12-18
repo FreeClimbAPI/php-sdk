@@ -69,6 +69,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         'call_id' => 'string',
         'talk' => 'bool',
         'listen' => 'bool',
+        'dtmf_pass_through' => 'bool',
         'start_conf_on_enter' => 'bool'
     ];
 
@@ -89,6 +90,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         'call_id' => null,
         'talk' => null,
         'listen' => null,
+        'dtmf_pass_through' => null,
         'start_conf_on_enter' => null
     ];
 
@@ -128,6 +130,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         'call_id' => 'callId',
         'talk' => 'talk',
         'listen' => 'listen',
+        'dtmf_pass_through' => 'dtmfPassThrough',
         'start_conf_on_enter' => 'startConfOnEnter'
     ];
 
@@ -146,6 +149,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         'call_id' => 'setCallId',
         'talk' => 'setTalk',
         'listen' => 'setListen',
+        'dtmf_pass_through' => 'setDtmfPassThrough',
         'start_conf_on_enter' => 'setStartConfOnEnter'
     ];
 
@@ -164,6 +168,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         'call_id' => 'getCallId',
         'talk' => 'getTalk',
         'listen' => 'getListen',
+        'dtmf_pass_through' => 'getDtmfPassThrough',
         'start_conf_on_enter' => 'getStartConfOnEnter'
     ];
 
@@ -233,6 +238,7 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
         $this->container['call_id'] = $data['call_id'] ?? null;
         $this->container['talk'] = $data['talk'] ?? null;
         $this->container['listen'] = $data['listen'] ?? null;
+        $this->container['dtmf_pass_through'] = $data['dtmf_pass_through'] ?? null;
         $this->container['start_conf_on_enter'] = $data['start_conf_on_enter'] ?? null;
     }
 
@@ -472,6 +478,30 @@ class ConferenceParticipantResult implements ModelInterface, ArrayAccess, \JsonS
     public function setListen($listen)
     {
         $this->container['listen'] = $listen;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtmf_pass_through
+     *
+     * @return bool|null
+     */
+    public function getDtmfPassThrough()
+    {
+        return $this->container['dtmf_pass_through'];
+    }
+
+    /**
+     * Sets dtmf_pass_through
+     *
+     * @param bool|null $dtmf_pass_through True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
+     *
+     * @return self
+     */
+    public function setDtmfPassThrough($dtmf_pass_through)
+    {
+        $this->container['dtmf_pass_through'] = $dtmf_pass_through;
 
         return $this;
     }

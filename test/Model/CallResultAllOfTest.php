@@ -210,6 +210,15 @@ class CallResultAllOfTest extends TestCase
         $this->CallResultAllOf->setSubresourceUris(new \stdClass);
         $this->assertInstanceOf(\stdClass::class, $this->CallResultAllOf->getSubresourceUris());
     }
+    /**
+     * Test attribute "application_id"
+     */
+    public function testPropertyApplicationId()
+    {
+        $this->CallResultAllOf->setApplicationId('TS');
+        $this->assertEquals('TS', $this->CallResultAllOf->getApplicationId());
+        $this->assertIsString($this->CallResultAllOf->getApplicationId());
+    }
 
     /**
 * Test method toStringTest
@@ -232,6 +241,7 @@ public function toStringTest() {
     $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
     $testObject = new stdClass(); 
     $test1->setSubresourceUris($testObject);
+    $test1->setApplicationId("TS");
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -259,6 +269,7 @@ public function toHeaderValueTest()
     $test1->setAnsweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
     $testObject = new stdClass();
     $test1->setSubresourceUris($testObject);
+    $test1->setApplicationId("TS");
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

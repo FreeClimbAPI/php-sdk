@@ -134,6 +134,15 @@ class AddToConferenceAllOfTest extends TestCase
         $this->assertFalse($this->AddToConferenceAllOf->getTalk());
         $this->assertIsBool($this->AddToConferenceAllOf->getTalk());
     }
+    /**
+     * Test attribute "dtmf_pass_through"
+     */
+    public function testPropertyDtmfPassThrough()
+    {
+        $this->AddToConferenceAllOf->setDtmfPassThrough(false);
+        $this->assertFalse($this->AddToConferenceAllOf->getDtmfPassThrough());
+        $this->assertIsBool($this->AddToConferenceAllOf->getDtmfPassThrough());
+    }
 
     /**
 * Test method toStringTest
@@ -149,6 +158,7 @@ public function toStringTest() {
     $test1->setNotificationUrl("TS");
     $test1->setStartConfOnEnter(true);
     $test1->setTalk(true);
+    $test1->setDtmfPassThrough(true);
 
     $toString1 = $test1->__toString();
     assert(is_string($toString1));
@@ -169,6 +179,7 @@ public function toHeaderValueTest()
     $test1->setNotificationUrl("TS");
     $test1->setStartConfOnEnter(true);
     $test1->setTalk(true);
+    $test1->setDtmfPassThrough(true);
 
     $toHeaderValue1 = $test1->toHeaderValue();
     assert(is_string($toHeaderValue1));

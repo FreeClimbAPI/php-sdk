@@ -131,6 +131,8 @@ docs/Model/Say.md
 docs/Model/SayAllOf.md
 docs/Model/SendDigits.md
 docs/Model/SendDigitsAllOf.md
+docs/Model/SetDTMFPassThrough.md
+docs/Model/SetDTMFPassThroughAllOf.md
 docs/Model/SetListen.md
 docs/Model/SetListenAllOf.md
 docs/Model/SetTalk.md
@@ -282,6 +284,8 @@ lib/Model/Say.php
 lib/Model/SayAllOf.php
 lib/Model/SendDigits.php
 lib/Model/SendDigitsAllOf.php
+lib/Model/SetDTMFPassThrough.php
+lib/Model/SetDTMFPassThroughAllOf.php
 lib/Model/SetListen.php
 lib/Model/SetListenAllOf.php
 lib/Model/SetTalk.php
@@ -302,3 +306,4 @@ lib/Model/UpdateConferenceRequest.php
 lib/Model/UpdateConferenceRequestStatus.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/DefaultApiTest.php

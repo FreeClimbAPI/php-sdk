@@ -68,7 +68,8 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'listen' => 'bool',
         'notification_url' => 'string',
         'start_conf_on_enter' => 'bool',
-        'talk' => 'bool'
+        'talk' => 'bool',
+        'dtmf_pass_through' => 'bool'
     ];
 
     /**
@@ -87,7 +88,8 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'listen' => null,
         'notification_url' => null,
         'start_conf_on_enter' => null,
-        'talk' => null
+        'talk' => null,
+        'dtmf_pass_through' => null
     ];
 
     /**
@@ -125,7 +127,8 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'listen' => 'listen',
         'notification_url' => 'notificationUrl',
         'start_conf_on_enter' => 'startConfOnEnter',
-        'talk' => 'talk'
+        'talk' => 'talk',
+        'dtmf_pass_through' => 'dtmfPassThrough'
     ];
 
     /**
@@ -142,7 +145,8 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'listen' => 'setListen',
         'notification_url' => 'setNotificationUrl',
         'start_conf_on_enter' => 'setStartConfOnEnter',
-        'talk' => 'setTalk'
+        'talk' => 'setTalk',
+        'dtmf_pass_through' => 'setDtmfPassThrough'
     ];
 
     /**
@@ -159,7 +163,8 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         'listen' => 'getListen',
         'notification_url' => 'getNotificationUrl',
         'start_conf_on_enter' => 'getStartConfOnEnter',
-        'talk' => 'getTalk'
+        'talk' => 'getTalk',
+        'dtmf_pass_through' => 'getDtmfPassThrough'
     ];
 
     /**
@@ -228,6 +233,7 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['notification_url'] = $data['notification_url'] ?? null;
         $this->container['start_conf_on_enter'] = $data['start_conf_on_enter'] ?? null;
         $this->container['talk'] = $data['talk'] ?? null;
+        $this->container['dtmf_pass_through'] = $data['dtmf_pass_through'] ?? null;
     }
 
     /**
@@ -469,6 +475,30 @@ class AddToConferenceAllOf implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setTalk($talk)
     {
         $this->container['talk'] = $talk;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtmf_pass_through
+     *
+     * @return bool|null
+     */
+    public function getDtmfPassThrough()
+    {
+        return $this->container['dtmf_pass_through'];
+    }
+
+    /**
+     * Sets dtmf_pass_through
+     *
+     * @param bool|null $dtmf_pass_through If `true`, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or `SetDTMFPassThrough` PerCL command.
+     *
+     * @return self
+     */
+    public function setDtmfPassThrough($dtmf_pass_through)
+    {
+        $this->container['dtmf_pass_through'] = $dtmf_pass_through;
 
         return $this;
     }

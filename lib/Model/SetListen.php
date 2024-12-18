@@ -34,7 +34,7 @@ use \FreeClimb\Api\ObjectSerializer;
  * SetListen Class Doc Comment
  *
  * @category Class
- * @description The &#x60;SetListen&#x60; command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. The Participant can hear what the other participants are saying only if this privilege is enabled.
+ * @description The &#x60;SetListen&#x60; command enables or disables the listen privilege for this Conference Participant. The Participant can hear what the other participants are saying only if this privilege is enabled.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
