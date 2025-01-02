@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PerCLScript
  *
@@ -43,7 +44,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class PerCLScript implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -159,9 +160,9 @@ class PerCLScript implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Play
  *
@@ -38,9 +39,9 @@ use \FreeClimb\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Play extends PerCLCommand 
+class Play extends PerCLCommand
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -166,9 +167,9 @@ class Play extends PerCLCommand
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
 
     /**

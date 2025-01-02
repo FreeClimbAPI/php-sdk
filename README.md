@@ -8,8 +8,8 @@ For more information, please visit [https://www.freeclimb.com/support/](https://
 
 ### Requirements
 
-PHP 7.3 and later.
-Should also work with PHP 8.0 but has not been tested.
+PHP 7.4 and later.
+Should also work with PHP 8.0.
 
 ### Composer
 
@@ -183,154 +183,147 @@ Class | Method | HTTP request | Description
 
 - [AccountRequest](docs/Model/AccountRequest.md)
 - [AccountResult](docs/Model/AccountResult.md)
-- [AccountResultAllOf](docs/Model/AccountResultAllOf.md)
 - [AccountStatus](docs/Model/AccountStatus.md)
 - [AccountType](docs/Model/AccountType.md)
 - [AddToConference](docs/Model/AddToConference.md)
-- [AddToConferenceAllOf](docs/Model/AddToConferenceAllOf.md)
+- [AddToConferenceNotificationWebhook](docs/Model/AddToConferenceNotificationWebhook.md)
+- [AddToQueueNotificationWebhook](docs/Model/AddToQueueNotificationWebhook.md)
 - [AnsweredBy](docs/Model/AnsweredBy.md)
 - [ApplicationList](docs/Model/ApplicationList.md)
-- [ApplicationListAllOf](docs/Model/ApplicationListAllOf.md)
 - [ApplicationRequest](docs/Model/ApplicationRequest.md)
 - [ApplicationResult](docs/Model/ApplicationResult.md)
-- [ApplicationResultAllOf](docs/Model/ApplicationResultAllOf.md)
 - [AvailableNumber](docs/Model/AvailableNumber.md)
 - [AvailableNumberList](docs/Model/AvailableNumberList.md)
-- [AvailableNumberListAllOf](docs/Model/AvailableNumberListAllOf.md)
+- [BargeInReason](docs/Model/BargeInReason.md)
 - [BuyIncomingNumberRequest](docs/Model/BuyIncomingNumberRequest.md)
+- [CallControlWebhook](docs/Model/CallControlWebhook.md)
 - [CallDirection](docs/Model/CallDirection.md)
+- [CallEndedReason](docs/Model/CallEndedReason.md)
 - [CallList](docs/Model/CallList.md)
-- [CallListAllOf](docs/Model/CallListAllOf.md)
 - [CallResult](docs/Model/CallResult.md)
-- [CallResultAllOf](docs/Model/CallResultAllOf.md)
 - [CallStatus](docs/Model/CallStatus.md)
+- [CallStatusWebhook](docs/Model/CallStatusWebhook.md)
 - [Capabilities](docs/Model/Capabilities.md)
 - [CompletionRequest](docs/Model/CompletionRequest.md)
 - [CompletionResult](docs/Model/CompletionResult.md)
+- [CompletionResultStatus](docs/Model/CompletionResultStatus.md)
 - [ConferenceList](docs/Model/ConferenceList.md)
-- [ConferenceListAllOf](docs/Model/ConferenceListAllOf.md)
 - [ConferenceParticipantList](docs/Model/ConferenceParticipantList.md)
-- [ConferenceParticipantListAllOf](docs/Model/ConferenceParticipantListAllOf.md)
 - [ConferenceParticipantResult](docs/Model/ConferenceParticipantResult.md)
-- [ConferenceParticipantResultAllOf](docs/Model/ConferenceParticipantResultAllOf.md)
+- [ConferenceRecordingStatusWebhook](docs/Model/ConferenceRecordingStatusWebhook.md)
 - [ConferenceResult](docs/Model/ConferenceResult.md)
-- [ConferenceResultAllOf](docs/Model/ConferenceResultAllOf.md)
 - [ConferenceStatus](docs/Model/ConferenceStatus.md)
+- [ConferenceStatusWebhook](docs/Model/ConferenceStatusWebhook.md)
 - [CreateConference](docs/Model/CreateConference.md)
-- [CreateConferenceAllOf](docs/Model/CreateConferenceAllOf.md)
 - [CreateConferenceRequest](docs/Model/CreateConferenceRequest.md)
+- [CreateConferenceWebhook](docs/Model/CreateConferenceWebhook.md)
 - [CreateWebRTCToken](docs/Model/CreateWebRTCToken.md)
 - [Dequeue](docs/Model/Dequeue.md)
+- [DequeueWebhook](docs/Model/DequeueWebhook.md)
 - [Enqueue](docs/Model/Enqueue.md)
-- [EnqueueAllOf](docs/Model/EnqueueAllOf.md)
 - [FilterLogsRequest](docs/Model/FilterLogsRequest.md)
 - [GetDigits](docs/Model/GetDigits.md)
-- [GetDigitsAllOf](docs/Model/GetDigitsAllOf.md)
+- [GetDigitsReason](docs/Model/GetDigitsReason.md)
+- [GetDigitsWebhook](docs/Model/GetDigitsWebhook.md)
 - [GetSpeech](docs/Model/GetSpeech.md)
-- [GetSpeechAllOf](docs/Model/GetSpeechAllOf.md)
 - [GetSpeechReason](docs/Model/GetSpeechReason.md)
+- [GetSpeechWebhook](docs/Model/GetSpeechWebhook.md)
 - [GrammarFileBuiltIn](docs/Model/GrammarFileBuiltIn.md)
 - [GrammarType](docs/Model/GrammarType.md)
 - [Hangup](docs/Model/Hangup.md)
-- [HangupAllOf](docs/Model/HangupAllOf.md)
 - [IfMachine](docs/Model/IfMachine.md)
+- [InboundCallWebhook](docs/Model/InboundCallWebhook.md)
 - [IncomingNumberList](docs/Model/IncomingNumberList.md)
-- [IncomingNumberListAllOf](docs/Model/IncomingNumberListAllOf.md)
 - [IncomingNumberRequest](docs/Model/IncomingNumberRequest.md)
 - [IncomingNumberResult](docs/Model/IncomingNumberResult.md)
-- [IncomingNumberResultAllOf](docs/Model/IncomingNumberResultAllOf.md)
 - [Language](docs/Model/Language.md)
+- [LeaveConferenceWebhook](docs/Model/LeaveConferenceWebhook.md)
 - [LogLevel](docs/Model/LogLevel.md)
 - [LogList](docs/Model/LogList.md)
-- [LogListAllOf](docs/Model/LogListAllOf.md)
 - [LogResult](docs/Model/LogResult.md)
+- [MachineDetectedWebhook](docs/Model/MachineDetectedWebhook.md)
 - [MachineType](docs/Model/MachineType.md)
 - [MakeCallRequest](docs/Model/MakeCallRequest.md)
+- [MessageDeliveryWebhook](docs/Model/MessageDeliveryWebhook.md)
 - [MessageDirection](docs/Model/MessageDirection.md)
 - [MessageRequest](docs/Model/MessageRequest.md)
-- [MessageRequestAllOf](docs/Model/MessageRequestAllOf.md)
 - [MessageResult](docs/Model/MessageResult.md)
-- [MessageResultAllOf](docs/Model/MessageResultAllOf.md)
 - [MessageStatus](docs/Model/MessageStatus.md)
+- [MessageStatusWebhook](docs/Model/MessageStatusWebhook.md)
 - [MessagesList](docs/Model/MessagesList.md)
-- [MessagesListAllOf](docs/Model/MessagesListAllOf.md)
 - [MutableResourceModel](docs/Model/MutableResourceModel.md)
 - [OutDial](docs/Model/OutDial.md)
-- [OutDialAllOf](docs/Model/OutDialAllOf.md)
+- [OutDialApiConnectWebhook](docs/Model/OutDialApiConnectWebhook.md)
+- [OutDialConnectWebhook](docs/Model/OutDialConnectWebhook.md)
+- [OutDialStartWebhook](docs/Model/OutDialStartWebhook.md)
 - [PaginationModel](docs/Model/PaginationModel.md)
 - [Park](docs/Model/Park.md)
-- [ParkAllOf](docs/Model/ParkAllOf.md)
 - [Pause](docs/Model/Pause.md)
-- [PauseAllOf](docs/Model/PauseAllOf.md)
 - [PerclCommand](docs/Model/PerclCommand.md)
 - [PerclScript](docs/Model/PerclScript.md)
 - [Play](docs/Model/Play.md)
-- [PlayAllOf](docs/Model/PlayAllOf.md)
 - [PlayBeep](docs/Model/PlayBeep.md)
 - [PlayEarlyMedia](docs/Model/PlayEarlyMedia.md)
-- [PlayEarlyMediaAllOf](docs/Model/PlayEarlyMediaAllOf.md)
 - [QueueList](docs/Model/QueueList.md)
-- [QueueListAllOf](docs/Model/QueueListAllOf.md)
 - [QueueMember](docs/Model/QueueMember.md)
 - [QueueMemberList](docs/Model/QueueMemberList.md)
-- [QueueMemberListAllOf](docs/Model/QueueMemberListAllOf.md)
 - [QueueRequest](docs/Model/QueueRequest.md)
 - [QueueResult](docs/Model/QueueResult.md)
-- [QueueResultAllOf](docs/Model/QueueResultAllOf.md)
 - [QueueResultStatus](docs/Model/QueueResultStatus.md)
+- [QueueWaitWebhook](docs/Model/QueueWaitWebhook.md)
 - [RecordUtterance](docs/Model/RecordUtterance.md)
-- [RecordUtteranceAllOf](docs/Model/RecordUtteranceAllOf.md)
 - [RecordUtteranceTermReason](docs/Model/RecordUtteranceTermReason.md)
+- [RecordWebhook](docs/Model/RecordWebhook.md)
 - [RecordingList](docs/Model/RecordingList.md)
-- [RecordingListAllOf](docs/Model/RecordingListAllOf.md)
 - [RecordingResult](docs/Model/RecordingResult.md)
-- [RecordingResultAllOf](docs/Model/RecordingResultAllOf.md)
 - [Redirect](docs/Model/Redirect.md)
-- [RedirectAllOf](docs/Model/RedirectAllOf.md)
+- [RedirectWebhook](docs/Model/RedirectWebhook.md)
 - [Reject](docs/Model/Reject.md)
-- [RejectAllOf](docs/Model/RejectAllOf.md)
 - [RemoveFromConference](docs/Model/RemoveFromConference.md)
+- [RemoveFromQueueNotificationWebhook](docs/Model/RemoveFromQueueNotificationWebhook.md)
 - [RequestType](docs/Model/RequestType.md)
 - [SMSTenDLCBrand](docs/Model/SMSTenDLCBrand.md)
+- [SMSTenDLCBrandAltBusinessIdType](docs/Model/SMSTenDLCBrandAltBusinessIdType.md)
+- [SMSTenDLCBrandEntityType](docs/Model/SMSTenDLCBrandEntityType.md)
+- [SMSTenDLCBrandIdentityStatus](docs/Model/SMSTenDLCBrandIdentityStatus.md)
+- [SMSTenDLCBrandRelationship](docs/Model/SMSTenDLCBrandRelationship.md)
+- [SMSTenDLCBrandStockExchange](docs/Model/SMSTenDLCBrandStockExchange.md)
 - [SMSTenDLCBrandsListResult](docs/Model/SMSTenDLCBrandsListResult.md)
-- [SMSTenDLCBrandsListResultAllOf](docs/Model/SMSTenDLCBrandsListResultAllOf.md)
 - [SMSTenDLCCampaign](docs/Model/SMSTenDLCCampaign.md)
+- [SMSTenDLCCampaignStatus](docs/Model/SMSTenDLCCampaignStatus.md)
 - [SMSTenDLCCampaignsListResult](docs/Model/SMSTenDLCCampaignsListResult.md)
-- [SMSTenDLCCampaignsListResultAllOf](docs/Model/SMSTenDLCCampaignsListResultAllOf.md)
 - [SMSTenDLCPartnerCampaign](docs/Model/SMSTenDLCPartnerCampaign.md)
 - [SMSTenDLCPartnerCampaignBrand](docs/Model/SMSTenDLCPartnerCampaignBrand.md)
+- [SMSTenDLCPartnerCampaignStatus](docs/Model/SMSTenDLCPartnerCampaignStatus.md)
 - [SMSTenDLCPartnerCampaignsListResult](docs/Model/SMSTenDLCPartnerCampaignsListResult.md)
-- [SMSTenDLCPartnerCampaignsListResultAllOf](docs/Model/SMSTenDLCPartnerCampaignsListResultAllOf.md)
 - [SMSTollFreeCampaign](docs/Model/SMSTollFreeCampaign.md)
+- [SMSTollFreeCampaignRegistrationStatus](docs/Model/SMSTollFreeCampaignRegistrationStatus.md)
 - [SMSTollFreeCampaignsListResult](docs/Model/SMSTollFreeCampaignsListResult.md)
-- [SMSTollFreeCampaignsListResultAllOf](docs/Model/SMSTollFreeCampaignsListResultAllOf.md)
 - [Say](docs/Model/Say.md)
-- [SayAllOf](docs/Model/SayAllOf.md)
 - [SendDigits](docs/Model/SendDigits.md)
-- [SendDigitsAllOf](docs/Model/SendDigitsAllOf.md)
 - [SetDTMFPassThrough](docs/Model/SetDTMFPassThrough.md)
-- [SetDTMFPassThroughAllOf](docs/Model/SetDTMFPassThroughAllOf.md)
 - [SetListen](docs/Model/SetListen.md)
-- [SetListenAllOf](docs/Model/SetListenAllOf.md)
 - [SetTalk](docs/Model/SetTalk.md)
-- [SetTalkAllOf](docs/Model/SetTalkAllOf.md)
 - [Sms](docs/Model/Sms.md)
-- [SmsAllOf](docs/Model/SmsAllOf.md)
 - [StartRecordCall](docs/Model/StartRecordCall.md)
 - [TFN](docs/Model/TFN.md)
 - [TerminateConference](docs/Model/TerminateConference.md)
+- [TranscribeReason](docs/Model/TranscribeReason.md)
+- [TranscribeTermReason](docs/Model/TranscribeTermReason.md)
 - [TranscribeUtterance](docs/Model/TranscribeUtterance.md)
-- [TranscribeUtteranceAllOf](docs/Model/TranscribeUtteranceAllOf.md)
-- [TranscribeUtteranceAllOfRecord](docs/Model/TranscribeUtteranceAllOfRecord.md)
+- [TranscribeUtteranceRecord](docs/Model/TranscribeUtteranceRecord.md)
+- [TranscribeWebhook](docs/Model/TranscribeWebhook.md)
 - [Unpark](docs/Model/Unpark.md)
 - [UpdateCallRequest](docs/Model/UpdateCallRequest.md)
 - [UpdateCallRequestStatus](docs/Model/UpdateCallRequestStatus.md)
 - [UpdateConferenceParticipantRequest](docs/Model/UpdateConferenceParticipantRequest.md)
 - [UpdateConferenceRequest](docs/Model/UpdateConferenceRequest.md)
 - [UpdateConferenceRequestStatus](docs/Model/UpdateConferenceRequestStatus.md)
+- [Webhook](docs/Model/Webhook.md)
 
 ## Authorization
 
+Authentication schemes defined for the API:
 ### fc
 
 - **Type**: HTTP basic authentication
@@ -344,41 +337,6 @@ composer install
 vendor/bin/phpunit
 ```
 
-<a name="documentation-for-verify-request-signature"></a>
-
-## Documentation for verifying request signature
-
-- To verify the request signature, we will need to use the verifyRequestSignature method within the Request Verifier class
-
-  RequestVerifier::verifyRequestSignature($requestBody, $requestHeader, $signingSecret, $tolerance);
-
-  This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the request signature is valid otherwise it will throw a specific error message depending on which request signature part is causing issues
-
-  This method requires a requestBody of type string, a requestHeader of type string, a signingSecret of type string, and a tolerance value of type int
-
-  Example code down below
-
-  ```php
-  <?php
-
-  namespace FreeClimb\Example;
-
-  use FreeClimb\Api\Util\RequestVerifier;
-
-  class Example
-  {
-    public function verifyRequestSignatureExample()
-    {
-        $tolerance = 5 * 60;
-        $requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8";
-        $requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}";
-        $signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794";
-
-        RequestVerifier::verifyRequestSignature($requestBody, $requestHeader, $signingSecret, $tolerance);
-    }
-  }
-  ```
-
 ## Author
 
 support@freeclimb.com
@@ -388,5 +346,6 @@ support@freeclimb.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0.0`
-    - Package version: `4.7.0`
+    - Package version: `5.0.0`
+    - Generator version: `7.9.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

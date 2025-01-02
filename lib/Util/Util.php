@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Util
  *
@@ -29,31 +30,31 @@ use \FreeClimb\ObjectSerializer;
  */
 class Util
 {
-  /**
-   * @var UtilInterface
-   */
-  protected $util;
+    /**
+     * @var UtilInterface
+     */
+    protected $util;
 
-  /**
-   * Constructor
-   *
-   */
-  public function __construct()
-  {
-  }
-
-  /**
-   * getResponseHeader
-   *
-   */
-  public function getResponseHeader($header, $response)
-  {
-    foreach ($response as $key => $r) {
-      // Match the header name up to ':', compare lower case
-      if (stripos($r, $header . ':') === 0) {
-        list($headername, $headervalue) = explode(":", $r, 2);
-        return trim($headervalue);
-      }
+    /**
+     * Constructor
+     *
+     */
+    public function __construct()
+    {
     }
-  }
+
+    /**
+     * getResponseHeader
+     *
+     */
+    public function getResponseHeader($header, $response)
+    {
+        foreach ($response as $key => $r) {
+            // Match the header name up to ':', compare lower case
+            if (stripos($r, $header . ':') === 0) {
+                list($headername, $headervalue) = explode(":", $r, 2);
+                return trim($headervalue);
+            }
+        }
+    }
 }

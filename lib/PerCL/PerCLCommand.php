@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PerCLCommand
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class PerCLCommand implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = 'command';
+    public const DISCRIMINATOR = 'command';
 
     /**
       * The original name of the model.
@@ -158,9 +159,9 @@ class PerCLCommand implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values

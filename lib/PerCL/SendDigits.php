@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SendDigits
  *
@@ -38,9 +39,9 @@ use \FreeClimb\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SendDigits extends PerCLCommand 
+class SendDigits extends PerCLCommand
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -161,9 +162,9 @@ class SendDigits extends PerCLCommand
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
 
     /**

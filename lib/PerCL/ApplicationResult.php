@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ApplicationResult
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class ApplicationResult implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -218,9 +219,9 @@ class ApplicationResult implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values

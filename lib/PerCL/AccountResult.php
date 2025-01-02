@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AccountResult
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class AccountResult implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -208,12 +209,12 @@ class AccountResult implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS_ACTIVE = 'active';
-    const STATUS_SUSPENDED = 'suspended';
-    const STATUS_CLOSED = 'closed';
-    
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_SUSPENDED = 'suspended';
+    public const STATUS_CLOSED = 'closed';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -227,7 +228,7 @@ class AccountResult implements ModelInterface, ArrayAccess
             self::STATUS_CLOSED,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

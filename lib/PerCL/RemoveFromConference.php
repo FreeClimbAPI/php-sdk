@@ -1,4 +1,5 @@
 <?php
+
 /**
  * RemoveFromConference
  *
@@ -38,9 +39,9 @@ use \FreeClimb\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class RemoveFromConference extends PerCLCommand 
+class RemoveFromConference extends PerCLCommand
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -156,9 +157,9 @@ class RemoveFromConference extends PerCLCommand
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
 
     /**

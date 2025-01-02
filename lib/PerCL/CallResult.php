@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CallResult
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class CallResult implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -248,17 +249,17 @@ class CallResult implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS_QUEUED = 'queued';
-    const STATUS_RINGING = 'ringing';
-    const STATUS_IN_PROGRESS = 'inProgress';
-    const STATUS_CANCELED = 'canceled';
-    const STATUS_COMPLETED = 'completed';
-    const STATUS_BUSY = 'busy';
-    const STATUS_FAILED = 'failed';
-    const STATUS_NO_ANSWER = 'noAnswer';
-    
+    public const STATUS_QUEUED = 'queued';
+    public const STATUS_RINGING = 'ringing';
+    public const STATUS_IN_PROGRESS = 'inProgress';
+    public const STATUS_CANCELED = 'canceled';
+    public const STATUS_COMPLETED = 'completed';
+    public const STATUS_BUSY = 'busy';
+    public const STATUS_FAILED = 'failed';
+    public const STATUS_NO_ANSWER = 'noAnswer';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -277,7 +278,7 @@ class CallResult implements ModelInterface, ArrayAccess
             self::STATUS_NO_ANSWER,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

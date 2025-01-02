@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UpdateConferenceRequest
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class UpdateConferenceRequest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -173,11 +174,11 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS__EMPTY = 'empty';
-    const STATUS_TERMINATED = 'terminated';
-    
+    public const STATUS__EMPTY = 'empty';
+    public const STATUS_TERMINATED = 'terminated';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -190,7 +191,7 @@ class UpdateConferenceRequest implements ModelInterface, ArrayAccess
             self::STATUS_TERMINATED,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

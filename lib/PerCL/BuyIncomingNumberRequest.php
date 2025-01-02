@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BuyIncomingNumberRequest
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class BuyIncomingNumberRequest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -173,9 +174,9 @@ class BuyIncomingNumberRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values

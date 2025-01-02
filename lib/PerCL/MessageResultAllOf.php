@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MessageResultAllOf
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class MessageResultAllOf implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -193,16 +194,16 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS__NEW = 'new';
-    const STATUS_QUEUED = 'queued';
-    const STATUS_REJECTED = 'rejected';
-    const STATUS_SENDING = 'sending';
-    const STATUS_SENT = 'sent';
-    const STATUS_FAILED = 'failed';
-    const STATUS_RECEIVED = 'received';
-    
+    public const STATUS__NEW = 'new';
+    public const STATUS_QUEUED = 'queued';
+    public const STATUS_REJECTED = 'rejected';
+    public const STATUS_SENDING = 'sending';
+    public const STATUS_SENT = 'sent';
+    public const STATUS_FAILED = 'failed';
+    public const STATUS_RECEIVED = 'received';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -220,7 +221,7 @@ class MessageResultAllOf implements ModelInterface, ArrayAccess
             self::STATUS_RECEIVED,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

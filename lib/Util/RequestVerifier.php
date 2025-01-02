@@ -31,9 +31,9 @@ class RequestVerifier
     {
         if ($requestHeader === "" or $requestHeader === null) {
             throw new Exception('Error with request header, Request header is empty');
-        } else if (!str_contains($requestHeader, "t=")) {
+        } elseif (!str_contains($requestHeader, "t=")) {
             throw new Exception("Error with request header, timestamp is not present");
-        } else if (!str_contains($requestHeader, "v1=")) {
+        } elseif (!str_contains($requestHeader, "v1=")) {
             throw new Exception("Error with request header, signatures are not present");
         }
     }
