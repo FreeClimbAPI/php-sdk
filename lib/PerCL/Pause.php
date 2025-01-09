@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Pause
  *
@@ -38,9 +39,9 @@ use \FreeClimb\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Pause extends PerCLCommand 
+class Pause extends PerCLCommand
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -156,9 +157,9 @@ class Pause extends PerCLCommand
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
 
     /**

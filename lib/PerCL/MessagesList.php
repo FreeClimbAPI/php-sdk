@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MessagesList
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class MessagesList implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -193,9 +194,9 @@ class MessagesList implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values

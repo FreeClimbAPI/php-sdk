@@ -7,7 +7,7 @@ class SignatureInformation
     public int $requestTimestamp = 0;
     public array $signatures = [];
 
-    function __construct(string $requestHeader)
+    public function __construct(string $requestHeader)
     {
         $signature_header = explode(",", $requestHeader);
         foreach ($signature_header as &$signature) {
@@ -20,17 +20,17 @@ class SignatureInformation
         }
     }
 
-    function isRequestTimeValid(int $tolerance)
+    public function isRequestTimeValid(int $tolerance)
     {
         $currentTime = $this->getCurrentUnixTime();
         $timeCalculation = $this->requestTimestamp + $tolerance;
         return $currentTime < $timeCalculation;
     }
 
-    function isSignatureSafe(string $requestBody, string $signingSecret)
+    public function isSignatureSafe(string $requestBody, string $signingSecret)
     {
         $hashValue = $this->computeHash($requestBody, $signingSecret);
-        return in_array($hashValue, $this->signatures);
+        return in_array($hashValue, $this->signatures, true);
     }
 
     private function computeHash(string $requestBody, string $signingSecret)
@@ -39,7 +39,7 @@ class SignatureInformation
         return hash_hmac('sha256', $data, $signingSecret);
     }
 
-    function getCurrentUnixTime()
+    public function getCurrentUnixTime()
     {
         return time();
     }

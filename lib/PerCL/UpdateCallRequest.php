@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UpdateCallRequest
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class UpdateCallRequest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -163,11 +164,11 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS_CANCELED = 'canceled';
-    const STATUS_COMPLETED = 'completed';
-    
+    public const STATUS_CANCELED = 'canceled';
+    public const STATUS_COMPLETED = 'completed';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -180,7 +181,7 @@ class UpdateCallRequest implements ModelInterface, ArrayAccess
             self::STATUS_COMPLETED,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

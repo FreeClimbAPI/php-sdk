@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **campaign_id** | **string** | Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC. |
 **csp_id** | **string** | Alphanumeric identifier of the CSP associated with this campaign. |
 **reseller_id** | **string** | Alphanumeric identifier of the reseller that you want to associate with this campaign. | [optional]
-**status** | **string** | Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. | [optional]
+**status** | [**\FreeClimb\Api\Model\SMSTenDLCCampaignStatus**](SMSTenDLCCampaignStatus.md) |  | [optional]
 **create_date** | **\DateTime** | Unix timestamp when campaign was created. | [optional]
 **auto_renewal** | **bool** | Campaign subscription auto-renewal status. | [optional]
 **billed_date** | **\DateTime** | Campaign recent billed date. | [optional]

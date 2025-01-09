@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LogResult
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class LogResult implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -188,12 +189,12 @@ class LogResult implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const LEVEL_INFO = 'info';
-    const LEVEL_WARNING = 'warning';
-    const LEVEL_ERROR = 'error';
-    
+    public const LEVEL_INFO = 'info';
+    public const LEVEL_WARNING = 'warning';
+    public const LEVEL_ERROR = 'error';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -207,7 +208,7 @@ class LogResult implements ModelInterface, ArrayAccess
             self::LEVEL_ERROR,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

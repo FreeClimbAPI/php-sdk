@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Dequeue
  *
@@ -38,9 +39,9 @@ use \FreeClimb\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Dequeue extends PerCLCommand 
+class Dequeue extends PerCLCommand
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -55,7 +56,7 @@ class Dequeue extends PerCLCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        
+
     ];
 
     /**
@@ -64,7 +65,7 @@ class Dequeue extends PerCLCommand
       * @var string[]
       */
     protected static $openAPIFormats = [
-        
+
     ];
 
     /**
@@ -94,7 +95,7 @@ class Dequeue extends PerCLCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        
+
     ];
 
     /**
@@ -103,7 +104,7 @@ class Dequeue extends PerCLCommand
      * @var string[]
      */
     protected static $setters = [
-        
+
     ];
 
     /**
@@ -112,7 +113,7 @@ class Dequeue extends PerCLCommand
      * @var string[]
      */
     protected static $getters = [
-        
+
     ];
 
     /**
@@ -156,9 +157,9 @@ class Dequeue extends PerCLCommand
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
 
     /**

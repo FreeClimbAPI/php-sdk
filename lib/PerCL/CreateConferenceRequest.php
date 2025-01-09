@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CreateConferenceRequest
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class CreateConferenceRequest implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -183,13 +184,13 @@ class CreateConferenceRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const PLAY_BEEP_ALWAYS = 'always';
-    const PLAY_BEEP_NEVER = 'never';
-    const PLAY_BEEP_ENTRY_ONLY = 'entryOnly';
-    const PLAY_BEEP_EXIT_ONLY = 'exitOnly';
-    
+    public const PLAY_BEEP_ALWAYS = 'always';
+    public const PLAY_BEEP_NEVER = 'never';
+    public const PLAY_BEEP_ENTRY_ONLY = 'entryOnly';
+    public const PLAY_BEEP_EXIT_ONLY = 'exitOnly';
 
-    
+
+
     /**
      * Gets allowable values of the enum
      *
@@ -204,7 +205,7 @@ class CreateConferenceRequest implements ModelInterface, ArrayAccess
             self::PLAY_BEEP_EXIT_ONLY,
         ];
     }
-    
+
 
     /**
      * Associative array for storing property values

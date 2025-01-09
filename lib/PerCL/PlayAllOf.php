@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PlayAllOf
  *
@@ -42,7 +43,7 @@ use \FreeClimb\ObjectSerializer;
  */
 class PlayAllOf implements ModelInterface, ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -168,9 +169,9 @@ class PlayAllOf implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
