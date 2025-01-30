@@ -78,6 +78,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->SMSTenDLCBrand->setAccountId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getAccountId());
         $this->assertIsString($this->SMSTenDLCBrand->getAccountId());
@@ -103,6 +104,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyCspId()
     {
+
         $this->SMSTenDLCBrand->setCspId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCspId());
         $this->assertIsString($this->SMSTenDLCBrand->getCspId());
@@ -112,6 +114,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyBrandId()
     {
+
         $this->SMSTenDLCBrand->setBrandId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getBrandId());
         $this->assertIsString($this->SMSTenDLCBrand->getBrandId());
@@ -121,6 +124,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyFirstName()
     {
+
         $this->SMSTenDLCBrand->setFirstName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getFirstName());
         $this->assertIsString($this->SMSTenDLCBrand->getFirstName());
@@ -130,6 +134,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyLastName()
     {
+
         $this->SMSTenDLCBrand->setLastName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getLastName());
         $this->assertIsString($this->SMSTenDLCBrand->getLastName());
@@ -139,6 +144,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyDisplayName()
     {
+
         $this->SMSTenDLCBrand->setDisplayName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getDisplayName());
         $this->assertIsString($this->SMSTenDLCBrand->getDisplayName());
@@ -148,6 +154,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyCompanyName()
     {
+
         $this->SMSTenDLCBrand->setCompanyName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCompanyName());
         $this->assertIsString($this->SMSTenDLCBrand->getCompanyName());
@@ -157,6 +164,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyEin()
     {
+
         $this->SMSTenDLCBrand->setEin('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEin());
         $this->assertIsString($this->SMSTenDLCBrand->getEin());
@@ -166,6 +174,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyEinIssuingCountry()
     {
+
         $this->SMSTenDLCBrand->setEinIssuingCountry('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEinIssuingCountry());
         $this->assertIsString($this->SMSTenDLCBrand->getEinIssuingCountry());
@@ -175,6 +184,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyPhone()
     {
+
         $this->SMSTenDLCBrand->setPhone('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getPhone());
         $this->assertIsString($this->SMSTenDLCBrand->getPhone());
@@ -184,6 +194,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyStreet()
     {
+
         $this->SMSTenDLCBrand->setStreet('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getStreet());
         $this->assertIsString($this->SMSTenDLCBrand->getStreet());
@@ -193,6 +204,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyCity()
     {
+
         $this->SMSTenDLCBrand->setCity('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCity());
         $this->assertIsString($this->SMSTenDLCBrand->getCity());
@@ -202,6 +214,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyState()
     {
+
         $this->SMSTenDLCBrand->setState('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getState());
         $this->assertIsString($this->SMSTenDLCBrand->getState());
@@ -211,6 +224,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyPostalCode()
     {
+
         $this->SMSTenDLCBrand->setPostalCode('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getPostalCode());
         $this->assertIsString($this->SMSTenDLCBrand->getPostalCode());
@@ -220,6 +234,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyCountry()
     {
+
         $this->SMSTenDLCBrand->setCountry('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCountry());
         $this->assertIsString($this->SMSTenDLCBrand->getCountry());
@@ -229,6 +244,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyEmail()
     {
+
         $this->SMSTenDLCBrand->setEmail('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEmail());
         $this->assertIsString($this->SMSTenDLCBrand->getEmail());
@@ -238,6 +254,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyStockSymbol()
     {
+
         $this->SMSTenDLCBrand->setStockSymbol('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getStockSymbol());
         $this->assertIsString($this->SMSTenDLCBrand->getStockSymbol());
@@ -307,6 +324,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyIpAddress()
     {
+
         $this->SMSTenDLCBrand->setIpAddress('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getIpAddress());
         $this->assertIsString($this->SMSTenDLCBrand->getIpAddress());
@@ -316,6 +334,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyWebsite()
     {
+
         $this->SMSTenDLCBrand->setWebsite('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getWebsite());
         $this->assertIsString($this->SMSTenDLCBrand->getWebsite());
@@ -341,6 +360,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyVertical()
     {
+
         $this->SMSTenDLCBrand->setVertical('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getVertical());
         $this->assertIsString($this->SMSTenDLCBrand->getVertical());
@@ -350,6 +370,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyAltBusinessId()
     {
+
         $this->SMSTenDLCBrand->setAltBusinessId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getAltBusinessId());
         $this->assertIsString($this->SMSTenDLCBrand->getAltBusinessId());
@@ -373,6 +394,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyUniversalEin()
     {
+
         $this->SMSTenDLCBrand->setUniversalEin('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getUniversalEin());
         $this->assertIsString($this->SMSTenDLCBrand->getUniversalEin());
@@ -382,6 +404,7 @@ class SMSTenDLCBrandTest extends TestCase
      */
     public function testPropertyReferenceId()
     {
+
         $this->SMSTenDLCBrand->setReferenceId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getReferenceId());
         $this->assertIsString($this->SMSTenDLCBrand->getReferenceId());

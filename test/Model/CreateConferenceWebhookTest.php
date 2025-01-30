@@ -78,6 +78,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->CreateConferenceWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getRequestType());
         $this->assertIsString($this->CreateConferenceWebhook->getRequestType());
@@ -87,6 +88,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->CreateConferenceWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getCallId());
         $this->assertIsString($this->CreateConferenceWebhook->getCallId());
@@ -96,6 +98,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->CreateConferenceWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getAccountId());
         $this->assertIsString($this->CreateConferenceWebhook->getAccountId());
@@ -105,6 +108,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->CreateConferenceWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getFrom());
         $this->assertIsString($this->CreateConferenceWebhook->getFrom());
@@ -114,6 +118,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->CreateConferenceWebhook->setTo('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getTo());
         $this->assertIsString($this->CreateConferenceWebhook->getTo());
@@ -157,6 +162,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->CreateConferenceWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getConferenceId());
         $this->assertIsString($this->CreateConferenceWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->CreateConferenceWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getQueueId());
         $this->assertIsString($this->CreateConferenceWebhook->getQueueId());
@@ -189,6 +196,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyRecordingUrl()
     {
+
         $this->CreateConferenceWebhook->setRecordingUrl('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getRecordingUrl());
         $this->assertIsString($this->CreateConferenceWebhook->getRecordingUrl());
@@ -198,6 +206,7 @@ class CreateConferenceWebhookTest extends TestCase
      */
     public function testPropertyRecordingId()
     {
+
         $this->CreateConferenceWebhook->setRecordingId('TS');
         $this->assertEquals('TS', $this->CreateConferenceWebhook->getRecordingId());
         $this->assertIsString($this->CreateConferenceWebhook->getRecordingId());

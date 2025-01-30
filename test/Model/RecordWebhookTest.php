@@ -78,6 +78,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->RecordWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getRequestType());
         $this->assertIsString($this->RecordWebhook->getRequestType());
@@ -87,6 +88,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->RecordWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getAccountId());
         $this->assertIsString($this->RecordWebhook->getAccountId());
@@ -96,6 +98,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->RecordWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getCallId());
         $this->assertIsString($this->RecordWebhook->getCallId());
@@ -105,6 +108,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->RecordWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getFrom());
         $this->assertIsString($this->RecordWebhook->getFrom());
@@ -114,6 +118,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->RecordWebhook->setTo('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getTo());
         $this->assertIsString($this->RecordWebhook->getTo());
@@ -157,6 +162,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->RecordWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getConferenceId());
         $this->assertIsString($this->RecordWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->RecordWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getQueueId());
         $this->assertIsString($this->RecordWebhook->getQueueId());
@@ -175,6 +182,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyRecordingId()
     {
+
         $this->RecordWebhook->setRecordingId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingId());
         $this->assertIsString($this->RecordWebhook->getRecordingId());
@@ -184,6 +192,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyRecordingUrl()
     {
+
         $this->RecordWebhook->setRecordingUrl('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingUrl());
         $this->assertIsString($this->RecordWebhook->getRecordingUrl());
@@ -193,6 +202,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyRecordingSize()
     {
+
         $this->RecordWebhook->setRecordingSize('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingSize());
         $this->assertIsString($this->RecordWebhook->getRecordingSize());
@@ -202,6 +212,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyRecordingFormat()
     {
+
         $this->RecordWebhook->setRecordingFormat('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingFormat());
         $this->assertIsString($this->RecordWebhook->getRecordingFormat());
@@ -237,6 +248,7 @@ class RecordWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->RecordWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->RecordWebhook->getParentCallId());
         $this->assertIsString($this->RecordWebhook->getParentCallId());

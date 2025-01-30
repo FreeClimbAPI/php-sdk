@@ -20,5 +20,8 @@ Name | Type | Description | Notes
 **campaign_id** | **string** | The unique identifier for the campaign associated with the message | [optional]
 **segment_count** | **float** | The number of segments into which the message was split | [optional]
 **media_urls** | **string[]** | an array of HTTP URLs which were attached this this message | [optional]
+**tfn** | [**\FreeClimb\Api\Model\MessageResultAllOfTfn**](MessageResultAllOfTfn.md) |  | [optional]
+**phone_number_id** | **string** | String that uniquely identifies the phoneNumber resource used to send this Message | [optional]
+**application_id** | **string** | String that uniquely identifies the Application resource used to send this Message | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

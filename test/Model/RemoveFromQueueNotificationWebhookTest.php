@@ -78,6 +78,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getRequestType());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getRequestType());
@@ -87,6 +88,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getAccountId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getAccountId());
@@ -96,6 +98,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getCallId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getCallId());
@@ -105,6 +108,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getFrom());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getFrom());
@@ -114,6 +118,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setTo('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getTo());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getTo());
@@ -157,6 +162,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getConferenceId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->RemoveFromQueueNotificationWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getQueueId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getQueueId());

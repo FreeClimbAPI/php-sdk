@@ -78,6 +78,7 @@ class SendDigitsTest extends TestCase
      */
     public function testPropertyDigits()
     {
+
         $this->SendDigits->setDigits('TS');
         $this->assertEquals('TS', $this->SendDigits->getDigits());
         $this->assertIsString($this->SendDigits->getDigits());

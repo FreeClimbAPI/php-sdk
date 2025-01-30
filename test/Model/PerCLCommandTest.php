@@ -78,6 +78,7 @@ class PerclCommandTest extends TestCase
      */
     public function testPropertyCommand()
     {
+
         $this->PerclCommand->setCommand('TS');
         $this->assertEquals('TS', $this->PerclCommand->getCommand());
         $this->assertIsString($this->PerclCommand->getCommand());

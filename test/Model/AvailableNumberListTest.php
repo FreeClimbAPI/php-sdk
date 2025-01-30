@@ -150,6 +150,7 @@ class AvailableNumberListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->AvailableNumberList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->AvailableNumberList->getNextPageUri());
         $this->assertIsString($this->AvailableNumberList->getNextPageUri());

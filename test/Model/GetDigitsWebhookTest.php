@@ -78,6 +78,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->GetDigitsWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getRequestType());
         $this->assertIsString($this->GetDigitsWebhook->getRequestType());
@@ -87,6 +88,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->GetDigitsWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getCallId());
         $this->assertIsString($this->GetDigitsWebhook->getCallId());
@@ -96,6 +98,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->GetDigitsWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getAccountId());
         $this->assertIsString($this->GetDigitsWebhook->getAccountId());
@@ -105,6 +108,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->GetDigitsWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getFrom());
         $this->assertIsString($this->GetDigitsWebhook->getFrom());
@@ -114,6 +118,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->GetDigitsWebhook->setTo('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getTo());
         $this->assertIsString($this->GetDigitsWebhook->getTo());
@@ -157,6 +162,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->GetDigitsWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getConferenceId());
         $this->assertIsString($this->GetDigitsWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->GetDigitsWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getQueueId());
         $this->assertIsString($this->GetDigitsWebhook->getQueueId());
@@ -175,6 +182,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyDigits()
     {
+
         $this->GetDigitsWebhook->setDigits('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getDigits());
         $this->assertIsString($this->GetDigitsWebhook->getDigits());
@@ -198,6 +206,7 @@ class GetDigitsWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->GetDigitsWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getParentCallId());
         $this->assertIsString($this->GetDigitsWebhook->getParentCallId());

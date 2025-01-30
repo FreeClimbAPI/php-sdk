@@ -78,6 +78,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->AddToQueueNotificationWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getRequestType());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getRequestType());
@@ -87,6 +88,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->AddToQueueNotificationWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getCallId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getCallId());
@@ -96,6 +98,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->AddToQueueNotificationWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getAccountId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getAccountId());
@@ -105,6 +108,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->AddToQueueNotificationWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getFrom());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getFrom());
@@ -114,6 +118,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->AddToQueueNotificationWebhook->setTo('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getTo());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getTo());
@@ -157,6 +162,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->AddToQueueNotificationWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getConferenceId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->AddToQueueNotificationWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getQueueId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getQueueId());

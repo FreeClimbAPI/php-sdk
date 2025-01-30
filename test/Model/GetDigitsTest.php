@@ -78,6 +78,7 @@ class GetDigitsTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->GetDigits->setActionUrl('TS');
         $this->assertEquals('TS', $this->GetDigits->getActionUrl());
         $this->assertIsString($this->GetDigits->getActionUrl());
@@ -99,6 +100,7 @@ class GetDigitsTest extends TestCase
      */
     public function testPropertyFinishOnKey()
     {
+
         $this->GetDigits->setFinishOnKey('TS');
         $this->assertEquals('TS', $this->GetDigits->getFinishOnKey());
         $this->assertIsString($this->GetDigits->getFinishOnKey());

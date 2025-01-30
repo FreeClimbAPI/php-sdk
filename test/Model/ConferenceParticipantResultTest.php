@@ -78,6 +78,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->ConferenceParticipantResult->setUri('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getUri());
         $this->assertIsString($this->ConferenceParticipantResult->getUri());
@@ -87,6 +88,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->ConferenceParticipantResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateCreated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateCreated());
@@ -96,6 +98,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->ConferenceParticipantResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateUpdated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateUpdated());
@@ -117,6 +120,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->ConferenceParticipantResult->setAccountId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getAccountId());
         $this->assertIsString($this->ConferenceParticipantResult->getAccountId());
@@ -126,6 +130,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->ConferenceParticipantResult->setConferenceId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getConferenceId());
         $this->assertIsString($this->ConferenceParticipantResult->getConferenceId());
@@ -135,6 +140,7 @@ class ConferenceParticipantResultTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->ConferenceParticipantResult->setCallId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getCallId());
         $this->assertIsString($this->ConferenceParticipantResult->getCallId());

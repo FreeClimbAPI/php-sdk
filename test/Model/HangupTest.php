@@ -78,6 +78,7 @@ class HangupTest extends TestCase
      */
     public function testPropertyReason()
     {
+
         $this->Hangup->setReason('TS');
         $this->assertEquals('TS', $this->Hangup->getReason());
         $this->assertIsString($this->Hangup->getReason());

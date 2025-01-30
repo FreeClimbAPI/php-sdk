@@ -150,6 +150,7 @@ class MessagesListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->MessagesList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->MessagesList->getNextPageUri());
         $this->assertIsString($this->MessagesList->getNextPageUri());

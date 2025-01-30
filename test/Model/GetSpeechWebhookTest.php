@@ -78,6 +78,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->GetSpeechWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getRequestType());
         $this->assertIsString($this->GetSpeechWebhook->getRequestType());
@@ -87,6 +88,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->GetSpeechWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCallId());
         $this->assertIsString($this->GetSpeechWebhook->getCallId());
@@ -96,6 +98,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->GetSpeechWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getAccountId());
         $this->assertIsString($this->GetSpeechWebhook->getAccountId());
@@ -105,6 +108,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->GetSpeechWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getFrom());
         $this->assertIsString($this->GetSpeechWebhook->getFrom());
@@ -114,6 +118,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->GetSpeechWebhook->setTo('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getTo());
         $this->assertIsString($this->GetSpeechWebhook->getTo());
@@ -157,6 +162,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->GetSpeechWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getConferenceId());
         $this->assertIsString($this->GetSpeechWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->GetSpeechWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getQueueId());
         $this->assertIsString($this->GetSpeechWebhook->getQueueId());
@@ -193,6 +200,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyRecognitionResult()
     {
+
         $this->GetSpeechWebhook->setRecognitionResult('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getRecognitionResult());
         $this->assertIsString($this->GetSpeechWebhook->getRecognitionResult());
@@ -214,6 +222,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->GetSpeechWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getParentCallId());
         $this->assertIsString($this->GetSpeechWebhook->getParentCallId());
@@ -223,6 +232,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyCompletionReason()
     {
+
         $this->GetSpeechWebhook->setCompletionReason('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionReason());
         $this->assertIsString($this->GetSpeechWebhook->getCompletionReason());
@@ -232,6 +242,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyCompletionCause()
     {
+
         $this->GetSpeechWebhook->setCompletionCause('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionCause());
         $this->assertIsString($this->GetSpeechWebhook->getCompletionCause());
@@ -253,6 +264,7 @@ class GetSpeechWebhookTest extends TestCase
      */
     public function testPropertyMrcpDiagnostic()
     {
+
         $this->GetSpeechWebhook->setMrcpDiagnostic('TS');
         $this->assertEquals('TS', $this->GetSpeechWebhook->getMrcpDiagnostic());
         $this->assertIsString($this->GetSpeechWebhook->getMrcpDiagnostic());

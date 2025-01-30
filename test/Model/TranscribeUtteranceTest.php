@@ -78,6 +78,7 @@ class TranscribeUtteranceTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->TranscribeUtterance->setActionUrl('TS');
         $this->assertEquals('TS', $this->TranscribeUtterance->getActionUrl());
         $this->assertIsString($this->TranscribeUtterance->getActionUrl());

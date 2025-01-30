@@ -150,6 +150,7 @@ class LogListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->LogList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->LogList->getNextPageUri());
         $this->assertIsString($this->LogList->getNextPageUri());

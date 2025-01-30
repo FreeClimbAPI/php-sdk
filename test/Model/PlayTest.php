@@ -78,6 +78,7 @@ class PlayTest extends TestCase
      */
     public function testPropertyFile()
     {
+
         $this->Play->setFile('TS');
         $this->assertEquals('TS', $this->Play->getFile());
         $this->assertIsString($this->Play->getFile());

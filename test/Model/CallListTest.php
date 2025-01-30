@@ -150,6 +150,7 @@ class CallListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->CallList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->CallList->getNextPageUri());
         $this->assertIsString($this->CallList->getNextPageUri());

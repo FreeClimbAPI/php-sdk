@@ -78,6 +78,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setAccountId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getAccountId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getAccountId());
@@ -87,6 +88,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyBrandId()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setBrandId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getBrandId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getBrandId());
@@ -96,6 +98,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyFirstName()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setFirstName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getFirstName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getFirstName());
@@ -105,6 +108,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyLastName()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setLastName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getLastName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getLastName());
@@ -114,6 +118,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyDisplayName()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setDisplayName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getDisplayName());
@@ -123,6 +128,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyCompanyName()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setCompanyName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getCompanyName());
@@ -132,6 +138,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyPhone()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setPhone('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getPhone());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getPhone());
@@ -141,6 +148,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyEmail()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setEmail('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getEmail());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getEmail());
@@ -150,6 +158,7 @@ class SMSTenDLCPartnerCampaignBrandTest extends TestCase
      */
     public function testPropertyWebsite()
     {
+
         $this->SMSTenDLCPartnerCampaignBrand->setWebsite('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignBrand->getWebsite());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignBrand->getWebsite());

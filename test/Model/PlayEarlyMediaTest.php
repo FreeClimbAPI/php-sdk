@@ -78,6 +78,7 @@ class PlayEarlyMediaTest extends TestCase
      */
     public function testPropertyFile()
     {
+
         $this->PlayEarlyMedia->setFile('TS');
         $this->assertEquals('TS', $this->PlayEarlyMedia->getFile());
         $this->assertIsString($this->PlayEarlyMedia->getFile());

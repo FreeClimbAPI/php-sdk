@@ -78,6 +78,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->LeaveConferenceWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getRequestType());
         $this->assertIsString($this->LeaveConferenceWebhook->getRequestType());
@@ -87,6 +88,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->LeaveConferenceWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getCallId());
         $this->assertIsString($this->LeaveConferenceWebhook->getCallId());
@@ -96,6 +98,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->LeaveConferenceWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getAccountId());
         $this->assertIsString($this->LeaveConferenceWebhook->getAccountId());
@@ -105,6 +108,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->LeaveConferenceWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getFrom());
         $this->assertIsString($this->LeaveConferenceWebhook->getFrom());
@@ -114,6 +118,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->LeaveConferenceWebhook->setTo('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getTo());
         $this->assertIsString($this->LeaveConferenceWebhook->getTo());
@@ -157,6 +162,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->LeaveConferenceWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getConferenceId());
         $this->assertIsString($this->LeaveConferenceWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class LeaveConferenceWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->LeaveConferenceWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getQueueId());
         $this->assertIsString($this->LeaveConferenceWebhook->getQueueId());

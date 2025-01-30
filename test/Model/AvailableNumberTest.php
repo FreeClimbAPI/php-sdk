@@ -86,6 +86,7 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->AvailableNumber->setCampaignId('TS');
         $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
         $this->assertIsString($this->AvailableNumber->getCampaignId());
@@ -95,6 +96,7 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyPhoneNumber()
     {
+
         $this->AvailableNumber->setPhoneNumber('TS');
         $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
         $this->assertIsString($this->AvailableNumber->getPhoneNumber());
@@ -122,6 +124,7 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyRegion()
     {
+
         $this->AvailableNumber->setRegion('TS');
         $this->assertEquals('TS', $this->AvailableNumber->getRegion());
         $this->assertIsString($this->AvailableNumber->getRegion());
@@ -131,6 +134,7 @@ class AvailableNumberTest extends TestCase
      */
     public function testPropertyCountry()
     {
+
         $this->AvailableNumber->setCountry('TS');
         $this->assertEquals('TS', $this->AvailableNumber->getCountry());
         $this->assertIsString($this->AvailableNumber->getCountry());

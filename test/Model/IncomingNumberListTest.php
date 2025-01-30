@@ -150,6 +150,7 @@ class IncomingNumberListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->IncomingNumberList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->IncomingNumberList->getNextPageUri());
         $this->assertIsString($this->IncomingNumberList->getNextPageUri());

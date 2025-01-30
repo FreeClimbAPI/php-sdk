@@ -78,6 +78,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->IncomingNumberResult->setUri('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getUri());
         $this->assertIsString($this->IncomingNumberResult->getUri());
@@ -87,6 +88,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->IncomingNumberResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getDateCreated());
         $this->assertIsString($this->IncomingNumberResult->getDateCreated());
@@ -96,6 +98,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->IncomingNumberResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getDateUpdated());
         $this->assertIsString($this->IncomingNumberResult->getDateUpdated());
@@ -125,6 +128,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->IncomingNumberResult->setCampaignId('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getCampaignId());
         $this->assertIsString($this->IncomingNumberResult->getCampaignId());
@@ -134,6 +138,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyPhoneNumberId()
     {
+
         $this->IncomingNumberResult->setPhoneNumberId('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumberId());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumberId());
@@ -143,6 +148,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->IncomingNumberResult->setAccountId('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getAccountId());
         $this->assertIsString($this->IncomingNumberResult->getAccountId());
@@ -152,6 +158,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->IncomingNumberResult->setApplicationId('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getApplicationId());
         $this->assertIsString($this->IncomingNumberResult->getApplicationId());
@@ -161,6 +168,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyPhoneNumber()
     {
+
         $this->IncomingNumberResult->setPhoneNumber('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumber());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumber());
@@ -170,6 +178,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->IncomingNumberResult->setAlias('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getAlias());
         $this->assertIsString($this->IncomingNumberResult->getAlias());
@@ -179,6 +188,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyRegion()
     {
+
         $this->IncomingNumberResult->setRegion('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getRegion());
         $this->assertIsString($this->IncomingNumberResult->getRegion());
@@ -188,6 +198,7 @@ class IncomingNumberResultTest extends TestCase
      */
     public function testPropertyCountry()
     {
+
         $this->IncomingNumberResult->setCountry('TS');
         $this->assertEquals('TS', $this->IncomingNumberResult->getCountry());
         $this->assertIsString($this->IncomingNumberResult->getCountry());

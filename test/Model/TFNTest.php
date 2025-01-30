@@ -78,6 +78,7 @@ class TFNTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->TFN->setCampaignId('TS');
         $this->assertEquals('TS', $this->TFN->getCampaignId());
         $this->assertIsString($this->TFN->getCampaignId());

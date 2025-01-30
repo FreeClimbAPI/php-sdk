@@ -78,6 +78,7 @@ class RecordUtteranceTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->RecordUtterance->setActionUrl('TS');
         $this->assertEquals('TS', $this->RecordUtterance->getActionUrl());
         $this->assertIsString($this->RecordUtterance->getActionUrl());
@@ -99,6 +100,7 @@ class RecordUtteranceTest extends TestCase
      */
     public function testPropertyFinishOnKey()
     {
+
         $this->RecordUtterance->setFinishOnKey('TS');
         $this->assertEquals('TS', $this->RecordUtterance->getFinishOnKey());
         $this->assertIsString($this->RecordUtterance->getFinishOnKey());

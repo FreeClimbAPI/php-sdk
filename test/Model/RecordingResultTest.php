@@ -78,6 +78,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->RecordingResult->setUri('TS');
         $this->assertEquals('TS', $this->RecordingResult->getUri());
         $this->assertIsString($this->RecordingResult->getUri());
@@ -87,6 +88,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->RecordingResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->RecordingResult->getDateCreated());
         $this->assertIsString($this->RecordingResult->getDateCreated());
@@ -96,6 +98,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->RecordingResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->RecordingResult->getDateUpdated());
         $this->assertIsString($this->RecordingResult->getDateUpdated());
@@ -117,6 +120,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyRecordingId()
     {
+
         $this->RecordingResult->setRecordingId('TS');
         $this->assertEquals('TS', $this->RecordingResult->getRecordingId());
         $this->assertIsString($this->RecordingResult->getRecordingId());
@@ -126,6 +130,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->RecordingResult->setAccountId('TS');
         $this->assertEquals('TS', $this->RecordingResult->getAccountId());
         $this->assertIsString($this->RecordingResult->getAccountId());
@@ -135,6 +140,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->RecordingResult->setCallId('TS');
         $this->assertEquals('TS', $this->RecordingResult->getCallId());
         $this->assertIsString($this->RecordingResult->getCallId());
@@ -156,6 +162,7 @@ class RecordingResultTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->RecordingResult->setConferenceId('TS');
         $this->assertEquals('TS', $this->RecordingResult->getConferenceId());
         $this->assertIsString($this->RecordingResult->getConferenceId());

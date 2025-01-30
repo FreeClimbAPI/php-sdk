@@ -78,6 +78,7 @@ class SayTest extends TestCase
      */
     public function testPropertyText()
     {
+
         $this->Say->setText('TS');
         $this->assertEquals('TS', $this->Say->getText());
         $this->assertIsString($this->Say->getText());
@@ -87,6 +88,7 @@ class SayTest extends TestCase
      */
     public function testPropertyLanguage()
     {
+
         $this->Say->setLanguage('TS');
         $this->assertEquals('TS', $this->Say->getLanguage());
         $this->assertIsString($this->Say->getLanguage());

@@ -78,6 +78,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->QueueWaitWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getRequestType());
         $this->assertIsString($this->QueueWaitWebhook->getRequestType());
@@ -87,6 +88,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->QueueWaitWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getAccountId());
         $this->assertIsString($this->QueueWaitWebhook->getAccountId());
@@ -96,6 +98,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->QueueWaitWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getCallId());
         $this->assertIsString($this->QueueWaitWebhook->getCallId());
@@ -105,6 +108,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->QueueWaitWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getFrom());
         $this->assertIsString($this->QueueWaitWebhook->getFrom());
@@ -114,6 +118,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->QueueWaitWebhook->setTo('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getTo());
         $this->assertIsString($this->QueueWaitWebhook->getTo());
@@ -157,6 +162,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->QueueWaitWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getConferenceId());
         $this->assertIsString($this->QueueWaitWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->QueueWaitWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getQueueId());
         $this->assertIsString($this->QueueWaitWebhook->getQueueId());
@@ -175,6 +182,7 @@ class QueueWaitWebhookTest extends TestCase
      */
     public function testPropertyQueuePosition()
     {
+
         $this->QueueWaitWebhook->setQueuePosition('TS');
         $this->assertEquals('TS', $this->QueueWaitWebhook->getQueuePosition());
         $this->assertIsString($this->QueueWaitWebhook->getQueuePosition());

@@ -150,6 +150,7 @@ class QueueMemberListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->QueueMemberList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->QueueMemberList->getNextPageUri());
         $this->assertIsString($this->QueueMemberList->getNextPageUri());

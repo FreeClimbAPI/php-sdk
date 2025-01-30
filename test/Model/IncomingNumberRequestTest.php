@@ -78,6 +78,7 @@ class IncomingNumberRequestTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->IncomingNumberRequest->setApplicationId('TS');
         $this->assertEquals('TS', $this->IncomingNumberRequest->getApplicationId());
         $this->assertIsString($this->IncomingNumberRequest->getApplicationId());
@@ -87,6 +88,7 @@ class IncomingNumberRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->IncomingNumberRequest->setAlias('TS');
         $this->assertEquals('TS', $this->IncomingNumberRequest->getAlias());
         $this->assertIsString($this->IncomingNumberRequest->getAlias());
@@ -96,6 +98,7 @@ class IncomingNumberRequestTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->IncomingNumberRequest->setCampaignId('TS');
         $this->assertEquals('TS', $this->IncomingNumberRequest->getCampaignId());
         $this->assertIsString($this->IncomingNumberRequest->getCampaignId());

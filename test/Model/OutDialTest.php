@@ -78,6 +78,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->OutDial->setActionUrl('TS');
         $this->assertEquals('TS', $this->OutDial->getActionUrl());
         $this->assertIsString($this->OutDial->getActionUrl());
@@ -87,6 +88,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyCallConnectUrl()
     {
+
         $this->OutDial->setCallConnectUrl('TS');
         $this->assertEquals('TS', $this->OutDial->getCallConnectUrl());
         $this->assertIsString($this->OutDial->getCallConnectUrl());
@@ -96,6 +98,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyCallingNumber()
     {
+
         $this->OutDial->setCallingNumber('TS');
         $this->assertEquals('TS', $this->OutDial->getCallingNumber());
         $this->assertIsString($this->OutDial->getCallingNumber());
@@ -105,6 +108,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyDestination()
     {
+
         $this->OutDial->setDestination('TS');
         $this->assertEquals('TS', $this->OutDial->getDestination());
         $this->assertIsString($this->OutDial->getDestination());
@@ -124,6 +128,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyIfMachineUrl()
     {
+
         $this->OutDial->setIfMachineUrl('TS');
         $this->assertEquals('TS', $this->OutDial->getIfMachineUrl());
         $this->assertIsString($this->OutDial->getIfMachineUrl());
@@ -133,6 +138,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertySendDigits()
     {
+
         $this->OutDial->setSendDigits('TS');
         $this->assertEquals('TS', $this->OutDial->getSendDigits());
         $this->assertIsString($this->OutDial->getSendDigits());
@@ -142,6 +148,7 @@ class OutDialTest extends TestCase
      */
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->OutDial->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->OutDial->getStatusCallbackUrl());
         $this->assertIsString($this->OutDial->getStatusCallbackUrl());

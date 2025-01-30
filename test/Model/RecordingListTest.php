@@ -150,6 +150,7 @@ class RecordingListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->RecordingList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->RecordingList->getNextPageUri());
         $this->assertIsString($this->RecordingList->getNextPageUri());

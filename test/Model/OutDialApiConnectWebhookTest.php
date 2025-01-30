@@ -78,6 +78,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->OutDialApiConnectWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getRequestType());
         $this->assertIsString($this->OutDialApiConnectWebhook->getRequestType());
@@ -87,6 +88,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->OutDialApiConnectWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getAccountId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getAccountId());
@@ -96,6 +98,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->OutDialApiConnectWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getCallId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getCallId());
@@ -105,6 +108,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->OutDialApiConnectWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getFrom());
         $this->assertIsString($this->OutDialApiConnectWebhook->getFrom());
@@ -114,6 +118,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->OutDialApiConnectWebhook->setTo('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getTo());
         $this->assertIsString($this->OutDialApiConnectWebhook->getTo());
@@ -157,6 +162,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->OutDialApiConnectWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getConferenceId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->OutDialApiConnectWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getQueueId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getQueueId());
@@ -175,6 +182,7 @@ class OutDialApiConnectWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->OutDialApiConnectWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getParentCallId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getParentCallId());

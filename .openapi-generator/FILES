@@ -71,6 +71,7 @@ docs/Model/MessageDeliveryWebhook.md
 docs/Model/MessageDirection.md
 docs/Model/MessageRequest.md
 docs/Model/MessageResult.md
+docs/Model/MessageResultAllOfTfn.md
 docs/Model/MessageStatus.md
 docs/Model/MessageStatusWebhook.md
 docs/Model/MessagesList.md
@@ -130,6 +131,7 @@ docs/Model/SetTalk.md
 docs/Model/Sms.md
 docs/Model/StartRecordCall.md
 docs/Model/TFN.md
+docs/Model/TFNCampaign.md
 docs/Model/TerminateConference.md
 docs/Model/TranscribeReason.md
 docs/Model/TranscribeTermReason.md
@@ -215,6 +217,7 @@ lib/Model/MessageDeliveryWebhook.php
 lib/Model/MessageDirection.php
 lib/Model/MessageRequest.php
 lib/Model/MessageResult.php
+lib/Model/MessageResultAllOfTfn.php
 lib/Model/MessageStatus.php
 lib/Model/MessageStatusWebhook.php
 lib/Model/MessagesList.php
@@ -275,6 +278,7 @@ lib/Model/SetTalk.php
 lib/Model/Sms.php
 lib/Model/StartRecordCall.php
 lib/Model/TFN.php
+lib/Model/TFNCampaign.php
 lib/Model/TerminateConference.php
 lib/Model/TranscribeReason.php
 lib/Model/TranscribeTermReason.php
@@ -357,6 +361,7 @@ test/Model/MakeCallRequestTest.php
 test/Model/MessageDeliveryWebhookTest.php
 test/Model/MessageDirectionTest.php
 test/Model/MessageRequestTest.php
+test/Model/MessageResultAllOfTfnTest.php
 test/Model/MessageResultTest.php
 test/Model/MessageStatusTest.php
 test/Model/MessageStatusWebhookTest.php
@@ -416,6 +421,7 @@ test/Model/SetListenTest.php
 test/Model/SetTalkTest.php
 test/Model/SmsTest.php
 test/Model/StartRecordCallTest.php
+test/Model/TFNCampaignTest.php
 test/Model/TFNTest.php
 test/Model/TerminateConferenceTest.php
 test/Model/TranscribeReasonTest.php

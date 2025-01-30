@@ -78,6 +78,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->AccountResult->setUri('TS');
         $this->assertEquals('TS', $this->AccountResult->getUri());
         $this->assertIsString($this->AccountResult->getUri());
@@ -87,6 +88,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->AccountResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->AccountResult->getDateCreated());
         $this->assertIsString($this->AccountResult->getDateCreated());
@@ -96,6 +98,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->AccountResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->AccountResult->getDateUpdated());
         $this->assertIsString($this->AccountResult->getDateUpdated());
@@ -117,6 +120,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->AccountResult->setAccountId('TS');
         $this->assertEquals('TS', $this->AccountResult->getAccountId());
         $this->assertIsString($this->AccountResult->getAccountId());
@@ -126,6 +130,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyApiKey()
     {
+
         $this->AccountResult->setApiKey('TS');
         $this->assertEquals('TS', $this->AccountResult->getApiKey());
         $this->assertIsString($this->AccountResult->getApiKey());
@@ -135,6 +140,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->AccountResult->setAlias('TS');
         $this->assertEquals('TS', $this->AccountResult->getAlias());
         $this->assertIsString($this->AccountResult->getAlias());
@@ -144,6 +150,7 @@ class AccountResultTest extends TestCase
      */
     public function testPropertyLabel()
     {
+
         $this->AccountResult->setLabel('TS');
         $this->assertEquals('TS', $this->AccountResult->getLabel());
         $this->assertIsString($this->AccountResult->getLabel());

@@ -78,6 +78,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->MessageRequest->setUri('TS');
         $this->assertEquals('TS', $this->MessageRequest->getUri());
         $this->assertIsString($this->MessageRequest->getUri());
@@ -87,6 +88,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->MessageRequest->setDateCreated('TS');
         $this->assertEquals('TS', $this->MessageRequest->getDateCreated());
         $this->assertIsString($this->MessageRequest->getDateCreated());
@@ -96,6 +98,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->MessageRequest->setDateUpdated('TS');
         $this->assertEquals('TS', $this->MessageRequest->getDateUpdated());
         $this->assertIsString($this->MessageRequest->getDateUpdated());
@@ -117,6 +120,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->MessageRequest->setFrom('TS');
         $this->assertEquals('TS', $this->MessageRequest->getFrom());
         $this->assertIsString($this->MessageRequest->getFrom());
@@ -126,6 +130,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->MessageRequest->setTo('TS');
         $this->assertEquals('TS', $this->MessageRequest->getTo());
         $this->assertIsString($this->MessageRequest->getTo());
@@ -135,6 +140,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyText()
     {
+
         $this->MessageRequest->setText('TS');
         $this->assertEquals('TS', $this->MessageRequest->getText());
         $this->assertIsString($this->MessageRequest->getText());
@@ -144,6 +150,7 @@ class MessageRequestTest extends TestCase
      */
     public function testPropertyNotificationUrl()
     {
+
         $this->MessageRequest->setNotificationUrl('TS');
         $this->assertEquals('TS', $this->MessageRequest->getNotificationUrl());
         $this->assertIsString($this->MessageRequest->getNotificationUrl());

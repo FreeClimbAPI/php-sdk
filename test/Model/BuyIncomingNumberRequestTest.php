@@ -78,6 +78,7 @@ class BuyIncomingNumberRequestTest extends TestCase
      */
     public function testPropertyPhoneNumber()
     {
+
         $this->BuyIncomingNumberRequest->setPhoneNumber('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getPhoneNumber());
         $this->assertIsString($this->BuyIncomingNumberRequest->getPhoneNumber());
@@ -87,6 +88,7 @@ class BuyIncomingNumberRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->BuyIncomingNumberRequest->setAlias('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getAlias());
         $this->assertIsString($this->BuyIncomingNumberRequest->getAlias());
@@ -96,6 +98,7 @@ class BuyIncomingNumberRequestTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->BuyIncomingNumberRequest->setApplicationId('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getApplicationId());
         $this->assertIsString($this->BuyIncomingNumberRequest->getApplicationId());

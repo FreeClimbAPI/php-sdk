@@ -78,6 +78,7 @@ class QueueRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->QueueRequest->setAlias('TS');
         $this->assertEquals('TS', $this->QueueRequest->getAlias());
         $this->assertIsString($this->QueueRequest->getAlias());

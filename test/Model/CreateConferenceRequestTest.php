@@ -78,6 +78,7 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->CreateConferenceRequest->setAlias('TS');
         $this->assertEquals('TS', $this->CreateConferenceRequest->getAlias());
         $this->assertIsString($this->CreateConferenceRequest->getAlias());
@@ -110,6 +111,7 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
+
         $this->CreateConferenceRequest->setWaitUrl('TS');
         $this->assertEquals('TS', $this->CreateConferenceRequest->getWaitUrl());
         $this->assertIsString($this->CreateConferenceRequest->getWaitUrl());
@@ -119,6 +121,7 @@ class CreateConferenceRequestTest extends TestCase
      */
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->CreateConferenceRequest->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->CreateConferenceRequest->getStatusCallbackUrl());
         $this->assertIsString($this->CreateConferenceRequest->getStatusCallbackUrl());

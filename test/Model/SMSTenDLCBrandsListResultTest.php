@@ -150,6 +150,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->SMSTenDLCBrandsListResult->setNextPageUri('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrandsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCBrandsListResult->getNextPageUri());

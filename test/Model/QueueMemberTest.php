@@ -78,6 +78,7 @@ class QueueMemberTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->QueueMember->setUri('TS');
         $this->assertEquals('TS', $this->QueueMember->getUri());
         $this->assertIsString($this->QueueMember->getUri());
@@ -87,6 +88,7 @@ class QueueMemberTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->QueueMember->setCallId('TS');
         $this->assertEquals('TS', $this->QueueMember->getCallId());
         $this->assertIsString($this->QueueMember->getCallId());
@@ -120,6 +122,7 @@ class QueueMemberTest extends TestCase
      */
     public function testPropertyDateEnqueued()
     {
+
         $this->QueueMember->setDateEnqueued('TS');
         $this->assertEquals('TS', $this->QueueMember->getDateEnqueued());
         $this->assertIsString($this->QueueMember->getDateEnqueued());

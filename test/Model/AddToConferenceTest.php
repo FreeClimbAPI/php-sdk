@@ -87,6 +87,7 @@ class AddToConferenceTest extends TestCase
      */
     public function testPropertyCallControlSequence()
     {
+
         $this->AddToConference->setCallControlSequence('TS');
         $this->assertEquals('TS', $this->AddToConference->getCallControlSequence());
         $this->assertIsString($this->AddToConference->getCallControlSequence());
@@ -96,6 +97,7 @@ class AddToConferenceTest extends TestCase
      */
     public function testPropertyCallControlUrl()
     {
+
         $this->AddToConference->setCallControlUrl('TS');
         $this->assertEquals('TS', $this->AddToConference->getCallControlUrl());
         $this->assertIsString($this->AddToConference->getCallControlUrl());
@@ -105,6 +107,7 @@ class AddToConferenceTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->AddToConference->setConferenceId('TS');
         $this->assertEquals('TS', $this->AddToConference->getConferenceId());
         $this->assertIsString($this->AddToConference->getConferenceId());
@@ -114,6 +117,7 @@ class AddToConferenceTest extends TestCase
      */
     public function testPropertyLeaveConferenceUrl()
     {
+
         $this->AddToConference->setLeaveConferenceUrl('TS');
         $this->assertEquals('TS', $this->AddToConference->getLeaveConferenceUrl());
         $this->assertIsString($this->AddToConference->getLeaveConferenceUrl());
@@ -132,6 +136,7 @@ class AddToConferenceTest extends TestCase
      */
     public function testPropertyNotificationUrl()
     {
+
         $this->AddToConference->setNotificationUrl('TS');
         $this->assertEquals('TS', $this->AddToConference->getNotificationUrl());
         $this->assertIsString($this->AddToConference->getNotificationUrl());

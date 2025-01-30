@@ -150,6 +150,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->SMSTollFreeCampaignsListResult->setNextPageUri('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTollFreeCampaignsListResult->getNextPageUri());

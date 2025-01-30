@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CompletionResultTest
+ * MessageResultAllOfTfnTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CompletionResultTest Class Doc Comment
+ * MessageResultAllOfTfnTest Class Doc Comment
  *
  * @category    Class
- * @description CompletionResult
+ * @description MessageResultAllOfTfn
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class CompletionResultTest extends TestCase
+class MessageResultAllOfTfnTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class CompletionResultTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->CompletionResult = new \FreeClimb\Api\Model\CompletionResult();
+        $this->MessageResultAllOfTfn = new \FreeClimb\Api\Model\MessageResultAllOfTfn();
     }
 
     /**
@@ -74,23 +74,14 @@ class CompletionResultTest extends TestCase
     }
 
     /**
-     * Test attribute "response"
+     * Test attribute "campaign_id"
      */
-    public function testPropertyResponse()
+    public function testPropertyCampaignId()
     {
 
-        $this->CompletionResult->setResponse('TS');
-        $this->assertEquals('TS', $this->CompletionResult->getResponse());
-        $this->assertIsString($this->CompletionResult->getResponse());
-    }
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        $this->CompletionResult->setstatus(\FreeClimb\Api\Model\CompletionResultStatus::SUCCESS);
-        $this->assertEquals(\FreeClimb\Api\Model\CompletionResultStatus::SUCCESS, $this->CompletionResult->getstatus());
-        $this->CompletionResult->setstatus(\FreeClimb\Api\Model\CompletionResultStatus::NO_CONTEXT);
-        $this->assertEquals(\FreeClimb\Api\Model\CompletionResultStatus::NO_CONTEXT, $this->CompletionResult->getstatus());
+        $this->MessageResultAllOfTfn->setCampaignId('cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a');
+        $this->assertEquals('cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a', $this->MessageResultAllOfTfn->getCampaignId());
+        $this->assertIsString($this->MessageResultAllOfTfn->getCampaignId());
+
     }
 }

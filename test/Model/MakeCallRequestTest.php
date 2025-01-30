@@ -78,6 +78,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->MakeCallRequest->setFrom('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getFrom());
         $this->assertIsString($this->MakeCallRequest->getFrom());
@@ -87,6 +88,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->MakeCallRequest->setTo('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getTo());
         $this->assertIsString($this->MakeCallRequest->getTo());
@@ -96,6 +98,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->MakeCallRequest->setApplicationId('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getApplicationId());
         $this->assertIsString($this->MakeCallRequest->getApplicationId());
@@ -105,6 +108,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertySendDigits()
     {
+
         $this->MakeCallRequest->setSendDigits('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getSendDigits());
         $this->assertIsString($this->MakeCallRequest->getSendDigits());
@@ -114,6 +118,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyIfMachine()
     {
+
         $this->MakeCallRequest->setIfMachine('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getIfMachine());
         $this->assertIsString($this->MakeCallRequest->getIfMachine());
@@ -123,6 +128,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyIfMachineUrl()
     {
+
         $this->MakeCallRequest->setIfMachineUrl('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getIfMachineUrl());
         $this->assertIsString($this->MakeCallRequest->getIfMachineUrl());
@@ -144,6 +150,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->MakeCallRequest->setParentCallId('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getParentCallId());
         $this->assertIsString($this->MakeCallRequest->getParentCallId());
@@ -162,6 +169,7 @@ class MakeCallRequestTest extends TestCase
      */
     public function testPropertyCallConnectUrl()
     {
+
         $this->MakeCallRequest->setCallConnectUrl('TS');
         $this->assertEquals('TS', $this->MakeCallRequest->getCallConnectUrl());
         $this->assertIsString($this->MakeCallRequest->getCallConnectUrl());

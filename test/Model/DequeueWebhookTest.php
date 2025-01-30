@@ -78,6 +78,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->DequeueWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getRequestType());
         $this->assertIsString($this->DequeueWebhook->getRequestType());
@@ -87,6 +88,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->DequeueWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getCallId());
         $this->assertIsString($this->DequeueWebhook->getCallId());
@@ -96,6 +98,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->DequeueWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getAccountId());
         $this->assertIsString($this->DequeueWebhook->getAccountId());
@@ -105,6 +108,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->DequeueWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getFrom());
         $this->assertIsString($this->DequeueWebhook->getFrom());
@@ -114,6 +118,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->DequeueWebhook->setTo('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getTo());
         $this->assertIsString($this->DequeueWebhook->getTo());
@@ -157,6 +162,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->DequeueWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getConferenceId());
         $this->assertIsString($this->DequeueWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->DequeueWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getQueueId());
         $this->assertIsString($this->DequeueWebhook->getQueueId());
@@ -175,6 +182,7 @@ class DequeueWebhookTest extends TestCase
      */
     public function testPropertyQueueResult()
     {
+
         $this->DequeueWebhook->setQueueResult('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getQueueResult());
         $this->assertIsString($this->DequeueWebhook->getQueueResult());

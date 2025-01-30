@@ -150,6 +150,7 @@ class ConferenceListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->ConferenceList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->ConferenceList->getNextPageUri());
         $this->assertIsString($this->ConferenceList->getNextPageUri());

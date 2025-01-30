@@ -78,6 +78,7 @@ class SmsTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->Sms->setTo('TS');
         $this->assertEquals('TS', $this->Sms->getTo());
         $this->assertIsString($this->Sms->getTo());
@@ -87,6 +88,7 @@ class SmsTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->Sms->setFrom('TS');
         $this->assertEquals('TS', $this->Sms->getFrom());
         $this->assertIsString($this->Sms->getFrom());
@@ -96,6 +98,7 @@ class SmsTest extends TestCase
      */
     public function testPropertyText()
     {
+
         $this->Sms->setText('TS');
         $this->assertEquals('TS', $this->Sms->getText());
         $this->assertIsString($this->Sms->getText());
@@ -105,6 +108,7 @@ class SmsTest extends TestCase
      */
     public function testPropertyNotificationUrl()
     {
+
         $this->Sms->setNotificationUrl('TS');
         $this->assertEquals('TS', $this->Sms->getNotificationUrl());
         $this->assertIsString($this->Sms->getNotificationUrl());

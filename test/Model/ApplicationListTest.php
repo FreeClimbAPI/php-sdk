@@ -150,6 +150,7 @@ class ApplicationListTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->ApplicationList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->ApplicationList->getNextPageUri());
         $this->assertIsString($this->ApplicationList->getNextPageUri());

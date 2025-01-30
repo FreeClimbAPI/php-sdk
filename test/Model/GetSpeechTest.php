@@ -78,6 +78,7 @@ class GetSpeechTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->GetSpeech->setActionUrl('TS');
         $this->assertEquals('TS', $this->GetSpeech->getActionUrl());
         $this->assertIsString($this->GetSpeech->getActionUrl());
@@ -97,6 +98,7 @@ class GetSpeechTest extends TestCase
      */
     public function testPropertyGrammarFile()
     {
+
         $this->GetSpeech->setGrammarFile('TS');
         $this->assertEquals('TS', $this->GetSpeech->getGrammarFile());
         $this->assertIsString($this->GetSpeech->getGrammarFile());
@@ -106,6 +108,7 @@ class GetSpeechTest extends TestCase
      */
     public function testPropertyGrammarRule()
     {
+
         $this->GetSpeech->setGrammarRule('TS');
         $this->assertEquals('TS', $this->GetSpeech->getGrammarRule());
         $this->assertIsString($this->GetSpeech->getGrammarRule());

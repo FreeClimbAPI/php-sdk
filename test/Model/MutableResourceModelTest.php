@@ -78,6 +78,7 @@ class MutableResourceModelTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->MutableResourceModel->setUri('TS');
         $this->assertEquals('TS', $this->MutableResourceModel->getUri());
         $this->assertIsString($this->MutableResourceModel->getUri());
@@ -87,6 +88,7 @@ class MutableResourceModelTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->MutableResourceModel->setDateCreated('TS');
         $this->assertEquals('TS', $this->MutableResourceModel->getDateCreated());
         $this->assertIsString($this->MutableResourceModel->getDateCreated());
@@ -96,6 +98,7 @@ class MutableResourceModelTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->MutableResourceModel->setDateUpdated('TS');
         $this->assertEquals('TS', $this->MutableResourceModel->getDateUpdated());
         $this->assertIsString($this->MutableResourceModel->getDateUpdated());

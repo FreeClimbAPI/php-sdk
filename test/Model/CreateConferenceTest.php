@@ -78,6 +78,7 @@ class CreateConferenceTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->CreateConference->setActionUrl('TS');
         $this->assertEquals('TS', $this->CreateConference->getActionUrl());
         $this->assertIsString($this->CreateConference->getActionUrl());
@@ -119,6 +120,7 @@ class CreateConferenceTest extends TestCase
      */
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->CreateConference->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->CreateConference->getStatusCallbackUrl());
         $this->assertIsString($this->CreateConference->getStatusCallbackUrl());
@@ -128,6 +130,7 @@ class CreateConferenceTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
+
         $this->CreateConference->setWaitUrl('TS');
         $this->assertEquals('TS', $this->CreateConference->getWaitUrl());
         $this->assertIsString($this->CreateConference->getWaitUrl());

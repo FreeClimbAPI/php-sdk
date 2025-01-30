@@ -78,6 +78,7 @@ class UpdateConferenceRequestTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->UpdateConferenceRequest->setAlias('TS');
         $this->assertEquals('TS', $this->UpdateConferenceRequest->getAlias());
         $this->assertIsString($this->UpdateConferenceRequest->getAlias());

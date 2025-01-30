@@ -78,6 +78,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->SMSTollFreeCampaign->setAccountId('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getAccountId());
         $this->assertIsString($this->SMSTollFreeCampaign->getAccountId());
@@ -87,6 +88,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->SMSTollFreeCampaign->setCampaignId('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getCampaignId());
         $this->assertIsString($this->SMSTollFreeCampaign->getCampaignId());
@@ -96,6 +98,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyUseCase()
     {
+
         $this->SMSTollFreeCampaign->setUseCase('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getUseCase());
         $this->assertIsString($this->SMSTollFreeCampaign->getUseCase());
@@ -121,6 +124,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->SMSTollFreeCampaign->setDateCreated('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateCreated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateCreated());
@@ -130,6 +134,7 @@ class SMSTollFreeCampaignTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->SMSTollFreeCampaign->setDateUpdated('TS');
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateUpdated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateUpdated());

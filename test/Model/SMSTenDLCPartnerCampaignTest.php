@@ -78,6 +78,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->SMSTenDLCPartnerCampaign->setAccountId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getAccountId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getAccountId());
@@ -87,6 +88,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyCampaignId()
     {
+
         $this->SMSTenDLCPartnerCampaign->setCampaignId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getCampaignId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getCampaignId());
@@ -114,6 +116,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyBrandId()
     {
+
         $this->SMSTenDLCPartnerCampaign->setBrandId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getBrandId());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getBrandId());
@@ -123,6 +126,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyUsecase()
     {
+
         $this->SMSTenDLCPartnerCampaign->setUsecase('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getUsecase());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getUsecase());
@@ -132,6 +136,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyDescription()
     {
+
         $this->SMSTenDLCPartnerCampaign->setDescription('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getDescription());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getDescription());
@@ -222,6 +227,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertySample1()
     {
+
         $this->SMSTenDLCPartnerCampaign->setSample1('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample1());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample1());
@@ -231,6 +237,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertySample2()
     {
+
         $this->SMSTenDLCPartnerCampaign->setSample2('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample2());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample2());
@@ -240,6 +247,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertySample3()
     {
+
         $this->SMSTenDLCPartnerCampaign->setSample3('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample3());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample3());
@@ -249,6 +257,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertySample4()
     {
+
         $this->SMSTenDLCPartnerCampaign->setSample4('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample4());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample4());
@@ -258,6 +267,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertySample5()
     {
+
         $this->SMSTenDLCPartnerCampaign->setSample5('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getSample5());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getSample5());
@@ -267,6 +277,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyMessageFlow()
     {
+
         $this->SMSTenDLCPartnerCampaign->setMessageFlow('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getMessageFlow());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getMessageFlow());
@@ -276,6 +287,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyHelpMessage()
     {
+
         $this->SMSTenDLCPartnerCampaign->setHelpMessage('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getHelpMessage());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getHelpMessage());
@@ -285,6 +297,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyOptinKeywords()
     {
+
         $this->SMSTenDLCPartnerCampaign->setOptinKeywords('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptinKeywords());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptinKeywords());
@@ -294,6 +307,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyOptoutKeywords()
     {
+
         $this->SMSTenDLCPartnerCampaign->setOptoutKeywords('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptoutKeywords());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptoutKeywords());
@@ -303,6 +317,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyHelpKeywords()
     {
+
         $this->SMSTenDLCPartnerCampaign->setHelpKeywords('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getHelpKeywords());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getHelpKeywords());
@@ -312,6 +327,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyOptinMessage()
     {
+
         $this->SMSTenDLCPartnerCampaign->setOptinMessage('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptinMessage());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptinMessage());
@@ -321,6 +337,7 @@ class SMSTenDLCPartnerCampaignTest extends TestCase
      */
     public function testPropertyOptoutMessage()
     {
+
         $this->SMSTenDLCPartnerCampaign->setOptoutMessage('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaign->getOptoutMessage());
         $this->assertIsString($this->SMSTenDLCPartnerCampaign->getOptoutMessage());

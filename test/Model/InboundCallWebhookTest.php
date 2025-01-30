@@ -78,6 +78,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->InboundCallWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getRequestType());
         $this->assertIsString($this->InboundCallWebhook->getRequestType());
@@ -87,6 +88,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->InboundCallWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getCallId());
         $this->assertIsString($this->InboundCallWebhook->getCallId());
@@ -96,6 +98,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->InboundCallWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getAccountId());
         $this->assertIsString($this->InboundCallWebhook->getAccountId());
@@ -105,6 +108,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->InboundCallWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getFrom());
         $this->assertIsString($this->InboundCallWebhook->getFrom());
@@ -114,6 +118,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->InboundCallWebhook->setTo('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getTo());
         $this->assertIsString($this->InboundCallWebhook->getTo());
@@ -157,6 +162,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->InboundCallWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getConferenceId());
         $this->assertIsString($this->InboundCallWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->InboundCallWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getQueueId());
         $this->assertIsString($this->InboundCallWebhook->getQueueId());
@@ -175,6 +182,7 @@ class InboundCallWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->InboundCallWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->InboundCallWebhook->getParentCallId());
         $this->assertIsString($this->InboundCallWebhook->getParentCallId());

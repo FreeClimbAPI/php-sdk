@@ -78,6 +78,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->ConferenceResult->setUri('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getUri());
         $this->assertIsString($this->ConferenceResult->getUri());
@@ -87,6 +88,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->ConferenceResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getDateCreated());
         $this->assertIsString($this->ConferenceResult->getDateCreated());
@@ -96,6 +98,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->ConferenceResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getDateUpdated());
         $this->assertIsString($this->ConferenceResult->getDateUpdated());
@@ -117,6 +120,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->ConferenceResult->setConferenceId('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getConferenceId());
         $this->assertIsString($this->ConferenceResult->getConferenceId());
@@ -126,6 +130,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->ConferenceResult->setAccountId('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getAccountId());
         $this->assertIsString($this->ConferenceResult->getAccountId());
@@ -135,6 +140,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->ConferenceResult->setAlias('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getAlias());
         $this->assertIsString($this->ConferenceResult->getAlias());
@@ -181,6 +187,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyWaitUrl()
     {
+
         $this->ConferenceResult->setWaitUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getWaitUrl());
         $this->assertIsString($this->ConferenceResult->getWaitUrl());
@@ -190,6 +197,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyActionUrl()
     {
+
         $this->ConferenceResult->setActionUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getActionUrl());
         $this->assertIsString($this->ConferenceResult->getActionUrl());
@@ -199,6 +207,7 @@ class ConferenceResultTest extends TestCase
      */
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->ConferenceResult->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getStatusCallbackUrl());
         $this->assertIsString($this->ConferenceResult->getStatusCallbackUrl());

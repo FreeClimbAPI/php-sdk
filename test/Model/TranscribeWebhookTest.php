@@ -78,6 +78,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->TranscribeWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRequestType());
         $this->assertIsString($this->TranscribeWebhook->getRequestType());
@@ -87,6 +88,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->TranscribeWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getAccountId());
         $this->assertIsString($this->TranscribeWebhook->getAccountId());
@@ -96,6 +98,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->TranscribeWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getCallId());
         $this->assertIsString($this->TranscribeWebhook->getCallId());
@@ -105,6 +108,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->TranscribeWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getFrom());
         $this->assertIsString($this->TranscribeWebhook->getFrom());
@@ -114,6 +118,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->TranscribeWebhook->setTo('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getTo());
         $this->assertIsString($this->TranscribeWebhook->getTo());
@@ -123,6 +128,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyRecordingId()
     {
+
         $this->TranscribeWebhook->setRecordingId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingId());
         $this->assertIsString($this->TranscribeWebhook->getRecordingId());
@@ -132,6 +138,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyRecordingUrl()
     {
+
         $this->TranscribeWebhook->setRecordingUrl('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingUrl());
         $this->assertIsString($this->TranscribeWebhook->getRecordingUrl());
@@ -153,6 +160,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyRecordingFormat()
     {
+
         $this->TranscribeWebhook->setRecordingFormat('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingFormat());
         $this->assertIsString($this->TranscribeWebhook->getRecordingFormat());
@@ -198,6 +206,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyDigit()
     {
+
         $this->TranscribeWebhook->setDigit('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getDigit());
         $this->assertIsString($this->TranscribeWebhook->getDigit());
@@ -285,6 +294,7 @@ class TranscribeWebhookTest extends TestCase
      */
     public function testPropertyTranscript()
     {
+
         $this->TranscribeWebhook->setTranscript('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getTranscript());
         $this->assertIsString($this->TranscribeWebhook->getTranscript());

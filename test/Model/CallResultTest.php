@@ -78,6 +78,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->CallResult->setUri('TS');
         $this->assertEquals('TS', $this->CallResult->getUri());
         $this->assertIsString($this->CallResult->getUri());
@@ -87,6 +88,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->CallResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->CallResult->getDateCreated());
         $this->assertIsString($this->CallResult->getDateCreated());
@@ -96,6 +98,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->CallResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->CallResult->getDateUpdated());
         $this->assertIsString($this->CallResult->getDateUpdated());
@@ -117,6 +120,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->CallResult->setCallId('TS');
         $this->assertEquals('TS', $this->CallResult->getCallId());
         $this->assertIsString($this->CallResult->getCallId());
@@ -126,6 +130,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->CallResult->setParentCallId('TS');
         $this->assertEquals('TS', $this->CallResult->getParentCallId());
         $this->assertIsString($this->CallResult->getParentCallId());
@@ -135,6 +140,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->CallResult->setAccountId('TS');
         $this->assertEquals('TS', $this->CallResult->getAccountId());
         $this->assertIsString($this->CallResult->getAccountId());
@@ -144,6 +150,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->CallResult->setFrom('TS');
         $this->assertEquals('TS', $this->CallResult->getFrom());
         $this->assertIsString($this->CallResult->getFrom());
@@ -153,6 +160,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->CallResult->setTo('TS');
         $this->assertEquals('TS', $this->CallResult->getTo());
         $this->assertIsString($this->CallResult->getTo());
@@ -162,6 +170,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyPhoneNumberId()
     {
+
         $this->CallResult->setPhoneNumberId('TS');
         $this->assertEquals('TS', $this->CallResult->getPhoneNumberId());
         $this->assertIsString($this->CallResult->getPhoneNumberId());
@@ -193,6 +202,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyStartTime()
     {
+
         $this->CallResult->setStartTime('TS');
         $this->assertEquals('TS', $this->CallResult->getStartTime());
         $this->assertIsString($this->CallResult->getStartTime());
@@ -202,6 +212,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyConnectTime()
     {
+
         $this->CallResult->setConnectTime('TS');
         $this->assertEquals('TS', $this->CallResult->getConnectTime());
         $this->assertIsString($this->CallResult->getConnectTime());
@@ -211,6 +222,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyEndTime()
     {
+
         $this->CallResult->setEndTime('TS');
         $this->assertEquals('TS', $this->CallResult->getEndTime());
         $this->assertIsString($this->CallResult->getEndTime());
@@ -274,6 +286,7 @@ class CallResultTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->CallResult->setApplicationId('TS');
         $this->assertEquals('TS', $this->CallResult->getApplicationId());
         $this->assertIsString($this->CallResult->getApplicationId());

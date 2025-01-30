@@ -150,6 +150,7 @@ class PaginationModelTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->PaginationModel->setNextPageUri('TS');
         $this->assertEquals('TS', $this->PaginationModel->getNextPageUri());
         $this->assertIsString($this->PaginationModel->getNextPageUri());

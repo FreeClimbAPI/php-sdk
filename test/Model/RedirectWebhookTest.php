@@ -78,6 +78,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->RedirectWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getRequestType());
         $this->assertIsString($this->RedirectWebhook->getRequestType());
@@ -87,6 +88,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->RedirectWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getAccountId());
         $this->assertIsString($this->RedirectWebhook->getAccountId());
@@ -96,6 +98,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->RedirectWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getCallId());
         $this->assertIsString($this->RedirectWebhook->getCallId());
@@ -105,6 +108,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->RedirectWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getFrom());
         $this->assertIsString($this->RedirectWebhook->getFrom());
@@ -114,6 +118,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->RedirectWebhook->setTo('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getTo());
         $this->assertIsString($this->RedirectWebhook->getTo());
@@ -157,6 +162,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->RedirectWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getConferenceId());
         $this->assertIsString($this->RedirectWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->RedirectWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getQueueId());
         $this->assertIsString($this->RedirectWebhook->getQueueId());
@@ -175,6 +182,7 @@ class RedirectWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->RedirectWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getParentCallId());
         $this->assertIsString($this->RedirectWebhook->getParentCallId());

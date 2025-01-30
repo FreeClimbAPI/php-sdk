@@ -78,6 +78,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->CallStatusWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getRequestType());
         $this->assertIsString($this->CallStatusWebhook->getRequestType());
@@ -87,6 +88,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->CallStatusWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getCallId());
         $this->assertIsString($this->CallStatusWebhook->getCallId());
@@ -96,6 +98,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->CallStatusWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getAccountId());
         $this->assertIsString($this->CallStatusWebhook->getAccountId());
@@ -105,6 +108,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->CallStatusWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getFrom());
         $this->assertIsString($this->CallStatusWebhook->getFrom());
@@ -114,6 +118,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->CallStatusWebhook->setTo('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getTo());
         $this->assertIsString($this->CallStatusWebhook->getTo());
@@ -209,6 +214,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->CallStatusWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getConferenceId());
         $this->assertIsString($this->CallStatusWebhook->getConferenceId());
@@ -218,6 +224,7 @@ class CallStatusWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->CallStatusWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->CallStatusWebhook->getQueueId());
         $this->assertIsString($this->CallStatusWebhook->getQueueId());

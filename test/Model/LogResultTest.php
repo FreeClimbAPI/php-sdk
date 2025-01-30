@@ -102,6 +102,7 @@ class LogResultTest extends TestCase
      */
     public function testPropertyRequestId()
     {
+
         $this->LogResult->setRequestId('TS');
         $this->assertEquals('TS', $this->LogResult->getRequestId());
         $this->assertIsString($this->LogResult->getRequestId());
@@ -111,6 +112,7 @@ class LogResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->LogResult->setAccountId('TS');
         $this->assertEquals('TS', $this->LogResult->getAccountId());
         $this->assertIsString($this->LogResult->getAccountId());
@@ -120,6 +122,7 @@ class LogResultTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->LogResult->setCallId('TS');
         $this->assertEquals('TS', $this->LogResult->getCallId());
         $this->assertIsString($this->LogResult->getCallId());
@@ -129,6 +132,7 @@ class LogResultTest extends TestCase
      */
     public function testPropertyMessage()
     {
+
         $this->LogResult->setMessage('TS');
         $this->assertEquals('TS', $this->LogResult->getMessage());
         $this->assertIsString($this->LogResult->getMessage());

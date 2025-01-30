@@ -78,6 +78,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->ApplicationResult->setUri('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getUri());
         $this->assertIsString($this->ApplicationResult->getUri());
@@ -87,6 +88,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->ApplicationResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getDateCreated());
         $this->assertIsString($this->ApplicationResult->getDateCreated());
@@ -96,6 +98,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->ApplicationResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getDateUpdated());
         $this->assertIsString($this->ApplicationResult->getDateUpdated());
@@ -117,6 +120,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->ApplicationResult->setAccountId('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getAccountId());
         $this->assertIsString($this->ApplicationResult->getAccountId());
@@ -126,6 +130,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyApplicationId()
     {
+
         $this->ApplicationResult->setApplicationId('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getApplicationId());
         $this->assertIsString($this->ApplicationResult->getApplicationId());
@@ -135,6 +140,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->ApplicationResult->setAlias('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getAlias());
         $this->assertIsString($this->ApplicationResult->getAlias());
@@ -144,6 +150,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyVoiceUrl()
     {
+
         $this->ApplicationResult->setVoiceUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getVoiceUrl());
         $this->assertIsString($this->ApplicationResult->getVoiceUrl());
@@ -153,6 +160,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyVoiceFallbackUrl()
     {
+
         $this->ApplicationResult->setVoiceFallbackUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getVoiceFallbackUrl());
         $this->assertIsString($this->ApplicationResult->getVoiceFallbackUrl());
@@ -162,6 +170,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyCallConnectUrl()
     {
+
         $this->ApplicationResult->setCallConnectUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getCallConnectUrl());
         $this->assertIsString($this->ApplicationResult->getCallConnectUrl());
@@ -171,6 +180,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->ApplicationResult->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getStatusCallbackUrl());
         $this->assertIsString($this->ApplicationResult->getStatusCallbackUrl());
@@ -180,6 +190,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertySmsUrl()
     {
+
         $this->ApplicationResult->setSmsUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getSmsUrl());
         $this->assertIsString($this->ApplicationResult->getSmsUrl());
@@ -189,6 +200,7 @@ class ApplicationResultTest extends TestCase
      */
     public function testPropertySmsFallbackUrl()
     {
+
         $this->ApplicationResult->setSmsFallbackUrl('TS');
         $this->assertEquals('TS', $this->ApplicationResult->getSmsFallbackUrl());
         $this->assertIsString($this->ApplicationResult->getSmsFallbackUrl());

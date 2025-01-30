@@ -78,6 +78,7 @@ class CreateWebRTCTokenTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->CreateWebRTCToken->setTo('TS');
         $this->assertEquals('TS', $this->CreateWebRTCToken->getTo());
         $this->assertIsString($this->CreateWebRTCToken->getTo());
@@ -87,6 +88,7 @@ class CreateWebRTCTokenTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->CreateWebRTCToken->setFrom('TS');
         $this->assertEquals('TS', $this->CreateWebRTCToken->getFrom());
         $this->assertIsString($this->CreateWebRTCToken->getFrom());

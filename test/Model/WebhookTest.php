@@ -78,6 +78,7 @@ class WebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->Webhook->setRequestType('TS');
         $this->assertEquals('TS', $this->Webhook->getRequestType());
         $this->assertIsString($this->Webhook->getRequestType());

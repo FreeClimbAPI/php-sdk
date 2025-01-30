@@ -150,6 +150,7 @@ class SMSTenDLCPartnerCampaignsListResultTest extends TestCase
      */
     public function testPropertyNextPageUri()
     {
+
         $this->SMSTenDLCPartnerCampaignsListResult->setNextPageUri('TS');
         $this->assertEquals('TS', $this->SMSTenDLCPartnerCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCPartnerCampaignsListResult->getNextPageUri());

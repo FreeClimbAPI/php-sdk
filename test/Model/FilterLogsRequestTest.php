@@ -78,6 +78,7 @@ class FilterLogsRequestTest extends TestCase
      */
     public function testPropertyPql()
     {
+
         $this->FilterLogsRequest->setPql('TS');
         $this->assertEquals('TS', $this->FilterLogsRequest->getPql());
         $this->assertIsString($this->FilterLogsRequest->getPql());

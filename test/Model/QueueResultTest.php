@@ -78,6 +78,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyUri()
     {
+
         $this->QueueResult->setUri('TS');
         $this->assertEquals('TS', $this->QueueResult->getUri());
         $this->assertIsString($this->QueueResult->getUri());
@@ -87,6 +88,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyDateCreated()
     {
+
         $this->QueueResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->QueueResult->getDateCreated());
         $this->assertIsString($this->QueueResult->getDateCreated());
@@ -96,6 +98,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyDateUpdated()
     {
+
         $this->QueueResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->QueueResult->getDateUpdated());
         $this->assertIsString($this->QueueResult->getDateUpdated());
@@ -117,6 +120,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->QueueResult->setAccountId('TS');
         $this->assertEquals('TS', $this->QueueResult->getAccountId());
         $this->assertIsString($this->QueueResult->getAccountId());
@@ -126,6 +130,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->QueueResult->setQueueId('TS');
         $this->assertEquals('TS', $this->QueueResult->getQueueId());
         $this->assertIsString($this->QueueResult->getQueueId());
@@ -135,6 +140,7 @@ class QueueResultTest extends TestCase
      */
     public function testPropertyAlias()
     {
+
         $this->QueueResult->setAlias('TS');
         $this->assertEquals('TS', $this->QueueResult->getAlias());
         $this->assertIsString($this->QueueResult->getAlias());

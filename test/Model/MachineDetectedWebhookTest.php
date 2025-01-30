@@ -78,6 +78,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyRequestType()
     {
+
         $this->MachineDetectedWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getRequestType());
         $this->assertIsString($this->MachineDetectedWebhook->getRequestType());
@@ -87,6 +88,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyCallId()
     {
+
         $this->MachineDetectedWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getCallId());
         $this->assertIsString($this->MachineDetectedWebhook->getCallId());
@@ -96,6 +98,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyAccountId()
     {
+
         $this->MachineDetectedWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getAccountId());
         $this->assertIsString($this->MachineDetectedWebhook->getAccountId());
@@ -105,6 +108,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyFrom()
     {
+
         $this->MachineDetectedWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getFrom());
         $this->assertIsString($this->MachineDetectedWebhook->getFrom());
@@ -114,6 +118,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyTo()
     {
+
         $this->MachineDetectedWebhook->setTo('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getTo());
         $this->assertIsString($this->MachineDetectedWebhook->getTo());
@@ -157,6 +162,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyConferenceId()
     {
+
         $this->MachineDetectedWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getConferenceId());
         $this->assertIsString($this->MachineDetectedWebhook->getConferenceId());
@@ -166,6 +172,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyQueueId()
     {
+
         $this->MachineDetectedWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getQueueId());
         $this->assertIsString($this->MachineDetectedWebhook->getQueueId());
@@ -175,6 +182,7 @@ class MachineDetectedWebhookTest extends TestCase
      */
     public function testPropertyParentCallId()
     {
+
         $this->MachineDetectedWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getParentCallId());
         $this->assertIsString($this->MachineDetectedWebhook->getParentCallId());
