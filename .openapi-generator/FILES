@@ -71,7 +71,6 @@ docs/Model/MessageDeliveryWebhook.md
 docs/Model/MessageDirection.md
 docs/Model/MessageRequest.md
 docs/Model/MessageResult.md
-docs/Model/MessageResultAllOfTfn.md
 docs/Model/MessageStatus.md
 docs/Model/MessageStatusWebhook.md
 docs/Model/MessagesList.md
@@ -217,7 +216,6 @@ lib/Model/MessageDeliveryWebhook.php
 lib/Model/MessageDirection.php
 lib/Model/MessageRequest.php
 lib/Model/MessageResult.php
-lib/Model/MessageResultAllOfTfn.php
 lib/Model/MessageStatus.php
 lib/Model/MessageStatusWebhook.php
 lib/Model/MessagesList.php
@@ -361,7 +359,6 @@ test/Model/MakeCallRequestTest.php
 test/Model/MessageDeliveryWebhookTest.php
 test/Model/MessageDirectionTest.php
 test/Model/MessageRequestTest.php
-test/Model/MessageResultAllOfTfnTest.php
 test/Model/MessageResultTest.php
 test/Model/MessageStatusTest.php
 test/Model/MessageStatusWebhookTest.php

@@ -75,7 +75,7 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'campaign_id' => 'string',
         'segment_count' => 'float',
         'media_urls' => 'string[]',
-        'tfn' => '\FreeClimb\Api\Model\MessageResultAllOfTfn',
+        'tfn' => '\FreeClimb\Api\Model\TFN',
         'phone_number_id' => 'string',
         'application_id' => 'string'
     ];
@@ -131,7 +131,7 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'campaign_id' => true,
         'segment_count' => true,
         'media_urls' => true,
-        'tfn' => true,
+        'tfn' => false,
         'phone_number_id' => true,
         'application_id' => true
     ];
@@ -936,7 +936,7 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tfn
      *
-     * @return \FreeClimb\Api\Model\MessageResultAllOfTfn|null
+     * @return \FreeClimb\Api\Model\TFN|null
      */
     public function getTfn()
     {
@@ -946,21 +946,14 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tfn
      *
-     * @param \FreeClimb\Api\Model\MessageResultAllOfTfn|null $tfn tfn
+     * @param \FreeClimb\Api\Model\TFN|null $tfn tfn
      *
      * @return self
      */
     public function setTfn($tfn)
     {
         if (is_null($tfn)) {
-            array_push($this->openAPINullablesSetToNull, 'tfn');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tfn', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tfn cannot be null');
         }
         $this->container['tfn'] = $tfn;
 
