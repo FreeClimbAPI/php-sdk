@@ -73,9 +73,7 @@ class MessageStatusWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getRequestType());
         $this->assertIsString($this->MessageStatusWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -93,9 +89,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getAccountId());
         $this->assertIsString($this->MessageStatusWebhook->getAccountId());
     }
-    /**
-     * Test attribute "message_id"
-     */
+
     public function testPropertyMessageId()
     {
 
@@ -103,9 +97,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getMessageId());
         $this->assertIsString($this->MessageStatusWebhook->getMessageId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -113,9 +105,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getCallId());
         $this->assertIsString($this->MessageStatusWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -123,9 +113,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getFrom());
         $this->assertIsString($this->MessageStatusWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -133,9 +121,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getTo());
         $this->assertIsString($this->MessageStatusWebhook->getTo());
     }
-    /**
-     * Test attribute "text"
-     */
+
     public function testPropertyText()
     {
 
@@ -143,9 +129,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getText());
         $this->assertIsString($this->MessageStatusWebhook->getText());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
 
@@ -153,9 +137,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getDirection());
         $this->assertIsString($this->MessageStatusWebhook->getDirection());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 
@@ -163,9 +145,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageStatusWebhook->getApplicationId());
         $this->assertIsString($this->MessageStatusWebhook->getApplicationId());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::NEW);
@@ -191,9 +171,7 @@ class MessageStatusWebhookTest extends TestCase
         $this->MessageStatusWebhook->setstatus(\FreeClimb\Api\Model\MessageStatus::UNKNOWN);
         $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNKNOWN, $this->MessageStatusWebhook->getstatus());
     }
-    /**
-     * Test attribute "phone_number_id"
-     */
+
     public function testPropertyPhoneNumberId()
     {
 

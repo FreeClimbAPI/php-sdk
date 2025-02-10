@@ -73,9 +73,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getRequestType());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getCallId());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -103,9 +97,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getAccountId());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getFrom());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getTo());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->AddToConferenceNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->AddToConferenceNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->AddToConferenceNotificationWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->AddToConferenceNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->AddToConferenceNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->AddToConferenceNotificationWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getConferenceId());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -177,9 +159,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getQueueId());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getQueueId());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->AddToConferenceNotificationWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
@@ -191,9 +171,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->AddToConferenceNotificationWebhook->setstatus(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED);
         $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED, $this->AddToConferenceNotificationWebhook->getstatus());
     }
-    /**
-     * Test attribute "recording_url"
-     */
+
     public function testPropertyRecordingUrl()
     {
 
@@ -201,9 +179,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getRecordingUrl());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getRecordingUrl());
     }
-    /**
-     * Test attribute "recording_id"
-     */
+
     public function testPropertyRecordingId()
     {
 
@@ -211,9 +187,7 @@ class AddToConferenceNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToConferenceNotificationWebhook->getRecordingId());
         $this->assertIsString($this->AddToConferenceNotificationWebhook->getRecordingId());
     }
-    /**
-     * Test attribute "recording_duration_sec"
-     */
+
     public function testPropertyRecordingDurationSec()
     {
 

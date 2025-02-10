@@ -73,9 +73,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getRequestType());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -93,9 +89,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getAccountId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -103,9 +97,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getCallId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getFrom());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getTo());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->RemoveFromQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->RemoveFromQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->RemoveFromQueueNotificationWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->RemoveFromQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->RemoveFromQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->RemoveFromQueueNotificationWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getConferenceId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -177,9 +159,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RemoveFromQueueNotificationWebhook->getQueueId());
         $this->assertIsString($this->RemoveFromQueueNotificationWebhook->getQueueId());
     }
-    /**
-     * Test attribute "queue_result"
-     */
+
     public function testPropertyQueueResult()
     {
         $this->RemoveFromQueueNotificationWebhook->setqueueResult(\FreeClimb\Api\Model\QueueResultStatus::QUEUE_FULL);
@@ -191,9 +171,7 @@ class RemoveFromQueueNotificationWebhookTest extends TestCase
         $this->RemoveFromQueueNotificationWebhook->setqueueResult(\FreeClimb\Api\Model\QueueResultStatus::SYSTEM_ERROR);
         $this->assertEquals(\FreeClimb\Api\Model\QueueResultStatus::SYSTEM_ERROR, $this->RemoveFromQueueNotificationWebhook->getqueueResult());
     }
-    /**
-     * Test attribute "queue_time"
-     */
+
     public function testPropertyQueueTime()
     {
 

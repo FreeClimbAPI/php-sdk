@@ -73,17 +73,13 @@ class AvailableNumberTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "capabilities"
-     */
+
     public function testPropertyCapabilities()
     {
         $this->AvailableNumber->setcapabilities(new \stdClass());
         $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
     }
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 
@@ -91,9 +87,7 @@ class AvailableNumberTest extends TestCase
         $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
         $this->assertIsString($this->AvailableNumber->getCampaignId());
     }
-    /**
-     * Test attribute "phone_number"
-     */
+
     public function testPropertyPhoneNumber()
     {
 
@@ -101,27 +95,21 @@ class AvailableNumberTest extends TestCase
         $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
         $this->assertIsString($this->AvailableNumber->getPhoneNumber());
     }
-    /**
-     * Test attribute "voice_enabled"
-     */
+
     public function testPropertyVoiceEnabled()
     {
         $this->AvailableNumber->setvoiceEnabled(false);
         $this->assertFalse($this->AvailableNumber->getvoiceEnabled());
         $this->assertIsBool($this->AvailableNumber->getvoiceEnabled());
     }
-    /**
-     * Test attribute "sms_enabled"
-     */
+
     public function testPropertySmsEnabled()
     {
         $this->AvailableNumber->setsmsEnabled(false);
         $this->assertFalse($this->AvailableNumber->getsmsEnabled());
         $this->assertIsBool($this->AvailableNumber->getsmsEnabled());
     }
-    /**
-     * Test attribute "region"
-     */
+
     public function testPropertyRegion()
     {
 
@@ -129,9 +117,7 @@ class AvailableNumberTest extends TestCase
         $this->assertEquals('TS', $this->AvailableNumber->getRegion());
         $this->assertIsString($this->AvailableNumber->getRegion());
     }
-    /**
-     * Test attribute "country"
-     */
+
     public function testPropertyCountry()
     {
 

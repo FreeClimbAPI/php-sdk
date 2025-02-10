@@ -73,9 +73,7 @@ class CompletionResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "response"
-     */
+
     public function testPropertyResponse()
     {
 
@@ -83,9 +81,7 @@ class CompletionResultTest extends TestCase
         $this->assertEquals('TS', $this->CompletionResult->getResponse());
         $this->assertIsString($this->CompletionResult->getResponse());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->CompletionResult->setstatus(\FreeClimb\Api\Model\CompletionResultStatus::SUCCESS);

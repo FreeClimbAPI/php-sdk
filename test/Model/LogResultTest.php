@@ -73,9 +73,7 @@ class LogResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "timestamp"
-     */
+
     public function testPropertyTimestamp()
     {
 
@@ -85,9 +83,7 @@ class LogResultTest extends TestCase
         $this->assertIsNumeric($this->LogResult->gettimestamp());
 
     }
-    /**
-     * Test attribute "level"
-     */
+
     public function testPropertyLevel()
     {
         $this->LogResult->setlevel(\FreeClimb\Api\Model\LogLevel::INFO);
@@ -97,9 +93,7 @@ class LogResultTest extends TestCase
         $this->LogResult->setlevel(\FreeClimb\Api\Model\LogLevel::ERROR);
         $this->assertEquals(\FreeClimb\Api\Model\LogLevel::ERROR, $this->LogResult->getlevel());
     }
-    /**
-     * Test attribute "request_id"
-     */
+
     public function testPropertyRequestId()
     {
 
@@ -107,9 +101,7 @@ class LogResultTest extends TestCase
         $this->assertEquals('TS', $this->LogResult->getRequestId());
         $this->assertIsString($this->LogResult->getRequestId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -117,9 +109,7 @@ class LogResultTest extends TestCase
         $this->assertEquals('TS', $this->LogResult->getAccountId());
         $this->assertIsString($this->LogResult->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -127,9 +117,7 @@ class LogResultTest extends TestCase
         $this->assertEquals('TS', $this->LogResult->getCallId());
         $this->assertIsString($this->LogResult->getCallId());
     }
-    /**
-     * Test attribute "message"
-     */
+
     public function testPropertyMessage()
     {
 
@@ -137,9 +125,7 @@ class LogResultTest extends TestCase
         $this->assertEquals('TS', $this->LogResult->getMessage());
         $this->assertIsString($this->LogResult->getMessage());
     }
-    /**
-     * Test attribute "metadata"
-     */
+
     public function testPropertyMetadata()
     {
         $this->LogResult->setmetadata(new \stdClass());

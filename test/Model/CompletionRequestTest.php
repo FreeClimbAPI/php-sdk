@@ -73,9 +73,7 @@ class CompletionRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "query"
-     */
+
     public function testPropertyQuery()
     {
 

@@ -73,9 +73,7 @@ class TFNCampaignTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -83,9 +81,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getAccountId());
         $this->assertIsString($this->TFNCampaign->getAccountId());
     }
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 
@@ -94,9 +90,7 @@ class TFNCampaignTest extends TestCase
         $this->assertIsString($this->TFNCampaign->getCampaignId());
 
     }
-    /**
-     * Test attribute "use_case"
-     */
+
     public function testPropertyUseCase()
     {
 
@@ -104,9 +98,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getUseCase());
         $this->assertIsString($this->TFNCampaign->getUseCase());
     }
-    /**
-     * Test attribute "registration_status"
-     */
+
     public function testPropertyRegistrationStatus()
     {
         $this->TFNCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::UNREGISTERED);
@@ -120,9 +112,7 @@ class TFNCampaignTest extends TestCase
         $this->TFNCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED, $this->TFNCampaign->getregistrationStatus());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -130,9 +120,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getDateCreated());
         $this->assertIsString($this->TFNCampaign->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -140,9 +128,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getDateUpdated());
         $this->assertIsString($this->TFNCampaign->getDateUpdated());
     }
-    /**
-     * Test attribute "date_created_iso"
-     */
+
     public function testPropertyDateCreatedIso()
     {
 
@@ -150,9 +136,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getDateCreatedIso());
         $this->assertIsString($this->TFNCampaign->getDateCreatedIso());
     }
-    /**
-     * Test attribute "date_updated_iso"
-     */
+
     public function testPropertyDateUpdatedIso()
     {
 
@@ -160,9 +144,7 @@ class TFNCampaignTest extends TestCase
         $this->assertEquals('TS', $this->TFNCampaign->getDateUpdatedIso());
         $this->assertIsString($this->TFNCampaign->getDateUpdatedIso());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 

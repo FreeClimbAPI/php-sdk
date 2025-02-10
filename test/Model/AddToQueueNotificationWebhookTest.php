@@ -73,9 +73,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getRequestType());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getCallId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -103,9 +97,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getAccountId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getFrom());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getTo());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->AddToQueueNotificationWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->AddToQueueNotificationWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->AddToQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->AddToQueueNotificationWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->AddToQueueNotificationWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class AddToQueueNotificationWebhookTest extends TestCase
         $this->assertEquals('TS', $this->AddToQueueNotificationWebhook->getConferenceId());
         $this->assertIsString($this->AddToQueueNotificationWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 

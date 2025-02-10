@@ -73,18 +73,14 @@ class AddToConferenceTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "allow_call_control"
-     */
+
     public function testPropertyAllowCallControl()
     {
         $this->AddToConference->setallowCallControl(false);
         $this->assertFalse($this->AddToConference->getallowCallControl());
         $this->assertIsBool($this->AddToConference->getallowCallControl());
     }
-    /**
-     * Test attribute "call_control_sequence"
-     */
+
     public function testPropertyCallControlSequence()
     {
 
@@ -92,9 +88,7 @@ class AddToConferenceTest extends TestCase
         $this->assertEquals('TS', $this->AddToConference->getCallControlSequence());
         $this->assertIsString($this->AddToConference->getCallControlSequence());
     }
-    /**
-     * Test attribute "call_control_url"
-     */
+
     public function testPropertyCallControlUrl()
     {
 
@@ -102,9 +96,7 @@ class AddToConferenceTest extends TestCase
         $this->assertEquals('TS', $this->AddToConference->getCallControlUrl());
         $this->assertIsString($this->AddToConference->getCallControlUrl());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -112,9 +104,7 @@ class AddToConferenceTest extends TestCase
         $this->assertEquals('TS', $this->AddToConference->getConferenceId());
         $this->assertIsString($this->AddToConference->getConferenceId());
     }
-    /**
-     * Test attribute "leave_conference_url"
-     */
+
     public function testPropertyLeaveConferenceUrl()
     {
 
@@ -122,18 +112,14 @@ class AddToConferenceTest extends TestCase
         $this->assertEquals('TS', $this->AddToConference->getLeaveConferenceUrl());
         $this->assertIsString($this->AddToConference->getLeaveConferenceUrl());
     }
-    /**
-     * Test attribute "listen"
-     */
+
     public function testPropertyListen()
     {
         $this->AddToConference->setlisten(false);
         $this->assertFalse($this->AddToConference->getlisten());
         $this->assertIsBool($this->AddToConference->getlisten());
     }
-    /**
-     * Test attribute "notification_url"
-     */
+
     public function testPropertyNotificationUrl()
     {
 
@@ -141,27 +127,21 @@ class AddToConferenceTest extends TestCase
         $this->assertEquals('TS', $this->AddToConference->getNotificationUrl());
         $this->assertIsString($this->AddToConference->getNotificationUrl());
     }
-    /**
-     * Test attribute "start_conf_on_enter"
-     */
+
     public function testPropertyStartConfOnEnter()
     {
         $this->AddToConference->setstartConfOnEnter(false);
         $this->assertFalse($this->AddToConference->getstartConfOnEnter());
         $this->assertIsBool($this->AddToConference->getstartConfOnEnter());
     }
-    /**
-     * Test attribute "talk"
-     */
+
     public function testPropertyTalk()
     {
         $this->AddToConference->settalk(false);
         $this->assertFalse($this->AddToConference->gettalk());
         $this->assertIsBool($this->AddToConference->gettalk());
     }
-    /**
-     * Test attribute "dtmf_pass_through"
-     */
+
     public function testPropertyDtmfPassThrough()
     {
         $this->AddToConference->setdtmfPassThrough(false);

@@ -73,9 +73,7 @@ class GetSpeechWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getRequestType());
         $this->assertIsString($this->GetSpeechWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCallId());
         $this->assertIsString($this->GetSpeechWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -103,9 +97,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getAccountId());
         $this->assertIsString($this->GetSpeechWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getFrom());
         $this->assertIsString($this->GetSpeechWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getTo());
         $this->assertIsString($this->GetSpeechWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->GetSpeechWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->GetSpeechWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->GetSpeechWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->GetSpeechWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->GetSpeechWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getConferenceId());
         $this->assertIsString($this->GetSpeechWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -177,9 +159,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getQueueId());
         $this->assertIsString($this->GetSpeechWebhook->getQueueId());
     }
-    /**
-     * Test attribute "reason"
-     */
+
     public function testPropertyReason()
     {
         $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::ERROR);
@@ -195,9 +175,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->GetSpeechWebhook->setreason(\FreeClimb\Api\Model\GetSpeechReason::RECOGNITION);
         $this->assertEquals(\FreeClimb\Api\Model\GetSpeechReason::RECOGNITION, $this->GetSpeechWebhook->getreason());
     }
-    /**
-     * Test attribute "recognition_result"
-     */
+
     public function testPropertyRecognitionResult()
     {
 
@@ -205,9 +183,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getRecognitionResult());
         $this->assertIsString($this->GetSpeechWebhook->getRecognitionResult());
     }
-    /**
-     * Test attribute "confidence"
-     */
+
     public function testPropertyConfidence()
     {
 
@@ -217,9 +193,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertIsNumeric($this->GetSpeechWebhook->getconfidence());
 
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
 
@@ -227,9 +201,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getParentCallId());
         $this->assertIsString($this->GetSpeechWebhook->getParentCallId());
     }
-    /**
-     * Test attribute "completion_reason"
-     */
+
     public function testPropertyCompletionReason()
     {
 
@@ -237,9 +209,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionReason());
         $this->assertIsString($this->GetSpeechWebhook->getCompletionReason());
     }
-    /**
-     * Test attribute "completion_cause"
-     */
+
     public function testPropertyCompletionCause()
     {
 
@@ -247,9 +217,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeechWebhook->getCompletionCause());
         $this->assertIsString($this->GetSpeechWebhook->getCompletionCause());
     }
-    /**
-     * Test attribute "mrcp_code"
-     */
+
     public function testPropertyMrcpCode()
     {
 
@@ -259,9 +227,7 @@ class GetSpeechWebhookTest extends TestCase
         $this->assertIsNumeric($this->GetSpeechWebhook->getmrcpCode());
 
     }
-    /**
-     * Test attribute "mrcp_diagnostic"
-     */
+
     public function testPropertyMrcpDiagnostic()
     {
 

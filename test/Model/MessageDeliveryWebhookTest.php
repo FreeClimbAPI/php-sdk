@@ -73,9 +73,7 @@ class MessageDeliveryWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getRequestType());
         $this->assertIsString($this->MessageDeliveryWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -93,9 +89,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getAccountId());
         $this->assertIsString($this->MessageDeliveryWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -103,9 +97,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getFrom());
         $this->assertIsString($this->MessageDeliveryWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -113,9 +105,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getTo());
         $this->assertIsString($this->MessageDeliveryWebhook->getTo());
     }
-    /**
-     * Test attribute "text"
-     */
+
     public function testPropertyText()
     {
 
@@ -123,9 +113,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getText());
         $this->assertIsString($this->MessageDeliveryWebhook->getText());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
 
@@ -133,9 +121,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getDirection());
         $this->assertIsString($this->MessageDeliveryWebhook->getDirection());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 
@@ -143,9 +129,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getApplicationId());
         $this->assertIsString($this->MessageDeliveryWebhook->getApplicationId());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
 
@@ -153,9 +137,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getStatus());
         $this->assertIsString($this->MessageDeliveryWebhook->getStatus());
     }
-    /**
-     * Test attribute "phone_number_id"
-     */
+
     public function testPropertyPhoneNumberId()
     {
 
@@ -163,9 +145,7 @@ class MessageDeliveryWebhookTest extends TestCase
         $this->assertEquals('TS', $this->MessageDeliveryWebhook->getPhoneNumberId());
         $this->assertIsString($this->MessageDeliveryWebhook->getPhoneNumberId());
     }
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 

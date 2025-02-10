@@ -73,9 +73,7 @@ class FilterLogsRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "pql"
-     */
+
     public function testPropertyPql()
     {
 

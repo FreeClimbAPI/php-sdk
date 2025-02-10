@@ -73,9 +73,7 @@ class AccountRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -83,9 +81,7 @@ class AccountRequestTest extends TestCase
         $this->assertEquals('TS', $this->AccountRequest->getAlias());
         $this->assertIsString($this->AccountRequest->getAlias());
     }
-    /**
-     * Test attribute "label"
-     */
+
     public function testPropertyLabel()
     {
 

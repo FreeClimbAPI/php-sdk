@@ -73,9 +73,7 @@ class MessageResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getUri());
         $this->assertIsString($this->MessageResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getDateCreated());
         $this->assertIsString($this->MessageResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getDateUpdated());
         $this->assertIsString($this->MessageResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class MessageResultTest extends TestCase
         $this->assertIsNumeric($this->MessageResult->getrevision());
 
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -125,9 +115,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getAccountId());
         $this->assertIsString($this->MessageResult->getAccountId());
     }
-    /**
-     * Test attribute "message_id"
-     */
+
     public function testPropertyMessageId()
     {
 
@@ -135,9 +123,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getMessageId());
         $this->assertIsString($this->MessageResult->getMessageId());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::NEW);
@@ -163,9 +149,7 @@ class MessageResultTest extends TestCase
         $this->MessageResult->setstatus(\FreeClimb\Api\Model\MessageStatus::UNKNOWN);
         $this->assertEquals(\FreeClimb\Api\Model\MessageStatus::UNKNOWN, $this->MessageResult->getstatus());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -173,9 +157,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getFrom());
         $this->assertIsString($this->MessageResult->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -183,9 +165,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getTo());
         $this->assertIsString($this->MessageResult->getTo());
     }
-    /**
-     * Test attribute "text"
-     */
+
     public function testPropertyText()
     {
 
@@ -193,9 +173,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getText());
         $this->assertIsString($this->MessageResult->getText());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
 
@@ -203,9 +181,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getDirection());
         $this->assertIsString($this->MessageResult->getDirection());
     }
-    /**
-     * Test attribute "notification_url"
-     */
+
     public function testPropertyNotificationUrl()
     {
 
@@ -213,9 +189,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getNotificationUrl());
         $this->assertIsString($this->MessageResult->getNotificationUrl());
     }
-    /**
-     * Test attribute "brand_id"
-     */
+
     public function testPropertyBrandId()
     {
 
@@ -223,9 +197,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getBrandId());
         $this->assertIsString($this->MessageResult->getBrandId());
     }
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 
@@ -233,9 +205,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getCampaignId());
         $this->assertIsString($this->MessageResult->getCampaignId());
     }
-    /**
-     * Test attribute "segment_count"
-     */
+
     public function testPropertySegmentCount()
     {
 
@@ -245,26 +215,20 @@ class MessageResultTest extends TestCase
         $this->assertIsNumeric($this->MessageResult->getsegmentCount());
 
     }
-    /**
-     * Test attribute "media_urls"
-     */
+
     public function testPropertyMediaUrls()
     {
         $this->MessageResult->setmediaUrls([]);
         $this->assertEquals([], $this->MessageResult->getmediaUrls());
         $this->assertIsArray($this->MessageResult->getmediaUrls());
     }
-    /**
-     * Test attribute "tfn"
-     */
+
     public function testPropertyTfn()
     {
         $this->MessageResult->settfn(new \stdClass());
         $this->assertInstanceOf(\stdClass::class, $this->MessageResult->gettfn());
     }
-    /**
-     * Test attribute "phone_number_id"
-     */
+
     public function testPropertyPhoneNumberId()
     {
 
@@ -272,9 +236,7 @@ class MessageResultTest extends TestCase
         $this->assertEquals('TS', $this->MessageResult->getPhoneNumberId());
         $this->assertIsString($this->MessageResult->getPhoneNumberId());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 

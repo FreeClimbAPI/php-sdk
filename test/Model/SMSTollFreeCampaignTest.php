@@ -73,9 +73,7 @@ class SMSTollFreeCampaignTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -83,9 +81,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getAccountId());
         $this->assertIsString($this->SMSTollFreeCampaign->getAccountId());
     }
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 
@@ -93,9 +89,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getCampaignId());
         $this->assertIsString($this->SMSTollFreeCampaign->getCampaignId());
     }
-    /**
-     * Test attribute "use_case"
-     */
+
     public function testPropertyUseCase()
     {
 
@@ -103,9 +97,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getUseCase());
         $this->assertIsString($this->SMSTollFreeCampaign->getUseCase());
     }
-    /**
-     * Test attribute "registration_status"
-     */
+
     public function testPropertyRegistrationStatus()
     {
         $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::UNREGISTERED);
@@ -119,9 +111,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->SMSTollFreeCampaign->setregistrationStatus(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTollFreeCampaignRegistrationStatus::REGISTERED, $this->SMSTollFreeCampaign->getregistrationStatus());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -129,9 +119,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateCreated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -139,9 +127,7 @@ class SMSTollFreeCampaignTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaign->getDateUpdated());
         $this->assertIsString($this->SMSTollFreeCampaign->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 

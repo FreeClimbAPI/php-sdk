@@ -73,9 +73,7 @@ class ParkTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "wait_url"
-     */
+
     public function testPropertyWaitUrl()
     {
 
@@ -83,9 +81,7 @@ class ParkTest extends TestCase
         $this->assertEquals('TS', $this->Park->getWaitUrl());
         $this->assertIsString($this->Park->getWaitUrl());
     }
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
 
@@ -93,9 +89,7 @@ class ParkTest extends TestCase
         $this->assertEquals('TS', $this->Park->getActionUrl());
         $this->assertIsString($this->Park->getActionUrl());
     }
-    /**
-     * Test attribute "notification_url"
-     */
+
     public function testPropertyNotificationUrl()
     {
 

@@ -73,9 +73,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,9 +133,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCBrandsListResult->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
 
@@ -155,9 +141,7 @@ class SMSTenDLCBrandsListResultTest extends TestCase
         $this->assertEquals('TS', $this->SMSTenDLCBrandsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCBrandsListResult->getNextPageUri());
     }
-    /**
-     * Test attribute "brands"
-     */
+
     public function testPropertyBrands()
     {
         $this->SMSTenDLCBrandsListResult->setbrands([]);

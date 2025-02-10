@@ -73,9 +73,7 @@ class CallControlWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class CallControlWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallControlWebhook->getRequestType());
         $this->assertIsString($this->CallControlWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class CallControlWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallControlWebhook->getCallId());
         $this->assertIsString($this->CallControlWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -103,9 +97,7 @@ class CallControlWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallControlWebhook->getAccountId());
         $this->assertIsString($this->CallControlWebhook->getAccountId());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -113,9 +105,7 @@ class CallControlWebhookTest extends TestCase
         $this->assertEquals('TS', $this->CallControlWebhook->getConferenceId());
         $this->assertIsString($this->CallControlWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "digits"
-     */
+
     public function testPropertyDigits()
     {
 

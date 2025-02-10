@@ -73,9 +73,7 @@ class RecordWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getRequestType());
         $this->assertIsString($this->RecordWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -93,9 +89,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getAccountId());
         $this->assertIsString($this->RecordWebhook->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -103,9 +97,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getCallId());
         $this->assertIsString($this->RecordWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getFrom());
         $this->assertIsString($this->RecordWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getTo());
         $this->assertIsString($this->RecordWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->RecordWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class RecordWebhookTest extends TestCase
         $this->RecordWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->RecordWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->RecordWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class RecordWebhookTest extends TestCase
         $this->RecordWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->RecordWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getConferenceId());
         $this->assertIsString($this->RecordWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -177,9 +159,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getQueueId());
         $this->assertIsString($this->RecordWebhook->getQueueId());
     }
-    /**
-     * Test attribute "recording_id"
-     */
+
     public function testPropertyRecordingId()
     {
 
@@ -187,9 +167,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingId());
         $this->assertIsString($this->RecordWebhook->getRecordingId());
     }
-    /**
-     * Test attribute "recording_url"
-     */
+
     public function testPropertyRecordingUrl()
     {
 
@@ -197,9 +175,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingUrl());
         $this->assertIsString($this->RecordWebhook->getRecordingUrl());
     }
-    /**
-     * Test attribute "recording_size"
-     */
+
     public function testPropertyRecordingSize()
     {
 
@@ -207,9 +183,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingSize());
         $this->assertIsString($this->RecordWebhook->getRecordingSize());
     }
-    /**
-     * Test attribute "recording_format"
-     */
+
     public function testPropertyRecordingFormat()
     {
 
@@ -217,9 +191,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getRecordingFormat());
         $this->assertIsString($this->RecordWebhook->getRecordingFormat());
     }
-    /**
-     * Test attribute "recording_duration_sec"
-     */
+
     public function testPropertyRecordingDurationSec()
     {
 
@@ -229,9 +201,7 @@ class RecordWebhookTest extends TestCase
         $this->assertIsNumeric($this->RecordWebhook->getrecordingDurationSec());
 
     }
-    /**
-     * Test attribute "term_reason"
-     */
+
     public function testPropertyTermReason()
     {
         $this->RecordWebhook->settermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::FINISH_KEY);
@@ -243,9 +213,7 @@ class RecordWebhookTest extends TestCase
         $this->RecordWebhook->settermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH);
         $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH, $this->RecordWebhook->gettermReason());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
 
@@ -253,9 +221,7 @@ class RecordWebhookTest extends TestCase
         $this->assertEquals('TS', $this->RecordWebhook->getParentCallId());
         $this->assertIsString($this->RecordWebhook->getParentCallId());
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->RecordWebhook->setprivacyMode(false);

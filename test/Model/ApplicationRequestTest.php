@@ -73,9 +73,7 @@ class ApplicationRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -83,9 +81,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getAlias());
         $this->assertIsString($this->ApplicationRequest->getAlias());
     }
-    /**
-     * Test attribute "voice_url"
-     */
+
     public function testPropertyVoiceUrl()
     {
 
@@ -93,9 +89,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getVoiceUrl());
         $this->assertIsString($this->ApplicationRequest->getVoiceUrl());
     }
-    /**
-     * Test attribute "voice_fallback_url"
-     */
+
     public function testPropertyVoiceFallbackUrl()
     {
 
@@ -103,9 +97,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getVoiceFallbackUrl());
         $this->assertIsString($this->ApplicationRequest->getVoiceFallbackUrl());
     }
-    /**
-     * Test attribute "call_connect_url"
-     */
+
     public function testPropertyCallConnectUrl()
     {
 
@@ -113,9 +105,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getCallConnectUrl());
         $this->assertIsString($this->ApplicationRequest->getCallConnectUrl());
     }
-    /**
-     * Test attribute "status_callback_url"
-     */
+
     public function testPropertyStatusCallbackUrl()
     {
 
@@ -123,9 +113,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getStatusCallbackUrl());
         $this->assertIsString($this->ApplicationRequest->getStatusCallbackUrl());
     }
-    /**
-     * Test attribute "sms_url"
-     */
+
     public function testPropertySmsUrl()
     {
 
@@ -133,9 +121,7 @@ class ApplicationRequestTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationRequest->getSmsUrl());
         $this->assertIsString($this->ApplicationRequest->getSmsUrl());
     }
-    /**
-     * Test attribute "sms_fallback_url"
-     */
+
     public function testPropertySmsFallbackUrl()
     {
 

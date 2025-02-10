@@ -73,9 +73,7 @@ class CallResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getUri());
         $this->assertIsString($this->CallResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getDateCreated());
         $this->assertIsString($this->CallResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getDateUpdated());
         $this->assertIsString($this->CallResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class CallResultTest extends TestCase
         $this->assertIsNumeric($this->CallResult->getrevision());
 
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -125,9 +115,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getCallId());
         $this->assertIsString($this->CallResult->getCallId());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
 
@@ -135,9 +123,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getParentCallId());
         $this->assertIsString($this->CallResult->getParentCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -145,9 +131,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getAccountId());
         $this->assertIsString($this->CallResult->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -155,9 +139,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getFrom());
         $this->assertIsString($this->CallResult->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -165,9 +147,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getTo());
         $this->assertIsString($this->CallResult->getTo());
     }
-    /**
-     * Test attribute "phone_number_id"
-     */
+
     public function testPropertyPhoneNumberId()
     {
 
@@ -175,9 +155,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getPhoneNumberId());
         $this->assertIsString($this->CallResult->getPhoneNumberId());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -197,9 +175,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->CallResult->getcallStatus());
     }
-    /**
-     * Test attribute "start_time"
-     */
+
     public function testPropertyStartTime()
     {
 
@@ -207,9 +183,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getStartTime());
         $this->assertIsString($this->CallResult->getStartTime());
     }
-    /**
-     * Test attribute "connect_time"
-     */
+
     public function testPropertyConnectTime()
     {
 
@@ -217,9 +191,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getConnectTime());
         $this->assertIsString($this->CallResult->getConnectTime());
     }
-    /**
-     * Test attribute "end_time"
-     */
+
     public function testPropertyEndTime()
     {
 
@@ -227,9 +199,7 @@ class CallResultTest extends TestCase
         $this->assertEquals('TS', $this->CallResult->getEndTime());
         $this->assertIsString($this->CallResult->getEndTime());
     }
-    /**
-     * Test attribute "duration"
-     */
+
     public function testPropertyDuration()
     {
 
@@ -239,9 +209,7 @@ class CallResultTest extends TestCase
         $this->assertIsNumeric($this->CallResult->getduration());
 
     }
-    /**
-     * Test attribute "connect_duration"
-     */
+
     public function testPropertyConnectDuration()
     {
 
@@ -251,9 +219,7 @@ class CallResultTest extends TestCase
         $this->assertIsNumeric($this->CallResult->getconnectDuration());
 
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -263,9 +229,7 @@ class CallResultTest extends TestCase
         $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->CallResult->getdirection());
     }
-    /**
-     * Test attribute "answered_by"
-     */
+
     public function testPropertyAnsweredBy()
     {
         $this->CallResult->setansweredBy(\FreeClimb\Api\Model\AnsweredBy::HUMAN);
@@ -273,17 +237,13 @@ class CallResultTest extends TestCase
         $this->CallResult->setansweredBy(\FreeClimb\Api\Model\AnsweredBy::MACHINE);
         $this->assertEquals(\FreeClimb\Api\Model\AnsweredBy::MACHINE, $this->CallResult->getansweredBy());
     }
-    /**
-     * Test attribute "subresource_uris"
-     */
+
     public function testPropertySubresourceUris()
     {
         $this->CallResult->setsubresourceUris(new \stdClass());
         $this->assertInstanceOf(\stdClass::class, $this->CallResult->getsubresourceUris());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 

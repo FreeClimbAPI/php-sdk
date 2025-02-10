@@ -73,9 +73,7 @@ class ApplicationResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getUri());
         $this->assertIsString($this->ApplicationResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getDateCreated());
         $this->assertIsString($this->ApplicationResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getDateUpdated());
         $this->assertIsString($this->ApplicationResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class ApplicationResultTest extends TestCase
         $this->assertIsNumeric($this->ApplicationResult->getrevision());
 
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -125,9 +115,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getAccountId());
         $this->assertIsString($this->ApplicationResult->getAccountId());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 
@@ -135,9 +123,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getApplicationId());
         $this->assertIsString($this->ApplicationResult->getApplicationId());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -145,9 +131,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getAlias());
         $this->assertIsString($this->ApplicationResult->getAlias());
     }
-    /**
-     * Test attribute "voice_url"
-     */
+
     public function testPropertyVoiceUrl()
     {
 
@@ -155,9 +139,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getVoiceUrl());
         $this->assertIsString($this->ApplicationResult->getVoiceUrl());
     }
-    /**
-     * Test attribute "voice_fallback_url"
-     */
+
     public function testPropertyVoiceFallbackUrl()
     {
 
@@ -165,9 +147,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getVoiceFallbackUrl());
         $this->assertIsString($this->ApplicationResult->getVoiceFallbackUrl());
     }
-    /**
-     * Test attribute "call_connect_url"
-     */
+
     public function testPropertyCallConnectUrl()
     {
 
@@ -175,9 +155,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getCallConnectUrl());
         $this->assertIsString($this->ApplicationResult->getCallConnectUrl());
     }
-    /**
-     * Test attribute "status_callback_url"
-     */
+
     public function testPropertyStatusCallbackUrl()
     {
 
@@ -185,9 +163,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getStatusCallbackUrl());
         $this->assertIsString($this->ApplicationResult->getStatusCallbackUrl());
     }
-    /**
-     * Test attribute "sms_url"
-     */
+
     public function testPropertySmsUrl()
     {
 
@@ -195,9 +171,7 @@ class ApplicationResultTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationResult->getSmsUrl());
         $this->assertIsString($this->ApplicationResult->getSmsUrl());
     }
-    /**
-     * Test attribute "sms_fallback_url"
-     */
+
     public function testPropertySmsFallbackUrl()
     {
 

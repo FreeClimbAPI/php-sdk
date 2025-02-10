@@ -73,9 +73,7 @@ class InboundCallWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
 
@@ -83,9 +81,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getRequestType());
         $this->assertIsString($this->InboundCallWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getCallId());
         $this->assertIsString($this->InboundCallWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -103,9 +97,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getAccountId());
         $this->assertIsString($this->InboundCallWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
 
@@ -113,9 +105,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getFrom());
         $this->assertIsString($this->InboundCallWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
 
@@ -123,9 +113,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getTo());
         $this->assertIsString($this->InboundCallWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->InboundCallWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -145,9 +133,7 @@ class InboundCallWebhookTest extends TestCase
         $this->InboundCallWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->InboundCallWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->InboundCallWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -157,9 +143,7 @@ class InboundCallWebhookTest extends TestCase
         $this->InboundCallWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->InboundCallWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 
@@ -167,9 +151,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getConferenceId());
         $this->assertIsString($this->InboundCallWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -177,9 +159,7 @@ class InboundCallWebhookTest extends TestCase
         $this->assertEquals('TS', $this->InboundCallWebhook->getQueueId());
         $this->assertIsString($this->InboundCallWebhook->getQueueId());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
 

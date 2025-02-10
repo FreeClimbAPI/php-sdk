@@ -73,9 +73,7 @@ class SendDigitsTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "digits"
-     */
+
     public function testPropertyDigits()
     {
 
@@ -83,9 +81,7 @@ class SendDigitsTest extends TestCase
         $this->assertEquals('TS', $this->SendDigits->getDigits());
         $this->assertIsString($this->SendDigits->getDigits());
     }
-    /**
-     * Test attribute "pause_ms"
-     */
+
     public function testPropertyPauseMs()
     {
 
@@ -95,9 +91,7 @@ class SendDigitsTest extends TestCase
         $this->assertIsNumeric($this->SendDigits->getpauseMs());
 
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->SendDigits->setprivacyMode(false);

@@ -73,27 +73,21 @@ class UpdateConferenceParticipantRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "talk"
-     */
+
     public function testPropertyTalk()
     {
         $this->UpdateConferenceParticipantRequest->settalk(false);
         $this->assertFalse($this->UpdateConferenceParticipantRequest->gettalk());
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->gettalk());
     }
-    /**
-     * Test attribute "listen"
-     */
+
     public function testPropertyListen()
     {
         $this->UpdateConferenceParticipantRequest->setlisten(false);
         $this->assertFalse($this->UpdateConferenceParticipantRequest->getlisten());
         $this->assertIsBool($this->UpdateConferenceParticipantRequest->getlisten());
     }
-    /**
-     * Test attribute "dtmf_pass_through"
-     */
+
     public function testPropertyDtmfPassThrough()
     {
         $this->UpdateConferenceParticipantRequest->setdtmfPassThrough(false);

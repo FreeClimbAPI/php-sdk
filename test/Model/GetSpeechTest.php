@@ -73,9 +73,7 @@ class GetSpeechTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
 
@@ -83,9 +81,7 @@ class GetSpeechTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeech->getActionUrl());
         $this->assertIsString($this->GetSpeech->getActionUrl());
     }
-    /**
-     * Test attribute "grammar_type"
-     */
+
     public function testPropertyGrammarType()
     {
         $this->GetSpeech->setgrammarType(\FreeClimb\Api\Model\GrammarType::URL);
@@ -93,9 +89,7 @@ class GetSpeechTest extends TestCase
         $this->GetSpeech->setgrammarType(\FreeClimb\Api\Model\GrammarType::BUILT_IN);
         $this->assertEquals(\FreeClimb\Api\Model\GrammarType::BUILT_IN, $this->GetSpeech->getgrammarType());
     }
-    /**
-     * Test attribute "grammar_file"
-     */
+
     public function testPropertyGrammarFile()
     {
 
@@ -103,9 +97,7 @@ class GetSpeechTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeech->getGrammarFile());
         $this->assertIsString($this->GetSpeech->getGrammarFile());
     }
-    /**
-     * Test attribute "grammar_rule"
-     */
+
     public function testPropertyGrammarRule()
     {
 
@@ -113,27 +105,21 @@ class GetSpeechTest extends TestCase
         $this->assertEquals('TS', $this->GetSpeech->getGrammarRule());
         $this->assertIsString($this->GetSpeech->getGrammarRule());
     }
-    /**
-     * Test attribute "play_beep"
-     */
+
     public function testPropertyPlayBeep()
     {
         $this->GetSpeech->setplayBeep(false);
         $this->assertFalse($this->GetSpeech->getplayBeep());
         $this->assertIsBool($this->GetSpeech->getplayBeep());
     }
-    /**
-     * Test attribute "prompts"
-     */
+
     public function testPropertyPrompts()
     {
         $this->GetSpeech->setprompts([]);
         $this->assertEquals([], $this->GetSpeech->getprompts());
         $this->assertIsArray($this->GetSpeech->getprompts());
     }
-    /**
-     * Test attribute "no_input_timeout_ms"
-     */
+
     public function testPropertyNoInputTimeoutMs()
     {
 
@@ -143,9 +129,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getnoInputTimeoutMs());
 
     }
-    /**
-     * Test attribute "recognition_timeout_ms"
-     */
+
     public function testPropertyRecognitionTimeoutMs()
     {
 
@@ -155,9 +139,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getrecognitionTimeoutMs());
 
     }
-    /**
-     * Test attribute "confidence_threshold"
-     */
+
     public function testPropertyConfidenceThreshold()
     {
 
@@ -167,9 +149,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getconfidenceThreshold());
 
     }
-    /**
-     * Test attribute "sensitivity_level"
-     */
+
     public function testPropertySensitivityLevel()
     {
 
@@ -179,9 +159,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getsensitivityLevel());
 
     }
-    /**
-     * Test attribute "speech_complete_timeout_ms"
-     */
+
     public function testPropertySpeechCompleteTimeoutMs()
     {
 
@@ -191,9 +169,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getspeechCompleteTimeoutMs());
 
     }
-    /**
-     * Test attribute "speech_incomplete_timeout_ms"
-     */
+
     public function testPropertySpeechIncompleteTimeoutMs()
     {
 
@@ -203,9 +179,7 @@ class GetSpeechTest extends TestCase
         $this->assertIsNumeric($this->GetSpeech->getspeechIncompleteTimeoutMs());
 
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->GetSpeech->setprivacyMode(false);

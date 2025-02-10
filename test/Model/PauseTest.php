@@ -73,9 +73,7 @@ class PauseTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "length"
-     */
+
     public function testPropertyLength()
     {
 

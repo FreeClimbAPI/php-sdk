@@ -73,9 +73,7 @@ class CreateConferenceTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
 
@@ -83,18 +81,14 @@ class CreateConferenceTest extends TestCase
         $this->assertEquals('TS', $this->CreateConference->getActionUrl());
         $this->assertIsString($this->CreateConference->getActionUrl());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
         $this->CreateConference->setalias(false);
         $this->assertFalse($this->CreateConference->getalias());
         $this->assertIsBool($this->CreateConference->getalias());
     }
-    /**
-     * Test attribute "play_beep"
-     */
+
     public function testPropertyPlayBeep()
     {
         $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
@@ -106,18 +100,14 @@ class CreateConferenceTest extends TestCase
         $this->CreateConference->setplayBeep(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY);
         $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY, $this->CreateConference->getplayBeep());
     }
-    /**
-     * Test attribute "record"
-     */
+
     public function testPropertyRecord()
     {
         $this->CreateConference->setrecord(false);
         $this->assertFalse($this->CreateConference->getrecord());
         $this->assertIsBool($this->CreateConference->getrecord());
     }
-    /**
-     * Test attribute "status_callback_url"
-     */
+
     public function testPropertyStatusCallbackUrl()
     {
 
@@ -125,9 +115,7 @@ class CreateConferenceTest extends TestCase
         $this->assertEquals('TS', $this->CreateConference->getStatusCallbackUrl());
         $this->assertIsString($this->CreateConference->getStatusCallbackUrl());
     }
-    /**
-     * Test attribute "wait_url"
-     */
+
     public function testPropertyWaitUrl()
     {
 

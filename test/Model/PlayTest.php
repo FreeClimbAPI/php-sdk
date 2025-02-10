@@ -73,9 +73,7 @@ class PlayTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "file"
-     */
+
     public function testPropertyFile()
     {
 
@@ -83,9 +81,7 @@ class PlayTest extends TestCase
         $this->assertEquals('TS', $this->Play->getFile());
         $this->assertIsString($this->Play->getFile());
     }
-    /**
-     * Test attribute "loop"
-     */
+
     public function testPropertyLoop()
     {
 
@@ -95,9 +91,7 @@ class PlayTest extends TestCase
         $this->assertIsNumeric($this->Play->getloop());
 
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->Play->setprivacyMode(false);

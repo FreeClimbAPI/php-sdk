@@ -73,9 +73,7 @@ class IncomingNumberResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getUri());
         $this->assertIsString($this->IncomingNumberResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getDateCreated());
         $this->assertIsString($this->IncomingNumberResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getDateUpdated());
         $this->assertIsString($this->IncomingNumberResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,17 +107,13 @@ class IncomingNumberResultTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberResult->getrevision());
 
     }
-    /**
-     * Test attribute "capabilities"
-     */
+
     public function testPropertyCapabilities()
     {
         $this->IncomingNumberResult->setcapabilities(new \stdClass());
         $this->assertInstanceOf(\stdClass::class, $this->IncomingNumberResult->getcapabilities());
     }
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 
@@ -133,9 +121,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getCampaignId());
         $this->assertIsString($this->IncomingNumberResult->getCampaignId());
     }
-    /**
-     * Test attribute "phone_number_id"
-     */
+
     public function testPropertyPhoneNumberId()
     {
 
@@ -143,9 +129,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumberId());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumberId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -153,9 +137,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getAccountId());
         $this->assertIsString($this->IncomingNumberResult->getAccountId());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
 
@@ -163,9 +145,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getApplicationId());
         $this->assertIsString($this->IncomingNumberResult->getApplicationId());
     }
-    /**
-     * Test attribute "phone_number"
-     */
+
     public function testPropertyPhoneNumber()
     {
 
@@ -173,9 +153,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getPhoneNumber());
         $this->assertIsString($this->IncomingNumberResult->getPhoneNumber());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -183,9 +161,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getAlias());
         $this->assertIsString($this->IncomingNumberResult->getAlias());
     }
-    /**
-     * Test attribute "region"
-     */
+
     public function testPropertyRegion()
     {
 
@@ -193,9 +169,7 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getRegion());
         $this->assertIsString($this->IncomingNumberResult->getRegion());
     }
-    /**
-     * Test attribute "country"
-     */
+
     public function testPropertyCountry()
     {
 
@@ -203,36 +177,28 @@ class IncomingNumberResultTest extends TestCase
         $this->assertEquals('TS', $this->IncomingNumberResult->getCountry());
         $this->assertIsString($this->IncomingNumberResult->getCountry());
     }
-    /**
-     * Test attribute "voice_enabled"
-     */
+
     public function testPropertyVoiceEnabled()
     {
         $this->IncomingNumberResult->setvoiceEnabled(false);
         $this->assertFalse($this->IncomingNumberResult->getvoiceEnabled());
         $this->assertIsBool($this->IncomingNumberResult->getvoiceEnabled());
     }
-    /**
-     * Test attribute "sms_enabled"
-     */
+
     public function testPropertySmsEnabled()
     {
         $this->IncomingNumberResult->setsmsEnabled(false);
         $this->assertFalse($this->IncomingNumberResult->getsmsEnabled());
         $this->assertIsBool($this->IncomingNumberResult->getsmsEnabled());
     }
-    /**
-     * Test attribute "offnet"
-     */
+
     public function testPropertyOffnet()
     {
         $this->IncomingNumberResult->setoffnet(false);
         $this->assertFalse($this->IncomingNumberResult->getoffnet());
         $this->assertIsBool($this->IncomingNumberResult->getoffnet());
     }
-    /**
-     * Test attribute "tfn"
-     */
+
     public function testPropertyTfn()
     {
         $this->IncomingNumberResult->settfn(new \stdClass());

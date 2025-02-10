@@ -73,9 +73,7 @@ class RedirectTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
 

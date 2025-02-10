@@ -73,9 +73,7 @@ class QueueMemberTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class QueueMemberTest extends TestCase
         $this->assertEquals('TS', $this->QueueMember->getUri());
         $this->assertIsString($this->QueueMember->getUri());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -93,9 +89,7 @@ class QueueMemberTest extends TestCase
         $this->assertEquals('TS', $this->QueueMember->getCallId());
         $this->assertIsString($this->QueueMember->getCallId());
     }
-    /**
-     * Test attribute "wait_time"
-     */
+
     public function testPropertyWaitTime()
     {
 
@@ -105,9 +99,7 @@ class QueueMemberTest extends TestCase
         $this->assertIsNumeric($this->QueueMember->getwaitTime());
 
     }
-    /**
-     * Test attribute "position"
-     */
+
     public function testPropertyPosition()
     {
 
@@ -117,9 +109,7 @@ class QueueMemberTest extends TestCase
         $this->assertIsNumeric($this->QueueMember->getposition());
 
     }
-    /**
-     * Test attribute "date_enqueued"
-     */
+
     public function testPropertyDateEnqueued()
     {
 

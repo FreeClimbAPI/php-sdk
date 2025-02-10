@@ -73,9 +73,7 @@ class OutDialTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
 
@@ -83,9 +81,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getActionUrl());
         $this->assertIsString($this->OutDial->getActionUrl());
     }
-    /**
-     * Test attribute "call_connect_url"
-     */
+
     public function testPropertyCallConnectUrl()
     {
 
@@ -93,9 +89,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getCallConnectUrl());
         $this->assertIsString($this->OutDial->getCallConnectUrl());
     }
-    /**
-     * Test attribute "calling_number"
-     */
+
     public function testPropertyCallingNumber()
     {
 
@@ -103,9 +97,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getCallingNumber());
         $this->assertIsString($this->OutDial->getCallingNumber());
     }
-    /**
-     * Test attribute "destination"
-     */
+
     public function testPropertyDestination()
     {
 
@@ -113,9 +105,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getDestination());
         $this->assertIsString($this->OutDial->getDestination());
     }
-    /**
-     * Test attribute "if_machine"
-     */
+
     public function testPropertyIfMachine()
     {
         $this->OutDial->setifMachine(\FreeClimb\Api\Model\IfMachine::REDIRECT);
@@ -123,9 +113,7 @@ class OutDialTest extends TestCase
         $this->OutDial->setifMachine(\FreeClimb\Api\Model\IfMachine::HANGUP);
         $this->assertEquals(\FreeClimb\Api\Model\IfMachine::HANGUP, $this->OutDial->getifMachine());
     }
-    /**
-     * Test attribute "if_machine_url"
-     */
+
     public function testPropertyIfMachineUrl()
     {
 
@@ -133,9 +121,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getIfMachineUrl());
         $this->assertIsString($this->OutDial->getIfMachineUrl());
     }
-    /**
-     * Test attribute "send_digits"
-     */
+
     public function testPropertySendDigits()
     {
 
@@ -143,9 +129,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getSendDigits());
         $this->assertIsString($this->OutDial->getSendDigits());
     }
-    /**
-     * Test attribute "status_callback_url"
-     */
+
     public function testPropertyStatusCallbackUrl()
     {
 
@@ -153,9 +137,7 @@ class OutDialTest extends TestCase
         $this->assertEquals('TS', $this->OutDial->getStatusCallbackUrl());
         $this->assertIsString($this->OutDial->getStatusCallbackUrl());
     }
-    /**
-     * Test attribute "timeout"
-     */
+
     public function testPropertyTimeout()
     {
 
@@ -165,9 +147,7 @@ class OutDialTest extends TestCase
         $this->assertIsNumeric($this->OutDial->gettimeout());
 
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->OutDial->setprivacyMode(false);

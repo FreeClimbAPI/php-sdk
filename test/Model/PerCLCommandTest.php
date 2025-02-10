@@ -73,9 +73,7 @@ class PerclCommandTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "command"
-     */
+
     public function testPropertyCommand()
     {
 

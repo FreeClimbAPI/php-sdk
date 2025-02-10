@@ -73,9 +73,7 @@ class ApplicationListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,9 +133,7 @@ class ApplicationListTest extends TestCase
         $this->assertIsNumeric($this->ApplicationList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
 
@@ -155,9 +141,7 @@ class ApplicationListTest extends TestCase
         $this->assertEquals('TS', $this->ApplicationList->getNextPageUri());
         $this->assertIsString($this->ApplicationList->getNextPageUri());
     }
-    /**
-     * Test attribute "applications"
-     */
+
     public function testPropertyApplications()
     {
         $this->ApplicationList->setapplications([]);

@@ -73,9 +73,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,9 +133,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTollFreeCampaignsListResult->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
 
@@ -155,9 +141,7 @@ class SMSTollFreeCampaignsListResultTest extends TestCase
         $this->assertEquals('TS', $this->SMSTollFreeCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTollFreeCampaignsListResult->getNextPageUri());
     }
-    /**
-     * Test attribute "brands"
-     */
+
     public function testPropertyBrands()
     {
         $this->SMSTollFreeCampaignsListResult->setbrands([]);

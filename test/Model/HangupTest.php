@@ -73,9 +73,7 @@ class HangupTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "reason"
-     */
+
     public function testPropertyReason()
     {
 

@@ -73,9 +73,7 @@ class RecordingResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getUri());
         $this->assertIsString($this->RecordingResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getDateCreated());
         $this->assertIsString($this->RecordingResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getDateUpdated());
         $this->assertIsString($this->RecordingResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class RecordingResultTest extends TestCase
         $this->assertIsNumeric($this->RecordingResult->getrevision());
 
     }
-    /**
-     * Test attribute "recording_id"
-     */
+
     public function testPropertyRecordingId()
     {
 
@@ -125,9 +115,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getRecordingId());
         $this->assertIsString($this->RecordingResult->getRecordingId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -135,9 +123,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getAccountId());
         $this->assertIsString($this->RecordingResult->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
 
@@ -145,9 +131,7 @@ class RecordingResultTest extends TestCase
         $this->assertEquals('TS', $this->RecordingResult->getCallId());
         $this->assertIsString($this->RecordingResult->getCallId());
     }
-    /**
-     * Test attribute "duration_sec"
-     */
+
     public function testPropertyDurationSec()
     {
 
@@ -157,9 +141,7 @@ class RecordingResultTest extends TestCase
         $this->assertIsNumeric($this->RecordingResult->getdurationSec());
 
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
 

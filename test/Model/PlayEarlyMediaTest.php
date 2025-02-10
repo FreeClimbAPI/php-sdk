@@ -73,9 +73,7 @@ class PlayEarlyMediaTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "file"
-     */
+
     public function testPropertyFile()
     {
 

@@ -73,9 +73,7 @@ class RejectTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "reason"
-     */
+
     public function testPropertyReason()
     {
 

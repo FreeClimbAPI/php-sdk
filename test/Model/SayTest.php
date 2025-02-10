@@ -73,9 +73,7 @@ class SayTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "text"
-     */
+
     public function testPropertyText()
     {
 
@@ -83,9 +81,7 @@ class SayTest extends TestCase
         $this->assertEquals('TS', $this->Say->getText());
         $this->assertIsString($this->Say->getText());
     }
-    /**
-     * Test attribute "language"
-     */
+
     public function testPropertyLanguage()
     {
 
@@ -93,9 +89,7 @@ class SayTest extends TestCase
         $this->assertEquals('TS', $this->Say->getLanguage());
         $this->assertIsString($this->Say->getLanguage());
     }
-    /**
-     * Test attribute "loop"
-     */
+
     public function testPropertyLoop()
     {
 
@@ -105,9 +99,7 @@ class SayTest extends TestCase
         $this->assertIsNumeric($this->Say->getloop());
 
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->Say->setprivacyMode(false);

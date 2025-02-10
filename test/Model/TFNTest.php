@@ -73,9 +73,7 @@ class TFNTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "campaign_id"
-     */
+
     public function testPropertyCampaignId()
     {
 

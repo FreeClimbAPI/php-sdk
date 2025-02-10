@@ -73,9 +73,7 @@ class AccountResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getUri());
         $this->assertIsString($this->AccountResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getDateCreated());
         $this->assertIsString($this->AccountResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getDateUpdated());
         $this->assertIsString($this->AccountResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class AccountResultTest extends TestCase
         $this->assertIsNumeric($this->AccountResult->getrevision());
 
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -125,9 +115,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getAccountId());
         $this->assertIsString($this->AccountResult->getAccountId());
     }
-    /**
-     * Test attribute "api_key"
-     */
+
     public function testPropertyApiKey()
     {
 
@@ -135,9 +123,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getApiKey());
         $this->assertIsString($this->AccountResult->getApiKey());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -145,9 +131,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getAlias());
         $this->assertIsString($this->AccountResult->getAlias());
     }
-    /**
-     * Test attribute "label"
-     */
+
     public function testPropertyLabel()
     {
 
@@ -155,9 +139,7 @@ class AccountResultTest extends TestCase
         $this->assertEquals('TS', $this->AccountResult->getLabel());
         $this->assertIsString($this->AccountResult->getLabel());
     }
-    /**
-     * Test attribute "type"
-     */
+
     public function testPropertyType()
     {
         $this->AccountResult->settype(\FreeClimb\Api\Model\AccountType::TRIAL);
@@ -165,9 +147,7 @@ class AccountResultTest extends TestCase
         $this->AccountResult->settype(\FreeClimb\Api\Model\AccountType::FULL);
         $this->assertEquals(\FreeClimb\Api\Model\AccountType::FULL, $this->AccountResult->gettype());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->AccountResult->setstatus(\FreeClimb\Api\Model\AccountStatus::CLOSED);
@@ -177,9 +157,7 @@ class AccountResultTest extends TestCase
         $this->AccountResult->setstatus(\FreeClimb\Api\Model\AccountStatus::ACTIVE);
         $this->assertEquals(\FreeClimb\Api\Model\AccountStatus::ACTIVE, $this->AccountResult->getstatus());
     }
-    /**
-     * Test attribute "subresource_uris"
-     */
+
     public function testPropertySubresourceUris()
     {
         $this->AccountResult->setsubresourceUris(new \stdClass());

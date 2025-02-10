@@ -73,9 +73,7 @@ class PaginationModelTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,9 +133,7 @@ class PaginationModelTest extends TestCase
         $this->assertIsNumeric($this->PaginationModel->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
 

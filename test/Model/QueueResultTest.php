@@ -73,9 +73,7 @@ class QueueResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
 
@@ -83,9 +81,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getUri());
         $this->assertIsString($this->QueueResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
 
@@ -93,9 +89,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getDateCreated());
         $this->assertIsString($this->QueueResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
 
@@ -103,9 +97,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getDateUpdated());
         $this->assertIsString($this->QueueResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -115,9 +107,7 @@ class QueueResultTest extends TestCase
         $this->assertIsNumeric($this->QueueResult->getrevision());
 
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
 
@@ -125,9 +115,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getAccountId());
         $this->assertIsString($this->QueueResult->getAccountId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
 
@@ -135,9 +123,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getQueueId());
         $this->assertIsString($this->QueueResult->getQueueId());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
 
@@ -145,9 +131,7 @@ class QueueResultTest extends TestCase
         $this->assertEquals('TS', $this->QueueResult->getAlias());
         $this->assertIsString($this->QueueResult->getAlias());
     }
-    /**
-     * Test attribute "max_size"
-     */
+
     public function testPropertyMaxSize()
     {
 
@@ -157,9 +141,7 @@ class QueueResultTest extends TestCase
         $this->assertIsNumeric($this->QueueResult->getmaxSize());
 
     }
-    /**
-     * Test attribute "current_size"
-     */
+
     public function testPropertyCurrentSize()
     {
 
@@ -169,9 +151,7 @@ class QueueResultTest extends TestCase
         $this->assertIsNumeric($this->QueueResult->getcurrentSize());
 
     }
-    /**
-     * Test attribute "average_queue_removal_time"
-     */
+
     public function testPropertyAverageQueueRemovalTime()
     {
 
@@ -181,9 +161,7 @@ class QueueResultTest extends TestCase
         $this->assertIsNumeric($this->QueueResult->getaverageQueueRemovalTime());
 
     }
-    /**
-     * Test attribute "subresource_uris"
-     */
+
     public function testPropertySubresourceUris()
     {
         $this->QueueResult->setsubresourceUris(new \stdClass());

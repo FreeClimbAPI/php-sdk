@@ -73,9 +73,7 @@ class SetListenTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "listen"
-     */
+
     public function testPropertyListen()
     {
         $this->SetListen->setlisten(false);
