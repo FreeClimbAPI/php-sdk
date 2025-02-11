@@ -73,36 +73,31 @@ class ConferenceResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
+
         $this->ConferenceResult->setUri('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getUri());
         $this->assertIsString($this->ConferenceResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
+
         $this->ConferenceResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getDateCreated());
         $this->assertIsString($this->ConferenceResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
+
         $this->ConferenceResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getDateUpdated());
         $this->assertIsString($this->ConferenceResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -112,36 +107,31 @@ class ConferenceResultTest extends TestCase
         $this->assertIsNumeric($this->ConferenceResult->getrevision());
 
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->ConferenceResult->setConferenceId('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getConferenceId());
         $this->assertIsString($this->ConferenceResult->getConferenceId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->ConferenceResult->setAccountId('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getAccountId());
         $this->assertIsString($this->ConferenceResult->getAccountId());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
+
         $this->ConferenceResult->setAlias('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getAlias());
         $this->assertIsString($this->ConferenceResult->getAlias());
     }
-    /**
-     * Test attribute "play_beep"
-     */
+
     public function testPropertyPlayBeep()
     {
         $this->ConferenceResult->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
@@ -153,18 +143,14 @@ class ConferenceResultTest extends TestCase
         $this->ConferenceResult->setplayBeep(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY);
         $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY, $this->ConferenceResult->getplayBeep());
     }
-    /**
-     * Test attribute "record"
-     */
+
     public function testPropertyRecord()
     {
         $this->ConferenceResult->setrecord(false);
         $this->assertFalse($this->ConferenceResult->getrecord());
         $this->assertIsBool($this->ConferenceResult->getrecord());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->ConferenceResult->setstatus(\FreeClimb\Api\Model\ConferenceStatus::EMPTY);
@@ -176,36 +162,31 @@ class ConferenceResultTest extends TestCase
         $this->ConferenceResult->setstatus(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED);
         $this->assertEquals(\FreeClimb\Api\Model\ConferenceStatus::TERMINATED, $this->ConferenceResult->getstatus());
     }
-    /**
-     * Test attribute "wait_url"
-     */
+
     public function testPropertyWaitUrl()
     {
+
         $this->ConferenceResult->setWaitUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getWaitUrl());
         $this->assertIsString($this->ConferenceResult->getWaitUrl());
     }
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
+
         $this->ConferenceResult->setActionUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getActionUrl());
         $this->assertIsString($this->ConferenceResult->getActionUrl());
     }
-    /**
-     * Test attribute "status_callback_url"
-     */
+
     public function testPropertyStatusCallbackUrl()
     {
+
         $this->ConferenceResult->setStatusCallbackUrl('TS');
         $this->assertEquals('TS', $this->ConferenceResult->getStatusCallbackUrl());
         $this->assertIsString($this->ConferenceResult->getStatusCallbackUrl());
     }
-    /**
-     * Test attribute "subresource_uris"
-     */
+
     public function testPropertySubresourceUris()
     {
         $this->ConferenceResult->setsubresourceUris(new \stdClass());

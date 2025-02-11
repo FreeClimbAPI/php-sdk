@@ -73,18 +73,15 @@ class UpdateConferenceRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
+
         $this->UpdateConferenceRequest->setAlias('TS');
         $this->assertEquals('TS', $this->UpdateConferenceRequest->getAlias());
         $this->assertIsString($this->UpdateConferenceRequest->getAlias());
     }
-    /**
-     * Test attribute "play_beep"
-     */
+
     public function testPropertyPlayBeep()
     {
         $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::ALWAYS);
@@ -96,9 +93,7 @@ class UpdateConferenceRequestTest extends TestCase
         $this->UpdateConferenceRequest->setplayBeep(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY);
         $this->assertEquals(\FreeClimb\Api\Model\PlayBeep::EXIT_ONLY, $this->UpdateConferenceRequest->getplayBeep());
     }
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->UpdateConferenceRequest->setstatus(\FreeClimb\Api\Model\UpdateConferenceRequestStatus::EMPTY);

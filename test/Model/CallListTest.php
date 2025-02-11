@@ -73,9 +73,7 @@ class CallListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class CallListTest extends TestCase
         $this->assertIsNumeric($this->CallList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->CallList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->CallList->getNextPageUri());
         $this->assertIsString($this->CallList->getNextPageUri());
     }
-    /**
-     * Test attribute "calls"
-     */
+
     public function testPropertyCalls()
     {
         $this->CallList->setcalls([]);

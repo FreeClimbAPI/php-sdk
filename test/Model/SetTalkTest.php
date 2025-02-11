@@ -73,9 +73,7 @@ class SetTalkTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "talk"
-     */
+
     public function testPropertyTalk()
     {
         $this->SetTalk->settalk(false);

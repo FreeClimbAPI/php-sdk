@@ -73,11 +73,10 @@ class RedirectTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
+
         $this->Redirect->setActionUrl('TS');
         $this->assertEquals('TS', $this->Redirect->getActionUrl());
         $this->assertIsString($this->Redirect->getActionUrl());

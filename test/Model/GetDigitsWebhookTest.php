@@ -73,54 +73,47 @@ class GetDigitsWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->GetDigitsWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getRequestType());
         $this->assertIsString($this->GetDigitsWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->GetDigitsWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getCallId());
         $this->assertIsString($this->GetDigitsWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->GetDigitsWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getAccountId());
         $this->assertIsString($this->GetDigitsWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->GetDigitsWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getFrom());
         $this->assertIsString($this->GetDigitsWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->GetDigitsWebhook->setTo('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getTo());
         $this->assertIsString($this->GetDigitsWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->GetDigitsWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class GetDigitsWebhookTest extends TestCase
         $this->GetDigitsWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->GetDigitsWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->GetDigitsWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,36 +143,31 @@ class GetDigitsWebhookTest extends TestCase
         $this->GetDigitsWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->GetDigitsWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->GetDigitsWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getConferenceId());
         $this->assertIsString($this->GetDigitsWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->GetDigitsWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getQueueId());
         $this->assertIsString($this->GetDigitsWebhook->getQueueId());
     }
-    /**
-     * Test attribute "digits"
-     */
+
     public function testPropertyDigits()
     {
+
         $this->GetDigitsWebhook->setDigits('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getDigits());
         $this->assertIsString($this->GetDigitsWebhook->getDigits());
     }
-    /**
-     * Test attribute "reason"
-     */
+
     public function testPropertyReason()
     {
         $this->GetDigitsWebhook->setreason(\FreeClimb\Api\Model\GetDigitsReason::FINISH_KEY);
@@ -193,11 +179,10 @@ class GetDigitsWebhookTest extends TestCase
         $this->GetDigitsWebhook->setreason(\FreeClimb\Api\Model\GetDigitsReason::TONE);
         $this->assertEquals(\FreeClimb\Api\Model\GetDigitsReason::TONE, $this->GetDigitsWebhook->getreason());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
+
         $this->GetDigitsWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->GetDigitsWebhook->getParentCallId());
         $this->assertIsString($this->GetDigitsWebhook->getParentCallId());

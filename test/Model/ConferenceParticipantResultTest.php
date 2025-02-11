@@ -73,36 +73,31 @@ class ConferenceParticipantResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "uri"
-     */
+
     public function testPropertyUri()
     {
+
         $this->ConferenceParticipantResult->setUri('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getUri());
         $this->assertIsString($this->ConferenceParticipantResult->getUri());
     }
-    /**
-     * Test attribute "date_created"
-     */
+
     public function testPropertyDateCreated()
     {
+
         $this->ConferenceParticipantResult->setDateCreated('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateCreated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateCreated());
     }
-    /**
-     * Test attribute "date_updated"
-     */
+
     public function testPropertyDateUpdated()
     {
+
         $this->ConferenceParticipantResult->setDateUpdated('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getDateUpdated());
         $this->assertIsString($this->ConferenceParticipantResult->getDateUpdated());
     }
-    /**
-     * Test attribute "revision"
-     */
+
     public function testPropertyRevision()
     {
 
@@ -112,63 +107,52 @@ class ConferenceParticipantResultTest extends TestCase
         $this->assertIsNumeric($this->ConferenceParticipantResult->getrevision());
 
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->ConferenceParticipantResult->setAccountId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getAccountId());
         $this->assertIsString($this->ConferenceParticipantResult->getAccountId());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->ConferenceParticipantResult->setConferenceId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getConferenceId());
         $this->assertIsString($this->ConferenceParticipantResult->getConferenceId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->ConferenceParticipantResult->setCallId('TS');
         $this->assertEquals('TS', $this->ConferenceParticipantResult->getCallId());
         $this->assertIsString($this->ConferenceParticipantResult->getCallId());
     }
-    /**
-     * Test attribute "talk"
-     */
+
     public function testPropertyTalk()
     {
         $this->ConferenceParticipantResult->settalk(false);
         $this->assertFalse($this->ConferenceParticipantResult->gettalk());
         $this->assertIsBool($this->ConferenceParticipantResult->gettalk());
     }
-    /**
-     * Test attribute "listen"
-     */
+
     public function testPropertyListen()
     {
         $this->ConferenceParticipantResult->setlisten(false);
         $this->assertFalse($this->ConferenceParticipantResult->getlisten());
         $this->assertIsBool($this->ConferenceParticipantResult->getlisten());
     }
-    /**
-     * Test attribute "dtmf_pass_through"
-     */
+
     public function testPropertyDtmfPassThrough()
     {
         $this->ConferenceParticipantResult->setdtmfPassThrough(false);
         $this->assertFalse($this->ConferenceParticipantResult->getdtmfPassThrough());
         $this->assertIsBool($this->ConferenceParticipantResult->getdtmfPassThrough());
     }
-    /**
-     * Test attribute "start_conf_on_enter"
-     */
+
     public function testPropertyStartConfOnEnter()
     {
         $this->ConferenceParticipantResult->setstartConfOnEnter(false);

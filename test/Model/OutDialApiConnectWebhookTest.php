@@ -73,54 +73,47 @@ class OutDialApiConnectWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->OutDialApiConnectWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getRequestType());
         $this->assertIsString($this->OutDialApiConnectWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->OutDialApiConnectWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getAccountId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->OutDialApiConnectWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getCallId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->OutDialApiConnectWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getFrom());
         $this->assertIsString($this->OutDialApiConnectWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->OutDialApiConnectWebhook->setTo('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getTo());
         $this->assertIsString($this->OutDialApiConnectWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->OutDialApiConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class OutDialApiConnectWebhookTest extends TestCase
         $this->OutDialApiConnectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->OutDialApiConnectWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->OutDialApiConnectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,29 +143,26 @@ class OutDialApiConnectWebhookTest extends TestCase
         $this->OutDialApiConnectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->OutDialApiConnectWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->OutDialApiConnectWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getConferenceId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->OutDialApiConnectWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getQueueId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getQueueId());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
+
         $this->OutDialApiConnectWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->OutDialApiConnectWebhook->getParentCallId());
         $this->assertIsString($this->OutDialApiConnectWebhook->getParentCallId());

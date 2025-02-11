@@ -73,54 +73,47 @@ class DequeueWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->DequeueWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getRequestType());
         $this->assertIsString($this->DequeueWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->DequeueWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getCallId());
         $this->assertIsString($this->DequeueWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->DequeueWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getAccountId());
         $this->assertIsString($this->DequeueWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->DequeueWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getFrom());
         $this->assertIsString($this->DequeueWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->DequeueWebhook->setTo('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getTo());
         $this->assertIsString($this->DequeueWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class DequeueWebhookTest extends TestCase
         $this->DequeueWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->DequeueWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->DequeueWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,36 +143,31 @@ class DequeueWebhookTest extends TestCase
         $this->DequeueWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->DequeueWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->DequeueWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getConferenceId());
         $this->assertIsString($this->DequeueWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->DequeueWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getQueueId());
         $this->assertIsString($this->DequeueWebhook->getQueueId());
     }
-    /**
-     * Test attribute "queue_result"
-     */
+
     public function testPropertyQueueResult()
     {
+
         $this->DequeueWebhook->setQueueResult('TS');
         $this->assertEquals('TS', $this->DequeueWebhook->getQueueResult());
         $this->assertIsString($this->DequeueWebhook->getQueueResult());
     }
-    /**
-     * Test attribute "queue_time"
-     */
+
     public function testPropertyQueueTime()
     {
 

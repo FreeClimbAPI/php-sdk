@@ -73,38 +73,34 @@ class EnqueueTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
+
         $this->Enqueue->setActionUrl('TS');
         $this->assertEquals('TS', $this->Enqueue->getActionUrl());
         $this->assertIsString($this->Enqueue->getActionUrl());
     }
-    /**
-     * Test attribute "notification_url"
-     */
+
     public function testPropertyNotificationUrl()
     {
+
         $this->Enqueue->setNotificationUrl('TS');
         $this->assertEquals('TS', $this->Enqueue->getNotificationUrl());
         $this->assertIsString($this->Enqueue->getNotificationUrl());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->Enqueue->setQueueId('TS');
         $this->assertEquals('TS', $this->Enqueue->getQueueId());
         $this->assertIsString($this->Enqueue->getQueueId());
     }
-    /**
-     * Test attribute "wait_url"
-     */
+
     public function testPropertyWaitUrl()
     {
+
         $this->Enqueue->setWaitUrl('TS');
         $this->assertEquals('TS', $this->Enqueue->getWaitUrl());
         $this->assertIsString($this->Enqueue->getWaitUrl());

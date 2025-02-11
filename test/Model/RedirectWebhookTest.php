@@ -73,54 +73,47 @@ class RedirectWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->RedirectWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getRequestType());
         $this->assertIsString($this->RedirectWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->RedirectWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getAccountId());
         $this->assertIsString($this->RedirectWebhook->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->RedirectWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getCallId());
         $this->assertIsString($this->RedirectWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->RedirectWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getFrom());
         $this->assertIsString($this->RedirectWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->RedirectWebhook->setTo('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getTo());
         $this->assertIsString($this->RedirectWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class RedirectWebhookTest extends TestCase
         $this->RedirectWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->RedirectWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->RedirectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,29 +143,26 @@ class RedirectWebhookTest extends TestCase
         $this->RedirectWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->RedirectWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->RedirectWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getConferenceId());
         $this->assertIsString($this->RedirectWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->RedirectWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getQueueId());
         $this->assertIsString($this->RedirectWebhook->getQueueId());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
+
         $this->RedirectWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->RedirectWebhook->getParentCallId());
         $this->assertIsString($this->RedirectWebhook->getParentCallId());

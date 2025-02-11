@@ -73,18 +73,14 @@ class TranscribeUtteranceRecordTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "save_recording"
-     */
+
     public function testPropertySaveRecording()
     {
         $this->TranscribeUtteranceRecord->setsaveRecording(false);
         $this->assertFalse($this->TranscribeUtteranceRecord->getsaveRecording());
         $this->assertIsBool($this->TranscribeUtteranceRecord->getsaveRecording());
     }
-    /**
-     * Test attribute "max_length_sec"
-     */
+
     public function testPropertyMaxLengthSec()
     {
         $this->TranscribeUtteranceRecord->setmaxLengthSec(60);
@@ -93,9 +89,7 @@ class TranscribeUtteranceRecordTest extends TestCase
 
 
     }
-    /**
-     * Test attribute "rcrd_termination_silence_time_ms"
-     */
+
     public function testPropertyRcrdTerminationSilenceTimeMs()
     {
         $this->TranscribeUtteranceRecord->setrcrdTerminationSilenceTimeMs(3000);

@@ -73,9 +73,7 @@ class PerclScriptTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "commands"
-     */
+
     public function testPropertyCommands()
     {
         $this->PerclScript->setcommands([]);

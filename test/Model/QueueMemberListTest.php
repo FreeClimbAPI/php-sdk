@@ -73,9 +73,7 @@ class QueueMemberListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class QueueMemberListTest extends TestCase
         $this->assertIsNumeric($this->QueueMemberList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->QueueMemberList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->QueueMemberList->getNextPageUri());
         $this->assertIsString($this->QueueMemberList->getNextPageUri());
     }
-    /**
-     * Test attribute "queue_members"
-     */
+
     public function testPropertyQueueMembers()
     {
         $this->QueueMemberList->setqueueMembers([]);

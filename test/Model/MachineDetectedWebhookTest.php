@@ -73,54 +73,47 @@ class MachineDetectedWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->MachineDetectedWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getRequestType());
         $this->assertIsString($this->MachineDetectedWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->MachineDetectedWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getCallId());
         $this->assertIsString($this->MachineDetectedWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->MachineDetectedWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getAccountId());
         $this->assertIsString($this->MachineDetectedWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->MachineDetectedWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getFrom());
         $this->assertIsString($this->MachineDetectedWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->MachineDetectedWebhook->setTo('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getTo());
         $this->assertIsString($this->MachineDetectedWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class MachineDetectedWebhookTest extends TestCase
         $this->MachineDetectedWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->MachineDetectedWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->MachineDetectedWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,36 +143,31 @@ class MachineDetectedWebhookTest extends TestCase
         $this->MachineDetectedWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->MachineDetectedWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->MachineDetectedWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getConferenceId());
         $this->assertIsString($this->MachineDetectedWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->MachineDetectedWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getQueueId());
         $this->assertIsString($this->MachineDetectedWebhook->getQueueId());
     }
-    /**
-     * Test attribute "parent_call_id"
-     */
+
     public function testPropertyParentCallId()
     {
+
         $this->MachineDetectedWebhook->setParentCallId('TS');
         $this->assertEquals('TS', $this->MachineDetectedWebhook->getParentCallId());
         $this->assertIsString($this->MachineDetectedWebhook->getParentCallId());
     }
-    /**
-     * Test attribute "machine_type"
-     */
+
     public function testPropertyMachineType()
     {
         $this->MachineDetectedWebhook->setmachineType(\FreeClimb\Api\Model\MachineType::ANSWERING_MACHINE);

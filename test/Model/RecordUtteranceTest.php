@@ -73,18 +73,15 @@ class RecordUtteranceTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
+
         $this->RecordUtterance->setActionUrl('TS');
         $this->assertEquals('TS', $this->RecordUtterance->getActionUrl());
         $this->assertIsString($this->RecordUtterance->getActionUrl());
     }
-    /**
-     * Test attribute "silence_timeout_ms"
-     */
+
     public function testPropertySilenceTimeoutMs()
     {
 
@@ -94,18 +91,15 @@ class RecordUtteranceTest extends TestCase
         $this->assertIsNumeric($this->RecordUtterance->getsilenceTimeoutMs());
 
     }
-    /**
-     * Test attribute "finish_on_key"
-     */
+
     public function testPropertyFinishOnKey()
     {
+
         $this->RecordUtterance->setFinishOnKey('TS');
         $this->assertEquals('TS', $this->RecordUtterance->getFinishOnKey());
         $this->assertIsString($this->RecordUtterance->getFinishOnKey());
     }
-    /**
-     * Test attribute "max_length_sec"
-     */
+
     public function testPropertyMaxLengthSec()
     {
 
@@ -115,27 +109,21 @@ class RecordUtteranceTest extends TestCase
         $this->assertIsNumeric($this->RecordUtterance->getmaxLengthSec());
 
     }
-    /**
-     * Test attribute "play_beep"
-     */
+
     public function testPropertyPlayBeep()
     {
         $this->RecordUtterance->setplayBeep(false);
         $this->assertFalse($this->RecordUtterance->getplayBeep());
         $this->assertIsBool($this->RecordUtterance->getplayBeep());
     }
-    /**
-     * Test attribute "auto_start"
-     */
+
     public function testPropertyAutoStart()
     {
         $this->RecordUtterance->setautoStart(false);
         $this->assertFalse($this->RecordUtterance->getautoStart());
         $this->assertIsBool($this->RecordUtterance->getautoStart());
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->RecordUtterance->setprivacyMode(false);

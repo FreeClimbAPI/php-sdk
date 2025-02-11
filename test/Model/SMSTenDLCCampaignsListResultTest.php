@@ -73,9 +73,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class SMSTenDLCCampaignsListResultTest extends TestCase
         $this->assertIsNumeric($this->SMSTenDLCCampaignsListResult->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->SMSTenDLCCampaignsListResult->setNextPageUri('TS');
         $this->assertEquals('TS', $this->SMSTenDLCCampaignsListResult->getNextPageUri());
         $this->assertIsString($this->SMSTenDLCCampaignsListResult->getNextPageUri());
     }
-    /**
-     * Test attribute "campaigns"
-     */
+
     public function testPropertyCampaigns()
     {
         $this->SMSTenDLCCampaignsListResult->setcampaigns([]);

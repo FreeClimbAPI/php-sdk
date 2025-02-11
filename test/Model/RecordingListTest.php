@@ -73,9 +73,7 @@ class RecordingListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class RecordingListTest extends TestCase
         $this->assertIsNumeric($this->RecordingList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->RecordingList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->RecordingList->getNextPageUri());
         $this->assertIsString($this->RecordingList->getNextPageUri());
     }
-    /**
-     * Test attribute "recordings"
-     */
+
     public function testPropertyRecordings()
     {
         $this->RecordingList->setrecordings([]);

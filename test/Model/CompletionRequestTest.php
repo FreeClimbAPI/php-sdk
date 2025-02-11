@@ -73,11 +73,10 @@ class CompletionRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "query"
-     */
+
     public function testPropertyQuery()
     {
+
         $this->CompletionRequest->setQuery('TS');
         $this->assertEquals('TS', $this->CompletionRequest->getQuery());
         $this->assertIsString($this->CompletionRequest->getQuery());

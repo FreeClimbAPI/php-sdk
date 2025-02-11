@@ -73,18 +73,15 @@ class SMSTenDLCBrandTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->SMSTenDLCBrand->setAccountId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getAccountId());
         $this->assertIsString($this->SMSTenDLCBrand->getAccountId());
     }
-    /**
-     * Test attribute "entity_type"
-     */
+
     public function testPropertyEntityType()
     {
         $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::PRIVATE_PROFIT);
@@ -98,153 +95,135 @@ class SMSTenDLCBrandTest extends TestCase
         $this->SMSTenDLCBrand->setentityType(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::SOLE_PROPRIETOR);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandEntityType::SOLE_PROPRIETOR, $this->SMSTenDLCBrand->getentityType());
     }
-    /**
-     * Test attribute "csp_id"
-     */
+
     public function testPropertyCspId()
     {
+
         $this->SMSTenDLCBrand->setCspId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCspId());
         $this->assertIsString($this->SMSTenDLCBrand->getCspId());
     }
-    /**
-     * Test attribute "brand_id"
-     */
+
     public function testPropertyBrandId()
     {
+
         $this->SMSTenDLCBrand->setBrandId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getBrandId());
         $this->assertIsString($this->SMSTenDLCBrand->getBrandId());
     }
-    /**
-     * Test attribute "first_name"
-     */
+
     public function testPropertyFirstName()
     {
+
         $this->SMSTenDLCBrand->setFirstName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getFirstName());
         $this->assertIsString($this->SMSTenDLCBrand->getFirstName());
     }
-    /**
-     * Test attribute "last_name"
-     */
+
     public function testPropertyLastName()
     {
+
         $this->SMSTenDLCBrand->setLastName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getLastName());
         $this->assertIsString($this->SMSTenDLCBrand->getLastName());
     }
-    /**
-     * Test attribute "display_name"
-     */
+
     public function testPropertyDisplayName()
     {
+
         $this->SMSTenDLCBrand->setDisplayName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getDisplayName());
         $this->assertIsString($this->SMSTenDLCBrand->getDisplayName());
     }
-    /**
-     * Test attribute "company_name"
-     */
+
     public function testPropertyCompanyName()
     {
+
         $this->SMSTenDLCBrand->setCompanyName('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCompanyName());
         $this->assertIsString($this->SMSTenDLCBrand->getCompanyName());
     }
-    /**
-     * Test attribute "ein"
-     */
+
     public function testPropertyEin()
     {
+
         $this->SMSTenDLCBrand->setEin('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEin());
         $this->assertIsString($this->SMSTenDLCBrand->getEin());
     }
-    /**
-     * Test attribute "ein_issuing_country"
-     */
+
     public function testPropertyEinIssuingCountry()
     {
+
         $this->SMSTenDLCBrand->setEinIssuingCountry('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEinIssuingCountry());
         $this->assertIsString($this->SMSTenDLCBrand->getEinIssuingCountry());
     }
-    /**
-     * Test attribute "phone"
-     */
+
     public function testPropertyPhone()
     {
+
         $this->SMSTenDLCBrand->setPhone('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getPhone());
         $this->assertIsString($this->SMSTenDLCBrand->getPhone());
     }
-    /**
-     * Test attribute "street"
-     */
+
     public function testPropertyStreet()
     {
+
         $this->SMSTenDLCBrand->setStreet('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getStreet());
         $this->assertIsString($this->SMSTenDLCBrand->getStreet());
     }
-    /**
-     * Test attribute "city"
-     */
+
     public function testPropertyCity()
     {
+
         $this->SMSTenDLCBrand->setCity('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCity());
         $this->assertIsString($this->SMSTenDLCBrand->getCity());
     }
-    /**
-     * Test attribute "state"
-     */
+
     public function testPropertyState()
     {
+
         $this->SMSTenDLCBrand->setState('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getState());
         $this->assertIsString($this->SMSTenDLCBrand->getState());
     }
-    /**
-     * Test attribute "postal_code"
-     */
+
     public function testPropertyPostalCode()
     {
+
         $this->SMSTenDLCBrand->setPostalCode('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getPostalCode());
         $this->assertIsString($this->SMSTenDLCBrand->getPostalCode());
     }
-    /**
-     * Test attribute "country"
-     */
+
     public function testPropertyCountry()
     {
+
         $this->SMSTenDLCBrand->setCountry('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getCountry());
         $this->assertIsString($this->SMSTenDLCBrand->getCountry());
     }
-    /**
-     * Test attribute "email"
-     */
+
     public function testPropertyEmail()
     {
+
         $this->SMSTenDLCBrand->setEmail('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getEmail());
         $this->assertIsString($this->SMSTenDLCBrand->getEmail());
     }
-    /**
-     * Test attribute "stock_symbol"
-     */
+
     public function testPropertyStockSymbol()
     {
+
         $this->SMSTenDLCBrand->setStockSymbol('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getStockSymbol());
         $this->assertIsString($this->SMSTenDLCBrand->getStockSymbol());
     }
-    /**
-     * Test attribute "stock_exchange"
-     */
+
     public function testPropertyStockExchange()
     {
         $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::NONE);
@@ -302,27 +281,23 @@ class SMSTenDLCBrandTest extends TestCase
         $this->SMSTenDLCBrand->setstockExchange(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OTHER);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandStockExchange::OTHER, $this->SMSTenDLCBrand->getstockExchange());
     }
-    /**
-     * Test attribute "ip_address"
-     */
+
     public function testPropertyIpAddress()
     {
+
         $this->SMSTenDLCBrand->setIpAddress('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getIpAddress());
         $this->assertIsString($this->SMSTenDLCBrand->getIpAddress());
     }
-    /**
-     * Test attribute "website"
-     */
+
     public function testPropertyWebsite()
     {
+
         $this->SMSTenDLCBrand->setWebsite('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getWebsite());
         $this->assertIsString($this->SMSTenDLCBrand->getWebsite());
     }
-    /**
-     * Test attribute "brand_relationship"
-     */
+
     public function testPropertyBrandRelationship()
     {
         $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::BASIC_ACCOUNT);
@@ -336,27 +311,23 @@ class SMSTenDLCBrandTest extends TestCase
         $this->SMSTenDLCBrand->setbrandRelationship(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::KEY_ACCOUNT);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandRelationship::KEY_ACCOUNT, $this->SMSTenDLCBrand->getbrandRelationship());
     }
-    /**
-     * Test attribute "vertical"
-     */
+
     public function testPropertyVertical()
     {
+
         $this->SMSTenDLCBrand->setVertical('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getVertical());
         $this->assertIsString($this->SMSTenDLCBrand->getVertical());
     }
-    /**
-     * Test attribute "alt_business_id"
-     */
+
     public function testPropertyAltBusinessId()
     {
+
         $this->SMSTenDLCBrand->setAltBusinessId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getAltBusinessId());
         $this->assertIsString($this->SMSTenDLCBrand->getAltBusinessId());
     }
-    /**
-     * Test attribute "alt_business_id_type"
-     */
+
     public function testPropertyAltBusinessIdType()
     {
         $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::NONE);
@@ -368,44 +339,36 @@ class SMSTenDLCBrandTest extends TestCase
         $this->SMSTenDLCBrand->setaltBusinessIdType(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::LEI);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandAltBusinessIdType::LEI, $this->SMSTenDLCBrand->getaltBusinessIdType());
     }
-    /**
-     * Test attribute "universal_ein"
-     */
+
     public function testPropertyUniversalEin()
     {
+
         $this->SMSTenDLCBrand->setUniversalEin('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getUniversalEin());
         $this->assertIsString($this->SMSTenDLCBrand->getUniversalEin());
     }
-    /**
-     * Test attribute "reference_id"
-     */
+
     public function testPropertyReferenceId()
     {
+
         $this->SMSTenDLCBrand->setReferenceId('TS');
         $this->assertEquals('TS', $this->SMSTenDLCBrand->getReferenceId());
         $this->assertIsString($this->SMSTenDLCBrand->getReferenceId());
     }
-    /**
-     * Test attribute "optional_attributes"
-     */
+
     public function testPropertyOptionalAttributes()
     {
         $this->SMSTenDLCBrand->setoptionalAttributes(new \stdClass());
         $this->assertInstanceOf(\stdClass::class, $this->SMSTenDLCBrand->getoptionalAttributes());
     }
-    /**
-     * Test attribute "mock"
-     */
+
     public function testPropertyMock()
     {
         $this->SMSTenDLCBrand->setmock(false);
         $this->assertFalse($this->SMSTenDLCBrand->getmock());
         $this->assertIsBool($this->SMSTenDLCBrand->getmock());
     }
-    /**
-     * Test attribute "identity_status"
-     */
+
     public function testPropertyIdentityStatus()
     {
         $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::SELF_DECLARED);
@@ -417,9 +380,7 @@ class SMSTenDLCBrandTest extends TestCase
         $this->SMSTenDLCBrand->setidentityStatus(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VETTED_VERIFIED);
         $this->assertEquals(\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus::VETTED_VERIFIED, $this->SMSTenDLCBrand->getidentityStatus());
     }
-    /**
-     * Test attribute "create_date"
-     */
+
     public function testPropertyCreateDate()
     {
         $this->SMSTenDLCBrand->setcreateDate('2023-09-21 15:30:00');

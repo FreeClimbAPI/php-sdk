@@ -73,9 +73,7 @@ class SetDTMFPassThroughTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "dtmf_pass_through"
-     */
+
     public function testPropertyDtmfPassThrough()
     {
         $this->SetDTMFPassThrough->setdtmfPassThrough(false);

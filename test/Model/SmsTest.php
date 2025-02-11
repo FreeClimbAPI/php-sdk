@@ -73,38 +73,34 @@ class SmsTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->Sms->setTo('TS');
         $this->assertEquals('TS', $this->Sms->getTo());
         $this->assertIsString($this->Sms->getTo());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->Sms->setFrom('TS');
         $this->assertEquals('TS', $this->Sms->getFrom());
         $this->assertIsString($this->Sms->getFrom());
     }
-    /**
-     * Test attribute "text"
-     */
+
     public function testPropertyText()
     {
+
         $this->Sms->setText('TS');
         $this->assertEquals('TS', $this->Sms->getText());
         $this->assertIsString($this->Sms->getText());
     }
-    /**
-     * Test attribute "notification_url"
-     */
+
     public function testPropertyNotificationUrl()
     {
+
         $this->Sms->setNotificationUrl('TS');
         $this->assertEquals('TS', $this->Sms->getNotificationUrl());
         $this->assertIsString($this->Sms->getNotificationUrl());

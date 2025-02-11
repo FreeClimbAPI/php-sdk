@@ -73,11 +73,10 @@ class PlayEarlyMediaTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "file"
-     */
+
     public function testPropertyFile()
     {
+
         $this->PlayEarlyMedia->setFile('TS');
         $this->assertEquals('TS', $this->PlayEarlyMedia->getFile());
         $this->assertIsString($this->PlayEarlyMedia->getFile());

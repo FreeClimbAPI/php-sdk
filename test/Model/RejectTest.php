@@ -73,11 +73,10 @@ class RejectTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "reason"
-     */
+
     public function testPropertyReason()
     {
+
         $this->Reject->setReason('TS');
         $this->assertEquals('TS', $this->Reject->getReason());
         $this->assertIsString($this->Reject->getReason());

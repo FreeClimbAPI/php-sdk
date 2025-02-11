@@ -73,9 +73,7 @@ class MessagesListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class MessagesListTest extends TestCase
         $this->assertIsNumeric($this->MessagesList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->MessagesList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->MessagesList->getNextPageUri());
         $this->assertIsString($this->MessagesList->getNextPageUri());
     }
-    /**
-     * Test attribute "messages"
-     */
+
     public function testPropertyMessages()
     {
         $this->MessagesList->setmessages([]);

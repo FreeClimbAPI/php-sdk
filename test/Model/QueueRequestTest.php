@@ -73,18 +73,15 @@ class QueueRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
+
         $this->QueueRequest->setAlias('TS');
         $this->assertEquals('TS', $this->QueueRequest->getAlias());
         $this->assertIsString($this->QueueRequest->getAlias());
     }
-    /**
-     * Test attribute "max_size"
-     */
+
     public function testPropertyMaxSize()
     {
 

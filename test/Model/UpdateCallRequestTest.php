@@ -73,9 +73,7 @@ class UpdateCallRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "status"
-     */
+
     public function testPropertyStatus()
     {
         $this->UpdateCallRequest->setstatus(\FreeClimb\Api\Model\UpdateCallRequestStatus::CANCELED);

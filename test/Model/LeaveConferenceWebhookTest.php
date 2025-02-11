@@ -73,54 +73,47 @@ class LeaveConferenceWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->LeaveConferenceWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getRequestType());
         $this->assertIsString($this->LeaveConferenceWebhook->getRequestType());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->LeaveConferenceWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getCallId());
         $this->assertIsString($this->LeaveConferenceWebhook->getCallId());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->LeaveConferenceWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getAccountId());
         $this->assertIsString($this->LeaveConferenceWebhook->getAccountId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->LeaveConferenceWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getFrom());
         $this->assertIsString($this->LeaveConferenceWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->LeaveConferenceWebhook->setTo('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getTo());
         $this->assertIsString($this->LeaveConferenceWebhook->getTo());
     }
-    /**
-     * Test attribute "call_status"
-     */
+
     public function testPropertyCallStatus()
     {
         $this->LeaveConferenceWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
@@ -140,9 +133,7 @@ class LeaveConferenceWebhookTest extends TestCase
         $this->LeaveConferenceWebhook->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
         $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->LeaveConferenceWebhook->getcallStatus());
     }
-    /**
-     * Test attribute "direction"
-     */
+
     public function testPropertyDirection()
     {
         $this->LeaveConferenceWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
@@ -152,20 +143,18 @@ class LeaveConferenceWebhookTest extends TestCase
         $this->LeaveConferenceWebhook->setdirection(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL);
         $this->assertEquals(\FreeClimb\Api\Model\CallDirection::OUTBOUND_DIAL, $this->LeaveConferenceWebhook->getdirection());
     }
-    /**
-     * Test attribute "conference_id"
-     */
+
     public function testPropertyConferenceId()
     {
+
         $this->LeaveConferenceWebhook->setConferenceId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getConferenceId());
         $this->assertIsString($this->LeaveConferenceWebhook->getConferenceId());
     }
-    /**
-     * Test attribute "queue_id"
-     */
+
     public function testPropertyQueueId()
     {
+
         $this->LeaveConferenceWebhook->setQueueId('TS');
         $this->assertEquals('TS', $this->LeaveConferenceWebhook->getQueueId());
         $this->assertIsString($this->LeaveConferenceWebhook->getQueueId());

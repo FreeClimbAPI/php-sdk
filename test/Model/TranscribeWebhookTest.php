@@ -73,72 +73,63 @@ class TranscribeWebhookTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "request_type"
-     */
+
     public function testPropertyRequestType()
     {
+
         $this->TranscribeWebhook->setRequestType('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRequestType());
         $this->assertIsString($this->TranscribeWebhook->getRequestType());
     }
-    /**
-     * Test attribute "account_id"
-     */
+
     public function testPropertyAccountId()
     {
+
         $this->TranscribeWebhook->setAccountId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getAccountId());
         $this->assertIsString($this->TranscribeWebhook->getAccountId());
     }
-    /**
-     * Test attribute "call_id"
-     */
+
     public function testPropertyCallId()
     {
+
         $this->TranscribeWebhook->setCallId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getCallId());
         $this->assertIsString($this->TranscribeWebhook->getCallId());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->TranscribeWebhook->setFrom('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getFrom());
         $this->assertIsString($this->TranscribeWebhook->getFrom());
     }
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->TranscribeWebhook->setTo('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getTo());
         $this->assertIsString($this->TranscribeWebhook->getTo());
     }
-    /**
-     * Test attribute "recording_id"
-     */
+
     public function testPropertyRecordingId()
     {
+
         $this->TranscribeWebhook->setRecordingId('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingId());
         $this->assertIsString($this->TranscribeWebhook->getRecordingId());
     }
-    /**
-     * Test attribute "recording_url"
-     */
+
     public function testPropertyRecordingUrl()
     {
+
         $this->TranscribeWebhook->setRecordingUrl('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingUrl());
         $this->assertIsString($this->TranscribeWebhook->getRecordingUrl());
     }
-    /**
-     * Test attribute "recording_size"
-     */
+
     public function testPropertyRecordingSize()
     {
 
@@ -148,18 +139,15 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getrecordingSize());
 
     }
-    /**
-     * Test attribute "recording_format"
-     */
+
     public function testPropertyRecordingFormat()
     {
+
         $this->TranscribeWebhook->setRecordingFormat('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getRecordingFormat());
         $this->assertIsString($this->TranscribeWebhook->getRecordingFormat());
     }
-    /**
-     * Test attribute "recording_duration_ms"
-     */
+
     public function testPropertyRecordingDurationMs()
     {
 
@@ -169,9 +157,7 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getrecordingDurationMs());
 
     }
-    /**
-     * Test attribute "term_reason"
-     */
+
     public function testPropertyTermReason()
     {
         $this->TranscribeWebhook->settermReason(\FreeClimb\Api\Model\TranscribeTermReason::ERROR);
@@ -179,9 +165,7 @@ class TranscribeWebhookTest extends TestCase
         $this->TranscribeWebhook->settermReason(\FreeClimb\Api\Model\TranscribeTermReason::COMPLETED);
         $this->assertEquals(\FreeClimb\Api\Model\TranscribeTermReason::COMPLETED, $this->TranscribeWebhook->gettermReason());
     }
-    /**
-     * Test attribute "record_term_reason"
-     */
+
     public function testPropertyRecordTermReason()
     {
         $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::FINISH_KEY);
@@ -193,36 +177,29 @@ class TranscribeWebhookTest extends TestCase
         $this->TranscribeWebhook->setrecordTermReason(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH);
         $this->assertEquals(\FreeClimb\Api\Model\RecordUtteranceTermReason::MAX_LENGTH, $this->TranscribeWebhook->getrecordTermReason());
     }
-    /**
-     * Test attribute "digit"
-     */
+
     public function testPropertyDigit()
     {
+
         $this->TranscribeWebhook->setDigit('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getDigit());
         $this->assertIsString($this->TranscribeWebhook->getDigit());
     }
-    /**
-     * Test attribute "privacy_for_logging"
-     */
+
     public function testPropertyPrivacyForLogging()
     {
         $this->TranscribeWebhook->setprivacyForLogging(false);
         $this->assertFalse($this->TranscribeWebhook->getprivacyForLogging());
         $this->assertIsBool($this->TranscribeWebhook->getprivacyForLogging());
     }
-    /**
-     * Test attribute "privacy_for_recording"
-     */
+
     public function testPropertyPrivacyForRecording()
     {
         $this->TranscribeWebhook->setprivacyForRecording(false);
         $this->assertFalse($this->TranscribeWebhook->getprivacyForRecording());
         $this->assertIsBool($this->TranscribeWebhook->getprivacyForRecording());
     }
-    /**
-     * Test attribute "barge_in_reason"
-     */
+
     public function testPropertyBargeInReason()
     {
         $this->TranscribeWebhook->setbargeInReason(\FreeClimb\Api\Model\BargeInReason::NO_BARGE_IN);
@@ -232,9 +209,7 @@ class TranscribeWebhookTest extends TestCase
         $this->TranscribeWebhook->setbargeInReason(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_ENERGY);
         $this->assertEquals(\FreeClimb\Api\Model\BargeInReason::BARGE_IN_BY_ENERGY, $this->TranscribeWebhook->getbargeInReason());
     }
-    /**
-     * Test attribute "barged_in_prompt_no"
-     */
+
     public function testPropertyBargedInPromptNo()
     {
 
@@ -244,9 +219,7 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptNo());
 
     }
-    /**
-     * Test attribute "barged_in_prompt_ms"
-     */
+
     public function testPropertyBargedInPromptMs()
     {
 
@@ -256,9 +229,7 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptMs());
 
     }
-    /**
-     * Test attribute "barged_in_prompt_loop_no"
-     */
+
     public function testPropertyBargedInPromptLoopNo()
     {
 
@@ -268,9 +239,7 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getbargedInPromptLoopNo());
 
     }
-    /**
-     * Test attribute "barge_in_time_ms"
-     */
+
     public function testPropertyBargeInTimeMs()
     {
 
@@ -280,18 +249,15 @@ class TranscribeWebhookTest extends TestCase
         $this->assertIsNumeric($this->TranscribeWebhook->getbargeInTimeMs());
 
     }
-    /**
-     * Test attribute "transcript"
-     */
+
     public function testPropertyTranscript()
     {
+
         $this->TranscribeWebhook->setTranscript('TS');
         $this->assertEquals('TS', $this->TranscribeWebhook->getTranscript());
         $this->assertIsString($this->TranscribeWebhook->getTranscript());
     }
-    /**
-     * Test attribute "transcribe_reason"
-     */
+
     public function testPropertyTranscribeReason()
     {
         $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::INTERNAL_ERROR);
@@ -305,9 +271,7 @@ class TranscribeWebhookTest extends TestCase
         $this->TranscribeWebhook->settranscribeReason(\FreeClimb\Api\Model\TranscribeReason::NO_INPUT);
         $this->assertEquals(\FreeClimb\Api\Model\TranscribeReason::NO_INPUT, $this->TranscribeWebhook->gettranscribeReason());
     }
-    /**
-     * Test attribute "transcription_duration_ms"
-     */
+
     public function testPropertyTranscriptionDurationMs()
     {
 

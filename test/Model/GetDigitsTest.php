@@ -73,18 +73,15 @@ class GetDigitsTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "action_url"
-     */
+
     public function testPropertyActionUrl()
     {
+
         $this->GetDigits->setActionUrl('TS');
         $this->assertEquals('TS', $this->GetDigits->getActionUrl());
         $this->assertIsString($this->GetDigits->getActionUrl());
     }
-    /**
-     * Test attribute "digit_timeout_ms"
-     */
+
     public function testPropertyDigitTimeoutMs()
     {
 
@@ -94,27 +91,22 @@ class GetDigitsTest extends TestCase
         $this->assertIsNumeric($this->GetDigits->getdigitTimeoutMs());
 
     }
-    /**
-     * Test attribute "finish_on_key"
-     */
+
     public function testPropertyFinishOnKey()
     {
+
         $this->GetDigits->setFinishOnKey('TS');
         $this->assertEquals('TS', $this->GetDigits->getFinishOnKey());
         $this->assertIsString($this->GetDigits->getFinishOnKey());
     }
-    /**
-     * Test attribute "flush_buffer"
-     */
+
     public function testPropertyFlushBuffer()
     {
         $this->GetDigits->setflushBuffer(false);
         $this->assertFalse($this->GetDigits->getflushBuffer());
         $this->assertIsBool($this->GetDigits->getflushBuffer());
     }
-    /**
-     * Test attribute "initial_timeout_ms"
-     */
+
     public function testPropertyInitialTimeoutMs()
     {
 
@@ -124,9 +116,7 @@ class GetDigitsTest extends TestCase
         $this->assertIsNumeric($this->GetDigits->getinitialTimeoutMs());
 
     }
-    /**
-     * Test attribute "max_digits"
-     */
+
     public function testPropertyMaxDigits()
     {
 
@@ -136,9 +126,7 @@ class GetDigitsTest extends TestCase
         $this->assertIsNumeric($this->GetDigits->getmaxDigits());
 
     }
-    /**
-     * Test attribute "min_digits"
-     */
+
     public function testPropertyMinDigits()
     {
 
@@ -148,18 +136,14 @@ class GetDigitsTest extends TestCase
         $this->assertIsNumeric($this->GetDigits->getminDigits());
 
     }
-    /**
-     * Test attribute "prompts"
-     */
+
     public function testPropertyPrompts()
     {
         $this->GetDigits->setprompts([]);
         $this->assertEquals([], $this->GetDigits->getprompts());
         $this->assertIsArray($this->GetDigits->getprompts());
     }
-    /**
-     * Test attribute "privacy_mode"
-     */
+
     public function testPropertyPrivacyMode()
     {
         $this->GetDigits->setprivacyMode(false);

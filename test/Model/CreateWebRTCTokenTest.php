@@ -73,27 +73,23 @@ class CreateWebRTCTokenTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "to"
-     */
+
     public function testPropertyTo()
     {
+
         $this->CreateWebRTCToken->setTo('TS');
         $this->assertEquals('TS', $this->CreateWebRTCToken->getTo());
         $this->assertIsString($this->CreateWebRTCToken->getTo());
     }
-    /**
-     * Test attribute "from"
-     */
+
     public function testPropertyFrom()
     {
+
         $this->CreateWebRTCToken->setFrom('TS');
         $this->assertEquals('TS', $this->CreateWebRTCToken->getFrom());
         $this->assertIsString($this->CreateWebRTCToken->getFrom());
     }
-    /**
-     * Test attribute "uses"
-     */
+
     public function testPropertyUses()
     {
 

@@ -73,29 +73,26 @@ class BuyIncomingNumberRequestTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "phone_number"
-     */
+
     public function testPropertyPhoneNumber()
     {
+
         $this->BuyIncomingNumberRequest->setPhoneNumber('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getPhoneNumber());
         $this->assertIsString($this->BuyIncomingNumberRequest->getPhoneNumber());
     }
-    /**
-     * Test attribute "alias"
-     */
+
     public function testPropertyAlias()
     {
+
         $this->BuyIncomingNumberRequest->setAlias('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getAlias());
         $this->assertIsString($this->BuyIncomingNumberRequest->getAlias());
     }
-    /**
-     * Test attribute "application_id"
-     */
+
     public function testPropertyApplicationId()
     {
+
         $this->BuyIncomingNumberRequest->setApplicationId('TS');
         $this->assertEquals('TS', $this->BuyIncomingNumberRequest->getApplicationId());
         $this->assertIsString($this->BuyIncomingNumberRequest->getApplicationId());

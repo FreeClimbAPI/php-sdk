@@ -74,7 +74,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => 'string',
         'campaign_id' => 'string',
         'segment_count' => 'float',
-        'media_urls' => 'string[]'
+        'media_urls' => 'string[]',
+        'tfn' => '\FreeClimb\Api\Model\TFN',
+        'phone_number_id' => 'string',
+        'application_id' => 'string'
     ];
 
     /**
@@ -100,7 +103,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => null,
         'campaign_id' => null,
         'segment_count' => null,
-        'media_urls' => 'uri'
+        'media_urls' => 'uri',
+        'tfn' => null,
+        'phone_number_id' => null,
+        'application_id' => null
     ];
 
     /**
@@ -124,7 +130,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => true,
         'campaign_id' => true,
         'segment_count' => true,
-        'media_urls' => true
+        'media_urls' => true,
+        'tfn' => false,
+        'phone_number_id' => true,
+        'application_id' => true
     ];
 
     /**
@@ -228,7 +237,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => 'brandId',
         'campaign_id' => 'campaignId',
         'segment_count' => 'segmentCount',
-        'media_urls' => 'mediaUrls'
+        'media_urls' => 'mediaUrls',
+        'tfn' => 'tfn',
+        'phone_number_id' => 'phoneNumberId',
+        'application_id' => 'applicationId'
     ];
 
     /**
@@ -252,7 +264,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => 'setBrandId',
         'campaign_id' => 'setCampaignId',
         'segment_count' => 'setSegmentCount',
-        'media_urls' => 'setMediaUrls'
+        'media_urls' => 'setMediaUrls',
+        'tfn' => 'setTfn',
+        'phone_number_id' => 'setPhoneNumberId',
+        'application_id' => 'setApplicationId'
     ];
 
     /**
@@ -276,7 +291,10 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'brand_id' => 'getBrandId',
         'campaign_id' => 'getCampaignId',
         'segment_count' => 'getSegmentCount',
-        'media_urls' => 'getMediaUrls'
+        'media_urls' => 'getMediaUrls',
+        'tfn' => 'getTfn',
+        'phone_number_id' => 'getPhoneNumberId',
+        'application_id' => 'getApplicationId'
     ];
 
     /**
@@ -352,6 +370,9 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('segment_count', $data ?? [], null);
         $this->setIfExists('media_urls', $data ?? [], null);
+        $this->setIfExists('tfn', $data ?? [], null);
+        $this->setIfExists('phone_number_id', $data ?? [], null);
+        $this->setIfExists('application_id', $data ?? [], null);
     }
 
     /**
@@ -908,6 +929,101 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['media_urls'] = $media_urls;
+
+        return $this;
+    }
+
+    /**
+     * Gets tfn
+     *
+     * @return \FreeClimb\Api\Model\TFN|null
+     */
+    public function getTfn()
+    {
+        return $this->container['tfn'];
+    }
+
+    /**
+     * Sets tfn
+     *
+     * @param \FreeClimb\Api\Model\TFN|null $tfn tfn
+     *
+     * @return self
+     */
+    public function setTfn($tfn)
+    {
+        if (is_null($tfn)) {
+            throw new \InvalidArgumentException('non-nullable tfn cannot be null');
+        }
+        $this->container['tfn'] = $tfn;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number_id
+     *
+     * @return string|null
+     */
+    public function getPhoneNumberId()
+    {
+        return $this->container['phone_number_id'];
+    }
+
+    /**
+     * Sets phone_number_id
+     *
+     * @param string|null $phone_number_id String that uniquely identifies the phoneNumber resource used to send this Message
+     *
+     * @return self
+     */
+    public function setPhoneNumberId($phone_number_id)
+    {
+        if (is_null($phone_number_id)) {
+            array_push($this->openAPINullablesSetToNull, 'phone_number_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone_number_id', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['phone_number_id'] = $phone_number_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string|null
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string|null $application_id String that uniquely identifies the Application resource used to send this Message
+     *
+     * @return self
+     */
+    public function setApplicationId($application_id)
+    {
+        if (is_null($application_id)) {
+            array_push($this->openAPINullablesSetToNull, 'application_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('application_id', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }

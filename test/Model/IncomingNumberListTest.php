@@ -73,9 +73,7 @@ class IncomingNumberListTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "total"
-     */
+
     public function testPropertyTotal()
     {
 
@@ -85,9 +83,7 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->gettotal());
 
     }
-    /**
-     * Test attribute "start"
-     */
+
     public function testPropertyStart()
     {
 
@@ -97,9 +93,7 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->getstart());
 
     }
-    /**
-     * Test attribute "end"
-     */
+
     public function testPropertyEnd()
     {
 
@@ -109,9 +103,7 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->getend());
 
     }
-    /**
-     * Test attribute "page"
-     */
+
     public function testPropertyPage()
     {
 
@@ -121,9 +113,7 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->getpage());
 
     }
-    /**
-     * Test attribute "num_pages"
-     */
+
     public function testPropertyNumPages()
     {
 
@@ -133,9 +123,7 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->getnumPages());
 
     }
-    /**
-     * Test attribute "page_size"
-     */
+
     public function testPropertyPageSize()
     {
 
@@ -145,18 +133,15 @@ class IncomingNumberListTest extends TestCase
         $this->assertIsNumeric($this->IncomingNumberList->getpageSize());
 
     }
-    /**
-     * Test attribute "next_page_uri"
-     */
+
     public function testPropertyNextPageUri()
     {
+
         $this->IncomingNumberList->setNextPageUri('TS');
         $this->assertEquals('TS', $this->IncomingNumberList->getNextPageUri());
         $this->assertIsString($this->IncomingNumberList->getNextPageUri());
     }
-    /**
-     * Test attribute "incoming_phone_numbers"
-     */
+
     public function testPropertyIncomingPhoneNumbers()
     {
         $this->IncomingNumberList->setincomingPhoneNumbers([]);

@@ -73,45 +73,35 @@ class CapabilitiesTest extends TestCase
     {
     }
 
-    /**
-     * Test attribute "voice"
-     */
+
     public function testPropertyVoice()
     {
         $this->Capabilities->setvoice(false);
         $this->assertFalse($this->Capabilities->getvoice());
         $this->assertIsBool($this->Capabilities->getvoice());
     }
-    /**
-     * Test attribute "sms"
-     */
+
     public function testPropertySms()
     {
         $this->Capabilities->setsms(false);
         $this->assertFalse($this->Capabilities->getsms());
         $this->assertIsBool($this->Capabilities->getsms());
     }
-    /**
-     * Test attribute "toll_free"
-     */
+
     public function testPropertyTollFree()
     {
         $this->Capabilities->settollFree(false);
         $this->assertFalse($this->Capabilities->gettollFree());
         $this->assertIsBool($this->Capabilities->gettollFree());
     }
-    /**
-     * Test attribute "ten_dlc"
-     */
+
     public function testPropertyTenDlc()
     {
         $this->Capabilities->settenDlc(false);
         $this->assertFalse($this->Capabilities->gettenDlc());
         $this->assertIsBool($this->Capabilities->gettenDlc());
     }
-    /**
-     * Test attribute "short_code"
-     */
+
     public function testPropertyShortCode()
     {
         $this->Capabilities->setshortCode(false);
