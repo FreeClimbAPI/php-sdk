@@ -304,6 +304,9 @@ class CreateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
+        if ($this->container['status_callback_url'] === null) {
+            $invalidProperties[] = "'status_callback_url' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -437,7 +440,7 @@ class CreateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets status_callback_url
      *
-     * @return string|null
+     * @return string
      */
     public function getStatusCallbackUrl()
     {
@@ -447,7 +450,7 @@ class CreateConferenceRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets status_callback_url
      *
-     * @param string|null $status_callback_url This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
+     * @param string $status_callback_url This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
      *
      * @return self
      */
