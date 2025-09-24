@@ -85,6 +85,9 @@ class DefaultApi
         'createAnApplication' => [
             'application/json',
         ],
+        'createExport' => [
+            'application/json',
+        ],
         'createKnowledgeBaseCompletion' => [
             'application/json',
         ],
@@ -92,6 +95,9 @@ class DefaultApi
             'application/json',
         ],
         'deleteAnApplication' => [
+            'application/json',
+        ],
+        'deleteAnExport' => [
             'application/json',
         ],
         'deleteAnIncomingNumber' => [
@@ -104,6 +110,9 @@ class DefaultApi
             'application/json',
         ],
         'downloadARecordingFile' => [
+            'application/json',
+        ],
+        'downloadAnExport' => [
             'application/json',
         ],
         'filterLogs' => [
@@ -131,6 +140,9 @@ class DefaultApi
             'application/json',
         ],
         'getAnApplication' => [
+            'application/json',
+        ],
+        'getAnExport' => [
             'application/json',
         ],
         'getAnIncomingNumber' => [
@@ -191,6 +203,9 @@ class DefaultApi
             'application/json',
         ],
         'listConferences' => [
+            'application/json',
+        ],
+        'listExports' => [
             'application/json',
         ],
         'listIncomingNumbers' => [
@@ -1595,6 +1610,330 @@ class DefaultApi
     }
 
     /**
+     * Operation createExport
+     *
+     * Create an Export
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportRequest $export_request A JSON object containing export creation parameters (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\ExportResult
+     */
+    public function createExport($export_request = null, string $contentType = self::contentTypes['createExport'][0])
+    {
+        list($response) = $this->createExportWithHttpInfo($export_request, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation createExportWithHttpInfo
+     *
+     * Create an Export
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportRequest $export_request A JSON object containing export creation parameters (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\ExportResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createExportWithHttpInfo($export_request = null, string $contentType = self::contentTypes['createExport'][0])
+    {
+        $request = $this->createExportRequest($export_request, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\ExportResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\ExportResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\ExportResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\ExportResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\ExportResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createExportAsync
+     *
+     * Create an Export
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportRequest $export_request A JSON object containing export creation parameters (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createExportAsync($export_request = null, string $contentType = self::contentTypes['createExport'][0])
+    {
+        return $this->createExportAsyncWithHttpInfo($export_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createExportAsyncWithHttpInfo
+     *
+     * Create an Export
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportRequest $export_request A JSON object containing export creation parameters (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createExportAsyncWithHttpInfo($export_request = null, string $contentType = self::contentTypes['createExport'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\ExportResult';
+        $request = $this->createExportRequest($export_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createExport'
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportRequest $export_request A JSON object containing export creation parameters (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createExportRequest($export_request = null, string $contentType = self::contentTypes['createExport'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Exports';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($export_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($export_request));
+            } else {
+                $httpBody = $export_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation createKnowledgeBaseCompletion
      *
      * Query the knowledge base
@@ -2361,6 +2700,246 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'applicationId' . '}',
                 ObjectSerializer::toPathValue($application_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteAnExport
+     *
+     * Delete an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteAnExport($export_id, string $contentType = self::contentTypes['deleteAnExport'][0])
+    {
+        $this->deleteAnExportWithHttpInfo($export_id, $contentType);
+    }     
+    /**
+     * Operation deleteAnExportWithHttpInfo
+     *
+     * Delete an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteAnExportWithHttpInfo($export_id, string $contentType = self::contentTypes['deleteAnExport'][0])
+    {
+        $request = $this->deleteAnExportRequest($export_id, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteAnExportAsync
+     *
+     * Delete an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAnExportAsync($export_id, string $contentType = self::contentTypes['deleteAnExport'][0])
+    {
+        return $this->deleteAnExportAsyncWithHttpInfo($export_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteAnExportAsyncWithHttpInfo
+     *
+     * Delete an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteAnExportAsyncWithHttpInfo($export_id, string $contentType = self::contentTypes['deleteAnExport'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteAnExportRequest($export_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteAnExport'
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteAnExportRequest($export_id, string $contentType = self::contentTypes['deleteAnExport'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $export_id when calling deleteAnExport'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Exports/{exportId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($export_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'exportId' . '}',
+                ObjectSerializer::toPathValue($export_id),
                 $resourcePath
             );
         }
@@ -3626,6 +4205,337 @@ class DefaultApi
 
         $headers = $this->headerSelector->selectHeaders(
             ['audio/x-wav', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation downloadAnExport
+     *
+     * Download an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return string
+     */
+    public function downloadAnExport($export_id, string $contentType = self::contentTypes['downloadAnExport'][0])
+    {
+        list($response) = $this->downloadAnExportWithHttpInfo($export_id, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation downloadAnExportWithHttpInfo
+     *
+     * Download an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function downloadAnExportWithHttpInfo($export_id, string $contentType = self::contentTypes['downloadAnExport'][0])
+    {
+        $request = $this->downloadAnExportRequest($export_id, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation downloadAnExportAsync
+     *
+     * Download an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadAnExportAsync($export_id, string $contentType = self::contentTypes['downloadAnExport'][0])
+    {
+        return $this->downloadAnExportAsyncWithHttpInfo($export_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation downloadAnExportAsyncWithHttpInfo
+     *
+     * Download an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadAnExportAsyncWithHttpInfo($export_id, string $contentType = self::contentTypes['downloadAnExport'][0])
+    {
+        $returnType = 'string';
+        $request = $this->downloadAnExportRequest($export_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'downloadAnExport'
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function downloadAnExportRequest($export_id, string $contentType = self::contentTypes['downloadAnExport'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $export_id when calling downloadAnExport'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Exports/{exportId}/Download';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($export_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'exportId' . '}',
+                ObjectSerializer::toPathValue($export_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/csv', ],
             $contentType,
             $multipart
         );
@@ -6622,6 +7532,337 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'applicationId' . '}',
                 ObjectSerializer::toPathValue($application_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAnExport
+     *
+     * Get an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\ExportResult
+     */
+    public function getAnExport($export_id, string $contentType = self::contentTypes['getAnExport'][0])
+    {
+        list($response) = $this->getAnExportWithHttpInfo($export_id, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation getAnExportWithHttpInfo
+     *
+     * Get an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnExport'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\ExportResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAnExportWithHttpInfo($export_id, string $contentType = self::contentTypes['getAnExport'][0])
+    {
+        $request = $this->getAnExportRequest($export_id, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\ExportResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\ExportResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\ExportResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\ExportResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\ExportResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAnExportAsync
+     *
+     * Get an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAnExportAsync($export_id, string $contentType = self::contentTypes['getAnExport'][0])
+    {
+        return $this->getAnExportAsyncWithHttpInfo($export_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAnExportAsyncWithHttpInfo
+     *
+     * Get an Export
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAnExportAsyncWithHttpInfo($export_id, string $contentType = self::contentTypes['getAnExport'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\ExportResult';
+        $request = $this->getAnExportRequest($export_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAnExport'
+     *
+
+     * @param  string $export_id A string that uniquely identifies this export resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnExport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAnExportRequest($export_id, string $contentType = self::contentTypes['getAnExport'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $export_id when calling getAnExport'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Exports/{exportId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($export_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'exportId' . '}',
+                ObjectSerializer::toPathValue($export_id),
                 $resourcePath
             );
         }
@@ -12425,15 +13666,19 @@ class DefaultApi
 
      * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
 
+     * @param  int $risk_score_min The minimum riskScore that should be included in the list. (optional)
+
+     * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\CallList
      */
-    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType);
+        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
         return $response;
     }     
     /**
@@ -12458,15 +13703,19 @@ class DefaultApi
 
      * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
 
+     * @param  int $risk_score_min The minimum riskScore that should be included in the list. (optional)
+
+     * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\CallList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType);        
+        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -12599,14 +13848,18 @@ class DefaultApi
 
      * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
 
+     * @param  int $risk_score_min The minimum riskScore that should be included in the list. (optional)
+
+     * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType)
+        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12636,15 +13889,19 @@ class DefaultApi
 
      * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
 
+     * @param  int $risk_score_min The minimum riskScore that should be included in the list. (optional)
+
+     * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
         $returnType = '\FreeClimb\Api\Model\CallList';
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $contentType);
+        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12702,12 +13959,16 @@ class DefaultApi
 
      * @param  string[] $application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. (optional)
 
+     * @param  int $risk_score_min The minimum riskScore that should be included in the list. (optional)
+
+     * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
         $account_id = $this->config->getUsername();
 
@@ -12721,6 +13982,8 @@ class DefaultApi
         if ($application_id !== null && count($application_id) > 16) {
             throw new \InvalidArgumentException('invalid value for "$application_id" when calling DefaultApi.listCalls, number of items must be less than or equal to 16.');
         }
+
+
 
 
 
@@ -12799,6 +14062,24 @@ class DefaultApi
             $application_id,
             'applicationId', // param base name
             'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $risk_score_min,
+            'riskScoreMin', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $risk_score_max,
+            'riskScoreMax', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -13555,6 +14836,352 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $date_updated,
             'dateUpdated', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listExports
+     *
+     * List Exports
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportStatus $status Status of export (optional)
+
+     * @param  string $cursor Used to reference pages of a list of exports (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listExports'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\ExportList
+     */
+    public function listExports($status = null, $cursor = null, string $contentType = self::contentTypes['listExports'][0])
+    {
+        list($response) = $this->listExportsWithHttpInfo($status, $cursor, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation listExportsWithHttpInfo
+     *
+     * List Exports
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportStatus $status Status of export (optional)
+
+     * @param  string $cursor Used to reference pages of a list of exports (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listExports'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\ExportList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listExportsWithHttpInfo($status = null, $cursor = null, string $contentType = self::contentTypes['listExports'][0])
+    {
+        $request = $this->listExportsRequest($status, $cursor, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\ExportList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\ExportList' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\ExportList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\ExportList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\ExportList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listExportsAsync
+     *
+     * List Exports
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportStatus $status Status of export (optional)
+
+     * @param  string $cursor Used to reference pages of a list of exports (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listExports'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listExportsAsync($status = null, $cursor = null, string $contentType = self::contentTypes['listExports'][0])
+    {
+        return $this->listExportsAsyncWithHttpInfo($status, $cursor, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listExportsAsyncWithHttpInfo
+     *
+     * List Exports
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportStatus $status Status of export (optional)
+
+     * @param  string $cursor Used to reference pages of a list of exports (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listExports'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listExportsAsyncWithHttpInfo($status = null, $cursor = null, string $contentType = self::contentTypes['listExports'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\ExportList';
+        $request = $this->listExportsRequest($status, $cursor, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listExports'
+     *
+
+     * @param  \FreeClimb\Api\Model\ExportStatus $status Status of export (optional)
+
+     * @param  string $cursor Used to reference pages of a list of exports (optional)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listExports'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listExportsRequest($status = null, $cursor = null, string $contentType = self::contentTypes['listExports'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Exports';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'ExportStatus', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cursor,
+            'cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -156,24 +156,24 @@ class CallResultTest extends TestCase
         $this->assertIsString($this->CallResult->getPhoneNumberId());
     }
 
-    public function testPropertyCallStatus()
+    public function testPropertyStatus()
     {
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::RINGING);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::FAILED);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::BUSY);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->CallResult->getcallStatus());
-        $this->CallResult->setcallStatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
-        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->CallResult->getcallStatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::QUEUED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::QUEUED, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::RINGING);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::RINGING, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::IN_PROGRESS, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::CANCELED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::CANCELED, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::COMPLETED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::COMPLETED, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::FAILED);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::FAILED, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::BUSY);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::BUSY, $this->CallResult->getstatus());
+        $this->CallResult->setstatus(\FreeClimb\Api\Model\CallStatus::NO_ANSWER);
+        $this->assertEquals(\FreeClimb\Api\Model\CallStatus::NO_ANSWER, $this->CallResult->getstatus());
     }
 
     public function testPropertyStartTime()

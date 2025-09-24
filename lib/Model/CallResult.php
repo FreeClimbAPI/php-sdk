@@ -69,7 +69,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'string',
         'to' => 'string',
         'phone_number_id' => 'string',
-        'call_status' => '\FreeClimb\Api\Model\CallStatus',
+        'status' => '\FreeClimb\Api\Model\CallStatus',
         'start_time' => 'string',
         'connect_time' => 'string',
         'end_time' => 'string',
@@ -99,7 +99,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => null,
         'to' => null,
         'phone_number_id' => null,
-        'call_status' => null,
+        'status' => null,
         'start_time' => null,
         'connect_time' => null,
         'end_time' => null,
@@ -127,7 +127,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => true,
         'to' => true,
         'phone_number_id' => true,
-        'call_status' => true,
+        'status' => true,
         'start_time' => true,
         'connect_time' => true,
         'end_time' => true,
@@ -235,7 +235,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'from',
         'to' => 'to',
         'phone_number_id' => 'phoneNumberId',
-        'call_status' => 'callStatus',
+        'status' => 'status',
         'start_time' => 'startTime',
         'connect_time' => 'connectTime',
         'end_time' => 'endTime',
@@ -263,7 +263,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'setFrom',
         'to' => 'setTo',
         'phone_number_id' => 'setPhoneNumberId',
-        'call_status' => 'setCallStatus',
+        'status' => 'setStatus',
         'start_time' => 'setStartTime',
         'connect_time' => 'setConnectTime',
         'end_time' => 'setEndTime',
@@ -291,7 +291,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'from' => 'getFrom',
         'to' => 'getTo',
         'phone_number_id' => 'getPhoneNumberId',
-        'call_status' => 'getCallStatus',
+        'status' => 'getStatus',
         'start_time' => 'getStartTime',
         'connect_time' => 'getConnectTime',
         'end_time' => 'getEndTime',
@@ -370,7 +370,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('from', $data ?? [], null);
         $this->setIfExists('to', $data ?? [], null);
         $this->setIfExists('phone_number_id', $data ?? [], null);
-        $this->setIfExists('call_status', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('start_time', $data ?? [], null);
         $this->setIfExists('connect_time', $data ?? [], null);
         $this->setIfExists('end_time', $data ?? [], null);
@@ -737,35 +737,35 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets call_status
+     * Gets status
      *
      * @return \FreeClimb\Api\Model\CallStatus|null
      */
-    public function getCallStatus()
+    public function getStatus()
     {
-        return $this->container['call_status'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets call_status
+     * Sets status
      *
-     * @param \FreeClimb\Api\Model\CallStatus|null $call_status call_status
+     * @param \FreeClimb\Api\Model\CallStatus|null $status status
      *
      * @return self
      */
-    public function setCallStatus($call_status)
+    public function setStatus($status)
     {
-        if (is_null($call_status)) {
-            array_push($this->openAPINullablesSetToNull, 'call_status');
+        if (is_null($status)) {
+            array_push($this->openAPINullablesSetToNull, 'status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('call_status', $nullablesSetToNull, true);
+            $index = array_search('status', $nullablesSetToNull, true);
             if ($index !== false) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['call_status'] = $call_status;
+        $this->container['status'] = $status;
 
         return $this;
     }

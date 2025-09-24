@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CreateConference
+ * ExportList
  *
  * PHP version 7.4
  *
@@ -29,19 +29,20 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * CreateConference Class Doc Comment
+ * ExportList Class Doc Comment
  *
  * @category Class
- * @description The &#x60;CreateConference&#x60; command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateConference extends PerclCommand
+class ExportList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CreateConference extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateConference';
+    protected static $openAPIModelName = 'ExportList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +59,14 @@ class CreateConference extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action_url' => 'string',
-        'alias' => 'string',
-        'play_beep' => '\FreeClimb\Api\Model\PlayBeep',
-        'record' => 'bool',
-        'status_callback_url' => 'string',
-        'wait_url' => 'string',
-        'parent_call_id' => 'string'
+        'total' => 'int',
+        'start' => 'int',
+        'end' => 'int',
+        'page' => 'int',
+        'num_pages' => 'int',
+        'page_size' => 'int',
+        'next_page_uri' => 'string',
+        'exports' => '\FreeClimb\Api\Model\ExportResult[]'
     ];
 
     /**
@@ -75,13 +77,14 @@ class CreateConference extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'action_url' => 'uri',
-        'alias' => null,
-        'play_beep' => null,
-        'record' => null,
-        'status_callback_url' => 'uri',
-        'wait_url' => 'uri',
-        'parent_call_id' => null
+        'total' => null,
+        'start' => null,
+        'end' => null,
+        'page' => null,
+        'num_pages' => null,
+        'page_size' => null,
+        'next_page_uri' => null,
+        'exports' => null
     ];
 
     /**
@@ -90,13 +93,14 @@ class CreateConference extends PerclCommand
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'action_url' => false,
-        'alias' => false,
-        'play_beep' => true,
-        'record' => false,
-        'status_callback_url' => false,
-        'wait_url' => false,
-        'parent_call_id' => false
+        'total' => true,
+        'start' => true,
+        'end' => true,
+        'page' => true,
+        'num_pages' => true,
+        'page_size' => true,
+        'next_page_uri' => true,
+        'exports' => true
     ];
 
     /**
@@ -113,7 +117,7 @@ class CreateConference extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -123,7 +127,7 @@ class CreateConference extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -133,7 +137,7 @@ class CreateConference extends PerclCommand
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -185,13 +189,14 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'action_url' => 'actionUrl',
-        'alias' => 'alias',
-        'play_beep' => 'playBeep',
-        'record' => 'record',
-        'status_callback_url' => 'statusCallbackUrl',
-        'wait_url' => 'waitUrl',
-        'parent_call_id' => 'parentCallId'
+        'total' => 'total',
+        'start' => 'start',
+        'end' => 'end',
+        'page' => 'page',
+        'num_pages' => 'numPages',
+        'page_size' => 'pageSize',
+        'next_page_uri' => 'nextPageUri',
+        'exports' => 'exports'
     ];
 
     /**
@@ -200,13 +205,14 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'action_url' => 'setActionUrl',
-        'alias' => 'setAlias',
-        'play_beep' => 'setPlayBeep',
-        'record' => 'setRecord',
-        'status_callback_url' => 'setStatusCallbackUrl',
-        'wait_url' => 'setWaitUrl',
-        'parent_call_id' => 'setParentCallId'
+        'total' => 'setTotal',
+        'start' => 'setStart',
+        'end' => 'setEnd',
+        'page' => 'setPage',
+        'num_pages' => 'setNumPages',
+        'page_size' => 'setPageSize',
+        'next_page_uri' => 'setNextPageUri',
+        'exports' => 'setExports'
     ];
 
     /**
@@ -215,13 +221,14 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'action_url' => 'getActionUrl',
-        'alias' => 'getAlias',
-        'play_beep' => 'getPlayBeep',
-        'record' => 'getRecord',
-        'status_callback_url' => 'getStatusCallbackUrl',
-        'wait_url' => 'getWaitUrl',
-        'parent_call_id' => 'getParentCallId'
+        'total' => 'getTotal',
+        'start' => 'getStart',
+        'end' => 'getEnd',
+        'page' => 'getPage',
+        'num_pages' => 'getNumPages',
+        'page_size' => 'getPageSize',
+        'next_page_uri' => 'getNextPageUri',
+        'exports' => 'getExports'
     ];
 
     /**
@@ -232,7 +239,7 @@ class CreateConference extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -242,7 +249,7 @@ class CreateConference extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -252,7 +259,7 @@ class CreateConference extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -266,6 +273,12 @@ class CreateConference extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -275,15 +288,14 @@ class CreateConference extends PerclCommand
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
-        $this->setIfExists('action_url', $data ?? [], null);
-        $this->setIfExists('alias', $data ?? [], null);
-        $this->setIfExists('play_beep', $data ?? [], null);
-        $this->setIfExists('record', $data ?? [], null);
-        $this->setIfExists('status_callback_url', $data ?? [], null);
-        $this->setIfExists('wait_url', $data ?? [], null);
-        $this->setIfExists('parent_call_id', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('start', $data ?? [], null);
+        $this->setIfExists('end', $data ?? [], null);
+        $this->setIfExists('page', $data ?? [], null);
+        $this->setIfExists('num_pages', $data ?? [], null);
+        $this->setIfExists('page_size', $data ?? [], null);
+        $this->setIfExists('next_page_uri', $data ?? [], null);
+        $this->setIfExists('exports', $data ?? [], null);
     }
 
     /**
@@ -311,11 +323,8 @@ class CreateConference extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['action_url'] === null) {
-            $invalidProperties[] = "'action_url' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -332,197 +341,273 @@ class CreateConference extends PerclCommand
 
 
     /**
-     * Gets action_url
+     * Gets total
      *
-     * @return string
+     * @return int|null
      */
-    public function getActionUrl()
+    public function getTotal()
     {
-        return $this->container['action_url'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets action_url
+     * Sets total
      *
-     * @param string $action_url This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.
+     * @param int|null $total Total amount of requested resource.
      *
      * @return self
      */
-    public function setActionUrl($action_url)
+    public function setTotal($total)
     {
-        if (is_null($action_url)) {
-            throw new \InvalidArgumentException('non-nullable action_url cannot be null');
-        }
-        $this->container['action_url'] = $action_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets alias
-     *
-     * @return string|null
-     */
-    public function getAlias()
-    {
-        return $this->container['alias'];
-    }
-
-    /**
-     * Sets alias
-     *
-     * @param string|null $alias Descriptive name for the Conference.
-     *
-     * @return self
-     */
-    public function setAlias($alias)
-    {
-        if (is_null($alias)) {
-            throw new \InvalidArgumentException('non-nullable alias cannot be null');
-        }
-        $this->container['alias'] = $alias;
-
-        return $this;
-    }
-
-    /**
-     * Gets play_beep
-     *
-     * @return \FreeClimb\Api\Model\PlayBeep|null
-     */
-    public function getPlayBeep()
-    {
-        return $this->container['play_beep'];
-    }
-
-    /**
-     * Sets play_beep
-     *
-     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep play_beep
-     *
-     * @return self
-     */
-    public function setPlayBeep($play_beep)
-    {
-        if (is_null($play_beep)) {
-            array_push($this->openAPINullablesSetToNull, 'play_beep');
+        if (is_null($total)) {
+            array_push($this->openAPINullablesSetToNull, 'total');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('play_beep', $nullablesSetToNull, true);
+            $index = array_search('total', $nullablesSetToNull, true);
             if ($index !== false) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['play_beep'] = $play_beep;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets record
+     * Gets start
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getRecord()
+    public function getStart()
     {
-        return $this->container['record'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets record
+     * Sets start
      *
-     * @param bool|null $record When set to `true`, the entire Conference is recorded. The `statusCallbackUrl` of the Conference will receive a `conferenceRecordingEnded` Webhook when the Conference transitions from the `inProgress` to empty state.
+     * @param int|null $start Resource index at start of current page
      *
      * @return self
      */
-    public function setRecord($record)
+    public function setStart($start)
     {
-        if (is_null($record)) {
-            throw new \InvalidArgumentException('non-nullable record cannot be null');
+        if (is_null($start)) {
+            array_push($this->openAPINullablesSetToNull, 'start');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['record'] = $record;
+        $this->container['start'] = $start;
 
         return $this;
     }
 
     /**
-     * Gets status_callback_url
+     * Gets end
+     *
+     * @return int|null
+     */
+    public function getEnd()
+    {
+        return $this->container['end'];
+    }
+
+    /**
+     * Sets end
+     *
+     * @param int|null $end Resource index at end of current page
+     *
+     * @return self
+     */
+    public function setEnd($end)
+    {
+        if (is_null($end)) {
+            array_push($this->openAPINullablesSetToNull, 'end');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('end', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['end'] = $end;
+
+        return $this;
+    }
+
+    /**
+     * Gets page
+     *
+     * @return int|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param int|null $page Current page
+     *
+     * @return self
+     */
+    public function setPage($page)
+    {
+        if (is_null($page)) {
+            array_push($this->openAPINullablesSetToNull, 'page');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('page', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets num_pages
+     *
+     * @return int|null
+     */
+    public function getNumPages()
+    {
+        return $this->container['num_pages'];
+    }
+
+    /**
+     * Sets num_pages
+     *
+     * @param int|null $num_pages Total number of pages
+     *
+     * @return self
+     */
+    public function setNumPages($num_pages)
+    {
+        if (is_null($num_pages)) {
+            array_push($this->openAPINullablesSetToNull, 'num_pages');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('num_pages', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['num_pages'] = $num_pages;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_size
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['page_size'];
+    }
+
+    /**
+     * Sets page_size
+     *
+     * @param int|null $page_size Number of items per page
+     *
+     * @return self
+     */
+    public function setPageSize($page_size)
+    {
+        if (is_null($page_size)) {
+            array_push($this->openAPINullablesSetToNull, 'page_size');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('page_size', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['page_size'] = $page_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_page_uri
      *
      * @return string|null
      */
-    public function getStatusCallbackUrl()
+    public function getNextPageUri()
     {
-        return $this->container['status_callback_url'];
+        return $this->container['next_page_uri'];
     }
 
     /**
-     * Sets status_callback_url
+     * Sets next_page_uri
      *
-     * @param string|null $status_callback_url This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
+     * @param string|null $next_page_uri Uri to retrieve the next page of items
      *
      * @return self
      */
-    public function setStatusCallbackUrl($status_callback_url)
+    public function setNextPageUri($next_page_uri)
     {
-        if (is_null($status_callback_url)) {
-            throw new \InvalidArgumentException('non-nullable status_callback_url cannot be null');
+        if (is_null($next_page_uri)) {
+            array_push($this->openAPINullablesSetToNull, 'next_page_uri');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('next_page_uri', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['status_callback_url'] = $status_callback_url;
+        $this->container['next_page_uri'] = $next_page_uri;
 
         return $this;
     }
 
     /**
-     * Gets wait_url
+     * Gets exports
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\ExportResult[]|null
      */
-    public function getWaitUrl()
+    public function getExports()
     {
-        return $this->container['wait_url'];
+        return $this->container['exports'];
     }
 
     /**
-     * Sets wait_url
+     * Sets exports
      *
-     * @param string|null $wait_url If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
+     * @param \FreeClimb\Api\Model\ExportResult[]|null $exports exports
      *
      * @return self
      */
-    public function setWaitUrl($wait_url)
+    public function setExports($exports)
     {
-        if (is_null($wait_url)) {
-            throw new \InvalidArgumentException('non-nullable wait_url cannot be null');
+        if (is_null($exports)) {
+            array_push($this->openAPINullablesSetToNull, 'exports');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('exports', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['wait_url'] = $wait_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_call_id
-     *
-     * @return string|null
-     */
-    public function getParentCallId()
-    {
-        return $this->container['parent_call_id'];
-    }
-
-    /**
-     * Sets parent_call_id
-     *
-     * @param string|null $parent_call_id ID of the Call that created this leg (child call).
-     *
-     * @return self
-     */
-    public function setParentCallId($parent_call_id)
-    {
-        if (is_null($parent_call_id)) {
-            throw new \InvalidArgumentException('non-nullable parent_call_id cannot be null');
-        }
-        $this->container['parent_call_id'] = $parent_call_id;
+        $this->container['exports'] = $exports;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CreateConference
+ * ExportResultOutput
  *
  * PHP version 7.4
  *
@@ -29,19 +29,20 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * CreateConference Class Doc Comment
+ * ExportResultOutput Class Doc Comment
  *
  * @category Class
- * @description The &#x60;CreateConference&#x60; command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateConference extends PerclCommand
+class ExportResultOutput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CreateConference extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateConference';
+    protected static $openAPIModelName = 'ExportResultOutput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +59,7 @@ class CreateConference extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action_url' => 'string',
-        'alias' => 'string',
-        'play_beep' => '\FreeClimb\Api\Model\PlayBeep',
-        'record' => 'bool',
-        'status_callback_url' => 'string',
-        'wait_url' => 'string',
-        'parent_call_id' => 'string'
+        'type' => '\FreeClimb\Api\Model\ExportOutputType'
     ];
 
     /**
@@ -75,13 +70,7 @@ class CreateConference extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'action_url' => 'uri',
-        'alias' => null,
-        'play_beep' => null,
-        'record' => null,
-        'status_callback_url' => 'uri',
-        'wait_url' => 'uri',
-        'parent_call_id' => null
+        'type' => null
     ];
 
     /**
@@ -90,13 +79,7 @@ class CreateConference extends PerclCommand
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'action_url' => false,
-        'alias' => false,
-        'play_beep' => true,
-        'record' => false,
-        'status_callback_url' => false,
-        'wait_url' => false,
-        'parent_call_id' => false
+        'type' => false
     ];
 
     /**
@@ -113,7 +96,7 @@ class CreateConference extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -123,7 +106,7 @@ class CreateConference extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -133,7 +116,7 @@ class CreateConference extends PerclCommand
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -185,13 +168,7 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'action_url' => 'actionUrl',
-        'alias' => 'alias',
-        'play_beep' => 'playBeep',
-        'record' => 'record',
-        'status_callback_url' => 'statusCallbackUrl',
-        'wait_url' => 'waitUrl',
-        'parent_call_id' => 'parentCallId'
+        'type' => 'type'
     ];
 
     /**
@@ -200,13 +177,7 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'action_url' => 'setActionUrl',
-        'alias' => 'setAlias',
-        'play_beep' => 'setPlayBeep',
-        'record' => 'setRecord',
-        'status_callback_url' => 'setStatusCallbackUrl',
-        'wait_url' => 'setWaitUrl',
-        'parent_call_id' => 'setParentCallId'
+        'type' => 'setType'
     ];
 
     /**
@@ -215,13 +186,7 @@ class CreateConference extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'action_url' => 'getActionUrl',
-        'alias' => 'getAlias',
-        'play_beep' => 'getPlayBeep',
-        'record' => 'getRecord',
-        'status_callback_url' => 'getStatusCallbackUrl',
-        'wait_url' => 'getWaitUrl',
-        'parent_call_id' => 'getParentCallId'
+        'type' => 'getType'
     ];
 
     /**
@@ -232,7 +197,7 @@ class CreateConference extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -242,7 +207,7 @@ class CreateConference extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -252,7 +217,7 @@ class CreateConference extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -266,6 +231,12 @@ class CreateConference extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -275,15 +246,7 @@ class CreateConference extends PerclCommand
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
-        $this->setIfExists('action_url', $data ?? [], null);
-        $this->setIfExists('alias', $data ?? [], null);
-        $this->setIfExists('play_beep', $data ?? [], null);
-        $this->setIfExists('record', $data ?? [], null);
-        $this->setIfExists('status_callback_url', $data ?? [], null);
-        $this->setIfExists('wait_url', $data ?? [], null);
-        $this->setIfExists('parent_call_id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -311,10 +274,10 @@ class CreateConference extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['action_url'] === null) {
-            $invalidProperties[] = "'action_url' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
         return $invalidProperties;
     }
@@ -332,197 +295,28 @@ class CreateConference extends PerclCommand
 
 
     /**
-     * Gets action_url
+     * Gets type
      *
-     * @return string
+     * @return \FreeClimb\Api\Model\ExportOutputType
      */
-    public function getActionUrl()
+    public function getType()
     {
-        return $this->container['action_url'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets action_url
+     * Sets type
      *
-     * @param string $action_url This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.
+     * @param \FreeClimb\Api\Model\ExportOutputType $type type
      *
      * @return self
      */
-    public function setActionUrl($action_url)
+    public function setType($type)
     {
-        if (is_null($action_url)) {
-            throw new \InvalidArgumentException('non-nullable action_url cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['action_url'] = $action_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets alias
-     *
-     * @return string|null
-     */
-    public function getAlias()
-    {
-        return $this->container['alias'];
-    }
-
-    /**
-     * Sets alias
-     *
-     * @param string|null $alias Descriptive name for the Conference.
-     *
-     * @return self
-     */
-    public function setAlias($alias)
-    {
-        if (is_null($alias)) {
-            throw new \InvalidArgumentException('non-nullable alias cannot be null');
-        }
-        $this->container['alias'] = $alias;
-
-        return $this;
-    }
-
-    /**
-     * Gets play_beep
-     *
-     * @return \FreeClimb\Api\Model\PlayBeep|null
-     */
-    public function getPlayBeep()
-    {
-        return $this->container['play_beep'];
-    }
-
-    /**
-     * Sets play_beep
-     *
-     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep play_beep
-     *
-     * @return self
-     */
-    public function setPlayBeep($play_beep)
-    {
-        if (is_null($play_beep)) {
-            array_push($this->openAPINullablesSetToNull, 'play_beep');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('play_beep', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['play_beep'] = $play_beep;
-
-        return $this;
-    }
-
-    /**
-     * Gets record
-     *
-     * @return bool|null
-     */
-    public function getRecord()
-    {
-        return $this->container['record'];
-    }
-
-    /**
-     * Sets record
-     *
-     * @param bool|null $record When set to `true`, the entire Conference is recorded. The `statusCallbackUrl` of the Conference will receive a `conferenceRecordingEnded` Webhook when the Conference transitions from the `inProgress` to empty state.
-     *
-     * @return self
-     */
-    public function setRecord($record)
-    {
-        if (is_null($record)) {
-            throw new \InvalidArgumentException('non-nullable record cannot be null');
-        }
-        $this->container['record'] = $record;
-
-        return $this;
-    }
-
-    /**
-     * Gets status_callback_url
-     *
-     * @return string|null
-     */
-    public function getStatusCallbackUrl()
-    {
-        return $this->container['status_callback_url'];
-    }
-
-    /**
-     * Sets status_callback_url
-     *
-     * @param string|null $status_callback_url This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
-     *
-     * @return self
-     */
-    public function setStatusCallbackUrl($status_callback_url)
-    {
-        if (is_null($status_callback_url)) {
-            throw new \InvalidArgumentException('non-nullable status_callback_url cannot be null');
-        }
-        $this->container['status_callback_url'] = $status_callback_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets wait_url
-     *
-     * @return string|null
-     */
-    public function getWaitUrl()
-    {
-        return $this->container['wait_url'];
-    }
-
-    /**
-     * Sets wait_url
-     *
-     * @param string|null $wait_url If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
-     *
-     * @return self
-     */
-    public function setWaitUrl($wait_url)
-    {
-        if (is_null($wait_url)) {
-            throw new \InvalidArgumentException('non-nullable wait_url cannot be null');
-        }
-        $this->container['wait_url'] = $wait_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_call_id
-     *
-     * @return string|null
-     */
-    public function getParentCallId()
-    {
-        return $this->container['parent_call_id'];
-    }
-
-    /**
-     * Sets parent_call_id
-     *
-     * @param string|null $parent_call_id ID of the Call that created this leg (child call).
-     *
-     * @return self
-     */
-    public function setParentCallId($parent_call_id)
-    {
-        if (is_null($parent_call_id)) {
-            throw new \InvalidArgumentException('non-nullable parent_call_id cannot be null');
-        }
-        $this->container['parent_call_id'] = $parent_call_id;
+        $this->container['type'] = $type;
 
         return $this;
     }

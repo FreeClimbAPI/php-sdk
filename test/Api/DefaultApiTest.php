@@ -625,6 +625,53 @@ class DefaultApiTest extends TestCase
     {
         return "true";
     }
+
+    public function export_request_createExport_test_value()
+    {
+        return new \FreeClimb\Api\Model\ExportRequest([
+            "resource_type" => \FreeClimb\Api\Model\ExportResourceType::MESSAGES,
+            "output" => new \FreeClimb\Api\Model\ExportRequestOutput([
+                "type" => \FreeClimb\Api\Model\ExportOutputType::CSV
+            ]),
+            "format" => ["id", "from", "to", "text"],
+            "query" => (object)["status" => "completed"]
+        ]);
+    }
+
+    public function export_id_deleteAnExport_test_value()
+    {
+        return "delete_export_id_test_value";
+    }
+
+    public function export_id_downloadAnExport_test_value()
+    {
+        return "download_export_id_value";
+    }
+
+    public function export_id_getAnExport_test_value()
+    {
+        return "get_export_id_value";
+    }
+
+    public function risk_score_min_listCalls_test_value()
+    {
+        return 10;
+    }
+
+    public function risk_score_max_listCalls_test_value()
+    {
+        return 90;
+    }
+
+    public function status_listExports_test_value()
+    {
+        return \FreeClimb\Api\Model\ExportStatus::COMPLETED;
+    }
+
+    public function cursor_listExports_test_value()
+    {
+        return "cursor_test_value";
+    }
     /**
      * Setup before running each test case
      */
@@ -710,6 +757,22 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for createExport
+     *
+     * Create an Export.
+     *
+     */
+    public function testCreateExport()
+    {
+
+        //$export_request = $export_request_test_value;
+
+
+        $response = static::$apiInstance->createExport($this->export_request_createExport_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ExportResult', $response);
+    }
+
+    /**
      * Test case for createKnowledgeBaseCompletion
      *
      * Query the knowledge base.
@@ -756,6 +819,22 @@ class DefaultApiTest extends TestCase
 
 
         $response = static::$apiInstance->deleteAnApplication($this->application_id_deleteAnApplication_test_value());
+        $this->assertNull($response);
+    }
+
+    /**
+     * Test case for deleteAnExport
+     *
+     * Delete an Export.
+     *
+     */
+    public function testDeleteAnExport()
+    {
+
+        //$export_id = $export_id_test_value;
+
+
+        $response = static::$apiInstance->deleteAnExport($this->export_id_deleteAnExport_test_value());
         $this->assertNull($response);
     }
 
@@ -823,6 +902,23 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->downloadARecordingFile($this->recording_id_downloadARecordingFile_test_value());
         $this->assertInstanceOf('\SplFileObject', $response);
+    }
+
+    /**
+     * Test case for downloadAnExport
+     *
+     * Download an Export.
+     *
+     */
+    public function testDownloadAnExport()
+    {
+
+        //$export_id = $export_id_test_value;
+
+
+        $response = static::$apiInstance->downloadAnExport($this->export_id_downloadAnExport_test_value());
+
+        $this->assertIsString($response);
     }
 
     /**
@@ -969,6 +1065,22 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->getAnApplication($this->application_id_getAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult', $response);
+    }
+
+    /**
+     * Test case for getAnExport
+     *
+     * Get an Export.
+     *
+     */
+    public function testGetAnExport()
+    {
+
+        //$export_id = $export_id_test_value;
+
+
+        $response = static::$apiInstance->getAnExport($this->export_id_getAnExport_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ExportResult', $response);
     }
 
     /**
@@ -1282,8 +1394,12 @@ class DefaultApiTest extends TestCase
 
         //$application_id = $application_id_test_value;
 
+        //$risk_score_min = $risk_score_min_test_value;
 
-        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
+        //$risk_score_max = $risk_score_max_test_value;
+
+
+        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $response);
     }
 
@@ -1327,6 +1443,24 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->listConferences($this->status_listConferences_test_value(), $this->alias_listConferences_test_value(), $this->date_created_listConferences_test_value(), $this->date_updated_listConferences_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceList', $response);
+    }
+
+    /**
+     * Test case for listExports
+     *
+     * List Exports.
+     *
+     */
+    public function testListExports()
+    {
+
+        //$status = $status_test_value;
+
+        //$cursor = $cursor_test_value;
+
+
+        $response = static::$apiInstance->listExports($this->status_listExports_test_value(), $this->cursor_listExports_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ExportList', $response);
     }
 
     /**
@@ -1822,7 +1956,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListCalls()
     {
-        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value());
+        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Calls?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $nextPageResponse);
@@ -1852,6 +1986,19 @@ class DefaultApiTest extends TestCase
         $response['next_page_uri'] = '/Accounts/{accountId}/Conferences?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\ConferenceList', $nextPageResponse);
+    }
+    /**
+     * Test case for getNextPage of listExports
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListExports()
+    {
+        $response = static::$apiInstance->listExports($this->status_listExports_test_value(), $this->cursor_listExports_test_value());
+        $response['next_page_uri'] = '/Accounts/{accountId}/Exports?cursor=1';
+        $nextPageResponse = static::$apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\ExportList', $nextPageResponse);
     }
     /**
      * Test case for getNextPage of listIncomingNumbers
@@ -1916,7 +2063,7 @@ class DefaultApiTest extends TestCase
         $response = static::$apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Messages?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
-        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList', $nextPageResponse);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$nextPageResponse);
     }
 
 }
