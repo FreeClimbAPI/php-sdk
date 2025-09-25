@@ -125,13 +125,16 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createAConference**](docs/Api/DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 *DefaultApi* | [**createAQueue**](docs/Api/DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
 *DefaultApi* | [**createAnApplication**](docs/Api/DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+*DefaultApi* | [**createExport**](docs/Api/DefaultApi.md#createexport) | **POST** /Accounts/{accountId}/Exports | Create an Export
 *DefaultApi* | [**createKnowledgeBaseCompletion**](docs/Api/DefaultApi.md#createknowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 *DefaultApi* | [**deleteARecording**](docs/Api/DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
 *DefaultApi* | [**deleteAnApplication**](docs/Api/DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
+*DefaultApi* | [**deleteAnExport**](docs/Api/DefaultApi.md#deleteanexport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export
 *DefaultApi* | [**deleteAnIncomingNumber**](docs/Api/DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
 *DefaultApi* | [**dequeueAMember**](docs/Api/DefaultApi.md#dequeueamember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member
 *DefaultApi* | [**dequeueHeadMember**](docs/Api/DefaultApi.md#dequeueheadmember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member
 *DefaultApi* | [**downloadARecordingFile**](docs/Api/DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File
+*DefaultApi* | [**downloadAnExport**](docs/Api/DefaultApi.md#downloadanexport) | **GET** /Accounts/{accountId}/Exports/{exportId}/Download | Download an Export
 *DefaultApi* | [**filterLogs**](docs/Api/DefaultApi.md#filterlogs) | **POST** /Accounts/{accountId}/Logs | Filter Logs
 *DefaultApi* | [**getACall**](docs/Api/DefaultApi.md#getacall) | **GET** /Accounts/{accountId}/Calls/{callId} | Get a Call
 *DefaultApi* | [**getAConference**](docs/Api/DefaultApi.md#getaconference) | **GET** /Accounts/{accountId}/Conferences/{conferenceId} | Get a Conference
@@ -141,6 +144,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getARecording**](docs/Api/DefaultApi.md#getarecording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording
 *DefaultApi* | [**getAnAccount**](docs/Api/DefaultApi.md#getanaccount) | **GET** /Accounts/{accountId} | Get an Account
 *DefaultApi* | [**getAnApplication**](docs/Api/DefaultApi.md#getanapplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
+*DefaultApi* | [**getAnExport**](docs/Api/DefaultApi.md#getanexport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export
 *DefaultApi* | [**getAnIncomingNumber**](docs/Api/DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 *DefaultApi* | [**getAnSmsMessage**](docs/Api/DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
 *DefaultApi* | [**getHeadMember**](docs/Api/DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
@@ -161,6 +165,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listCalls**](docs/Api/DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls
 *DefaultApi* | [**listConferenceRecordings**](docs/Api/DefaultApi.md#listconferencerecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings
 *DefaultApi* | [**listConferences**](docs/Api/DefaultApi.md#listconferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences
+*DefaultApi* | [**listExports**](docs/Api/DefaultApi.md#listexports) | **GET** /Accounts/{accountId}/Exports | List Exports
 *DefaultApi* | [**listIncomingNumbers**](docs/Api/DefaultApi.md#listincomingnumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers
 *DefaultApi* | [**listMembers**](docs/Api/DefaultApi.md#listmembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members
 *DefaultApi* | [**listParticipants**](docs/Api/DefaultApi.md#listparticipants) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants | List Participants
@@ -221,6 +226,14 @@ Class | Method | HTTP request | Description
 - [Dequeue](docs/Model/Dequeue.md)
 - [DequeueWebhook](docs/Model/DequeueWebhook.md)
 - [Enqueue](docs/Model/Enqueue.md)
+- [ExportList](docs/Model/ExportList.md)
+- [ExportOutputType](docs/Model/ExportOutputType.md)
+- [ExportRequest](docs/Model/ExportRequest.md)
+- [ExportRequestOutput](docs/Model/ExportRequestOutput.md)
+- [ExportResourceType](docs/Model/ExportResourceType.md)
+- [ExportResult](docs/Model/ExportResult.md)
+- [ExportResultOutput](docs/Model/ExportResultOutput.md)
+- [ExportStatus](docs/Model/ExportStatus.md)
 - [FilterLogsRequest](docs/Model/FilterLogsRequest.md)
 - [GetDigits](docs/Model/GetDigits.md)
 - [GetDigitsReason](docs/Model/GetDigitsReason.md)
@@ -347,6 +360,6 @@ support@freeclimb.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0.0`
-    - Package version: `5.1.1`
+    - Package version: `5.2.0`
     - Generator version: `7.9.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

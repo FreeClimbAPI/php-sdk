@@ -84,9 +84,10 @@ class CreateConferenceTest extends TestCase
 
     public function testPropertyAlias()
     {
-        $this->CreateConference->setalias(false);
-        $this->assertFalse($this->CreateConference->getalias());
-        $this->assertIsBool($this->CreateConference->getalias());
+
+        $this->CreateConference->setAlias('TS');
+        $this->assertEquals('TS', $this->CreateConference->getAlias());
+        $this->assertIsString($this->CreateConference->getAlias());
     }
 
     public function testPropertyPlayBeep()
@@ -122,5 +123,13 @@ class CreateConferenceTest extends TestCase
         $this->CreateConference->setWaitUrl('TS');
         $this->assertEquals('TS', $this->CreateConference->getWaitUrl());
         $this->assertIsString($this->CreateConference->getWaitUrl());
+    }
+
+    public function testPropertyParentCallId()
+    {
+
+        $this->CreateConference->setParentCallId('TS');
+        $this->assertEquals('TS', $this->CreateConference->getParentCallId());
+        $this->assertIsString($this->CreateConference->getParentCallId());
     }
 }

@@ -8,13 +8,16 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**createAConference()**](DefaultApi.md#createAConference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference |
 | [**createAQueue()**](DefaultApi.md#createAQueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue |
 | [**createAnApplication()**](DefaultApi.md#createAnApplication) | **POST** /Accounts/{accountId}/Applications | Create an application |
+| [**createExport()**](DefaultApi.md#createExport) | **POST** /Accounts/{accountId}/Exports | Create an Export |
 | [**createKnowledgeBaseCompletion()**](DefaultApi.md#createKnowledgeBaseCompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
 | [**deleteARecording()**](DefaultApi.md#deleteARecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
 | [**deleteAnApplication()**](DefaultApi.md#deleteAnApplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
+| [**deleteAnExport()**](DefaultApi.md#deleteAnExport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**deleteAnIncomingNumber()**](DefaultApi.md#deleteAnIncomingNumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
 | [**dequeueAMember()**](DefaultApi.md#dequeueAMember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
 | [**dequeueHeadMember()**](DefaultApi.md#dequeueHeadMember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
 | [**downloadARecordingFile()**](DefaultApi.md#downloadARecordingFile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
+| [**downloadAnExport()**](DefaultApi.md#downloadAnExport) | **GET** /Accounts/{accountId}/Exports/{exportId}/Download | Download an Export |
 | [**filterLogs()**](DefaultApi.md#filterLogs) | **POST** /Accounts/{accountId}/Logs | Filter Logs |
 | [**getACall()**](DefaultApi.md#getACall) | **GET** /Accounts/{accountId}/Calls/{callId} | Get a Call |
 | [**getAConference()**](DefaultApi.md#getAConference) | **GET** /Accounts/{accountId}/Conferences/{conferenceId} | Get a Conference |
@@ -24,6 +27,7 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**getARecording()**](DefaultApi.md#getARecording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording |
 | [**getAnAccount()**](DefaultApi.md#getAnAccount) | **GET** /Accounts/{accountId} | Get an Account |
 | [**getAnApplication()**](DefaultApi.md#getAnApplication) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application |
+| [**getAnExport()**](DefaultApi.md#getAnExport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export |
 | [**getAnIncomingNumber()**](DefaultApi.md#getAnIncomingNumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**getAnSmsMessage()**](DefaultApi.md#getAnSmsMessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
 | [**getHeadMember()**](DefaultApi.md#getHeadMember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
@@ -44,6 +48,7 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**listCalls()**](DefaultApi.md#listCalls) | **GET** /Accounts/{accountId}/Calls | List Calls |
 | [**listConferenceRecordings()**](DefaultApi.md#listConferenceRecordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings |
 | [**listConferences()**](DefaultApi.md#listConferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences |
+| [**listExports()**](DefaultApi.md#listExports) | **GET** /Accounts/{accountId}/Exports | List Exports |
 | [**listIncomingNumbers()**](DefaultApi.md#listIncomingNumbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers |
 | [**listMembers()**](DefaultApi.md#listMembers) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members |
 | [**listParticipants()**](DefaultApi.md#listParticipants) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants | List Participants |
@@ -303,6 +308,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `createExport()`
+
+```php
+createExport($export_request): \FreeClimb\Api\Model\ExportResult
+```
+
+Create an Export
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$export_request = new \FreeClimb\Api\Model\ExportRequest(); // \FreeClimb\Api\Model\ExportRequest | A JSON object containing export creation parameters
+
+try {
+    $result = $apiInstance->createExport($export_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->createExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **export_request** | [**\FreeClimb\Api\Model\ExportRequest**](../Model/ExportRequest.md)| A JSON object containing export creation parameters | [optional] |
+
+### Return type
+
+[**\FreeClimb\Api\Model\ExportResult**](../Model/ExportResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `createKnowledgeBaseCompletion()`
 
 ```php
@@ -465,6 +530,65 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **application_id** | **string**| String that uniquely identifies this application resource. | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteAnExport()`
+
+```php
+deleteAnExport($export_id)
+```
+
+Delete an Export
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$export_id = 'export_id_example'; // string | A string that uniquely identifies this export resource.
+
+try {
+    $apiInstance->deleteAnExport($export_id);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->deleteAnExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **export_id** | **string**| A string that uniquely identifies this export resource. | |
 
 ### Return type
 
@@ -719,6 +843,66 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `audio/x-wav`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `downloadAnExport()`
+
+```php
+downloadAnExport($export_id): string
+```
+
+Download an Export
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$export_id = 'export_id_example'; // string | A string that uniquely identifies this export resource.
+
+try {
+    $result = $apiInstance->downloadAnExport($export_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->downloadAnExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **export_id** | **string**| A string that uniquely identifies this export resource. | |
+
+### Return type
+
+**string**
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `text/csv`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1251,6 +1435,66 @@ try {
 ### Return type
 
 [**\FreeClimb\Api\Model\ApplicationResult**](../Model/ApplicationResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAnExport()`
+
+```php
+getAnExport($export_id): \FreeClimb\Api\Model\ExportResult
+```
+
+Get an Export
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$export_id = 'export_id_example'; // string | A string that uniquely identifies this export resource.
+
+try {
+    $result = $apiInstance->getAnExport($export_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getAnExport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **export_id** | **string**| A string that uniquely identifies this export resource. | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\ExportResult**](../Model/ExportResult.md)
 
 ### Authorization
 
@@ -2299,7 +2543,7 @@ try {
 ## `listCalls()`
 
 ```php
-listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id): \FreeClimb\Api\Model\CallList
+listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max): \FreeClimb\Api\Model\CallList
 ```
 
 List Calls
@@ -2331,9 +2575,11 @@ $start_time = 'start_time_example'; // string | Only show Calls that started at 
 $end_time = 'end_time_example'; // string | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
 $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned by the call with this ID.
 $application_id = array('application_id_example'); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+$risk_score_min = 56; // int | The minimum riskScore that should be included in the list.
+$risk_score_max = 56; // int | The maximum riskScore that should be included in the list.
 
 try {
-    $result = $apiInstance->listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id);
+    $result = $apiInstance->listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCalls: ', $e->getMessage(), PHP_EOL;
@@ -2352,6 +2598,8 @@ try {
 | **end_time** | **string**| Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] |
 | **parent_call_id** | **string**| Only show Calls spawned by the call with this ID. | [optional] |
 | **application_id** | [**string[]**](../Model/string.md)| Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
+| **risk_score_min** | **int**| The minimum riskScore that should be included in the list. | [optional] |
+| **risk_score_max** | **int**| The maximum riskScore that should be included in the list. | [optional] |
 
 ### Return type
 
@@ -2486,6 +2734,68 @@ try {
 ### Return type
 
 [**\FreeClimb\Api\Model\ConferenceList**](../Model/ConferenceList.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listExports()`
+
+```php
+listExports($status, $cursor): \FreeClimb\Api\Model\ExportList
+```
+
+List Exports
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$status = new \FreeClimb\Api\Model\\FreeClimb\Api\Model\ExportStatus(); // \FreeClimb\Api\Model\ExportStatus | Status of export
+$cursor = 'cursor_example'; // string | Used to reference pages of a list of exports
+
+try {
+    $result = $apiInstance->listExports($status, $cursor);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listExports: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **status** | [**\FreeClimb\Api\Model\ExportStatus**](../Model/.md)| Status of export | [optional] |
+| **cursor** | **string**| Used to reference pages of a list of exports | [optional] |
+
+### Return type
+
+[**\FreeClimb\Api\Model\ExportList**](../Model/ExportList.md)
 
 ### Authorization
 
