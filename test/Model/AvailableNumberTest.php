@@ -96,20 +96,6 @@ class AvailableNumberTest extends TestCase
         $this->assertIsString($this->AvailableNumber->getPhoneNumber());
     }
 
-    public function testPropertyVoiceEnabled()
-    {
-        $this->AvailableNumber->setvoiceEnabled(false);
-        $this->assertFalse($this->AvailableNumber->getvoiceEnabled());
-        $this->assertIsBool($this->AvailableNumber->getvoiceEnabled());
-    }
-
-    public function testPropertySmsEnabled()
-    {
-        $this->AvailableNumber->setsmsEnabled(false);
-        $this->assertFalse($this->AvailableNumber->getsmsEnabled());
-        $this->assertIsBool($this->AvailableNumber->getsmsEnabled());
-    }
-
     public function testPropertyRegion()
     {
 

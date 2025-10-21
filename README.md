@@ -125,12 +125,14 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createAConference**](docs/Api/DefaultApi.md#createaconference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 *DefaultApi* | [**createAQueue**](docs/Api/DefaultApi.md#createaqueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
 *DefaultApi* | [**createAnApplication**](docs/Api/DefaultApi.md#createanapplication) | **POST** /Accounts/{accountId}/Applications | Create an application
+*DefaultApi* | [**createBlob**](docs/Api/DefaultApi.md#createblob) | **POST** /Accounts/{accountId}/Blobs | Create a Blob
 *DefaultApi* | [**createExport**](docs/Api/DefaultApi.md#createexport) | **POST** /Accounts/{accountId}/Exports | Create an Export
 *DefaultApi* | [**createKnowledgeBaseCompletion**](docs/Api/DefaultApi.md#createknowledgebasecompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 *DefaultApi* | [**deleteARecording**](docs/Api/DefaultApi.md#deletearecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording
 *DefaultApi* | [**deleteAnApplication**](docs/Api/DefaultApi.md#deleteanapplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application
 *DefaultApi* | [**deleteAnExport**](docs/Api/DefaultApi.md#deleteanexport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export
 *DefaultApi* | [**deleteAnIncomingNumber**](docs/Api/DefaultApi.md#deleteanincomingnumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number
+*DefaultApi* | [**deleteBlob**](docs/Api/DefaultApi.md#deleteblob) | **DELETE** /Accounts/{accountId}/Blobs/{blobId} | Delete Blob
 *DefaultApi* | [**dequeueAMember**](docs/Api/DefaultApi.md#dequeueamember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member
 *DefaultApi* | [**dequeueHeadMember**](docs/Api/DefaultApi.md#dequeueheadmember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member
 *DefaultApi* | [**downloadARecordingFile**](docs/Api/DefaultApi.md#downloadarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File
@@ -147,6 +149,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getAnExport**](docs/Api/DefaultApi.md#getanexport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export
 *DefaultApi* | [**getAnIncomingNumber**](docs/Api/DefaultApi.md#getanincomingnumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 *DefaultApi* | [**getAnSmsMessage**](docs/Api/DefaultApi.md#getansmsmessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
+*DefaultApi* | [**getBlob**](docs/Api/DefaultApi.md#getblob) | **GET** /Accounts/{accountId}/Blobs/{blobId} | Get Blob
 *DefaultApi* | [**getHeadMember**](docs/Api/DefaultApi.md#getheadmember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
 *DefaultApi* | [**getTenDLCSmsBrand**](docs/Api/DefaultApi.md#gettendlcsmsbrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand
 *DefaultApi* | [**getTenDLCSmsBrands**](docs/Api/DefaultApi.md#gettendlcsmsbrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands
@@ -160,6 +163,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listAllAccountLogs**](docs/Api/DefaultApi.md#listallaccountlogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 *DefaultApi* | [**listApplications**](docs/Api/DefaultApi.md#listapplications) | **GET** /Accounts/{accountId}/Applications | List applications
 *DefaultApi* | [**listAvailableNumbers**](docs/Api/DefaultApi.md#listavailablenumbers) | **GET** /AvailablePhoneNumbers | List available numbers
+*DefaultApi* | [**listBlobs**](docs/Api/DefaultApi.md#listblobs) | **GET** /Accounts/{accountId}/Blobs | List Blobs belonging to an account.
 *DefaultApi* | [**listCallLogs**](docs/Api/DefaultApi.md#listcalllogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs
 *DefaultApi* | [**listCallRecordings**](docs/Api/DefaultApi.md#listcallrecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings
 *DefaultApi* | [**listCalls**](docs/Api/DefaultApi.md#listcalls) | **GET** /Accounts/{accountId}/Calls | List Calls
@@ -173,7 +177,9 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listSmsMessages**](docs/Api/DefaultApi.md#listsmsmessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages
 *DefaultApi* | [**makeACall**](docs/Api/DefaultApi.md#makeacall) | **POST** /Accounts/{accountId}/Calls | Make a Call
 *DefaultApi* | [**makeAWebrtcJwt**](docs/Api/DefaultApi.md#makeawebrtcjwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling
+*DefaultApi* | [**modifyBlob**](docs/Api/DefaultApi.md#modifyblob) | **PATCH** /Accounts/{accountId}/Blobs/{blobId} | Modify Blob
 *DefaultApi* | [**removeAParticipant**](docs/Api/DefaultApi.md#removeaparticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant
+*DefaultApi* | [**replaceBlob**](docs/Api/DefaultApi.md#replaceblob) | **PUT** /Accounts/{accountId}/Blobs/{blobId} | Replace Blob
 *DefaultApi* | [**sendAnSmsMessage**](docs/Api/DefaultApi.md#sendansmsmessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message
 *DefaultApi* | [**streamARecordingFile**](docs/Api/DefaultApi.md#streamarecordingfile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File
 *DefaultApi* | [**updateAConference**](docs/Api/DefaultApi.md#updateaconference) | **POST** /Accounts/{accountId}/Conferences/{conferenceId} | Update a Conference
@@ -200,6 +206,8 @@ Class | Method | HTTP request | Description
 - [AvailableNumber](docs/Model/AvailableNumber.md)
 - [AvailableNumberList](docs/Model/AvailableNumberList.md)
 - [BargeInReason](docs/Model/BargeInReason.md)
+- [BlobListResponse](docs/Model/BlobListResponse.md)
+- [BlobResult](docs/Model/BlobResult.md)
 - [BuyIncomingNumberRequest](docs/Model/BuyIncomingNumberRequest.md)
 - [CallControlWebhook](docs/Model/CallControlWebhook.md)
 - [CallDirection](docs/Model/CallDirection.md)
@@ -219,6 +227,7 @@ Class | Method | HTTP request | Description
 - [ConferenceResult](docs/Model/ConferenceResult.md)
 - [ConferenceStatus](docs/Model/ConferenceStatus.md)
 - [ConferenceStatusWebhook](docs/Model/ConferenceStatusWebhook.md)
+- [CreateBlobRequest](docs/Model/CreateBlobRequest.md)
 - [CreateConference](docs/Model/CreateConference.md)
 - [CreateConferenceRequest](docs/Model/CreateConferenceRequest.md)
 - [CreateConferenceWebhook](docs/Model/CreateConferenceWebhook.md)
@@ -264,6 +273,7 @@ Class | Method | HTTP request | Description
 - [MessageStatus](docs/Model/MessageStatus.md)
 - [MessageStatusWebhook](docs/Model/MessageStatusWebhook.md)
 - [MessagesList](docs/Model/MessagesList.md)
+- [ModifyBlobRequest](docs/Model/ModifyBlobRequest.md)
 - [MutableResourceModel](docs/Model/MutableResourceModel.md)
 - [OutDial](docs/Model/OutDial.md)
 - [OutDialApiConnectWebhook](docs/Model/OutDialApiConnectWebhook.md)
@@ -274,6 +284,7 @@ Class | Method | HTTP request | Description
 - [Pause](docs/Model/Pause.md)
 - [PerclCommand](docs/Model/PerclCommand.md)
 - [PerclScript](docs/Model/PerclScript.md)
+- [PlatformError](docs/Model/PlatformError.md)
 - [Play](docs/Model/Play.md)
 - [PlayBeep](docs/Model/PlayBeep.md)
 - [PlayEarlyMedia](docs/Model/PlayEarlyMedia.md)
@@ -294,6 +305,7 @@ Class | Method | HTTP request | Description
 - [Reject](docs/Model/Reject.md)
 - [RemoveFromConference](docs/Model/RemoveFromConference.md)
 - [RemoveFromQueueNotificationWebhook](docs/Model/RemoveFromQueueNotificationWebhook.md)
+- [ReplaceBlobRequest](docs/Model/ReplaceBlobRequest.md)
 - [RequestType](docs/Model/RequestType.md)
 - [SMSTenDLCBrand](docs/Model/SMSTenDLCBrand.md)
 - [SMSTenDLCBrandAltBusinessIdType](docs/Model/SMSTenDLCBrandAltBusinessIdType.md)
@@ -313,6 +325,21 @@ Class | Method | HTTP request | Description
 - [SMSTollFreeCampaignRegistrationStatus](docs/Model/SMSTollFreeCampaignRegistrationStatus.md)
 - [SMSTollFreeCampaignsListResult](docs/Model/SMSTollFreeCampaignsListResult.md)
 - [Say](docs/Model/Say.md)
+- [SayClassic](docs/Model/SayClassic.md)
+- [SayElevenLabs](docs/Model/SayElevenLabs.md)
+- [SayElevenLabsEngine](docs/Model/SayElevenLabsEngine.md)
+- [SayElevenLabsEngineParameters](docs/Model/SayElevenLabsEngineParameters.md)
+- [SayElevenLabsEngineParametersPronunciationDictionaryInner](docs/Model/SayElevenLabsEngineParametersPronunciationDictionaryInner.md)
+- [SayElevenLabsEngineParametersVoiceSettings](docs/Model/SayElevenLabsEngineParametersVoiceSettings.md)
+- [SayNeural](docs/Model/SayNeural.md)
+- [SayNeuralEngine](docs/Model/SayNeuralEngine.md)
+- [SayNeuralEngineParameters](docs/Model/SayNeuralEngineParameters.md)
+- [SayNeuralTextType](docs/Model/SayNeuralTextType.md)
+- [SayStandard](docs/Model/SayStandard.md)
+- [SayStandardContentType](docs/Model/SayStandardContentType.md)
+- [SayStandardCulture](docs/Model/SayStandardCulture.md)
+- [SayStandardEngine](docs/Model/SayStandardEngine.md)
+- [SayStandardVoice](docs/Model/SayStandardVoice.md)
 - [SendDigits](docs/Model/SendDigits.md)
 - [SetDTMFPassThrough](docs/Model/SetDTMFPassThrough.md)
 - [SetListen](docs/Model/SetListen.md)
@@ -360,6 +387,6 @@ support@freeclimb.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0.0`
-    - Package version: `5.2.0`
+    - Package version: `5.3.0`
     - Generator version: `7.9.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

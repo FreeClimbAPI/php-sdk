@@ -59,9 +59,10 @@ class Say extends PerclCommand
       */
     protected static $openAPITypes = [
         'text' => 'string',
-        'language' => 'string',
         'loop' => 'int',
-        'privacy_mode' => 'bool'
+        'privacy_mode' => 'bool',
+        'engine' => '\FreeClimb\Api\Model\SayStandardEngine',
+        'language' => 'string'
     ];
 
     /**
@@ -73,9 +74,10 @@ class Say extends PerclCommand
       */
     protected static $openAPIFormats = [
         'text' => null,
-        'language' => null,
         'loop' => null,
-        'privacy_mode' => null
+        'privacy_mode' => null,
+        'engine' => null,
+        'language' => null
     ];
 
     /**
@@ -85,9 +87,10 @@ class Say extends PerclCommand
       */
     protected static array $openAPINullables = [
         'text' => false,
-        'language' => false,
         'loop' => false,
-        'privacy_mode' => false
+        'privacy_mode' => false,
+        'engine' => false,
+        'language' => false
     ];
 
     /**
@@ -177,9 +180,10 @@ class Say extends PerclCommand
      */
     protected static $attributeMap = [
         'text' => 'text',
-        'language' => 'language',
         'loop' => 'loop',
-        'privacy_mode' => 'privacyMode'
+        'privacy_mode' => 'privacyMode',
+        'engine' => 'engine',
+        'language' => 'language'
     ];
 
     /**
@@ -189,9 +193,10 @@ class Say extends PerclCommand
      */
     protected static $setters = [
         'text' => 'setText',
-        'language' => 'setLanguage',
         'loop' => 'setLoop',
-        'privacy_mode' => 'setPrivacyMode'
+        'privacy_mode' => 'setPrivacyMode',
+        'engine' => 'setEngine',
+        'language' => 'setLanguage'
     ];
 
     /**
@@ -201,9 +206,10 @@ class Say extends PerclCommand
      */
     protected static $getters = [
         'text' => 'getText',
-        'language' => 'getLanguage',
         'loop' => 'getLoop',
-        'privacy_mode' => 'getPrivacyMode'
+        'privacy_mode' => 'getPrivacyMode',
+        'engine' => 'getEngine',
+        'language' => 'getLanguage'
     ];
 
     /**
@@ -260,9 +266,10 @@ class Say extends PerclCommand
         parent::__construct($data);
 
         $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('language', $data ?? [], null);
         $this->setIfExists('loop', $data ?? [], 1);
         $this->setIfExists('privacy_mode', $data ?? [], null);
+        $this->setIfExists('engine', $data ?? [], null);
+        $this->setIfExists('language', $data ?? [], null);
     }
 
     /**
@@ -294,6 +301,9 @@ class Say extends PerclCommand
 
         if ($this->container['text'] === null) {
             $invalidProperties[] = "'text' can't be null";
+        }
+        if ($this->container['engine'] === null) {
+            $invalidProperties[] = "'engine' can't be null";
         }
         return $invalidProperties;
     }
@@ -333,33 +343,6 @@ class Say extends PerclCommand
             throw new \InvalidArgumentException('non-nullable text cannot be null');
         }
         $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets language
-     *
-     * @return string|null
-     */
-    public function getLanguage()
-    {
-        return $this->container['language'];
-    }
-
-    /**
-     * Sets language
-     *
-     * @param string|null $language Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-     *
-     * @return self
-     */
-    public function setLanguage($language)
-    {
-        if (is_null($language)) {
-            throw new \InvalidArgumentException('non-nullable language cannot be null');
-        }
-        $this->container['language'] = $language;
 
         return $this;
     }
@@ -414,6 +397,60 @@ class Say extends PerclCommand
             throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
         }
         $this->container['privacy_mode'] = $privacy_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets engine
+     *
+     * @return \FreeClimb\Api\Model\SayStandardEngine
+     */
+    public function getEngine()
+    {
+        return $this->container['engine'];
+    }
+
+    /**
+     * Sets engine
+     *
+     * @param \FreeClimb\Api\Model\SayStandardEngine $engine engine
+     *
+     * @return self
+     */
+    public function setEngine($engine)
+    {
+        if (is_null($engine)) {
+            throw new \InvalidArgumentException('non-nullable engine cannot be null');
+        }
+        $this->container['engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string|null
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string|null $language Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+     *
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        if (is_null($language)) {
+            throw new \InvalidArgumentException('non-nullable language cannot be null');
+        }
+        $this->container['language'] = $language;
 
         return $this;
     }

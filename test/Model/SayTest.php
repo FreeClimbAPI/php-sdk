@@ -82,14 +82,6 @@ class SayTest extends TestCase
         $this->assertIsString($this->Say->getText());
     }
 
-    public function testPropertyLanguage()
-    {
-
-        $this->Say->setLanguage('TS');
-        $this->assertEquals('TS', $this->Say->getLanguage());
-        $this->assertIsString($this->Say->getLanguage());
-    }
-
     public function testPropertyLoop()
     {
 
@@ -105,5 +97,19 @@ class SayTest extends TestCase
         $this->Say->setprivacyMode(false);
         $this->assertFalse($this->Say->getprivacyMode());
         $this->assertIsBool($this->Say->getprivacyMode());
+    }
+
+    public function testPropertyEngine()
+    {
+        $this->Say->setengine(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->Say->getengine());
+    }
+
+    public function testPropertyLanguage()
+    {
+
+        $this->Say->setLanguage('TS');
+        $this->assertEquals('TS', $this->Say->getLanguage());
+        $this->assertIsString($this->Say->getLanguage());
     }
 }

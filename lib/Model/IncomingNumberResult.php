@@ -72,8 +72,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => 'string',
         'region' => 'string',
         'country' => 'string',
-        'voice_enabled' => 'bool',
-        'sms_enabled' => 'bool',
         'offnet' => 'bool',
         'tfn' => '\FreeClimb\Api\Model\TFN'
     ];
@@ -99,8 +97,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => null,
         'region' => null,
         'country' => null,
-        'voice_enabled' => null,
-        'sms_enabled' => null,
         'offnet' => null,
         'tfn' => null
     ];
@@ -124,8 +120,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => true,
         'region' => true,
         'country' => true,
-        'voice_enabled' => true,
-        'sms_enabled' => true,
         'offnet' => true,
         'tfn' => false
     ];
@@ -229,8 +223,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => 'alias',
         'region' => 'region',
         'country' => 'country',
-        'voice_enabled' => 'voiceEnabled',
-        'sms_enabled' => 'smsEnabled',
         'offnet' => 'offnet',
         'tfn' => 'tfn'
     ];
@@ -254,8 +246,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => 'setAlias',
         'region' => 'setRegion',
         'country' => 'setCountry',
-        'voice_enabled' => 'setVoiceEnabled',
-        'sms_enabled' => 'setSmsEnabled',
         'offnet' => 'setOffnet',
         'tfn' => 'setTfn'
     ];
@@ -279,8 +269,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'alias' => 'getAlias',
         'region' => 'getRegion',
         'country' => 'getCountry',
-        'voice_enabled' => 'getVoiceEnabled',
-        'sms_enabled' => 'getSmsEnabled',
         'offnet' => 'getOffnet',
         'tfn' => 'getTfn'
     ];
@@ -355,8 +343,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('alias', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
-        $this->setIfExists('voice_enabled', $data ?? [], null);
-        $this->setIfExists('sms_enabled', $data ?? [], null);
         $this->setIfExists('offnet', $data ?? [], null);
         $this->setIfExists('tfn', $data ?? [], null);
     }
@@ -806,78 +792,6 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
         $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets voice_enabled
-     *
-     * @return bool|null
-     * @deprecated
-     */
-    public function getVoiceEnabled()
-    {
-        return $this->container['voice_enabled'];
-    }
-
-    /**
-     * Sets voice_enabled
-     *
-     * @param bool|null $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setVoiceEnabled($voice_enabled)
-    {
-        if (is_null($voice_enabled)) {
-            array_push($this->openAPINullablesSetToNull, 'voice_enabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voice_enabled', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['voice_enabled'] = $voice_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets sms_enabled
-     *
-     * @return bool|null
-     * @deprecated
-     */
-    public function getSmsEnabled()
-    {
-        return $this->container['sms_enabled'];
-    }
-
-    /**
-     * Sets sms_enabled
-     *
-     * @param bool|null $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setSmsEnabled($sms_enabled)
-    {
-        if (is_null($sms_enabled)) {
-            array_push($this->openAPINullablesSetToNull, 'sms_enabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sms_enabled', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['sms_enabled'] = $sms_enabled;
 
         return $this;
     }
