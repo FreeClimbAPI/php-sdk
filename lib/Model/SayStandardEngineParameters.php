@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SayStandardEngine
+ * SayStandardEngineParameters
  *
  * PHP version 7.4
  *
@@ -34,16 +34,16 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * SayStandardEngine Class Doc Comment
+ * SayStandardEngineParameters Class Doc Comment
  *
  * @category Class
- * @description Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+ * @description The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializable
+class SayStandardEngineParameters implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SayStandard_engine';
+    protected static $openAPIModelName = 'SayStandardEngineParameters';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,8 +60,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'parameters' => '\FreeClimb\Api\Model\SayStandardEngineParameters'
+        'voice' => '\FreeClimb\Api\Model\SayStandardVoice',
+        'culture' => '\FreeClimb\Api\Model\SayStandardCulture',
+        'content_type' => '\FreeClimb\Api\Model\SayStandardContentType'
     ];
 
     /**
@@ -72,8 +73,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'parameters' => null
+        'voice' => null,
+        'culture' => null,
+        'content_type' => null
     ];
 
     /**
@@ -82,8 +84,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'parameters' => false
+        'voice' => false,
+        'culture' => false,
+        'content_type' => false
     ];
 
     /**
@@ -172,8 +175,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'parameters' => 'parameters'
+        'voice' => 'Voice',
+        'culture' => 'Culture',
+        'content_type' => 'Content-Type'
     ];
 
     /**
@@ -182,8 +186,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'parameters' => 'setParameters'
+        'voice' => 'setVoice',
+        'culture' => 'setCulture',
+        'content_type' => 'setContentType'
     ];
 
     /**
@@ -192,8 +197,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'parameters' => 'getParameters'
+        'voice' => 'getVoice',
+        'culture' => 'getCulture',
+        'content_type' => 'getContentType'
     ];
 
     /**
@@ -253,8 +259,9 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], 'freeclimb.standard');
-        $this->setIfExists('parameters', $data ?? [], null);
+        $this->setIfExists('voice', $data ?? [], null);
+        $this->setIfExists('culture', $data ?? [], null);
+        $this->setIfExists('content_type', $data ?? [], null);
     }
 
     /**
@@ -300,55 +307,82 @@ class SayStandardEngine implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets name
+     * Gets voice
      *
-     * @return string|null
+     * @return \FreeClimb\Api\Model\SayStandardVoice|null
      */
-    public function getName()
+    public function getVoice()
     {
-        return $this->container['name'];
+        return $this->container['voice'];
     }
 
     /**
-     * Sets name
+     * Sets voice
      *
-     * @param string|null $name The name of the TTS engine to use. Set to `freeclimb.standard` for to use the standard freeclimb TTS engine.
+     * @param \FreeClimb\Api\Model\SayStandardVoice|null $voice voice
      *
      * @return self
      */
-    public function setName($name)
+    public function setVoice($voice)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($voice)) {
+            throw new \InvalidArgumentException('non-nullable voice cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['voice'] = $voice;
 
         return $this;
     }
 
     /**
-     * Gets parameters
+     * Gets culture
      *
-     * @return \FreeClimb\Api\Model\SayStandardEngineParameters|null
+     * @return \FreeClimb\Api\Model\SayStandardCulture|null
      */
-    public function getParameters()
+    public function getCulture()
     {
-        return $this->container['parameters'];
+        return $this->container['culture'];
     }
 
     /**
-     * Sets parameters
+     * Sets culture
      *
-     * @param \FreeClimb\Api\Model\SayStandardEngineParameters|null $parameters parameters
+     * @param \FreeClimb\Api\Model\SayStandardCulture|null $culture culture
      *
      * @return self
      */
-    public function setParameters($parameters)
+    public function setCulture($culture)
     {
-        if (is_null($parameters)) {
-            throw new \InvalidArgumentException('non-nullable parameters cannot be null');
+        if (is_null($culture)) {
+            throw new \InvalidArgumentException('non-nullable culture cannot be null');
         }
-        $this->container['parameters'] = $parameters;
+        $this->container['culture'] = $culture;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type
+     *
+     * @return \FreeClimb\Api\Model\SayStandardContentType|null
+     */
+    public function getContentType()
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type
+     *
+     * @param \FreeClimb\Api\Model\SayStandardContentType|null $content_type content_type
+     *
+     * @return self
+     */
+    public function setContentType($content_type)
+    {
+        if (is_null($content_type)) {
+            throw new \InvalidArgumentException('non-nullable content_type cannot be null');
+        }
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }

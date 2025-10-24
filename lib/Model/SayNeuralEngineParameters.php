@@ -52,7 +52,7 @@ class SayNeuralEngineParameters implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SayNeural_engine_parameters';
+    protected static $openAPIModelName = 'SayNeuralEngineParameters';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

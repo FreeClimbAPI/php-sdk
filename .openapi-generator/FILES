@@ -151,6 +151,7 @@ docs/Model/SayStandard.md
 docs/Model/SayStandardContentType.md
 docs/Model/SayStandardCulture.md
 docs/Model/SayStandardEngine.md
+docs/Model/SayStandardEngineParameters.md
 docs/Model/SayStandardVoice.md
 docs/Model/SendDigits.md
 docs/Model/SetDTMFPassThrough.md
@@ -326,6 +327,7 @@ lib/Model/SayStandard.php
 lib/Model/SayStandardContentType.php
 lib/Model/SayStandardCulture.php
 lib/Model/SayStandardEngine.php
+lib/Model/SayStandardEngineParameters.php
 lib/Model/SayStandardVoice.php
 lib/Model/SendDigits.php
 lib/Model/SetDTMFPassThrough.php
@@ -495,6 +497,7 @@ test/Model/SayNeuralTest.php
 test/Model/SayNeuralTextTypeTest.php
 test/Model/SayStandardContentTypeTest.php
 test/Model/SayStandardCultureTest.php
+test/Model/SayStandardEngineParametersTest.php
 test/Model/SayStandardEngineTest.php
 test/Model/SayStandardTest.php
 test/Model/SayStandardVoiceTest.php
