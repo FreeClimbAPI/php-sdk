@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SayStandardTest
+ * TTSEngineNameTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SayStandardTest Class Doc Comment
+ * TTSEngineNameTest Class Doc Comment
  *
  * @category    Class
- * @description The &#x60;Say&#x60; command provides Text-To-Speech (TTS) support using the freeclimb.standard  TTS engine. It converts text to speech and then renders it in a female voice back to the caller. &#x60;SayStandard&#x60; is useful in cases where it&#39;s difficult to pre-record a prompt for any reason. &#x60;SayStandard&#x60; does not allow barge-in unless nested within a &#x60;GetSpeech&#x60; command. The file will always be played to completion unless nested.
+ * @description The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class SayStandardTest extends TestCase
+class TTSEngineNameTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class SayStandardTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SayStandard = new \FreeClimb\Api\Model\SayStandard();
+        $this->TTSEngineName = new \FreeClimb\Api\Model\TTSEngineName();
     }
 
     /**
@@ -73,35 +73,4 @@ class SayStandardTest extends TestCase
     {
     }
 
-
-    public function testPropertyText()
-    {
-
-        $this->SayStandard->setText('TS');
-        $this->assertEquals('TS', $this->SayStandard->getText());
-        $this->assertIsString($this->SayStandard->getText());
-    }
-
-    public function testPropertyLoop()
-    {
-
-
-        $this->SayStandard->setloop(1);
-        $this->assertEquals(1, $this->SayStandard->getloop());
-        $this->assertIsNumeric($this->SayStandard->getloop());
-
-    }
-
-    public function testPropertyPrivacyMode()
-    {
-        $this->SayStandard->setprivacyMode(false);
-        $this->assertFalse($this->SayStandard->getprivacyMode());
-        $this->assertIsBool($this->SayStandard->getprivacyMode());
-    }
-
-    public function testPropertyEngine()
-    {
-        $this->SayStandard->setengine(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->SayStandard->getengine());
-    }
 }

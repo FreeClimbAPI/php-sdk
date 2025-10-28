@@ -3773,17 +3773,15 @@ class DefaultApi
 
      * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
 
-     * @param  string[] $key key within blob to remove (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
      */
-    public function deleteBlob($blob_id, $key = null, string $contentType = self::contentTypes['deleteBlob'][0])
+    public function deleteBlob($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
     {
-        list($response) = $this->deleteBlobWithHttpInfo($blob_id, $key, $contentType);
+        list($response) = $this->deleteBlobWithHttpInfo($blob_id, $contentType);
         return $response;
     }     
     /**
@@ -3794,17 +3792,15 @@ class DefaultApi
 
      * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
 
-     * @param  string[] $key key within blob to remove (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBlobWithHttpInfo($blob_id, $key = null, string $contentType = self::contentTypes['deleteBlob'][0])
+    public function deleteBlobWithHttpInfo($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
     {
-        $request = $this->deleteBlobRequest($blob_id, $key, $contentType);        
+        $request = $this->deleteBlobRequest($blob_id, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -4063,16 +4059,14 @@ class DefaultApi
 
      * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
 
-     * @param  string[] $key key within blob to remove (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBlobAsync($blob_id, $key = null, string $contentType = self::contentTypes['deleteBlob'][0])
+    public function deleteBlobAsync($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
     {
-        return $this->deleteBlobAsyncWithHttpInfo($blob_id, $key, $contentType)
+        return $this->deleteBlobAsyncWithHttpInfo($blob_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4088,17 +4082,15 @@ class DefaultApi
 
      * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
 
-     * @param  string[] $key key within blob to remove (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBlobAsyncWithHttpInfo($blob_id, $key = null, string $contentType = self::contentTypes['deleteBlob'][0])
+    public function deleteBlobAsyncWithHttpInfo($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
     {
         $returnType = '\FreeClimb\Api\Model\BlobResult';
-        $request = $this->deleteBlobRequest($blob_id, $key, $contentType);
+        $request = $this->deleteBlobRequest($blob_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4142,14 +4134,12 @@ class DefaultApi
 
      * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
 
-     * @param  string[] $key key within blob to remove (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBlobRequest($blob_id, $key = null, string $contentType = self::contentTypes['deleteBlob'][0])
+    public function deleteBlobRequest($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
     {
         $account_id = $this->config->getUsername();
 
@@ -4165,7 +4155,6 @@ class DefaultApi
 
 
 
-
         $resourcePath = '/Accounts/{accountId}/Blobs/{blobId}';
         $formParams = [];
         $queryParams = [];
@@ -4173,15 +4162,6 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $key,
-            'key', // param base name
-            'array', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -14424,19 +14404,15 @@ class DefaultApi
      * List Blobs belonging to an account.
      *
 
-     * @param  string $alias Filter blobs by alias (optional)
-
-     * @param  string $cursor Used to reference pages of a list of blobs (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\BlobListResponse|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
      */
-    public function listBlobs($alias = null, $cursor = null, string $contentType = self::contentTypes['listBlobs'][0])
+    public function listBlobs(string $contentType = self::contentTypes['listBlobs'][0])
     {
-        list($response) = $this->listBlobsWithHttpInfo($alias, $cursor, $contentType);
+        list($response) = $this->listBlobsWithHttpInfo($contentType);
         return $response;
     }     
     /**
@@ -14445,19 +14421,15 @@ class DefaultApi
      * List Blobs belonging to an account.
      *
 
-     * @param  string $alias Filter blobs by alias (optional)
-
-     * @param  string $cursor Used to reference pages of a list of blobs (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\BlobListResponse|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listBlobsWithHttpInfo($alias = null, $cursor = null, string $contentType = self::contentTypes['listBlobs'][0])
+    public function listBlobsWithHttpInfo(string $contentType = self::contentTypes['listBlobs'][0])
     {
-        $request = $this->listBlobsRequest($alias, $cursor, $contentType);        
+        $request = $this->listBlobsRequest($contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -14679,18 +14651,14 @@ class DefaultApi
      * List Blobs belonging to an account.
      *
 
-     * @param  string $alias Filter blobs by alias (optional)
-
-     * @param  string $cursor Used to reference pages of a list of blobs (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listBlobsAsync($alias = null, $cursor = null, string $contentType = self::contentTypes['listBlobs'][0])
+    public function listBlobsAsync(string $contentType = self::contentTypes['listBlobs'][0])
     {
-        return $this->listBlobsAsyncWithHttpInfo($alias, $cursor, $contentType)
+        return $this->listBlobsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14704,19 +14672,15 @@ class DefaultApi
      * List Blobs belonging to an account.
      *
 
-     * @param  string $alias Filter blobs by alias (optional)
-
-     * @param  string $cursor Used to reference pages of a list of blobs (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listBlobsAsyncWithHttpInfo($alias = null, $cursor = null, string $contentType = self::contentTypes['listBlobs'][0])
+    public function listBlobsAsyncWithHttpInfo(string $contentType = self::contentTypes['listBlobs'][0])
     {
         $returnType = '\FreeClimb\Api\Model\BlobListResponse';
-        $request = $this->listBlobsRequest($alias, $cursor, $contentType);
+        $request = $this->listBlobsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14758,20 +14722,14 @@ class DefaultApi
      * Create request for operation 'listBlobs'
      *
 
-     * @param  string $alias Filter blobs by alias (optional)
-
-     * @param  string $cursor Used to reference pages of a list of blobs (optional)
-
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listBlobsRequest($alias = null, $cursor = null, string $contentType = self::contentTypes['listBlobs'][0])
+    public function listBlobsRequest(string $contentType = self::contentTypes['listBlobs'][0])
     {
         $account_id = $this->config->getUsername();
-
-
 
 
 
@@ -14782,24 +14740,6 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $alias,
-            'alias', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $cursor,
-            'cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params

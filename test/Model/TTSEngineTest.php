@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SayElevenLabsEngineTest
+ * TTSEngineTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SayElevenLabsEngineTest Class Doc Comment
+ * TTSEngineTest Class Doc Comment
  *
  * @category    Class
- * @description The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.
+ * @description TTSEngine
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class SayElevenLabsEngineTest extends TestCase
+class TTSEngineTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class SayElevenLabsEngineTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->SayElevenLabsEngine = new \FreeClimb\Api\Model\SayElevenLabsEngine();
+        $this->TTSEngine = new \FreeClimb\Api\Model\TTSEngine();
     }
 
     /**
@@ -76,15 +76,17 @@ class SayElevenLabsEngineTest extends TestCase
 
     public function testPropertyName()
     {
-
-        $this->SayElevenLabsEngine->setName('TS');
-        $this->assertEquals('TS', $this->SayElevenLabsEngine->getName());
-        $this->assertIsString($this->SayElevenLabsEngine->getName());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_STANDARD);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_STANDARD, $this->TTSEngine->getname());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_NEURAL);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_NEURAL, $this->TTSEngine->getname());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::ELEVEN_LABS);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::ELEVEN_LABS, $this->TTSEngine->getname());
     }
 
     public function testPropertyParameters()
     {
-        $this->SayElevenLabsEngine->setparameters(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->SayElevenLabsEngine->getparameters());
+        $this->TTSEngine->setparameters(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->TTSEngine->getparameters());
     }
 }

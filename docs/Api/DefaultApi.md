@@ -737,7 +737,7 @@ void (empty response body)
 ## `deleteBlob()`
 
 ```php
-deleteBlob($blob_id, $key): \FreeClimb\Api\Model\BlobResult
+deleteBlob($blob_id): \FreeClimb\Api\Model\BlobResult
 ```
 
 Delete Blob
@@ -764,10 +764,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     $config
 );
 $blob_id = 'blob_id_example'; // string | String that uniquely identifies this Blob resource.
-$key = array('key_example'); // string[] | key within blob to remove
 
 try {
-    $result = $apiInstance->deleteBlob($blob_id, $key);
+    $result = $apiInstance->deleteBlob($blob_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteBlob: ', $e->getMessage(), PHP_EOL;
@@ -779,7 +778,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **blob_id** | **string**| String that uniquely identifies this Blob resource. | |
-| **key** | [**string[]**](../Model/string.md)| key within blob to remove | [optional] |
 
 ### Return type
 
@@ -2615,7 +2613,7 @@ try {
 ## `listBlobs()`
 
 ```php
-listBlobs($alias, $cursor): \FreeClimb\Api\Model\BlobListResponse
+listBlobs(): \FreeClimb\Api\Model\BlobListResponse
 ```
 
 List Blobs belonging to an account.
@@ -2641,11 +2639,9 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$alias = 'alias_example'; // string | Filter blobs by alias
-$cursor = 'cursor_example'; // string | Used to reference pages of a list of blobs
 
 try {
-    $result = $apiInstance->listBlobs($alias, $cursor);
+    $result = $apiInstance->listBlobs();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listBlobs: ', $e->getMessage(), PHP_EOL;
@@ -2654,10 +2650,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **alias** | **string**| Filter blobs by alias | [optional] |
-| **cursor** | **string**| Used to reference pages of a list of blobs | [optional] |
+
 
 ### Return type
 

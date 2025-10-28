@@ -935,10 +935,8 @@ class DefaultApiTest extends TestCase
 
         //$blob_id = $blob_id_test_value;
 
-        //$key = $key_test_value;
 
-
-        $response = static::$apiInstance->deleteBlob($this->blob_id_deleteBlob_test_value(), $this->key_deleteBlob_test_value());
+        $response = static::$apiInstance->deleteBlob($this->blob_id_deleteBlob_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
@@ -1456,12 +1454,8 @@ class DefaultApiTest extends TestCase
     public function testListBlobs()
     {
 
-        //$alias = $alias_test_value;
 
-        //$cursor = $cursor_test_value;
-
-
-        $response = static::$apiInstance->listBlobs($this->alias_listBlobs_test_value(), $this->cursor_listBlobs_test_value());
+        $response = static::$apiInstance->listBlobs();
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
@@ -2103,7 +2097,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListBlobs()
     {
-        $response = static::$apiInstance->listBlobs($this->alias_listBlobs_test_value(), $this->cursor_listBlobs_test_value());
+        $response = static::$apiInstance->listBlobs();
         $response['next_page_uri'] = '/Accounts/{accountId}/Blobs?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $nextPageResponse);

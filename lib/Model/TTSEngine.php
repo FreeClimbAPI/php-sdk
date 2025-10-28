@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SayElevenLabs
+ * TTSEngine
  *
  * PHP version 7.4
  *
@@ -34,16 +34,15 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * SayElevenLabs Class Doc Comment
+ * TTSEngine Class Doc Comment
  *
  * @category Class
- * @description The &#x60;SayElevenLabs&#x60; command provides Text-To-Speech (TTS) support using the ElevenLabs TTS engine. It converts text to speech and then renders it in a female voice back to the caller. &#x60;SayElevenLabs&#x60; is useful in cases where it&#39;s difficult to pre-record a prompt for any reason. &#x60;SayElevenLabs&#x60; does not allow barge-in unless nested within a &#x60;GetSpeech&#x60; command. The file will always be played to completion unless nested.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
+class TTSEngine implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SayElevenLabs';
+    protected static $openAPIModelName = 'TTSEngine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +59,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text' => 'string',
-        'loop' => 'int',
-        'privacy_mode' => 'bool',
-        'engine' => '\FreeClimb\Api\Model\SayElevenLabsEngine'
+        'name' => '\FreeClimb\Api\Model\TTSEngineName',
+        'parameters' => 'array<string,mixed>'
     ];
 
     /**
@@ -74,10 +71,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'text' => null,
-        'loop' => null,
-        'privacy_mode' => null,
-        'engine' => null
+        'name' => null,
+        'parameters' => null
     ];
 
     /**
@@ -86,10 +81,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'text' => false,
-        'loop' => false,
-        'privacy_mode' => false,
-        'engine' => false
+        'name' => false,
+        'parameters' => false
     ];
 
     /**
@@ -178,10 +171,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text',
-        'loop' => 'loop',
-        'privacy_mode' => 'privacyMode',
-        'engine' => 'engine'
+        'name' => 'name',
+        'parameters' => 'parameters'
     ];
 
     /**
@@ -190,10 +181,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'loop' => 'setLoop',
-        'privacy_mode' => 'setPrivacyMode',
-        'engine' => 'setEngine'
+        'name' => 'setName',
+        'parameters' => 'setParameters'
     ];
 
     /**
@@ -202,10 +191,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'loop' => 'getLoop',
-        'privacy_mode' => 'getPrivacyMode',
-        'engine' => 'getEngine'
+        'name' => 'getName',
+        'parameters' => 'getParameters'
     ];
 
     /**
@@ -265,10 +252,8 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('loop', $data ?? [], 1);
-        $this->setIfExists('privacy_mode', $data ?? [], null);
-        $this->setIfExists('engine', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('parameters', $data ?? [], null);
     }
 
     /**
@@ -298,12 +283,6 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
-        }
-        if ($this->container['engine'] === null) {
-            $invalidProperties[] = "'engine' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -320,109 +299,55 @@ class SayElevenLabs implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets text
+     * Gets name
      *
-     * @return string
+     * @return \FreeClimb\Api\Model\TTSEngineName|null
      */
-    public function getText()
+    public function getName()
     {
-        return $this->container['text'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets text
+     * Sets name
      *
-     * @param string $text The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
+     * @param \FreeClimb\Api\Model\TTSEngineName|null $name name
      *
      * @return self
      */
-    public function setText($text)
+    public function setName($name)
     {
-        if (is_null($text)) {
-            throw new \InvalidArgumentException('non-nullable text cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['text'] = $text;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets loop
+     * Gets parameters
      *
-     * @return int|null
+     * @return array<string,mixed>|null
      */
-    public function getLoop()
+    public function getParameters()
     {
-        return $this->container['loop'];
+        return $this->container['parameters'];
     }
 
     /**
-     * Sets loop
+     * Sets parameters
      *
-     * @param int|null $loop Number of times the text is said. Specifying '0' causes the `SayElevenLabs` action to loop until the Call is hung up.
+     * @param array<string,mixed>|null $parameters Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine's documentation.
      *
      * @return self
      */
-    public function setLoop($loop)
+    public function setParameters($parameters)
     {
-        if (is_null($loop)) {
-            throw new \InvalidArgumentException('non-nullable loop cannot be null');
+        if (is_null($parameters)) {
+            throw new \InvalidArgumentException('non-nullable parameters cannot be null');
         }
-        $this->container['loop'] = $loop;
-
-        return $this;
-    }
-
-    /**
-     * Gets privacy_mode
-     *
-     * @return bool|null
-     */
-    public function getPrivacyMode()
-    {
-        return $this->container['privacy_mode'];
-    }
-
-    /**
-     * Sets privacy_mode
-     *
-     * @param bool|null $privacy_mode Parameter `privacyMode` will not log the `text` as required by PCI compliance.
-     *
-     * @return self
-     */
-    public function setPrivacyMode($privacy_mode)
-    {
-        if (is_null($privacy_mode)) {
-            throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
-        }
-        $this->container['privacy_mode'] = $privacy_mode;
-
-        return $this;
-    }
-
-    /**
-     * Gets engine
-     *
-     * @return \FreeClimb\Api\Model\SayElevenLabsEngine
-     */
-    public function getEngine()
-    {
-        return $this->container['engine'];
-    }
-
-    /**
-     * Sets engine
-     *
-     * @param \FreeClimb\Api\Model\SayElevenLabsEngine $engine engine
-     *
-     * @return self
-     */
-    public function setEngine($engine)
-    {
-        if (is_null($engine)) {
-            throw new \InvalidArgumentException('non-nullable engine cannot be null');
-        }
-        $this->container['engine'] = $engine;
+        $this->container['parameters'] = $parameters;
 
         return $this;
     }

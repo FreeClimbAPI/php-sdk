@@ -52,7 +52,7 @@ class PlatformError implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'platformError';
+    protected static $openAPIModelName = 'PlatformError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
