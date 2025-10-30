@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * CreateBlobRequestTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * CreateBlobRequestTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description CreateBlobRequest
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class CreateBlobRequestTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->CreateBlobRequest = new \FreeClimb\Api\Model\CreateBlobRequest();
     }
 
     /**
@@ -74,41 +74,25 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyAlias()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
+
+        $this->CreateBlobRequest->setAlias('TS');
+        $this->assertEquals('TS', $this->CreateBlobRequest->getAlias());
+        $this->assertIsString($this->CreateBlobRequest->getAlias());
     }
 
-    public function testPropertyCampaignId()
+    public function testPropertyExpiresAt()
     {
 
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
+        $this->CreateBlobRequest->setExpiresAt('TS');
+        $this->assertEquals('TS', $this->CreateBlobRequest->getExpiresAt());
+        $this->assertIsString($this->CreateBlobRequest->getExpiresAt());
     }
 
-    public function testPropertyPhoneNumber()
+    public function testPropertyBlob()
     {
-
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-    }
-
-    public function testPropertyRegion()
-    {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->CreateBlobRequest->setblob(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->CreateBlobRequest->getblob());
     }
 }

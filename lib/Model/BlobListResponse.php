@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Say
+ * BlobListResponse
  *
  * PHP version 7.4
  *
@@ -29,19 +29,20 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * Say Class Doc Comment
+ * BlobListResponse Class Doc Comment
  *
  * @category Class
- * @description The &#x60;Say&#x60; command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. &#x60;Say&#x60; is useful in cases where it&#39;s difficult to pre-record a prompt for any reason. &#x60;Say&#x60; does not allow barge-in unless nested within a &#x60;GetSpeech&#x60; command. The file will always be played to completion unless nested.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Say extends PerclCommand
+class BlobListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class Say extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Say';
+    protected static $openAPIModelName = 'BlobListResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +59,14 @@ class Say extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text' => 'string',
-        'language' => 'string',
-        'engine' => '\FreeClimb\Api\Model\TTSEngine',
-        'loop' => 'int',
-        'privacy_mode' => 'bool'
+        'total' => 'int',
+        'start' => 'int',
+        'end' => 'int',
+        'page' => 'int',
+        'num_pages' => 'int',
+        'page_size' => 'int',
+        'next_page_uri' => 'string',
+        'blobs' => '\FreeClimb\Api\Model\BlobResult[]'
     ];
 
     /**
@@ -73,11 +77,14 @@ class Say extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'text' => null,
-        'language' => null,
-        'engine' => null,
-        'loop' => null,
-        'privacy_mode' => null
+        'total' => null,
+        'start' => null,
+        'end' => null,
+        'page' => null,
+        'num_pages' => null,
+        'page_size' => null,
+        'next_page_uri' => null,
+        'blobs' => null
     ];
 
     /**
@@ -86,11 +93,14 @@ class Say extends PerclCommand
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'text' => false,
-        'language' => false,
-        'engine' => false,
-        'loop' => false,
-        'privacy_mode' => false
+        'total' => true,
+        'start' => true,
+        'end' => true,
+        'page' => true,
+        'num_pages' => true,
+        'page_size' => true,
+        'next_page_uri' => true,
+        'blobs' => false
     ];
 
     /**
@@ -107,7 +117,7 @@ class Say extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -117,7 +127,7 @@ class Say extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -127,7 +137,7 @@ class Say extends PerclCommand
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -179,11 +189,14 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text',
-        'language' => 'language',
-        'engine' => 'engine',
-        'loop' => 'loop',
-        'privacy_mode' => 'privacyMode'
+        'total' => 'total',
+        'start' => 'start',
+        'end' => 'end',
+        'page' => 'page',
+        'num_pages' => 'numPages',
+        'page_size' => 'pageSize',
+        'next_page_uri' => 'nextPageUri',
+        'blobs' => 'blobs'
     ];
 
     /**
@@ -192,11 +205,14 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'language' => 'setLanguage',
-        'engine' => 'setEngine',
-        'loop' => 'setLoop',
-        'privacy_mode' => 'setPrivacyMode'
+        'total' => 'setTotal',
+        'start' => 'setStart',
+        'end' => 'setEnd',
+        'page' => 'setPage',
+        'num_pages' => 'setNumPages',
+        'page_size' => 'setPageSize',
+        'next_page_uri' => 'setNextPageUri',
+        'blobs' => 'setBlobs'
     ];
 
     /**
@@ -205,11 +221,14 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'language' => 'getLanguage',
-        'engine' => 'getEngine',
-        'loop' => 'getLoop',
-        'privacy_mode' => 'getPrivacyMode'
+        'total' => 'getTotal',
+        'start' => 'getStart',
+        'end' => 'getEnd',
+        'page' => 'getPage',
+        'num_pages' => 'getNumPages',
+        'page_size' => 'getPageSize',
+        'next_page_uri' => 'getNextPageUri',
+        'blobs' => 'getBlobs'
     ];
 
     /**
@@ -220,7 +239,7 @@ class Say extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -230,7 +249,7 @@ class Say extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -240,7 +259,7 @@ class Say extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -254,6 +273,12 @@ class Say extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -263,13 +288,14 @@ class Say extends PerclCommand
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
-        $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('language', $data ?? [], null);
-        $this->setIfExists('engine', $data ?? [], null);
-        $this->setIfExists('loop', $data ?? [], 1);
-        $this->setIfExists('privacy_mode', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('start', $data ?? [], null);
+        $this->setIfExists('end', $data ?? [], null);
+        $this->setIfExists('page', $data ?? [], null);
+        $this->setIfExists('num_pages', $data ?? [], null);
+        $this->setIfExists('page_size', $data ?? [], null);
+        $this->setIfExists('next_page_uri', $data ?? [], null);
+        $this->setIfExists('blobs', $data ?? [], null);
     }
 
     /**
@@ -297,11 +323,8 @@ class Say extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -318,136 +341,266 @@ class Say extends PerclCommand
 
 
     /**
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string $text The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        if (is_null($text)) {
-            throw new \InvalidArgumentException('non-nullable text cannot be null');
-        }
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets language
-     *
-     * @return string|null
-     */
-    public function getLanguage()
-    {
-        return $this->container['language'];
-    }
-
-    /**
-     * Sets language
-     *
-     * @param string|null $language Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-     *
-     * @return self
-     */
-    public function setLanguage($language)
-    {
-        if (is_null($language)) {
-            throw new \InvalidArgumentException('non-nullable language cannot be null');
-        }
-        $this->container['language'] = $language;
-
-        return $this;
-    }
-
-    /**
-     * Gets engine
-     *
-     * @return \FreeClimb\Api\Model\TTSEngine|null
-     */
-    public function getEngine()
-    {
-        return $this->container['engine'];
-    }
-
-    /**
-     * Sets engine
-     *
-     * @param \FreeClimb\Api\Model\TTSEngine|null $engine engine
-     *
-     * @return self
-     */
-    public function setEngine($engine)
-    {
-        if (is_null($engine)) {
-            throw new \InvalidArgumentException('non-nullable engine cannot be null');
-        }
-        $this->container['engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
-     * Gets loop
+     * Gets total
      *
      * @return int|null
      */
-    public function getLoop()
+    public function getTotal()
     {
-        return $this->container['loop'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets loop
+     * Sets total
      *
-     * @param int|null $loop Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
+     * @param int|null $total Total amount of requested resource.
      *
      * @return self
      */
-    public function setLoop($loop)
+    public function setTotal($total)
     {
-        if (is_null($loop)) {
-            throw new \InvalidArgumentException('non-nullable loop cannot be null');
+        if (is_null($total)) {
+            array_push($this->openAPINullablesSetToNull, 'total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['loop'] = $loop;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets privacy_mode
+     * Gets start
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getPrivacyMode()
+    public function getStart()
     {
-        return $this->container['privacy_mode'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets privacy_mode
+     * Sets start
      *
-     * @param bool|null $privacy_mode Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+     * @param int|null $start Resource index at start of current page
      *
      * @return self
      */
-    public function setPrivacyMode($privacy_mode)
+    public function setStart($start)
     {
-        if (is_null($privacy_mode)) {
-            throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
+        if (is_null($start)) {
+            array_push($this->openAPINullablesSetToNull, 'start');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['privacy_mode'] = $privacy_mode;
+        $this->container['start'] = $start;
+
+        return $this;
+    }
+
+    /**
+     * Gets end
+     *
+     * @return int|null
+     */
+    public function getEnd()
+    {
+        return $this->container['end'];
+    }
+
+    /**
+     * Sets end
+     *
+     * @param int|null $end Resource index at end of current page
+     *
+     * @return self
+     */
+    public function setEnd($end)
+    {
+        if (is_null($end)) {
+            array_push($this->openAPINullablesSetToNull, 'end');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('end', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['end'] = $end;
+
+        return $this;
+    }
+
+    /**
+     * Gets page
+     *
+     * @return int|null
+     */
+    public function getPage()
+    {
+        return $this->container['page'];
+    }
+
+    /**
+     * Sets page
+     *
+     * @param int|null $page Current page
+     *
+     * @return self
+     */
+    public function setPage($page)
+    {
+        if (is_null($page)) {
+            array_push($this->openAPINullablesSetToNull, 'page');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('page', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['page'] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Gets num_pages
+     *
+     * @return int|null
+     */
+    public function getNumPages()
+    {
+        return $this->container['num_pages'];
+    }
+
+    /**
+     * Sets num_pages
+     *
+     * @param int|null $num_pages Total number of pages
+     *
+     * @return self
+     */
+    public function setNumPages($num_pages)
+    {
+        if (is_null($num_pages)) {
+            array_push($this->openAPINullablesSetToNull, 'num_pages');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('num_pages', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['num_pages'] = $num_pages;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_size
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['page_size'];
+    }
+
+    /**
+     * Sets page_size
+     *
+     * @param int|null $page_size Number of items per page
+     *
+     * @return self
+     */
+    public function setPageSize($page_size)
+    {
+        if (is_null($page_size)) {
+            array_push($this->openAPINullablesSetToNull, 'page_size');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('page_size', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['page_size'] = $page_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_page_uri
+     *
+     * @return string|null
+     */
+    public function getNextPageUri()
+    {
+        return $this->container['next_page_uri'];
+    }
+
+    /**
+     * Sets next_page_uri
+     *
+     * @param string|null $next_page_uri Uri to retrieve the next page of items
+     *
+     * @return self
+     */
+    public function setNextPageUri($next_page_uri)
+    {
+        if (is_null($next_page_uri)) {
+            array_push($this->openAPINullablesSetToNull, 'next_page_uri');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('next_page_uri', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['next_page_uri'] = $next_page_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets blobs
+     *
+     * @return \FreeClimb\Api\Model\BlobResult[]|null
+     */
+    public function getBlobs()
+    {
+        return $this->container['blobs'];
+    }
+
+    /**
+     * Sets blobs
+     *
+     * @param \FreeClimb\Api\Model\BlobResult[]|null $blobs blobs
+     *
+     * @return self
+     */
+    public function setBlobs($blobs)
+    {
+        if (is_null($blobs)) {
+            throw new \InvalidArgumentException('non-nullable blobs cannot be null');
+        }
+        $this->container['blobs'] = $blobs;
 
         return $this;
     }

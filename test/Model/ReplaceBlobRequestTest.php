@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * ReplaceBlobRequestTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * ReplaceBlobRequestTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description ReplaceBlobRequest
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class ReplaceBlobRequestTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->ReplaceBlobRequest = new \FreeClimb\Api\Model\ReplaceBlobRequest();
     }
 
     /**
@@ -74,41 +74,9 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyBlob()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
-    }
-
-    public function testPropertyCampaignId()
-    {
-
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
-    }
-
-    public function testPropertyPhoneNumber()
-    {
-
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-    }
-
-    public function testPropertyRegion()
-    {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->ReplaceBlobRequest->setblob(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->ReplaceBlobRequest->getblob());
     }
 }

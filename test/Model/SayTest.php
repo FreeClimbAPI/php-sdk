@@ -90,6 +90,12 @@ class SayTest extends TestCase
         $this->assertIsString($this->Say->getLanguage());
     }
 
+    public function testPropertyEngine()
+    {
+        $this->Say->setengine(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->Say->getengine());
+    }
+
     public function testPropertyLoop()
     {
 

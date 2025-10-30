@@ -178,20 +178,6 @@ class IncomingNumberResultTest extends TestCase
         $this->assertIsString($this->IncomingNumberResult->getCountry());
     }
 
-    public function testPropertyVoiceEnabled()
-    {
-        $this->IncomingNumberResult->setvoiceEnabled(false);
-        $this->assertFalse($this->IncomingNumberResult->getvoiceEnabled());
-        $this->assertIsBool($this->IncomingNumberResult->getvoiceEnabled());
-    }
-
-    public function testPropertySmsEnabled()
-    {
-        $this->IncomingNumberResult->setsmsEnabled(false);
-        $this->assertFalse($this->IncomingNumberResult->getsmsEnabled());
-        $this->assertIsBool($this->IncomingNumberResult->getsmsEnabled());
-    }
-
     public function testPropertyOffnet()
     {
         $this->IncomingNumberResult->setoffnet(false);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * TTSEngineNameTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * TTSEngineNameTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class TTSEngineNameTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->TTSEngineName = new \FreeClimb\Api\Model\TTSEngineName();
     }
 
     /**
@@ -73,42 +73,4 @@ class AvailableNumberTest extends TestCase
     {
     }
 
-
-    public function testPropertyCapabilities()
-    {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
-    }
-
-    public function testPropertyCampaignId()
-    {
-
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
-    }
-
-    public function testPropertyPhoneNumber()
-    {
-
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-    }
-
-    public function testPropertyRegion()
-    {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
-    }
 }

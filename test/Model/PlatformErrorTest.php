@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * PlatformErrorTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * PlatformErrorTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description Standard error structure returned by platform.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class PlatformErrorTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->PlatformError = new \FreeClimb\Api\Model\PlatformError();
     }
 
     /**
@@ -74,41 +74,35 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyCode()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
+
+
+        $this->PlatformError->setcode(1);
+        $this->assertEquals(1, $this->PlatformError->getcode());
+        $this->assertIsNumeric($this->PlatformError->getcode());
+
     }
 
-    public function testPropertyCampaignId()
+    public function testPropertyCall()
     {
 
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
+        $this->PlatformError->setCall('TS');
+        $this->assertEquals('TS', $this->PlatformError->getCall());
+        $this->assertIsString($this->PlatformError->getCall());
     }
 
-    public function testPropertyPhoneNumber()
+    public function testPropertyUrl()
     {
 
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
+        $this->PlatformError->setUrl('TS');
+        $this->assertEquals('TS', $this->PlatformError->getUrl());
+        $this->assertIsString($this->PlatformError->getUrl());
     }
 
-    public function testPropertyRegion()
+    public function testPropertyDetails()
     {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->PlatformError->setdetails(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->PlatformError->getdetails());
     }
 }

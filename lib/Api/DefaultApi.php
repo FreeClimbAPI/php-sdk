@@ -85,6 +85,9 @@ class DefaultApi
         'createAnApplication' => [
             'application/json',
         ],
+        'createBlob' => [
+            'application/json',
+        ],
         'createExport' => [
             'application/json',
         ],
@@ -101,6 +104,9 @@ class DefaultApi
             'application/json',
         ],
         'deleteAnIncomingNumber' => [
+            'application/json',
+        ],
+        'deleteBlob' => [
             'application/json',
         ],
         'dequeueAMember' => [
@@ -151,6 +157,9 @@ class DefaultApi
         'getAnSmsMessage' => [
             'application/json',
         ],
+        'getBlob' => [
+            'application/json',
+        ],
         'getHeadMember' => [
             'application/json',
         ],
@@ -188,6 +197,9 @@ class DefaultApi
             'application/json',
         ],
         'listAvailableNumbers' => [
+            'application/json',
+        ],
+        'listBlobs' => [
             'application/json',
         ],
         'listCallLogs' => [
@@ -229,7 +241,13 @@ class DefaultApi
         'makeAWebrtcJwt' => [
             'application/json',
         ],
+        'modifyBlob' => [
+            'application/json',
+        ],
         'removeAParticipant' => [
+            'application/json',
+        ],
+        'replaceBlob' => [
             'application/json',
         ],
         'sendAnSmsMessage' => [
@@ -1558,6 +1576,511 @@ class DefaultApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($application_request));
             } else {
                 $httpBody = $application_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createBlob
+     *
+     * Create a Blob
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateBlobRequest $create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function createBlob($create_blob_request, string $contentType = self::contentTypes['createBlob'][0])
+    {
+        list($response) = $this->createBlobWithHttpInfo($create_blob_request, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation createBlobWithHttpInfo
+     *
+     * Create a Blob
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateBlobRequest $create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createBlobWithHttpInfo($create_blob_request, string $contentType = self::contentTypes['createBlob'][0])
+    {
+        $request = $this->createBlobRequest($create_blob_request, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 201:
+                    if ('\FreeClimb\Api\Model\BlobResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createBlobAsync
+     *
+     * Create a Blob
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateBlobRequest $create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createBlobAsync($create_blob_request, string $contentType = self::contentTypes['createBlob'][0])
+    {
+        return $this->createBlobAsyncWithHttpInfo($create_blob_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createBlobAsyncWithHttpInfo
+     *
+     * Create a Blob
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateBlobRequest $create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createBlobAsyncWithHttpInfo($create_blob_request, string $contentType = self::contentTypes['createBlob'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobResult';
+        $request = $this->createBlobRequest($create_blob_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createBlob'
+     *
+
+     * @param  \FreeClimb\Api\Model\CreateBlobRequest $create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createBlobRequest($create_blob_request, string $contentType = self::contentTypes['createBlob'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'create_blob_request' is set
+        if ($create_blob_request === null || (is_array($create_blob_request) && count($create_blob_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_blob_request when calling createBlob'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_blob_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_blob_request));
+            } else {
+                $httpBody = $create_blob_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3243,6 +3766,480 @@ class DefaultApi
     }
 
     /**
+     * Operation deleteBlob
+     *
+     * Delete Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function deleteBlob($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
+    {
+        list($response) = $this->deleteBlobWithHttpInfo($blob_id, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation deleteBlobWithHttpInfo
+     *
+     * Delete Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteBlobWithHttpInfo($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
+    {
+        $request = $this->deleteBlobRequest($blob_id, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\BlobResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 504:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 504:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteBlobAsync
+     *
+     * Delete Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBlobAsync($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
+    {
+        return $this->deleteBlobAsyncWithHttpInfo($blob_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteBlobAsyncWithHttpInfo
+     *
+     * Delete Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBlobAsyncWithHttpInfo($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobResult';
+        $request = $this->deleteBlobRequest($blob_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteBlob'
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteBlobRequest($blob_id, string $contentType = self::contentTypes['deleteBlob'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'blob_id' is set
+        if ($blob_id === null || (is_array($blob_id) && count($blob_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blob_id when calling deleteBlob'
+            );
+        }
+        if (!preg_match("/BL[0-9a-fA-F]{40}/", $blob_id)) {
+            throw new \InvalidArgumentException("invalid value for \"blob_id\" when calling DefaultApi.deleteBlob, must conform to the pattern /BL[0-9a-fA-F]{40}/.");
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs/{blobId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($blob_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blobId' . '}',
+                ObjectSerializer::toPathValue($blob_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation dequeueAMember
      *
      * Dequeue a Member
@@ -4204,7 +5201,7 @@ class DefaultApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['audio/x-wav', ],
+            ['audio/wav', ],
             $contentType,
             $multipart
         );
@@ -8525,6 +9522,445 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'messageId' . '}',
                 ObjectSerializer::toPathValue($message_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getBlob
+     *
+     * Get Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function getBlob($blob_id, string $contentType = self::contentTypes['getBlob'][0])
+    {
+        list($response) = $this->getBlobWithHttpInfo($blob_id, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation getBlobWithHttpInfo
+     *
+     * Get Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getBlobWithHttpInfo($blob_id, string $contentType = self::contentTypes['getBlob'][0])
+    {
+        $request = $this->getBlobRequest($blob_id, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\BlobResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 504:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 504:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getBlobAsync
+     *
+     * Get Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlobAsync($blob_id, string $contentType = self::contentTypes['getBlob'][0])
+    {
+        return $this->getBlobAsyncWithHttpInfo($blob_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getBlobAsyncWithHttpInfo
+     *
+     * Get Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlobAsyncWithHttpInfo($blob_id, string $contentType = self::contentTypes['getBlob'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobResult';
+        $request = $this->getBlobRequest($blob_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getBlob'
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getBlobRequest($blob_id, string $contentType = self::contentTypes['getBlob'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'blob_id' is set
+        if ($blob_id === null || (is_array($blob_id) && count($blob_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blob_id when calling getBlob'
+            );
+        }
+        if (!preg_match("/BL[0-9a-fA-F]{40}/", $blob_id)) {
+            throw new \InvalidArgumentException("invalid value for \"blob_id\" when calling DefaultApi.getBlob, must conform to the pattern /BL[0-9a-fA-F]{40}/.");
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs/{blobId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($blob_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blobId' . '}',
+                ObjectSerializer::toPathValue($blob_id),
                 $resourcePath
             );
         }
@@ -12963,6 +14399,417 @@ class DefaultApi
     }
 
     /**
+     * Operation listBlobs
+     *
+     * List Blobs belonging to an account.
+     *
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobListResponse|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function listBlobs(string $contentType = self::contentTypes['listBlobs'][0])
+    {
+        list($response) = $this->listBlobsWithHttpInfo($contentType);
+        return $response;
+    }     
+    /**
+     * Operation listBlobsWithHttpInfo
+     *
+     * List Blobs belonging to an account.
+     *
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobListResponse|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listBlobsWithHttpInfo(string $contentType = self::contentTypes['listBlobs'][0])
+    {
+        $request = $this->listBlobsRequest($contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\BlobListResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobListResponse' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobListResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 504:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobListResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobListResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 504:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listBlobsAsync
+     *
+     * List Blobs belonging to an account.
+     *
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listBlobsAsync(string $contentType = self::contentTypes['listBlobs'][0])
+    {
+        return $this->listBlobsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listBlobsAsyncWithHttpInfo
+     *
+     * List Blobs belonging to an account.
+     *
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listBlobsAsyncWithHttpInfo(string $contentType = self::contentTypes['listBlobs'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobListResponse';
+        $request = $this->listBlobsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listBlobs'
+     *
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBlobs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listBlobsRequest(string $contentType = self::contentTypes['listBlobs'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listCallLogs
      *
      * List Call Logs
@@ -15274,10 +17121,6 @@ class DefaultApi
 
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
 
-     * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
-     * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice  (optional)
@@ -15300,9 +17143,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\IncomingNumberList
      */
-    public function listIncomingNumbers($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
+    public function listIncomingNumbers($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
-        list($response) = $this->listIncomingNumbersWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
+        list($response) = $this->listIncomingNumbersWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
         return $response;
     }     
     /**
@@ -15322,10 +17165,6 @@ class DefaultApi
      * @param  string $application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. (optional)
 
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
-
-     * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
-     * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
 
      * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
@@ -15349,9 +17188,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\IncomingNumberList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listIncomingNumbersWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
+    public function listIncomingNumbersWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
-        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);        
+        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -15480,10 +17319,6 @@ class DefaultApi
 
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
 
-     * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
-     * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice  (optional)
@@ -15505,9 +17340,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listIncomingNumbersAsync($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
+    public function listIncomingNumbersAsync($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
-        return $this->listIncomingNumbersAsyncWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType)
+        return $this->listIncomingNumbersAsyncWithHttpInfo($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15533,10 +17368,6 @@ class DefaultApi
 
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
 
-     * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
-     * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice  (optional)
@@ -15558,10 +17389,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listIncomingNumbersAsyncWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
+    public function listIncomingNumbersAsyncWithHttpInfo($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
         $returnType = '\FreeClimb\Api\Model\IncomingNumberList';
-        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
+        $request = $this->listIncomingNumbersRequest($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15615,10 +17446,6 @@ class DefaultApi
 
      * @param  bool $has_application Indication of whether the phone number has an application linked to it. (optional, default to false)
 
-     * @param  bool $voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
-     * @param  bool $sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (optional, default to true) (deprecated)
-
      * @param  bool $has_campaign Indication of whether the phone number has a campaign associated with it (optional)
 
      * @param  bool $capabilities_voice  (optional)
@@ -15640,11 +17467,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listIncomingNumbersRequest($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $voice_enabled = true, $sms_enabled = true, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
+    public function listIncomingNumbersRequest($phone_number = null, $alias = null, $region = null, $country = null, $application_id = null, $has_application = false, $has_campaign = null, $capabilities_voice = null, $capabilities_sms = null, $capabilities_toll_free = null, $capabilities_ten_dlc = null, $capabilities_short_code = null, $tfn_campaign_id = null, $offnet = null, string $contentType = self::contentTypes['listIncomingNumbers'][0])
     {
         $account_id = $this->config->getUsername();
-
-
 
 
 
@@ -15718,24 +17543,6 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $has_application,
             'hasApplication', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $voice_enabled,
-            'voiceEnabled', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sms_enabled,
-            'smsEnabled', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode
@@ -18091,6 +19898,504 @@ class DefaultApi
     }
 
     /**
+     * Operation modifyBlob
+     *
+     * Modify Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ModifyBlobRequest $modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['modifyBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function modifyBlob($blob_id, $modify_blob_request, string $contentType = self::contentTypes['modifyBlob'][0])
+    {
+        list($response) = $this->modifyBlobWithHttpInfo($blob_id, $modify_blob_request, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation modifyBlobWithHttpInfo
+     *
+     * Modify Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ModifyBlobRequest $modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['modifyBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function modifyBlobWithHttpInfo($blob_id, $modify_blob_request, string $contentType = self::contentTypes['modifyBlob'][0])
+    {
+        $request = $this->modifyBlobRequest($blob_id, $modify_blob_request, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\BlobResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation modifyBlobAsync
+     *
+     * Modify Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ModifyBlobRequest $modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['modifyBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function modifyBlobAsync($blob_id, $modify_blob_request, string $contentType = self::contentTypes['modifyBlob'][0])
+    {
+        return $this->modifyBlobAsyncWithHttpInfo($blob_id, $modify_blob_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation modifyBlobAsyncWithHttpInfo
+     *
+     * Modify Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ModifyBlobRequest $modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['modifyBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function modifyBlobAsyncWithHttpInfo($blob_id, $modify_blob_request, string $contentType = self::contentTypes['modifyBlob'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobResult';
+        $request = $this->modifyBlobRequest($blob_id, $modify_blob_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'modifyBlob'
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ModifyBlobRequest $modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['modifyBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function modifyBlobRequest($blob_id, $modify_blob_request, string $contentType = self::contentTypes['modifyBlob'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'blob_id' is set
+        if ($blob_id === null || (is_array($blob_id) && count($blob_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blob_id when calling modifyBlob'
+            );
+        }
+        if (!preg_match("/BL[0-9a-fA-F]{40}/", $blob_id)) {
+            throw new \InvalidArgumentException("invalid value for \"blob_id\" when calling DefaultApi.modifyBlob, must conform to the pattern /BL[0-9a-fA-F]{40}/.");
+        }
+
+        // verify the required parameter 'modify_blob_request' is set
+        if ($modify_blob_request === null || (is_array($modify_blob_request) && count($modify_blob_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $modify_blob_request when calling modifyBlob'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs/{blobId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($blob_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blobId' . '}',
+                ObjectSerializer::toPathValue($blob_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($modify_blob_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($modify_blob_request));
+            } else {
+                $httpBody = $modify_blob_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PATCH',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation removeAParticipant
      *
      * Remove a Participant
@@ -18349,6 +20654,504 @@ class DefaultApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation replaceBlob
+     *
+     * Replace Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ReplaceBlobRequest $replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['replaceBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError
+     */
+    public function replaceBlob($blob_id, $replace_blob_request, string $contentType = self::contentTypes['replaceBlob'][0])
+    {
+        list($response) = $this->replaceBlobWithHttpInfo($blob_id, $replace_blob_request, $contentType);
+        return $response;
+    }     
+    /**
+     * Operation replaceBlobWithHttpInfo
+     *
+     * Replace Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ReplaceBlobRequest $replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['replaceBlob'] to see the possible values for this operation
+     *
+     * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \FreeClimb\Api\Model\BlobResult|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError|\FreeClimb\Api\Model\PlatformError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function replaceBlobWithHttpInfo($blob_id, $replace_blob_request, string $contentType = self::contentTypes['replaceBlob'][0])
+    {
+        $request = $this->replaceBlobRequest($blob_id, $replace_blob_request, $contentType);        
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch ($statusCode) {
+                case 200:
+                    if ('\FreeClimb\Api\Model\BlobResult' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\BlobResult' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\BlobResult', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\FreeClimb\Api\Model\PlatformError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\FreeClimb\Api\Model\PlatformError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\PlatformError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\FreeClimb\Api\Model\BlobResult';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\BlobResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\FreeClimb\Api\Model\PlatformError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation replaceBlobAsync
+     *
+     * Replace Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ReplaceBlobRequest $replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['replaceBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function replaceBlobAsync($blob_id, $replace_blob_request, string $contentType = self::contentTypes['replaceBlob'][0])
+    {
+        return $this->replaceBlobAsyncWithHttpInfo($blob_id, $replace_blob_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation replaceBlobAsyncWithHttpInfo
+     *
+     * Replace Blob
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ReplaceBlobRequest $replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['replaceBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function replaceBlobAsyncWithHttpInfo($blob_id, $replace_blob_request, string $contentType = self::contentTypes['replaceBlob'][0])
+    {
+        $returnType = '\FreeClimb\Api\Model\BlobResult';
+        $request = $this->replaceBlobRequest($blob_id, $replace_blob_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'replaceBlob'
+     *
+
+     * @param  string $blob_id String that uniquely identifies this Blob resource. (required)
+
+     * @param  \FreeClimb\Api\Model\ReplaceBlobRequest $replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents. (required)
+
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['replaceBlob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function replaceBlobRequest($blob_id, $replace_blob_request, string $contentType = self::contentTypes['replaceBlob'][0])
+    {
+        $account_id = $this->config->getUsername();
+
+        // verify the required parameter 'blob_id' is set
+        if ($blob_id === null || (is_array($blob_id) && count($blob_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blob_id when calling replaceBlob'
+            );
+        }
+        if (!preg_match("/BL[0-9a-fA-F]{40}/", $blob_id)) {
+            throw new \InvalidArgumentException("invalid value for \"blob_id\" when calling DefaultApi.replaceBlob, must conform to the pattern /BL[0-9a-fA-F]{40}/.");
+        }
+
+        // verify the required parameter 'replace_blob_request' is set
+        if ($replace_blob_request === null || (is_array($replace_blob_request) && count($replace_blob_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $replace_blob_request when calling replaceBlob'
+            );
+        }
+
+
+
+        $resourcePath = '/Accounts/{accountId}/Blobs/{blobId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'accountId' . '}',
+                ObjectSerializer::toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($blob_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blobId' . '}',
+                ObjectSerializer::toPathValue($blob_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($replace_blob_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($replace_blob_request));
+            } else {
+                $httpBody = $replace_blob_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -18960,7 +21763,7 @@ class DefaultApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['audio/x-wav', ],
+            ['audio/wav', ],
             $contentType,
             $multipart
         );

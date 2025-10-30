@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Say
+ * CreateBlobRequest
  *
  * PHP version 7.4
  *
@@ -29,19 +29,20 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * Say Class Doc Comment
+ * CreateBlobRequest Class Doc Comment
  *
  * @category Class
- * @description The &#x60;Say&#x60; command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. &#x60;Say&#x60; is useful in cases where it&#39;s difficult to pre-record a prompt for any reason. &#x60;Say&#x60; does not allow barge-in unless nested within a &#x60;GetSpeech&#x60; command. The file will always be played to completion unless nested.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Say extends PerclCommand
+class CreateBlobRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class Say extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Say';
+    protected static $openAPIModelName = 'CreateBlobRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +59,9 @@ class Say extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text' => 'string',
-        'language' => 'string',
-        'engine' => '\FreeClimb\Api\Model\TTSEngine',
-        'loop' => 'int',
-        'privacy_mode' => 'bool'
+        'alias' => 'string',
+        'expires_at' => 'string',
+        'blob' => 'object'
     ];
 
     /**
@@ -73,11 +72,9 @@ class Say extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'text' => null,
-        'language' => null,
-        'engine' => null,
-        'loop' => null,
-        'privacy_mode' => null
+        'alias' => null,
+        'expires_at' => null,
+        'blob' => null
     ];
 
     /**
@@ -86,11 +83,9 @@ class Say extends PerclCommand
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'text' => false,
-        'language' => false,
-        'engine' => false,
-        'loop' => false,
-        'privacy_mode' => false
+        'alias' => false,
+        'expires_at' => false,
+        'blob' => false
     ];
 
     /**
@@ -107,7 +102,7 @@ class Say extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -117,7 +112,7 @@ class Say extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -127,7 +122,7 @@ class Say extends PerclCommand
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -179,11 +174,9 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text',
-        'language' => 'language',
-        'engine' => 'engine',
-        'loop' => 'loop',
-        'privacy_mode' => 'privacyMode'
+        'alias' => 'alias',
+        'expires_at' => 'expiresAt',
+        'blob' => 'blob'
     ];
 
     /**
@@ -192,11 +185,9 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'language' => 'setLanguage',
-        'engine' => 'setEngine',
-        'loop' => 'setLoop',
-        'privacy_mode' => 'setPrivacyMode'
+        'alias' => 'setAlias',
+        'expires_at' => 'setExpiresAt',
+        'blob' => 'setBlob'
     ];
 
     /**
@@ -205,11 +196,9 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'language' => 'getLanguage',
-        'engine' => 'getEngine',
-        'loop' => 'getLoop',
-        'privacy_mode' => 'getPrivacyMode'
+        'alias' => 'getAlias',
+        'expires_at' => 'getExpiresAt',
+        'blob' => 'getBlob'
     ];
 
     /**
@@ -220,7 +209,7 @@ class Say extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -230,7 +219,7 @@ class Say extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -240,7 +229,7 @@ class Say extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -254,6 +243,12 @@ class Say extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -263,13 +258,9 @@ class Say extends PerclCommand
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
-        $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('language', $data ?? [], null);
-        $this->setIfExists('engine', $data ?? [], null);
-        $this->setIfExists('loop', $data ?? [], 1);
-        $this->setIfExists('privacy_mode', $data ?? [], null);
+        $this->setIfExists('alias', $data ?? [], null);
+        $this->setIfExists('expires_at', $data ?? [], null);
+        $this->setIfExists('blob', $data ?? [], null);
     }
 
     /**
@@ -297,10 +288,14 @@ class Say extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
+        if (!is_null($this->container['alias']) && (mb_strlen($this->container['alias']) > 64)) {
+            $invalidProperties[] = "invalid value for 'alias', the character length must be smaller than or equal to 64.";
+        }
+
+        if ($this->container['blob'] === null) {
+            $invalidProperties[] = "'blob' can't be null";
         }
         return $invalidProperties;
     }
@@ -318,136 +313,86 @@ class Say extends PerclCommand
 
 
     /**
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string $text The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        if (is_null($text)) {
-            throw new \InvalidArgumentException('non-nullable text cannot be null');
-        }
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets language
+     * Gets alias
      *
      * @return string|null
      */
-    public function getLanguage()
+    public function getAlias()
     {
-        return $this->container['language'];
+        return $this->container['alias'];
     }
 
     /**
-     * Sets language
+     * Sets alias
      *
-     * @param string|null $language Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+     * @param string|null $alias Custom identifier for this blob that is unique for the owning account. It will be set to the blobId by default if not provided.
      *
      * @return self
      */
-    public function setLanguage($language)
+    public function setAlias($alias)
     {
-        if (is_null($language)) {
-            throw new \InvalidArgumentException('non-nullable language cannot be null');
+        if (is_null($alias)) {
+            throw new \InvalidArgumentException('non-nullable alias cannot be null');
         }
-        $this->container['language'] = $language;
+        if ((mb_strlen($alias) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $alias when calling CreateBlobRequest., must be smaller than or equal to 64.');
+        }
+
+        $this->container['alias'] = $alias;
 
         return $this;
     }
 
     /**
-     * Gets engine
+     * Gets expires_at
      *
-     * @return \FreeClimb\Api\Model\TTSEngine|null
+     * @return string|null
      */
-    public function getEngine()
+    public function getExpiresAt()
     {
-        return $this->container['engine'];
+        return $this->container['expires_at'];
     }
 
     /**
-     * Sets engine
+     * Sets expires_at
      *
-     * @param \FreeClimb\Api\Model\TTSEngine|null $engine engine
+     * @param string|null $expires_at An RFC3339 timestamp with millisecond resolution. This timestamp defines the time at which this blob will delete itself. It must not be more than 48 hours in the future and will default to 9 hours in the future if not provided.
      *
      * @return self
      */
-    public function setEngine($engine)
+    public function setExpiresAt($expires_at)
     {
-        if (is_null($engine)) {
-            throw new \InvalidArgumentException('non-nullable engine cannot be null');
+        if (is_null($expires_at)) {
+            throw new \InvalidArgumentException('non-nullable expires_at cannot be null');
         }
-        $this->container['engine'] = $engine;
+        $this->container['expires_at'] = $expires_at;
 
         return $this;
     }
 
     /**
-     * Gets loop
+     * Gets blob
      *
-     * @return int|null
+     * @return object
      */
-    public function getLoop()
+    public function getBlob()
     {
-        return $this->container['loop'];
+        return $this->container['blob'];
     }
 
     /**
-     * Sets loop
+     * Sets blob
      *
-     * @param int|null $loop Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
+     * @param object $blob blob
      *
      * @return self
      */
-    public function setLoop($loop)
+    public function setBlob($blob)
     {
-        if (is_null($loop)) {
-            throw new \InvalidArgumentException('non-nullable loop cannot be null');
+        if (is_null($blob)) {
+            throw new \InvalidArgumentException('non-nullable blob cannot be null');
         }
-        $this->container['loop'] = $loop;
-
-        return $this;
-    }
-
-    /**
-     * Gets privacy_mode
-     *
-     * @return bool|null
-     */
-    public function getPrivacyMode()
-    {
-        return $this->container['privacy_mode'];
-    }
-
-    /**
-     * Sets privacy_mode
-     *
-     * @param bool|null $privacy_mode Parameter `privacyMode` will not log the `text` as required by PCI compliance.
-     *
-     * @return self
-     */
-    public function setPrivacyMode($privacy_mode)
-    {
-        if (is_null($privacy_mode)) {
-            throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
-        }
-        $this->container['privacy_mode'] = $privacy_mode;
+        $this->container['blob'] = $blob;
 
         return $this;
     }

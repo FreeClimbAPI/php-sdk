@@ -8,12 +8,14 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**createAConference()**](DefaultApi.md#createAConference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference |
 | [**createAQueue()**](DefaultApi.md#createAQueue) | **POST** /Accounts/{accountId}/Queues | Create a Queue |
 | [**createAnApplication()**](DefaultApi.md#createAnApplication) | **POST** /Accounts/{accountId}/Applications | Create an application |
+| [**createBlob()**](DefaultApi.md#createBlob) | **POST** /Accounts/{accountId}/Blobs | Create a Blob |
 | [**createExport()**](DefaultApi.md#createExport) | **POST** /Accounts/{accountId}/Exports | Create an Export |
 | [**createKnowledgeBaseCompletion()**](DefaultApi.md#createKnowledgeBaseCompletion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
 | [**deleteARecording()**](DefaultApi.md#deleteARecording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
 | [**deleteAnApplication()**](DefaultApi.md#deleteAnApplication) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
 | [**deleteAnExport()**](DefaultApi.md#deleteAnExport) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**deleteAnIncomingNumber()**](DefaultApi.md#deleteAnIncomingNumber) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
+| [**deleteBlob()**](DefaultApi.md#deleteBlob) | **DELETE** /Accounts/{accountId}/Blobs/{blobId} | Delete Blob |
 | [**dequeueAMember()**](DefaultApi.md#dequeueAMember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
 | [**dequeueHeadMember()**](DefaultApi.md#dequeueHeadMember) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
 | [**downloadARecordingFile()**](DefaultApi.md#downloadARecordingFile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
@@ -30,6 +32,7 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**getAnExport()**](DefaultApi.md#getAnExport) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export |
 | [**getAnIncomingNumber()**](DefaultApi.md#getAnIncomingNumber) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**getAnSmsMessage()**](DefaultApi.md#getAnSmsMessage) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
+| [**getBlob()**](DefaultApi.md#getBlob) | **GET** /Accounts/{accountId}/Blobs/{blobId} | Get Blob |
 | [**getHeadMember()**](DefaultApi.md#getHeadMember) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
 | [**getTenDLCSmsBrand()**](DefaultApi.md#getTenDLCSmsBrand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand |
 | [**getTenDLCSmsBrands()**](DefaultApi.md#getTenDLCSmsBrands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands |
@@ -43,6 +46,7 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**listAllAccountLogs()**](DefaultApi.md#listAllAccountLogs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
 | [**listApplications()**](DefaultApi.md#listApplications) | **GET** /Accounts/{accountId}/Applications | List applications |
 | [**listAvailableNumbers()**](DefaultApi.md#listAvailableNumbers) | **GET** /AvailablePhoneNumbers | List available numbers |
+| [**listBlobs()**](DefaultApi.md#listBlobs) | **GET** /Accounts/{accountId}/Blobs | List Blobs belonging to an account. |
 | [**listCallLogs()**](DefaultApi.md#listCallLogs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
 | [**listCallRecordings()**](DefaultApi.md#listCallRecordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings |
 | [**listCalls()**](DefaultApi.md#listCalls) | **GET** /Accounts/{accountId}/Calls | List Calls |
@@ -56,7 +60,9 @@ All URIs are relative to https://www.freeclimb.com/apiserver, except if the oper
 | [**listSmsMessages()**](DefaultApi.md#listSmsMessages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages |
 | [**makeACall()**](DefaultApi.md#makeACall) | **POST** /Accounts/{accountId}/Calls | Make a Call |
 | [**makeAWebrtcJwt()**](DefaultApi.md#makeAWebrtcJwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling |
+| [**modifyBlob()**](DefaultApi.md#modifyBlob) | **PATCH** /Accounts/{accountId}/Blobs/{blobId} | Modify Blob |
 | [**removeAParticipant()**](DefaultApi.md#removeAParticipant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant |
+| [**replaceBlob()**](DefaultApi.md#replaceBlob) | **PUT** /Accounts/{accountId}/Blobs/{blobId} | Replace Blob |
 | [**sendAnSmsMessage()**](DefaultApi.md#sendAnSmsMessage) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message |
 | [**streamARecordingFile()**](DefaultApi.md#streamARecordingFile) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File |
 | [**updateAConference()**](DefaultApi.md#updateAConference) | **POST** /Accounts/{accountId}/Conferences/{conferenceId} | Update a Conference |
@@ -294,6 +300,68 @@ try {
 ### Return type
 
 [**\FreeClimb\Api\Model\ApplicationResult**](../Model/ApplicationResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createBlob()`
+
+```php
+createBlob($create_blob_request): \FreeClimb\Api\Model\BlobResult
+```
+
+Create a Blob
+
+Create a new Blob belonging to the requesting account.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$create_blob_request = {"blob":{}}; // \FreeClimb\Api\Model\CreateBlobRequest | An object defining a new blob. A request body must be provided but the blob may be empty.
+
+try {
+    $result = $apiInstance->createBlob($create_blob_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->createBlob: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_blob_request** | [**\FreeClimb\Api\Model\CreateBlobRequest**](../Model/CreateBlobRequest.md)| An object defining a new blob. A request body must be provided but the blob may be empty. | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobResult**](../Model/BlobResult.md)
 
 ### Authorization
 
@@ -666,6 +734,68 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteBlob()`
+
+```php
+deleteBlob($blob_id): \FreeClimb\Api\Model\BlobResult
+```
+
+Delete Blob
+
+Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$blob_id = 'blob_id_example'; // string | String that uniquely identifies this Blob resource.
+
+try {
+    $result = $apiInstance->deleteBlob($blob_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->deleteBlob: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **blob_id** | **string**| String that uniquely identifies this Blob resource. | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobResult**](../Model/BlobResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `dequeueAMember()`
 
 ```php
@@ -842,7 +972,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `audio/x-wav`
+- **Accept**: `audio/wav`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1615,6 +1745,68 @@ try {
 ### Return type
 
 [**\FreeClimb\Api\Model\MessageResult**](../Model/MessageResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getBlob()`
+
+```php
+getBlob($blob_id): \FreeClimb\Api\Model\BlobResult
+```
+
+Get Blob
+
+Retrieves a specified blob
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$blob_id = 'blob_id_example'; // string | String that uniquely identifies this Blob resource.
+
+try {
+    $result = $apiInstance->getBlob($blob_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getBlob: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **blob_id** | **string**| String that uniquely identifies this Blob resource. | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobResult**](../Model/BlobResult.md)
 
 ### Authorization
 
@@ -2418,6 +2610,65 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listBlobs()`
+
+```php
+listBlobs(): \FreeClimb\Api\Model\BlobListResponse
+```
+
+List Blobs belonging to an account.
+
+List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->listBlobs();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->listBlobs: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobListResponse**](../Model/BlobListResponse.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listCallLogs()`
 
 ```php
@@ -2813,7 +3064,7 @@ try {
 ## `listIncomingNumbers()`
 
 ```php
-listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet): \FreeClimb\Api\Model\IncomingNumberList
+listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet): \FreeClimb\Api\Model\IncomingNumberList
 ```
 
 List Incoming Numbers
@@ -2843,8 +3094,6 @@ $region = 'region_example'; // string | State or province of this phone number.
 $country = 'country_example'; // string | Country of this phone number.
 $application_id = 'application_id_example'; // string | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
 $has_application = false; // bool | Indication of whether the phone number has an application linked to it.
-$voice_enabled = true; // bool | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-$sms_enabled = true; // bool | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
 $has_campaign = True; // bool | Indication of whether the phone number has a campaign associated with it
 $capabilities_voice = True; // bool | 
 $capabilities_sms = True; // bool | 
@@ -2855,7 +3104,7 @@ $tfn_campaign_id = 'tfn_campaign_id_example'; // string | Only show incoming pho
 $offnet = True; // bool | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
 
 try {
-    $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $voice_enabled, $sms_enabled, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
+    $result = $apiInstance->listIncomingNumbers($phone_number, $alias, $region, $country, $application_id, $has_application, $has_campaign, $capabilities_voice, $capabilities_sms, $capabilities_toll_free, $capabilities_ten_dlc, $capabilities_short_code, $tfn_campaign_id, $offnet);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listIncomingNumbers: ', $e->getMessage(), PHP_EOL;
@@ -2872,8 +3121,6 @@ try {
 | **country** | **string**| Country of this phone number. | [optional] |
 | **application_id** | **string**| ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] |
 | **has_application** | **bool**| Indication of whether the phone number has an application linked to it. | [optional] [default to false] |
-| **voice_enabled** | **bool**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true] |
-| **sms_enabled** | **bool**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true] |
 | **has_campaign** | **bool**| Indication of whether the phone number has a campaign associated with it | [optional] |
 | **capabilities_voice** | **bool**|  | [optional] |
 | **capabilities_sms** | **bool**|  | [optional] |
@@ -3284,6 +3531,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `modifyBlob()`
+
+```php
+modifyBlob($blob_id, $modify_blob_request): \FreeClimb\Api\Model\BlobResult
+```
+
+Modify Blob
+
+Modifys a pre existing blob by either adding new fields, or modifying existing fields
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$blob_id = 'blob_id_example'; // string | String that uniquely identifies this Blob resource.
+$modify_blob_request = {"alias":"new_conversation_id","blob":{"field0":"value0_redux","field4":"value4"}}; // \FreeClimb\Api\Model\ModifyBlobRequest | Request body to specify keys to modify. Or new keys to add onto the already existing blob
+
+try {
+    $result = $apiInstance->modifyBlob($blob_id, $modify_blob_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->modifyBlob: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **blob_id** | **string**| String that uniquely identifies this Blob resource. | |
+| **modify_blob_request** | [**\FreeClimb\Api\Model\ModifyBlobRequest**](../Model/ModifyBlobRequest.md)| Request body to specify keys to modify. Or new keys to add onto the already existing blob | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobResult**](../Model/BlobResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `removeAParticipant()`
 
 ```php
@@ -3340,6 +3651,70 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `replaceBlob()`
+
+```php
+replaceBlob($blob_id, $replace_blob_request): \FreeClimb\Api\Model\BlobResult
+```
+
+Replace Blob
+
+Replaces the blob content with the provided values.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: fc
+$config = FreeClimb\Api\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_ACCOUNT_ID')
+              ->setPassword('YOUR_API_KEY');
+
+
+$apiInstance = new FreeClimb\Api\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$blob_id = 'blob_id_example'; // string | String that uniquely identifies this Blob resource.
+$replace_blob_request = {"blob":{"field0":"value0_redux","field4":"value4"}}; // \FreeClimb\Api\Model\ReplaceBlobRequest | JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+
+try {
+    $result = $apiInstance->replaceBlob($blob_id, $replace_blob_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->replaceBlob: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **blob_id** | **string**| String that uniquely identifies this Blob resource. | |
+| **replace_blob_request** | [**\FreeClimb\Api\Model\ReplaceBlobRequest**](../Model/ReplaceBlobRequest.md)| JSON object containing blob key the contents of which will be used to override the enitre blob contents. | |
+
+### Return type
+
+[**\FreeClimb\Api\Model\BlobResult**](../Model/BlobResult.md)
+
+### Authorization
+
+[fc](../../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -3459,7 +3834,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `audio/x-wav`
+- **Accept**: `audio/wav`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

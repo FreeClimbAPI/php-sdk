@@ -63,8 +63,8 @@ class DefaultApiTest extends TestCase
     {
         $config = Configuration::getDefaultConfiguration()
             ->setHost('http://127.0.0.1:4010')
-            ->setUsername('YOUR_ACCOUNT_ID')
-            ->setPassword('YOUR_API_KEY');
+            ->setUsername('AC0123456789abcdefABCDEF0123456789abcdef00')
+            ->setPassword('123ABC123ABC123ABC123ABC123ABC123ABCID');
 
 
         static::$apiInstance = new DefaultApi(
@@ -672,6 +672,55 @@ class DefaultApiTest extends TestCase
     {
         return "cursor_test_value";
     }
+    public function create_blob_request_createBlob_test_value()
+    {
+        return new \FreeClimb\Api\Model\CreateBlobRequest([
+            "alias" => "alias_example",
+            "expires_at" => "expires_at_example",
+            "blob" => new \stdClass()
+        ]);
+    }
+    public function blob_id_deleteBlob_test_value()
+    {
+        return "BL0123456789abcdefABCDEF0123456789abcdef00";
+    }
+    public function blob_id_getBlob_test_value()
+    {
+        return "BL0123456789abcdefABCDEF0123456789abcdef00";
+    }
+    public function alias_listBlobs_test_value()
+    {
+        return "alias_example";
+    }
+    public function modify_blob_request_modifyBlob_test_value()
+    {
+        return new \FreeClimb\Api\Model\ModifyBlobRequest([
+            "blob" => new \stdClass(),
+            "alias" => "alias_example"
+        ]);
+    }
+    public function replace_blob_request_replaceBlob_test_value()
+    {
+        return new \FreeClimb\Api\Model\ReplaceBlobRequest([
+            "blob" => new \stdClass()
+        ]);
+    }
+    public function key_deleteBlob_test_value()
+    {
+        return ["key_example"];
+    }
+    public function cursor_listBlobs_test_value()
+    {
+        return "cursor_test_value";
+    }
+    public function blob_id_modifyBlob_test_value()
+    {
+        return "BL0123456789abcdefABCDEF0123456789abcdef00";
+    }
+    public function blob_id_replaceBlob_test_value()
+    {
+        return "BL0123456789abcdefABCDEF0123456789abcdef00";
+    }
     /**
      * Setup before running each test case
      */
@@ -754,6 +803,27 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->createAnApplication($this->application_request_createAnApplication_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\ApplicationResult', $response);
+    }
+
+    /**
+     * Test case for createBlob
+     *
+     * Create a Blob.
+     *
+     */
+    public function testCreateBlob()
+    {
+
+        //$create_blob_request = $create_blob_request_test_value;
+
+
+        $response = static::$apiInstance->createBlob($this->create_blob_request_createBlob_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
     }
 
     /**
@@ -852,6 +922,27 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->deleteAnIncomingNumber($this->phone_number_id_deleteAnIncomingNumber_test_value());
         $this->assertNull($response);
+    }
+
+    /**
+     * Test case for deleteBlob
+     *
+     * Delete Blob.
+     *
+     */
+    public function testDeleteBlob()
+    {
+
+        //$blob_id = $blob_id_test_value;
+
+
+        $response = static::$apiInstance->deleteBlob($this->blob_id_deleteBlob_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
     }
 
     /**
@@ -1116,6 +1207,25 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for getBlob
+     *
+     * Get Blob.
+     *
+     */
+    public function testGetBlob()
+    {
+
+        //$blob_id = $blob_id_test_value;
+
+
+        $response = static::$apiInstance->getBlob($this->blob_id_getBlob_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+    }
+
+    /**
      * Test case for getHeadMember
      *
      * Get Head Member.
@@ -1336,6 +1446,23 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for listBlobs
+     *
+     * List Blobs belonging to an account..
+     *
+     */
+    public function testListBlobs()
+    {
+
+
+        $response = static::$apiInstance->listBlobs();
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $response);
+    }
+
+    /**
      * Test case for listCallLogs
      *
      * List Call Logs.
@@ -1484,10 +1611,6 @@ class DefaultApiTest extends TestCase
 
         //$has_application = $has_application_test_value;
 
-        //$voice_enabled = $voice_enabled_test_value;
-
-        //$sms_enabled = $sms_enabled_test_value;
-
         //$has_campaign = $has_campaign_test_value;
 
         //$capabilities_voice = $capabilities_voice_test_value;
@@ -1505,7 +1628,7 @@ class DefaultApiTest extends TestCase
         //$offnet = $offnet_test_value;
 
 
-        $response = static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->voice_enabled_listIncomingNumbers_test_value(), $this->sms_enabled_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
+        $response = static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberList', $response);
     }
 
@@ -1631,6 +1754,28 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for modifyBlob
+     *
+     * Modify Blob.
+     *
+     */
+    public function testModifyBlob()
+    {
+
+        //$blob_id = $blob_id_test_value;
+
+        //$modify_blob_request = $modify_blob_request_test_value;
+
+
+        $response = static::$apiInstance->modifyBlob($this->blob_id_modifyBlob_test_value(), $this->modify_blob_request_modifyBlob_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+    }
+
+    /**
      * Test case for removeAParticipant
      *
      * Remove a Participant.
@@ -1646,6 +1791,28 @@ class DefaultApiTest extends TestCase
 
         $response = static::$apiInstance->removeAParticipant($this->conference_id_removeAParticipant_test_value(), $this->call_id_removeAParticipant_test_value());
         $this->assertNull($response);
+    }
+
+    /**
+     * Test case for replaceBlob
+     *
+     * Replace Blob.
+     *
+     */
+    public function testReplaceBlob()
+    {
+
+        //$blob_id = $blob_id_test_value;
+
+        //$replace_blob_request = $replace_blob_request_test_value;
+
+
+        $response = static::$apiInstance->replaceBlob($this->blob_id_replaceBlob_test_value(), $this->replace_blob_request_replaceBlob_test_value());
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobResult', $response);
     }
 
     /**
@@ -1923,6 +2090,19 @@ class DefaultApiTest extends TestCase
         $this->assertInstanceOf('\FreeClimb\Api\Model\AvailableNumberList', $nextPageResponse);
     }
     /**
+     * Test case for getNextPage of listBlobs
+     *
+     * Get next page of resource.
+     */
+
+    public function testGetNextPageListBlobs()
+    {
+        $response = static::$apiInstance->listBlobs();
+        $response['next_page_uri'] = '/Accounts/{accountId}/Blobs?cursor=1';
+        $nextPageResponse = static::$apiInstance->getNextPage($response);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\BlobListResponse', $nextPageResponse);
+    }
+    /**
      * Test case for getNextPage of listCallLogs
      *
      * Get next page of resource.
@@ -2008,7 +2188,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListIncomingNumbers()
     {
-        $response = static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->voice_enabled_listIncomingNumbers_test_value(), $this->sms_enabled_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
+        $response = static::$apiInstance->listIncomingNumbers($this->phone_number_listIncomingNumbers_test_value(), $this->alias_listIncomingNumbers_test_value(), $this->region_listIncomingNumbers_test_value(), $this->country_listIncomingNumbers_test_value(), $this->application_id_listIncomingNumbers_test_value(), $this->has_application_listIncomingNumbers_test_value(), $this->has_campaign_listIncomingNumbers_test_value(), $this->capabilities_voice_listIncomingNumbers_test_value(), $this->capabilities_sms_listIncomingNumbers_test_value(), $this->capabilities_toll_free_listIncomingNumbers_test_value(), $this->capabilities_ten_dlc_listIncomingNumbers_test_value(), $this->capabilities_short_code_listIncomingNumbers_test_value(), $this->tfn_campaign_id_listIncomingNumbers_test_value(), $this->offnet_listIncomingNumbers_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\IncomingNumberList', $nextPageResponse);

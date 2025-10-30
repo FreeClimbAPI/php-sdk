@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Say
+ * PlatformError
  *
  * PHP version 7.4
  *
@@ -29,19 +29,21 @@
  */
 
 namespace FreeClimb\Api\Model;
+
+use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * Say Class Doc Comment
+ * PlatformError Class Doc Comment
  *
  * @category Class
- * @description The &#x60;Say&#x60; command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. &#x60;Say&#x60; is useful in cases where it&#39;s difficult to pre-record a prompt for any reason. &#x60;Say&#x60; does not allow barge-in unless nested within a &#x60;GetSpeech&#x60; command. The file will always be played to completion unless nested.
+ * @description Standard error structure returned by platform.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Say extends PerclCommand
+class PlatformError implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +52,7 @@ class Say extends PerclCommand
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Say';
+    protected static $openAPIModelName = 'PlatformError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +60,10 @@ class Say extends PerclCommand
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text' => 'string',
-        'language' => 'string',
-        'engine' => '\FreeClimb\Api\Model\TTSEngine',
-        'loop' => 'int',
-        'privacy_mode' => 'bool'
+        'code' => 'int',
+        'call' => 'string',
+        'url' => 'string',
+        'details' => 'object'
     ];
 
     /**
@@ -73,11 +74,10 @@ class Say extends PerclCommand
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'text' => null,
-        'language' => null,
-        'engine' => null,
-        'loop' => null,
-        'privacy_mode' => null
+        'code' => null,
+        'call' => null,
+        'url' => 'uri-reference',
+        'details' => null
     ];
 
     /**
@@ -86,11 +86,10 @@ class Say extends PerclCommand
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'text' => false,
-        'language' => false,
-        'engine' => false,
-        'loop' => false,
-        'privacy_mode' => false
+        'code' => false,
+        'call' => false,
+        'url' => false,
+        'details' => false
     ];
 
     /**
@@ -107,7 +106,7 @@ class Say extends PerclCommand
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -117,7 +116,7 @@ class Say extends PerclCommand
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -127,7 +126,7 @@ class Say extends PerclCommand
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -179,11 +178,10 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $attributeMap = [
-        'text' => 'text',
-        'language' => 'language',
-        'engine' => 'engine',
-        'loop' => 'loop',
-        'privacy_mode' => 'privacyMode'
+        'code' => 'code',
+        'call' => 'call',
+        'url' => 'url',
+        'details' => 'details'
     ];
 
     /**
@@ -192,11 +190,10 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'language' => 'setLanguage',
-        'engine' => 'setEngine',
-        'loop' => 'setLoop',
-        'privacy_mode' => 'setPrivacyMode'
+        'code' => 'setCode',
+        'call' => 'setCall',
+        'url' => 'setUrl',
+        'details' => 'setDetails'
     ];
 
     /**
@@ -205,11 +202,10 @@ class Say extends PerclCommand
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'language' => 'getLanguage',
-        'engine' => 'getEngine',
-        'loop' => 'getLoop',
-        'privacy_mode' => 'getPrivacyMode'
+        'code' => 'getCode',
+        'call' => 'getCall',
+        'url' => 'getUrl',
+        'details' => 'getDetails'
     ];
 
     /**
@@ -220,7 +216,7 @@ class Say extends PerclCommand
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -230,7 +226,7 @@ class Say extends PerclCommand
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -240,7 +236,7 @@ class Say extends PerclCommand
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -254,6 +250,12 @@ class Say extends PerclCommand
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -263,13 +265,10 @@ class Say extends PerclCommand
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
-        $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('language', $data ?? [], null);
-        $this->setIfExists('engine', $data ?? [], null);
-        $this->setIfExists('loop', $data ?? [], 1);
-        $this->setIfExists('privacy_mode', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('call', $data ?? [], null);
+        $this->setIfExists('url', $data ?? [], null);
+        $this->setIfExists('details', $data ?? [], null);
     }
 
     /**
@@ -297,11 +296,8 @@ class Say extends PerclCommand
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -318,136 +314,109 @@ class Say extends PerclCommand
 
 
     /**
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string $text The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        if (is_null($text)) {
-            throw new \InvalidArgumentException('non-nullable text cannot be null');
-        }
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets language
-     *
-     * @return string|null
-     */
-    public function getLanguage()
-    {
-        return $this->container['language'];
-    }
-
-    /**
-     * Sets language
-     *
-     * @param string|null $language Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-     *
-     * @return self
-     */
-    public function setLanguage($language)
-    {
-        if (is_null($language)) {
-            throw new \InvalidArgumentException('non-nullable language cannot be null');
-        }
-        $this->container['language'] = $language;
-
-        return $this;
-    }
-
-    /**
-     * Gets engine
-     *
-     * @return \FreeClimb\Api\Model\TTSEngine|null
-     */
-    public function getEngine()
-    {
-        return $this->container['engine'];
-    }
-
-    /**
-     * Sets engine
-     *
-     * @param \FreeClimb\Api\Model\TTSEngine|null $engine engine
-     *
-     * @return self
-     */
-    public function setEngine($engine)
-    {
-        if (is_null($engine)) {
-            throw new \InvalidArgumentException('non-nullable engine cannot be null');
-        }
-        $this->container['engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
-     * Gets loop
+     * Gets code
      *
      * @return int|null
      */
-    public function getLoop()
+    public function getCode()
     {
-        return $this->container['loop'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets loop
+     * Sets code
      *
-     * @param int|null $loop Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
+     * @param int|null $code code
      *
      * @return self
      */
-    public function setLoop($loop)
+    public function setCode($code)
     {
-        if (is_null($loop)) {
-            throw new \InvalidArgumentException('non-nullable loop cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['loop'] = $loop;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets privacy_mode
+     * Gets call
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getPrivacyMode()
+    public function getCall()
     {
-        return $this->container['privacy_mode'];
+        return $this->container['call'];
     }
 
     /**
-     * Sets privacy_mode
+     * Sets call
      *
-     * @param bool|null $privacy_mode Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+     * @param string|null $call call
      *
      * @return self
      */
-    public function setPrivacyMode($privacy_mode)
+    public function setCall($call)
     {
-        if (is_null($privacy_mode)) {
-            throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
+        if (is_null($call)) {
+            throw new \InvalidArgumentException('non-nullable call cannot be null');
         }
-        $this->container['privacy_mode'] = $privacy_mode;
+        $this->container['call'] = $call;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url url
+     *
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        if (is_null($url)) {
+            throw new \InvalidArgumentException('non-nullable url cannot be null');
+        }
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return object|null
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param object|null $details details
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        if (is_null($details)) {
+            throw new \InvalidArgumentException('non-nullable details cannot be null');
+        }
+        $this->container['details'] = $details;
 
         return $this;
     }

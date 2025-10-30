@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * TTSEngineTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * TTSEngineTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description TTSEngine
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class TTSEngineTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->TTSEngine = new \FreeClimb\Api\Model\TTSEngine();
     }
 
     /**
@@ -74,41 +74,19 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyName()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_STANDARD);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_STANDARD, $this->TTSEngine->getname());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_NEURAL);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::FREECLIMB_NEURAL, $this->TTSEngine->getname());
+        $this->TTSEngine->setname(\FreeClimb\Api\Model\TTSEngineName::ELEVEN_LABS);
+        $this->assertEquals(\FreeClimb\Api\Model\TTSEngineName::ELEVEN_LABS, $this->TTSEngine->getname());
     }
 
-    public function testPropertyCampaignId()
+    public function testPropertyParameters()
     {
-
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
-    }
-
-    public function testPropertyPhoneNumber()
-    {
-
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-    }
-
-    public function testPropertyRegion()
-    {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->TTSEngine->setparameters(new \stdClass());
+        $this->assertInstanceOf(\stdClass::class, $this->TTSEngine->getparameters());
     }
 }

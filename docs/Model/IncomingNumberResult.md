@@ -17,8 +17,6 @@ Name | Type | Description | Notes
 **alias** | **string** | Description for this phone number. Typically the conventionally-formatted version of the phone number. | [optional]
 **region** | **string** | State or province of this phone number. | [optional]
 **country** | **string** | Country of this phone number. | [optional]
-**voice_enabled** | **bool** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional]
-**sms_enabled** | **bool** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional]
 **offnet** | **bool** | The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource. | [optional]
 **tfn** | [**\FreeClimb\Api\Model\TFN**](TFN.md) |  | [optional]
 
