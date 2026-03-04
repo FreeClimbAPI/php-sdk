@@ -2732,7 +2732,7 @@ try {
 ## `listCallRecordings()`
 
 ```php
-listCallRecordings($call_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listCallRecordings($call_id, $date_created, $start_time, $end_time): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Call Recordings
@@ -2758,9 +2758,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
 );
 $call_id = 'call_id_example'; // string | String that uniquely identifies this call resource.
 $date_created = 'date_created_example'; // string | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+$start_time = 'start_time_example'; // string | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+$end_time = 'end_time_example'; // string | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 
 try {
-    $result = $apiInstance->listCallRecordings($call_id, $date_created);
+    $result = $apiInstance->listCallRecordings($call_id, $date_created, $start_time, $end_time);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCallRecordings: ', $e->getMessage(), PHP_EOL;
@@ -2773,6 +2775,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **call_id** | **string**| String that uniquely identifies this call resource. | |
 | **date_created** | **string**| Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
+| **start_time** | **string**| Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **string**| Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 ### Return type
 
@@ -2794,7 +2798,7 @@ try {
 ## `listCalls()`
 
 ```php
-listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max): \FreeClimb\Api\Model\CallList
+listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max): \FreeClimb\Api\Model\CallList
 ```
 
 List Calls
@@ -2818,6 +2822,7 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$used_audio_stream = false; // bool | If usedAudioStream is set to true then all calls that have a audioStreamDuration > 0 will be returned
 $active = false; // bool | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
 $to = 'to_example'; // string | Only show Calls to this phone number.
 $from = 'from_example'; // string | Only show Calls from this phone number.
@@ -2830,7 +2835,7 @@ $risk_score_min = 56; // int | The minimum riskScore that should be included in 
 $risk_score_max = 56; // int | The maximum riskScore that should be included in the list.
 
 try {
-    $result = $apiInstance->listCalls($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max);
+    $result = $apiInstance->listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCalls: ', $e->getMessage(), PHP_EOL;
@@ -2841,6 +2846,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **used_audio_stream** | **bool**| If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned | [optional] [default to false] |
 | **active** | **bool**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false] |
 | **to** | **string**| Only show Calls to this phone number. | [optional] |
 | **from** | **string**| Only show Calls from this phone number. | [optional] |
@@ -2872,7 +2878,7 @@ try {
 ## `listConferenceRecordings()`
 
 ```php
-listConferenceRecordings($conference_id, $call_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listConferenceRecordings($conference_id, $call_id, $date_created, $start_time, $end_time): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Conference Recordings
@@ -2899,9 +2905,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
 $conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
 $call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+$start_time = 'start_time_example'; // string | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+$end_time = 'end_time_example'; // string | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 
 try {
-    $result = $apiInstance->listConferenceRecordings($conference_id, $call_id, $date_created);
+    $result = $apiInstance->listConferenceRecordings($conference_id, $call_id, $date_created, $start_time, $end_time);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listConferenceRecordings: ', $e->getMessage(), PHP_EOL;
@@ -2915,6 +2923,8 @@ try {
 | **conference_id** | **string**| Show only Recordings made during the conference with this ID. | |
 | **call_id** | **string**| Show only Recordings made during the Call with this ID. | [optional] |
 | **date_created** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+| **start_time** | **string**| Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **string**| Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 ### Return type
 
@@ -3276,7 +3286,7 @@ try {
 ## `listRecordings()`
 
 ```php
-listRecordings($call_id, $conference_id, $date_created): \FreeClimb\Api\Model\RecordingList
+listRecordings($call_id, $conference_id, $date_created, $start_time, $end_time): \FreeClimb\Api\Model\RecordingList
 ```
 
 List Recordings
@@ -3303,9 +3313,11 @@ $apiInstance = new FreeClimb\Api\Api\DefaultApi(
 $call_id = 'call_id_example'; // string | Show only Recordings made during the Call with this ID.
 $conference_id = 'conference_id_example'; // string | Show only Recordings made during the conference with this ID.
 $date_created = 'date_created_example'; // string | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+$start_time = 'start_time_example'; // string | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+$end_time = 'end_time_example'; // string | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 
 try {
-    $result = $apiInstance->listRecordings($call_id, $conference_id, $date_created);
+    $result = $apiInstance->listRecordings($call_id, $conference_id, $date_created, $start_time, $end_time);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listRecordings: ', $e->getMessage(), PHP_EOL;
@@ -3319,6 +3331,8 @@ try {
 | **call_id** | **string**| Show only Recordings made during the Call with this ID. | [optional] |
 | **conference_id** | **string**| Show only Recordings made during the conference with this ID. | [optional] |
 | **date_created** | **string**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+| **start_time** | **string**| Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **string**| Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 ### Return type
 

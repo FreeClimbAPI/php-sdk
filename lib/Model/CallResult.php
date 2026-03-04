@@ -75,6 +75,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => 'string',
         'duration' => 'int',
         'connect_duration' => 'int',
+        'audio_stream_duration' => 'int',
         'direction' => '\FreeClimb\Api\Model\CallDirection',
         'answered_by' => '\FreeClimb\Api\Model\AnsweredBy',
         'subresource_uris' => 'object',
@@ -105,6 +106,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => null,
         'duration' => null,
         'connect_duration' => null,
+        'audio_stream_duration' => null,
         'direction' => null,
         'answered_by' => null,
         'subresource_uris' => null,
@@ -133,6 +135,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => true,
         'duration' => true,
         'connect_duration' => true,
+        'audio_stream_duration' => true,
         'direction' => true,
         'answered_by' => true,
         'subresource_uris' => true,
@@ -241,6 +244,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => 'endTime',
         'duration' => 'duration',
         'connect_duration' => 'connectDuration',
+        'audio_stream_duration' => 'audioStreamDuration',
         'direction' => 'direction',
         'answered_by' => 'answeredBy',
         'subresource_uris' => 'subresourceUris',
@@ -269,6 +273,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => 'setEndTime',
         'duration' => 'setDuration',
         'connect_duration' => 'setConnectDuration',
+        'audio_stream_duration' => 'setAudioStreamDuration',
         'direction' => 'setDirection',
         'answered_by' => 'setAnsweredBy',
         'subresource_uris' => 'setSubresourceUris',
@@ -297,6 +302,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_time' => 'getEndTime',
         'duration' => 'getDuration',
         'connect_duration' => 'getConnectDuration',
+        'audio_stream_duration' => 'getAudioStreamDuration',
         'direction' => 'getDirection',
         'answered_by' => 'getAnsweredBy',
         'subresource_uris' => 'getSubresourceUris',
@@ -376,6 +382,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('end_time', $data ?? [], null);
         $this->setIfExists('duration', $data ?? [], null);
         $this->setIfExists('connect_duration', $data ?? [], null);
+        $this->setIfExists('audio_stream_duration', $data ?? [], null);
         $this->setIfExists('direction', $data ?? [], null);
         $this->setIfExists('answered_by', $data ?? [], null);
         $this->setIfExists('subresource_uris', $data ?? [], null);
@@ -936,6 +943,40 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['connect_duration'] = $connect_duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets audio_stream_duration
+     *
+     * @return int|null
+     */
+    public function getAudioStreamDuration()
+    {
+        return $this->container['audio_stream_duration'];
+    }
+
+    /**
+     * Sets audio_stream_duration
+     *
+     * @param int|null $audio_stream_duration Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream.
+     *
+     * @return self
+     */
+    public function setAudioStreamDuration($audio_stream_duration)
+    {
+        if (is_null($audio_stream_duration)) {
+            array_push($this->openAPINullablesSetToNull, 'audio_stream_duration');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('audio_stream_duration', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['audio_stream_duration'] = $audio_stream_duration;
 
         return $this;
     }

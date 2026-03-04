@@ -721,6 +721,34 @@ class DefaultApiTest extends TestCase
     {
         return "BL0123456789abcdefABCDEF0123456789abcdef00";
     }
+    public function start_time_listConferenceRecordings_test_value(): string
+    {
+        return 'start_time_example';
+    }
+    public function end_time_listConferenceRecordings_test_value(): string
+    {
+        return 'end_time_example';
+    }
+    public function start_time_listCallRecordings_test_value(): string
+    {
+        return 'start_time_example';
+    }
+    public function end_time_listCallRecordings_test_value(): string
+    {
+        return 'end_time_example';
+    }
+    public function start_time_listRecordings_test_value(): string
+    {
+        return 'start_time_example';
+    }
+    public function end_time_listRecordings_test_value(): string
+    {
+        return 'end_time_example';
+    }
+    public function used_audio_stream_listCalls_test_value(): string
+    {
+        return "true";
+    }    
     /**
      * Setup before running each test case
      */
@@ -1491,8 +1519,12 @@ class DefaultApiTest extends TestCase
 
         //$date_created = $date_created_test_value;
 
+        //$start_time = $start_time_test_value;
 
-        $response = static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value());
+        //$end_time = $end_time_test_value;
+
+
+        $response = static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value(), $this->start_time_listCallRecordings_test_value(), $this->end_time_listCallRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $response);
     }
 
@@ -1504,6 +1536,8 @@ class DefaultApiTest extends TestCase
      */
     public function testListCalls()
     {
+
+        //$used_audio_stream = $used_audio_stream_test_value;
 
         //$active = $active_test_value;
 
@@ -1526,7 +1560,7 @@ class DefaultApiTest extends TestCase
         //$risk_score_max = $risk_score_max_test_value;
 
 
-        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
+        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $response);
     }
 
@@ -1545,8 +1579,12 @@ class DefaultApiTest extends TestCase
 
         //$date_created = $date_created_test_value;
 
+        //$start_time = $start_time_test_value;
 
-        $response = static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
+        //$end_time = $end_time_test_value;
+
+
+        $response = static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value(), $this->start_time_listConferenceRecordings_test_value(), $this->end_time_listConferenceRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $response);
     }
 
@@ -1685,8 +1723,12 @@ class DefaultApiTest extends TestCase
 
         //$date_created = $date_created_test_value;
 
+        //$start_time = $start_time_test_value;
 
-        $response = static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value());
+        //$end_time = $end_time_test_value;
+
+
+        $response = static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value(), $this->start_time_listRecordings_test_value(), $this->end_time_listRecordings_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $response);
     }
 
@@ -2123,7 +2165,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListCallRecordings()
     {
-        $response = static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value());
+        $response = static::$apiInstance->listCallRecordings($this->call_id_listCallRecordings_test_value(), $this->date_created_listCallRecordings_test_value(), $this->start_time_listCallRecordings_test_value(), $this->end_time_listCallRecordings_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $nextPageResponse);
@@ -2136,7 +2178,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListCalls()
     {
-        $response = static::$apiInstance->listCalls($this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
+        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Calls?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $nextPageResponse);
@@ -2149,7 +2191,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListConferenceRecordings()
     {
-        $response = static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value());
+        $response = static::$apiInstance->listConferenceRecordings($this->conference_id_listConferenceRecordings_test_value(), $this->call_id_listConferenceRecordings_test_value(), $this->date_created_listConferenceRecordings_test_value(), $this->start_time_listConferenceRecordings_test_value(), $this->end_time_listConferenceRecordings_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $nextPageResponse);
@@ -2227,7 +2269,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListRecordings()
     {
-        $response = static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value());
+        $response = static::$apiInstance->listRecordings($this->call_id_listRecordings_test_value(), $this->conference_id_listRecordings_test_value(), $this->date_created_listRecordings_test_value(), $this->start_time_listRecordings_test_value(), $this->end_time_listRecordings_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Recordings?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\RecordingList', $nextPageResponse);
@@ -2243,7 +2285,7 @@ class DefaultApiTest extends TestCase
         $response = static::$apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Messages?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
-        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$nextPageResponse);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList', $nextPageResponse);
     }
 
 }

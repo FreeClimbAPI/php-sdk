@@ -1040,7 +1040,7 @@ class DefaultApi
 
 
             switch ($statusCode) {
-                case 200:
+                case 201:
                     if ('\FreeClimb\Api\Model\QueueResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -1112,7 +1112,7 @@ class DefaultApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\FreeClimb\Api\Model\QueueResult',
@@ -15150,15 +15150,19 @@ class DefaultApi
 
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCallRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\RecordingList
      */
-    public function listCallRecordings($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
+    public function listCallRecordings($call_id, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
-        list($response) = $this->listCallRecordingsWithHttpInfo($call_id, $date_created, $contentType);
+        list($response) = $this->listCallRecordingsWithHttpInfo($call_id, $date_created, $start_time, $end_time, $contentType);
         return $response;
     }     
     /**
@@ -15171,15 +15175,19 @@ class DefaultApi
 
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCallRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\RecordingList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallRecordingsWithHttpInfo($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
+    public function listCallRecordingsWithHttpInfo($call_id, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
-        $request = $this->listCallRecordingsRequest($call_id, $date_created, $contentType);        
+        $request = $this->listCallRecordingsRequest($call_id, $date_created, $start_time, $end_time, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -15300,14 +15308,18 @@ class DefaultApi
 
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCallRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallRecordingsAsync($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
+    public function listCallRecordingsAsync($call_id, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
-        return $this->listCallRecordingsAsyncWithHttpInfo($call_id, $date_created, $contentType)
+        return $this->listCallRecordingsAsyncWithHttpInfo($call_id, $date_created, $start_time, $end_time, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15325,15 +15337,19 @@ class DefaultApi
 
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCallRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallRecordingsAsyncWithHttpInfo($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
+    public function listCallRecordingsAsyncWithHttpInfo($call_id, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
         $returnType = '\FreeClimb\Api\Model\RecordingList';
-        $request = $this->listCallRecordingsRequest($call_id, $date_created, $contentType);
+        $request = $this->listCallRecordingsRequest($call_id, $date_created, $start_time, $end_time, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15379,12 +15395,16 @@ class DefaultApi
 
      * @param  string $date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCallRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallRecordingsRequest($call_id, $date_created = null, string $contentType = self::contentTypes['listCallRecordings'][0])
+    public function listCallRecordingsRequest($call_id, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listCallRecordings'][0])
     {
         $account_id = $this->config->getUsername();
 
@@ -15394,6 +15414,8 @@ class DefaultApi
                 'Missing the required parameter $call_id when calling listCallRecordings'
             );
         }
+
+
 
 
 
@@ -15409,6 +15431,24 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $date_created,
             'dateCreated', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_time,
+            'startTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_time,
+            'endTime', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -15497,6 +15537,8 @@ class DefaultApi
      * List Calls
      *
 
+     * @param  bool $used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned (optional, default to false)
+
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
 
      * @param  string $to Only show Calls to this phone number. (optional)
@@ -15523,9 +15565,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\CallList
      */
-    public function listCalls($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCalls($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        list($response) = $this->listCallsWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
+        list($response) = $this->listCallsWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
         return $response;
     }     
     /**
@@ -15533,6 +15575,8 @@ class DefaultApi
      *
      * List Calls
      *
+
+     * @param  bool $used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned (optional, default to false)
 
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
 
@@ -15560,9 +15604,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\CallList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallsWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);        
+        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -15679,6 +15723,8 @@ class DefaultApi
      * List Calls
      *
 
+     * @param  bool $used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned (optional, default to false)
+
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
 
      * @param  string $to Only show Calls to this phone number. (optional)
@@ -15704,9 +15750,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsync($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsync($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
-        return $this->listCallsAsyncWithHttpInfo($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType)
+        return $this->listCallsAsyncWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15720,6 +15766,8 @@ class DefaultApi
      * List Calls
      *
 
+     * @param  bool $used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned (optional, default to false)
+
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
 
      * @param  string $to Only show Calls to this phone number. (optional)
@@ -15745,10 +15793,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsyncWithHttpInfo($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsyncWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
         $returnType = '\FreeClimb\Api\Model\CallList';
-        $request = $this->listCallsRequest($active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
+        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15790,6 +15838,8 @@ class DefaultApi
      * Create request for operation 'listCalls'
      *
 
+     * @param  bool $used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned (optional, default to false)
+
      * @param  bool $active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (optional, default to false)
 
      * @param  string $to Only show Calls to this phone number. (optional)
@@ -15815,9 +15865,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallsRequest($active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsRequest($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
     {
         $account_id = $this->config->getUsername();
+
 
 
 
@@ -15841,6 +15892,15 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $used_audio_stream,
+            'usedAudioStream', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $active,
@@ -16012,15 +16072,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listConferenceRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\RecordingList
      */
-    public function listConferenceRecordings($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
+    public function listConferenceRecordings($conference_id, $call_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
-        list($response) = $this->listConferenceRecordingsWithHttpInfo($conference_id, $call_id, $date_created, $contentType);
+        list($response) = $this->listConferenceRecordingsWithHttpInfo($conference_id, $call_id, $date_created, $start_time, $end_time, $contentType);
         return $response;
     }     
     /**
@@ -16035,15 +16099,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listConferenceRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\RecordingList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listConferenceRecordingsWithHttpInfo($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
+    public function listConferenceRecordingsWithHttpInfo($conference_id, $call_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
-        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created, $contentType);        
+        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created, $start_time, $end_time, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -16166,14 +16234,18 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listConferenceRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConferenceRecordingsAsync($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
+    public function listConferenceRecordingsAsync($conference_id, $call_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
-        return $this->listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id, $date_created, $contentType)
+        return $this->listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id, $date_created, $start_time, $end_time, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -16193,15 +16265,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listConferenceRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
+    public function listConferenceRecordingsAsyncWithHttpInfo($conference_id, $call_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
         $returnType = '\FreeClimb\Api\Model\RecordingList';
-        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created, $contentType);
+        $request = $this->listConferenceRecordingsRequest($conference_id, $call_id, $date_created, $start_time, $end_time, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -16249,12 +16325,16 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listConferenceRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listConferenceRecordingsRequest($conference_id, $call_id = null, $date_created = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
+    public function listConferenceRecordingsRequest($conference_id, $call_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listConferenceRecordings'][0])
     {
         $account_id = $this->config->getUsername();
 
@@ -16264,6 +16344,8 @@ class DefaultApi
                 'Missing the required parameter $conference_id when calling listConferenceRecordings'
             );
         }
+
+
 
 
 
@@ -16289,6 +16371,24 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $date_created,
             'dateCreated', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_time,
+            'startTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_time,
+            'endTime', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -18423,15 +18523,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\RecordingList
      */
-    public function listRecordings($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
+    public function listRecordings($call_id = null, $conference_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
-        list($response) = $this->listRecordingsWithHttpInfo($call_id, $conference_id, $date_created, $contentType);
+        list($response) = $this->listRecordingsWithHttpInfo($call_id, $conference_id, $date_created, $start_time, $end_time, $contentType);
         return $response;
     }     
     /**
@@ -18446,15 +18550,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRecordings'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\RecordingList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRecordingsWithHttpInfo($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
+    public function listRecordingsWithHttpInfo($call_id = null, $conference_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
-        $request = $this->listRecordingsRequest($call_id, $conference_id, $date_created, $contentType);        
+        $request = $this->listRecordingsRequest($call_id, $conference_id, $date_created, $start_time, $end_time, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -18577,14 +18685,18 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRecordingsAsync($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
+    public function listRecordingsAsync($call_id = null, $conference_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
-        return $this->listRecordingsAsyncWithHttpInfo($call_id, $conference_id, $date_created, $contentType)
+        return $this->listRecordingsAsyncWithHttpInfo($call_id, $conference_id, $date_created, $start_time, $end_time, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -18604,15 +18716,19 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRecordingsAsyncWithHttpInfo($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
+    public function listRecordingsAsyncWithHttpInfo($call_id = null, $conference_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
         $returnType = '\FreeClimb\Api\Model\RecordingList';
-        $request = $this->listRecordingsRequest($call_id, $conference_id, $date_created, $contentType);
+        $request = $this->listRecordingsRequest($call_id, $conference_id, $date_created, $start_time, $end_time, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -18660,14 +18776,20 @@ class DefaultApi
 
      * @param  string $date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*. (optional)
 
+     * @param  string $start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
+     * @param  string $end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. (optional)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRecordings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRecordingsRequest($call_id = null, $conference_id = null, $date_created = null, string $contentType = self::contentTypes['listRecordings'][0])
+    public function listRecordingsRequest($call_id = null, $conference_id = null, $date_created = null, $start_time = null, $end_time = null, string $contentType = self::contentTypes['listRecordings'][0])
     {
         $account_id = $this->config->getUsername();
+
+
 
 
 
@@ -18703,6 +18825,24 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $date_created,
             'dateCreated', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_time,
+            'startTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_time,
+            'endTime', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

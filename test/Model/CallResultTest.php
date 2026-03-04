@@ -220,6 +220,16 @@ class CallResultTest extends TestCase
 
     }
 
+    public function testPropertyAudioStreamDuration()
+    {
+
+
+        $this->CallResult->setaudioStreamDuration(1);
+        $this->assertEquals(1, $this->CallResult->getaudioStreamDuration());
+        $this->assertIsNumeric($this->CallResult->getaudioStreamDuration());
+
+    }
+
     public function testPropertyDirection()
     {
         $this->CallResult->setdirection(\FreeClimb\Api\Model\CallDirection::INBOUND);
