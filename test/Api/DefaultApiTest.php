@@ -2285,7 +2285,7 @@ class DefaultApiTest extends TestCase
         $response = static::$apiInstance->listSmsMessages($this->to_listSmsMessages_test_value(), $this->from_listSmsMessages_test_value(), $this->begin_time_listSmsMessages_test_value(), $this->end_time_listSmsMessages_test_value(), $this->direction_listSmsMessages_test_value(), $this->campaign_id_listSmsMessages_test_value(), $this->brand_id_listSmsMessages_test_value(), $this->is10_dlc_listSmsMessages_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Messages?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
-        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList', $nextPageResponse);
+        $this->assertInstanceOf('\FreeClimb\Api\Model\MessagesList',$nextPageResponse);
     }
 
 }

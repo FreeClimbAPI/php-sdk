@@ -593,8 +593,12 @@ class ObjectSerializer
         }
 
         $castBool = Configuration::BOOLEAN_FORMAT_INT === Configuration::getDefaultConfiguration()->getBooleanFormatForQueryString()
-            ? function ($v) { return (int) $v; }
-        : function ($v) { return $v ? 'true' : 'false'; };
+            ? function ($v) {
+                return (int) $v;
+            }
+        : function ($v) {
+            return $v ? 'true' : 'false';
+        };
 
         $qs = '';
         foreach ($params as $k => $v) {
