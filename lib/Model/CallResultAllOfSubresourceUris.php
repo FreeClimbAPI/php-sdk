@@ -52,7 +52,7 @@ class CallResultAllOfSubresourceUris implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CallResult_allOf_subresourceUris';
+    protected static $openAPIModelName = 'CallResultAllOfSubresourceUris';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
