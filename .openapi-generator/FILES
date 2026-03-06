@@ -26,6 +26,7 @@ docs/Model/CallDirection.md
 docs/Model/CallEndedReason.md
 docs/Model/CallList.md
 docs/Model/CallResult.md
+docs/Model/CallResultAllOfSubresourceUris.md
 docs/Model/CallStatus.md
 docs/Model/CallStatusWebhook.md
 docs/Model/Capabilities.md
@@ -187,6 +188,7 @@ lib/Model/CallDirection.php
 lib/Model/CallEndedReason.php
 lib/Model/CallList.php
 lib/Model/CallResult.php
+lib/Model/CallResultAllOfSubresourceUris.php
 lib/Model/CallStatus.php
 lib/Model/CallStatusWebhook.php
 lib/Model/Capabilities.php
@@ -346,6 +348,7 @@ test/Model/CallControlWebhookTest.php
 test/Model/CallDirectionTest.php
 test/Model/CallEndedReasonTest.php
 test/Model/CallListTest.php
+test/Model/CallResultAllOfSubresourceUrisTest.php
 test/Model/CallResultTest.php
 test/Model/CallStatusTest.php
 test/Model/CallStatusWebhookTest.php

@@ -162,6 +162,16 @@ class QueueResultTest extends TestCase
 
     }
 
+    public function testPropertyAverageWaitTime()
+    {
+
+
+        $this->QueueResult->setaverageWaitTime(1);
+        $this->assertEquals(1, $this->QueueResult->getaverageWaitTime());
+        $this->assertIsNumeric($this->QueueResult->getaverageWaitTime());
+
+    }
+
     public function testPropertySubresourceUris()
     {
         $this->QueueResult->setsubresourceUris(new \stdClass());

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumber
+ * CallResultAllOfSubresourceUris
  *
  * PHP version 7.4
  *
@@ -34,15 +34,16 @@ use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * AvailableNumber Class Doc Comment
+ * CallResultAllOfSubresourceUris Class Doc Comment
  *
  * @category Class
+ * @description The list of subresources for this Call. These include things like logs and recordings associated with the Call.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
+class CallResultAllOfSubresourceUris implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AvailableNumber';
+    protected static $openAPIModelName = 'CallResult_allOf_subresourceUris';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +60,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'capabilities' => '\FreeClimb\Api\Model\Capabilities',
-        'campaign_id' => 'string',
-        'phone_number' => 'string',
-        'alias' => 'string',
-        'region' => 'string',
-        'country' => 'string'
+        'logs' => 'string',
+        'recordings' => 'string'
     ];
 
     /**
@@ -75,12 +72,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'capabilities' => null,
-        'campaign_id' => null,
-        'phone_number' => null,
-        'alias' => null,
-        'region' => null,
-        'country' => null
+        'logs' => null,
+        'recordings' => null
     ];
 
     /**
@@ -89,12 +82,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'capabilities' => false,
-        'campaign_id' => true,
-        'phone_number' => true,
-        'alias' => true,
-        'region' => true,
-        'country' => true
+        'logs' => false,
+        'recordings' => false
     ];
 
     /**
@@ -183,12 +172,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'capabilities' => 'capabilities',
-        'campaign_id' => 'campaignId',
-        'phone_number' => 'phoneNumber',
-        'alias' => 'alias',
-        'region' => 'region',
-        'country' => 'country'
+        'logs' => 'logs',
+        'recordings' => 'recordings'
     ];
 
     /**
@@ -197,12 +182,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'capabilities' => 'setCapabilities',
-        'campaign_id' => 'setCampaignId',
-        'phone_number' => 'setPhoneNumber',
-        'alias' => 'setAlias',
-        'region' => 'setRegion',
-        'country' => 'setCountry'
+        'logs' => 'setLogs',
+        'recordings' => 'setRecordings'
     ];
 
     /**
@@ -211,12 +192,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'capabilities' => 'getCapabilities',
-        'campaign_id' => 'getCampaignId',
-        'phone_number' => 'getPhoneNumber',
-        'alias' => 'getAlias',
-        'region' => 'getRegion',
-        'country' => 'getCountry'
+        'logs' => 'getLogs',
+        'recordings' => 'getRecordings'
     ];
 
     /**
@@ -276,12 +253,8 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('capabilities', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('phone_number', $data ?? [], null);
-        $this->setIfExists('alias', $data ?? [], null);
-        $this->setIfExists('region', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('logs', $data ?? [], null);
+        $this->setIfExists('recordings', $data ?? [], null);
     }
 
     /**
@@ -327,198 +300,55 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets capabilities
+     * Gets logs
      *
-     * @return \FreeClimb\Api\Model\Capabilities|null
+     * @return string|null
      */
-    public function getCapabilities()
+    public function getLogs()
     {
-        return $this->container['capabilities'];
+        return $this->container['logs'];
     }
 
     /**
-     * Sets capabilities
+     * Sets logs
      *
-     * @param \FreeClimb\Api\Model\Capabilities|null $capabilities capabilities
+     * @param string|null $logs The URI for the logs associated with this Call.
      *
      * @return self
      */
-    public function setCapabilities($capabilities)
+    public function setLogs($logs)
     {
-        if (is_null($capabilities)) {
-            throw new \InvalidArgumentException('non-nullable capabilities cannot be null');
+        if (is_null($logs)) {
+            throw new \InvalidArgumentException('non-nullable logs cannot be null');
         }
-        $this->container['capabilities'] = $capabilities;
+        $this->container['logs'] = $logs;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets recordings
      *
      * @return string|null
      */
-    public function getCampaignId()
+    public function getRecordings()
     {
-        return $this->container['campaign_id'];
+        return $this->container['recordings'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets recordings
      *
-     * @param string|null $campaign_id The campaign ID generated by the campaign registry
+     * @param string|null $recordings The URI for the recordings associated with this Call.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setRecordings($recordings)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($recordings)) {
+            throw new \InvalidArgumentException('non-nullable recordings cannot be null');
         }
-        $this->container['campaign_id'] = $campaign_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string|null
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string|null $phone_number The phone number, in E.164 format (+ country code and phone number: +18003608245).
-     *
-     * @return self
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        if (is_null($phone_number)) {
-            array_push($this->openAPINullablesSetToNull, 'phone_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone_number', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets alias
-     *
-     * @return string|null
-     */
-    public function getAlias()
-    {
-        return $this->container['alias'];
-    }
-
-    /**
-     * Sets alias
-     *
-     * @param string|null $alias A nicely-formatted version of the phone number.
-     *
-     * @return self
-     */
-    public function setAlias($alias)
-    {
-        if (is_null($alias)) {
-            array_push($this->openAPINullablesSetToNull, 'alias');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alias', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['alias'] = $alias;
-
-        return $this;
-    }
-
-    /**
-     * Gets region
-     *
-     * @return string|null
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /**
-     * Sets region
-     *
-     * @param string|null $region The state or province of this phone number.
-     *
-     * @return self
-     */
-    public function setRegion($region)
-    {
-        if (is_null($region)) {
-            array_push($this->openAPINullablesSetToNull, 'region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('region', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country The country of this phone number.
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        if (is_null($country)) {
-            array_push($this->openAPINullablesSetToNull, 'country');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['country'] = $country;
+        $this->container['recordings'] = $recordings;
 
         return $this;
     }

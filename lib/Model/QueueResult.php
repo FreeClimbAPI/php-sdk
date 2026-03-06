@@ -69,6 +69,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => 'int',
         'current_size' => 'int',
         'average_queue_removal_time' => 'int',
+        'average_wait_time' => 'int',
         'subresource_uris' => 'object'
     ];
 
@@ -90,6 +91,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => null,
         'current_size' => null,
         'average_queue_removal_time' => null,
+        'average_wait_time' => null,
         'subresource_uris' => null
     ];
 
@@ -109,6 +111,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => true,
         'current_size' => true,
         'average_queue_removal_time' => true,
+        'average_wait_time' => true,
         'subresource_uris' => true
     ];
 
@@ -208,6 +211,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => 'maxSize',
         'current_size' => 'currentSize',
         'average_queue_removal_time' => 'averageQueueRemovalTime',
+        'average_wait_time' => 'averageWaitTime',
         'subresource_uris' => 'subresourceUris'
     ];
 
@@ -227,6 +231,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => 'setMaxSize',
         'current_size' => 'setCurrentSize',
         'average_queue_removal_time' => 'setAverageQueueRemovalTime',
+        'average_wait_time' => 'setAverageWaitTime',
         'subresource_uris' => 'setSubresourceUris'
     ];
 
@@ -246,6 +251,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'max_size' => 'getMaxSize',
         'current_size' => 'getCurrentSize',
         'average_queue_removal_time' => 'getAverageQueueRemovalTime',
+        'average_wait_time' => 'getAverageWaitTime',
         'subresource_uris' => 'getSubresourceUris'
     ];
 
@@ -316,6 +322,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('max_size', $data ?? [], null);
         $this->setIfExists('current_size', $data ?? [], null);
         $this->setIfExists('average_queue_removal_time', $data ?? [], null);
+        $this->setIfExists('average_wait_time', $data ?? [], null);
         $this->setIfExists('subresource_uris', $data ?? [], null);
     }
 
@@ -669,6 +676,40 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['average_queue_removal_time'] = $average_queue_removal_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets average_wait_time
+     *
+     * @return int|null
+     */
+    public function getAverageWaitTime()
+    {
+        return $this->container['average_wait_time'];
+    }
+
+    /**
+     * Sets average_wait_time
+     *
+     * @param int|null $average_wait_time The average wait time (in seconds) of all Calls in the Queue.
+     *
+     * @return self
+     */
+    public function setAverageWaitTime($average_wait_time)
+    {
+        if (is_null($average_wait_time)) {
+            array_push($this->openAPINullablesSetToNull, 'average_wait_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('average_wait_time', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['average_wait_time'] = $average_wait_time;
 
         return $this;
     }

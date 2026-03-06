@@ -108,6 +108,18 @@ class CallResultTest extends TestCase
 
     }
 
+    public function testPropertyDateCreatedIso()
+    {
+        $this->CallResult->setdateCreatedIso('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->CallResult->getdateCreatedIso());
+    }
+
+    public function testPropertyDateUpdatedIso()
+    {
+        $this->CallResult->setdateUpdatedIso('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->CallResult->getdateUpdatedIso());
+    }
+
     public function testPropertyCallId()
     {
 
@@ -184,6 +196,12 @@ class CallResultTest extends TestCase
         $this->assertIsString($this->CallResult->getStartTime());
     }
 
+    public function testPropertyStartTimeIso()
+    {
+        $this->CallResult->setstartTimeIso('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->CallResult->getstartTimeIso());
+    }
+
     public function testPropertyConnectTime()
     {
 
@@ -192,12 +210,24 @@ class CallResultTest extends TestCase
         $this->assertIsString($this->CallResult->getConnectTime());
     }
 
+    public function testPropertyConnectTimeIso()
+    {
+        $this->CallResult->setconnectTimeIso('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->CallResult->getconnectTimeIso());
+    }
+
     public function testPropertyEndTime()
     {
 
         $this->CallResult->setEndTime('TS');
         $this->assertEquals('TS', $this->CallResult->getEndTime());
         $this->assertIsString($this->CallResult->getEndTime());
+    }
+
+    public function testPropertyEndTimeIso()
+    {
+        $this->CallResult->setendTimeIso('2023-09-21 15:30:00');
+        $this->assertEquals('2023-09-21 15:30:00', $this->CallResult->getendTimeIso());
     }
 
     public function testPropertyDuration()
@@ -246,6 +276,21 @@ class CallResultTest extends TestCase
         $this->assertEquals(\FreeClimb\Api\Model\AnsweredBy::HUMAN, $this->CallResult->getansweredBy());
         $this->CallResult->setansweredBy(\FreeClimb\Api\Model\AnsweredBy::MACHINE);
         $this->assertEquals(\FreeClimb\Api\Model\AnsweredBy::MACHINE, $this->CallResult->getansweredBy());
+    }
+
+    public function testPropertyCallerName()
+    {
+
+        $this->CallResult->setCallerName('TS');
+        $this->assertEquals('TS', $this->CallResult->getCallerName());
+        $this->assertIsString($this->CallResult->getCallerName());
+    }
+
+    public function testPropertyWebRtc()
+    {
+        $this->CallResult->setwebRtc(false);
+        $this->assertFalse($this->CallResult->getwebRtc());
+        $this->assertIsBool($this->CallResult->getwebRtc());
     }
 
     public function testPropertySubresourceUris()

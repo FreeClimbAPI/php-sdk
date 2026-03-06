@@ -748,6 +748,10 @@ class DefaultApiTest extends TestCase
     public function used_audio_stream_listCalls_test_value(): string
     {
         return "true";
+    }
+    public function web_rtc_listCalls_test_value(): string
+    {
+        return "true";
     }    
     /**
      * Setup before running each test case
@@ -1559,8 +1563,10 @@ class DefaultApiTest extends TestCase
 
         //$risk_score_max = $risk_score_max_test_value;
 
+        //$web_rtc = $web_rtc_test_value;
 
-        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
+
+        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value(), $this->web_rtc_listCalls_test_value());
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $response);
     }
 
@@ -2178,7 +2184,7 @@ class DefaultApiTest extends TestCase
 
     public function testGetNextPageListCalls()
     {
-        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value());
+        $response = static::$apiInstance->listCalls($this->used_audio_stream_listCalls_test_value(), $this->active_listCalls_test_value(), $this->to_listCalls_test_value(), $this->from_listCalls_test_value(), $this->status_listCalls_test_value(), $this->start_time_listCalls_test_value(), $this->end_time_listCalls_test_value(), $this->parent_call_id_listCalls_test_value(), $this->application_id_listCalls_test_value(), $this->risk_score_min_listCalls_test_value(), $this->risk_score_max_listCalls_test_value(), $this->web_rtc_listCalls_test_value());
         $response['next_page_uri'] = '/Accounts/{accountId}/Calls?cursor=1';
         $nextPageResponse = static::$apiInstance->getNextPage($response);
         $this->assertInstanceOf('\FreeClimb\Api\Model\CallList', $nextPageResponse);

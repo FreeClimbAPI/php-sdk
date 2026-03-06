@@ -63,6 +63,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => 'string',
         'date_updated' => 'string',
         'revision' => 'int',
+        'date_created_iso' => '\DateTime',
+        'date_updated_iso' => '\DateTime',
         'call_id' => 'string',
         'parent_call_id' => 'string',
         'account_id' => 'string',
@@ -71,14 +73,19 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => 'string',
         'status' => '\FreeClimb\Api\Model\CallStatus',
         'start_time' => 'string',
+        'start_time_iso' => '\DateTime',
         'connect_time' => 'string',
+        'connect_time_iso' => '\DateTime',
         'end_time' => 'string',
+        'end_time_iso' => '\DateTime',
         'duration' => 'int',
         'connect_duration' => 'int',
         'audio_stream_duration' => 'int',
         'direction' => '\FreeClimb\Api\Model\CallDirection',
         'answered_by' => '\FreeClimb\Api\Model\AnsweredBy',
-        'subresource_uris' => 'object',
+        'caller_name' => 'string',
+        'web_rtc' => 'bool',
+        'subresource_uris' => '\FreeClimb\Api\Model\CallResultAllOfSubresourceUris',
         'application_id' => 'string'
     ];
 
@@ -94,6 +101,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => null,
         'date_updated' => null,
         'revision' => null,
+        'date_created_iso' => 'date-time',
+        'date_updated_iso' => 'date-time',
         'call_id' => null,
         'parent_call_id' => null,
         'account_id' => null,
@@ -102,13 +111,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => null,
         'status' => null,
         'start_time' => null,
+        'start_time_iso' => 'date-time',
         'connect_time' => null,
+        'connect_time_iso' => 'date-time',
         'end_time' => null,
+        'end_time_iso' => 'date-time',
         'duration' => null,
         'connect_duration' => null,
         'audio_stream_duration' => null,
         'direction' => null,
         'answered_by' => null,
+        'caller_name' => null,
+        'web_rtc' => null,
         'subresource_uris' => null,
         'application_id' => null
     ];
@@ -123,6 +137,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => false,
         'date_updated' => false,
         'revision' => false,
+        'date_created_iso' => true,
+        'date_updated_iso' => true,
         'call_id' => true,
         'parent_call_id' => true,
         'account_id' => true,
@@ -131,13 +147,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => true,
         'status' => true,
         'start_time' => true,
+        'start_time_iso' => true,
         'connect_time' => true,
+        'connect_time_iso' => true,
         'end_time' => true,
+        'end_time_iso' => true,
         'duration' => true,
         'connect_duration' => true,
         'audio_stream_duration' => true,
         'direction' => true,
         'answered_by' => true,
+        'caller_name' => true,
+        'web_rtc' => true,
         'subresource_uris' => true,
         'application_id' => true
     ];
@@ -232,6 +253,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => 'dateCreated',
         'date_updated' => 'dateUpdated',
         'revision' => 'revision',
+        'date_created_iso' => 'dateCreatedISO',
+        'date_updated_iso' => 'dateUpdatedISO',
         'call_id' => 'callId',
         'parent_call_id' => 'parentCallId',
         'account_id' => 'accountId',
@@ -240,13 +263,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => 'phoneNumberId',
         'status' => 'status',
         'start_time' => 'startTime',
+        'start_time_iso' => 'startTimeISO',
         'connect_time' => 'connectTime',
+        'connect_time_iso' => 'connectTimeISO',
         'end_time' => 'endTime',
+        'end_time_iso' => 'endTimeISO',
         'duration' => 'duration',
         'connect_duration' => 'connectDuration',
         'audio_stream_duration' => 'audioStreamDuration',
         'direction' => 'direction',
         'answered_by' => 'answeredBy',
+        'caller_name' => 'callerName',
+        'web_rtc' => 'webRTC',
         'subresource_uris' => 'subresourceUris',
         'application_id' => 'applicationId'
     ];
@@ -261,6 +289,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => 'setDateCreated',
         'date_updated' => 'setDateUpdated',
         'revision' => 'setRevision',
+        'date_created_iso' => 'setDateCreatedIso',
+        'date_updated_iso' => 'setDateUpdatedIso',
         'call_id' => 'setCallId',
         'parent_call_id' => 'setParentCallId',
         'account_id' => 'setAccountId',
@@ -269,13 +299,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => 'setPhoneNumberId',
         'status' => 'setStatus',
         'start_time' => 'setStartTime',
+        'start_time_iso' => 'setStartTimeIso',
         'connect_time' => 'setConnectTime',
+        'connect_time_iso' => 'setConnectTimeIso',
         'end_time' => 'setEndTime',
+        'end_time_iso' => 'setEndTimeIso',
         'duration' => 'setDuration',
         'connect_duration' => 'setConnectDuration',
         'audio_stream_duration' => 'setAudioStreamDuration',
         'direction' => 'setDirection',
         'answered_by' => 'setAnsweredBy',
+        'caller_name' => 'setCallerName',
+        'web_rtc' => 'setWebRtc',
         'subresource_uris' => 'setSubresourceUris',
         'application_id' => 'setApplicationId'
     ];
@@ -290,6 +325,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_created' => 'getDateCreated',
         'date_updated' => 'getDateUpdated',
         'revision' => 'getRevision',
+        'date_created_iso' => 'getDateCreatedIso',
+        'date_updated_iso' => 'getDateUpdatedIso',
         'call_id' => 'getCallId',
         'parent_call_id' => 'getParentCallId',
         'account_id' => 'getAccountId',
@@ -298,13 +335,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone_number_id' => 'getPhoneNumberId',
         'status' => 'getStatus',
         'start_time' => 'getStartTime',
+        'start_time_iso' => 'getStartTimeIso',
         'connect_time' => 'getConnectTime',
+        'connect_time_iso' => 'getConnectTimeIso',
         'end_time' => 'getEndTime',
+        'end_time_iso' => 'getEndTimeIso',
         'duration' => 'getDuration',
         'connect_duration' => 'getConnectDuration',
         'audio_stream_duration' => 'getAudioStreamDuration',
         'direction' => 'getDirection',
         'answered_by' => 'getAnsweredBy',
+        'caller_name' => 'getCallerName',
+        'web_rtc' => 'getWebRtc',
         'subresource_uris' => 'getSubresourceUris',
         'application_id' => 'getApplicationId'
     ];
@@ -370,6 +412,8 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('date_created', $data ?? [], null);
         $this->setIfExists('date_updated', $data ?? [], null);
         $this->setIfExists('revision', $data ?? [], null);
+        $this->setIfExists('date_created_iso', $data ?? [], null);
+        $this->setIfExists('date_updated_iso', $data ?? [], null);
         $this->setIfExists('call_id', $data ?? [], null);
         $this->setIfExists('parent_call_id', $data ?? [], null);
         $this->setIfExists('account_id', $data ?? [], null);
@@ -378,13 +422,18 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('phone_number_id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('start_time', $data ?? [], null);
+        $this->setIfExists('start_time_iso', $data ?? [], null);
         $this->setIfExists('connect_time', $data ?? [], null);
+        $this->setIfExists('connect_time_iso', $data ?? [], null);
         $this->setIfExists('end_time', $data ?? [], null);
+        $this->setIfExists('end_time_iso', $data ?? [], null);
         $this->setIfExists('duration', $data ?? [], null);
         $this->setIfExists('connect_duration', $data ?? [], null);
         $this->setIfExists('audio_stream_duration', $data ?? [], null);
         $this->setIfExists('direction', $data ?? [], null);
         $this->setIfExists('answered_by', $data ?? [], null);
+        $this->setIfExists('caller_name', $data ?? [], null);
+        $this->setIfExists('web_rtc', $data ?? [], null);
         $this->setIfExists('subresource_uris', $data ?? [], null);
         $this->setIfExists('application_id', $data ?? [], null);
     }
@@ -535,6 +584,74 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable revision cannot be null');
         }
         $this->container['revision'] = $revision;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_created_iso
+     *
+     * @return \DateTime|null
+     */
+    public function getDateCreatedIso()
+    {
+        return $this->container['date_created_iso'];
+    }
+
+    /**
+     * Sets date_created_iso
+     *
+     * @param \DateTime|null $date_created_iso The date that this resource was created in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+     *
+     * @return self
+     */
+    public function setDateCreatedIso($date_created_iso)
+    {
+        if (is_null($date_created_iso)) {
+            array_push($this->openAPINullablesSetToNull, 'date_created_iso');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_created_iso', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['date_created_iso'] = $date_created_iso;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_updated_iso
+     *
+     * @return \DateTime|null
+     */
+    public function getDateUpdatedIso()
+    {
+        return $this->container['date_updated_iso'];
+    }
+
+    /**
+     * Sets date_updated_iso
+     *
+     * @param \DateTime|null $date_updated_iso The date that this resource was last updated in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+     *
+     * @return self
+     */
+    public function setDateUpdatedIso($date_updated_iso)
+    {
+        if (is_null($date_updated_iso)) {
+            array_push($this->openAPINullablesSetToNull, 'date_updated_iso');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_updated_iso', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['date_updated_iso'] = $date_updated_iso;
 
         return $this;
     }
@@ -812,6 +929,40 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets start_time_iso
+     *
+     * @return \DateTime|null
+     */
+    public function getStartTimeIso()
+    {
+        return $this->container['start_time_iso'];
+    }
+
+    /**
+     * Sets start_time_iso
+     *
+     * @param \DateTime|null $start_time_iso Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+     *
+     * @return self
+     */
+    public function setStartTimeIso($start_time_iso)
+    {
+        if (is_null($start_time_iso)) {
+            array_push($this->openAPINullablesSetToNull, 'start_time_iso');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start_time_iso', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['start_time_iso'] = $start_time_iso;
+
+        return $this;
+    }
+
+    /**
      * Gets connect_time
      *
      * @return string|null
@@ -846,6 +997,40 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets connect_time_iso
+     *
+     * @return \DateTime|null
+     */
+    public function getConnectTimeIso()
+    {
+        return $this->container['connect_time_iso'];
+    }
+
+    /**
+     * Sets connect_time_iso
+     *
+     * @param \DateTime|null $connect_time_iso Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+     *
+     * @return self
+     */
+    public function setConnectTimeIso($connect_time_iso)
+    {
+        if (is_null($connect_time_iso)) {
+            array_push($this->openAPINullablesSetToNull, 'connect_time_iso');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('connect_time_iso', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['connect_time_iso'] = $connect_time_iso;
+
+        return $this;
+    }
+
+    /**
      * Gets end_time
      *
      * @return string|null
@@ -875,6 +1060,40 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['end_time'] = $end_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_time_iso
+     *
+     * @return \DateTime|null
+     */
+    public function getEndTimeIso()
+    {
+        return $this->container['end_time_iso'];
+    }
+
+    /**
+     * Sets end_time_iso
+     *
+     * @param \DateTime|null $end_time_iso End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call did not complete successfully.
+     *
+     * @return self
+     */
+    public function setEndTimeIso($end_time_iso)
+    {
+        if (is_null($end_time_iso)) {
+            array_push($this->openAPINullablesSetToNull, 'end_time_iso');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('end_time_iso', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['end_time_iso'] = $end_time_iso;
 
         return $this;
     }
@@ -1050,9 +1269,77 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets caller_name
+     *
+     * @return string|null
+     */
+    public function getCallerName()
+    {
+        return $this->container['caller_name'];
+    }
+
+    /**
+     * Sets caller_name
+     *
+     * @param string|null $caller_name The caller ID name (CNAM) for this Call. Empty if unavailable.
+     *
+     * @return self
+     */
+    public function setCallerName($caller_name)
+    {
+        if (is_null($caller_name)) {
+            array_push($this->openAPINullablesSetToNull, 'caller_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('caller_name', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['caller_name'] = $caller_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets web_rtc
+     *
+     * @return bool|null
+     */
+    public function getWebRtc()
+    {
+        return $this->container['web_rtc'];
+    }
+
+    /**
+     * Sets web_rtc
+     *
+     * @param bool|null $web_rtc Indicates whether this Call was initiated via WebRTC.
+     *
+     * @return self
+     */
+    public function setWebRtc($web_rtc)
+    {
+        if (is_null($web_rtc)) {
+            array_push($this->openAPINullablesSetToNull, 'web_rtc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('web_rtc', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['web_rtc'] = $web_rtc;
+
+        return $this;
+    }
+
+    /**
      * Gets subresource_uris
      *
-     * @return object|null
+     * @return \FreeClimb\Api\Model\CallResultAllOfSubresourceUris|null
      */
     public function getSubresourceUris()
     {
@@ -1062,7 +1349,7 @@ class CallResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subresource_uris
      *
-     * @param object|null $subresource_uris The list of subresources for this Call. These include things like logs and recordings associated with the Call.
+     * @param \FreeClimb\Api\Model\CallResultAllOfSubresourceUris|null $subresource_uris subresource_uris
      *
      * @return self
      */

@@ -15559,15 +15559,17 @@ class DefaultApi
 
      * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
 
+     * @param  bool $web_rtc Only show Calls that were originated via WebRTC. (optional, default to false)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \FreeClimb\Api\Model\CallList
      */
-    public function listCalls($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCalls($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, $web_rtc = false, string $contentType = self::contentTypes['listCalls'][0])
     {
-        list($response) = $this->listCallsWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
+        list($response) = $this->listCallsWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc, $contentType);
         return $response;
     }     
     /**
@@ -15598,15 +15600,17 @@ class DefaultApi
 
      * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
 
+     * @param  bool $web_rtc Only show Calls that were originated via WebRTC. (optional, default to false)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \FreeClimb\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \FreeClimb\Api\Model\CallList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCallsWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, $web_rtc = false, string $contentType = self::contentTypes['listCalls'][0])
     {
-        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);        
+        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc, $contentType);        
 
         try {
             $options = $this->createHttpClientOption();
@@ -15745,14 +15749,16 @@ class DefaultApi
 
      * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
 
+     * @param  bool $web_rtc Only show Calls that were originated via WebRTC. (optional, default to false)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsync($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsync($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, $web_rtc = false, string $contentType = self::contentTypes['listCalls'][0])
     {
-        return $this->listCallsAsyncWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType)
+        return $this->listCallsAsyncWithHttpInfo($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15788,15 +15794,17 @@ class DefaultApi
 
      * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
 
+     * @param  bool $web_rtc Only show Calls that were originated via WebRTC. (optional, default to false)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCallsAsyncWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsAsyncWithHttpInfo($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, $web_rtc = false, string $contentType = self::contentTypes['listCalls'][0])
     {
         $returnType = '\FreeClimb\Api\Model\CallList';
-        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $contentType);
+        $request = $this->listCallsRequest($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15860,12 +15868,14 @@ class DefaultApi
 
      * @param  int $risk_score_max The maximum riskScore that should be included in the list. (optional)
 
+     * @param  bool $web_rtc Only show Calls that were originated via WebRTC. (optional, default to false)
+
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCalls'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCallsRequest($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, string $contentType = self::contentTypes['listCalls'][0])
+    public function listCallsRequest($used_audio_stream = false, $active = false, $to = null, $from = null, $status = null, $start_time = null, $end_time = null, $parent_call_id = null, $application_id = null, $risk_score_min = null, $risk_score_max = null, $web_rtc = false, string $contentType = self::contentTypes['listCalls'][0])
     {
         $account_id = $this->config->getUsername();
 
@@ -15880,6 +15890,7 @@ class DefaultApi
         if ($application_id !== null && count($application_id) > 16) {
             throw new \InvalidArgumentException('invalid value for "$application_id" when calling DefaultApi.listCalls, number of items must be less than or equal to 16.');
         }
+
 
 
 
@@ -15987,6 +15998,15 @@ class DefaultApi
             $risk_score_max,
             'riskScoreMax', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $web_rtc,
+            'webRTC', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

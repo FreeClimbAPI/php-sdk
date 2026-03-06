@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * CallResultAllOfSubresourceUrisTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * CallResultAllOfSubresourceUrisTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description The list of subresources for this Call. These include things like logs and recordings associated with the Call.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class CallResultAllOfSubresourceUrisTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->CallResultAllOfSubresourceUris = new \FreeClimb\Api\Model\CallResultAllOfSubresourceUris();
     }
 
     /**
@@ -74,49 +74,19 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyLogs()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
+
+        $this->CallResultAllOfSubresourceUris->setLogs('TS');
+        $this->assertEquals('TS', $this->CallResultAllOfSubresourceUris->getLogs());
+        $this->assertIsString($this->CallResultAllOfSubresourceUris->getLogs());
     }
 
-    public function testPropertyCampaignId()
+    public function testPropertyRecordings()
     {
 
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
-    }
-
-    public function testPropertyPhoneNumber()
-    {
-
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
-    }
-
-    public function testPropertyAlias()
-    {
-
-        $this->AvailableNumber->setAlias('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getAlias());
-        $this->assertIsString($this->AvailableNumber->getAlias());
-    }
-
-    public function testPropertyRegion()
-    {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->CallResultAllOfSubresourceUris->setRecordings('TS');
+        $this->assertEquals('TS', $this->CallResultAllOfSubresourceUris->getRecordings());
+        $this->assertIsString($this->CallResultAllOfSubresourceUris->getRecordings());
     }
 }

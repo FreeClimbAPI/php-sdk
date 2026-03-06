@@ -2798,7 +2798,7 @@ try {
 ## `listCalls()`
 
 ```php
-listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max): \FreeClimb\Api\Model\CallList
+listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc): \FreeClimb\Api\Model\CallList
 ```
 
 List Calls
@@ -2833,9 +2833,10 @@ $parent_call_id = 'parent_call_id_example'; // string | Only show Calls spawned 
 $application_id = array('application_id_example'); // string[] | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
 $risk_score_min = 56; // int | The minimum riskScore that should be included in the list.
 $risk_score_max = 56; // int | The maximum riskScore that should be included in the list.
+$web_rtc = false; // bool | Only show Calls that were originated via WebRTC.
 
 try {
-    $result = $apiInstance->listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max);
+    $result = $apiInstance->listCalls($used_audio_stream, $active, $to, $from, $status, $start_time, $end_time, $parent_call_id, $application_id, $risk_score_min, $risk_score_max, $web_rtc);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->listCalls: ', $e->getMessage(), PHP_EOL;
@@ -2857,6 +2858,7 @@ try {
 | **application_id** | [**string[]**](../Model/string.md)| Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
 | **risk_score_min** | **int**| The minimum riskScore that should be included in the list. | [optional] |
 | **risk_score_max** | **int**| The maximum riskScore that should be included in the list. | [optional] |
+| **web_rtc** | **bool**| Only show Calls that were originated via WebRTC. | [optional] [default to false] |
 
 ### Return type
 
