@@ -131,7 +131,7 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'campaign_id' => true,
         'segment_count' => true,
         'media_urls' => true,
-        'tfn' => false,
+        'tfn' => true,
         'phone_number_id' => true,
         'application_id' => true
     ];
@@ -953,7 +953,14 @@ class MessageResult implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTfn($tfn)
     {
         if (is_null($tfn)) {
-            throw new \InvalidArgumentException('non-nullable tfn cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tfn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tfn', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tfn'] = $tfn;
 

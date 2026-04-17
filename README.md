@@ -203,6 +203,8 @@ Class | Method | HTTP request | Description
 - [ApplicationList](docs/Model/ApplicationList.md)
 - [ApplicationRequest](docs/Model/ApplicationRequest.md)
 - [ApplicationResult](docs/Model/ApplicationResult.md)
+- [AudioStream](docs/Model/AudioStream.md)
+- [AudioStreamWebhook](docs/Model/AudioStreamWebhook.md)
 - [AvailableNumber](docs/Model/AvailableNumber.md)
 - [AvailableNumberList](docs/Model/AvailableNumberList.md)
 - [BargeInReason](docs/Model/BargeInReason.md)

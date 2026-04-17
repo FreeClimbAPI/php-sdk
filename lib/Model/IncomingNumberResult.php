@@ -121,7 +121,7 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'region' => true,
         'country' => true,
         'offnet' => true,
-        'tfn' => false
+        'tfn' => true
     ];
 
     /**
@@ -850,7 +850,14 @@ class IncomingNumberResult implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setTfn($tfn)
     {
         if (is_null($tfn)) {
-            throw new \InvalidArgumentException('non-nullable tfn cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tfn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tfn', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tfn'] = $tfn;
 

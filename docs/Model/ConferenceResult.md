@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **conference_id** | **string** | A string that uniquely identifies this Conference resource. | [optional]
 **account_id** | **string** | ID of the account that created this Conference. | [optional]
 **alias** | **string** | A description for this Conference. | [optional]
-**play_beep** | [**\FreeClimb\Api\Model\PlayBeep**](PlayBeep.md) |  | [optional]
+**play_beep** | [**\FreeClimb\Api\Model\PlayBeep**](PlayBeep.md) | Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always. | [optional]
 **record** | **bool** | Flag indicating whether recording is enabled for this Conference. | [optional]
 **status** | [**\FreeClimb\Api\Model\ConferenceStatus**](ConferenceStatus.md) |  | [optional]
 **wait_url** | **string** | URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state. | [optional]

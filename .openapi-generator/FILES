@@ -15,6 +15,8 @@ docs/Model/AnsweredBy.md
 docs/Model/ApplicationList.md
 docs/Model/ApplicationRequest.md
 docs/Model/ApplicationResult.md
+docs/Model/AudioStream.md
+docs/Model/AudioStreamWebhook.md
 docs/Model/AvailableNumber.md
 docs/Model/AvailableNumberList.md
 docs/Model/BargeInReason.md
@@ -177,6 +179,8 @@ lib/Model/AnsweredBy.php
 lib/Model/ApplicationList.php
 lib/Model/ApplicationRequest.php
 lib/Model/ApplicationResult.php
+lib/Model/AudioStream.php
+lib/Model/AudioStreamWebhook.php
 lib/Model/AvailableNumber.php
 lib/Model/AvailableNumberList.php
 lib/Model/BargeInReason.php
@@ -338,6 +342,8 @@ test/Model/AnsweredByTest.php
 test/Model/ApplicationListTest.php
 test/Model/ApplicationRequestTest.php
 test/Model/ApplicationResultTest.php
+test/Model/AudioStreamTest.php
+test/Model/AudioStreamWebhookTest.php
 test/Model/AvailableNumberListTest.php
 test/Model/AvailableNumberTest.php
 test/Model/BargeInReasonTest.php

@@ -605,7 +605,7 @@ class ConferenceResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets play_beep
      *
-     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep play_beep
+     * @param \FreeClimb\Api\Model\PlayBeep|null $play_beep Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
      *
      * @return self
      */
