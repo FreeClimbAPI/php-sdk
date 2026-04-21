@@ -1,7 +1,7 @@
 <?php
 
 /**
- * QueueResult
+ * AudioStreamWebhook
  *
  * PHP version 7.4
  *
@@ -29,20 +29,19 @@
  */
 
 namespace FreeClimb\Api\Model;
-
-use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * QueueResult Class Doc Comment
+ * AudioStreamWebhook Class Doc Comment
  *
  * @category Class
+ * @description A gRPC session has ended for this Call its actionUrl is being invoked. A PerCL response is expected — unless the URL is invoked due to the participant hanging up.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
+class AudioStreamWebhook extends Webhook
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'QueueResult';
+    protected static $openAPIModelName = 'AudioStreamWebhook';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,18 +58,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'uri' => 'string',
-        'date_created' => 'string',
-        'date_updated' => 'string',
-        'revision' => 'int',
+        'request_type' => 'string',
+        'call_id' => 'string',
         'account_id' => 'string',
-        'queue_id' => 'string',
-        'alias' => 'string',
-        'max_size' => 'int',
-        'current_size' => 'int',
-        'average_queue_removal_time' => 'int',
-        'average_wait_time' => 'int',
-        'subresource_uris' => 'object'
+        'from' => 'string',
+        'to' => 'string',
+        'call_status' => '\FreeClimb\Api\Model\CallStatus',
+        'direction' => '\FreeClimb\Api\Model\CallDirection',
+        'conference_id' => 'string',
+        'queue_id' => 'string'
     ];
 
     /**
@@ -81,18 +77,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'uri' => null,
-        'date_created' => null,
-        'date_updated' => null,
-        'revision' => null,
+        'request_type' => null,
+        'call_id' => null,
         'account_id' => null,
-        'queue_id' => null,
-        'alias' => null,
-        'max_size' => null,
-        'current_size' => null,
-        'average_queue_removal_time' => null,
-        'average_wait_time' => null,
-        'subresource_uris' => null
+        'from' => null,
+        'to' => null,
+        'call_status' => null,
+        'direction' => null,
+        'conference_id' => null,
+        'queue_id' => null
     ];
 
     /**
@@ -101,18 +94,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'uri' => false,
-        'date_created' => false,
-        'date_updated' => false,
-        'revision' => false,
-        'account_id' => true,
-        'queue_id' => true,
-        'alias' => true,
-        'max_size' => true,
-        'current_size' => true,
-        'average_queue_removal_time' => true,
-        'average_wait_time' => true,
-        'subresource_uris' => true
+        'request_type' => false,
+        'call_id' => false,
+        'account_id' => false,
+        'from' => false,
+        'to' => false,
+        'call_status' => true,
+        'direction' => true,
+        'conference_id' => true,
+        'queue_id' => true
     ];
 
     /**
@@ -129,7 +119,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -139,7 +129,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -149,7 +139,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -201,18 +191,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'uri' => 'uri',
-        'date_created' => 'dateCreated',
-        'date_updated' => 'dateUpdated',
-        'revision' => 'revision',
+        'request_type' => 'requestType',
+        'call_id' => 'callId',
         'account_id' => 'accountId',
-        'queue_id' => 'queueId',
-        'alias' => 'alias',
-        'max_size' => 'maxSize',
-        'current_size' => 'currentSize',
-        'average_queue_removal_time' => 'averageQueueRemovalTime',
-        'average_wait_time' => 'averageWaitTime',
-        'subresource_uris' => 'subresourceUris'
+        'from' => 'from',
+        'to' => 'to',
+        'call_status' => 'callStatus',
+        'direction' => 'direction',
+        'conference_id' => 'conferenceId',
+        'queue_id' => 'queueId'
     ];
 
     /**
@@ -221,18 +208,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'uri' => 'setUri',
-        'date_created' => 'setDateCreated',
-        'date_updated' => 'setDateUpdated',
-        'revision' => 'setRevision',
+        'request_type' => 'setRequestType',
+        'call_id' => 'setCallId',
         'account_id' => 'setAccountId',
-        'queue_id' => 'setQueueId',
-        'alias' => 'setAlias',
-        'max_size' => 'setMaxSize',
-        'current_size' => 'setCurrentSize',
-        'average_queue_removal_time' => 'setAverageQueueRemovalTime',
-        'average_wait_time' => 'setAverageWaitTime',
-        'subresource_uris' => 'setSubresourceUris'
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'call_status' => 'setCallStatus',
+        'direction' => 'setDirection',
+        'conference_id' => 'setConferenceId',
+        'queue_id' => 'setQueueId'
     ];
 
     /**
@@ -241,18 +225,15 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'uri' => 'getUri',
-        'date_created' => 'getDateCreated',
-        'date_updated' => 'getDateUpdated',
-        'revision' => 'getRevision',
+        'request_type' => 'getRequestType',
+        'call_id' => 'getCallId',
         'account_id' => 'getAccountId',
-        'queue_id' => 'getQueueId',
-        'alias' => 'getAlias',
-        'max_size' => 'getMaxSize',
-        'current_size' => 'getCurrentSize',
-        'average_queue_removal_time' => 'getAverageQueueRemovalTime',
-        'average_wait_time' => 'getAverageWaitTime',
-        'subresource_uris' => 'getSubresourceUris'
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'call_status' => 'getCallStatus',
+        'direction' => 'getDirection',
+        'conference_id' => 'getConferenceId',
+        'queue_id' => 'getQueueId'
     ];
 
     /**
@@ -263,7 +244,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -273,7 +254,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -283,7 +264,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -297,12 +278,6 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -312,18 +287,17 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('uri', $data ?? [], null);
-        $this->setIfExists('date_created', $data ?? [], null);
-        $this->setIfExists('date_updated', $data ?? [], null);
-        $this->setIfExists('revision', $data ?? [], null);
+        parent::__construct($data);
+
+        $this->setIfExists('request_type', $data ?? [], null);
+        $this->setIfExists('call_id', $data ?? [], null);
         $this->setIfExists('account_id', $data ?? [], null);
+        $this->setIfExists('from', $data ?? [], null);
+        $this->setIfExists('to', $data ?? [], null);
+        $this->setIfExists('call_status', $data ?? [], null);
+        $this->setIfExists('direction', $data ?? [], null);
+        $this->setIfExists('conference_id', $data ?? [], null);
         $this->setIfExists('queue_id', $data ?? [], null);
-        $this->setIfExists('alias', $data ?? [], null);
-        $this->setIfExists('max_size', $data ?? [], null);
-        $this->setIfExists('current_size', $data ?? [], null);
-        $this->setIfExists('average_queue_removal_time', $data ?? [], null);
-        $this->setIfExists('average_wait_time', $data ?? [], null);
-        $this->setIfExists('subresource_uris', $data ?? [], null);
     }
 
     /**
@@ -351,7 +325,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -369,109 +343,55 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets uri
+     * Gets request_type
      *
      * @return string|null
      */
-    public function getUri()
+    public function getRequestType()
     {
-        return $this->container['uri'];
+        return $this->container['request_type'];
     }
 
     /**
-     * Sets uri
+     * Sets request_type
      *
-     * @param string|null $uri The URI for this resource, relative to /apiserver.
+     * @param string|null $request_type Context or reason why this request is being made. Will be audioStream - gRPC session for this Call has ended and its actionUrl is being invoked.
      *
      * @return self
      */
-    public function setUri($uri)
+    public function setRequestType($request_type)
     {
-        if (is_null($uri)) {
-            throw new \InvalidArgumentException('non-nullable uri cannot be null');
+        if (is_null($request_type)) {
+            throw new \InvalidArgumentException('non-nullable request_type cannot be null');
         }
-        $this->container['uri'] = $uri;
+        $this->container['request_type'] = $request_type;
 
         return $this;
     }
 
     /**
-     * Gets date_created
+     * Gets call_id
      *
      * @return string|null
      */
-    public function getDateCreated()
+    public function getCallId()
     {
-        return $this->container['date_created'];
+        return $this->container['call_id'];
     }
 
     /**
-     * Sets date_created
+     * Sets call_id
      *
-     * @param string|null $date_created The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
+     * @param string|null $call_id Unique ID for this Call, generated by FreeClimb. This is the call leg which ended its gRPC session.
      *
      * @return self
      */
-    public function setDateCreated($date_created)
+    public function setCallId($call_id)
     {
-        if (is_null($date_created)) {
-            throw new \InvalidArgumentException('non-nullable date_created cannot be null');
+        if (is_null($call_id)) {
+            throw new \InvalidArgumentException('non-nullable call_id cannot be null');
         }
-        $this->container['date_created'] = $date_created;
-
-        return $this;
-    }
-
-    /**
-     * Gets date_updated
-     *
-     * @return string|null
-     */
-    public function getDateUpdated()
-    {
-        return $this->container['date_updated'];
-    }
-
-    /**
-     * Sets date_updated
-     *
-     * @param string|null $date_updated The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
-     *
-     * @return self
-     */
-    public function setDateUpdated($date_updated)
-    {
-        if (is_null($date_updated)) {
-            throw new \InvalidArgumentException('non-nullable date_updated cannot be null');
-        }
-        $this->container['date_updated'] = $date_updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets revision
-     *
-     * @return int|null
-     */
-    public function getRevision()
-    {
-        return $this->container['revision'];
-    }
-
-    /**
-     * Sets revision
-     *
-     * @param int|null $revision Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
-     *
-     * @return self
-     */
-    public function setRevision($revision)
-    {
-        if (is_null($revision)) {
-            throw new \InvalidArgumentException('non-nullable revision cannot be null');
-        }
-        $this->container['revision'] = $revision;
+        $this->container['call_id'] = $call_id;
 
         return $this;
     }
@@ -489,23 +409,172 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets account_id
      *
-     * @param string|null $account_id ID of the account that created this Queue.
+     * @param string|null $account_id Account ID associated with your account.
      *
      * @return self
      */
     public function setAccountId($account_id)
     {
         if (is_null($account_id)) {
-            array_push($this->openAPINullablesSetToNull, 'account_id');
+            throw new \InvalidArgumentException('non-nullable account_id cannot be null');
+        }
+        $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     *
+     * @return string|null
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param string|null $from Phone number of the party that initiated the Call (in E.164 format).
+     *
+     * @return self
+     */
+    public function setFrom($from)
+    {
+        if (is_null($from)) {
+            throw new \InvalidArgumentException('non-nullable from cannot be null');
+        }
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets to
+     *
+     * @return string|null
+     */
+    public function getTo()
+    {
+        return $this->container['to'];
+    }
+
+    /**
+     * Sets to
+     *
+     * @param string|null $to Phone number provisioned to you and to which this Call is directed (in E.164 format).
+     *
+     * @return self
+     */
+    public function setTo($to)
+    {
+        if (is_null($to)) {
+            throw new \InvalidArgumentException('non-nullable to cannot be null');
+        }
+        $this->container['to'] = $to;
+
+        return $this;
+    }
+
+    /**
+     * Gets call_status
+     *
+     * @return \FreeClimb\Api\Model\CallStatus|null
+     */
+    public function getCallStatus()
+    {
+        return $this->container['call_status'];
+    }
+
+    /**
+     * Sets call_status
+     *
+     * @param \FreeClimb\Api\Model\CallStatus|null $call_status call_status
+     *
+     * @return self
+     */
+    public function setCallStatus($call_status)
+    {
+        if (is_null($call_status)) {
+            array_push($this->openAPINullablesSetToNull, 'call_status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('account_id', $nullablesSetToNull, true);
+            $index = array_search('call_status', $nullablesSetToNull, true);
             if ($index !== false) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['account_id'] = $account_id;
+        $this->container['call_status'] = $call_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets direction
+     *
+     * @return \FreeClimb\Api\Model\CallDirection|null
+     */
+    public function getDirection()
+    {
+        return $this->container['direction'];
+    }
+
+    /**
+     * Sets direction
+     *
+     * @param \FreeClimb\Api\Model\CallDirection|null $direction direction
+     *
+     * @return self
+     */
+    public function setDirection($direction)
+    {
+        if (is_null($direction)) {
+            array_push($this->openAPINullablesSetToNull, 'direction');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('direction', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * Gets conference_id
+     *
+     * @return string|null
+     */
+    public function getConferenceId()
+    {
+        return $this->container['conference_id'];
+    }
+
+    /**
+     * Sets conference_id
+     *
+     * @param string|null $conference_id This is only populated if request pertains to a Conference. Otherwise, it is set to null.
+     *
+     * @return self
+     */
+    public function setConferenceId($conference_id)
+    {
+        if (is_null($conference_id)) {
+            array_push($this->openAPINullablesSetToNull, 'conference_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('conference_id', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['conference_id'] = $conference_id;
 
         return $this;
     }
@@ -523,7 +592,7 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets queue_id
      *
-     * @param string|null $queue_id A string that uniquely identifies this Queue resource.
+     * @param string|null $queue_id This is only populated if the request pertains to a Queue. Otherwise, it is set to null.
      *
      * @return self
      */
@@ -540,210 +609,6 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['queue_id'] = $queue_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets alias
-     *
-     * @return string|null
-     */
-    public function getAlias()
-    {
-        return $this->container['alias'];
-    }
-
-    /**
-     * Sets alias
-     *
-     * @param string|null $alias A description for this Queue.
-     *
-     * @return self
-     */
-    public function setAlias($alias)
-    {
-        if (is_null($alias)) {
-            array_push($this->openAPINullablesSetToNull, 'alias');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alias', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['alias'] = $alias;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_size
-     *
-     * @return int|null
-     */
-    public function getMaxSize()
-    {
-        return $this->container['max_size'];
-    }
-
-    /**
-     * Sets max_size
-     *
-     * @param int|null $max_size The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000.
-     *
-     * @return self
-     */
-    public function setMaxSize($max_size)
-    {
-        if (is_null($max_size)) {
-            array_push($this->openAPINullablesSetToNull, 'max_size');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('max_size', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['max_size'] = $max_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets current_size
-     *
-     * @return int|null
-     */
-    public function getCurrentSize()
-    {
-        return $this->container['current_size'];
-    }
-
-    /**
-     * Sets current_size
-     *
-     * @param int|null $current_size Count of Calls currently in the Queue.
-     *
-     * @return self
-     */
-    public function setCurrentSize($current_size)
-    {
-        if (is_null($current_size)) {
-            array_push($this->openAPINullablesSetToNull, 'current_size');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('current_size', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['current_size'] = $current_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets average_queue_removal_time
-     *
-     * @return int|null
-     */
-    public function getAverageQueueRemovalTime()
-    {
-        return $this->container['average_queue_removal_time'];
-    }
-
-    /**
-     * Sets average_queue_removal_time
-     *
-     * @param int|null $average_queue_removal_time The average amount of time (in seconds) for a call to be removed from the queue.
-     *
-     * @return self
-     */
-    public function setAverageQueueRemovalTime($average_queue_removal_time)
-    {
-        if (is_null($average_queue_removal_time)) {
-            array_push($this->openAPINullablesSetToNull, 'average_queue_removal_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('average_queue_removal_time', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['average_queue_removal_time'] = $average_queue_removal_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets average_wait_time
-     *
-     * @return int|null
-     */
-    public function getAverageWaitTime()
-    {
-        return $this->container['average_wait_time'];
-    }
-
-    /**
-     * Sets average_wait_time
-     *
-     * @param int|null $average_wait_time The average wait time (in seconds) of all Calls in the Queue.
-     *
-     * @return self
-     */
-    public function setAverageWaitTime($average_wait_time)
-    {
-        if (is_null($average_wait_time)) {
-            array_push($this->openAPINullablesSetToNull, 'average_wait_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('average_wait_time', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['average_wait_time'] = $average_wait_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets subresource_uris
-     *
-     * @return object|null
-     */
-    public function getSubresourceUris()
-    {
-        return $this->container['subresource_uris'];
-    }
-
-    /**
-     * Sets subresource_uris
-     *
-     * @param object|null $subresource_uris List of subresources for this Queue (which includes Queue members).
-     *
-     * @return self
-     */
-    public function setSubresourceUris($subresource_uris)
-    {
-        if (is_null($subresource_uris)) {
-            array_push($this->openAPINullablesSetToNull, 'subresource_uris');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subresource_uris', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['subresource_uris'] = $subresource_uris;
 
         return $this;
     }
@@ -837,6 +702,11 @@ class QueueResult implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
+    public static function deserialize(string $payload)
+    {
+        $content = json_decode($payload, false, 512, JSON_THROW_ON_ERROR);
+        return ObjectSerializer::deserialize($content, '\FreeClimb\Api\Model\AudioStreamWebhook', []);
+    }
 }
 
 

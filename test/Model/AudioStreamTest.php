@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumberTest
+ * AudioStreamTest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ namespace FreeClimb\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AvailableNumberTest Class Doc Comment
+ * AudioStreamTest Class Doc Comment
  *
  * @category    Class
- * @description AvailableNumber
+ * @description The &#x60;AudioStream&#x60; command transfers control of the call to a gRPC session.  Upon completion of the gRPC session, if the actionUrl is specified, control can be returned to percl usage or the call will simply be hung up if the actionUrl is not specified.
  * @package     FreeClimb\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
 #[\AllowDynamicProperties]
-class AvailableNumberTest extends TestCase
+class AudioStreamTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -56,7 +56,7 @@ class AvailableNumberTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->AvailableNumber = new \FreeClimb\Api\Model\AvailableNumber();
+        $this->AudioStream = new \FreeClimb\Api\Model\AudioStream();
     }
 
     /**
@@ -74,49 +74,41 @@ class AvailableNumberTest extends TestCase
     }
 
 
-    public function testPropertyCapabilities()
+    public function testPropertyLocation()
     {
-        $this->AvailableNumber->setcapabilities(new \stdClass());
-        $this->assertInstanceOf(\stdClass::class, $this->AvailableNumber->getcapabilities());
+
+        $this->AudioStream->setLocation('TS');
+        $this->assertEquals('TS', $this->AudioStream->getLocation());
+        $this->assertIsString($this->AudioStream->getLocation());
     }
 
-    public function testPropertyCampaignId()
+    public function testPropertyActionUrl()
     {
 
-        $this->AvailableNumber->setCampaignId('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCampaignId());
-        $this->assertIsString($this->AvailableNumber->getCampaignId());
+        $this->AudioStream->setActionUrl('TS');
+        $this->assertEquals('TS', $this->AudioStream->getActionUrl());
+        $this->assertIsString($this->AudioStream->getActionUrl());
     }
 
-    public function testPropertyPhoneNumber()
+    public function testPropertyContentType()
     {
 
-        $this->AvailableNumber->setPhoneNumber('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getPhoneNumber());
-        $this->assertIsString($this->AvailableNumber->getPhoneNumber());
+        $this->AudioStream->setContentType('TS');
+        $this->assertEquals('TS', $this->AudioStream->getContentType());
+        $this->assertIsString($this->AudioStream->getContentType());
     }
 
-    public function testPropertyAlias()
+    public function testPropertyMetaData()
     {
-
-        $this->AvailableNumber->setAlias('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getAlias());
-        $this->assertIsString($this->AvailableNumber->getAlias());
+        $this->AudioStream->setmetaData([]);
+        $this->assertEquals([], $this->AudioStream->getmetaData());
+        $this->assertIsArray($this->AudioStream->getmetaData());
     }
 
-    public function testPropertyRegion()
+    public function testPropertyPrivacyMode()
     {
-
-        $this->AvailableNumber->setRegion('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getRegion());
-        $this->assertIsString($this->AvailableNumber->getRegion());
-    }
-
-    public function testPropertyCountry()
-    {
-
-        $this->AvailableNumber->setCountry('TS');
-        $this->assertEquals('TS', $this->AvailableNumber->getCountry());
-        $this->assertIsString($this->AvailableNumber->getCountry());
+        $this->AudioStream->setprivacyMode(false);
+        $this->assertFalse($this->AudioStream->getprivacyMode());
+        $this->assertIsBool($this->AudioStream->getprivacyMode());
     }
 }

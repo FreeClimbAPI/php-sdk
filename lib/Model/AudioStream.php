@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AvailableNumber
+ * AudioStream
  *
  * PHP version 7.4
  *
@@ -29,20 +29,19 @@
  */
 
 namespace FreeClimb\Api\Model;
-
-use \ArrayAccess;
 use \FreeClimb\Api\ObjectSerializer;
 
 /**
- * AvailableNumber Class Doc Comment
+ * AudioStream Class Doc Comment
  *
  * @category Class
+ * @description The &#x60;AudioStream&#x60; command transfers control of the call to a gRPC session.  Upon completion of the gRPC session, if the actionUrl is specified, control can be returned to percl usage or the call will simply be hung up if the actionUrl is not specified.
  * @package  FreeClimb\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
+class AudioStream extends PerclCommand
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AvailableNumber';
+    protected static $openAPIModelName = 'AudioStream';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +58,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'capabilities' => '\FreeClimb\Api\Model\Capabilities',
-        'campaign_id' => 'string',
-        'phone_number' => 'string',
-        'alias' => 'string',
-        'region' => 'string',
-        'country' => 'string'
+        'location' => 'string',
+        'action_url' => 'string',
+        'content_type' => 'string',
+        'meta_data' => 'string[]',
+        'privacy_mode' => 'bool'
     ];
 
     /**
@@ -75,12 +73,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'capabilities' => null,
-        'campaign_id' => null,
-        'phone_number' => null,
-        'alias' => null,
-        'region' => null,
-        'country' => null
+        'location' => 'uri',
+        'action_url' => 'uri',
+        'content_type' => null,
+        'meta_data' => null,
+        'privacy_mode' => null
     ];
 
     /**
@@ -89,12 +86,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'capabilities' => false,
-        'campaign_id' => true,
-        'phone_number' => true,
-        'alias' => true,
-        'region' => true,
-        'country' => true
+        'location' => false,
+        'action_url' => false,
+        'content_type' => false,
+        'meta_data' => false,
+        'privacy_mode' => false
     ];
 
     /**
@@ -111,7 +107,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +117,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +127,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,12 +179,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'capabilities' => 'capabilities',
-        'campaign_id' => 'campaignId',
-        'phone_number' => 'phoneNumber',
-        'alias' => 'alias',
-        'region' => 'region',
-        'country' => 'country'
+        'location' => 'location',
+        'action_url' => 'actionUrl',
+        'content_type' => 'contentType',
+        'meta_data' => 'metaData',
+        'privacy_mode' => 'privacyMode'
     ];
 
     /**
@@ -197,12 +192,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'capabilities' => 'setCapabilities',
-        'campaign_id' => 'setCampaignId',
-        'phone_number' => 'setPhoneNumber',
-        'alias' => 'setAlias',
-        'region' => 'setRegion',
-        'country' => 'setCountry'
+        'location' => 'setLocation',
+        'action_url' => 'setActionUrl',
+        'content_type' => 'setContentType',
+        'meta_data' => 'setMetaData',
+        'privacy_mode' => 'setPrivacyMode'
     ];
 
     /**
@@ -211,12 +205,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'capabilities' => 'getCapabilities',
-        'campaign_id' => 'getCampaignId',
-        'phone_number' => 'getPhoneNumber',
-        'alias' => 'getAlias',
-        'region' => 'getRegion',
-        'country' => 'getCountry'
+        'location' => 'getLocation',
+        'action_url' => 'getActionUrl',
+        'content_type' => 'getContentType',
+        'meta_data' => 'getMetaData',
+        'privacy_mode' => 'getPrivacyMode'
     ];
 
     /**
@@ -227,7 +220,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +230,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +240,7 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +254,6 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,12 +263,13 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('capabilities', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('phone_number', $data ?? [], null);
-        $this->setIfExists('alias', $data ?? [], null);
-        $this->setIfExists('region', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], null);
+        parent::__construct($data);
+
+        $this->setIfExists('location', $data ?? [], null);
+        $this->setIfExists('action_url', $data ?? [], null);
+        $this->setIfExists('content_type', $data ?? [], null);
+        $this->setIfExists('meta_data', $data ?? [], null);
+        $this->setIfExists('privacy_mode', $data ?? [], null);
     }
 
     /**
@@ -309,8 +297,11 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['location'] === null) {
+            $invalidProperties[] = "'location' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -327,198 +318,136 @@ class AvailableNumber implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets capabilities
+     * Gets location
      *
-     * @return \FreeClimb\Api\Model\Capabilities|null
+     * @return string
      */
-    public function getCapabilities()
+    public function getLocation()
     {
-        return $this->container['capabilities'];
+        return $this->container['location'];
     }
 
     /**
-     * Sets capabilities
+     * Sets location
      *
-     * @param \FreeClimb\Api\Model\Capabilities|null $capabilities capabilities
+     * @param string $location The gRPC server location that will receive the grpc stream as a uri and must be port 80 or 443.
      *
      * @return self
      */
-    public function setCapabilities($capabilities)
+    public function setLocation($location)
     {
-        if (is_null($capabilities)) {
-            throw new \InvalidArgumentException('non-nullable capabilities cannot be null');
+        if (is_null($location)) {
+            throw new \InvalidArgumentException('non-nullable location cannot be null');
         }
-        $this->container['capabilities'] = $capabilities;
+        $this->container['location'] = $location;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets action_url
      *
      * @return string|null
      */
-    public function getCampaignId()
+    public function getActionUrl()
     {
-        return $this->container['campaign_id'];
+        return $this->container['action_url'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets action_url
      *
-     * @param string|null $campaign_id The campaign ID generated by the campaign registry
+     * @param string|null $action_url A request is made to this URL when the gRPC session is concluded. The PerCL script returned in response to the actionUrl will be executed on the call.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setActionUrl($action_url)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($action_url)) {
+            throw new \InvalidArgumentException('non-nullable action_url cannot be null');
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['action_url'] = $action_url;
 
         return $this;
     }
 
     /**
-     * Gets phone_number
+     * Gets content_type
      *
      * @return string|null
      */
-    public function getPhoneNumber()
+    public function getContentType()
     {
-        return $this->container['phone_number'];
+        return $this->container['content_type'];
     }
 
     /**
-     * Sets phone_number
+     * Sets content_type
      *
-     * @param string|null $phone_number The phone number, in E.164 format (+ country code and phone number: +18003608245).
+     * @param string|null $content_type The type and sample rate of the audio being received over the channel must match the environmental sample rate.
      *
      * @return self
      */
-    public function setPhoneNumber($phone_number)
+    public function setContentType($content_type)
     {
-        if (is_null($phone_number)) {
-            array_push($this->openAPINullablesSetToNull, 'phone_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone_number', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($content_type)) {
+            throw new \InvalidArgumentException('non-nullable content_type cannot be null');
         }
-        $this->container['phone_number'] = $phone_number;
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
 
     /**
-     * Gets alias
+     * Gets meta_data
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getAlias()
+    public function getMetaData()
     {
-        return $this->container['alias'];
+        return $this->container['meta_data'];
     }
 
     /**
-     * Sets alias
+     * Sets meta_data
      *
-     * @param string|null $alias A nicely-formatted version of the phone number.
+     * @param string[]|null $meta_data An arbitrary array of strings passed through FC to the GRPC server can be used to pass state or other information about the call.
      *
      * @return self
      */
-    public function setAlias($alias)
+    public function setMetaData($meta_data)
     {
-        if (is_null($alias)) {
-            array_push($this->openAPINullablesSetToNull, 'alias');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alias', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($meta_data)) {
+            throw new \InvalidArgumentException('non-nullable meta_data cannot be null');
         }
-        $this->container['alias'] = $alias;
+        $this->container['meta_data'] = $meta_data;
 
         return $this;
     }
 
     /**
-     * Gets region
+     * Gets privacy_mode
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getRegion()
+    public function getPrivacyMode()
     {
-        return $this->container['region'];
+        return $this->container['privacy_mode'];
     }
 
     /**
-     * Sets region
+     * Sets privacy_mode
      *
-     * @param string|null $region The state or province of this phone number.
+     * @param bool|null $privacy_mode Enables audio redaction with full call recording while gRPC session is running and blocks logging of any DTMFs received by FreeClimb.
      *
      * @return self
      */
-    public function setRegion($region)
+    public function setPrivacyMode($privacy_mode)
     {
-        if (is_null($region)) {
-            array_push($this->openAPINullablesSetToNull, 'region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('region', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($privacy_mode)) {
+            throw new \InvalidArgumentException('non-nullable privacy_mode cannot be null');
         }
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country The country of this phone number.
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        if (is_null($country)) {
-            array_push($this->openAPINullablesSetToNull, 'country');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['country'] = $country;
+        $this->container['privacy_mode'] = $privacy_mode;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class RequestType
     public const DEQUEUE = "dequeue";
     public const QUEUE_WAIT = "queueWait";
     public const ADD_TO_QUEUE_NOTIFICATION = "addToQueueNotification";
+    public const AUDIO_STREAM = "audioStream";
     public const REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification";
     public const CALL_STATUS = "callStatus";
     public const CREATE_CONFERENCE = "createConference";
@@ -90,6 +91,7 @@ class RequestType
             self::DEQUEUE,
             self::QUEUE_WAIT,
             self::ADD_TO_QUEUE_NOTIFICATION,
+            self::AUDIO_STREAM,
             self::REMOVE_FROM_QUEUE_NOTIFICATION,
             self::CALL_STATUS,
             self::CREATE_CONFERENCE,
