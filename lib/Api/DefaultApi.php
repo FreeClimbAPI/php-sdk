@@ -19464,7 +19464,7 @@ class DefaultApi
 
 
             switch ($statusCode) {
-                case 200:
+                case 202:
                     if ('\FreeClimb\Api\Model\CallResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -19536,7 +19536,7 @@ class DefaultApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\FreeClimb\Api\Model\CallResult',
