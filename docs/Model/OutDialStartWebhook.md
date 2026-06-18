@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **dial_call_id** | **string** | ID of the child call that was generated as a result of the Outdial. | [optional]
 **parent_call_id** | **string** | ID of the Call that created this leg (child call). If this was an inbound call or call created via REST API with no parent, this field will be null. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "outDialStart",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "dialCallId": "string",
+  "parentCallId": "string"
+}
+JSON;
+
+// create an instance of OutDialStartWebhook from a JSON string
+$out_dial_start_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\OutDialStartWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -14,4 +14,31 @@ Name | Type | Description | Notes
 **conference_id** | **string** | Unique ID of the Conference. | [optional]
 **queue_id** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "addToQueueNotification",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string"
+}
+JSON;
+
+// create an instance of AddToQueueNotificationWebhook from a JSON string
+$add_to_queue_notification_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\AddToQueueNotificationWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -36,4 +36,51 @@ Name | Type | Description | Notes
 **identity_status** | [**\FreeClimb\Api\Model\SMSTenDLCBrandIdentityStatus**](SMSTenDLCBrandIdentityStatus.md) |  |
 **create_date** | **\DateTime** | Unix timestamp when brand was created. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "mock": true,
+  "optionalAttributes": {},
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef06",
+  "brandId": "BVCEBIJ",
+  "cspId": "SKGC6G0",
+  "firstName": "",
+  "lastName": "",
+  "displayName": "FreeClimb LLC(mock)",
+  "companyName": "FreeClimb LLC",
+  "ein": "843793747",
+  "einIssuingCountry": "US",
+  "phone": "+18475722071",
+  "street": "570 Lake Cook Rd Ste 400",
+  "city": "Deerfield",
+  "state": "IL",
+  "postalCode": "60015",
+  "country": "US",
+  "email": "bmabry@vailsys.com",
+  "stockSymbol": "",
+  "stockExchange": "NASDAQ",
+  "ipAddress": "127.0.0.1",
+  "website": "https://www.freeclimb.com/",
+  "vertical": "TECHNOLOGY",
+  "universalEin": "US_843793747",
+  "referenceId": "ACdeadbeef",
+  "entityType": "PRIVATE_PROFIT",
+  "brandRelationship": "SMALL_ACCOUNT",
+  "identityStatus": "VERIFIED",
+  "createDate": "2022-07-01T20:29:23Z"
+}
+JSON;
+
+// create an instance of SMSTenDLCBrand from a JSON string
+$sms_ten_dlc_brand = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\SMSTenDLCBrand::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

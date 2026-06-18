@@ -19,4 +19,34 @@ Name | Type | Description | Notes
 **status_callback_url** | **string** | URL to inform that the Conference status has changed. | [optional]
 **subresource_uris** | **object** | The list of subresources for this Conference. This includes participants and/or recordings. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "conferenceId": "string",
+  "accountId": "string",
+  "alias": "string",
+  "record": false,
+  "status": "empty",
+  "waitUrl": "https://www.example.com",
+  "actionUrl": "https://www.example.com",
+  "statusCallbackUrl": "https://www.example.com"
+}
+JSON;
+
+// create an instance of ConferenceResult from a JSON string
+$conference_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\ConferenceResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

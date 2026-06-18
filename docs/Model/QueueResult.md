@@ -17,4 +17,33 @@ Name | Type | Description | Notes
 **average_wait_time** | **int** | The average wait time (in seconds) of all Calls in the Queue. | [optional]
 **subresource_uris** | **object** | List of subresources for this Queue (which includes Queue members). | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "queueId": "string",
+  "alias": "string",
+  "maxSize": 0,
+  "currentSize": 0,
+  "averageQueueRemovalTime": 0,
+  "averageWaitTime": 0
+}
+JSON;
+
+// create an instance of QueueResult from a JSON string
+$queue_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\QueueResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

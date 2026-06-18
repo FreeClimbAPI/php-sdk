@@ -10,4 +10,30 @@ Name | Type | Description | Notes
 **meta_data** | **string[]** | An arbitrary array of strings passed through FC to the GRPC server can be used to pass state or other information about the call. | [optional]
 **privacy_mode** | **bool** | Enables audio redaction with full call recording while gRPC session is running and blocks logging of any DTMFs received by FreeClimb. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "AudioStream",
+  "location": "https://www.example.com",
+  "actionUrl": "https://www.example.com",
+  "contentType": "string",
+  "metaData": [
+    "string"
+  ],
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of AudioStream from a JSON string
+$audio_stream = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\AudioStream::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -28,4 +28,45 @@ Name | Type | Description | Notes
 **transcribe_reason** | [**\FreeClimb\Api\Model\TranscribeReason**](TranscribeReason.md) |  | [optional]
 **transcription_duration_ms** | **int** | The duration of the audio being transcribed in milliseconds | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "transcribe",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "recordingId": "string",
+  "recordingUrl": "https://www.example.com",
+  "recordingSize": 0,
+  "recordingFormat": "string",
+  "recordingDurationMs": 0,
+  "termReason": "error",
+  "recordTermReason": "finishKey",
+  "digit": "string",
+  "privacyForLogging": false,
+  "privacyForRecording": false,
+  "bargeInReason": "noBargeIn",
+  "bargedInPromptNo": 0,
+  "bargedInPromptMs": 0,
+  "bargedInPromptLoopNo": 0,
+  "bargeInTimeMs": 0,
+  "transcript": "string",
+  "transcribeReason": "internalError",
+  "transcriptionDurationMs": 0
+}
+JSON;
+
+// create an instance of TranscribeWebhook from a JSON string
+$transcribe_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\TranscribeWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

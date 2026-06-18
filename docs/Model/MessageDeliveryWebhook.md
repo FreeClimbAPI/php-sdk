@@ -15,4 +15,32 @@ Name | Type | Description | Notes
 **phone_number_id** | **string** | ID of the destination phone number. | [optional]
 **uri** | **string** | The URI for this resource, relative to the API base URL | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "messageDelivery",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "text": "string",
+  "direction": "string",
+  "applicationId": "string",
+  "status": "string",
+  "phoneNumberId": "string",
+  "uri": "string"
+}
+JSON;
+
+// create an instance of MessageDeliveryWebhook from a JSON string
+$message_delivery_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\MessageDeliveryWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

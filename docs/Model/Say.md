@@ -10,4 +10,30 @@ Name | Type | Description | Notes
 **loop** | **int** | Number of times the text is said. Specifying &#39;0&#39; causes the &#x60;Say&#x60; action to loop until the Call is hung up. | [optional] [default to 1]
 **privacy_mode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "Say",
+  "text": "string",
+  "language": "string",
+  "engine": {
+    "name": "freeclimb.standard"
+  },
+  "loop": 1,
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of Say from a JSON string
+$say = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\Say::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

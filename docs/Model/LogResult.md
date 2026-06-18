@@ -12,4 +12,28 @@ Name | Type | Description | Notes
 **message** | **string** | A simple string describing the event being logged. | [optional]
 **metadata** | **object** | JSON document containing metadata about the event. Some log messages may include request and response header content in this field. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "timestamp": 0,
+  "level": "info",
+  "requestId": "string",
+  "accountId": "string",
+  "callId": "string",
+  "message": "string"
+}
+JSON;
+
+// create an instance of LogResult from a JSON string
+$log_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\LogResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

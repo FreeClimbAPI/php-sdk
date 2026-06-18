@@ -15,4 +15,32 @@ Name | Type | Description | Notes
 **privacy_mode** | **bool** | Activate privacy mode in order to obscure log data that can potentially expose private information. | [optional]
 **call_connect_url** | **string** | The URL that FreeClimb should use to handle this phone call. If an applicationId or parentCallId have already been provided, this callConnectUrl attribute will be used as a replacement of the callConnectUrl originally assigned in the application or parent call. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "from": "+12025551234",
+  "to": "+13035559876",
+  "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03",
+  "sendDigits": "1234#",
+  "ifMachine": "redirect",
+  "ifMachineUrl": "https://www.myapp.com/ifMachine",
+  "timeout": 30,
+  "parentCallId": "CA0123456789abcdefABCDEF0123456789abcdef04",
+  "privacyMode": false,
+  "callConnectUrl": "https://www.myapp.com/callConnect"
+}
+JSON;
+
+// create an instance of MakeCallRequest from a JSON string
+$make_call_request = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\MakeCallRequest::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

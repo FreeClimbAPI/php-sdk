@@ -14,4 +14,31 @@ Name | Type | Description | Notes
 **duration_sec** | **int** | Length of the recording in seconds. | [optional]
 **conference_id** | **string** | ID of the Conference that was recorded. If a Call was recorded, this value is empty and the callId property is populated. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "recordingId": "string",
+  "accountId": "string",
+  "callId": "string",
+  "durationSec": 0,
+  "conferenceId": "string"
+}
+JSON;
+
+// create an instance of RecordingResult from a JSON string
+$recording_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\RecordingResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

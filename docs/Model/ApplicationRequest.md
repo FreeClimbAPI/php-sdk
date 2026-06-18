@@ -12,4 +12,29 @@ Name | Type | Description | Notes
 **sms_url** | **string** | The URL that FreeClimb will request when a phone number assigned to this application receives an incoming SMS message. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. | [optional]
 **sms_fallback_url** | **string** | The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "alias": "Customer Support Line",
+  "voiceUrl": "https://www.myapp.com/voice",
+  "voiceFallbackUrl": "https://www.myapp.com/voiceFallback",
+  "callConnectUrl": "https://www.myapp.com/callConnect",
+  "statusCallbackUrl": "https://www.myapp.com/status",
+  "smsUrl": "https://www.myapp.com/sms",
+  "smsFallbackUrl": "https://www.myapp.com/smsFallback"
+}
+JSON;
+
+// create an instance of ApplicationRequest from a JSON string
+$application_request = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\ApplicationRequest::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

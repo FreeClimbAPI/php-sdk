@@ -22,4 +22,39 @@ Name | Type | Description | Notes
 **parent_call_id** | **string** | ID of Call that created this leg (child call). | [optional]
 **privacy_mode** | **bool** | If true then it indicates the recording will only be available for download for two minutes prior to it being deleted. This is to minimize risk of anyone else getting access to the url and attempting to access it. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "record",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "recordingId": "string",
+  "recordingUrl": "https://www.example.com",
+  "recordingSize": "string",
+  "recordingFormat": "string",
+  "recordingDurationSec": 0,
+  "termReason": "finishKey",
+  "parentCallId": "string",
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of RecordWebhook from a JSON string
+$record_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\RecordWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

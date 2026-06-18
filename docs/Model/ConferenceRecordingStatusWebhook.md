@@ -18,4 +18,35 @@ Name | Type | Description | Notes
 **recording_id** | **string** | Unique ID of the Recording from this Conference. Populated only if a recording exists and the Conference was emptied. | [optional]
 **recording_duration_sec** | **int** | Duration of the recorded audio (in seconds), rounded up to the nearest second. Populated only if a Recording exists and the Conference was emptied. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "conferenceRecordingStatus",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "status": "empty",
+  "recordingUrl": "https://www.example.com",
+  "recordingId": "string",
+  "recordingDurationSec": 0
+}
+JSON;
+
+// create an instance of ConferenceRecordingStatusWebhook from a JSON string
+$conference_recording_status_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\ConferenceRecordingStatusWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

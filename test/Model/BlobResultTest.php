@@ -77,8 +77,8 @@ class BlobResultTest extends TestCase
     public function testPropertyBlobId()
     {
 
-        $this->BlobResult->setBlobId('BL88615a9b4ca7e9aad57d9057773fc74268b9caf7');
-        $this->assertEquals('BL88615a9b4ca7e9aad57d9057773fc74268b9caf7', $this->BlobResult->getBlobId());
+        $this->BlobResult->setBlobId('BL0123456789abcdefABCDEF0123456789abcdef02');
+        $this->assertEquals('BL0123456789abcdefABCDEF0123456789abcdef02', $this->BlobResult->getBlobId());
         $this->assertIsString($this->BlobResult->getBlobId());
 
     }
@@ -86,8 +86,8 @@ class BlobResultTest extends TestCase
     public function testPropertyAccountId()
     {
 
-        $this->BlobResult->setAccountId('AC0534faec6b32da45f36166674d65b3903f784141');
-        $this->assertEquals('AC0534faec6b32da45f36166674d65b3903f784141', $this->BlobResult->getAccountId());
+        $this->BlobResult->setAccountId('AC0123456789abcdefABCDEF0123456789abcdef01');
+        $this->assertEquals('AC0123456789abcdefABCDEF0123456789abcdef01', $this->BlobResult->getAccountId());
         $this->assertIsString($this->BlobResult->getAccountId());
 
     }

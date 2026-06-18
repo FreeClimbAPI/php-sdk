@@ -16,4 +16,32 @@ Name | Type | Description | Notes
 **status** | [**\FreeClimb\Api\Model\AccountStatus**](AccountStatus.md) |  | [optional]
 **subresource_uris** | **object** | The list of subresources for this account. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "apiKey": "string",
+  "alias": "string",
+  "label": "string",
+  "type": "trial",
+  "status": "closed"
+}
+JSON;
+
+// create an instance of AccountResult from a JSON string
+$account_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\AccountResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

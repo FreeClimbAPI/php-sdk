@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **parent_call_id** | **string** | Call ID of the leg which initiated the OutDial. | [optional]
 **machine_type** | [**\FreeClimb\Api\Model\MachineType**](MachineType.md) |  | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "machineDetected",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "parentCallId": "string",
+  "machineType": "answering machine"
+}
+JSON;
+
+// create an instance of MachineDetectedWebhook from a JSON string
+$machine_detected_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\MachineDetectedWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

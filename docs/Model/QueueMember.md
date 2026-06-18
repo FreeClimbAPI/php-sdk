@@ -10,4 +10,27 @@ Name | Type | Description | Notes
 **position** | **int** | Member&#39;s current position in the Queue, 1 indexed. | [optional]
 **date_enqueued** | **string** | Date that the Member was enqueued (GMT), given in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "callId": "string",
+  "waitTime": 0,
+  "position": 0,
+  "dateEnqueued": "string"
+}
+JSON;
+
+// create an instance of QueueMember from a JSON string
+$queue_member = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\QueueMember::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
