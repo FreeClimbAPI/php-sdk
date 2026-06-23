@@ -18,4 +18,40 @@ Name | Type | Description | Notes
 **speech_incomplete_timeout_ms** | **int** | Parameter &#x60;speechIncompleteTimeoutMs&#x60; specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout &#x60;speechIncompleteTimeoutMs&#x60; is usually longer than &#x60;speechCompleteTimeoutMs&#x60; to allow users to pause mid-utterance. | [optional]
 **privacy_mode** | **bool** | Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "GetSpeech",
+  "actionUrl": "https://www.example.com",
+  "grammarType": "URL",
+  "grammarFile": "string",
+  "grammarRule": "string",
+  "playBeep": false,
+  "prompts": [
+    {
+      "command": "string"
+    }
+  ],
+  "noInputTimeoutMs": 0,
+  "recognitionTimeoutMs": 0,
+  "confidenceThreshold": 0,
+  "sensitivityLevel": 0,
+  "speechCompleteTimeoutMs": 0,
+  "speechIncompleteTimeoutMs": 0,
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of GetSpeech from a JSON string
+$get_speech = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\GetSpeech::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

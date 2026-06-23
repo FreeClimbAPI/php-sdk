@@ -20,4 +20,45 @@ Name | Type | Description | Notes
 **offnet** | **bool** | The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource. | [optional]
 **tfn** | [**\FreeClimb\Api\Model\TFN**](TFN.md) |  | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "capabilities": {
+    "voice": false,
+    "sms": false,
+    "tollFree": false,
+    "tenDLC": false,
+    "shortCode": false
+  },
+  "campaignId": "string",
+  "phoneNumberId": "string",
+  "accountId": "string",
+  "applicationId": "string",
+  "phoneNumber": "string",
+  "alias": "string",
+  "region": "string",
+  "country": "string",
+  "offnet": false,
+  "tfn": {
+    "campaignId": "string"
+  }
+}
+JSON;
+
+// create an instance of IncomingNumberResult from a JSON string
+$incoming_number_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\IncomingNumberResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

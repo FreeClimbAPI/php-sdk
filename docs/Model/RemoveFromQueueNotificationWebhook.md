@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **queue_result** | [**\FreeClimb\Api\Model\QueueResultStatus**](QueueResultStatus.md) |  | [optional]
 **queue_time** | **int** | Time (in seconds) the Call spent in the Queue. This is only available if the Call was actually enqueued. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "removeFromQueueNotification",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queueResult": "queueFull",
+  "queueTime": 0
+}
+JSON;
+
+// create an instance of RemoveFromQueueNotificationWebhook from a JSON string
+$remove_from_queue_notification_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\RemoveFromQueueNotificationWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

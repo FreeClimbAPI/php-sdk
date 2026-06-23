@@ -14,4 +14,36 @@ Name | Type | Description | Notes
 **prompts** | [**\FreeClimb\Api\Model\PerclCommand[]**](PerclCommand.md) | JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller. | [optional]
 **privacy_mode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "GetDigits",
+  "actionUrl": "https://www.example.com",
+  "digitTimeoutMs": 0,
+  "finishOnKey": "string",
+  "flushBuffer": false,
+  "initialTimeoutMs": 0,
+  "maxDigits": 0,
+  "minDigits": 0,
+  "prompts": [
+    {
+      "command": "string"
+    }
+  ],
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of GetDigits from a JSON string
+$get_digits = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\GetDigits::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

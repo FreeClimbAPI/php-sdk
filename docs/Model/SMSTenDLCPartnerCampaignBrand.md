@@ -16,4 +16,32 @@ Name | Type | Description | Notes
 **optional_attributes** | **array<string,mixed>** | Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names. | [optional]
 **evp_vetting_score** | **int** | External vetting score. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "accountId": "string",
+  "brandId": "string",
+  "firstName": "John",
+  "lastName": "Doe",
+  "displayName": "ABC Mobile",
+  "companyName": "ABC Inc.",
+  "phone": "+12024567890",
+  "email": "string",
+  "website": "http://www.abcmobile.com",
+  "evpVettingScore": 0
+}
+JSON;
+
+// create an instance of SMSTenDLCPartnerCampaignBrand from a JSON string
+$sms_ten_dlc_partner_campaign_brand = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\SMSTenDLCPartnerCampaignBrand::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

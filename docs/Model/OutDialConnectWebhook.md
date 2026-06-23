@@ -15,4 +15,32 @@ Name | Type | Description | Notes
 **queue_id** | **string** | This is only populated if the request pertains to a queue. Otherwise, it is set to null. | [optional]
 **parent_call_id** | **string** | ID of the Call that created this leg (child call). | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "outDialConnect",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "parentCallId": "string"
+}
+JSON;
+
+// create an instance of OutDialConnectWebhook from a JSON string
+$out_dial_connect_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\OutDialConnectWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -12,4 +12,30 @@ Name | Type | Description | Notes
 **wait_url** | **string** | If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb. | [optional]
 **parent_call_id** | **string** | ID of the Call that created this leg (child call). | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "CreateConference",
+  "actionUrl": "https://www.example.com",
+  "alias": "string",
+  "playBeep": "always",
+  "record": false,
+  "statusCallbackUrl": "https://www.example.com",
+  "waitUrl": "https://www.example.com",
+  "parentCallId": "string"
+}
+JSON;
+
+// create an instance of CreateConference from a JSON string
+$create_conference = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\CreateConference::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

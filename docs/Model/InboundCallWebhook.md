@@ -15,4 +15,32 @@ Name | Type | Description | Notes
 **queue_id** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional]
 **parent_call_id** | **string** |  | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "inboundCall",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "parentCallId": "string"
+}
+JSON;
+
+// create an instance of InboundCallWebhook from a JSON string
+$inbound_call_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\InboundCallWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

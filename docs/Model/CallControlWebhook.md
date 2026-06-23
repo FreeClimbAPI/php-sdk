@@ -10,4 +10,27 @@ Name | Type | Description | Notes
 **conference_id** | **string** | Unique ID of the Conference. | [optional]
 **digits** | **string** | String of digits entered by the participant. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "callControl",
+  "callId": "string",
+  "accountId": "string",
+  "conferenceId": "string",
+  "digits": "string"
+}
+JSON;
+
+// create an instance of CallControlWebhook from a JSON string
+$call_control_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\CallControlWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

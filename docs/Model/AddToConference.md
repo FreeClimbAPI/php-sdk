@@ -15,4 +15,33 @@ Name | Type | Description | Notes
 **talk** | **bool** | If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command. | [optional]
 **dtmf_pass_through** | **bool** | If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "AddToConference",
+  "allowCallControl": false,
+  "callControlSequence": "string",
+  "callControlUrl": "https://www.example.com",
+  "conferenceId": "string",
+  "leaveConferenceUrl": "https://www.example.com",
+  "listen": false,
+  "notificationUrl": "https://www.example.com",
+  "startConfOnEnter": false,
+  "talk": false,
+  "dtmfPassThrough": false
+}
+JSON;
+
+// create an instance of AddToConference from a JSON string
+$add_to_conference = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\AddToConference::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

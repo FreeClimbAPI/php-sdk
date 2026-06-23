@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **queue_result** | **string** | The final result of the enqueued Call. Valid values are: •dequeued - Enqueued caller exited the Queue via a Dequeue action (Dequeue command or Queue Members POST REST API). | [optional]
 **queue_time** | **int** | Time (in seconds) the call spent in the Queue. This is only available if the Call was actually enqueued. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "dequeue",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queueResult": "string",
+  "queueTime": 0
+}
+JSON;
+
+// create an instance of DequeueWebhook from a JSON string
+$dequeue_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\DequeueWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

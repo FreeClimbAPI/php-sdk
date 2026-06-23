@@ -24,4 +24,45 @@ Name | Type | Description | Notes
 **phone_number_id** | **string** | String that uniquely identifies the phoneNumber resource used to send this Message | [optional]
 **application_id** | **string** | String that uniquely identifies the Application resource used to send this Message | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "messageId": "string",
+  "status": "new",
+  "from": "string",
+  "to": "string",
+  "text": "string",
+  "direction": "string",
+  "notificationUrl": "https://www.example.com",
+  "brandId": "string",
+  "campaignId": "string",
+  "segmentCount": 0,
+  "mediaUrls": [
+    "https://www.example.com"
+  ],
+  "tfn": {
+    "campaignId": "string"
+  },
+  "phoneNumberId": "string",
+  "applicationId": "string"
+}
+JSON;
+
+// create an instance of MessageResult from a JSON string
+$message_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\MessageResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

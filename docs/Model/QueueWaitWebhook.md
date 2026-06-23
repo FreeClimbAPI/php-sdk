@@ -17,4 +17,34 @@ Name | Type | Description | Notes
 **queue_time** | **int** | Time (in seconds) the Call spent in the Queue. This is only available if the Call was actually enqueued. | [optional]
 **current_queue_size** | **int** | Current number of enqueued Calls in this Queue. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "queueWait",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queuePosition": "string",
+  "queueTime": 0,
+  "currentQueueSize": 0
+}
+JSON;
+
+// create an instance of QueueWaitWebhook from a JSON string
+$queue_wait_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\QueueWaitWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -14,4 +14,31 @@ Name | Type | Description | Notes
 **conference_id** | **string** | This is only populated if request pertains to a Conference. Otherwise, it is set to null. | [optional]
 **queue_id** | **string** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "audioStream",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string"
+}
+JSON;
+
+// create an instance of AudioStreamWebhook from a JSON string
+$audio_stream_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\AudioStreamWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

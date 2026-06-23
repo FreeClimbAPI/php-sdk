@@ -15,4 +15,33 @@ Name | Type | Description | Notes
 **timeout** | **int** | Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;. | [optional]
 **privacy_mode** | **bool** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "OutDial",
+  "actionUrl": "https://www.example.com",
+  "callConnectUrl": "https://www.example.com",
+  "callingNumber": "string",
+  "destination": "string",
+  "ifMachine": "redirect",
+  "ifMachineUrl": "https://www.example.com",
+  "sendDigits": "string",
+  "statusCallbackUrl": "https://www.example.com",
+  "timeout": 0,
+  "privacyMode": false
+}
+JSON;
+
+// create an instance of OutDial from a JSON string
+$out_dial = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\OutDial::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

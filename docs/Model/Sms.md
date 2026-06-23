@@ -9,4 +9,27 @@ Name | Type | Description | Notes
 **text** | **string** | Text contained in the message (maximum 160 characters). |
 **notification_url** | **string** | When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "command": "Sms",
+  "to": "string",
+  "from": "string",
+  "text": "string",
+  "notificationUrl": "https://www.example.com"
+}
+JSON;
+
+// create an instance of Sms from a JSON string
+$sms = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\Sms::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

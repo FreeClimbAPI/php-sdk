@@ -22,4 +22,39 @@ Name | Type | Description | Notes
 **mrcp_code** | **int** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional]
 **mrcp_diagnostic** | **string** | Advanced diagnostic information if reason was error. See RFC 6787 section 5.4 - MRCPv2 specification. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "getSpeech",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "reason": "error",
+  "recognitionResult": "string",
+  "confidence": 0,
+  "parentCallId": "string",
+  "completionReason": "string",
+  "completionCause": "string",
+  "mrcpCode": 0,
+  "mrcpDiagnostic": "string"
+}
+JSON;
+
+// create an instance of GetSpeechWebhook from a JSON string
+$get_speech_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\GetSpeechWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

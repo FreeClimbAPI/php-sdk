@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **status** | [**\FreeClimb\Api\Model\MessageStatus**](MessageStatus.md) |  | [optional]
 **phone_number_id** | **string** | ID of the destination phone number. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "requestType": "messageStatus",
+  "accountId": "string",
+  "messageId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "text": "string",
+  "direction": "string",
+  "applicationId": "string",
+  "status": "new",
+  "phoneNumberId": "string"
+}
+JSON;
+
+// create an instance of MessageStatusWebhook from a JSON string
+$message_status_webhook = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\MessageStatusWebhook::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

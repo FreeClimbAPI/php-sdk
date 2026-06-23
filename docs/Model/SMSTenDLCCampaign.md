@@ -41,4 +41,53 @@ Name | Type | Description | Notes
 **mock** | **bool** | Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. |
 **next_renewal_or_expiration_date** | **\DateTime** | When the campaign would be due for its next renew/bill date. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "campaignId": "CX56XX4",
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+  "cspId": "SX56XX4",
+  "brandId": "BX56XX4",
+  "usecase": "2FA",
+  "description": "mock campaign.",
+  "subUsecases": [],
+  "resellerId": null,
+  "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+  "sample2": null,
+  "sample3": null,
+  "sample4": null,
+  "sample5": null,
+  "messageFlow": null,
+  "helpMessage": null,
+  "referenceId": null,
+  "status": "EXPIRED",
+  "mock": true,
+  "autoRenewal": false,
+  "embeddedLink": false,
+  "embeddedPhone": false,
+  "affiliateMarketing": false,
+  "numberPool": false,
+  "ageGated": false,
+  "directLending": false,
+  "subscriberOptin": true,
+  "subscriberOptout": false,
+  "subscriberHelp": true,
+  "createDate": "2022-07-05T15:17:05Z",
+  "billedDate": "2022-07-05T00:00:00Z",
+  "nextRenewalOrExpirationDate": null
+}
+JSON;
+
+// create an instance of SMSTenDLCCampaign from a JSON string
+$sms_ten_dlc_campaign = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\SMSTenDLCCampaign::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

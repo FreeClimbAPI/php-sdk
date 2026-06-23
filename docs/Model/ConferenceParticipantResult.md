@@ -16,4 +16,33 @@ Name | Type | Description | Notes
 **dtmf_pass_through** | **bool** | True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise. | [optional]
 **start_conf_on_enter** | **bool** | True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise. | [optional]
 
+## Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$json = <<<'JSON'
+{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "conferenceId": "string",
+  "callId": "string",
+  "talk": false,
+  "listen": false,
+  "dtmfPassThrough": false,
+  "startConfOnEnter": false
+}
+JSON;
+
+// create an instance of ConferenceParticipantResult from a JSON string
+$conference_participant_result = \FreeClimb\Api\ObjectSerializer::deserialize(
+    json_decode($json),
+    \FreeClimb\Api\Model\ConferenceParticipantResult::class
+);
+```
+
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
